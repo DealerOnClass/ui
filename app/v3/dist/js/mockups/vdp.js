@@ -87,10 +87,8 @@
 		_opacityAnim = 500,
 		_imageClone;
 
-	window.addEventListener('load', GalleryInit);
-	window.addEventListener('load', OffsetInit);
-	window.addEventListener('resize', GalleryInit);
-	window.addEventListener('resize', OffsetInit);
+	window.addEventListener('load', Init);
+	window.addEventListener('resize', Init);
 	_carousel.addEventListener('mousedown', MouseDown);
 	_carousel.addEventListener('mouseleave', MouseLeave);
 	_carousel.addEventListener('mousemove', MouseMove);
@@ -98,10 +96,17 @@
 	_carouselLeft.addEventListener('click', CarouselLeft);
 	_carouselRight.addEventListener('click', CarouselRight);
 
+	function Init(evt) {
+		OffsetInit().then(_ => CarouselSetWidth());
+	}
+
 	function OffsetInit(evt) {
-		_offset                     = _vdpBodyContainer.offsetLeft + _gutter;
-		_carousel.style.paddingLeft = _offset + "px";
-		CarouselSetWidth();
+		return new Promise(function(resolve, reject) {
+			_offset                     = _vdpBodyContainer.offsetLeft + _gutter;
+			_carousel.style.paddingLeft = _offset + "px";
+			resolve();
+			return;
+		});
 	}
 
 	function CarouselSetWidth() {
@@ -212,7 +217,7 @@
 	function MouseUp(evt) {
 		if (_mouseClick){
 			if (!_galleryActive) {
-				GalleryStart(evt.target);
+				GalleryInit().then(_ => GalleryStart(evt.target));
 			}
 		}
 		_mouseDown = false;
@@ -223,12 +228,16 @@
 	}
 
 	function GalleryInit() {
-		_carouselImages.forEach(function(current_value){
-			current_value.style.transform = "translateX(" + current_value.offsetLeft + "px)" + "translateY(" + current_value.offsetTop + "px)";
-			current_value.style.width  = current_value.offsetWidth + "px";
-			current_value.style.height = current_value.offsetHeight + "px";
+		return new Promise(function(resolve, reject) {
+			_carouselImages.forEach(function(current_value){
+				current_value.style.transform = "translateX(" + current_value.offsetLeft + "px)" + "translateY(" + current_value.offsetTop + "px)";
+				current_value.style.width  = current_value.offsetWidth + "px";
+				current_value.style.height = current_value.offsetHeight + "px";
+			});
+			_carousel.classList.add("js-gallery-init");
+			resolve();
+			return;
 		});
-		_carousel.classList.add("js-gallery-init");
 	}
 
 	function GalleryStart(_image) {
@@ -305,5 +314,4 @@
 
 		return _newValue;
 	}
-
 })();
