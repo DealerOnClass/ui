@@ -1,0 +1,99 @@
+//
+//  Var
+$dropdown__contrast:        $global__contrast;
+$dropdown__radius:          $global__radius;
+$dropdown__x:               $global__x;
+$dropdown__y:               $global__y;
+$dropdown__use-btn__color:  false;
+//
+//  Options
+$dropdown__icon:      $fa-var-angle-down;
+$dropdown__icon-use:  true !default;
+@if $output__global {
+    @if $output__dropdown {
+        //
+        //  Base
+        .dropup,
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            z-index: $zindex-dropdown;
+            top: 100%;
+            left: 0;
+
+            display: none;
+            float: left;
+
+            .open > & {
+                display: block;
+            }
+        }
+
+        .dropdown-item {
+            position: relative;
+            display: block;
+            padding: $dropdown__y $dropdown__x;
+            white-space: nowrap;
+            background-color: $white;
+            border: $one__pixel solid;
+
+            &:first-child {
+                border-radius: $dropdown__radius $dropdown__radius 0 0;
+            }
+
+            &:last-child {
+                border-radius: 0 0 $dropdown__radius $dropdown__radius;
+            }
+
+            &:only-child {
+                border-radius: $card__radius;
+            }
+
+            &:not(:first-child) {
+                border-top: 0;
+            }
+
+            &:not(:last-child) {
+                border-bottom: 0;
+            }
+
+            @include state-and-active-and-open {
+                color: $white;
+                border-color: transparent;
+                background-color: $primary__color;
+            }
+        }
+
+        .dropdown-toggle {
+            &:after {
+                @if $dropdown__icon-use {
+                    font-family: $fa-font-name;
+
+                    content: "#{$dropdown__icon}";
+                } @else {
+                    @include caret(top, 4px, 0);
+                    margin-left: half($dropdown__x);
+
+                    display: inline-block;
+
+                    content: "";
+                }
+            }
+        }
+        //
+        //  Colors
+        @if $output__global--theme {
+            @if $output__dropdown--theme {
+                @include dropdown-color-variation($default__palette);
+                @include dropdown-color-variation($inverse__palette);
+                @include dropdown-color-variation($primary__palette);
+                @include dropdown-color-variation($neutral__palette);
+                @include dropdown-color-variation($state__palette);
+                @include dropdown-color-variation($classic__palette);
+            }
+        }
+    }
+}

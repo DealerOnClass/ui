@@ -1,0 +1,21 @@
+@if $table__default-palette {
+    @include table-color-variation($default__palette);
+}
+@if $table__inverse-palette {
+    @include table-color-variation($inverse__palette);
+}
+@if $table__primary-palette {
+    @include table-color-variation($primary__palette);
+}
+@if $table__neutral-palette {
+    @include table-color-variation($neutral__palette);
+}
+@if $table__state-palette {
+    @include table-color-variation($state__palette);
+}
+//  @include table-row-variant('active',    $table--contextual--active);
+//  @include table-row-variant('success',   $table--contextual--success);
+//  @include table-row-variant('info',      $table--contextual--info);
+//  @include table-row-variant('warning',   $table--contextual--warning);
+//  @include table-row-variant('danger',    $table--contextual--danger);
+

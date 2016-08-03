@@ -1,0 +1,77 @@
+.carousel-inner {
+    position: relative;
+
+    overflow: hidden;
+
+    width: 100%;
+
+    > .item {
+        position: relative;
+
+        display: none;
+
+        transition: 0.6s ease-in-out left;
+
+        > img,
+        > a > img {
+            line-height: 1;
+
+            @include img-responsive;
+        }
+    }
+
+    > .item {
+        @media all and (transform-3d), (-webkit-transform-3d) {
+            transition-transform: 0.6s ease-in-out;
+            backface-visibility: hidden;
+            perspective: 1000px;
+
+            &.next,
+            &.active.right {
+                left: 0;
+
+                transform: translate3d(100%, 0, 0);
+            }
+            &.prev,
+            &.active.left {
+                left: 0;
+
+                transform: translate3d(-100%, 0, 0);
+            }
+            &.next.left,
+            &.prev.right,
+            &.active {
+                left: 0;
+
+                transform: translate3d(0, 0, 0);
+            }
+        }
+    }
+
+    > .active,
+    > .next,
+    > .prev {
+        display: block;
+    }
+    > .active,
+    > .next.left,       //
+    > .prev.right {     //
+        left: 0;
+    }
+    > .next,
+    > .prev {
+        position: absolute;
+        top: 0;
+
+        width: 100%;
+    }
+    > .next,
+    > .active.right {   //
+        left: 100%;
+    }
+    > .prev,
+    > .active.left {    //
+        left: -100%;
+    }
+}
+

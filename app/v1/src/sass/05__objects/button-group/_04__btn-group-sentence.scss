@@ -1,0 +1,24 @@
+.btn-group-sentence {
+
+    .btn {
+        float: left;
+    }
+
+    .btn + .btn {
+        margin-left: -1 * $one__true__pixel;
+    }
+
+    .btn + .btn:not(:last-child) {
+        border-radius: 0;
+    }
+
+    .btn:first-child:not(:only-child) {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .btn:last-child:not(:only-child) {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+}

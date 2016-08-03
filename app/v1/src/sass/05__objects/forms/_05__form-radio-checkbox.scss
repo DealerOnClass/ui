@@ -1,0 +1,50 @@
+.radio,
+.checkbox {
+    position: relative;
+
+    display: block;
+
+    margin-bottom: rhythm(1);
+    margin-left: $form__x / 1.5;
+
+    label {
+        padding-left: $form__x;
+
+        cursor: pointer;
+    }
+}
+
+.radio input[type='radio'],
+.radio-inline input[type='radio'],
+.checkbox input[type='checkbox'],
+.checkbox-inline input[type='checkbox'] {
+    position: absolute;
+
+    margin-top: 4px \9;
+    margin-left: $form__x * -1.5;
+}
+
+.radio + .radio,
+.checkbox + .checkbox {
+    margin-top: rhythm(-0.25);
+}
+
+.radio-inline,
+.checkbox-inline {
+    position: relative;
+
+    display: inline-block;
+
+    margin-bottom: rhythm(1);
+    margin-left: $form__x / 1.5;
+    padding-left: $form__x;
+
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.radio-inline + .radio-inline,
+.checkbox-inline + .checkbox-inline {
+    margin-top: 0;
+    margin-left: $form__x * 1.5;
+}

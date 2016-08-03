@@ -1,0 +1,23 @@
+//
+//  Units
+$well__contrast:            $global__contrast;
+$well__radius:              $global__radius;
+$well__x:                   $global__x;
+$well__y:                   $global__y;
+//
+//  Colors
+$well__default-palette:     true !default;
+$well__inverse-palette:     true !default;
+$well__primary-palette:     true !default;
+$well__neutral-palette:     true !default;
+$well__state-palette:       true !default;
+//
+//  Base
+$well__padding:             $well__x;
+$well__radius:              $well__radius;
+$well__vertical-rhythm:     ($well__y * 2);
+//
+//  Variations
+$well--lg__padding:         ( $well__y * ( $base__font-ratio * 2 ) ) ( $well__x * $base__font-ratio );
+$well--sm__padding:         ( $well__y * ( $base__font-ratio / 2 ) ) ( $well__x / $base__font-ratio );
+

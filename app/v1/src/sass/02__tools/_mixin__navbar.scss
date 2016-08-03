@@ -1,0 +1,100 @@
+@mixin navbar-color-variation($input__palette) {
+    @each $class__name, $color in $input__palette {
+        .navbar-#{$class__name} {
+            color: check-color($color, 80, inherit, $white);
+            border: 0 none;
+            background-color: $color;
+
+            a,
+            button {
+                color: inherit;
+                @include state {
+                    background-color: shade($color, $navbar__contrast);
+                }
+            }
+
+            .navbar-nav > li.open > a,
+            .navbar-nav > li.active > a,
+            .navbar-nav > li > a.active,
+            li.open > a,
+            li.active > a,
+            a.active {
+                @include state-and-self {
+                    background-color: shade($color, $navbar__contrast * 1.5);
+                }
+            }
+
+            .navbar-search-form .form-control {
+                color: check-color($color, 80, inherit, $white);
+                background-color: shade($color, $navbar__contrast * 1.5);
+            }
+        }
+
+        .navbar-#{$class__name} .dropdown-menu {
+            background-color: shade($color, $navbar__contrast * 1.5);
+
+            > li > a {
+                border-color: transparent;
+                background-color: shade($color, $navbar__contrast * 1.5);
+                @include state {
+                    background-color: shade($color, $navbar__contrast * 2);
+                }
+            }
+
+            > li.open > a,
+            > li.active > a,
+            > a.active {
+                @include state-and-self {
+                    background-color: shade($color, $navbar__contrast * 2);
+                }
+            }
+
+            //  @media (max-width: $grid-float-breakpoint-max) {
+            //      background-color: shade($color, $navbar__contrast * 2);
+
+            //      > li > a {
+            //          @include state {
+            //              background-color: shade($color, $navbar__contrast * 3);
+            //          }
+            //      }
+
+            //      > li.open > a,
+            //      > li.active > a,
+            //      > a.active {
+            //          background-color: shade($color, $navbar__contrast * 3);
+            //      }
+            //  }
+        }
+
+        .navbar-#{$class__name}.navbar-stacked {
+
+            .dropdown-menu {
+
+                > li > a {
+                    background-color: shade($color, $navbar__contrast * 2);
+                    @include state {
+                        background-color: shade($color, $navbar__contrast * 3);
+                    }
+                }
+
+                > li.open > a,
+                > li.active > a,
+                > a.active {
+                    @include state-and-self {
+                        background-color: shade($color, $navbar__contrast * 3);
+                    }
+                }
+            }
+        }
+
+        .navbar-#{$class__name} {
+            .navbar-sidebar-header {
+                background-color: check-color($color, 80, shade($color, $navbar__contrast / 2), shade($color, $navbar__contrast * 2));
+                color: check-color($color, 80, shade($color, 60%), tint($color, 60%));
+            }
+            .navbar-sidebar-title {
+                color: check-color($color, 80, shade($color, 60%), tint($color, 80%));
+            }
+        }
+    }
+}

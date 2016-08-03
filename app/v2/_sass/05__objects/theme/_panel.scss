@@ -1,0 +1,179 @@
+//
+//  Var
+$panel__contrast:              $global__contrast;
+$panel__radius:                $global__radius;
+$panel__x:                     $global__x;
+$panel__y:                     $global__y;
+$panel-wizard-step-counter:    true !default;
+$panel-wizard-true-accordion:  true !default;
+@if $output__global {
+    @if $output__panel {
+        //
+        //  Base
+        .panel {
+            position: relative;
+            border-radius: $card__radius;
+
+            .panel-heading,
+            .panel-body,
+            .panel-footer {
+                position: relative;
+                border: $one__pixel solid;
+
+                &:first-child {
+                    border-radius: $panel__radius $panel__radius 0 0;
+                }
+
+                &:last-child {
+                    border-radius: 0 0 $panel__radius $panel__radius;
+                }
+
+                &:only-child {
+                    border: $one__pixel solid;
+                    border-radius: $panel__radius;
+                }
+
+                &:not(:last-child) {
+                    border-bottom: 0;
+                }
+            }
+        }
+
+        .panel-body,
+        .panel-footer {
+
+            &:first-child + .panel-heading {
+                margin-top: $one__pixel * -1;
+                margin-bottom: $one__pixel * -1;
+            }
+        }
+
+        .panel-heading,
+        .panel-body,
+        .panel-footer {
+            padding: $panel__y $panel__x;
+        }
+
+        .panel-heading,
+        .panel-footer {
+            background-color: $gray__01;
+        }
+
+        .panel-heading {
+            position: relative;
+            z-index: 10;
+        }
+
+        .panel-title {
+            margin-bottom: 0;
+        }
+
+        .panel-body {
+            box-sizing: border-box;
+        }
+
+        //
+        //  Base
+        //  .panel-wizard {
+
+        //      .panel-heading.btn {
+        //          display: block;
+        //          width: 100%;
+        //          overflow: hidden;
+        //      }
+
+        //      .panel-wizard-step {
+        //          float: left;
+        //      }
+
+        //      .panel-wizard-icon {
+        //          position: relative;
+        //          top: $panel__y / 2;
+
+        //          float: right;
+        //      }
+
+        //      .panel-body:first-child {
+        //          border-bottom: 0 none;
+        //      }
+
+        //      .panel-footer {
+        //          background-color: transparent;
+        //      }
+        //  }
+
+        //  //
+        //  //  Counter
+        //  @if $panel-wizard-step-counter {
+        //      .panel-wizard-container {
+        //          counter-reset: panel-wizard-step;
+        //      }
+
+        //      .panel-wizard-step:before {
+        //          //  font-family: $sans--bold;
+        //          content: "Step " counter(panel-wizard-step) ": ";
+        //          counter-increment: panel-wizard-step;
+        //      }
+        //  }
+
+        //  //
+        //  //  Accordion
+        //  @if $panel-wizard-true-accordion {
+        //      .panel-wizard-container .panel-wizard {
+        //          margin-bottom: 0;
+
+        //          .panel-heading,
+        //          .panel-body,
+        //          .panel-footer {
+        //              border-radius: 0;
+        //          }
+
+        //          &:first-child {
+
+        //              .panel-heading {
+        //                  border-top-right-radius: $panel__radius;
+        //                  border-top-left-radius: $panel__radius;
+        //              }
+        //          }
+
+        //          &:last-child {
+
+        //              .panel-heading,
+        //              .panel-footer {
+        //                  border-bottom-right-radius: $panel__radius;
+        //                  border-bottom-left-radius: $panel__radius;
+        //              }
+
+        //              .panel-heading.current {
+        //                  border-radius: 0;
+        //              }
+        //          }
+        //      }
+
+        //      .panel-wizard-container .panel-wizard + .panel-wizard:before {
+        //          content: "";
+        //          display: block;
+        //          width: 100%;
+        //          border-top: $one__pixel solid;
+        //      }
+        //  }
+        //
+        //  Sizing
+        @if $output__global--sizes {
+            @if $output__panel--sizes {
+                @include panel-size-variation($panel__y, $panel__x, $default__sizing);
+            }
+        }
+        //
+        //  Colors
+        @if $output__global--theme {
+            @if $output__panel--theme {
+                @include panel-color-variation($default__palette);
+                @include panel-color-variation($inverse__palette);
+                @include panel-color-variation($primary__palette);
+                @include panel-color-variation($neutral__palette);
+                @include panel-color-variation($state__palette);
+            }
+        }
+    }
+}

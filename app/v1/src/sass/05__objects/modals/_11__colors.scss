@@ -1,0 +1,15 @@
+@if $modal__default-palette {
+    @include modal-color-variation($default__palette);
+}
+@if $modal__inverse-palette {
+    @include modal-color-variation($inverse__palette);
+}
+@if $modal__primary-palette {
+    @include modal-color-variation($primary__palette);
+}
+@if $modal__neutral-palette {
+    @include modal-color-variation($neutral__palette);
+}
+@if $modal__state-palette {
+    @include modal-color-variation($state__palette);
+}

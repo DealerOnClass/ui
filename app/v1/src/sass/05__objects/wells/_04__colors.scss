@@ -1,0 +1,16 @@
+@if $well__default-palette {
+    @include well-color-variation($default__palette);
+}
+@if $well__inverse-palette {
+    @include well-color-variation($inverse__palette);
+}
+@if $well__primary-palette {
+    @include well-color-variation($primary__palette);
+}
+@if $well__neutral-palette {
+    @include well-color-variation($neutral__palette);
+}
+@if $well__state-palette {
+    @include well-color-variation($state__palette);
+}
+

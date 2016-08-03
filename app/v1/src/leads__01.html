@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>DealerOn UI Kit - Shell 00</title>
+        <link href="css/screen.css" rel="stylesheet">
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                if (WindowWidth() > 991) {
+                    ShowSidebar();
+                } else {
+                    HideSidebar();
+                }
+            });
+            function WindowWidth() {
+                var windowWidth  = window.innerWidth;
+                return windowWidth;
+            };
+            function ShowSidebar() {
+                var sidebar     = document.getElementById("navbar-sidebar");
+                //  var sidebarIcon = document.getElementById("navbar-sidebar-icon");
+                var backdrop    = document.getElementById("offcanvas-backdrop");
+
+                sidebar.className += " in";
+                //  sidebarIcon.className = sidebarIcon.className.replace( /(?:^|\s)fa-navicon(?!\S)/g , '' );
+                //  sidebarIcon.className += " fa-remove";
+                backdrop.className += " in";
+            };
+            function HideSidebar() {
+                var backdrop    = document.getElementById("offcanvas-backdrop");
+                backdrop.className += " invisible";
+            }
+        </script>
+
+    </head>
+
+    <body id="offcanvas-wrapper" class="offcanvas-wrapper">
+
+        <nav id="oncanvas-nav" class="oncanvas-nav navbar navbar-main navbar-static-top" oncanvas-nav>
+
+            <a id="navbar-sidebar-link" href="#navbar-sidebar" class="navbar-brand navbar-brand-svg" data-toggle="collapse">
+                <i id="navbar-sidebar-icon" class="fa fa-navicon fa-fw"></i>
+                <object class="logo__svg" data='img/logo__symbol.svg' type="image/svg+xml">
+                    <img class="logo__svg" src="img/logo__symbol.svg" alt="">
+                </object>
+            </a>
+            <ul class="nav navbar-nav navbar-left-override">
+                <li class="dropdown hidden-xs">
+                    <a href="#" data-toggle="dropdown">Accounts</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="">Account 1</a></li>
+                        <li><a href="">Account 2</a></li>
+                        <li><a href="">Account 3</a></li>
+                        <li><a href="">Account 4</a></li>
+                        <li><a href="">Account 5</a></li>
+                        <li class="divider"></li>
+                        <li><a href="">View All Accounts</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown hidden-xs">
+                    <a href="#" data-toggle="dropdown">Websites</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="">Website 1</a></li>
+                        <li><a href="">Website 2</a></li>
+                        <li><a href="">Website 3</a></li>
+                        <li><a href="">Website 4</a></li>
+                        <li><a href="">Website 5</a></li>
+                        <li class="divider"></li>
+                        <li><a href="">View All Websites</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown hidden-xs">
+                    <a href="#" data-toggle="dropdown">Products</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="">Product 1</a></li>
+                        <li><a href="">Product 2</a></li>
+                        <li><a href="">Product 3</a></li>
+                        <li><a href="">Product 4</a></li>
+                        <li><a href="">Product 5</a></li>
+                        <li class="divider"></li>
+                        <li><a href="">View All Products</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown hidden-xs">
+                    <a href="#" data-toggle="dropdown">Billing</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="">Account 1</a></li>
+                        <li><a href="">Account 2</a></li>
+                        <li><a href="">Account 3</a></li>
+                        <li><a href="">Account 4</a></li>
+                        <li><a href="">Account 5</a></li>
+                        <li class="divider"></li>
+                        <li><a href="">View All Products</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown hidden-xs">
+                    <a href="#" data-toggle="dropdown">Help</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="">Account 1</a></li>
+                        <li><a href="">Account 2</a></li>
+                        <li><a href="">Account 3</a></li>
+                        <li><a href="">Account 4</a></li>
+                        <li><a href="">Account 5</a></li>
+                        <li class="divider"></li>
+                        <li><a href="">View All Products</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown hidden-xs">
+                    <a href="#" data-toggle="dropdown">Filters</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="">Account 1</a></li>
+                        <li><a href="">Account 2</a></li>
+                        <li><a href="">Account 3</a></li>
+                        <li><a href="">Account 4</a></li>
+                        <li><a href="">Account 5</a></li>
+                        <li class="divider"></li>
+                        <li><a href="">View All Products</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown hidden-xs">
+                    <a href="#" data-toggle="dropdown">Users</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="">Account 1</a></li>
+                        <li><a href="">Account 2</a></li>
+                        <li><a href="">Account 3</a></li>
+                        <li><a href="">Account 4</a></li>
+                        <li><a href="">Account 5</a></li>
+                        <li class="divider"></li>
+                        <li><a href="">View All Products</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown hidden-xs">
+                    <a href="#" data-toggle="dropdown">Admin</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="">Account 1</a></li>
+                        <li><a href="">Account 2</a></li>
+                        <li><a href="">Account 3</a></li>
+                        <li><a href="">Account 4</a></li>
+                        <li><a href="">Account 5</a></li>
+                        <li class="divider"></li>
+                        <li><a href="">View All Products</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right-override">
+                <li>
+                    <form id="navbar-search-form" class="navbar-search-form form-inline collapse width">
+                        <input id="navbar-search-form-input" class="form-control" type="text">
+                    </form>
+                </li>
+                <li>
+                    <a id="navbar-search-link" href="#navbar-search-form" class="navbar-link" data-toggle="collapse">
+                        <i class="fa fa-search"></i>
+                    </a>
+                </li>
+                <li>
+                    <a id="navbar-profile-link" href="#navbar-profile" data-disable="notify" data-toggle="collapse">
+                        <div class="navbar-profile notify">
+                            <img class="navbar-profile-img" src="img/mario.png" alt="Itsa me Mario!">
+                            <i class="fa fa-exclamation fa-sm notify-icon notify-icon-alert"></i>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+
+        <div id="navbar-profile" class="collapse">
+
+            <a class="btn btn-link pull-right" href="#navbar-profile" data-toggle="collapse">
+                <i class="fa fa-remove fa-fw"></i>
+            </a>
+            <div class="hero hero-xs">
+                <div class="container tab-content">
+                    <div id="Profile" class="tab-pane active">
+                        <h3>Welcome, Mario.</h3>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <p><a href="">mario@itsamemario.com</a></p>
+                                <a class="btn btn-main" href="">Sign Out</a>
+                                <a class="btn btn-main" href="/index.html">Go Home</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--<hr class="divider hidden-sm hidden-xs">-->
+
+        </div>
+
+        <div id="navbar-profile-backdrop" class="offcanvas-backdrop fade invisible"></div>
+
+        <div id="offcanvas" class="offcanvas" offcanvas-set-top="oncanvas-nav">
+
+            <nav id="offcanvas-nav" class="offcanvas-nav navbar navbar-inverse navbar-stacked">
+                <div id="navbar-sidebar" class="navbar-sidebar-collapse collapse width">
+                    <div id="navbar-sidebar-wrapper" class="navbar-sidebar-wrapper" offcanvas-set-height="oncanvas-nav" offcanvas-set-width="offcanvas-nav">
+                        <hr class="divider">
+                        <div class="navbar-sidebar-header">
+                            <div class="media media-profile">
+                                <div class="media-left">
+                                    <img class="img-rounded-sm" src="img/toyota.jpg" alt="Gimmie dem eggs!" height="50" width="50">
+                                </div>
+                                <div class="media-body media-middle">
+                                    <ul class="list-inline margin-x">
+                                        <li>
+                                            <h5 class="margin-x">Chrysler Dodge Jeep Ram of Chatanooga</h5>
+                                            <a class="text-muted" href="http://www.scottclarktoyota.com">
+                                                <i class="fa fa-globe fa-fw xs"></i>
+                                                <small>Visit Website | 9682</small>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="media-right media-middle">
+                                    <a id="navbar-sidebar-nested-link" href="#navbar-sidebar-nested" class="navbar-link text-muted" data-toggle="collapse">
+                                        <i id="navbar-sidebar-nested-icon" class="fa fa-angle-down fa-fw fa-md"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div id="navbar-sidebar-nested" class="collapse">
+                            <div class="navbar-sidebar-header">
+                                <table class="table table-borderless table-condensed table-flush xs margin-x">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-muted">Account:</td>
+                                            <td>AMSI Auto Group</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-muted">Site ID:</td>
+                                            <td>9682</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-muted">Site Url:</td>
+                                            <td>http://www.scottclarktoyota.com</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-muted">Support:</td>
+                                            <td>Team Green</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <hr class="divider">
+
+                        <div class="navbar-sidebar-nav">
+                            <ul class="nav navbar-nav">
+                                <li class="dropdown">
+                                    <a href="" class="dropdown-toggle collapsed" data-toggle="collapse" data-target="#Website">
+                                        <i class="navbar-sidebar-icon text-muted fa fa-file fa-fw"></i>
+                                        Website
+                                        <span class="navbar-sidebar-icon text-muted caret fa-fw pull-right"></span>
+                                    </a>
+                                    <ul id="Website" class="collapse dropdown-menu">
+                                        <li><a href="">Item 1</a></li>
+                                        <li><a href="">Item 2</a></li>
+                                        <li><a href="">Item 3</a></li>
+                                        <li><a href="">Item 4</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="" class="dropdown-toggle collapsed" data-toggle="collapse" data-target="#BTS">
+                                        <i class="navbar-sidebar-icon text-muted fa fa-rocket fa-fw"></i>
+                                        BTS
+                                        <span class="navbar-sidebar-icon text-muted caret fa-fw pull-right"></span>
+                                    </a>
+                                    <ul id="BTS" class="collapse dropdown-menu">
+                                        <li><a href="">Item 1</a></li>
+                                        <li><a href="">Item 2</a></li>
+                                        <li><a href="">Item 3</a></li>
+                                        <li><a href="">Item 4</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="" class="dropdown-toggle collapsed" data-toggle="collapse" data-target="#Inventory">
+                                        <i class="navbar-sidebar-icon text-muted fa fa-shopping-cart fa-fw"></i>
+                                        Inventory
+                                        <span class="navbar-sidebar-icon text-muted caret fa-fw pull-right"></span>
+                                    </a>
+                                    <ul id="Inventory" class="collapse dropdown-menu">
+                                        <li><a href="">Item 1</a></li>
+                                        <li><a href="">Item 2</a></li>
+                                        <li><a href="">Item 3</a></li>
+                                        <li><a href="">Item 4</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="" class="dropdown-toggle collapsed" data-toggle="collapse" data-target="#Reporting">
+                                        <i class="navbar-sidebar-icon text-muted fa fa-area-chart fa-fw"></i>
+                                        Reporting
+                                        <span class="navbar-sidebar-icon text-muted caret fa-fw pull-right"></span>
+                                    </a>
+                                    <ul id="Reporting" class="collapse dropdown-menu">
+                                        <li><a href="">Item 1</a></li>
+                                        <li><a href="">Item 2</a></li>
+                                        <li><a href="">Item 3</a></li>
+                                        <li><a href="">Item 4</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <div id="offcanvas-body" class="offcanvas-body">
+
+                <div id="offcanvas-backdrop" class="offcanvas-backdrop fade"></div>
+
+                <div id="offcanvas-inner" class="offcanvas-inner" offcanvas-set-height="oncanvas-nav">
+
+                    <ol class="breadcrumb breadcrumb-default breadcrumb-flush margin-x">
+                        <li><a href="#">Home</a></li>
+                        <li class="active">Search Leads</li>
+                    </ol>
+
+                    <div class="hero">
+                        <div class="container-fluid">
+                            <h3>Search Leads</h3>
+                            <div class="table-responsive">
+                                <table class="table table-flush" table-magic="inactive">
+                                    <thead>
+                                        <tr>
+                                            <th>Source</th>
+                                            <th>Ref ID</th>
+                                            <th>From</th>
+                                            <th>Name</th>
+                                            <th>Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Website - ePrice Details New</td>
+                                            <td>6751895</td>
+                                            <td>brisinn@gmail.com</td>
+                                            <td>Brian Sinn</td>
+                                            <td>1/21/2016 9:54:00 AM</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Website Mobile - ePrice Inventory New</td>
+                                            <td>6751738</td>
+                                            <td>brijeshchawla@yahoo.com</td>
+                                            <td>Brijesh Chawla</td>
+                                            <td>1/21/2016 9:11:00 AM</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Website - ePrice Inventory New</td>
+                                            <td>6750929</td>
+                                            <td>vaeav@hotmail.com</td>
+                                            <td>Veronica Rincon Rojas</td>
+                                            <td>1/20/2016 10:47:00 PM</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Website Mobile - ePrice Inventory Used</td>
+                                            <td>6750747</td>
+                                            <td>chuckm@lefeld.com</td>
+                                            <td>Chuck Meyer</td>
+                                            <td>1/20/2016 9:57:00 PM</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Website - ePrice Inventory New</td>
+                                            <td>6749723</td>
+                                            <td>wellsc@stolaf.edu</td>
+                                            <td>Colin Wells</td>
+                                            <td>1/20/2016 6:21:00 PM</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Website - Value Your Trade</td>
+                                            <td>6747317</td>
+                                            <td>cvang019@gmail.com</td>
+                                            <td>Chang Vang</td>
+                                            <td>1/20/2016 11:14:00 AM</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Website Mobile - ePrice Inventory New</td>
+                                            <td>6745665</td>
+                                            <td>Melissajsherlock@hotmail.com</td>
+                                            <td>Melissa Sherlock</td>
+                                            <td>1/19/2016 9:47:00 PM</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Website - ePrice Inventory New</td>
+                                            <td>6744591</td>
+                                            <td>KBWEAVER@COMCAST.NET</td>
+                                            <td>KEITH WEAVER</td>
+                                            <td>1/19/2016 5:19:00 PM</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Website - Contact Us</td>
+                                            <td>6744571</td>
+                                            <td>kwagenmann@gmail.com</td>
+                                            <td>Kayla Wagenmann</td>
+                                            <td>1/19/2016 5:14:00 PM</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Website Mobile - ePrice Details Used</td>
+                                            <td>6743148</td>
+                                            <td>Aelmi88@ggmail.com</td>
+                                            <td>Abdikarim Elmi</td>
+                                            <td>1/19/2016 1:00:00 PM</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Website - ePrice Inventory New</td>
+                                            <td>6740946</td>
+                                            <td>abximan@yahoo.com</td>
+                                            <td>Mike Graf</td>
+                                            <td>1/18/2016 10:17:00 PM</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Website - ePrice Details Used</td>
+                                            <td>6740938</td>
+                                            <td>mackenzie.millette@lutherbrookdalehonda.com</td>
+                                            <td>Mackenzie Millette</td>
+                                            <td>1/18/2016 10:15:00 PM</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Website Mobile - ePrice Inventory New</td>
+                                            <td>6740684</td>
+                                            <td>Bzeller@hamhwe.com</td>
+                                            <td>Brad Zeller</td>
+                                            <td>1/18/2016 9:08:00 PM</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Website - ePrice Inventory New</td>
+                                            <td>6737443</td>
+                                            <td>JKRAMER91191@GMAIL.COM</td>
+                                            <td>JOSHUA KRAMER</td>
+                                            <td>1/18/2016 11:04:00 AM</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Website - ePrice Inventory New</td>
+                                            <td>6736125</td>
+                                            <td>fetsumberhankidanu84@gmail.com</td>
+                                            <td>Fetsum Kidanu</td>
+                                            <td>1/17/2016 10:33:00 PM</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Website - ePrice Inventory New</td>
+                                            <td>6735246</td>
+                                            <td>a_srihari@hotmail.com</td>
+                                            <td>Srihari Appasamy</td>
+                                            <td>1/17/2016 6:14:00 PM</td>
+                                        </tr>
+                                        <tr>
+                                            <td>vehicle certified</td>
+                                            <td>6732146</td>
+                                            <td>pjk2124@gmail.com</td>
+                                            <td>Patty LeMay</td>
+                                            <td>1/16/2016 8:30:00 PM</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Website - ePrice Inventory New</td>
+                                            <td>6730920</td>
+                                            <td>lpapasodora@yahoo.com</td>
+                                            <td>Lou Ann Papasodora</td>
+                                            <td>1/16/2016 3:22:00 PM</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Website - ePrice Details Used</td>
+                                            <td>6730171</td>
+                                            <td>blinky2bob@yahoo.com</td>
+                                            <td>Bob Streit</td>
+                                            <td>1/16/2016 12:46:00 PM</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Website - ePrice Details Used</td>
+                                            <td>6730169</td>
+                                            <td>stevebasinger@charter.net</td>
+                                            <td>Steve Basinger</td>
+                                            <td>1/16/2016 12:46:00 PM</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Website - ePrice Inventory Used</td>
+                                            <td>6727162</td>
+                                            <td>treetis@gmail.com</td>
+                                            <td>Treetis Ebben</td>
+                                            <td>1/15/2016 5:27:00 PM</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Website - ePrice Inventory New</td>
+                                            <td>6726941</td>
+                                            <td>sreitenour@gmail.com</td>
+                                            <td>Steve Reitenour</td>
+                                            <td>1/15/2016 4:44:00 PM</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Website - ePrice Inventory New</td>
+                                            <td>6726931</td>
+                                            <td>sreitenour@gmail.com</td>
+                                            <td>Steve Reitenour</td>
+                                            <td>1/15/2016 4:43:00 PM</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Website - ePrice Inventory New</td>
+                                            <td>6726864</td>
+                                            <td>bgdiehl@yahoo.com</td>
+                                            <td>Brenden Diehl</td>
+                                            <td>1/15/2016 4:32:00 PM</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Website Mobile - ePrice Inventory Used</td>
+                                            <td>6726696</td>
+                                            <td>Rkc5150@aol.com</td>
+                                            <td>Russell Cirelli</td>
+                                            <td>1/15/2016 4:04:00 PM</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Website - ePrice Inventory Used</td>
+                                            <td>6726617</td>
+                                            <td>alijased@gmail.com</td>
+                                            <td>Alija Triviski</td>
+                                            <td>1/15/2016 3:49:00 PM</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Website - Value Your Trade</td>
+                                            <td>6725593</td>
+                                            <td>cross2014@gmail.com</td>
+                                            <td>Chandler Ross</td>
+                                            <td>1/15/2016 12:39:00 PM</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Website - ePrice Inventory New</td>
+                                            <td>6725366</td>
+                                            <td>davidkarsjens@gmail.com</td>
+                                            <td>David Karsjens</td>
+                                            <td>1/15/2016 12:00:00 PM</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Website - ePrice Inventory Used</td>
+                                            <td>6724949</td>
+                                            <td>ferrellda22@gmail.com</td>
+                                            <td>Dave Ferrell</td>
+                                            <td>1/15/2016 10:46:00 AM</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Website Mobile - ePrice Details Used</td>
+                                            <td>6724568</td>
+                                            <td>Tdue22@gmail.com</td>
+                                            <td>Tom Duevel</td>
+                                            <td>1/15/2016 9:20:00 AM</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Website - ePrice Inventory New</td>
+                                            <td>6722843</td>
+                                            <td>se65188@gmail.com</td>
+                                            <td>Steven Barnes</td>
+                                            <td>1/14/2016 7:27:00 PM</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Website - ePrice Inventory New</td>
+                                            <td>6722693</td>
+                                            <td>johnl.choiniere@gmail.com</td>
+                                            <td>John Choiniere</td>
+                                            <td>1/14/2016 6:53:00 PM</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="myModal" class="modal modal-cta fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                        <h4 id="modal-title" class="modal-title">Modal title
+                            <a class="anchorjs-link" href="#modal-title">
+                                <span class="anchorjs-icon"></span>
+                            </a>
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>One fine body…</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#" class="btn btn-default" data-dismiss="modal">Close</a>
+                        <a href="#" class="btn btn-default">Save changes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/jquery.min.js"></script>
+        <!--<script src="js/jquery.touchSwipe.min.js"></script>-->
+        <script src="js/tether.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/functions.js"></script>
+
+    </body>
+
+</html>
+
+

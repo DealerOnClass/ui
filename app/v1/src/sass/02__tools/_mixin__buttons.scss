@@ -1,0 +1,30 @@
+@mixin btn-color-variation($input__palette) {
+    @each $class__name, $color in $input__palette {
+        .btn-#{$class__name} {
+            color: check-color($color, 80, inherit, $white);
+            border-color: check-color($color, 80, rgba(0,0,0,0.15), transparent);
+            background-color: $color;
+
+            @include state-and-active {
+                color: check-color($color, 80, inherit, $white);
+                background-color: shade($color, $btn__contrast);
+            }
+
+            .btn-group.open > & {
+                color: check-color($color, 80, inherit, $white);
+                background-color: shade($color, $btn__contrast);
+            }
+
+            &[active] {
+                color: check-color($color, 80, inherit, $white);
+                background-color: shade($color, $btn__contrast);
+            }
+
+            &[disabled] {
+                @include state-and-self {
+                    background-color: $color;
+                }
+            }
+        }
+    }
+}

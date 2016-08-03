@@ -1,0 +1,19 @@
+.badge {
+    line-height: 1;
+
+    display: inline-block;
+
+    padding: $badge__padding;
+
+    border: $one__true__pixel solid transparent;
+    border-radius: $badge__radius;
+    background-color: rgba(0,0,0,0.15);
+
+    .btn &,
+    .list-group-item > &,
+    .nav & {
+        float: right;
+
+        margin-left: rhythm(0.5);
+    }
+}

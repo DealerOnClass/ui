@@ -1,0 +1,35 @@
+.navbar-toggle {
+    position: relative;
+
+    float: right;
+
+    height: $base__line-height * $base__font-unit;
+    padding: $navbar__link__padding;
+
+    @media (min-width: $grid-float-breakpoint) {
+        display: none;
+    }
+}
+//
+//  .icon-bar-wrapper {
+//      position: relative;
+//      top: rhythm(0.2);
+//
+//      display: block;
+//
+//      height: rhythm(1);
+//  }
+//
+//  .icon-bar {
+//      display: block;
+//
+//      width: $navbar-toggle__icon-bar__width;
+//      height: $two__pixels;
+//
+//      border-radius: $one__pixel;
+//      background-color: $navbar-toggle__icon-bar__bg;
+//
+//      & + & {
+//          margin-top: $four__pixels;
+//      }
+//  }

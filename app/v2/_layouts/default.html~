@@ -1,0 +1,26 @@
+---
+layout: compress
+---
+<!DOCTYPE html>
+
+<html>
+
+    {% include head.html %}
+
+    <body>
+
+        <nav class="nav nav--navbar">
+            {% include nav--main.html %}
+        </nav>
+
+        <nav class="nav nav--sidebar">
+            {% include nav--objects.html %}
+        </nav>
+
+        {{ content }}
+
+        {% include footer.html %}
+
+    </body>
+
+</html>

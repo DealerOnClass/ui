@@ -1,0 +1,15 @@
+.input-group-addon {
+    padding: $form__y $form__x;
+
+    text-align: center;
+
+    border: $one__true__pixel solid $form-control__border;
+    border-radius: $form__radius;
+    background-color: $form-control__bg;
+
+    input[type='radio'],
+    input[type='checkbox'] {
+        margin-top: 0;
+    }
+}
+

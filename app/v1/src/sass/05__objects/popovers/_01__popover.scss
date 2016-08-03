@@ -1,0 +1,132 @@
+.popover {
+    position: absolute;
+    z-index: $zindex-popover;
+    top: 0;
+    left: 0;
+
+    display: block;
+
+    max-width: $popover__max-width;
+
+    border-radius: $popover__radius;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+
+    //
+    //  Popover above button
+    &.top,
+    &.popover-top,
+    &.bs-tether-element-attached-bottom {
+        margin-top: -$popover-arrow--inner__width;
+
+        .arrow,
+        .popover-arrow {
+            bottom: -$popover-arrow--outer__width + $popover-arrow__offset;
+            left: 50%;
+
+            margin-left: -$popover-arrow--outer__width;
+
+            border-top-color: $popover-arrow--outer__color;
+            border-bottom-width: 0;
+
+            &:after {
+                bottom: $one__true__pixel;
+
+                margin-left: -$popover-arrow--inner__width;
+
+                content: '';
+
+                border-top-color: $popover-arrow--inner__color;
+                border-bottom-width: 0;
+            }
+        }
+    }
+
+    //
+    //  Popover to right of button
+    &.right,
+    &.popover-right,
+    &.bs-tether-element-attached-left {
+        margin-left: $popover-arrow--inner__width;
+
+        .arrow,
+        .popover-arrow {
+            top: 50%;
+            left: -$popover-arrow--outer__width + $popover-arrow__offset;
+
+            margin-top: -$popover-arrow--outer__width;
+
+            border-right-color: $popover-arrow--outer__color;
+            border-left-width: 0;
+
+            &:after {
+                bottom: -$popover-arrow--inner__width;
+                left: $one__true__pixel;
+
+                content: '';
+
+                border-right-color: $popover-arrow--inner__color;
+                border-left-width: 0;
+            }
+        }
+    }
+
+    //
+    //  Popover below button
+    &.bottom,
+    &.popover-bottom,
+    &.bs-tether-element-attached-top {
+        margin-top: $popover-arrow--inner__width;
+
+        .arrow,
+        .popover-arrow {
+            top: -$popover-arrow--outer__width + $popover-arrow__offset;
+            left: 50%;
+
+            margin-left: -$popover-arrow--outer__width;
+
+            border-top-width: 0;
+            border-bottom-color: $popover-arrow--outer__color;
+
+            &:after {
+                top: $one__true__pixel;
+
+                margin-left: -$popover-arrow--inner__width;
+
+                content: '';
+
+                border-top-width: 0;
+                border-bottom-color: $popover-arrow--inner__color;
+            }
+        }
+    }
+
+
+    //
+    //  Popover to left of button
+    &.left,
+    &.popover-left,
+    &.bs-tether-element-attached-right {
+        margin-left: -$popover-arrow--inner__width;
+
+        .arrow,
+        .popover-arrow {
+            top: 50%;
+            right: -$popover-arrow--outer__width + $popover-arrow__offset;
+
+            margin-top: -$popover-arrow--outer__width;
+
+            border-right-width: 0;
+            border-left-color: $popover-arrow--outer__color;
+
+            &:after {
+                right: $one__true__pixel;
+                bottom: -$popover-arrow--inner__width;
+
+                content: '';
+
+                border-right-width: 0;
+                border-left-color: $popover-arrow--inner__color;
+            }
+        }
+    }
+}

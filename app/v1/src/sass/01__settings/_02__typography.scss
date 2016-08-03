@@ -1,0 +1,50 @@
+//
+//  Raw Units
+$raw__font-size:        17;
+//
+//  General Units
+$base__font-size:       fontsize($raw__font-size);
+$base__font-ratio:      1.333;
+$base__font-unit:       1em;
+$base__line-height:     1.5;
+//
+//  Typeface
+$sans--regular:         'AvenirRegular', 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+$sans--semibold:        'AvenirMedium', 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+$sans--bold:            'AvenirHeavy', 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+$serif--regular:        'MerriweatherRegular', Georgia, serif !default;
+$serif--bold:           'MerriweatherBold', Georgia, serif !default;
+$serif--black:          'MerriweatherBlack', Georgia, serif !default;
+$mono--regular:         'SourceCodePro', 'Lucida Console', monospace !default;
+//
+//  Typeface Palette
+$primary__font--regular:      $sans--regular;
+$primary__font--bold:         $sans--bold;
+//
+$secondary__font--regular:    $serif--regular;
+$secondary__font--bold:       $serif--bold;
+//
+$code__font--regular:         $mono--regular;
+//
+//  Typeface Rhythm
+$h5__font-size:         $base__font-unit;
+$h6__font-size:         $h5__font-size / $base__font-ratio;
+$h4__font-size:         $h5__font-size * $base__font-ratio;
+$h3__font-size:         $h4__font-size * $base__font-ratio;
+$h2__font-size:         $h3__font-size * $base__font-ratio;
+$h1__font-size:         $h2__font-size * $base__font-ratio;
+$display4__font-size:   $h1__font-size * $base__font-ratio;
+$display3__font-size:   $display4__font-size * $base__font-ratio;
+$display2__font-size:   $display3__font-size * $base__font-ratio;
+$display1__font-size:   $display2__font-size * $base__font-ratio;
+//
+//  Ratios based on classical scale
+//
+//  1.067      Minor Second
+//  1.125      Major Second
+//  1.200      Minor Third
+//  1.250      Major Third
+//  1.333      Perfect Fourth
+//  1.414      Augmented Fourth
+//  1.500      Perfect Fifth
+//  1.618      Golden Ratio

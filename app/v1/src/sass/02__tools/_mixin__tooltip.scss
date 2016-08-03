@@ -1,0 +1,57 @@
+@mixin tooltip-color-variation($input__palette) {
+    @each $class__name, $color in $input__palette {
+        span[data-toggle="tooltip"][data-style="#{$class__name}"]:after {
+            color: check-color($color, 80, inherit, $color);
+        }
+
+        .tooltip-#{$class__name} {
+
+            .tooltip-inner {
+                color: check-color($color, 80, inherit, $white);
+                border-color: transparent;
+                background-color: $color;
+            }
+
+            &.top,
+            &.tooltip-top,
+            &.bs-tether-element-attached-bottom {
+
+                .arrow,
+                .tooltip-arrow {
+                    border-top-color: $color;
+                }
+            }
+
+            &.right,
+            &.tooltip-right,
+            &.bs-tether-element-attached-left {
+
+                .arrow,
+                .tooltip-arrow {
+                    border-right-color: $color;
+                }
+            }
+
+            &.bottom,
+            &.tooltip-bottom,
+            &.bs-tether-element-attached-top {
+
+                .arrow,
+                .tooltip-arrow {
+                    border-bottom-color: $color;
+                }
+            }
+
+            &.left,
+            &.tooltip-left,
+            &.bs-tether-element-attached-right {
+
+                .arrow,
+                .tooltip-arrow {
+                    border-left-color: $color;
+                }
+            }
+        }
+    }
+}
+

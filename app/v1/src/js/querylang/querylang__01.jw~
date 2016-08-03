@@ -1,0 +1,210 @@
+//
+//
+//  Remove items in workbench on clicking "x"
+$(document).on("click", ".sortable-remove", function() {
+    $(this).parent('.sortable').remove();
+});
+//  Remove all items in workbench on clicking "clear all"
+$(".sortable-remove-all").on("click", function() {
+    $('#query__creation__workbench').empty();
+    $('#query__creation__preview').empty();
+});
+//  Remove all preview items in query creation modal
+$("#query_modal .sortable-finished").on("click", function () {
+    $("#query__creation__preview").empty();
+    $(this).removeClass("sortable-is-enabled");
+});
+//
+$(".sortable-finished").on("click", function() {
+    $("[data-type='parameter']").removeClass("sortable-is-enabled");
+    $("[data-type='operator']").removeClass("sortable-is-enabled");
+    $("[data-type='value']").removeClass("sortable-is-enabled");
+    $("[data-type='joiner']").removeClass("sortable-is-enabled");
+});
+//
+//
+//  Toggle active state in "Associated States"
+$(".active-toggle .btn").on("click", function () {
+    if ($(this).hasClass("active")) {
+        $(this).removeClass("active")
+    } else {
+        $(this).addClass("active");
+    }
+});
+//  Remove active statess in "associated stated" when clicking "clear"
+$(".sortable-remove-all").on("click", function() {
+    $(this).parent().parent().next('.btn-tags').children().removeClass("active");
+});
+//  Enable all active statess in "associated stated" when clicking "Select all"
+$(".sortable-select-all").on("click", function() {
+    $(this).parent().parent().next('.btn-tags').children().addClass("active");
+});
+//
+//
+//  Step through accordions
+$("[data-toggle='step__next']").on("click", function() {
+    $(this).closest(".panel-collapse").collapse('hide');
+    $(this).closest(".panel.panel-default").next(".panel").children(".panel-collapse").collapse('show');
+});
+$("[data-toggle='step__prev']").on("click", function() {
+    $(this).closest(".panel-collapse").collapse('hide');
+    $(this).closest(".panel.panel-default").prev(".panel").children(".panel-collapse").collapse('show');
+});
+$("[data-toggle='step__done']").on("click", function() {
+    $(this).closest(".panel-collapse").collapse('hide');
+});
+//
+//
+//  1.) Launch Contextual Modal
+function OpenModal(elem) {
+
+    //  config
+    var this__type  = elem.getAttribute("data-type");
+    var this__tab__link = "a[href='#" + this__type + "_tab']";
+    var query__modal = "#query_modal";
+
+    if (this__type != "b_joiner") {
+        $(query__modal).modal('show');
+        $(this__tab__link).click();
+    }
+
+    if (this__type == "group") {
+        $(query__modal + " .nav-tabs a[href='#parameter_tab']").click();
+    }
+}
+//
+//
+//  2.) Cycle through Query Builder based on current data-type
+$("#query_modal attr[data-type]").on("click", function () {
+
+    //  config
+    var this__elem = $(this);
+    var this__type = this__elem.attr("data-type");
+    var this__accepts = this__elem.attr("data-accepts");
+    var query__modal = "#query_modal";
+    var query__workbench = "#query__creation__workbench";
+    var query__preview = "#query__creation__preview";
+
+    //  reset
+    $(query__workbench + " .sortable-base").remove();
+
+    //  update workbench
+    $(this).clone().appendTo(query__workbench);
+
+    //  open appropriate tabs
+    if (this__type == "parameter") {
+        $(query__modal + " .nav-tabs a[href='#operator_tab']").click();
+
+        //  Highlight next match
+        accepts = this__accepts.split(',');
+        $.each( accepts, function(index, value) {
+            $(query__modal + " #operator_tab [data-id='" + value + "']").addClass("sortable-is-enabled");
+        });
+
+        //  //  Update if it exists in preview
+        //  if ($("#query__creation__preview").find("[data-type='parameter']").length != null) {
+        //      $("#query__creation__preview").find("[data-type='parameter']").remove().replaceWith(this__elem);
+        //  }
+    }
+    if (this__type == "operator") {
+        $(query__modal + " .nav-tabs a[href='#value_tab']").click();
+        $(query__modal + " [data-type='operator']").removeClass("sortable-is-enabled");
+        $(query__workbench + " [data-type='operator']").removeClass("sortable-is-enabled");
+        $(query__modal + " [data-type='value']").addClass("sortable-is-enabled");
+    }
+    if (this__type == "value") {
+        $(query__modal + " .nav-tabs a[href='#joiner_tab']").click();
+        $(query__modal + " [data-type='value']").removeClass("sortable-is-enabled");
+        $(query__workbench + " [data-type='value']").removeClass("sortable-is-enabled");
+        $(query__modal + " .sortable-finished").addClass("sortable-is-enabled");
+    }
+
+    if ($("#query__creation__preview").is(":empty")) {
+        alert("its empty");
+        //  this__elem.clone().appendTo(query__preview);
+    } else {
+        alert("its not empty");
+        $("#query__creation__preview [data-type='" + this__type + "']").replaceWith(this__elem);
+    }
+});
+
+
+
+(function () {
+    'use strict';
+
+    var byId = function (id) { return document.getElementById(id); },
+
+        loadScripts = function (desc, callback) {
+        var deps = [], key, idx = 0;
+
+        for (key in desc) {
+            deps.push(key);
+        }
+
+        (function _next() {
+            var pid,
+            name = deps[idx],
+                script = document.createElement('script');
+
+            script.type = 'text/javascript';
+            script.src = desc[deps[idx]];
+
+            pid = setInterval(function () {
+                if (window[name]) {
+                    clearTimeout(pid);
+
+                    deps[idx++] = window[name];
+
+                    if (deps[idx]) {
+                        _next();
+                    } else {
+                        callback.apply(null, deps);
+                    }
+                }
+            }, 30);
+
+            document.getElementsByTagName('head')[0].appendChild(script);
+
+        })()
+    },
+
+    console = window.console;
+
+
+    if (!console.log) {
+        console.log = function () {
+            alert([].join.apply(arguments, ' '));
+        };
+    }
+
+    //  Global Animation Speed
+    var animation__speed = 300;
+
+    //  Sortable(s) for Step3 of Pricing Template Creation
+    Sortable.create(byId('query__creation__toolbox'), {
+        group: {
+            name: "query__creation__step3",
+            pull: 'clone',
+            put: false
+        },
+        sort: false,
+        animation: animation__speed,
+    });
+    Sortable.create(byId('query__creation__workbench'), {
+        group: {
+            name: "query__creation__step3",
+            pull: false,
+            put: true
+        },
+        animation: animation__speed,
+        // On added item, launch modal
+        onAdd: function (e) {
+            var itemEl = e.item;
+            OpenModal(itemEl);
+        },
+    });
+})();
+
+
+

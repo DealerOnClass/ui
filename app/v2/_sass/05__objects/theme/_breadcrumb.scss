@@ -1,0 +1,75 @@
+//
+//  Var
+$breadcrumb__contrast:  $global__contrast;
+$breadcrumb__flex:      $global__flex;
+$breadcrumb__radius:    $global__radius;
+$breadcrumb__x:         $global__x;
+$breadcrumb__y:         $global__y;
+//
+//  Options
+$breadcrumb__icon:      $fa-var-angle-right;
+$breadcrumb__icon-use:  true !default;
+
+@if $output__global {
+    @if $output__breadcrumb {
+        //
+        //  Base
+        .breadcrumb {
+            @if $breadcrumb__flex {
+                display: flex;
+            } @else {
+                @include clearfix;
+            }
+            border: $one__pixel solid;
+        }
+
+        .breadcrumb-item {
+            @if $breadcrumb__flex {
+                //
+            } @else {
+                display:block;
+                float: left;
+            }
+            color: inherit;
+            padding: $breadcrumb__y 0 $breadcrumb__y $breadcrumb__x;
+
+            &.active {
+                padding: $breadcrumb__y $breadcrumb__x;
+            }
+
+            &:not(:last-child):after {
+                margin-left: $breadcrumb__x;
+                @if $breadcrumb__icon-use {
+                    font-family: $fa-font-name;
+                    content: "#{$breadcrumb__icon}";
+                } @else {
+                    content: "/";
+                }
+            }
+        }
+        //
+        //  Variations
+        .breadcrumb-rounded {
+            border-radius: ($breadcrumb__y * 2) + $global__line-height;
+        }
+        //
+        //  Sizing
+        @if $output__global--sizes {
+            @if $output__breadcrumb--sizes {
+                @include breadcrumb-size-variation($breadcrumb__y, $breadcrumb__x, $default__sizing);
+            }
+        }
+        //
+        //  Colors
+        @if $output__global--theme {
+            @if $output__breadcrumb--theme {
+                @include breadcrumb-color-variation($default__palette);
+                @include breadcrumb-color-variation($inverse__palette);
+                @include breadcrumb-color-variation($primary__palette);
+                @include breadcrumb-color-variation($neutral__palette);
+                @include breadcrumb-color-variation($state__palette);
+                @include breadcrumb-color-variation($classic__palette);
+            }
+        }
+    }
+}

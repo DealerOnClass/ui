@@ -1,0 +1,20 @@
+//
+//  Units
+$nav__contrast:                 $global__contrast;
+$nav__radius:                   $global__radius;
+$nav__x:                        $global__x;
+$nav__y:                        $global__y;
+//
+//  Colors
+$nav__default-palette:          true !default;
+$nav__inverse-palette:          true !default;
+$nav__primary-palette:          true !default;
+$nav__neutral-palette:          true !default;
+$nav__state-palette:            true !default;
+//
+//  Base
+$nav__link__padding:            $nav__y $nav__x;
+//
+//  Components
+$nav__link--active__color:      $white;
+$nav__link--active__bg:         $primary__color;

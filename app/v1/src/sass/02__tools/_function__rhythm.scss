@@ -1,0 +1,36 @@
+//  http://compass-style.org/reference/compass/typography/vertical_rhythm/#function-rhythm
+//  Rhythm Function:
+//  Multiply a number by the declared line-height,
+//  useful for vertical rhythm.
+//
+//  Usage:
+//  p {
+//      margin-top: rhythm(1);
+//  }
+@function rhythm($local__input) {
+    $rhythm: $local__input * $base__line-height * $base__font-unit;
+    @return $rhythm;
+}
+
+//  http://webtypography.net/2.2.2
+//  Heading Rhythm Function
+//  Calculate based on font size the line-height,
+//  margin-top and bottom for a heading.
+//
+//  Usage:
+//  h1 {
+//      @include rhythm($h1__font-size);
+//  }
+//@mixin rhythm-font($input) {
+//    // remove unit for math
+//    $local__size:   $input / $base__font-unit;
+//    // do math for vertical rhythm
+//    $local__rhythm: $base__line-height / $local__size;
+//    // output line height
+//    $line-height:   $local__rhythm * 3;
+//    line-height:    decimal-floor($line-height, 1);
+//    // output margin
+//    $margin: $local__rhythm * $base__font-unit;
+//    // margin-top:     decimal-floor($margin, 2);
+//    margin-bottom:  decimal-floor($margin, 2);
+//}

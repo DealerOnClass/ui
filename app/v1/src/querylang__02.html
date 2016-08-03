@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>DealerOn UI Kit - Query Language 02</title>
+        <link href="css/screen.css" rel="stylesheet">
+    </head>
+
+    <body class="demo pricing">
+        <nav class="navbar navbar-dealeron navbar-fixed-top">
+            <div class="navbar-header">
+                <a href="#ttest51" id="sidebar__icon" class="navbar-brand" data-toggle="collapse">
+                    <span class="icon-bar-wrapper icon-bar-animate">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </span>
+                </a>
+                <a class="navbar-brand" href="#"><img class="logo__svg" src='img/logo__symbol.svg'></a>
+            </div>
+            <a class="navbar-brand pull-right" href="index.html"><i class="fa fa-home"></i></a>
+        </nav>
+
+
+        <nav id="navbar-main" class="navbar navbar-dealeron navbar-sidebar">
+            <div id="ttest51" class="navbar-sidebar-collapse collapse width" data-animate-icon="#sidebar__icon">
+                <div class="navbar-sidebar-wrapper">
+                    <div class="navbar-sidebar-body">
+                        <h3>Yo</h3>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h5 style="margin-top: .9em">
+                        Create Query <small>(clicking unlock will allow editing)</small>
+                        <div class="btn-group pull-right">
+                            <a class="btn btn-default sortable-remove-all">Clear</a>
+                            <a class="btn btn-default sortable-finished">I'm Done</a>
+                        </div>
+                    </h5>
+                    <div id="querylang__query-workbench" class="sortable-workbench btn-tags btn-sentence" style="min-height: 6em;"></div>
+                    <div id="querylang__toolbox-operator" class="sortable-toolbox btn-tags">
+                        <h5 style="margin-top: .9em">
+                            Operators
+                        </h5>
+                        <attr title="Equals" class="btn btn-default clearfix sortable" data-type="operator" data-id="1">
+                            <span class="sortable-text">is equal to</span>
+                            <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                            <a class="sortable-action-item sortable-remove"><i class="fa fa-times fa-sm"></i></a>
+                        </attr>
+                        <attr title="Except" class="btn btn-default clearfix sortable" data-type="operator" data-id="2">
+                            <span class="sortable-text">except</span>
+                            <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                            <a class="sortable-action-item sortable-remove"><i class="fa fa-times fa-sm"></i></a>
+                        </attr>
+                        <attr title="Greater than or Equal to" class="btn btn-default clearfix sortable" data-type="operator" data-id="3">
+                            <span class="sortable-text">greater or equal to</span>
+                            <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                            <a class="sortable-action-item sortable-remove"><i class="fa fa-times fa-sm"></i></a>
+                        </attr>
+                        <attr title="Less than or Equal to" class="btn btn-default clearfix sortable" data-type="operator" data-id="4">
+                            <span class="sortable-text">less or equal to</span>
+                            <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                            <a class="sortable-action-item sortable-remove"><i class="fa fa-times fa-sm"></i></a>
+                        </attr>
+                        <attr title="Like" class="btn btn-default clearfix sortable" data-type="operator" data-id="5">
+                            <span class="sortable-text">is like</span>
+                            <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                            <a class="sortable-action-item sortable-remove"><i class="fa fa-times fa-sm"></i></a>
+                        </attr>
+                        <attr title="Not like" class="btn btn-default clearfix sortable" data-type="operator" data-id="6">
+                            <span class="sortable-text">is not like</span>
+                            <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                            <a class="sortable-action-item sortable-remove"><i class="fa fa-times fa-sm"></i></a>
+                        </attr>
+                        <attr title="Between" class="btn btn-default clearfix sortable" data-type="operator" data-id="7">
+                            <span class="sortable-text">between</span>
+                            <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                            <a class="sortable-action-item sortable-remove"><i class="fa fa-times fa-sm"></i></a>
+                        </attr>
+                        <attr title="Near" class="btn btn-default clearfix sortable" data-type="operator" data-id="8">
+                            <span class="sortable-text">near</span>
+                            <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                            <a class="sortable-action-item sortable-remove"><i class="fa fa-times fa-sm"></i></a>
+                        </attr>
+                        <div class="clearfix"></div>
+                        <h5 style="margin-top: .9em">
+                            Little Joiners <small>(combine "joiners", do existing in logic)</small>
+                        </h5>
+                        <attr title="or" class="btn btn-default clearfix sortable" data-type="s_joiner" data-id="9">
+                            <span class="sortable-text">or</span>
+                            <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                            <a class="sortable-action-item sortable-remove"><i class="fa fa-times fa-sm"></i></a>
+                        </attr>
+                        <attr title="and" class="btn btn-default clearfix sortable" data-type="s_joiner" data-id="10">
+                            <span class="sortable-text">and</span>
+                            <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                            <a class="sortable-action-item sortable-remove"><i class="fa fa-times fa-sm"></i></a>
+                        </attr>
+                        <div class="clearfix"></div>
+                        <h5 style="margin-top: .9em">
+                            Big Joiners
+                        </h5>
+                        <attr title="or" class="btn btn-default clearfix sortable" data-type="b_joiner" data-id="9">
+                            <span class="sortable-text">or</span>
+                            <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                            <a class="sortable-action-item sortable-remove"><i class="fa fa-times fa-sm"></i></a>
+                        </attr>
+                        <attr title="and" class="btn btn-default clearfix sortable" data-type="b_joiner" data-id="10">
+                            <span class="sortable-text">and</span>
+                            <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                            <a class="sortable-action-item sortable-remove"><i class="fa fa-times fa-sm"></i></a>
+                        </attr>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div id="querylang__toolbox-parameter" class="sortable-toolbox btn-tags">
+                        <h5 style="margin-top: .9em">
+                            Group
+                        </h5>
+                        <attr title="String" class="btn btn-default clearfix sortable" data-type="value">
+                            <span class="sortable-text">String</span>
+                            <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                            <a class="sortable-action-item sortable-remove"><i class="fa fa-times fa-sm"></i></a>
+                        </attr>
+                        <div class="clearfix"></div>
+                        <h5 style="margin-top: .9em">
+                            Value <small>(remove later, do modal on operator drop)</small>
+                        </h5>
+                        <attr title="String" class="btn btn-default clearfix sortable" data-type="value">
+                            <span class="sortable-text">String</span>
+                            <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                            <a class="sortable-action-item sortable-remove"><i class="fa fa-times fa-sm"></i></a>
+                        </attr>
+                        <attr title="Number" class="btn btn-default clearfix sortable" data-type="value">
+                            <span class="sortable-text">Number</span>
+                            <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                            <a class="sortable-action-item sortable-remove"><i class="fa fa-times fa-sm"></i></a>
+                        </attr>
+                        <div class="clearfix"></div>
+                        <h5 style="margin-top: .9em">
+                            Parameter
+                        </h5>
+                        <attr title="Body style" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="[&#34;1&#34;,&#34;2&#34;,&#34;5&#34;,&#34;6&#34;]">
+                            <span class="sortable-text">Body Style</span>
+                            <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                            <a class="sortable-action-item sortable-remove"><i class="fa fa-times fa-sm"></i></a>
+                        </attr>
+                        <attr title="Carfax1owner" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="[&#34;1&#34;]">
+                            <span class="sortable-text">Carfax1owner</span>
+                            <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                            <a class="sortable-action-item sortable-remove"><i class="fa fa-times fa-sm"></i></a>
+                        </attr>
+                        <attr title="City MPG" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="[&#34;1&#34;,&#34;2&#34;,3,4,&#34;7&#34;]">
+                            <span class="sortable-text">City MPG</span>
+                            <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                            <a class="sortable-action-item sortable-remove"><i class="fa fa-times fa-sm"></i></a>
+                        </attr>
+                        <attr title="Cpo" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="[&#34;1&#34;]">
+                            <span class="sortable-text">CPO</span>
+                            <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                            <a class="sortable-action-item sortable-remove"><i class="fa fa-times fa-sm"></i></a>
+                        </attr>
+                        <attr title="Days" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="[&#34;1&#34;,&#34;2&#34;,3,4,&#34;7&#34;]">
+                            <span class="sortable-text">Days</span>
+                            <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                            <a class="sortable-action-item sortable-remove"><i class="fa fa-times fa-sm"></i></a>
+                        </attr>
+                        <attr title="Dealership" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="[&#34;1&#34;,&#34;2&#34;,&#34;5&#34;,&#34;6&#34;]">
+                            <span class="sortable-text">Dealership</span>
+                            <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                            <a class="sortable-action-item sortable-remove"><i class="fa fa-times fa-sm"></i></a>
+                        </attr>
+                        <attr title="Drivetrain" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="[&#34;1&#34;,&#34;2&#34;,&#34;5&#34;,&#34;6&#34;]">
+                            <span class="sortable-text">Drivetrain</span>
+                            <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                            <a class="sortable-action-item sortable-remove"><i class="fa fa-times fa-sm"></i></a>
+                        </attr>
+                        <attr title="Exterior color" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="[&#34;1&#34;,&#34;2&#34;,&#34;5&#34;,&#34;6&#34;]">
+                            <span class="sortable-text">Ext color</span>
+                            <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                            <a class="sortable-action-item sortable-remove"><i class="fa fa-times fa-sm"></i></a>
+                        </attr>
+                        <attr title="Features" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="[&#34;1&#34;]">
+                            <span class="sortable-text">Features</span>
+                            <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                            <a class="sortable-action-item sortable-remove"><i class="fa fa-times fa-sm"></i></a>
+                        </attr>
+                        <attr title="Fuel type" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="[&#34;1&#34;,&#34;2&#34;,&#34;5&#34;,&#34;6&#34;]">
+                            <span class="sortable-text">Fuel Type</span>
+                            <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                            <a class="sortable-action-item sortable-remove"><i class="fa fa-times fa-sm"></i></a>
+                        </attr>
+                        <attr title="Hwy MPG" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="[&#34;1&#34;,&#34;2&#34;,3,4,&#34;7&#34;]">
+                            <span class="sortable-text">Hwy MPG</span>
+                            <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                            <a class="sortable-action-item sortable-remove"><i class="fa fa-times fa-sm"></i></a>
+                        </attr>
+                        <attr title="Interior color" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="[&#34;1&#34;,&#34;2&#34;,&#34;5&#34;,&#34;6&#34;]">
+                            <span class="sortable-text">Int Color</span>
+                            <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                            <a class="sortable-action-item sortable-remove"><i class="fa fa-times fa-sm"></i></a>
+                        </attr>
+                        <attr title="Internet price" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="[&#34;1&#34;,&#34;2&#34;,3,4,&#34;7&#34;]">
+                            <span class="sortable-text">Internet Price</span>
+                            <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                            <a class="sortable-action-item sortable-remove"><i class="fa fa-times fa-sm"></i></a>
+                        </attr>
+                        <attr title="Location" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="[&#34;1&#34;,&#34;2&#34;,&#34;5&#34;,&#34;6&#34;]">
+                            <span class="sortable-text">Location</span>
+                            <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                            <a class="sortable-action-item sortable-remove"><i class="fa fa-times fa-sm"></i></a>
+                        </attr>
+                        <attr title="Lot order" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="[&#34;1&#34;,&#34;2&#34;]">
+                            <span class="sortable-text">Lot Order</span>
+                            <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                            <a class="sortable-action-item sortable-remove"><i class="fa fa-times fa-sm"></i></a>
+                        </attr>
+                        <attr title="Make" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="[&#34;1&#34;,&#34;2&#34;,&#34;5&#34;,&#34;6&#34;]">
+                            <span class="sortable-text">Make</span>
+                            <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                            <a class="sortable-action-item sortable-remove"><i class="fa fa-times fa-sm"></i></a>
+                        </attr>
+                        <attr title="Mileage" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="[&#34;1&#34;,&#34;2&#34;,3,4,&#34;7&#34;]">
+                            <span class="sortable-text">Mileage</span>
+                            <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                            <a class="sortable-action-item sortable-remove"><i class="fa fa-times fa-sm"></i></a>
+                        </attr>
+                        <attr title="Model" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="[&#34;1&#34;,&#34;2&#34;,&#34;5&#34;,&#34;6&#34;]">
+                            <span class="sortable-text">Model</span>
+                            <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                            <a class="sortable-action-item sortable-remove"><i class="fa fa-times fa-sm"></i></a>
+                        </attr>
+                        <attr title="Msrp" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="[&#34;1&#34;,&#34;2&#34;,3,4,&#34;7&#34;]">
+                            <span class="sortable-text">MSRP</span>
+                            <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                            <a class="sortable-action-item sortable-remove"><i class="fa fa-times fa-sm"></i></a>
+                        </attr>
+                        <attr title="Special" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="[&#34;1&#34;]">
+                            <span class="sortable-text">Special</span>
+                            <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                            <a class="sortable-action-item sortable-remove"><i class="fa fa-times fa-sm"></i></a>
+                        </attr>
+                        <attr title="Stock number" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="[&#34;1&#34;,&#34;2&#34;,&#34;5&#34;,&#34;6&#34;]">
+                            <span class="sortable-text">Stock Number</span>
+                            <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                            <a class="sortable-action-item sortable-remove"><i class="fa fa-times fa-sm"></i></a>
+                        </attr>
+                        <attr title="Tags" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="[&#34;1&#34;,&#34;2&#34;,&#34;5&#34;,&#34;6&#34;]">
+                            <span class="sortable-text">Tags</span>
+                            <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                            <a class="sortable-action-item sortable-remove"><i class="fa fa-times fa-sm"></i></a>
+                        </attr>
+                        <attr title="Transmission" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="[&#34;1&#34;,&#34;2&#34;,&#34;5&#34;,&#34;6&#34;]">
+                            <span class="sortable-text">Transmission</span>
+                            <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                            <a class="sortable-action-item sortable-remove"><i class="fa fa-times fa-sm"></i></a>
+                        </attr>
+                        <attr title="Trim" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="[&#34;1&#34;,&#34;2&#34;,&#34;5&#34;,&#34;6&#34;]">
+                            <span class="sortable-text">Trim</span>
+                            <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                            <a class="sortable-action-item sortable-remove"><i class="fa fa-times fa-sm"></i></a>
+                        </attr>
+                        <attr title="Vehicle location" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="[&#34;8&#34;]">
+                            <span class="sortable-text">Car Location</span>
+                            <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                            <a class="sortable-action-item sortable-remove"><i class="fa fa-times fa-sm"></i></a>
+                        </attr>
+                        <attr title="Vin" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="[&#34;1&#34;,&#34;2&#34;,&#34;5&#34;,&#34;6&#34;]">
+                            <span class="sortable-text">Vin</span>
+                            <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                            <a class="sortable-action-item sortable-remove"><i class="fa fa-times fa-sm"></i></a>
+                        </attr>
+                        <attr title="Year" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="[&#34;1&#34;,&#34;2&#34;,&#34;3&#34;,&#34;4&#34;]">
+                            <span class="sortable-text">Year</span>
+                            <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                            <a class="sortable-action-item sortable-remove"><i class="fa fa-times fa-sm"></i></a>
+                        </attr>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <h3>When groups are combined look like...</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="sortable-workbench btn-tags btn-sentence">
+                        <div class="btn btn-default clearfix sortable">
+                            <attr title="Body style" class="btn btn-default clearfix sortable" data-type="combined" data-accepts="[&quot;1&quot;,&quot;2&quot;,&quot;5&quot;,&quot;6&quot;]" draggable="false">
+                                <span class="sortable-text">         Body Style  is equal to String</span>
+                                <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                                <a class="sortable-action-item sortable-remove" draggable="false"><i class="fa fa-times fa-sm"></i></a>
+                            </attr>
+                            <attr title="and" class="btn btn-default clearfix sortable" data-type="b_joiner" data-id="10" draggable="false">
+                                <span class="sortable-text">       and</span>
+                                <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                                <a class="sortable-action-item sortable-remove" draggable="false"><i class="fa fa-times fa-sm"></i></a>
+                            </attr>
+                            <attr title="Cpo" class="btn btn-default clearfix sortable" data-type="combined" data-accepts="[&quot;1&quot;]" draggable="false">
+                                <span class="sortable-text">       CPO       is equal to       String       and       CPO       is equal to       String and</span>
+                                <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                                <a class="sortable-action-item sortable-remove" draggable="false"><i class="fa fa-times fa-sm"></i></a>
+                            </attr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SCRIPTS -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/tether.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/jquery.easing.min.js"></script>
+
+        <script src="js/sortable.js"></script>
+        <script src="js/functions.js"></script>
+        <script src="js/querylang/querylang__02.js"></script>
+    </body>
+
+</html>
+

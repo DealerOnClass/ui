@@ -1,0 +1,15 @@
+@if $progress__default-palette {
+    @include progress-color-variation($default__palette);
+}
+@if $progress__inverse-palette {
+    @include progress-color-variation($inverse__palette);
+}
+@if $progress__primary-palette {
+    @include progress-color-variation($primary__palette);
+}
+@if $progress__neutral-palette {
+    @include progress-color-variation($neutral__palette);
+}
+@if $progress__state-palette {
+    @include progress-color-variation($state__palette);
+}

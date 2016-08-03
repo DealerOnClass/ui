@@ -1,0 +1,16 @@
+@if $popover__default-palette {
+    @include popover-color-variation($default__palette);
+}
+@if $popover__inverse-palette {
+    @include popover-color-variation($inverse__palette);
+}
+@if $popover__primary-palette {
+    @include popover-color-variation($primary__palette);
+}
+@if $popover__neutral-palette {
+    @include popover-color-variation($neutral__palette);
+}
+@if $popover__state-palette {
+    @include popover-color-variation($state__palette);
+}
+

@@ -1,0 +1,13 @@
+//  %combine-joined-type {
+//      float: none;
+//      clear: both;
+//      display: block;
+//  }
+//  //.sortable-workbench .sortable[data-type="combined"] {
+//  //    @extend %combine-joined-type;
+//  //    width: auto!important;
+//  //}
+//  .sortable-workbench .sortable[data-type="joiner"] {
+//      @extend %combine-joined-type;
+//      width: 5em!important;
+//  }

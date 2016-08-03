@@ -1,0 +1,7 @@
+.sortable {
+    position: relative;
+    z-index: 10;
+
+    transition: border-color 0.15s ease-in-out;
+    transition: background-color 0.15s ease-in-out;
+}

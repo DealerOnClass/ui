@@ -1,0 +1,12 @@
+.modal-dialog {
+    position: relative;
+
+    width: auto;
+    margin: $global__gutter / 3;
+
+    @media (min-width: $screen-sm-min) {
+        width: $modal--md__width;
+        margin: $grid__gutter auto;
+    }
+}
+

@@ -1,0 +1,91 @@
+.tooltip {
+    font-size: $tooltip__font-size;
+
+    position: absolute;
+    z-index: $zindex-tooltip;
+
+    display: block;
+
+    opacity: 0;
+
+    &.in {
+        opacity: $tooltip__opacity;
+    }
+
+    //
+    //  Tooltip is above
+    &.top,
+    &.tooltip-top,
+    &.bs-tether-element-attached-bottom {
+        margin-top: -$tooltip__offset;
+        padding: $tooltip-arrow__width 0;
+
+        .tooltip-arrow {
+            bottom: $one__true__pixel;
+            left: 50%;
+
+            margin-left: -$tooltip-arrow__width;
+
+            border-width: $tooltip-arrow__width $tooltip-arrow__width 0;
+            border-top-color: $tooltip-arrow__color;
+        }
+    }
+
+    //
+    //  Tooltip is on the right
+    &.right,
+    &.tooltip-right,
+    &.bs-tether-element-attached-left {
+        margin-left: $tooltip__offset;
+        padding: 0 $tooltip-arrow__width;
+
+        .tooltip-arrow {
+            top: 50%;
+            left: 0;
+
+            margin-top: -$tooltip-arrow__width;
+
+            border-width: $tooltip-arrow__width $tooltip-arrow__width $tooltip-arrow__width 0;
+            border-right-color: $tooltip-arrow__color;
+        }
+    }
+
+    //
+    //  Tooltip is below
+    &.bottom,
+    &.tooltip-bottom,
+    &.bs-tether-element-attached-top {
+        margin-top: $tooltip__offset;
+        padding: $tooltip-arrow__width 0;
+
+        .tooltip-arrow {
+            top: 0;
+            left: 50%;
+
+            margin-left: -$tooltip-arrow__width;
+
+            border-width: 0 $tooltip-arrow__width $tooltip-arrow__width;
+            border-bottom-color: $tooltip-arrow__color;
+        }
+    }
+
+    //
+    //  Tooltip is on the left
+    &.left,
+    &.tooltip-left,
+    &.bs-tether-element-attached-right {
+        margin-left: -$tooltip__offset;
+        padding: 0 $tooltip-arrow__width;
+
+        .tooltip-arrow {
+            top: 50%;
+            right: 0;
+
+            margin-top: -$tooltip-arrow__width;
+
+            border-width: $tooltip-arrow__width 0 $tooltip-arrow__width $tooltip-arrow__width;
+            border-left-color: $tooltip-arrow__color;
+        }
+    }
+}
+

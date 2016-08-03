@@ -1,0 +1,83 @@
+//
+//  Units
+$grid__columns: 12;
+$grid__gutter:  $global__gutter;
+$grid__x:       $global__x;
+$grid__y:       $global__y;
+//
+//  Options
+$grid__has__pull:            true !default;
+$grid__has__push:            true !default;
+$grid__has__offset:          true !default;
+$grid-float-breakpoint:      $screen-sm-min !default;
+$grid-float-breakpoint-max:  ($grid-float-breakpoint - 1) !default;
+$offcanvas-breakpoint:       $screen-md-min !default;
+$offcanvas-breakpoint-max:   ($offcanvas-breakpoint - 1) !default;
+@if $output__global {
+    @if $output__grid {
+        //
+        //  Base
+        .container {
+
+            @include container-fixed;
+
+            @media (min-width: $screen-sm-min) {
+                max-width: $container-sm;
+            }
+
+            @media (min-width: $screen-md-min) {
+                max-width: $container-md;
+            }
+
+            @media (min-width: $screen-lg-min) {
+                max-width: $container-lg;
+            }
+        }
+
+        .container-fluid {
+
+            @include container-fixed;
+        }
+
+        .row {
+            @include make-row;
+        }
+
+        @include make-grid-columns;
+
+        @include make-grid(xxs);
+
+        @media (min-width: $screen-xs-min) {
+            @include make-grid(xs);
+        }
+
+        @media (min-width: $screen-sm-min) {
+            @include make-grid(sm);
+        }
+
+        @media (min-width: $screen-md-min) {
+            @include make-grid(md);
+        }
+
+        @media (min-width: $screen-lg-min) {
+            @include make-grid(lg);
+        }
+
+        //
+        //  Variations
+        .col {
+            @include column($grid__gutter);
+            position: relative;
+            float: left;
+            min-width: 10em;
+        }
+
+        .gutter-x {
+            &.row [class*="col-"],
+            &[class*="col-"] {
+                padding-right: 0;
+                padding-left: 0;
+            }
+        }
+    }
+}

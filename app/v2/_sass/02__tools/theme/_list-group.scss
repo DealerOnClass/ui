@@ -1,0 +1,41 @@
+@mixin list-group-color-variation($input__palette) {
+    @each $class__name, $color in $input__palette {
+        .list-group-#{$class__name} {
+
+            .list-group-item {
+                color: check-color($color, 80, inherit, $white);
+                border-color: transparent;
+                background-color: $color;
+
+                &:not(:last-child) {
+                    border-bottom-color: rgba(0, 0, 0, 0.15);
+                }
+            }
+
+            a.list-group-item {
+                @include state-and-active-and-open {
+                    color: check-color($color, 80, inherit, $white);
+                    background-color: shade($color, $list-group__contrast);
+                }
+            }
+
+            &[disabled] {
+                @include state-and-self {
+                    background-color: $color;
+                }
+            }
+        }
+    }
+}
+
+@mixin list-group-size-variation($unit__y, $unit__x, $input__palette) {
+    @each $class__name, $size in $input__palette {
+
+        $x: ($unit__x * strip-unit($size));
+        $y: ($unit__y * strip-unit($size));
+
+        .list-group-#{$class__name} .list-group-item {
+            padding: $y $x;
+        }
+    }
+}

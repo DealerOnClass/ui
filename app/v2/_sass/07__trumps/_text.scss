@@ -1,0 +1,55 @@
+//  Responsive Alignment
+.text-xs-left   { text-align: left; }
+.text-xs-right  { text-align: right; }
+.text-xs-center { text-align: center; }
+
+@media (min-width: $screen-xs-min) {
+    .text-xs-left   { text-align: left; }
+    .text-xs-right  { text-align: right; }
+    .text-xs-center { text-align: center; }
+}
+
+@media (min-width: $screen-sm-min) {
+    .text-sm-left   { text-align: left; }
+    .text-sm-right  { text-align: right; }
+    .text-sm-center { text-align: center; }
+}
+
+@media (min-width: $screen-md-min) {
+    .text-md-left   { text-align: left; }
+    .text-md-right  { text-align: right; }
+    .text-md-center { text-align: center; }
+}
+
+@media (min-width: $screen-lg-min) {
+    .text-lg-left   { text-align: left; }
+    .text-lg-right  { text-align: right; }
+    .text-lg-center { text-align: center; }
+}
+
+//  Alignment
+.text-left    { text-align: left; }
+.text-right   { text-align: right; }
+.text-center  { text-align: center; }
+
+//  Transformation
+.text-lowercase  { text-transform: lowercase; }
+.text-uppercase  { text-transform: uppercase; }
+.text-capitalize { text-transform: capitalize; }
+.text-justify { text-align: justify; }
+.text-nowrap  { white-space: nowrap; }
+
+//
+//  Colors
+.text-muted-25 { opacity: 0.25; }
+.text-muted,
+.text-muted-50 { opacity: 0.5; }
+.text-muted-75 { opacity: 0.75; }
+
+//
+//
+@include text-color-variation($default__palette);
+@include text-color-variation($inverse__palette);
+@include text-color-variation($primary__palette);
+@include text-color-variation($neutral__palette);
+@include text-color-variation($state__palette);

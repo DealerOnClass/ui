@@ -1,0 +1,22 @@
+//
+//  Units
+$hero__contrast:            $global__contrast;
+$hero__radius:              $global__radius;
+$hero__x:                   $global__x;
+$hero__y:                   $global__y * 7;
+//
+//  Color
+$hero__default-palette:     true !default;
+$hero__inverse-palette:     true !default;
+$hero__primary-palette:     true !default;
+$hero__neutral-palette:     true !default;
+$hero__state-palette:       true !default;
+//
+//  Base
+$hero__padding:             $hero__y 0;
+//
+//  Variations
+$hero--lg__padding:         $hero__y * ( $base__font-ratio * 1.5 ) 0;
+$hero--md__padding:         $hero__y * $base__font-ratio 0;
+$hero--sm__padding:         $hero__y / $base__font-ratio 0;
+$hero--xs__padding:         $hero__y / ( $base__font-ratio * 2 ) 0;

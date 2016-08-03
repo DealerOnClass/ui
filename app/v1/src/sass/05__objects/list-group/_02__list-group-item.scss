@@ -1,0 +1,34 @@
+.list-group-item {
+    position: relative;
+
+    display: block;
+
+    padding: $list-group-item__padding;
+    border: $one__true__pixel solid;
+
+    &.active {
+        color: $list-group-item--active__color;
+        border-color: transparent;
+        background-color: $list-group-item--active__bg;
+    }
+
+    &:first-child {
+        border-top-left-radius: $list-group-item__radius;
+        border-top-right-radius: $list-group-item__radius;
+    }
+
+    &:last-child {
+        border-bottom-right-radius: $list-group-item__radius;
+        border-bottom-left-radius: $list-group-item__radius;
+    }
+
+    & + & {
+        border-top: 0 none;
+    }
+}
+
+button.list-group-item {
+    width: 100%;
+
+    text-align: left;
+}

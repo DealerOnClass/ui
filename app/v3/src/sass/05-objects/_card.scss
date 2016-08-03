@@ -1,0 +1,161 @@
+/*
+ * Units
+ */
+$card-c: $g-c;
+$card-g: $g-g;
+$card-r: $g-r;
+$card-x: $g-x;
+$card-y: $g-y;
+/*
+ * Colors
+ */
+$card-border: transparent;
+$card-bg: $default__color;
+/*
+ * Base
+ */
+.card {
+    display: flex;
+	flex-direction: column;
+}
+.card-item {
+    display: flex;
+    flex: 1 1 auto;
+    padding: $card-y $card-x;
+    border: 1px solid $card-border;
+	&:first-child {
+		border-radius: $card-r $card-r 0 0;
+	}
+	&:last-child {
+		border-radius: 0 0 $card-r $card-r;
+	}
+	&:only-child {
+		border-radius: $card-r;
+	}
+}
+.card-header {
+	background-color: $card-bg;
+	flex-grow: 0;
+}
+.card-block {
+	border-color: $card-bg;
+	flex-grow: 1;
+}
+.card-footer {
+	background-color: $card-bg;
+	flex-grow: 0;
+}
+.card-actions {
+	display: flex;
+	justify-content: space-between;
+	padding: 0;
+	border: 0;
+	flex-grow: 0;
+	.btn {
+		flex: 1 1 0;
+		border-radius: 0;
+	}
+	&:first-child {
+		.btn:first-child {
+			border-radius: $card-r 0 0 0;
+		}
+		.btn:last-child {
+			border-radius: 0 $card-r 0 0;
+		}
+		.btn:only-child {
+			border-radius: $card-r $card-r 0 0;
+		}
+	}
+	&:last-child {
+		.btn:first-child {
+			border-radius: 0 0 0 $card-r;
+		}
+		.btn:last-child {
+			border-radius: 0 0 $card-r 0;
+		}
+		.btn:only-child {
+			border-radius: 0 0 $card-r $card-r;
+		}
+	}
+	&:only-child {
+		.btn:first-child {
+			border-radius: $card-r 0 0 $card-r;
+		}
+		.btn:last-child {
+			border-radius: 0 $card-r $card-r 0;
+		}
+		.btn:only-child {
+			border-radius: $card-r;
+		}
+	}
+}
+/*
+ * Variations
+ */
+.card-group {
+	display: flex;
+}
+.card-group .card {
+	flex: 1 1 0;
+	.card-item {
+		border-radius: 0;
+	}
+}
+.card-group .card:first-child {
+	.card-item {
+		&:first-child {
+			border-radius: $card-r 0 0 0;
+		}
+		&:last-child {
+			border-radius: 0 0 0 $card-r;
+		}
+		&:only-child {
+			border-radius: $card-r 0 0 $card-r;
+		}
+	}
+}
+.card-group .card:last-child {
+	.card-item {
+		&:first-child {
+			border-radius: 0 $card-r 0 0;
+		}
+		&:last-child {
+			border-radius: 0 0 $card-r 0;
+		}
+		&:only-child {
+			border-radius: 0 $card-r $card-r 0;
+		}
+	}
+}
+.card-group .card:only-child {
+	.card-item {
+		&:first-child {
+			border-radius: $card-r $card-r 0 0;
+		}
+		&:last-child {
+			border-radius: 0 0 $card-r $card-r;
+		}
+		&:only-child {
+			border-radius: $card-r;
+		}
+	}
+}
+.card-deck {
+	display: flex;
+	margin-right: negative($card-g);
+	margin-left: negative($card-g);
+	.card {
+		flex: 1 1 0;
+		padding-right: $card-g;
+		padding-left: $card-g;
+	}
+}
+/*
+ * Theme
+ */
+//	@include card-color-variation($default__palette);
+//	@include card-color-variation($inverse__palette);
+//	@include card-color-variation($primary__palette);
+//	@include card-color-variation($neutral__palette);
+//	@include card-color-variation($state__palette);
+//	@include card-color-variation($classic__palette);

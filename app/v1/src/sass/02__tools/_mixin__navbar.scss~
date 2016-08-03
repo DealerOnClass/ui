@@ -1,0 +1,223 @@
+@mixin navbar-color-variation($input__palette) {
+    @each $class__name, $color in $input__palette {
+        .navbar-#{$class__name} {
+            @if $navbar__solid-color {
+                color: check-color($color, 80, inherit, $white);
+                border-color: $color;
+                background-color: $color;
+
+                .navbar-brand,
+                .navbar-link,
+                .navbar-toggle {
+                    @extend %navbar__link;
+                }
+
+                .navbar-nav {
+                    > li > a {
+                        @extend %navbar__link;
+                    }
+                    >.active > a {
+                        @extend %navbar__link--active;
+                    }
+                    >.disabled > a {
+                        @extend %navbar__link--disabled;
+                    }
+                }
+
+                %navbar__link {
+                    color: check-color($color, 80, inherit, $white);
+                    @include state {
+                        background-color: shade($color, $navbar__contrast);
+                    }
+                }
+                %navbar__link--active {
+                    &,
+                    &:hover,
+                    &:focus {
+                        background-color: shade($color, $navbar__contrast);
+                    }
+                }
+                %navbar__link--disabled {
+                    &,
+                    &:hover,
+                    &:focus {
+                        color: shade($color, $navbar__contrast * 3);
+                        background-color: transparent;
+                    }
+                }
+
+            } @else {
+                color: check-color($color, 80, inherit, $color);
+                border-color: check-color($color, 80, inherit, shade($color, $navbar__contrast));
+
+                .navbar-brand,
+                .navbar-link,
+                .navbar-toggle {
+                    @extend %navbar__link;
+                }
+
+                .navbar-nav {
+                    > li > a {
+                        @extend %navbar__link;
+                    }
+                    >.active > a {
+                        @extend %navbar__link--active;
+                    }
+                    >.disabled > a {
+                        @extend %navbar__link--disabled;
+                    }
+                }
+
+                %navbar__link {
+                    color: inherit;
+                    @include state {
+                        background-color: shade($color, $navbar__contrast);
+                    }
+                }
+                %navbar__link--active {
+                    &,
+                    &:hover,
+                    &:focus {
+                        background-color: shade($color, $navbar__contrast);
+                    }
+                }
+                %navbar__link--disabled {
+                    &,
+                    &:hover,
+                    &:focus {
+                        color: shade($color, $navbar__contrast * 3);
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+    }
+}
+//
+//  .navbar-primary {
+//      @include navbar-variant($color, true, true);
+//  }
+//
+@mixin navbar-solid-color-variant($input__color, $dropdown: false, $sidebar: false) {
+    //  Vars
+    $background: $input__color;
+    $color: check-color($background, 80, $body__color, $white);
+    $border: check-color($background, 80, $gray__02, $background);
+
+    color: $color;
+    border-color: $border;
+    background-color: $background;
+
+    .navbar-brand {
+        color: $color;
+        &:hover,
+        &:focus {
+            color: $color;
+            background-color: shade($background, $global__contrast);
+        }
+    }
+
+    .navbar-text {
+        color: $color;
+    }
+
+    .navbar-link {
+        color: $color;
+        &:hover {
+            color: $color;
+        }
+    }
+
+    .navbar-toggle {
+        &:hover,
+        &:focus {
+            background-color: shade($background, $global__contrast);
+        }
+    }
+
+    .icon-bar {
+        background-color: $color;
+    }
+
+    .navbar-collapse,
+    .navbar-form {
+        border-color: $background;
+    }
+
+    .navbar-nav {
+        > li > a {
+            color: $color;
+
+            &:hover,
+            &:focus {
+                color: $color;
+                background-color: shade($background, $global__contrast);
+            }
+        }
+        > .active > a {
+            &,
+            &:hover,
+            &:focus {
+                color: $color;
+                background-color: shade($background, $global__contrast);
+            }
+        }
+        > .disabled > a {
+            &,
+            &:hover,
+            &:focus {
+                color: shade($color, $global__contrast * 2);
+                background-color: $background;
+            }
+        }
+
+        @if $dropdown {
+            > .open > a {
+                &,
+                &:hover,
+                &:focus {
+                    color: $color;
+                    background-color: shade($background, $global__contrast);
+                }
+            }
+            > .open .dropdown-menu {
+                border-color: shade($background, $global__contrast);
+
+                > li > a {
+                    color: $color;
+                    background-color: shade($background, $global__contrast);
+                    &:hover,
+                    &:focus {
+                        color: $color;
+                        background-color: shade($background, $global__contrast * 2);
+                    }
+                }
+                > .active > a {
+                    &,
+                    &:hover,
+                    &:focus {
+                        color: $color;
+                        background-color: shade($background, $global__contrast * 2);
+                    }
+                }
+                > .disabled > a {
+                    &,
+                    &:hover,
+                    &:focus {
+                        color: $color;
+                        background-color: $background;
+                    }
+                }
+            }
+        }
+        //  end @if $dropdown;
+    }
+}
+
+
+
+@mixin navbar-solid-color-bar($input__color) {
+    color: $white;
+    border-color: $input__color;
+    background-color: $input__color;
+}

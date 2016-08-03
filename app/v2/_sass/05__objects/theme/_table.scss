@@ -1,0 +1,186 @@
+//
+//  Var
+$table__contrast:           $global__contrast;
+$table__radius:             $global__radius;
+$table__x:                  $global__x;
+$table__y:                  $global__y;
+//  $table--striped__bg:        tint($gray__01, $table__contrast * 3);
+$table--hover__bg:          tint($gray__01, $table__contrast * 3);
+@if $output__global {
+    @if $output__table {
+        //
+        //  Base
+        .table {
+            width: 100%;
+            max-width: 100%;
+            text-align: left;
+
+            th,
+            td {
+                padding: $table__y $table__x;
+                border-top: $one__pixel solid;
+            }
+
+            thead:first-child > tr:first-child {
+                th,
+                td {
+                    border-top: 0;
+                }
+            }
+        }
+
+        .table-condensed {
+
+            th,
+            td {
+                padding: ($table__y / 2) ($table__x / 2);
+            }
+        }
+
+        .table-bordered {
+            border: $one__pixel solid;
+
+            th,
+            td {
+                &:not(:last-child) {
+                    border-right: $one__pixel solid;
+                }
+            }
+        }
+
+        .table-borderless {
+            border: 0 none;
+
+            th,
+            td {
+                border-top: 0 none;
+            }
+        }
+
+        .table-striped > tbody > tr:nth-of-type(odd) {
+            //  background-color: $table--striped__bg;
+            //background-color: rgba(0, 0, 0, 0.075);
+            background-color: tint($inverse__color, 84%);
+        }
+
+        .table-hover > tbody > tr:hover {
+            background-color: $table--hover__bg;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+
+            min-height: 0.01%; // Workaround for IE9 bug (see https://github.com/twbs/bootstrap/issues/14837)
+
+            @media screen and (max-width: $screen-xs-max) {
+                overflow-y: hidden;
+
+                width: 100%;
+
+                //  border: $one__pixel solid;
+
+                -ms-overflow-style: -ms-autohiding-scrollbar;
+
+                > .table {
+                    margin-bottom: 0;
+
+                    th,
+                    td {
+                        white-space: nowrap;
+                    }
+                }
+
+                > .table-bordered {
+                    border: 0;
+
+                    th,
+                    td {
+                        &:first-child {
+                            border-left: 0;
+                        }
+                    }
+
+                    th,
+                    td {
+                        &:last-child {
+                            border-right: 0;
+                        }
+                    }
+
+                    > tbody,
+                    > tfoot {
+                        > tr:last-child {
+                            > th,
+                            > td {
+                                border-bottom: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .table-rounded {
+            border-radius: $table__radius;
+            border-collapse: separate;
+            overflow: hidden;
+        }
+
+        .table-flush {
+
+            th,
+            td {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+
+        .table-left-flush {
+
+            th,
+            td {
+                padding-left: 0;
+            }
+        }
+
+        .table-right-flush {
+
+            > th,
+            > td {
+                padding-right: 0;
+            }
+        }
+
+        .table-align-top {
+
+            th,
+            td {
+                vertical-align: top;
+            }
+        }
+
+        .table-sticky {
+            thead {
+                background-color: $white;
+            }
+        }
+        //
+        //  Sizing
+        @if $output__global--sizes {
+            @if $output__table--sizes {
+                @include table-size-variation($table__y, $table__x, $default__sizing);
+            }
+        }
+        //
+        //  Colors
+        @if $output__global--theme {
+            @if $output__table--theme {
+                @include table-color-variation($default__palette);
+                @include table-color-variation($inverse__palette);
+                @include table-color-variation($primary__palette);
+                @include table-color-variation($neutral__palette);
+                @include table-color-variation($state__palette);
+            }
+        }
+    }
+}

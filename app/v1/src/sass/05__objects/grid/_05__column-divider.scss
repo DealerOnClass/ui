@@ -1,0 +1,21 @@
+//
+//  Use
+//  .row>.col-sm-6>p{stuff}+.col-sm-6.col-divider>p{stuff}
+//
+//  Output
+//  stuff | stuff
+//
+.col-divider:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: block;
+
+    width: $one__true__pixel;
+    height: 100%;
+
+    content: '';
+
+    background-color: $col-divider__bg;
+}

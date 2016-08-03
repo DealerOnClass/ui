@@ -1,0 +1,9 @@
+.dropdown-backdrop {
+    position: fixed;
+    z-index: ($zindex-dropdown - 10);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+

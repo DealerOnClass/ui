@@ -1,0 +1,47 @@
+.pagination {
+    display: inline-block;
+
+    padding-left: 0;
+
+    > li {
+        display: inline-block;
+        float: left;
+    }
+
+    > li > a {
+        position: relative;
+
+        display: inline-block;
+
+        margin-left: $one__true__pixel * -1;
+        padding: $pagination__padding;
+
+        border: $one__true__pixel solid;
+    }
+
+    > li:first-child > a {
+        border-top-left-radius: $pagination__radius;
+        border-bottom-left-radius: $pagination__radius;
+    }
+
+    > li:last-child > a {
+        border-top-right-radius: $pagination__radius;
+        border-bottom-right-radius: $pagination__radius;
+    }
+
+    > li.active > a,
+    > li > a.active {
+        @include state-and-self {
+            z-index: 20;
+
+            color: $pagination__link--active__color;
+            border-color: transparent;
+            background-color: $pagination__link--active__bg;
+        }
+    }
+
+    > li > a[disabled] {
+        box-shadow: none;
+    }
+}
+

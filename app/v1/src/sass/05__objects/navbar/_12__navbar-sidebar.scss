@@ -1,0 +1,31 @@
+.navbar-sidebar {
+    //  position: fixed;
+    z-index: $zindex-navbar-sidebar;
+    //  top: 0;
+    //  left: 0;
+
+    //  overflow: visible;
+
+    //  height: 100%;
+
+    border-width: 0;
+    border-radius: 0;
+}
+
+.navbar-sidebar-icon {
+    margin-right: $navbar__x;
+}
+
+.navbar-sidebar-wrapper {
+    position: relative;
+
+    overflow-y: auto;
+}
+
+.navbar-sidebar-item {
+    padding: $navbar__y $navbar__x;
+}
+
+.navbar-sidebar-nav .dropdown-menu > li > a {
+    padding-left: $navbar__x * 3;
+}

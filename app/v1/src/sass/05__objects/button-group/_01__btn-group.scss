@@ -1,0 +1,52 @@
+.btn-group,
+.btn-group-vertical {
+    position: relative;
+
+    display: inline-block;
+
+    vertical-align: middle;
+
+    > .btn {
+        @include state-and-active {
+            z-index: 2;
+        }
+    }
+}
+
+.btn-group {
+    .btn + .btn,
+    .btn + .btn-group,
+    .btn-group + .btn,
+    .btn-group + .btn-group {
+        margin-left: $one__true__pixel * -1;
+    }
+
+    > .btn {
+        border-radius: 0;
+        float: left;
+    }
+
+    > .btn:first-child {
+        border-top-left-radius: $btn__radius;
+        border-bottom-left-radius: $btn__radius;
+    }
+
+    > .dropdown-toggle,
+    > .dropup-toggle,
+    > .btn:last-child,
+    > .btn-group:last-child > .btn {
+        border-top-right-radius: $btn__radius;
+        border-bottom-right-radius: $btn__radius;
+    }
+
+    > .btn-group:last-child > .btn {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    > .btn-group > .dropdown-toggle,
+    > .btn-group > .dropup-toggle {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+}

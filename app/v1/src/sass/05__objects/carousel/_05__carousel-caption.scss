@@ -1,0 +1,26 @@
+.carousel-caption {
+    position: absolute;
+    z-index: 10;
+    right: 15%;
+    bottom: $card__y;
+    left: 15%;
+
+    overflow: hidden;
+
+    padding-top: $card__y;
+    padding-bottom: $card__y;
+
+    text-align: center;
+
+    color: $carousel-caption__color;
+    text-shadow: $carousel-caption__text-shadow;
+
+    @media screen and (min-width: $screen-sm-min) {
+        .carousel-caption {
+            right: 20%;
+            left: 20%;
+
+            padding-bottom: $card__y * 1.5;
+        }
+    }
+}

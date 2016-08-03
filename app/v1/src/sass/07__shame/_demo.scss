@@ -1,0 +1,113 @@
+.demo__body {
+    position: relative;
+
+    margin-bottom: rhythm(6);
+}
+
+.demo__section,
+.demo__titlebar,
+.demo__hero {
+    margin-bottom: rhythm(2);
+}
+
+.demo__titlebar {
+    margin-top: rhythm(2);
+}
+
+.demo__heading {
+    font-size: 1em;
+
+    margin-top: rhythm(2);
+
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
+
+    color: $gray__03;
+}
+
+.demo {
+
+    .alert,
+    .breadcrumb,
+    .card,
+    .form-inline,
+    .demo__nav {
+        margin-bottom: rhythm(1);
+    }
+}
+
+.demo__dropdown,
+.demo__dropdown + ul,
+.demo__dropup + ul {
+    display: block;
+}
+
+.demo__dropdown + ul {
+    position: relative;
+}
+
+.demo__btn-group {
+    margin-bottom: rhythm(.5);
+}
+
+.show__modal,
+.show__modal--palette,
+.show__popover,
+.demo__dropdown {
+    position: relative;
+
+    display: block;
+}
+
+.show__popover {
+    margin-bottom: rhythm(.5);
+}
+
+.show__modal--palette {
+
+    .modal-content {
+        margin: rhythm(.5);
+    }
+
+    .modal-dialog {
+        width: 100%;
+    }
+}
+
+.show__tooltip {
+    opacity: 1;
+}
+
+.show__btn-group .btn-group {
+    display: block;
+
+    @include rhythm-rem(margin-top, .5);
+
+    @include clearfix;
+}
+
+.navbar-vertical-container {
+    overflow-y: auto;
+}
+
+.emulate-html-element {
+    position: relative;
+    z-index: 30;
+
+    min-height: 20em;
+    max-height: 24em;
+
+    .navbar-fixed-top,
+    .navbar-sidebar:not(.offcanvas-nav) {
+        //  overrides default value of fixed
+        //  for demo purposes. Keeps nav confined
+        //  within "emulate-body" container
+        position: absolute;
+    }
+}
+
+.emulate-container-class {
+    max-width: 34em;
+    margin: 0 auto;
+    padding: rhythm(3) $global__gutter 0;
+}

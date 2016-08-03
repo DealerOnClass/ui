@@ -1,0 +1,5 @@
+.btn-rounded {
+    //padding: $btn__y ( $btn__x * 1.5 );
+
+    border-radius: ( $btn__y * 2 ) + $base__font-unit;
+}

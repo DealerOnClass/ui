@@ -1,0 +1,44 @@
+@mixin btn-group-color-variation($input__palette) {
+    @each $class__name, $color in $input__palette {
+        .btn-group-#{$class__name} {
+            border-color: transparent;
+            background-color: $color;
+
+            a.btn {
+                color: check-color($color, 80, inherit, $white);
+                border-color: $color;
+                background-color: $color;
+
+                @include state-and-active {
+                    color: check-color($color, 80, inherit, $white);
+                    background-color: shade($color, $btn__contrast);
+                }
+
+                &[disabled] {
+                    @include state-and-self {
+                        background-color: $color;
+                    }
+                }
+            }
+        }
+
+        .btn-group-#{$class__name}.open > .btn,
+        .btn-group-#{$class__name} .btn-group.open > .btn {
+            color: check-color($color, 80, inherit, $white);
+            background-color: shade($color, $btn__contrast);
+        }
+    }
+}
+
+@mixin btn-group-size-variation($unit__y, $unit__x, $input__palette) {
+    @each $class__name, $size in $input__palette {
+
+        $x: ($unit__x * strip-unit($size));
+        $y: ($unit__y * strip-unit($size));
+
+        .btn-group-#{$class__name} .btn {
+            padding: $y $x;
+        }
+    }
+}
+

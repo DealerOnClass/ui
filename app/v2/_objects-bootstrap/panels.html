@@ -1,0 +1,110 @@
+---
+navgroup: "objects"
+navorder: 1
+navtitle: "panels"
+category: [objects]
+published: false
+
+name: "panel"
+
+base-grid: false
+base-grid-col: col-md-6
+base-hide-code: true
+base: |
+    <div class="panel">
+        <div class="panel-body">
+            Panel body
+        </div>
+    </div>
+
+variant: true
+variants-grid: false
+variants-grid-col: col-md-6
+variants-hide-code: true
+variants:
+    - name: panel-heading
+      base: |
+          <div class="panel">
+              <div class="panel-heading">
+                  Panel heading
+              </div>
+              <div class="panel-body">
+                  Panel body
+              </div>
+          </div>
+
+    - name: panel-title
+      base: |
+          <div class="panel">
+              <div class="panel-heading">
+                  <h4 class="panel-title">Panel title</h4>
+                  Panel heading
+              </div>
+              <div class="panel-body">
+                  Panel body
+              </div>
+          </div>
+
+
+    - name: panel-footer
+      base: |
+          <div class="panel">
+              <div class="panel-heading">
+                  <h4 class="panel-title">Panel title</h4>
+                  Panel heading
+              </div>
+              <div class="panel-body">
+                  Panel body
+              </div>
+              <div class="panel-footer">Panel footer</div>
+          </div>
+
+
+    - name: states
+      base: |
+          <div class="panel">
+              <div class="panel-heading">
+                  <h4 class="panel-title">Panel title</h4>
+                  Panel heading
+              </div>
+              <div class="panel-body">
+                  Panel body
+              </div>
+              <div class="panel-footer">Panel footer</div>
+          </div>
+
+size: true
+size-grid: false
+size-grid-col: col-md-3
+size-hide-code: true
+size-base-use: true
+size-base: |
+    <div class="panel">
+        <div class="panel-heading">
+            <h4 class="panel-title">Panel title</h4>
+            Panel heading
+        </div>
+        <div class="panel-body">
+            Panel body
+        </div>
+        <div class="panel-footer">Panel footer</div>
+    </div>
+
+theme: true
+theme-grid: true
+theme-grid-col: col-md-3
+theme-hide-code: true
+theme-base-use: true
+theme-base: |
+    <div class="panel">
+        <div class="panel-heading">
+            <h4 class="panel-title">Panel title</h4>
+            Panel heading
+        </div>
+        <div class="panel-body">
+            Panel body
+        </div>
+        <div class="panel-footer">Panel footer</div>
+    </div>
+
+---

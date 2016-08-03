@@ -1,0 +1,15 @@
+@if $pager__default-palette {
+    @include pager-color-variation($default__palette);
+}
+@if $pager__inverse-palette {
+    @include pager-color-variation($inverse__palette);
+}
+@if $pager__primary-palette {
+    @include pager-color-variation($primary__palette);
+}
+@if $pager__neutral-palette {
+    @include pager-color-variation($neutral__palette);
+}
+@if $pager__state-palette {
+    @include pager-color-variation($state__palette);
+}

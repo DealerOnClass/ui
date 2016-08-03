@@ -1,0 +1,86 @@
+//
+//  Base
+.panel-wizard {
+
+    .panel-heading.btn {
+        display: block;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .panel-wizard-step {
+        float: left;
+    }
+
+    .panel-wizard-icon {
+        position: relative;
+        top: $panel__y / 2;
+
+        float: right;
+    }
+
+    .panel-body:first-child {
+        border-bottom: 0 none;
+    }
+
+    .panel-footer {
+        background-color: transparent;
+    }
+}
+
+//
+//  Counter
+@if $panel-wizard-step-counter {
+    .panel-wizard-container {
+        counter-reset: panel-wizard-step;
+    }
+
+    .panel-wizard-step:before {
+        font-family: $sans--bold;
+
+        content: 'Step ' counter(panel-wizard-step) ': ';
+        counter-increment: panel-wizard-step;
+    }
+}
+
+//
+//  Accordion
+@if $panel-wizard-true-accordion {
+    .panel-wizard-container .panel-wizard {
+        margin-bottom: 0;
+
+        .panel-heading,
+        .panel-body,
+        .panel-footer {
+            border-radius: 0;
+        }
+
+        &:first-child {
+
+            .panel-heading {
+                border-top-right-radius: $panel__radius;
+                border-top-left-radius: $panel__radius;
+            }
+        }
+
+        &:last-child {
+
+            .panel-heading,
+            .panel-footer {
+                border-bottom-right-radius: $panel__radius;
+                border-bottom-left-radius: $panel__radius;
+            }
+
+            .panel-heading.current {
+                border-radius: 0;
+            }
+        }
+    }
+
+    .panel-wizard-container .panel-wizard + .panel-wizard:before {
+        content: "";
+        display: block;
+        width: 100%;
+        border-top: $one__true__pixel solid;
+    }
+}

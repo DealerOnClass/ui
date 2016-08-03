@@ -1,0 +1,14 @@
+---
+navgroup: "objects"
+navorder: 1
+navtitle: "button"
+
+name: "btn"
+
+base: |
+    <button type="button" class="btn">I'm a Button</button>
+
+theme: true
+theme-grid: true
+theme-grid-size: col-md-6
+---

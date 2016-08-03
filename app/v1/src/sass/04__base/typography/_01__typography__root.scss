@@ -1,0 +1,15 @@
+html {
+    font-size: 100%;
+    line-height: $base__line-height;
+
+    //  @media (min-width: $screen-sm-min) {
+    //      font-size: $base__font-size;
+    //  }
+}
+
+body {
+    font-family: $body__font;
+
+    color: $body__color;
+}
+

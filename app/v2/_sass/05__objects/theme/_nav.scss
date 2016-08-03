@@ -1,0 +1,252 @@
+//
+//  Var
+$nav__contrast:  $global__contrast;
+$nav__radius:    $global__radius;
+$nav__x:         $global__x;
+$nav__y:         $global__y;
+@if $output__global {
+    @if $output__nav {
+        //
+        //  Base
+        .nav {
+            display: flex;
+        }
+
+        .nav-item {
+            display: inline-block;
+            border: $one__pixel solid;
+            padding: $nav__y $nav__x;
+
+            &.active,
+            &.open {
+                color: $white;
+                border-color: transparent;
+                background-color: $primary__color;
+            }
+
+            &.dropdown {
+                padding: 0;
+
+                .dropdown-menu {
+                    left: negative($one__pixel);
+                }
+
+                .dropdown-menu > li:first-child > a {
+                    border-top-right-radius: 0;
+                    border-top-left-radius: 0;
+                }
+
+                .dropdown-toggle {
+                    color: inherit;
+                    display: block;
+                    padding: $nav__y $nav__x;
+                }
+            }
+        }
+
+        .nav-tabs,
+        .nav-pills {
+
+            .nav-item + .nav-item {
+                margin-left: $two__pixels;
+            }
+        }
+
+        .nav-tabs .nav-item {
+            border-radius: $nav__radius $nav__radius 0 0;
+            border-bottom-color: transparent;
+        }
+
+        .nav-pills .nav-item {
+            border-radius: $nav__radius;
+        }
+        //
+        //  Variations
+        .nav-justified .nav-item {
+            flex: 1 1 auto;
+        }
+
+        .nav-stacked {
+            flex-direction: column;
+
+            .nav-item + .nav-item {
+                margin-top: $two__pixels;
+                margin-left: 0;
+            }
+        }
+
+        .nav-flush {
+
+            .nav-item {
+                border-radius: 0;
+            }
+
+            .nav-item + .nav-item {
+                margin: 0;
+            }
+        }
+        //  .nav {
+        //      @include clearfix;
+
+        //      margin-bottom: 0;
+        //      padding-left: 0;
+
+        //      list-style: none;
+
+        //      &,
+        //      > li,
+        //      > li > a,
+        //      .nav-item {
+        //          position: relative;
+
+        //          display: block;
+        //      }
+
+        //      > li > a,
+        //      .nav-item {
+        //          padding: $nav__y $nav__x;
+        //      }
+        //  }
+
+        //  .nav-tabs,
+        //  .nav-pills {
+
+        //      > li {
+        //          float: left;
+        //      }
+
+        //      > li + li {
+        //          margin-left: $two__pixels;
+        //          border-radius: $nav__radius;
+        //      }
+
+        //      > li > a {
+        //          border: $one__pixel solid;
+        //          border-radius: $nav__radius;
+        //      }
+
+        //      > li > .active,
+        //      > .active > a,
+        //      > .open > a {
+        //          color: $white;
+        //          border-color: transparent;
+        //          background-color: $primary__color;
+        //      }
+        //  }
+
+        //  .nav-tabs {
+        //      //  border-bottom: $one__pixel solid;
+
+        //      > li > a {
+        //          border-bottom-color: transparent;
+        //          border-bottom-right-radius: 0;
+        //          border-bottom-left-radius: 0;
+        //      }
+
+        //      .dropdown-menu {
+        //          margin-top: negative($one__pixel);
+
+        //          &,
+        //          & > li > a:first-child {
+        //              border-top-right-radius: 0;
+        //              border-top-left-radius: 0;
+        //          }
+        //      }
+        //  }
+
+        //  .nav-stacked {
+
+        //      > li {
+        //          float: none;
+        //      }
+
+        //      > li + li {
+        //          margin-top: $two__pixels;
+        //          margin-left: 0;
+        //      }
+        //  }
+
+        //  .nav-justified {
+        //      display: table;
+
+        //      width: 100%;
+
+        //      table-layout: fixed;
+        //      border-spacing: $two__pixels;
+
+        //      > li {
+        //          position: relative;
+        //          top: $two__pixels;
+
+        //          display: table-cell;
+        //          float: none;
+
+        //          width: 1%;
+        //      }
+
+        //      > li > a {
+        //          text-align: center;
+        //          white-space: nowrap;
+        //      }
+
+        //      > .dropdown .dropdown-menu {
+        //          top: auto;
+        //          left: auto;
+        //      }
+        //  }
+
+        //  .nav.nav-justified:after {
+        //      display: none;
+        //  }
+
+        //  .nav-flush {
+
+        //      > li {
+
+        //          > a {
+        //              border-color: transparent;
+        //              border-radius: 0;
+        //          }
+
+        //          //  &:first-child > a {
+        //          //      border-top-left-radius: $nav__radius;
+        //          //  }
+
+        //          //  &:last-child > a {
+        //          //      border-top-right-radius: $nav__radius;
+        //          //  }
+
+        //          + li {
+        //              margin-left: negative($one__pixel);
+        //          }
+        //      }
+
+        //      &.nav-justified {
+        //          border-spacing: 0;
+
+        //          > li {
+        //              top: 0;
+        //          }
+        //      }
+        //  }
+        //
+        //  Sizing
+        @if $output__global--sizes {
+            @if $output__nav--sizes {
+                @include nav-size-variation($nav__y, $nav__x, $default__sizing);
+            }
+        }
+        //
+        //  Colors
+        @if $output__global--theme {
+            @if $output__nav--theme {
+                @include nav-color-variation($default__palette);
+                @include nav-color-variation($inverse__palette);
+                @include nav-color-variation($primary__palette);
+                @include nav-color-variation($neutral__palette);
+                @include nav-color-variation($state__palette);
+                @include nav-color-variation($classic__palette);
+            }
+        }
+    }
+}

@@ -1,0 +1,150 @@
+---
+navgroup: "objects"
+navorder: 1
+navtitle: "grid"
+category: [objects]
+
+name: "grid"
+
+base-grid: false
+base-grid-col: col-md-6
+base-hide-code: true
+base: |
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                One of three columns
+            </div>
+            <div class="col-sm-4">
+                One of three columns
+            </div>
+            <div class="col-sm-4">
+                One of three columns
+            </div>
+        </div>
+    </div>
+
+variant: true
+variants-grid: false
+variants-grid-col: col-md-6
+variants-hide-code: true
+variants:
+    - name: full width
+      base: |
+          <div class="container-fluid">
+              <div class="row">
+                  <div class="col-sm-4">
+                      One of three columns
+                  </div>
+                  <div class="col-sm-4">
+                      One of three columns
+                  </div>
+                  <div class="col-sm-4">
+                      One of three columns
+                  </div>
+              </div>
+          </div>
+
+    - name: flush
+      base: |
+          <div class="container">
+              <div class="row gutter-x">
+                  <div class="col-sm-4">
+                      One of three columns
+                  </div>
+                  <div class="col-sm-4">
+                      One of three columns
+                  </div>
+                  <div class="col-sm-4">
+                      One of three columns
+                  </div>
+              </div>
+          </div>
+
+    - name: nested
+      base: |
+          <div class="container">
+              <div class="row">
+                  <div class="col-sm-4">
+                      <div class="row">
+                          <div class="col-sm-4">
+                              One of three columns
+                          </div>
+                          <div class="col-sm-4">
+                              One of three columns
+                          </div>
+                          <div class="col-sm-4">
+                              One of three columns
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-sm-4">
+                      One of three columns
+                  </div>
+                  <div class="col-sm-4">
+                      One of three columns
+                  </div>
+              </div>
+          </div>
+
+    - name: offset
+      base: |
+          <div class="container">
+              <div class="row">
+                  <div class="col-sm-offset-4 col-sm-4">
+                      One of three columns
+                  </div>
+              </div>
+          </div>
+
+    - name: push pull
+      base: |
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-9 col-md-push-3">.col-md-9 .col-md-push-3</div>
+                  <div class="col-md-3 col-md-pull-9">.col-md-3 .col-md-pull-9</div>
+              </div>
+          </div>
+
+
+size: false
+size-grid: false
+size-grid-col: col-md-3
+size-hide-code: true
+size-base-use: true
+size-base: |
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                One of three columns
+            </div>
+            <div class="col-sm-4">
+                One of three columns
+            </div>
+            <div class="col-sm-4">
+                One of three columns
+            </div>
+        </div>
+    </div>
+
+theme: false
+theme-grid: true
+theme-grid-col: col-md-3
+theme-hide-code: true
+theme-base-use: true
+theme-base: |
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                One of three columns
+            </div>
+            <div class="col-sm-4">
+                One of three columns
+            </div>
+            <div class="col-sm-4">
+                One of three columns
+            </div>
+        </div>
+    </div>
+
+---

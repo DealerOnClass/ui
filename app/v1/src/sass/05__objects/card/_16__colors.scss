@@ -1,0 +1,15 @@
+@if $card__default-palette {
+    @include card-color-variation($default__palette);
+}
+@if $card__inverse-palette {
+    @include card-color-variation($inverse__palette);
+}
+@if $card__primary-palette {
+    @include card-color-variation($primary__palette);
+}
+@if $card__neutral-palette {
+    @include card-color-variation($neutral__palette);
+}
+@if $card__state-palette {
+    @include card-color-variation($state__palette);
+}

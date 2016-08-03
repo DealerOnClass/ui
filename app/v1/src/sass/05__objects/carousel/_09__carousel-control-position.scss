@@ -1,0 +1,51 @@
+.carousel-control-position {
+    .carousel-control {
+        width: $carousel-control-position__control__width;
+        height: $carousel-control-position__control__height;
+
+        @if $carousel-control-position__vert == top {
+            top: 0;
+            bottom: auto;
+        }
+        @if $carousel-control-position__vert == bottom {
+            top: auto;
+            bottom: 0;
+        }
+
+        @if $carousel-control-position__horz == right {
+            &.left {
+                right: $carousel-control-position__control__width;
+                left: auto;
+            }
+        }
+        @if $carousel-control-position__horz == left {
+            &.right {
+                right: auto;
+                left: $carousel-control-position__control__width;
+            }
+        }
+
+        @if $carousel-control-position__vert == middle {
+            &.left,
+            &.right {
+                top: 50%;
+
+                margin-top: $carousel-control-position__control__height / -2;
+            }
+        }
+
+        @if $carousel-control-position__horz == middle {
+            &.left {
+                left: 50%;
+
+                margin-left: $carousel-control-position__control__width * -1;
+            }
+            &.right {
+                right: 50%;
+
+                margin-right: $carousel-control-position__control__width * -1;
+            }
+        }
+    }
+}
+

@@ -1,0 +1,7 @@
+.panel-heading {
+    padding: $panel-heading__padding;
+
+    background-color: $panel-heading__bg;
+    position: relative;
+    z-index: 10;
+}

@@ -1,0 +1,24 @@
+//
+//  Units
+$table__contrast:           $global__contrast;
+$table__radius:             $global__radius;
+$table__x:                  $global__x;
+$table__y:                  $global__y;
+//
+//  Options
+$table__default-palette:    true !default;
+$table__inverse-palette:    true !default;
+$table__primary-palette:    true !default;
+$table__neutral-palette:    true !default;
+$table__state-palette:      true !default;
+//
+//  Base
+$table__padding:            $table__y $table__x;
+//
+//  Components
+$table--condensed__padding: ( $table__y / 2 ) ( $table__x / 2 );
+//
+$table--striped__bg:        tint($gray__01, $table__contrast * 3);
+//
+$table--hover__bg:          tint($gray__01, $table__contrast * 3);
+

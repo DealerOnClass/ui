@@ -1,0 +1,111 @@
+Sample
+
+User sees:
+Get Buick or GMC CPO vehicles
+
+Dev sees:
+(
+    (
+        ( Make = Buick )
+        or
+        ( Make = GMC )
+    )
+    and
+    ( cpo = 1 )
+)
+
+Process:
+
+
+Operator Key            Joiner
+1 : =                   or
+2 : <>                  and
+3 : >=
+4 : <=
+5 : like
+6 : notlike
+7 : between
+8 : near
+
+
+
+
+
+
+Parameter               Accepts
+Year                    1, 2, 3, 4,
+Make                    1, 2, 5, 6,
+Model                   1, 2, 5, 6,
+Trim                    1, 2, 5, 6,
+Bodystyle               1, 2, 5, 6,
+Vin                     1, 2, 5, 6,
+Stocknum                1, 2, 5, 6,
+Msrp                    1, 2, 3, 4, 7,
+Internetprice           1, 2, 3, 4, 7,
+Extcolor                1, 2, 5, 6,
+Intcolor                1, 2, 5, 6,
+Mileage                 1, 2, 3, 4, 7,
+Citympg                 1, 2, 3, 4, 7,
+Highwaympg              1, 2, 3, 4, 7,
+Transmission            1, 2, 5, 6,
+Days                    1, 2, 3, 4, 7,
+Special                 1
+Location                1, 2, 5, 6,
+Dealership              1, 2, 5, 6,
+Lotorder                1, 2,
+Vehiclelocation	        8
+Tags                    1, 2, 5, 6,
+Cpo                     1
+Carfax1owner            1
+Features                1
+Fueltype                1, 2, 5, 6,
+Drivetraintype          1, 2, 5, 6,
+
+
+
+
+
+
+
+
+
+
+<span data-type="parameter" data-accepts="1, 2, 3, 4"> Year </span>
+<span data-type="parameter" data-accepts="1, 2, 5, 6"> Make </span>
+<span data-type="parameter" data-accepts="1, 2, 5, 6"> Model </span>
+<span data-type="parameter" data-accepts="1, 2, 5, 6"> Trim </span>
+<span data-type="parameter" data-accepts="1, 2, 5, 6"> Bodystyle </span>
+<span data-type="parameter" data-accepts="1, 2, 5, 6"> Vin </span>
+<span data-type="parameter" data-accepts="1, 2, 5, 6"> Stocknum </span>
+<span data-type="parameter" data-accepts="1, 2, 3, 4, 7"> Msrp </span>
+<span data-type="parameter" data-accepts="1, 2, 3, 4, 7"> Internetprice </span>
+<span data-type="parameter" data-accepts="1, 2, 5, 6"> Extcolor </span>
+<span data-type="parameter" data-accepts="1, 2, 5, 6"> Intcolor </span>
+<span data-type="parameter" data-accepts="1, 2, 3, 4, 7"> Mileage </span>
+<span data-type="parameter" data-accepts="1, 2, 3, 4, 7"> Citympg </span>
+<span data-type="parameter" data-accepts="1, 2, 3, 4, 7"> Highwaympg </span>
+<span data-type="parameter" data-accepts="1, 2, 5, 6"> Transmission </span>
+<span data-type="parameter" data-accepts="1, 2, 3, 4, 7"> Days </span>
+<span data-type="parameter" data-accepts="1"> Special </span>
+<span data-type="parameter" data-accepts="1, 2, 5, 6"> Location </span>
+<span data-type="parameter" data-accepts="1, 2, 5, 6"> Dealership </span>
+<span data-type="parameter" data-accepts="1, 2"> Lotorder </span>
+<span data-type="parameter" data-accepts="8"> Vehiclelocation </span>
+<span data-type="parameter" data-accepts="1, 2, 5, 6"> Tags </span>
+<span data-type="parameter" data-accepts="1"> Cpo </span>
+<span data-type="parameter" data-accepts="1"> Carfax1owner </span>
+<span data-type="parameter" data-accepts="1"> Features </span>
+<span data-type="parameter" data-accepts="1, 2, 5, 6"> Fueltype </span>
+<span data-type="parameter" data-accepts="1, 2, 5, 6"> Drivetraintype </span>
+
+<span data-type="operator" data-id="1"> = </span>
+<span data-type="operator" data-id="2"> <> </span>
+<span data-type="operator" data-id="3"> >= </span>
+<span data-type="operator" data-id="4"> <= </span>
+<span data-type="operator" data-id="5"> like </span>
+<span data-type="operator" data-id="6"> notlike </span>
+<span data-type="operator" data-id="7"> between </span>
+<span data-type="operator" data-id="8"> near </span>
+
+<span data-type="joiner" data-id="9"> or </span>
+<span data-type="joiner" data-id="10"> and </span>

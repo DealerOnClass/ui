@@ -1,0 +1,14 @@
+.table-align-top {
+
+    > thead,
+    > tbody,
+    > tfoot {
+        > tr {
+            > th,
+            > td {
+                vertical-align: top;
+            }
+        }
+    }
+}
+

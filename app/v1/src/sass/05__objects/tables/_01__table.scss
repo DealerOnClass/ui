@@ -1,0 +1,38 @@
+.table {
+    width: 100%;
+    max-width: 100%;
+
+    > thead,
+    > tbody,
+    > tfoot {
+        > tr {
+            > th {
+                font-family: $primary__font--bold;
+            }
+
+            > th,
+            > td {
+                padding: $table__padding;
+
+                border-top: $one__true__pixel solid;
+            }
+        }
+    }
+
+    > thead > tr > th {
+        vertical-align: bottom;
+
+        border-bottom: $one__true__pixel solid;
+    }
+
+    > caption + thead,
+    > colgroup + thead,
+    > thead:first-child {
+        > tr:first-child {
+            > th,
+            > td {
+                border-top: 0;
+            }
+        }
+    }
+}

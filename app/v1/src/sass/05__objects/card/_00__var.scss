@@ -1,0 +1,32 @@
+//
+//  Units
+$card__contrast:                $global__contrast;
+$card__radius:                  $global__radius;
+$card__x:                       $global__x * 1.5;
+$card__y:                       $global__y * 1.5;
+//
+//  Color
+$card__default-palette:         true !default;
+$card__inverse-palette:         true !default;
+$card__primary-palette:         true !default;
+$card__neutral-palette:         true !default;
+$card__state-palette:           true !default;
+//
+//  Base
+$card__radius:                  $card__radius;
+//
+//  Components
+$card-block__padding:           ( $card__y * 1.5 ) $card__x;
+//
+$card-header__padding:          $card__y $card__x;
+//
+$card-footer__padding:          $card__y $card__x;
+//
+$card-img-overlay__bg:          rgba(0, 0, 0, 0.5);
+$card-img-overlay__color:       $white;
+//
+//  Variations
+$card--lg__padding:              ( $card__x * ( $base__font-ratio * 1.5 ) ) ( $card__x * ( $base__font-ratio * 1.5 ) );
+$card--md__padding:              ( $card__x * $base__font-ratio ) ( $card__x * $base__font-ratio );
+$card--sm__padding:              ( $card__x / $base__font-ratio ) ( $card__x / $base__font-ratio );
+$card--xs__padding:              ( $card__x / ( $base__font-ratio * 2 ) ) ( $card__x / $base__font-ratio );

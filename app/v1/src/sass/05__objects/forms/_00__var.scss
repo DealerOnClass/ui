@@ -1,0 +1,34 @@
+//
+//  Units
+$form__contrast:                   $global__contrast;
+$form__radius:                     $global__radius;
+$form__x:                          $global__x;
+$form__y:                          $global__y;
+//
+//  Color
+$form-feedback__default-palette:   false !default;
+$form-feedback__primary-palette:   false !default;
+$form-feedback__neutral-palette:   false !default;
+$form-feedback__state-palette:     true !default;
+//
+//  Components
+$form-control__bg:                 $white;
+$form-control__border:             $gray__02;
+$form-control__color:              $body__color;
+$form-control__padding:            $form__y $form__x;
+$form-control__radius:             $form__radius;
+$form-control--focus__border:      tint($state--info, 30%);
+//
+$form-feedback__use-icon:          true !default;
+$has-success__icon:                $fa-var-check;
+$has-warning__icon:                $fa-var-warning;
+$has-danger__icon:                 $fa-var-remove;
+//
+$input__color__placeholder:        $gray__04;
+$input__bg--disabled:              $gray__02;
+//
+//  Variations
+$form--lg__padding:                ( $form__y * ( $base__font-ratio * 1.5 ) ) ( $form__x * ( $base__font-ratio * 1.5 ) );
+$form--md__padding:                ( $form__y * $base__font-ratio ) ( $form__x * $base__font-ratio );
+$form--sm__padding:                ( $form__y / $base__font-ratio ) ( $form__x / $base__font-ratio );
+$form--xs__padding:                ( $form__y / ( $base__font-ratio * 2 ) ) ( $form__x / $base__font-ratio );

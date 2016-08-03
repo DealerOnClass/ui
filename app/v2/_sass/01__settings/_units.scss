@@ -1,0 +1,47 @@
+//
+//  Base Unit
+$global__unit:      1em;
+//
+//  Global Units
+$global__contrast:  10%;
+$global__flex:      true;
+$global__gutter:    ($global__unit * 0.75);
+$global__radius:    ($global__unit * 0.25);
+$global__x:         ($global__unit * 0.75);
+$global__y:         ($global__unit * 0.5);
+//
+//  Z-Index
+$zindex-navbar:              1000 !default;
+$zindex-dropdown:            1000 !default;
+$zindex-navbar-sidebar:      1020 !default;
+$zindex-object-copy:         1025 !default;
+$zindex-navbar-fixed:        1030 !default;
+$zindex-offcanvas-backdrop:  1032 !default;
+$zindex-offcanvas:           1035 !default;
+$zindex-modal-background:    1040 !default;
+$zindex-modal:               1050 !default;
+$zindex-popover:             1060 !default;
+$zindex-tooltip:             1070 !default;
+//
+//  Typography
+$global__font-ratio:   1.333;
+$global__font-size:    17;
+$global__line-height:  1.618;
+//
+//  Pixel Units
+$one__pixel:     1px;
+$two__pixels:    2px;
+$three__pixels:  3px;
+$five__pixels:   5px;
+$six__pixels:    6px;
+$nine__pixels:   9px;
+//
+//  Rhythm
+//  1.067      Minor Second
+//  1.125      Major Second
+//  1.200      Minor Third
+//  1.250      Major Third
+//  1.333      Perfect Fourth
+//  1.414      Augmented Fourth
+//  1.500      Perfect Fifth
+//  1.618      Golden Ratio

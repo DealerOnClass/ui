@@ -1,0 +1,30 @@
+//
+//  Units
+$breadcrumb__contrast:              $global__contrast;
+$breadcrumb__radius:                $global__radius;
+$breadcrumb__x:                     $global__x;
+$breadcrumb__y:                     $global__y;
+//
+//  Color
+$breadcrumb__default-palette:       true !default;
+$breadcrumb__inverse-palette:       true !default;
+$breadcrumb__primary-palette:       true !default;
+$breadcrumb__neutral-palette:       true !default;
+$breadcrumb__state-palette:         true !default;
+//
+//  Base
+$breadcrumb__padding:               $breadcrumb__y $breadcrumb__x;
+$breadcrumb__radius:                $breadcrumb__radius;
+//
+//  Components
+$breadcrumb__separator__use-icon:   true !default;
+$breadcrumb__separator__icon:       $fa-var-angle-right;
+$breadcrumb__separator__padding:    $breadcrumb__y ( $breadcrumb__x / 4 );
+//
+$breadcrumb__link--active__font:    $primary__font--bold;
+//
+//  Variations
+$breadcrumb--lg__padding:           ( $breadcrumb__y * ( $base__font-ratio * 1.5 ) ) ( $breadcrumb__x * ( $base__font-ratio * 1.5 ) );
+$breadcrumb--md__padding:           ( $breadcrumb__y * $base__font-ratio ) ( $breadcrumb__x * $base__font-ratio );
+$breadcrumb--sm__padding:           ( $breadcrumb__y / $base__font-ratio ) ( $breadcrumb__x / $base__font-ratio );
+$breadcrumb--xs__padding:           ( $breadcrumb__y / ( $base__font-ratio * 2 ) ) ( $breadcrumb__x / $base__font-ratio );

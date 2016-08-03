@@ -1,0 +1,10 @@
+.modal-content {
+    position: relative;
+
+    border-radius: $modal__radius;
+    outline: 0;
+    background-color: $modal-content__bg;
+    background-clip: padding-box;
+    box-shadow: $modal-content__shadow;
+}
+

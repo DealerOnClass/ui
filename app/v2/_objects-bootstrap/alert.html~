@@ -1,0 +1,49 @@
+---
+navgroup: "objects"
+navorder: 1
+navtitle: "alert"
+category: [objects]
+
+name: "alert"
+
+base-grid: false
+base-grid-col: col-md-6
+base-hide-code: false
+base: |
+    <div class="alert" role="alert">
+        <strong>Hello!</strong> I'm an alert, one day I'll mean something.
+    </div>
+
+variants-grid: false
+variants-grid-col: col-md-6
+variants-hide-code: true
+variants:
+    - id: dismissible
+      base: |
+          <div class="alert alert-dismissible" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">x</span>
+              </button>
+              <strong>Hello!</strong> I'm an alert, one day I'll mean something.
+          </div>
+
+    - id: chicken
+      base: |
+          <div class="alert alert-chicken" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">x</span>
+              </button>
+              <strong>Hello!</strong> I'm an alert, one day I'll mean something.
+          </div>
+
+theme: true
+theme-grid: true
+theme-grid-col: col-md-3
+theme-hide-code: true
+theme-base-use: true
+theme-base: |
+    <div class="alert" role="alert">
+        <strong>Hello!</strong> I'm an alert, one day I'll mean something.
+    </div>
+
+---

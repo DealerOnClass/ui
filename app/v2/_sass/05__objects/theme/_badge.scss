@@ -1,0 +1,54 @@
+//
+//  Var
+$badge__contrast:  $global__contrast;
+$badge__radius:    $global__radius;
+$badge__x:         ($global__x / 2);
+$badge__y:         ($global__y / 2);
+@if $output__global {
+    @if $output__badge {
+        //
+        //  Base
+        .badge {
+            line-height: 1;
+
+            display: inline-block;
+
+            padding: $badge__y $badge__x;
+
+            border: $one__pixel solid transparent;
+            border-radius: $badge__radius;
+            background-color: rgba(0, 0, 0, 0.15);
+
+            .btn &,
+            .list-group-item > &,
+            .nav & {
+                float: right;
+
+                margin-left: rhythm($global__x);
+            }
+        }
+        //
+        //  Variations
+        .badge-rounded {
+            border-radius: ($badge__y * 2) + $global__line-height;
+        }
+        //
+        //  Sizing
+        @if $output__global--sizes {
+            @if $output__badge--sizes {
+                @include badge-size-variation($badge__y, $badge__x, $default__sizing);
+            }
+        }
+        //
+        //  Colors
+        @if $output__global--theme {
+            @if $output__badge--theme {
+                @include badge-color-variation($default__palette);
+                @include badge-color-variation($inverse__palette);
+                @include badge-color-variation($primary__palette);
+                @include badge-color-variation($neutral__palette);
+                @include badge-color-variation($state__palette);
+            }
+        }
+    }
+}

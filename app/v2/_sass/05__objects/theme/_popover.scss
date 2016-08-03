@@ -1,0 +1,223 @@
+//
+//  Var
+$popover__contrast:            $global__contrast;
+$popover__radius:              $global__radius;
+$popover__x:                   $global__x;
+$popover__y:                   $global__y;
+$popover__max-width:           15em;
+$popover-arrow__offset:        $one__pixel;
+$popover-arrow--inner__color:  $white;
+$popover-arrow--inner__width:  10px;
+$popover-arrow--outer__color:  $body__color;
+$popover-arrow--outer__width:  $popover-arrow__inner__width + 1;
+@if $output__global {
+    @if $output__popover {
+        //
+        //  Base
+        .popover {
+            position: absolute;
+            z-index: $zindex-popover;
+            top: 0;
+            left: 0;
+
+            display: block;
+
+            max-width: $popover__max-width;
+
+            border-radius: $popover__radius;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
+            //
+            //  Popover above button
+            //  &.top,
+            //  &.popover-top,
+            &.bs-tether-element-attached-bottom {
+                margin-top: negative($popover-arrow--inner__width);
+
+                .popover-arrow {
+                    bottom: negative($popover-arrow--outer__width) + $popover-arrow__offset;
+                    left: 50%;
+
+                    margin-left: negative($popover-arrow--outer__width);
+
+                    border-top-color: $popover-arrow--outer__color;
+                    border-bottom-width: 0;
+
+                    &:after {
+                        bottom: $one__pixel;
+
+                        margin-left: negative($popover-arrow--inner__width);
+
+                        content: "";
+
+                        border-top-color: $popover-arrow--inner__color;
+                        border-bottom-width: 0;
+                    }
+                }
+            }
+
+            //
+            //  Popover to right of button
+            //  &.right,
+            //  &.popover-right,
+            &.bs-tether-element-attached-left {
+                margin-left: $popover-arrow--inner__width;
+
+                .popover-arrow {
+                    top: 50%;
+                    left: negative($popover-arrow--outer__width) + $popover-arrow__offset;
+
+                    margin-top: negative($popover-arrow--outer__width);
+
+                    border-right-color: $popover-arrow--outer__color;
+                    border-left-width: 0;
+
+                    &:after {
+                        bottom: negative($popover-arrow--inner__width);
+                        left: $one__pixel;
+
+                        content: "";
+
+                        border-right-color: $popover-arrow--inner__color;
+                        border-left-width: 0;
+                    }
+                }
+            }
+
+            //
+            //  Popover below button
+            //  &.bottom,
+            //  &.popover-bottom,
+            &.bs-tether-element-attached-top {
+                margin-top: $popover-arrow--inner__width;
+
+                .popover-arrow {
+                    top: negative($popover-arrow--outer__width) + $popover-arrow__offset;
+                    left: 50%;
+
+                    margin-left: negative($popover-arrow--outer__width);
+
+                    border-top-width: 0;
+                    border-bottom-color: $popover-arrow--outer__color;
+
+                    &:after {
+                        top: $one__pixel;
+
+                        margin-left: negative($popover-arrow--inner__width);
+
+                        content: "";
+
+                        border-top-width: 0;
+                        border-bottom-color: $popover-arrow--inner__color;
+                    }
+                }
+            }
+
+
+            //
+            //  Popover to left of button
+            //  &.left,
+            //  &.popover-left,
+            &.bs-tether-element-attached-right {
+                margin-left: negative($popover-arrow--inner__width);
+
+                .popover-arrow {
+                    top: 50%;
+                    right: negative($popover-arrow--outer__width) + $popover-arrow__offset;
+
+                    margin-top: negative($popover-arrow--outer__width);
+
+                    border-right-width: 0;
+                    border-left-color: $popover-arrow--outer__color;
+
+                    &:after {
+                        right: $one__pixel;
+                        bottom: negative($popover-arrow--inner__width);
+
+                        content: "";
+
+                        border-right-width: 0;
+                        border-left-color: $popover-arrow--inner__color;
+                    }
+                }
+            }
+        }
+
+        .popover-title {
+            margin: 0;
+            padding: $popover__y $popover__x;
+
+            border-top: $one__pixel solid;
+            border-right: $one__pixel solid;
+            border-left: $one__pixel solid;
+            border-radius: $panel__radius $panel__radius 0 0;
+            background-color: $gray__01;
+
+            .arrow + &:last-child,
+            .popover-arrow + &:last-child {
+                border-radius: 0 0 $panel__radius $panel__radius;
+                border: $one__pixel solid;
+            }
+        }
+
+        .popover-content {
+            padding: $popover__y $popover__x;
+
+            border-bottom: $one__pixel solid;
+            border-right: $one__pixel solid;
+            border-left: $one__pixel solid;
+
+            border-radius: 0 0 $panel__radius $panel__radius;
+            background-color: $white;
+
+            .arrow + &,
+            .popover-arrow + & {
+                border-radius: $panel__radius $panel__radius 0 0;
+            }
+        }
+
+        .popover-arrow {
+
+            &,
+            &:after {
+                position: absolute;
+
+                display: block;
+
+                width: 0;
+                height: 0;
+
+                border-style: solid;
+                border-color: transparent;
+            }
+        }
+
+        .popover-arrow {
+            border-width: $popover-arrow--outer__width;
+
+            &:after {
+                content: "";
+
+                border-width: $popover-arrow--inner__width;
+            }
+        }
+        //
+        //  Sizing
+        @if $output__global--sizes {
+            @if $output__popover--sizes {
+                @include popover-size-variation($popover__y, $popover__x, $default__sizing);
+            }
+        }
+        //
+        //  Colors
+        @if $output__global--theme {
+            @if $output__popover--theme {
+                @include popover-color-variation($default__palette);
+                @include popover-color-variation($inverse__palette);
+                @include popover-color-variation($primary__palette);
+                @include popover-color-variation($neutral__palette);
+                @include popover-color-variation($state__palette);
+            }
+        }
+    }
+}

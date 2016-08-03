@@ -1,0 +1,260 @@
+//
+//  Var
+$card__contrast:  $global__contrast;
+$card__radius:    $global__radius;
+$card__x:         $global__x;
+$card__y:         $global__y;
+@if $output__global {
+    @if $output__card {
+        //
+        //  Base
+        .card {
+            position: relative;
+            border-radius: $card__radius;
+
+            .card-header,
+            .card-img,
+            .card-block,
+            .card-footer {
+                position: relative;
+                border: $one__pixel solid;
+
+                &:first-child {
+                    border-radius: $card__radius $card__radius 0 0;
+                }
+
+                &:last-child {
+                    border-radius: 0 0 $card__radius $card__radius;
+                }
+
+                &:only-child {
+                    border: $one__pixel solid;
+                    border-radius: $card__radius;
+                }
+
+                &:not(:last-child) {
+                    border-bottom: 0;
+                }
+            }
+        }
+
+        .card-block {
+            padding: $card__x;
+
+            &.card {
+                border: $one__pixel solid;
+            }
+        }
+
+        .card-title {
+            //
+        }
+
+        .card-subtitle {
+            //
+        }
+
+        .card-text {
+            p,
+            &:last-child,
+            &:only-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .card-header {
+            padding: $card__x;
+        }
+
+        .card-footer {
+            padding: $card__x;
+        }
+
+        .card-blockquote {
+            //
+        }
+
+        .card-img {
+            display: block;
+            max-width: 100%;
+        }
+
+        .card-img-overlay-wrapper {
+            padding: 0;
+
+            .card-img {
+                border: 0;
+                border-radius: 0;
+            }
+        }
+
+        .card-img-overlay {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            padding: $card__y $card__x;
+
+            color: $white;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .card .list-group {
+            margin-bottom: 0;
+        }
+
+        .card .list-group-item {
+            padding-right: $card__x;
+            padding-left: $card__x;
+
+            &:first-child,
+            &:last-child {
+                border-radius: 0;
+            }
+
+            &:last-child {
+                border-bottom: 0 none;
+            }
+        }
+        //
+        //  Variations
+        @media (min-width: $screen-xs-min) {
+            .card-deck-wrapper {
+                margin: 0 negative($global__gutter);
+            }
+
+            .card-deck .card {
+                display: table-cell;
+
+                width: 1%;
+            }
+        }
+
+        .card-deck {
+            display: table;
+
+            width: 100%;
+
+            table-layout: fixed;
+            border-spacing: $global__gutter;
+        }
+
+        .card-deck .card {
+
+            vertical-align: top;
+
+            border: $one__pixel solid;
+
+            .card-header,
+            .card-img,
+            .card-block,
+            .card-footer {
+                border-right: 0 none !important;
+                border-left: 0 none !important;
+
+                &:first-child {
+                    border-top: 0 none;
+                }
+
+                &:last-child {
+                    border-bottom: 0 none;
+                }
+            }
+        }
+
+        .card-group {
+            display: table;
+
+            width: 100%;
+
+            table-layout: fixed;
+
+            border-right: $one__pixel solid;
+            border-radius: $card__radius;
+        }
+
+        .card-group .card {
+            display: table-cell;
+
+            vertical-align: top;
+
+            border-top: $one__pixel solid;
+            border-bottom: $one__pixel solid;
+            border-left: $one__pixel solid;
+            border-radius: 0;
+
+            .card-header,
+            .card-img,
+            .card-block,
+            .card-footer {
+                border-right: 0 none !important;
+                border-left: 0 none !important;
+
+                &:first-child {
+                    border-top: 0 none;
+                }
+
+                &:last-child {
+                    border-bottom: 0 none;
+                }
+            }
+
+            .card-img {
+                border-radius: 0;
+            }
+
+            &:first-child {
+                border-radius: $card__radius 0 0 $card__radius;
+
+                .card-img {
+                    border-top-left-radius: $card__radius;
+                }
+            }
+
+            &:last-child {
+                border-radius: 0 $card__radius $card__radius 0;
+
+                .card-img {
+                    border-top-right-radius: $card__radius;
+                }
+            }
+        }
+
+        @media (min-width: $screen-xs-min) {
+            .card-columns {
+                column-count: 3;
+                column-gap: $global__gutter;
+            }
+        }
+
+        .card-columns {
+
+            .card {
+                display: inline-block;
+
+                width: 100%; // Don't let them exceed the column width
+            }
+        }
+        //
+        //  Sizing
+        @if $output__global--sizes {
+            @if $output__card--sizes {
+                @include card-size-variation($card__y, $card__x, $default__sizing);
+            }
+        }
+        //
+        //  Colors
+        @if $output__global--theme {
+            @if $output__card--theme {
+                @include card-color-variation($default__palette);
+                @include card-color-variation($inverse__palette);
+                @include card-color-variation($primary__palette);
+                @include card-color-variation($neutral__palette);
+                @include card-color-variation($state__palette);
+                @include card-color-variation($classic__palette);
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+.table-bordered {
+    border: $one__true__pixel solid;
+
+    > thead,
+    > tbody,
+    > tfoot {
+        > tr {
+            > th,
+            > td {
+                &:not(:last-child) {
+                    border-right: $one__true__pixel solid;
+                }
+            }
+        }
+    }
+
+    > thead > tr {
+        > th,
+        > td {
+            border-bottom-width: $one__true__pixel;
+        }
+    }
+}

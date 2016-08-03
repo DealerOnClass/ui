@@ -1,0 +1,15 @@
+@if $dropdown-menu__default-palette {
+    @include dropdown-color-variation($default__palette);
+}
+@if $dropdown-menu__inverse-palette {
+    @include dropdown-color-variation($inverse__palette);
+}
+@if $dropdown-menu__primary-palette {
+    @include dropdown-color-variation($primary__palette);
+}
+@if $dropdown-menu__neutral-palette {
+    @include dropdown-color-variation($neutral__palette);
+}
+@if $dropdown-menu__state-palette {
+    @include dropdown-color-variation($state__palette);
+}

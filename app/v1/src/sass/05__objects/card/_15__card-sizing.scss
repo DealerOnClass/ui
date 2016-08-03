@@ -1,0 +1,31 @@
+.card-lg {
+    .card-header,
+    .card-block,
+    .card-footer {
+        padding: $card--lg__padding;
+    }
+}
+
+.card-md {
+    .card-header,
+    .card-block,
+    .card-footer {
+        padding: $card--md__padding;
+    }
+}
+
+.card-sm {
+    .card-header,
+    .card-block,
+    .card-footer {
+        padding: $card--sm__padding;
+    }
+}
+
+.card-xs {
+    .card-header,
+    .card-block,
+    .card-footer {
+        padding: $card--xs__padding;
+    }
+}

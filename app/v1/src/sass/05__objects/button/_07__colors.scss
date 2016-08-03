@@ -1,0 +1,15 @@
+@if $btn__default-palette {
+    @include btn-color-variation($default__palette);
+}
+@if $btn__inverse-palette {
+    @include btn-color-variation($inverse__palette);
+}
+@if $btn__primary-palette {
+    @include btn-color-variation($primary__palette);
+}
+@if $btn__neutral-palette {
+    @include btn-color-variation($neutral__palette);
+}
+@if $btn__state-palette {
+    @include btn-color-variation($state__palette);
+}

@@ -1,0 +1,74 @@
+//
+//  http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/
+//  Modified a bit
+//
+//  Convert to REM:
+//  Converts number input to rems!
+//  Uses the line height and base font size as a multiplier.
+//  Will output fallback in px
+//
+//  Usage:
+//  p {
+//      font-size: rem(1);
+//  }
+@function parseInt($n) {
+    @return $n / ($n * 0 + 1);
+}
+
+@mixin rhythm-rem($property, $values) {
+    $px : ();
+    $rem: ();
+
+    @each $value in $values {
+
+        @if $value == 0 or $value == auto {
+//            $px : append($px , $value);
+            $rem: append($rem, $value);
+        }
+
+        @else {
+            $unit: unit($value * $base__line-height);
+            $val: parseInt($value * $base__line-height);
+
+//            @if $unit == "px" {
+//                $px : append($px,  $value);
+//                $rem: append($rem, ($val / $raw__font-size + rem));
+//            }
+
+//            @if $unit == "rem" {
+                $px : append($px,  ($val * $raw__font-size + px));
+                $rem: append($rem, $value * $base__line-height + rem);
+//            }
+        }
+    }
+
+    #{$property}: $px;
+    #{$property}: $rem;
+    //    @if $px == $rem {
+    //        #{$property}: $px;
+    //    } @else {
+    //        #{$property}: $px;
+    //        #{$property}: $rem;
+    //    }
+}
+
+@mixin rhythm-actual-rem($property, $values) {
+    $px : ();
+    $rem: ();
+
+    @each $value in $values {
+
+        @if $value == 0 or $value == auto {
+            $rem: append($rem, $value);
+        }
+
+        @else {
+            $val: parseInt($value);
+                $px : append($px,  ($val * $raw__font-size + px));
+                $rem: append($rem, $value + rem);
+        }
+    }
+
+    #{$property}: $px;
+    #{$property}: $rem;
+}

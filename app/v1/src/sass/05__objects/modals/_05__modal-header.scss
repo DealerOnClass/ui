@@ -1,0 +1,17 @@
+.modal-header {
+    padding: $modal-header__padding;
+    position: relative;
+    z-index: 10;
+
+    .close {
+        line-height: 1;
+
+        position: absolute;
+        top: $modal__y / 2;
+        right: $modal__x / 3;
+
+        padding: $global__y;
+
+        border-radius: $modal__radius;
+    }
+}

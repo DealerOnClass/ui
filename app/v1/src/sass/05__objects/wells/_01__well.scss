@@ -1,0 +1,10 @@
+.well {
+    margin-bottom: $well__vertical-rhythm;
+    padding: $well__padding;
+
+    border: $one__pixel solid;
+    border-radius: $well__radius;
+
+    box-shadow: inset 0 $one__pixel $one__pixel rgba(0,0,0,0.05);
+}
+

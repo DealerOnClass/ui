@@ -1,0 +1,11 @@
+
+
+
+
+
+$base__font--regular:   'AvenirRegular';
+$base__font--semibold:  'AvenirMedium';
+$base__font--bold:      'AvenirHeavy';
+
+$body__font: $base__font--regular;
+$body__color: #333333;

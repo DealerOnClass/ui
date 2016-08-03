@@ -1,0 +1,26 @@
+.close {
+    @if $close__use-icon {
+        position: relative;
+
+        &:after {
+            font-family: $fa-font-name;
+
+            position: absolute;
+            top: $close__y;
+            right: calc(#{$close__x} - #{$one__true__pixel});
+
+            content: '#{$close__icon}';
+        }
+
+        > span {
+            visibility: hidden;
+        }
+    } @else {
+        font-family: $close__font;
+    }
+
+    @include state {
+        cursor: pointer;
+        text-decoration: none;
+    }
+}

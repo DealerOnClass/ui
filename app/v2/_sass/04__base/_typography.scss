@@ -1,0 +1,177 @@
+//
+//  Var
+$body__color: $inverse__color;
+$link__color: $primary__color;
+//
+//  Headings
+$h5__font-size: $global__unit;
+$h6__font-size: $h5__font-size / $global__font-ratio;
+$h7__font-size: $h6__font-size / $global__font-ratio;
+$h4__font-size: $h5__font-size * $global__font-ratio;
+$h3__font-size: $h4__font-size * $global__font-ratio;
+$h2__font-size: $h3__font-size * $global__font-ratio;
+$h1__font-size: $h2__font-size * $global__font-ratio;
+//
+//  Sizing
+$default__sizing: (
+    "xl":     decimal-ceil($h2__font-size),
+    "lg":     decimal-ceil($h3__font-size),
+    "md":     decimal-ceil($h4__font-size),
+    "sm":     decimal-ceil($h6__font-size),
+    "xs":     decimal-ceil($h7__font-size),
+) !default;
+//
+//  Fonts
+@include font($sans);
+@include font($icon);
+@include font($mono);
+//
+//  Base
+html {
+    font-size: ($global__font-size / 16) * 100%;
+
+    box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: "Avenir", serif;
+    line-height: $global__line-height;
+
+    color: $body__color;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: $h4__font-size;
+    font-weight: 500;
+}
+
+.h1 {
+    font-size: $h1__font-size;
+}
+
+.h2 {
+    font-size: $h2__font-size;
+}
+
+.h3 {
+    font-size: $h3__font-size;
+}
+
+.h4 {
+    font-size: $h4__font-size;
+}
+
+.h5 {
+    font-size: $h5__font-size;
+}
+
+.h6,
+.small,
+small {
+    font-size: $h6__font-size;
+}
+
+.lead {
+    //  essentially half-way between h4 and h5
+    font-size: (($h4__font-size - $h5__font-size) / 2) + $global__unit;
+}
+
+p,
+ul,
+ol {
+    margin-bottom: rhythm(1);
+}
+
+a {
+    text-decoration: none;
+
+    color: $link__color;
+}
+
+a,
+button {
+
+    &:active {
+        box-shadow: inset 0 $three__pixels $five__pixels rgba(0, 0, 0, 0.125);
+    }
+}
+
+[disabled] {
+    @include state-and-self {
+        cursor: not-allowed;
+
+        opacity: 0.65;
+        box-shadow: none;
+    }
+}
+
+strong,
+em {
+    font-weight: 700;
+}
+
+[type="submit"],
+[type="reset"],
+[type="button"],
+button {
+    font: inherit;
+    text-align: left;
+
+    overflow: visible;
+
+    box-sizing: inherit;
+    padding: 0;
+
+    user-select: none;
+
+    color: inherit;
+    border: 0;
+    background: none;
+
+    appearance: button;
+}
+
+dt {
+    font-weight: 600;
+}
+
+.dl-horizontal {
+    dd {
+        @include clearfix;
+    }
+
+    dt {
+        @include truncate(auto);
+
+        float: left;
+
+        width: rhythm(5);
+    }
+
+    dd {
+        margin-left: rhythm(5) + $global__gutter;
+    }
+}
+
+hr {
+    margin: ($global__y * 2) 0;
+
+    border: 0 none;
+    height: $one__pixel;
+    background-color: rgba(0,0,0,0.10);
+
+    &.divider {
+        margin: 0;
+    }
+}

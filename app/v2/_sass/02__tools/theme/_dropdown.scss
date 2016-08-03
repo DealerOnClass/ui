@@ -1,0 +1,63 @@
+@mixin dropdown-color-variation($input__palette) {
+    @each $class__name, $color in $input__palette {
+        @if $dropdown__use-btn__color {
+            .btn-#{$class__name} {
+                + .dropdown-menu {
+
+                    .dropdown-item {
+                        color: check-color($color, 80, inherit, $white);
+                        border-color: transparent;
+                        background-color: $color;
+
+                        @include state-and-active-and-open {
+                            background-color: shade($color, $btn__contrast);
+                        }
+
+                        &[disabled] {
+                            @include state-and-self {
+                                background-color: $color;
+                            }
+                        }
+                    }
+
+                }
+
+                .btn-group &.dropdown-toggle:nth-child(2n) + .dropdown-menu:after {
+                    border-bottom-color: shade($color, $btn__contrast * 1.5);
+                }
+
+                .dropup.open &.dropup-toggle:after {
+                    border-top-color: shade($color, $btn__contrast * 1.5);
+                }
+            }
+        }
+
+        .dropdown-#{$class__name} {
+
+            .dropdown-item {
+                color: check-color($color, 80, inherit, $white);
+                border-color: transparent;
+                background-color: $color;
+
+                @include state-and-active-and-open {
+                    background-color: shade($color, $btn__contrast);
+                }
+
+                &[disabled] {
+                    @include state-and-self {
+                        background-color: $color;
+                    }
+                }
+            }
+        }
+
+        .dropdown-toggle + .dropdown-menu-#{$class__name}:after {
+            border-bottom-color: shade($color, $btn__contrast * 1.5);
+        }
+
+        .dropup-toggle + .dropdown-menu-#{$class__name}:after {
+            border-bottom-color: shade($color, $btn__contrast * 1.5);
+        }
+    }
+}
+

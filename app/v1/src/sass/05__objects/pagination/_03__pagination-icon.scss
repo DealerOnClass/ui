@@ -1,0 +1,29 @@
+@if $pagination__use-icon {
+    .pagination li {
+
+        &:first-child > a:after,
+        &:last-child > a:after {
+            line-height: 1;
+            font-family: $fa-font-name;
+        }
+
+        &:first-child > a:after {
+            content: '#{$pagination__previous__icon}';
+        }
+
+        &:last-child > a:after {
+            content: '#{$pagination__next__icon}';
+        }
+    }
+} @else {
+    .pagination li {
+
+        &:first-child > a:after {
+            content: '\00AB';
+        }
+
+        &:last-child > a:after {
+            content: '\00BB';
+        }
+    }
+}

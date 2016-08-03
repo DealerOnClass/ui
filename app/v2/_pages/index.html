@@ -1,0 +1,40 @@
+---
+layout:     default
+title:      Home
+permalink:  /
+navgroup:   "main"
+navorder:   1
+---
+
+<div class="hero hero-md">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <h3>Purpose</h3>
+                <p>This website serves as a reference for the DealerOn UI Kit based on the Bootstrap(v4) Framework.</p>
+                <p>It is intended to be used for the design and development of DealerOn web entities.</p>
+                <p>It should EXTEND Bootstrap and be compatible with existing sites on older versions of Bootstrap.</p>
+            </div>
+            <div class="col-sm-8">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h3>Mockups</h3>
+                        <ul>
+                            {% for mockup in site.mockups %}
+                            <li><a href="{{ mockup.url | prepend: site.baseurl }}">{{ mockup.title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="col-sm-6">
+                        <h3>UI Components</h3>
+                        <ul>
+                            {% for object in site.objects-bootstrap %}
+                            <li><a class="text-capitalize" href="{{ object.url | prepend: site.baseurl }}">{{ object.navtitle }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

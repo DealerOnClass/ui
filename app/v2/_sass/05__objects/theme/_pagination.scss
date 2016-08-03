@@ -1,0 +1,99 @@
+//
+//  Var
+$pagination__contrast:        $global__contrast;
+$pagination__radius:          $global__radius;
+$pagination__x:               $global__x;
+$pagination__y:               $global__y;
+$pagination__use-icon:        true !default;
+$pagination__next__icon:      $fa-var-angle-right;
+$pagination__previous__icon:  $fa-var-angle-left;
+@if $output__global {
+    @if $output__pagination {
+        //
+        //  Base
+        .pagination {
+            display: flex;
+        }
+
+        .pagination-item {
+            display: inline-block;
+            margin-left: negative($one__pixel);
+            padding: $pagination__y $pagination__x;
+
+            border: $one__pixel solid;
+
+            &.active {
+                @include state-and-self {
+                    z-index: 2;
+                    color: $white;
+                    border-color: transparent;
+                    background-color: $primary__color;
+                }
+            }
+
+            &:first-child {
+                border-radius: $pagination__radius 0 0 $pagination__radius;
+            }
+
+            &:last-child {
+                border-radius: 0 $pagination__radius $pagination__radius 0;
+            }
+
+            @if $pagination__use-icon {
+                &:first-child:after,
+                &:last-child:after {
+                    font-family: $fa-font-name;
+                }
+
+                &:first-child:after {
+                    content: "#{$pagination__previous__icon}";
+                }
+
+                &:last-child:after {
+                    content: "#{$pagination__next__icon}";
+                }
+            } @else {
+                &:first-child:after {
+                    content: "\00AB";
+                }
+
+                &:last-child:after {
+                    content: "\00BB";
+                }
+            }
+        }
+        //
+        //  Variations
+        .pagination-rounded {
+            $y: (($pagination__y * 2) + $global__unit);
+
+            .pagination-item:first-child {
+                padding-left: ($pagination__x * 1.25);
+                border-radius: $y 0 0 $y;
+            }
+
+            .pagination-item:last-child {
+                padding-right: ($pagination__x * 1.25);
+                border-radius: 0 $y $y 0;
+            }
+        }
+        //
+        //  Sizing
+        @if $output__global--sizes {
+            @if $output__pagination--sizes {
+                @include pagination-size-variation($pagination__y, $pagination__x, $default__sizing);
+            }
+        }
+        //
+        //  Colors
+        @if $output__global--theme {
+            @if $output__pagination--theme {
+                @include pagination-color-variation($default__palette);
+                @include pagination-color-variation($inverse__palette);
+                @include pagination-color-variation($primary__palette);
+                @include pagination-color-variation($neutral__palette);
+                @include pagination-color-variation($state__palette);
+            }
+        }
+    }
+}

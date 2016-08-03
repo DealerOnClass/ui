@@ -1,0 +1,15 @@
+@if $hero__default-palette {
+    @include hero-color-variation($default__palette);
+}
+@if $hero__inverse-palette {
+    @include hero-color-variation($inverse__palette);
+}
+@if $hero__primary-palette {
+    @include hero-color-variation($primary__palette);
+}
+@if $hero__neutral-palette {
+    @include hero-color-variation($neutral__palette);
+}
+@if $hero__state-palette {
+    @include hero-color-variation($state__palette);
+}

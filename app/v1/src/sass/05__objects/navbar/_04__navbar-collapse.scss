@@ -1,0 +1,28 @@
+.navbar-collapse {
+
+    -webkit-overflow-scrolling: touch;
+
+    &.in {
+        overflow-y: auto;
+    }
+
+    @media (min-width: $grid-float-breakpoint) {
+        width: auto;
+
+        &.collapse {
+            display: block !important;
+            overflow: visible !important;
+
+            height: auto !important;
+        }
+
+        &.in {
+            overflow-y: visible;
+        }
+    }
+
+    .dropdown-menu {
+        border-right: 0 none;
+        border-left: 0 none;
+    }
+}

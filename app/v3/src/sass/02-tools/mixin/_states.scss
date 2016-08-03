@@ -1,0 +1,37 @@
+/*
+ * Base
+ */
+@mixin state($color, $background, $contrast) {
+	@if ($color != 'inherit') {
+		color: $color;
+	}
+	background-color: shade($background, $contrast);
+}
+/*
+ * Variations
+ */
+@mixin state--hover($color, $background,  $contrast: 1) {
+    &:hover {
+		@include state($color, $background, $contrast);
+    }
+}
+@mixin state--focus($color, $background,  $contrast: 1) {
+    &:focus {
+		@include state($color, $background, $contrast);
+    }
+}
+@mixin state--active($color, $background,  $contrast: 1) {
+    &:active {
+		@include state($color, $background, $contrast);
+    }
+}
+@mixin state--class($class, $color, $background,  $contrast: 1) {
+    &.#{$class} {
+		@include state($color, $background, $contrast);
+    }
+}
+@mixin state--attr($attr, $color, $background,  $contrast: 1) {
+    &[#{$attr}] {
+		@include state($color, $background, $contrast);
+    }
+}

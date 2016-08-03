@@ -1,0 +1,121 @@
+---
+navgroup: "objects"
+navorder: 1
+navtitle: "input group"
+category: [objects]
+
+name: "input-group"
+
+base-grid: false
+base-grid-col: col-md-6
+base-hide-code: true
+base: |
+    <form>
+        <div class="input-group">
+            <span class="input-group-item input-group-addon" id="basic-addon1">@</span>
+            <input class="input-group-item form-control" placeholder="Username" aria-describedby="basic-addon1" type="text">
+        </div>
+    </form>
+
+variant: true
+variants-grid: false
+variants-grid-col: col-md-6
+variants-hide-code: true
+variants:
+    - name: addon
+      base: |
+          <form>
+              <div class="input-group">
+                  <span class="input-group-item input-group-addon" id="basic-addon1">
+                      <i class="fa fa-home"></i>
+                  </span>
+                  <input class="input-group-item form-control" placeholder="Username" aria-describedby="basic-addon1" type="text">
+              </div>
+          </form>
+
+    - name: string
+      base: |
+          <form>
+              <div class="input-group">
+                  <input class="input-group-item form-control" placeholder="Username" aria-describedby="basic-addon1" type="text">
+                  <span class="input-group-item input-group-addon" id="basic-addon1">Somestring</span>
+              </div>
+          </form>
+
+    - name: button
+      base: |
+          <form>
+              <div class="input-group">
+                  <a class="input-group-item input-group-addon btn" href="#">Button</a>
+                  <input class="input-group-item form-control" placeholder="Username" aria-describedby="basic-addon1" type="text">
+              </div>
+          </form>
+
+    - name: dropdown
+      base: |
+          <form>
+              <div class="input-group">
+                  <div class="input-group-item input-group-addon dropdown">
+                      <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Dropdown
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                      </div>
+                  </div>
+                  <input class="input-group-item form-control" placeholder="Username" aria-describedby="basic-addon1" type="text">
+              </div>
+          </form>
+
+    - name: checkbox
+      base: |
+          <form>
+              <div class="input-group">
+                  <span class="input-group-item input-group-addon" id="basic-addon1">
+                      <input type="checkbox">
+                  </span>
+                  <input class="input-group-item form-control" placeholder="Username" aria-describedby="basic-addon1" type="text">
+              </div>
+          </form>
+
+    - name: radio
+      base: |
+          <form>
+              <div class="input-group">
+                  <span class="input-group-item input-group-addon" id="basic-addon1">
+                      <input type="radio">
+                  </span>
+                  <input class="input-group-item form-control" placeholder="Username" aria-describedby="basic-addon1" type="text">
+              </div>
+          </form>
+
+size: true
+size-grid: false
+size-grid-col: col-md-3
+size-hide-code: true
+size-base-use: true
+size-base: |
+    <form>
+        <div class="input-group">
+            <span class="input-group-item input-group-addon" id="basic-addon1">@</span>
+            <input class="input-group-item form-control" placeholder="Username" aria-describedby="basic-addon1" type="text">
+        </div>
+    </form>
+
+theme: true
+theme-grid: true
+theme-grid-col: col-md-3
+theme-hide-code: true
+theme-base-use: true
+theme-base: |
+    <form>
+        <div class="input-group">
+            <span class="input-group-item input-group-addon" id="basic-addon1">@</span>
+            <input class="input-group-item form-control" placeholder="Username" aria-describedby="basic-addon1" type="text">
+        </div>
+    </form>
+
+---
+

@@ -1,0 +1,24 @@
+.breadcrumb > li > a {
+    display: block;
+
+    padding: $breadcrumb__padding;
+
+    &:after {
+        margin-left: $breadcrumb__x;
+
+        @if $breadcrumb__separator__use-icon {
+            font: normal normal normal #{$fa-font-size-base}/#{$fa-line-height-base} $fa-font-name; // shortening font declaration
+
+            content: '#{$breadcrumb__separator__icon}';
+        } @else {
+            content: '/';
+        }
+    }
+}
+
+.breadcrumb > li:last-child > a {
+
+    &:after {
+        display: none;
+    }
+}

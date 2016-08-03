@@ -1,0 +1,15 @@
+.pagination-rounded {
+    border-radius: ($pagination__y * 2) + $base__font-unit;
+
+    > li:first-child > a {
+        padding-left: ($pagination__x * 1.25);
+        border-bottom-left-radius: ($pagination__y * 2) + $base__font-unit;
+        border-top-left-radius: ($pagination__y * 2) + $base__font-unit;
+    }
+
+    >li:last-child > a {
+        padding-right: ($pagination__x * 1.25);
+        border-bottom-right-radius: ($pagination__y * 2) + $base__font-unit;
+        border-top-right-radius: ($pagination__y * 2) + $base__font-unit;
+    }
+}

@@ -1,0 +1,25 @@
+/*
+ * Units
+ */
+$blockquote-c: $g-c;
+$blockquote-r: $g-r;
+$blockquote-x: $g-x;
+$blockquote-y: $g-y;
+/*
+ * Colors
+ */
+$blockquote-border: transparent;
+$blockquote-bg: $default__color;
+/*
+ * Base
+ */
+.blockquote {
+    position: relative;
+    padding: $blockquote-y ($blockquote-x * 2);
+    border-left: 4px solid $blockquote-bg;
+}
+.blockquote-reversed {
+    text-align: right;
+    border-right: 4px solid $blockquote-bg;
+    border-left: 0 none;
+}

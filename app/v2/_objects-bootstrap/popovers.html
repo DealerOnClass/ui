@@ -1,0 +1,113 @@
+---
+navgroup: "objects"
+navorder: 1
+navtitle: "popovers"
+category: [objects]
+
+name: "popover"
+
+base-grid: false
+base-grid-col: col-md-6
+base-hide-code: true
+base: |
+    <div class="popover top">
+        <div class="popover-arrow"></div>
+        <div class="popover-title">
+            <h5 id="popover-top">Popover Title
+                <a href="#popover-top">
+                    <span class="anchorjs-icon"></span>
+                </a>
+            </h5>
+        </div>
+        <div class="popover-content">
+            Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+        </div>
+    </div>
+
+variant: true
+variants-grid: false
+variants-grid-col: col-md-6
+variants-hide-code: true
+variants:
+    - name: top
+      base: |
+          <button data-original-title="Popover title" type="button" class="btn" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+              Popover on top
+          </button>
+
+
+    - name: left
+      base: |
+          <button data-original-title="Popover title" type="button" class="btn" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+              Popover on left
+          </button>
+
+    - name: right
+      base: |
+          <button data-original-title="Popover title" type="button" class="btn" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+              Popover on right
+          </button>
+
+    - name: bottom
+      base: |
+          <button data-original-title="Popover title" type="button" class="btn" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+              Popover on bottom
+          </button>
+
+    - name: data-size
+      base: |
+          <button data-original-title="Popover title" type="button" class="btn" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-size="lg">
+              Popover using 'data-size'
+          </button>
+
+    - name: data-style
+      base: |
+          <button data-original-title="Popover title" type="button" class="btn" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-style="main">
+              Popover using 'data-style'
+          </button>
+
+
+size: true
+size-grid: false
+size-grid-col: col-md-3
+size-hide-code: true
+size-base-use: true
+size-base: |
+    <div class="popover top">
+        <div class="popover-arrow"></div>
+        <div class="popover-title">
+            <h5 id="popover-top">Popover Title
+                <a href="#popover-top">
+                    <span class="anchorjs-icon"></span>
+                </a>
+            </h5>
+        </div>
+        <div class="popover-content">
+            Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+        </div>
+    </div>
+
+
+
+theme: true
+theme-grid: true
+theme-grid-col: col-md-3
+theme-hide-code: true
+theme-base-use: true
+theme-base: |
+    <div class="popover top">
+        <div class="popover-arrow"></div>
+        <div class="popover-title">
+            <h5 id="popover-top">Popover Title
+                <a href="#popover-top">
+                    <span class="anchorjs-icon"></span>
+                </a>
+            </h5>
+        </div>
+        <div class="popover-content">
+            Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+        </div>
+    </div>
+
+
+---

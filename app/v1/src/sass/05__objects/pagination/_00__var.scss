@@ -1,0 +1,25 @@
+//
+//  Units
+$pagination__contrast:              $global__contrast;
+$pagination__radius:                $global__radius;
+$pagination__x:                     $global__x;
+$pagination__y:                     $global__y;
+//
+//  Color
+$pagination__default-palette:       true !default;
+$pagination__inverse-palette:       true !default;
+$pagination__primary-palette:       true !default;
+$pagination__neutral-palette:       true !default;
+$pagination__state-palette:         true !default;
+//
+//  Base
+$pagination__padding:               $pagination__y $pagination__x;
+$pagination__radius:                $pagination__radius;
+//
+//  Components
+$pagination__link--active__color:   white;
+$pagination__link--active__bg:      $primary__color;
+//
+$pagination__use-icon:              true !default;
+$pagination__next__icon:            $fa-var-angle-right;
+$pagination__previous__icon:        $fa-var-angle-left;

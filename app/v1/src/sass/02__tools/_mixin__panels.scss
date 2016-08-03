@@ -1,0 +1,37 @@
+@mixin panel-color-variation($input__palette) {
+    @each $class__name, $color in $input__palette {
+        .panel-#{$class__name} {
+
+            .panel-heading {
+                color: check-color($color, 80, inherit, $white);
+                border-color: check-color($color, 80, shade($color, $panel__contrast), $color);
+                background-color: $color;
+            }
+
+            .panel-heading.btn {
+                @include state {
+                    @extend %panel-active-item;
+                }
+            }
+
+            .panel-heading.current {
+                @extend %panel-active-item;
+            }
+
+            %panel-active-item {
+                border-color: shade($color, $panel__contrast);
+                background-color: shade($color, $panel__contrast);
+            }
+
+            .panel-body,
+            .panel-footer {
+                border-color: $gray__02;
+            }
+
+            &.panel-wizard:before {
+                color: shade($color, $panel__contrast * 1.5);
+            }
+        }
+    }
+}
+

@@ -1,0 +1,21 @@
+@if $text__default-palette {
+    @include text-color-variation($default__palette);
+}
+@if $text__inverse-palette {
+    @include text-color-variation($inverse__palette);
+}
+@if $text__primary-palette {
+    @include text-color-variation($primary__palette);
+}
+@if $text__neutral-palette {
+    @include text-color-variation($neutral__palette);
+}
+@if $text__state-palette {
+    @include text-color-variation($state__palette);
+}
+@if $text__opacity-palette {
+    @include text-color-variation($opacity__palette);
+}
+.text-muted {
+    opacity: .5;
+}

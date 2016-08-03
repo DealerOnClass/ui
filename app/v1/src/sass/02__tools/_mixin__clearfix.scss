@@ -1,0 +1,15 @@
+//
+//  Clearfix
+//  Prevent floated items from creeping up
+//
+//  Usage:
+//  .col-xs-6 {
+//      @include clearfix;
+//  }
+@mixin clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}

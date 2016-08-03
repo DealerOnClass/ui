@@ -1,0 +1,30 @@
+//
+//  Var
+$caret__contrast:  $global__contrast;
+$caret__radius:    $global__radius;
+$caret__x:         $global__x;
+$caret__y:         $global__y;
+$caret__size:      3px;
+@if $output__global {
+    @if $output__caret {
+        //
+        //  Base
+        .caret {
+            line-height: 1;
+
+            position: relative;
+
+            display: inline-block;
+
+            &:after {
+                @include caret(top, $caret__size, 0);
+
+                position: absolute;
+
+                display: block;
+
+                content: "";
+            }
+        }
+    }
+}

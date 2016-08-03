@@ -1,0 +1,20 @@
+.display-1,
+.display-2,
+.display-3,
+.display-4 {
+    font-family: $display__font;
+    word-break: break-all;
+}
+
+.display-1 {
+    font-size: $display1__font-size;
+}
+.display-2 {
+    font-size: $display2__font-size;
+}
+.display-3 {
+    font-size: $display3__font-size;
+}
+.display-4 {
+    font-size: $display4__font-size;
+}

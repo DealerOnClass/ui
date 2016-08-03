@@ -1,0 +1,13 @@
+@if $form-feedback__default-palette {
+    @include form-feedback-color-variation($default__palette);
+}
+@if $form-feedback__primary-palette {
+    @include form-feedback-color-variation($primary__palette);
+}
+@if $form-feedback__neutral-palette {
+    @include form-feedback-color-variation($neutral__palette);
+}
+@if $form-feedback__state-palette {
+    @include form-feedback-color-variation($state__palette);
+}
+

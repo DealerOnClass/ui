@@ -1,0 +1,9 @@
+.thumbnail {
+    display: block;
+
+    padding: $thumbnail__padding;
+
+    border: $one__pixel solid;
+    border-radius: $thumbnail__radius;
+}
+

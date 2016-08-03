@@ -1,0 +1,113 @@
+.clearfix {
+    @include clearfix;
+}
+.center-block {
+    @include center-block;
+}
+.pull-right {
+    float: right !important;
+}
+.pull-left {
+    float: left !important;
+}
+
+// Toggling content
+// -------------------------
+// Note: Deprecated .hide in favor of .hidden or .sr-only (as appropriate) in v3.0.1
+.hide {
+    display: none !important;
+}
+.show {
+    display: block !important;
+}
+.invisible {
+    visibility: hidden;
+}
+.text-hide {
+    @include text-hide;
+}
+
+// Hide from screenreaders and browsers
+//
+// Credit: HTML5 Boilerplate
+.hidden {
+    display: none !important;
+}
+
+// For Affix plugin
+// -------------------------
+.affix {
+    position: fixed;
+}
+
+// For Magical Table
+// -------------------------
+.table-magic-wrapper {
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    padding-left: 29px;
+
+    @media ( max-width: $offcanvas-breakpoint-max ) {
+        display: none;
+    }
+
+    .table {
+        margin: 0;
+    }
+
+    .table th {
+        transition: width .15s ease-in-out;
+    }
+}
+
+// Raw
+// -------------------------
+.raw {
+    padding: 0;
+
+    border: 0 none;
+    border-radius: 0;
+}
+// Wire
+// -------------------------
+@if $global__wire {
+    .wire {
+
+        &,
+        & * {
+            color: $global__wire__fg;
+            fill: $global__wire__fg;
+            border-color: $global__wire__fg;
+            background-color: $global__wire__bg;
+        }
+    }
+}
+// Extend
+// -------------------------
+.margin-x {
+    margin: 0 !important;
+}
+
+.margin-vert_5x {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.margin-vert-1x {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.border-x {
+    border: 0 !important;
+}
+// Truncate
+// -------------------------
+.truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

@@ -1,0 +1,6 @@
+.sortable-ghost {
+    &.btn {
+        border-color: $sortable-ghost__border;
+        background-color: $sortable-ghost__bg;
+    }
+}

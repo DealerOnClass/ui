@@ -1,0 +1,25 @@
+ul,
+ol {
+    list-style-position: inside;
+
+    ul,
+    ol {
+        padding-left: $list__padding;
+    }
+}
+
+.list-unstyled {
+    @extend %list-unstyled;
+}
+
+.list-inline > li {
+    display: inline-block;
+
+    @extend %list-unstyled;
+}
+
+%list-unstyled {
+    padding-left: 0;
+
+    list-style: none;
+}

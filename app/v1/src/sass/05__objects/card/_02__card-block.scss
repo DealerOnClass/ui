@@ -1,0 +1,9 @@
+.card-block {
+    padding: $card-block__padding;
+
+    box-sizing: border-box;
+
+    &.card {
+        border: $one__true__pixel solid;
+    }
+}

@@ -1,0 +1,10 @@
+.dropdown-header {
+    font-family: $dropdown-header__font;
+
+    display: block;
+
+    padding: $dropdown-menu__link__padding;
+
+    white-space: nowrap;
+    text-transform: capitalize;
+}

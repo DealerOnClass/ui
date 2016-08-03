@@ -1,0 +1,154 @@
+/*
+ * Vdp Price Drop
+ */
+(function(){
+	var _priceDrop     = document.querySelector(".js-vdp-sidebar-notifications-pricedrop");
+	var _priceDropLink = document.querySelector(".js-vdp-sidebar-notifications-pricedrop-link");
+	var _delay         = 2000;
+	var _isVisible	   = true;
+
+	_priceDropLink.addEventListener('click', function(event){
+		event.preventDefault();
+		SlideToggle();
+	});
+
+	setTimeout(function() { SlideToggle(); }, _delay);
+
+	function SlideDown() {
+		_priceDrop.classList.add("down");
+		_isVisible = false;
+	}
+
+	function SlideUp() {
+		_priceDrop.classList.remove("down");
+		_isVisible = true;
+	}
+
+	function SlideToggle() {
+		if (_isVisible) {
+			SlideDown();
+		} else {
+			SlideUp();
+		}
+	}
+})();
+/*
+ * Vdp Carousel
+ */
+(function(){
+	var $carousel                  = $(".js-vdp-carousel");
+	var _carousel                  = document.querySelector(".js-vdp-carousel");
+	var _carouselLeft              = document.querySelector(".js-control-left");
+	var _carouselRight             = document.querySelector(".js-control-right");
+	var _scrollSpeed               = 500;
+	var _scrollVisibilityThreshold = 400;
+	//	// - testing offset start
+	//	var _vdpBodyContainer = document.querySelector(".js-vdp-body-container");
+	//	var _isOffset		  = true;
+	//	var offset		      = 0;
+	//	window.addEventListener('load', OffsetControl);
+	//	window.addEventListener('resize', OffsetControl);
+	//	// - testing offset end
+	var curXPos = 0,
+		curDown = false;
+
+	_carousel.addEventListener('scroll', FadeControl);
+	_carousel.addEventListener('mousemove', MouseMove);
+	_carousel.addEventListener('mousedown', MouseDown);
+	_carousel.addEventListener('mouseup', MouseUp);
+	_carouselLeft.addEventListener('click', ScrollLeft);
+	_carouselRight.addEventListener('click', ScrollRight);
+
+	_carouselLeft.style.opacity = 0;
+
+	function ScrollLeft(evt) {
+		evt.preventDefault();
+		$carousel.animate({
+			scrollLeft: '-=500'
+		}, _scrollSpeed);
+	}
+
+	function ScrollRight(evt) {
+		evt.preventDefault();
+		//	if(_isOffset == false) {
+			$carousel.animate({
+				scrollLeft: '+=500'
+			}, _scrollSpeed);
+		//		_isOffset = true;
+		//	}
+		//	// - testing offset start
+		//	if(_isOffset) {
+		//		$carousel.animate({
+		//			transform: "translate3d(+=500px,0,0)"
+		//		}, _scrollSpeed);
+		//		_carousel.style.transform = "translate3d(0,0,0)";
+		//		_isOffset = false;
+		//	};
+		//	// - testing offset end
+	}
+
+	function MouseMove(evt) {
+		evt.preventDefault();
+		if(curDown === true) {
+			//	console.log("Current X: " + curXPos);
+			//	console.log("Evt X: " + evt.pageX);
+			var difference = curXPos - evt.pageX;
+			_carousel.scrollLeft = _carousel.scrollLeft + (difference - curXPos);
+			//	console.log("difference: " + difference);
+			//	if(curXPos <= evt.pageX) {
+			//		console.log("rice");
+			//	} else {
+			//		console.log("beef");
+			//		_carousel.scrollLeft = (curXPos - evt.pageX);
+			//	}
+		}
+	}
+
+	function MouseDown(evt) {
+		evt.preventDefault();
+		curXPos = evt.pageX;
+		curDown = true;
+	}
+
+	function MouseUp(evt) {
+		evt.preventDefault();
+		curDown = false;
+	}
+
+	function FadeControl() {
+		if(_carousel.scrollLeft < _scrollVisibilityThreshold) {
+			_carouselLeft.style.opacity = Normalize(_carousel.scrollLeft,0,_scrollVisibilityThreshold,0,1);
+		}
+		//	// - testing offset start
+		//	if(_carousel.scrollLeft == 0) {
+		//		offset = _vdpBodyContainer.offsetLeft + 15 + "px";
+		//		_carousel.style.transform = "translate3d(" + offset + ",0,0)";
+		//	}
+		//	// - testing offset end
+	}
+
+	//	// - testing offset start
+	//	function OffsetControl() {
+ 	//		offset = _vdpBodyContainer.offsetLeft + 15 + "px";
+	//		_carousel.style.transform = "translate3d(" + offset + ",0,0)";
+	//		_isOffset = true;
+	//	}
+	//	// - testing offset end
+
+	function Normalize(oldValue,oldMin, oldMax, newMin, newMax) {
+		//	http://stackoverflow.com/questions/5731863/mapping-a-numeric-range-onto-another
+
+		var _oldMin   = oldMin;
+		var _oldMax   = oldMax;
+		var _oldRange = _oldMax - _oldMin;
+		var _oldValue = oldValue; //
+
+		var _newMin   = 0;
+		var _newMax   = 1;
+		var _newRange = _newMax - _newMin;
+		var _newValue = ((_oldValue - _oldMin) * _newRange / _oldRange) + _newMin;
+
+		return _newValue;
+	}
+
+})();

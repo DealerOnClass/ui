@@ -1,0 +1,13 @@
+hr {
+    margin-top: $global__y * 2;
+    margin-bottom: $global__y * 2;
+
+    border-top: $one__true__pixel solid rgba(0,0,0,0.20);
+    border-right: 0 none;
+    border-bottom: 0 none;
+    border-left: 0 none;
+
+    &.divider {
+        margin: 0;
+    }
+}

@@ -1,0 +1,21 @@
+.navbar-profile {
+    position: relative;
+
+    height: rhythm(1);
+    width: $navbar-profile-img;
+}
+
+.navbar-profile-img {
+    position: absolute;
+    border-radius: 50%;
+    height: $navbar-profile-img;
+    width: $navbar-profile-img;
+    top: 50%;
+    margin-top: $navbar-profile-img / -2;
+}
+
+.navbar-profile-navicon {
+    float: left;
+    margin-right: $navbar__x;
+}
+

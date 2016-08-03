@@ -1,0 +1,28 @@
+.arrow,
+.popover-arrow {
+
+    &,
+    &:after {
+        position: absolute;
+
+        display: block;
+
+        width: 0;
+        height: 0;
+
+        border-style: solid;
+        border-color: transparent;
+    }
+}
+
+.arrow,
+.popover-arrow {
+    border-width: $popover-arrow--outer__width;
+
+    &:after {
+        content: '';
+
+        border-width: $popover-arrow--inner__width;
+    }
+}
+

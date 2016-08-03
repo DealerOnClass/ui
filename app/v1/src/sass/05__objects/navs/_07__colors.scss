@@ -1,0 +1,16 @@
+@if $nav__default-palette {
+    @include nav-color-variation($default__palette);
+}
+@if $nav__inverse-palette {
+    @include nav-color-variation($inverse__palette);
+}
+@if $nav__primary-palette {
+    @include nav-color-variation($primary__palette);
+}
+@if $nav__neutral-palette {
+    @include nav-color-variation($neutral__palette);
+}
+@if $nav__state-palette {
+    @include nav-color-variation($state__palette);
+}
+

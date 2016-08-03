@@ -1,0 +1,12 @@
+.nav-stacked {
+
+    > li {
+        float: none;
+    }
+
+    > li + li {
+        margin-top: $two__true__pixels;
+        margin-left: 0;
+    }
+}
+

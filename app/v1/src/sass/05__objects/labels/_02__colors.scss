@@ -1,0 +1,15 @@
+@if $label__default-palette {
+    @include label-color-variation($default__palette);
+}
+@if $label__inverse-palette {
+    @include label-color-variation($inverse__palette);
+}
+@if $label__primary-palette {
+    @include label-color-variation($primary__palette);
+}
+@if $label__neutral-palette {
+    @include label-color-variation($neutral__palette);
+}
+@if $label__state-palette {
+    @include label-color-variation($state__palette);
+}

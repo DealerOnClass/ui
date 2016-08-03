@@ -1,0 +1,30 @@
+.nav-flush {
+
+    > li {
+
+        > a {
+            border-color: transparent;
+            border-radius: 0;
+        }
+
+        //  &:first-child > a {
+        //      border-top-left-radius: $nav__radius;
+        //  }
+
+        //  &:last-child > a {
+        //      border-top-right-radius: $nav__radius;
+        //  }
+
+        + li {
+            margin-left: $one__true__pixel * -1;
+        }
+    }
+
+    &.nav-justified {
+        border-spacing: 0;
+
+        > li {
+            top: 0;
+        }
+    }
+}

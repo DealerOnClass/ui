@@ -1,0 +1,230 @@
+/*
+ * Imports
+ */
+/*
+ * Imports
+ */
+/*
+ * Breakpoints
+ * $m-mobile:   $media-mobile:   544px;
+ * $m-tablet:   $media-tablet:   768px;
+ * $m-desktop:  $media-desktop:  992px;
+ * $m-large:    $media-large:    1200px;
+ */
+/*
+ * GrayScale
+ */
+/*
+ * Colors
+ */
+/*
+ * States
+ */
+/*
+ * Colors
+ */
+/*
+ * Icon
+ */
+/*
+ * Sans Serif
+ */
+/*
+ * 00 Global Output
+ * $o-a-c:  $output-all-components:  true;
+ * $o-a-t:  $output-all-themes:      true;
+ */
+/*
+ * 03 Base Output
+ */
+/*
+ * 04 Base Output
+ */
+/*
+ * 05 Object Output
+ */
+/*
+ * 06 Utilities Output
+ */
+/*
+ * Root
+ */
+/*
+ * Assets
+ */
+/*
+ * Ratios
+ */
+/*
+ * Global Unit
+ * $g-u:  $global-unit:        1rem;
+ * $g-m:  $global-multiplier:  1;
+ */
+/*
+ * Global Unit Abstracts
+ * $g-c:  $global-contrast:        (10% * $g-m);
+ * $g-g:  $global-gutter:          ($g-u * $g-m);
+ * $g-r:  $global-radius:          (($g-u * 0.30) * $g-m);
+ * $g-x:  $global-leftandorright:  (($g-u * 0.75) * $g-m);
+ * $g-y:  $global-topandorbottom:  (($g-u * 0.50) * $g-m);
+ */
+/*
+ * Typography
+ * $t-u:   $type-unit:        1em;
+ * $t-r:   $type-ratio:       $major-third;
+ * $t-fs:  $type-fontsize:    16px;
+ * $t-lh:  $type-lineheight:  1.618;
+ */
+/*
+ * Global Spacers
+ * $s-x-1:  $spacer-x-1:  $g-x;
+ * ...
+ * $s-y-1:  $spacer-y-1:  $g-y;
+ * ...
+ * $spacers: map for mixin
+ */
+/*
+ * Global Z
+ * $g-z-dropdown:  $global-z-dropdown:  1000
+ */
+/*
+ * 02 Tools
+ */
+/*
+ * Base
+ */
+/*
+ * Variations
+ */
+/*
+ * Export
+ */
+/*
+ * Units
+ */
+/*
+ * Colors
+ */
+/*
+ * Base
+ */
+.tooltip {
+    position: relative;
+    z-index: 1020;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #e4e4e4;
+    border-radius: 0.3rem;
+    background-color: #e4e4e4;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip:after,
+.tooltip-arrow:after {
+    position: absolute;
+    z-index: 1020;
+    display: block;
+    clear: both;
+    content: "";
+}
+
+.tooltip:after {
+    border: 10px solid transparent;
+}
+
+.tooltip-arrow:after {
+    border: 11px solid transparent;
+}
+
+.tooltip.top,
+.tooltip.bs-tether-element-attached-bottom {
+    margin-top: -14px;
+}
+.tooltip.top:after,
+.tooltip.top .tooltip-arrow:after,
+.tooltip.bs-tether-element-attached-bottom:after,
+.tooltip.bs-tether-element-attached-bottom .tooltip-arrow:after {
+    top: 100%;
+    left: 50%;
+}
+.tooltip.top:after,
+.tooltip.bs-tether-element-attached-bottom:after {
+    margin-left: -9px;
+    border-top-color: #e4e4e4;
+}
+.tooltip.top .tooltip-arrow:after,
+.tooltip.bs-tether-element-attached-bottom .tooltip-arrow:after {
+    margin-left: -10px;
+    border-top-color: #e4e4e4;
+}
+
+.tooltip.right,
+.tooltip.bs-tether-element-attached-left {
+    margin-left: 14px;
+}
+.tooltip.right:after,
+.tooltip.right .tooltip-arrow:after,
+.tooltip.bs-tether-element-attached-left:after,
+.tooltip.bs-tether-element-attached-left .tooltip-arrow:after {
+    top: 50%;
+    right: 100%;
+    left: auto;
+}
+.tooltip.right:after,
+.tooltip.bs-tether-element-attached-left:after {
+    margin-top: -9px;
+    border-right-color: #e4e4e4;
+}
+.tooltip.right .tooltip-arrow:after,
+.tooltip.bs-tether-element-attached-left .tooltip-arrow:after {
+    margin-top: -10px;
+    border-right-color: #e4e4e4;
+}
+
+.tooltip.bottom,
+.tooltip.bs-tether-element-attached-top {
+    margin-top: 14px;
+}
+.tooltip.bottom:after,
+.tooltip.bottom .tooltip-arrow:after,
+.tooltip.bs-tether-element-attached-top:after,
+.tooltip.bs-tether-element-attached-top .tooltip-arrow:after {
+    top: auto;
+    bottom: 100%;
+    left: 50%;
+}
+.tooltip.bottom:after,
+.tooltip.bs-tether-element-attached-top:after {
+    margin-left: -9px;
+    border-bottom-color: #e4e4e4;
+}
+.tooltip.bottom .tooltip-arrow:after,
+.tooltip.bs-tether-element-attached-top .tooltip-arrow:after {
+    margin-left: -10px;
+    border-bottom-color: #e4e4e4;
+}
+
+.tooltip.left,
+.tooltip.bs-tether-element-attached-right {
+    margin-left: -14px;
+}
+.tooltip.left:after,
+.tooltip.left .tooltip-arrow:after,
+.tooltip.bs-tether-element-attached-right:after,
+.tooltip.bs-tether-element-attached-right .tooltip-arrow:after {
+    top: 50%;
+    left: 100%;
+}
+.tooltip.left:after,
+.tooltip.bs-tether-element-attached-right:after {
+    margin-top: -9px;
+    border-left-color: #e4e4e4;
+}
+.tooltip.left .tooltip-arrow:after,
+.tooltip.bs-tether-element-attached-right .tooltip-arrow:after {
+    margin-top: -10px;
+    border-left-color: #e4e4e4;
+}
+
+/*
+ * Theme
+ */

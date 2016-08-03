@@ -1,0 +1,139 @@
+---
+navgroup: "objects"
+navorder: 1
+navtitle: "Button Group"
+category: [objects]
+
+name: "btn-group"
+
+base-grid: false
+base-grid-col: col-md-6
+base-hide-code: true
+base: |
+    <div class="btn-group" aria-label="Basic example">
+        <a class="btn-group-item btn" href="#">Left</a>
+        <a class="btn-group-item btn" href="#">Middle</a>
+        <a class="btn-group-item btn" href="#">Right</a>
+    </div>
+
+variant: true
+variants-grid: false
+variants-grid-col: col-md-6
+variants-hide-code: true
+variants:
+    - name: dropdown
+      base: |
+          <div class="btn-group" aria-label="Basic example">
+              <a class="btn-group-item btn" href="#">Left</a>
+              <a class="btn-group-item btn" href="#">Middle</a>
+              <a class="btn-group-item btn" href="#">Right</a>
+              <div class="btn-group-item dropdown">
+                  <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Dropdown
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+              </div>
+          </div>
+
+    - name: vertical
+      base: |
+          <div class="btn-group btn-group-vertical" aria-label="Basic example">
+              <a class="btn-group-item btn" href="#">Left</a>
+              <a class="btn-group-item btn" href="#">Middle</a>
+              <a class="btn-group-item btn" href="#">Right</a>
+              <a class="btn-group-item btn" href="#">Left</a>
+              <a class="btn-group-item btn" href="#">Middle</a>
+              <div class="btn-group-item dropdown">
+                  <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Dropdown
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+              </div>
+              <div class="btn-group-item dropdown">
+                  <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Dropdown
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+              </div>
+          </div>
+
+    - name: pager
+      base: |
+          <div class="btn-group btn-group-pager" aria-label="Basic example">
+              <a class="btn-group-item btn is-previous" href="#">Previous</a>
+              <a class="btn-group-item btn is-next" href="#">Next</a>
+          </div>
+
+    - name: pagination
+      base: |
+          <div class="btn-group btn-group-pagination" aria-label="Basic example">
+              <a class="btn-group-item btn" href="#" aria-label="Previous"></a>
+              <a class="btn-group-item btn active" href="#">1</a>
+              <a class="btn-group-item btn" href="#">2</a>
+              <a class="btn-group-item btn" href="#">3</a>
+              <a class="btn-group-item btn" href="#">4</a>
+              <a class="btn-group-item btn" href="#" disabled>5</a>
+              <a class="btn-group-item btn" href="#" aria-label="Next"></a>
+          </div>
+
+    - name: breadcrumb
+      base: |
+          <div class="btn-group btn-group-breadcrumb" aria-label="Basic example">
+              <a class="btn-group-item btn" href="#">home</a>
+              <a class="btn-group-item btn" href="#">library</a>
+              <span class="btn-group-item btn" href="#">jules verne</span>
+          </div>
+
+    - name: centered
+      base: |
+          <div class="btn-group btn-group-centered" aria-label="Basic example">
+              <a class="btn-group-item active btn" href="#">Left</a>
+              <a class="btn-group-item btn" href="#">Middle</a>
+              <a class="btn-group-item btn" href="#" disabled>Right</a>
+          </div>
+
+    - name: justified
+      base: |
+          <div class="btn-group btn-group-justified" aria-label="Basic example">
+              <a class="btn-group-item active btn" href="#">Left</a>
+              <a class="btn-group-item btn" href="#">Middle</a>
+              <a class="btn-group-item btn" href="#" disabled>Right</a>
+          </div>
+
+size: true
+size-grid: false
+size-grid-col: col-md-3
+size-hide-code: true
+size-base-use: true
+size-base: |
+    <div class="btn-group">
+        <a class="btn-group-item btn" href="#">Left</a>
+        <a class="btn-group-item btn" href="#">Middle</a>
+        <a class="btn-group-item btn" href="#">Right</a>
+    </div>
+
+theme: true
+theme-grid: true
+theme-grid-col: col-md-3
+theme-hide-code: true
+theme-base-use: true
+theme-base: |
+    <div class="btn-group">
+        <a class="btn-group-item btn" href="#">Left</a>
+        <a class="btn-group-item btn" href="#">Middle</a>
+        <a class="btn-group-item btn" href="#">Right</a>
+    </div>
+
+---

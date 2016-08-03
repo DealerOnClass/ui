@@ -1,0 +1,58 @@
+.btn {
+    display: inline-block;
+
+    box-sizing: border-box;
+
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    border: $one__pixel solid transparent;
+    @if $btn__rounded {
+        padding: $btn__y ($btn__x * 1.5);
+        border-radius: ($btn__y * 2) + $base__font-unit;
+    } @else {
+        padding: $btn__padding;
+        border-radius: $btn__radius;
+    }
+    background-image: none;
+
+    touch-action: manipulation;
+    &,
+    &:active,
+    &.active {
+        &:focus,
+        &.focus {
+            @include tab-focus;
+        }
+    }
+    &:hover,
+    &:focus,
+    &.focus {
+        color: $btn--hover__color;
+    }
+    &:active,
+    &.active {
+        outline: 0;
+        background-image: none;
+        box-shadow: $btn--active__shadow;
+    }
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        cursor: $cursor-disabled;
+
+        box-shadow: $btn--disabled__shadow;
+
+        @include opacity(0.65);
+    }
+}
+
+a.btn {
+    &.disabled,
+    fieldset[disabled] & {
+        pointer-events: none;
+    }
+}

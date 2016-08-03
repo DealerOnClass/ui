@@ -1,0 +1,22 @@
+@mixin hero-color-variation($input__palette) {
+    @each $class__name, $color in $input__palette {
+        .hero-#{$class__name} {
+            color: check-color($color, 80, inherit, $white);
+            background-color: $color;
+
+            a {
+                color: inherit;
+            }
+
+            .btn {
+                @include state {
+                    color: check-color($color, 80, inherit, $white);
+                    $over-color: mix($color, $body__color, $hero__contrast * 6);
+                    $under-color: mix($color, $white, $hero__contrast * 6);
+                    border-color: check-color($color, 80, $over-color, $under-color);
+                    background-color: shade($color, $hero__contrast);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+.logo__svg {
+    height: rhythm(1);
+    width: rhythm(2);
+    margin-bottom: rhythm(-.3);
+    position: relative;
+    top: rhythm(-.075);
+}
+
+a:hover .logo__svg {
+    cursor: pointer;
+}

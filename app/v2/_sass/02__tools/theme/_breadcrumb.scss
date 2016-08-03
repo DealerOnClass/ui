@@ -1,0 +1,27 @@
+@mixin breadcrumb-color-variation($input__palette) {
+    @each $class__name, $color in $input__palette {
+        .breadcrumb-#{$class__name} {
+            color: check-color($color, 80, inherit, $white);
+            border-color: transparent;
+            background-color: $color;
+
+            a.breadcrumb-item {
+                @include state {
+                    background-color: shade($color, $breadcrumb__contrast);
+                }
+            }
+        }
+    }
+}
+
+@mixin breadcrumb-size-variation($unit__y, $unit__x, $input__palette) {
+    @each $class__name, $size in $input__palette {
+
+        $x: ($unit__x * strip-unit($size));
+        $y: ($unit__y * strip-unit($size));
+
+        .breadcrumb-#{$class__name} .breadcrumb-item {
+            padding: $y 0 $y $unit__x;
+        }
+    }
+}

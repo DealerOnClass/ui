@@ -1,0 +1,15 @@
+@if $breadcrumb__default-palette {
+    @include breadcrumb-color-variation($default__palette);
+}
+@if $breadcrumb__inverse-palette {
+    @include breadcrumb-color-variation($inverse__palette);
+}
+@if $breadcrumb__primary-palette {
+    @include breadcrumb-color-variation($primary__palette);
+}
+@if $breadcrumb__neutral-palette {
+    @include breadcrumb-color-variation($neutral__palette);
+}
+@if $breadcrumb__state-palette {
+    @include breadcrumb-color-variation($state__palette);
+}

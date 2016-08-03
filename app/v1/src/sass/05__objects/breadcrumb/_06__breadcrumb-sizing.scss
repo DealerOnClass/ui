@@ -1,0 +1,27 @@
+.breadcrumb-lg {
+    > li > a,
+    > li.active {
+        padding: $breadcrumb--lg__padding;
+    }
+}
+
+.breadcrumb-md {
+    > li > a,
+    > li.active {
+        padding: $breadcrumb--md__padding;
+    }
+}
+
+.breadcrumb-sm {
+    > li > a,
+    > li.active {
+        padding: $breadcrumb--sm__padding;
+    }
+}
+
+.breadcrumb-xs {
+    > li > a,
+    > li.active {
+        padding: $breadcrumb--xs__padding;
+    }
+}

@@ -1,0 +1,17 @@
+/*
+ * Breakpoints
+ * $m-mobile:   $media-mobile:   544px;
+ * $m-tablet:   $media-tablet:   768px;
+ * $m-desktop:  $media-desktop:  992px;
+ * $m-large:    $media-large:    1200px;
+ */
+$m-mobile:     544px;
+$m-tablet:     768px;
+$m-desktop:    992px;
+$m-large:      1200px;
+$breakpoints:  (
+	"sm":  $m-mobile,
+	"md":  $m-tablet,
+	"lg":  $m-desktop,
+	"xl":  $m-large,
+) !default;

@@ -1,0 +1,18 @@
+.table-borderless {
+    border: 0 none;
+
+    > thead,
+    > tbody,
+    > tfoot {
+        > tr {
+            > th,
+            > td {
+                border-top: 0 none;
+            }
+        }
+    }
+
+    > thead > tr > th {
+        border: 0 none;
+    }
+}

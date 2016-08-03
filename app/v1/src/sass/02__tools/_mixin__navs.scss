@@ -1,0 +1,45 @@
+@mixin nav-color-variation($input__palette) {
+    @each $class__name, $color in $input__palette {
+        .nav-#{$class__name} {
+            color: check-color($color, 80, inherit, $white);
+
+            a {
+                color: inherit;
+            }
+
+            > li > a {
+                border-color: transparent;
+                background-color: $color;
+
+                @include state {
+                    background-color: shade($color, $nav__contrast);
+                }
+            }
+
+            > li > a.active,
+            > li.active > a,
+            > li.open > a {
+                @include state-and-self {
+                    color: inherit;
+                    border-color: transparent;
+                    background-color: shade($color, $nav__contrast * 1.5);
+                }
+            }
+
+            > li > a[disabled] {
+                background-color: $color;
+            }
+
+            .dropdown-menu {
+                border: 0 none;
+                background-color: shade($color, $nav__contrast);
+
+                > li > a {
+                    @include state {
+                        background-color: shade($color, $nav__contrast * 2);
+                    }
+                }
+            }
+        }
+    }
+}

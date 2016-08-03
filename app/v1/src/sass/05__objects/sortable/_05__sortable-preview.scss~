@@ -1,0 +1,39 @@
+%sortable-preview-base {
+    border: $one__pixel solid transparent;
+    background-color: transparent;
+    padding-left: 0;
+
+    .sortable-drag,
+    .sortable-action-item {
+        display: none;
+    }
+}
+
+
+.sortable-preview {
+    .sortable[data-preview="text"],
+    .sortable[data-preview="divider"] {
+        @extend %sortable-preview-base;
+    }
+    .sortable[data-preview="divider"] {
+        @extend %sortable-preview-base;
+
+        .sortable-text {
+            display: none;
+        }
+
+        &:after {
+            content: "";
+            display: block;
+            height: $one__pixel;
+            width: 100%;
+            background-color: red;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+    .sortable[data-preview="button"] {
+
+    }
+}

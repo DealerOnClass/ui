@@ -1,0 +1,15 @@
+@if $panel__default-palette {
+    @include panel-color-variation($default__palette);
+}
+@if $panel__inverse-palette {
+    @include panel-color-variation($inverse__palette);
+}
+@if $panel__primary-palette {
+    @include panel-color-variation($primary__palette);
+}
+@if $panel__neutral-palette {
+    @include panel-color-variation($neutral__palette);
+}
+@if $panel__state-palette {
+    @include panel-color-variation($state__palette);
+}

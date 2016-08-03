@@ -1,0 +1,26 @@
+//
+//  Units
+$thumbnail__contrast:             $global__contrast;
+$thumbnail__radius:               $global__radius;
+$thumbnail__x:                    $global__x;
+$thumbnail__y:                    $global__y;
+//
+//  Base
+$thumbnail__bg:                   $gray__01;
+$thumbnail__border:               $gray__01;
+$thumbnail__padding:              0;
+$thumbnail__radius:               $thumbnail__radius;
+$thumbnail__vertical-rhythm:      ($thumbnail__y * 2);
+//
+//  Components
+$thumbnail__caption__padding:     $thumbnail__x;
+$thumbnail__caption__color:       $body__color;
+//
+$thumbnail__link__padding:        ($thumbnail__y / 2) ($thumbnail__x / 2);
+$thumbnail__link__border:         $gray__01;
+$thumbnail__link__radius:         $thumbnail__radius;
+$thumbnail__link__bg:             $gray__01;
+$thumbnail__link--hover__border:  $primary__color;
+$thumbnail__link--hover__bg:      $primary__color;
+$thumbnail__link--hover__border:  $primary__color;
+

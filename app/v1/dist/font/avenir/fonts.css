@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'AvenirHeavy';
+    src: url('AvenirHeavy-webfont.eot');
+    src: url('AvenirHeavy-webfont.eot?#iefix') format('embedded-opentype'),
+         url('AvenirHeavy-webfont.woff') format('woff'),
+         url('AvenirHeavy-webfont.ttf') format('truetype'),
+         url('AvenirHeavy-webfont.svg#AvenirHeavy') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    -webkit-font-smoothing: subpixel-antialiased !important;
+}
+
+@font-face {
+    font-family: 'AvenirMedium';
+    src: url('avenirltstd-medium-webfont.eot');
+    src: url('avenirltstd-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('avenirltstd-medium-webfont.woff') format('woff'),
+         url('avenirltstd-medium-webfont.ttf') format('truetype'),
+         url('avenirltstd-medium-webfont.svg#AvenirMed') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    -webkit-font-smoothing: subpixel-antialiased !important;
+}
+
+@font-face {
+    font-family: 'AvenirRegular';
+    src: url('avenirltstd-roman-webfont.eot');
+    src: url('avenirltstd-roman-webfont.eot?#iefix') format('embedded-opentype'),
+         url('avenirltstd-roman-webfont.woff') format('woff'),
+         url('avenirltstd-roman-webfont.ttf') format('truetype'),
+         url('avenirltstd-roman-webfont.svg#AvenirRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    -webkit-font-smoothing: subpixel-antialiased !important;
+}

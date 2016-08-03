@@ -1,0 +1,14 @@
+.offcanvas-inner {
+    position: relative;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    box-sizing: border-box;
+
+    background-color: $white;
+}
+
+.offcanvas-inner-wrapper.force-auto-width {
+    width: auto !important;
+}

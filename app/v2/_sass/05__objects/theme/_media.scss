@@ -1,0 +1,88 @@
+//
+//  Var
+$media__contrast:  $global__contrast;
+$media__gutter:    $global__gutter;
+$media__radius:    $global__radius;
+$media__x:         $global__x;
+$media__y:         $global__y;
+@if $output__global {
+    @if $output__media {
+        //
+        //  Base
+        .media {
+            display: flex;
+        }
+
+        .media-body {
+            flex-grow: 1;
+        }
+
+        .media-right {
+            padding-left: $media__gutter;
+        }
+
+        .media-left {
+            padding-right: $media__gutter;
+        }
+
+        .media-middle {
+            align-items: center;
+        }
+
+        .media-bottom {
+            align-items: flex-end;
+        }
+        //  .media,
+        //  .media-body {
+        //      zoom: 1;
+        //  }
+
+        //  .media-body {
+        //      width: 10000px;
+        //      display: table-cell;
+        //      vertical-align: top;
+        //  }
+
+        //  .media-object {
+        //      display: block;
+        //  }
+
+        //  .media-right,
+        //  .media > .pull-right {
+        //      padding-left: $media__gutter;
+        //  }
+
+        //  .media-left,
+        //  .media > .pull-left {
+        //      padding-right: $media__gutter;
+        //  }
+
+        //  .media-left,
+        //  .media-right {
+        //      display: table-cell;
+
+        //      vertical-align: top;
+        //  }
+
+        //  .media-middle {
+        //      vertical-align: middle;
+        //  }
+
+        //  .media-bottom {
+        //      vertical-align: bottom;
+        //  }
+        //
+        //  Variations
+        //
+        //  //
+        //  //  Sizing
+        //  @include media-size-variation($media__y, $media__x, $default__sizing);
+        //  //
+        //  //  Colors
+        //  @include media-color-variation($default__palette);
+        //  @include media-color-variation($inverse__palette);
+        //  @include media-color-variation($primary__palette);
+        //  @include media-color-variation($neutral__palette);
+        //  @include media-color-variation($state__palette);
+    }
+}

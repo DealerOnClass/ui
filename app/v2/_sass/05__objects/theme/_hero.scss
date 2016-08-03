@@ -1,0 +1,49 @@
+//
+//  Var
+$hero__contrast:  $global__contrast;
+$hero__radius:    $global__radius;
+$hero__x:         $global__x;
+$hero__y:         $global__y * 7;
+@if $output__global {
+    @if $output__hero {
+        //
+        //  Base
+        .hero {
+            padding-top: $hero__y;
+            padding-bottom: $hero__y;
+        }
+
+        //
+        //  Sizing
+        @if $output__global--sizes {
+            @if $output__hero--sizes {
+                .hero-lg {
+                    padding: $hero__y * ($global__line-height * 1.5) 0;
+                }
+
+                .hero-md {
+                    padding: $hero__y * $global__line-height 0;
+                }
+
+                .hero-sm {
+                    padding: $hero__y / $global__line-height 0;
+                }
+
+                .hero-xs {
+                    padding: $hero__y / ($global__line-height * 2) 0;
+                }
+            }
+        }
+        //
+        //  Colors
+        @if $output__global--theme {
+            @if $output__hero--theme {
+                @include hero-color-variation($default__palette);
+                @include hero-color-variation($inverse__palette);
+                @include hero-color-variation($primary__palette);
+                @include hero-color-variation($neutral__palette);
+                @include hero-color-variation($state__palette);
+            }
+        }
+    }
+}

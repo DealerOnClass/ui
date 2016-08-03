@@ -1,0 +1,34 @@
+@mixin pagination-color-variation($input__palette) {
+    @each $class__name, $color in $input__palette {
+        .pagination-#{$class__name} {
+
+            .pagination-item {
+                color: check-color($color, 80, inherit, $white);
+                border-color: transparent;
+                background-color: $color;
+
+                @include state-and-active {
+                    background-color: shade($color, $pagination__contrast);
+                }
+
+                &[disabled] {
+                    @include state-and-self {
+                        background-color: $color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin pagination-size-variation($unit__y, $unit__x, $input__palette) {
+    @each $class__name, $size in $input__palette {
+
+        $x: ($unit__x * strip-unit($size));
+        $y: ($unit__y * strip-unit($size));
+
+        .pagination-#{$class__name} .pagination-item {
+            padding: $y $x;
+        }
+    }
+}

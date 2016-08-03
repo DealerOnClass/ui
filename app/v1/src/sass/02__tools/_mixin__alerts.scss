@@ -1,0 +1,9 @@
+@mixin alert-color-variation($input__palette) {
+    @each $class__name, $color in $input__palette {
+        .alert-#{$class__name} {
+            color: check-color($color, 80, inherit, $white);
+            border-color: transparent;
+            background-color: $color;
+        }
+    }
+}

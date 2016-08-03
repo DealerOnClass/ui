@@ -1,0 +1,13 @@
+//
+//  Text Overflow:
+//
+//  Usage:
+//  .list__item {
+//      @include text-overflow-ellipsis;
+//  }
+@mixin text-overflow-ellipsis {
+    overflow: hidden;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

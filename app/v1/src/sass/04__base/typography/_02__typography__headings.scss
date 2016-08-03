@@ -1,0 +1,47 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $heading__font;
+
+    @include rhythm-rem(margin-bottom, .5);
+
+    small,
+    .small {
+        font-size: $heading__small__size;
+
+        color: $heading__small__color;
+    }
+}
+
+h1,
+.h1 {
+    font-size: $h1__font-size;
+}
+h2,
+.h2 {
+    font-size: $h2__font-size;
+}
+h3,
+.h3,
+.lg {
+    font-size: $h3__font-size;
+}
+h4,
+.h4,
+.md {
+    font-size: $h4__font-size;
+}
+h5,
+.h5 {
+    font-size: $h5__font-size;
+}
+h6,
+.h6,
+small,
+.small,
+.xs {
+    font-size: $h6__font-size;
+}

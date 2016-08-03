@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>DealerOn UI Kit - Shell 00</title>
+        <link href="css/screen.css" rel="stylesheet">
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                if (WindowWidth() > 991) {
+                    ShowSidebar();
+                } else {
+                    HideSidebar();
+                }
+            });
+            function WindowWidth() {
+                var windowWidth  = window.innerWidth;
+                return windowWidth;
+            };
+            function ShowSidebar() {
+                var sidebar     = document.getElementById("navbar-sidebar");
+                var backdrop    = document.getElementById("offcanvas-backdrop");
+
+                sidebar.className += " in";
+                backdrop.className += " in";
+            };
+            function HideSidebar() {
+                var backdrop    = document.getElementById("offcanvas-backdrop");
+                backdrop.className += " invisible";
+            }
+        </script>
+
+    </head>
+
+    <body id="offcanvas-wrapper" class="offcanvas-wrapper">
+
+        <nav id="oncanvas-nav" class="oncanvas-nav navbar navbar-main navbar-static-top" oncanvas-nav>
+
+            <a id="navbar-sidebar-link" href="#navbar-sidebar" class="navbar-brand navbar-brand-svg" data-toggle="collapse">
+                <i id="navbar-sidebar-icon" class="visible-sm-inline-block visible-xs-inline-block fa fa-navicon fa-fw"></i>
+                <object class="logo__svg" data='img/logo__symbol.svg' type="image/svg+xml">
+                    <img class="logo__svg" src="img/logo__symbol.svg" alt="">
+                </object>
+            </a>
+            <ul class="nav navbar-nav navbar-left-override">
+                <li class="dropdown hidden-xs">
+                    <a href="#" data-toggle="dropdown">Accounts</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="">Account 1</a></li>
+                        <li><a href="">Account 2</a></li>
+                        <li><a href="">Account 3</a></li>
+                        <li><a href="">Account 4</a></li>
+                        <li><a href="">Account 5</a></li>
+                        <li class="divider"></li>
+                        <li><a href="">View All Accounts</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown hidden-xs">
+                    <a href="#" data-toggle="dropdown">Websites</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="">Website 1</a></li>
+                        <li><a href="">Website 2</a></li>
+                        <li><a href="">Website 3</a></li>
+                        <li><a href="">Website 4</a></li>
+                        <li><a href="">Website 5</a></li>
+                        <li class="divider"></li>
+                        <li><a href="">View All Websites</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown hidden-xs">
+                    <a href="#" data-toggle="dropdown">Products</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="">Product 1</a></li>
+                        <li><a href="">Product 2</a></li>
+                        <li><a href="">Product 3</a></li>
+                        <li><a href="">Product 4</a></li>
+                        <li><a href="">Product 5</a></li>
+                        <li class="divider"></li>
+                        <li><a href="">View All Products</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown hidden-xs">
+                    <a href="#" data-toggle="dropdown">Billing</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="">Account 1</a></li>
+                        <li><a href="">Account 2</a></li>
+                        <li><a href="">Account 3</a></li>
+                        <li><a href="">Account 4</a></li>
+                        <li><a href="">Account 5</a></li>
+                        <li class="divider"></li>
+                        <li><a href="">View All Products</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown hidden-xs">
+                    <a href="#" data-toggle="dropdown">Help</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="">Account 1</a></li>
+                        <li><a href="">Account 2</a></li>
+                        <li><a href="">Account 3</a></li>
+                        <li><a href="">Account 4</a></li>
+                        <li><a href="">Account 5</a></li>
+                        <li class="divider"></li>
+                        <li><a href="">View All Products</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown hidden-xs">
+                    <a href="#" data-toggle="dropdown">Filters</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="">Account 1</a></li>
+                        <li><a href="">Account 2</a></li>
+                        <li><a href="">Account 3</a></li>
+                        <li><a href="">Account 4</a></li>
+                        <li><a href="">Account 5</a></li>
+                        <li class="divider"></li>
+                        <li><a href="">View All Products</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown hidden-xs">
+                    <a href="#" data-toggle="dropdown">Users</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="">Account 1</a></li>
+                        <li><a href="">Account 2</a></li>
+                        <li><a href="">Account 3</a></li>
+                        <li><a href="">Account 4</a></li>
+                        <li><a href="">Account 5</a></li>
+                        <li class="divider"></li>
+                        <li><a href="">View All Products</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown hidden-xs">
+                    <a href="#" data-toggle="dropdown">Admin</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="">Account 1</a></li>
+                        <li><a href="">Account 2</a></li>
+                        <li><a href="">Account 3</a></li>
+                        <li><a href="">Account 4</a></li>
+                        <li><a href="">Account 5</a></li>
+                        <li class="divider"></li>
+                        <li><a href="">View All Products</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right-override">
+                <li>
+                    <form id="navbar-search-form" class="navbar-search-form form-inline collapse width">
+                        <input id="navbar-search-form-input" class="form-control" type="text">
+                    </form>
+                </li>
+                <li>
+                    <a id="navbar-search-link" href="#navbar-search-form" class="navbar-link" data-toggle="collapse">
+                        <i class="fa fa-search"></i>
+                    </a>
+                </li>
+                <li>
+                    <a id="navbar-profile-link" href="#navbar-profile" data-disable="notify" data-toggle="collapse">
+                        <div class="navbar-profile notify">
+                            <img class="navbar-profile-img" src="img/mario.png" alt="Itsa me Mario!">
+                            <i class="fa fa-exclamation fa-sm notify-icon notify-icon-alert"></i>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div id="navbar-profile" class="collapse">
+
+            <a class="btn btn-link pull-right" href="#navbar-profile" data-toggle="collapse">
+                <i class="fa fa-remove fa-fw"></i>
+            </a>
+            <div class="hero hero-xs">
+                <div class="container tab-content">
+                    <div id="Profile" class="tab-pane active">
+                        <h3>Welcome, Mario.</h3>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <p><a href="">mario@itsamemario.com</a></p>
+                                <a class="btn btn-main" href="">Sign Out</a>
+                                <a class="btn btn-main" href="/index.html">Go Home</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="navbar-profile-backdrop" class="offcanvas-backdrop fade invisible"></div>
+
+        <div id="offcanvas" class="offcanvas" offcanvas-set-top="oncanvas-nav">
+
+            <nav id="offcanvas-nav" class="offcanvas-nav navbar navbar-inverse navbar-stacked">
+                <div id="navbar-sidebar" class="navbar-sidebar-collapse collapse width">
+                    <div id="navbar-sidebar-wrapper" class="navbar-sidebar-wrapper" offcanvas-set-height="oncanvas-nav" offcanvas-set-width="offcanvas-nav">
+                        <div class="navbar-sidebar-item navbar-sidebar-header">
+                            <div class="media media-profile">
+                                <div class="media-left">
+                                    <img class="img-rounded-sm" src="img/toyota.jpg" alt="Toyota Logo" height="50" width="50">
+                                </div>
+                                <div class="media-body media-middle">
+                                    <ul class="list-inline margin-x">
+                                        <li>
+                                            <h5 class="navbar-sidebar-title margin-x"><strong>Chrysler Dodge Jeep Ram of Chatanooga</strong></h5>
+                                            <a href="http://www.scottclarktoyota.com">
+                                                <i class="fa fa-globe fa-fw xs"></i>
+                                                <small>Visit Website | 9682</small>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="media-right media-middle">
+                                    <a id="navbar-sidebar-collapse-link" href="#navbar-sidebar-collapse" class="visible-xs visible-sm navbar-link" data-toggle="collapse">
+                                        <i id="navbar-sidebar-collapse-icon" class="fa fa-angle-down fa-fw fa-md"></i>
+                                    </a>
+                                    <a id="navbar-sidebar-nested-link" href="#navbar-sidebar-nested" class="hidden-xs hidden-sm navbar-link" data-toggle="collapse">
+                                        <i id="navbar-sidebar-nested-icon" class="fa fa-angle-right fa-fw fa-md"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="navbar-sidebar-collapse" class="hidden-lg hidden-md collapse">
+                            <div class="navbar-sidebar-item navbar-sidebar-header">
+                                <div class="xs">
+                                    <p>
+                                        <strong class="navbar-sidebar-title">Associated Account:</strong><br>
+                                        AMSI <i class="fa fa-angle-right"></i> Chrysler Dodge Jeep Ram of Chatanooga
+                                    </p>
+                                    <p>
+                                        <strong class="navbar-sidebar-title">Agnecy/Partner:</strong><br>
+                                        Force Marketing
+                                    </p>
+                                    <p>
+                                        <strong class="navbar-sidebar-title">Website ID:</strong><br>
+                                        9682
+                                    </p>
+                                    <p>
+                                        <strong class="navbar-sidebar-title">Website Url:</strong><br>
+                                        http://www.scottclarktoyota.com
+                                    </p>
+                                    <p>
+                                        <strong class="navbar-sidebar-title">Support:</strong><br>
+                                        Team Green
+                                    </p>
+                                </div>
+                                <table class="table table-borderless table-condensed table-flush xs">
+                                    <thead>
+                                        <tr>
+                                            <th class="navbar-sidebar-title">Active Products</th>
+                                            <th>ID:</th>
+                                            <th>Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><a href="">Chameleon Elite</a></td>
+                                            <td>32523</td>
+                                            <td>9/15/2014</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="">Spin Car Interactive</a></td>
+                                            <td>32523</td>
+                                            <td>4/21/2015</td>
+                                        </tr>
+                                    </tbody>
+                                    <thead>
+                                        <tr>
+                                            <th class="navbar-sidebar-title">Cancelled Products</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><a href="">Pre-Launch Page Migration</a></td>
+                                            <td>4/3/2015</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="">Homepage Banner Design</a></td>
+                                            <td>4/3/2015</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="">Elite SEO</a></td>
+                                            <td>7/3/2015</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="navbar-sidebar-nav">
+                            <ul class="nav navbar-nav">
+                                <li class="dropdown">
+                                    <a href="" class="dropdown-toggle collapsed" data-toggle="collapse" data-target="#Website">
+                                        <i class="navbar-sidebar-icon text-muted fa fa-file fa-fw"></i>
+                                        Website
+                                        <span class="navbar-sidebar-icon text-muted caret fa-fw pull-right"></span>
+                                    </a>
+                                    <ul id="Website" class="collapse dropdown-menu">
+                                        <li><a href="">Item 1</a></li>
+                                        <li><a href="">Item 2</a></li>
+                                        <li><a href="">Item 3</a></li>
+                                        <li><a href="">Item 4</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="" class="dropdown-toggle collapsed" data-toggle="collapse" data-target="#BTS">
+                                        <i class="navbar-sidebar-icon text-muted fa fa-rocket fa-fw"></i>
+                                        BTS
+                                        <span class="navbar-sidebar-icon text-muted caret fa-fw pull-right"></span>
+                                    </a>
+                                    <ul id="BTS" class="collapse dropdown-menu">
+                                        <li><a href="">Item 1</a></li>
+                                        <li><a href="">Item 2</a></li>
+                                        <li><a href="">Item 3</a></li>
+                                        <li><a href="">Item 4</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="" class="dropdown-toggle collapsed" data-toggle="collapse" data-target="#Inventory">
+                                        <i class="navbar-sidebar-icon text-muted fa fa-shopping-cart fa-fw"></i>
+                                        Inventory
+                                        <span class="navbar-sidebar-icon text-muted caret fa-fw pull-right"></span>
+                                    </a>
+                                    <ul id="Inventory" class="collapse dropdown-menu">
+                                        <li><a href="">Item 1</a></li>
+                                        <li><a href="">Item 2</a></li>
+                                        <li><a href="">Item 3</a></li>
+                                        <li><a href="">Item 4</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="" class="dropdown-toggle collapsed" data-toggle="collapse" data-target="#Reporting">
+                                        <i class="navbar-sidebar-icon text-muted fa fa-area-chart fa-fw"></i>
+                                        Reporting
+                                        <span class="navbar-sidebar-icon text-muted caret fa-fw pull-right"></span>
+                                    </a>
+                                    <ul id="Reporting" class="collapse dropdown-menu">
+                                        <li><a href="">Item 1</a></li>
+                                        <li><a href="">Item 2</a></li>
+                                        <li><a href="">Item 3</a></li>
+                                        <li><a href="">Item 4</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <div id="offcanvas-body" class="offcanvas-body">
+
+                <div id="offcanvas-backdrop" class="offcanvas-backdrop fade"></div>
+
+                <nav id="offcanvas-nav-nested" class="hidden-sm hidden-xs offcanvas-nav offcanvas-nav-nested navbar navbar-inverse navbar-stacked">
+                    <div id="navbar-sidebar-nested" class="navbar-sidebar-collapse collapse width">
+                        <div class="navbar-sidebar-wrapper navbar-sidebar-header" offcanvas-set-height="oncanvas-nav">
+                            <div class="container-fluid">
+                                <div class="navbar-sidebar-item">
+                                    <br>
+                                    <h3 class="navbar-sidebar-title">Overview</h3>
+                                    <table class="table table-borderless table-rounded table-condensed margin-x">
+                                        <tbody>
+                                            <tr>
+                                                <td><strong>Associated Account:</strong></td>
+                                                <td>AMSI <i class="fa fa-angle-right"></i> Chrylser Dodge Jeep Ram of Chatanooga</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Agency/Partner:</strong></td>
+                                                <td>Force Marketing</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Website ID:</strong></td>
+                                                <td>64541</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Website Url:</strong></td>
+                                                <td>http://www.scottclarktoyota.com</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Support:</strong></td>
+                                                <td><i class="fa fa-circle fa-fw xs text-success"></i> Team Green</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="navbar-sidebar-item">
+                                    <h3 class="navbar-sidebar-title">Products</h3>
+                                    <table class="table table-borderless table-rounded table-condensed table-flush">
+                                        <thead>
+                                            <tr>
+                                                <th>Active</th>
+                                                <th>ID:</th>
+                                                <th>Type</th>
+                                                <th>Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><a href="">Chameleon Elite</a></td>
+                                                <td>3245</td>
+                                                <td>Website</td>
+                                                <td>9/15/2014</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="">Spin Car Interactive</a></td>
+                                                <td>2945</td>
+                                                <td>Add-On(Video)</td>
+                                                <td>4/21/2015</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="text-muted">
+                                        <a class="btn btn-link btn-xs btn-flush" href="#cancelled-products-table" data-toggle="collapse">
+                                            <strong>Cancelled</strong>
+                                            <i class="fa fa-angle-down"></i>
+                                        </a>
+                                        <div id="cancelled-products-table" class="collapse in" style="margin-top: -2em">
+                                            <table class="table table-borderless table-rounded table-condensed table-flush margin-x">
+                                                <thead>
+                                                    <tr>
+                                                        <th></th>
+                                                        <th>ID:</th>
+                                                        <th>Type</th>
+                                                        <th>Date</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><a href="">Pre-Launch Page Migration</a></td>
+                                                        <td>3241</td>
+                                                        <td>Add-On</td>
+                                                        <td>4/3/2015</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><a href="">Homepage Banner Design</a></td>
+                                                        <td>3412</td>
+                                                        <td>Add-On</td>
+                                                        <td>4/3/2015</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><a href="">Elite SEO</a></td>
+                                                        <td>8312</td>
+                                                        <td>Add-On(SEO)</td>
+                                                        <td>7/3/2015</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+
+                <div id="offcanvas-nested-backdrop" class="offcanvas-nested-backdrop fade invisible"></div>
+
+                <div id="offcanvas-inner" class="offcanvas-inner" offcanvas-set-height="oncanvas-nav">
+
+                    <div id="offcanvas-inner-wrapper" class="offcanvas-inner-wrapper force-auto-width" offcanvas-set-width="sidebar">
+                        <div class="hero">
+                            <div class="container">
+                                <h2>Shell 00</h2>
+                                <h4>Its almost official - with swipe</h4>
+                                <hr>
+                                <div class="media">
+                                    <div class="media-left">
+                                        <p style="width: 5em">
+                                            <small> Elit id pariatur tempora ipsa officia nostrum.</small>
+                                        </p>
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="row">
+                                            <div class="col-sm-6 col-md-4">
+                                                <p>Ipsum molestias accusamus nulla illo ex deleniti error tempora sunt voluptas consectetur aliquid debitis? Mollitia veritatis exercitationem a iure omnis doloremque?</p>
+                                                <p>Nihil rerum omnis quas maiores maxime ipsum accusamus. Vero explicabo rem quas dignissimos maxime! Blanditiis nihil eius ullam commodi suscipit!</p>
+                                                <p>Saepe inventore at exercitationem veniam vel. Dolorum autem.</p>
+                                            </div>
+                                            <div class="col-sm-6 col-md-4">
+                                                <p>Elit soluta reprehenderit repellendus nulla ducimus provident ipsa veritatis!</p>
+                                                <p>Reprehenderit ex omnis distinctio nostrum veniam consequuntur distinctio adipisci quos hic officiis omnis exercitationem. Doloremque a neque saepe magni labore error necessitatibus! Et alias praesentium eum odio tempora soluta. Id ut accusamus aliquam corrupti debitis quisquam. Eum mollitia velit libero qui.</p>
+                                            </div>
+                                        </div>
+                                        <p>
+                                            <a class="btn btn-cta" data-toggle="modal" href="#myModal">Default Modal</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-offset-3 col-sm-6">
+                                    <h2>Lorem incidunt.</h2>
+                                    <p>Ipsum molestias accusamus nulla illo ex deleniti error tempora sunt voluptas consectetur aliquid debitis? Mollitia veritatis exercitationem a iure omnis doloremque?</p>
+                                    <p>Nihil rerum omnis quas maiores maxime ipsum accusamus. Vero explicabo rem quas dignissimos maxime! Blanditiis nihil eius ullam commodi suscipit!</p>
+                                    <p>Saepe inventore at exercitationem veniam vel. Dolorum autem.</p>
+                                    <p>Elit soluta reprehenderit repellendus nulla ducimus provident ipsa veritatis!</p>
+                                    <p>Reprehenderit ex omnis distinctio nostrum veniam consequuntur distinctio adipisci quos hic officiis omnis exercitationem. Doloremque a neque saepe magni labore error necessitatibus! Et alias praesentium eum odio tempora soluta. Id ut accusamus aliquam corrupti debitis quisquam. Eum mollitia velit libero qui.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="myModal" class="modal modal-cta fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                        <h4 id="modal-title" class="modal-title">Modal title
+                            <a class="anchorjs-link" href="#modal-title">
+                                <span class="anchorjs-icon"></span>
+                            </a>
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>One fine body…</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#" class="btn btn-default" data-dismiss="modal">Close</a>
+                        <a href="#" class="btn btn-default">Save changes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/jquery.min.js"></script>
+        <!--<script src="js/jquery.touchSwipe.min.js"></script>-->
+        <script src="js/tether.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/functions.js"></script>
+
+    </body>
+
+</html>
+
+

@@ -1,0 +1,98 @@
+//
+//  Var
+$breadcrumb__contrast:  $global__contrast;
+$breadcrumb__radius:    $global__radius;
+$breadcrumb__x:         $global__x;
+$breadcrumb__y:         $global__y;
+//
+//  Options
+$breadcrumb__icon:      $fa-var-angle-right;
+$breadcrumb__icon-use:  true !default;
+
+@if $output__global {
+    @if $output__breadcrumb {
+        //
+        //  Base
+        .breadcrumb {
+            @include clearfix;
+
+            border: $one__pixel solid;
+            //  border-radius: $breadcrumb__radius;
+            box-shadow: 0 $two__pixels $three__pixels rgba(0, 0, 0, 0.1);
+            margin-bottom: rhythm(1);
+        }
+
+        .breadcrumb-item {
+            display:block;
+            float: left;
+            color: inherit;
+            padding: $breadcrumb__y 0 $breadcrumb__y $breadcrumb__x;
+
+            &.active {
+                padding: $breadcrumb__y $breadcrumb__x;
+            }
+        }
+
+        //  .breadcrumb > li {
+        //      display: block;
+        //      float: left;
+
+        //      &.active {
+        //          padding: $breadcrumb__y $breadcrumb__x;
+        //      }
+        //  }
+
+        //  .breadcrumb > li > a {
+        //      color: inherit;
+        //      display: block;
+        //      padding: $breadcrumb__y 0 $breadcrumb__y $breadcrumb__x;
+
+        //      &:after {
+        //          margin-left: $breadcrumb__x;
+        //          @if $breadcrumb__icon-use {
+        //              font-family: $fa-font-name;
+
+        //              content: "#{$breadcrumb__icon}";
+        //          } @else {
+        //              content: "/";
+        //          }
+        //      }
+        //  }
+        //
+        //  Variations
+        .breadcrumb-rounded {
+            border-radius: ($breadcrumb__y * 2) + $global__line-height;
+
+            > li > a {
+                //
+            }
+        }
+
+        .breadcrumb-flush {
+            border-radius: 0;
+
+            > li > a {
+                //
+            }
+        }
+        //
+        //  Sizing
+        @if $output__global--sizes {
+            @if $output__breadcrumb--sizes {
+                @include breadcrumb-size-variation($breadcrumb__y, $breadcrumb__x, $default__sizing);
+            }
+        }
+        //
+        //  Colors
+        @if $output__global--theme {
+            @if $output__breadcrumb--theme {
+                @include breadcrumb-color-variation($default__palette);
+                @include breadcrumb-color-variation($inverse__palette);
+                @include breadcrumb-color-variation($primary__palette);
+                @include breadcrumb-color-variation($neutral__palette);
+                @include breadcrumb-color-variation($state__palette);
+                @include breadcrumb-color-variation($classic__palette);
+            }
+        }
+    }
+}

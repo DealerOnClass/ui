@@ -1,0 +1,76 @@
+//
+//  Var
+$list-group__contrast:  $global__contrast;
+$list-group__radius:    $global__radius;
+$list-group__x:         $global__x;
+$list-group__y:         $global__y;
+@if $output__global {
+    @if $output__list-groups {
+        //
+        //  Base
+        .list-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .list-group-item {
+			position: relative;
+            display: flex;
+            padding: $list-group__y $list-group__x;
+            border: $one__pixel solid;
+
+            //	&:first-child {
+            //	    border-radius: $list-group__radius $list-group__radius 0 0;
+            //	}
+
+            //	&:last-child {
+            //	    border-radius: 0 0 $list-group__radius $list-group__radius;
+            //	}
+
+            //	&:only-child {
+            //	    border-radius: $list-group__radius;
+            //	}
+
+            &:not(:first-child) {
+                border-top: 0;
+            }
+        }
+
+        a.list-group-item {
+            @include state-and-active-and-open {
+                color: $white;
+                border-color: transparent;
+                background-color: $primary__color;
+            }
+        }
+		a.list-group-item[aria-expanded="true"]:after {
+			content: "";
+			position: absolute;
+			top: 0;
+			display: block;
+			left: 0;
+			height: 100%;
+			width: 6px;
+			background-color: $primary__color;
+		}
+        //
+        //  Sizing
+        @if $output__global--sizes {
+            @if $output__list-groups--sizes {
+                @include list-group-size-variation($list-group__y, $list-group__x, $default__sizing);
+            }
+        }
+        //
+        //  Colors
+        @if $output__global--theme {
+            @if $output__list-groups--theme {
+                @include list-group-color-variation($default__palette);
+                @include list-group-color-variation($inverse__palette);
+                @include list-group-color-variation($primary__palette);
+                @include list-group-color-variation($neutral__palette);
+                @include list-group-color-variation($state__palette);
+                @include list-group-color-variation($classic__palette);
+            }
+        }
+    }
+}

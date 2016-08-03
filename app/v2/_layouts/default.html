@@ -1,0 +1,74 @@
+---
+layout: compress
+---
+<!DOCTYPE html>
+
+<html>
+
+    {% include head.html %}
+
+    <body onload="PopulateThemes()">
+
+        <nav class="oncanvas-nav nav nav--navbar site-navbar">
+            <button id="navbar-nav-toggle" class="nav__item navbar-nav-toggle">
+                <i class="fa fa-navicon"></i>
+            </button>
+            <button id="sidebar-nav-toggle" class="nav__item navbar-nav-toggle">
+                <i class="fa fa-navicon"></i>
+            </button>
+            <a class="nav__item nav__item--svg" href="{{ site.baseurl }}/">
+                <object class="logo site-logo" data="{{ '/img/logo__symbol.svg' | prepend: site.baseurl }}" type="image/svg+xml">
+                    <img class="logo site-logo" src="{{ '/img/logo__symbol.svg' | prepend: site.baseurl }}" alt="">
+                </object>
+            </a>
+            {% assign pagelist = site.pages%}
+            {% assign navgroup = 'main' %}
+            {% include nav.html %}
+        </nav>
+
+        <main class="offcanvas">
+
+            <nav class="offcanvas-nav nav nav--sidebar site-sidebar">
+                <div class="offcanvas-nav-body">
+                    <a href="" class="nav__item dropdown-toggle collapsed" data-toggle="collapse" data-target="#collapse__mockups">
+                        Mockups
+                    </a>
+                    <div id="collapse__mockups" class="nav__group collapse in">
+                        {% assign pagelist = site.mockups %}
+                        {% assign navgroup = 'mockups' %}
+                        {% include nav.html %}
+                    </div>
+                    <a href="" class="nav__item dropdown-toggle collapsed" data-toggle="collapse" data-target="#objects-utilities">
+                        Utilities
+                    </a>
+                    <div id="objects-utilities" class="nav__group collapse in">
+                        {% assign pagelist = site.objects-utilities %}
+                        {% assign navgroup = 'utilities' %}
+                        {% include nav.html %}
+                    </div>
+                    <a href="" class="nav__item dropdown-toggle collapsed" data-toggle="collapse" data-target="#objects-bootstrap">
+                        UI Kit
+                    </a>
+                    <div id="objects-bootstrap" class="nav__group collapse in">
+                        {% assign pagelist = site.objects-bootstrap %}
+                        {% assign navgroup = 'objects' %}
+                        {% include nav.html %}
+                    </div>
+                </div>
+            </nav>
+
+            <div class="offcanvas-body">
+                {{ content }}
+
+                {% include footer.html %}
+            </div>
+
+        </main>
+
+        <script>
+            {% include scripts.min.js %}
+        </script>
+
+    </body>
+
+</html>

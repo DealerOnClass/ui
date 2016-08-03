@@ -1,0 +1,104 @@
+#
+#   General Site Settigns
+#
+author: DealerOn
+title: Your awesome title
+email: alberto@dealeron.com
+description: > # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+
+#
+#   General Build Settings
+#
+#   Url
+#baseurl: "/assets/ui"            # remote
+baseurl: ""                 # local
+url: ""                     # the base hostname & protocol for your site
+permalink: pretty
+#   Exclude files and directories
+exclude:
+    - LICENSE
+    - README.md
+    - gulpfile.js
+    - node_modules
+    - package.json
+
+#   Output specified collections
+collections:
+    mockups:
+        output: true
+
+    objects-bootstrap:
+        output: true
+
+    objects-utilities:
+        output: true
+
+    pages:
+        output: true
+
+#   Set collection default layout
+defaults:
+    - scope:
+        type: mockups
+      values:
+        layout: mockup
+
+    - scope:
+        type: objects-bootstrap
+      values:
+        layout: object
+
+    - scope:
+        type: objects-utilities
+      values:
+        layout: object
+
+    - scope:
+        type: pages
+      values:
+        layout: page
+
+#   Should match "_sass/04__base/_typography.scss"
+sizes:
+    - xl
+    - lg
+    - md
+    - sm
+    - xs
+
+#   Should match "_sass/01__settings/_colors.scss"
+palettes:
+    - id: default
+      colors:
+          - default
+
+    - id: inverse
+      colors:
+          - inverse
+            #- inverse-dark
+
+    - id: primary
+      colors:
+          - cta
+          - main
+
+    - id: neutral
+      colors:
+          - alt1
+          - alt2
+          - alt3
+
+    - id: state
+      colors:
+          - success
+          - info
+          - warning
+          - danger
+
+    - id: classic
+      colors:
+          - white
+            #- black

@@ -1,0 +1,73 @@
+.navbar-stacked {
+    float: left;
+
+    .navbar-header,
+    .navbar-brand,
+    .navbar-nav,
+    .navbar-nav > li {
+        display: block;
+        float: none;
+        clear: both;
+    }
+
+    .dropdown-menu {
+        position: relative;
+
+        display: block;
+        border: 0 none;
+        border-radius: 0;
+
+        width: 100%;
+
+        &.collapse {
+            height: 0;
+        }
+
+        &.collapse.in,
+        &.collapsing {
+            height: auto;
+        }
+    }
+
+    .dropdown-menu > li {
+
+        > a {
+            padding: $navbar-stacked__link__padding;
+        }
+
+        &:last-child > a {
+            border-radius: 0;
+        }
+    }
+
+    .navbar-nav > li.active > a,
+    .dropdown-menu > li.active > a {
+
+        &:after {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            display: block;
+
+            width: $two__true__pixels;
+            height: 100%;
+
+            content: '';
+
+            background-color: tint(saturate($primary__color, $global__contrast * 2), $global__contrast);
+        }
+    }
+
+    .navbar-nav {
+        overflow: hidden;
+
+        border-bottom-right-radius: $navbar__radius * 1.5;
+        border-bottom-left-radius: $navbar__radius;
+    }
+
+    .navbar-brand {
+        border-top-left-radius: $navbar__radius;
+        border-top-right-radius: $navbar__radius;
+    }
+}

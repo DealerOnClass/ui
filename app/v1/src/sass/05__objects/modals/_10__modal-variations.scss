@@ -1,0 +1,11 @@
+@media (min-width: $screen-sm-min) {
+    .modal-sm {
+        width: $modal--sm__width;
+    }
+}
+
+@media (min-width: $screen-md-min) {
+    .modal-lg {
+        width: $modal--lg__width;
+    }
+}

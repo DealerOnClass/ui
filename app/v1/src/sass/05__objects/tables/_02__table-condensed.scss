@@ -1,0 +1,17 @@
+.table-condensed {
+    > thead,
+    > tbody,
+    > tfoot {
+        > tr {
+            > th,
+            > td {
+                padding: $table--condensed__padding;
+            }
+        }
+    }
+
+    > tbody + thead > tr > th,
+    > tbody + thead > tr > td {
+        padding-top: $table__y * 2;
+    }
+}

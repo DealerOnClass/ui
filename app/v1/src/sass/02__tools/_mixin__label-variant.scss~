@@ -1,0 +1,16 @@
+
+
+// Check text color
+// http://thesassway.com/intermediate/dynamically-change-text-color-based-on-its-background-with-sass
+@function check-color($color) {
+    @if (lightness($color) > 50) {
+        @return $body__color; // Lighter backgorund, return dark color
+    } @else {
+        @return #ffffff; // Darker background, return light color
+    }
+}
+
+@mixin label-variant($color) {
+    background-color:  $color;
+    color:             check-color($color);
+}

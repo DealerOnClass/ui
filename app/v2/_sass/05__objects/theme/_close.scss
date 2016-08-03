@@ -1,0 +1,30 @@
+//
+//  Var
+$close__contrast:  $global__contrast;
+$close__radius:    $global__radius;
+$close__x:         $global__x;
+$close__y:         $global__y;
+//
+//  Options
+$close__icon:      $fa-var-close;
+$close__icon-use:  true !default;
+@if $output__global {
+    @if $output__close {
+        //
+        //  Base
+        .close {
+            line-height: 1;
+            @if $close__icon-use {
+                &:after {
+                    font-family: $fa-font-name;
+
+                    content: "#{$close__icon}";
+                }
+
+                > span {
+                    display: none;
+                }
+            }
+        }
+    }
+}

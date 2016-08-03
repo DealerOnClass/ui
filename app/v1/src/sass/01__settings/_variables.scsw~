@@ -1,0 +1,113 @@
+//  Neutral Palette
+$white:                  white;
+$black:                  black;
+$gray__01:               mix($black,$white,10%);
+$gray__02:               mix($black,$white,20%);
+$gray__03:               mix($black,$white,30%);
+$gray__04:               mix($black,$white,40%);
+$gray__05:               mix($black,$white,50%);
+$gray__06:               mix($black,$white,60%);
+$gray__07:               mix($black,$white,70%);
+$gray__08:               mix($black,$white,80%);
+$gray__09:               mix($black,$white,90%);
+//  State Palette
+$state--success:         #5cb85c !default;
+$state--info:            #5bc0de !default;
+$state--warning:         #f0ad4e !default;
+$state--danger:          #d9534f !default;
+//  True Palette
+$palette__blue:          #1c4181;
+$palette__blue--dark:    #15294b;
+$palette__orange:        #f36c0a;
+$palette__gray--dark:    #252931;
+$palette__gray:          #74777d;
+$palette__gray--light:   #f3f3f3;
+//  Abstract Palette
+$primary__color:         $palette__blue;
+$primary__color--dark:   $palette__blue--dark;
+$accent__color:          $palette__orange;
+$neutral__color--dark:   $palette__gray--dark;
+$neutral__color:         $palette__gray;
+$neutral__color--light:  $palette__gray--light;
+//
+//  Typography
+//
+//  Ratio
+$master__font-size:  18;
+$base__font-size:    ($master__font-size / 16) * 100%;
+$base__font-ratio:   1.333;
+$base__font-unit:    1em;
+$base__line-height:  1.5;
+//  Typeface
+$sans--regular:      'AvenirRegular', 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+$sans--semibold:     'AvenirMedium', 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+$sans--bold:         'AvenirHeavy', 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+$mono--regular:      'SourceCodePro' !default;
+//
+//  Global
+//
+//  General Spacers
+$global__radius:           rhythm(.2) !default;
+$global__x:                rhythm(.5) !default;
+$global__y:                rhythm(.5) !default;
+$global__gutter:           15px;
+//  Media Queries
+$container-sm:             750px !default;
+$container-md:             970px !default;
+$container-lg:             1170px !default;
+$screen-xs-min:            480px !default;
+$screen-sm-min:            768px !default;
+$screen-md-min:            992px !default;
+$screen-lg-min:            1200px !default;
+$screen-xs-max:            ($screen-sm-min - 1) !default;
+$screen-sm-max:            ($screen-md-min - 1) !default;
+$screen-md-max:            ($screen-lg-min - 1) !default;
+//  Caret
+$caret__width-base:        $global__radius;
+$caret__width-large:       rhythm(.3);
+//  Pixel Units
+$one__pixel:               $base__font-unit / $master__font-size;
+$two__pixels:              $one__pixel * 2;
+$three__pixels:            $one__pixel * 3;
+$four__pixels:             $one__pixel * 4;
+$five__pixels:             $one__pixel * 5;
+$six__pixels:              $one__pixel * 6;
+$eight__pixels:            $one__pixel * 8;
+$nine__pixels:             $one__pixel * 9;
+$twelve__pixels:           $one__pixel * 12;
+//  Zindex
+$zindex-navbar:            1000 !default;
+$zindex-dropdown:          1000 !default;
+$zindex-navbar-fixed:      1030 !default;
+$zindex-modal-background:  1040 !default;
+$zindex-modal:             1050 !default;
+$zindex-popover:           1060 !default;
+$zindex-tooltip:           1070 !default;
+//  Cursor States
+$cursor-disabled:          not-allowed;
+//
+//  Body
+//
+//  Body Element
+$body__font:            $sans--regular;
+$body__line-height:     $base__line-height;
+$body__color:           $neutral__color--dark;
+//
+//  Headings
+//
+//  Heading Elements
+$h5__font-size:         $base__font-unit;
+$h6__font-size:         $h5__font-size / $base__font-ratio;
+$h4__font-size:         $h5__font-size * $base__font-ratio;
+$h3__font-size:         $h4__font-size * $base__font-ratio;
+$h2__font-size:         $h3__font-size * $base__font-ratio;
+$h1__font-size:         $h2__font-size * $base__font-ratio;
+//
+//
+//  Logo
+$logo__font:           $sans--bold;
+$logo__accent__color:  $white;
+//  Navbar
+$navbar-section__bg:                crimson;
+$navbar-section__color:             $white;
+$navbar-section__navbar-brand__bg:  shade($navbar-section__bg, 15%);

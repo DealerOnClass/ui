@@ -1,0 +1,21 @@
+.modal-backdrop {
+    position: fixed;
+    z-index: $zindex-modal-background;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background-color: $modal-backdrop__bg;
+
+    &.fade {
+
+        @include opacity(0);
+    }
+
+    &.in {
+
+        @include opacity($modal-backdrop__opacity);
+    }
+}
+

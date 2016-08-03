@@ -1,0 +1,9 @@
+.img-thumbnail,
+.img-rounded {
+    overflow: hidden;
+    border-radius: $img__radius;
+}
+
+.img-rounded-sm {
+    border-radius: $img--sm__radius;
+}

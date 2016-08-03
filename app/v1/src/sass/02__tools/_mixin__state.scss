@@ -1,0 +1,35 @@
+//
+//  https://gist.github.com/taupecat/4739443
+//  Hover State:
+//  Use instead of writing out :hover,:active,:focus
+//
+//  Usage:
+//  a {
+//      @include states {
+//          text-decoration: underline;
+//      }
+//  }
+
+@mixin state {
+    &:hover, &:active {
+        @content;
+    }
+}
+
+@mixin state-and-active {
+    &:hover, &:active, &.active {
+        @content;
+    }
+}
+
+@mixin state-and-self {
+    &, &:hover, &:active {
+        @content;
+    }
+}
+
+@mixin state-disabled {
+    box-shadow: none;
+
+    @include opacity(0.65);
+}

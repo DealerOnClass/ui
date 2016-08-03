@@ -1,0 +1,128 @@
+/*
+ * Vdp Price Drop
+ */
+(function(){
+	var _priceDrop     = document.querySelector(".js-vdp-sidebar-notifications-pricedrop");
+	var _priceDropLink = document.querySelector(".js-vdp-sidebar-notifications-pricedrop-link");
+	var _delay         = 2000;
+	var _isVisible	   = true;
+
+	_priceDropLink.addEventListener('click', function(event){
+		event.preventDefault();
+		SlideToggle();
+	});
+
+	setTimeout(function() { SlideToggle(); }, _delay);
+
+	function SlideDown() {
+		_priceDrop.classList.add("down");
+		_isVisible = false;
+	}
+
+	function SlideUp() {
+		_priceDrop.classList.remove("down");
+		_isVisible = true;
+	}
+
+	function SlideToggle() {
+		if (_isVisible) {
+			SlideDown();
+		} else {
+			SlideUp();
+		}
+	}
+})();
+/*
+ * Vdp Carousel
+ */
+(function(){
+	var carousel           = ".js-vdp-carousel",
+		$carousel          = $(carousel),
+		_carousel          = document.querySelector(carousel),
+		_carouselLeft      = document.querySelector(".js-control-left"),
+		_carouselRight     = document.querySelector(".js-control-right"),
+		_vdpBodyContainer  = document.querySelector(".js-vdp-body-container");
+	var _scrollAnimationSpeed      = 500,
+		_scrollVisibilityThreshold = 400;
+	var _curXPos = 0,
+		_curLeft = 0,
+		_curDown = false;
+	var _curOffset = 0,
+		_isOffset  = true,
+		_gutter	   = 15;
+
+	window.addEventListener('resize', OffsetControl);
+	_carousel.addEventListener('scroll', FadeControl);
+	_carousel.addEventListener('mousemove', MouseMove);
+	_carousel.addEventListener('mousedown', MouseDown);
+	_carousel.addEventListener('mouseup', MouseUp);
+	_carousel.addEventListener('mouseout', MouseOut);
+	_carouselLeft.addEventListener('click', ScrollLeft);
+	_carouselRight.addEventListener('click', ScrollRight);
+
+	function OffsetControl(evt) {
+		_curOffset = _vdpBodyContainer.offsetLeft + _gutter;
+		_carousel.style.transform = "translate3d(" + _curOffset + "px,0,0)";
+	}
+
+	function ScrollLeft(evt) {
+		evt.preventDefault();
+		$carousel.animate({
+			scrollLeft: '-=500'
+		}, _scrollAnimationSpeed);
+	}
+
+	function ScrollRight(evt) {
+		evt.preventDefault();
+		$carousel.animate({
+			scrollLeft: '+=500'
+		}, _scrollAnimationSpeed);
+	}
+
+	function MouseMove(evt) {
+		evt.preventDefault();
+		if(_curDown === true) {
+			_carousel.scrollLeft = (_curLeft - evt.pageX + _curXPos);
+		}
+	}
+
+	function MouseDown(evt) {
+		evt.preventDefault();
+		_curXPos = evt.pageX;
+		_curLeft = _carousel.scrollLeft;
+		_curDown = true;
+	}
+
+	function MouseUp(evt) {
+		evt.preventDefault();
+		_curDown = false;
+	}
+
+	function MouseOut(evt) {
+		evt.preventDefault();
+		_curDown = false;
+	}
+
+	function FadeControl() {
+		if(_carousel.scrollLeft < _scrollVisibilityThreshold) {
+			_carouselLeft.style.opacity = Normalize(_carousel.scrollLeft,0,_scrollVisibilityThreshold,0,1);
+		}
+	}
+
+	function Normalize(oldValue,oldMin, oldMax, newMin, newMax) {
+		//	http://stackoverflow.com/questions/5731863/mapping-a-numeric-range-onto-another
+
+		var _oldMin   = oldMin;
+		var _oldMax   = oldMax;
+		var _oldRange = _oldMax - _oldMin;
+		var _oldValue = oldValue; //
+
+		var _newMin   = 0;
+		var _newMax   = 1;
+		var _newRange = _newMax - _newMin;
+		var _newValue = ((_oldValue - _oldMin) * _newRange / _oldRange) + _newMin;
+
+		return _newValue;
+	}
+
+})();

@@ -1,0 +1,19 @@
+.popover-title {
+    margin: 0;
+    padding: $popover-title__padding;
+
+    border-top: $one__true__pixel solid;
+    border-right: $one__true__pixel solid;
+    border-left: $one__true__pixel solid;
+    border-top-left-radius: $panel__radius;
+    border-top-right-radius: $panel__radius;
+    background-color: $popover-title__bg;
+
+    .arrow + &:last-child,
+    .popover-arrow + &:last-child {
+        border-bottom-right-radius: $panel__radius;
+        border-bottom-left-radius: $panel__radius;
+        border: $one__true__pixel solid;
+    }
+}
+

@@ -1,0 +1,33 @@
+@if $pager__use-icon {
+    .pager {
+
+        .next > a:after,
+        .previous > a:before {
+            line-height: 1;
+            font-family: $fa-font-name;
+        }
+
+        .next > a:after {
+            content: '#{$pager__next__icon}';
+            margin-left: $pager__x / 2;
+        }
+
+        .previous > a:before {
+            content: '#{$pager__previous__icon}';
+            margin-right: $pager__x / 2;
+        }
+    }
+} @else {
+    .pager {
+
+        .next > a:after {
+            content: '\00BB';
+            margin-left: $pager__x / 2;
+        }
+
+        .previous > a:before {
+            content: '\00AB';
+            margin-right: $pager__x / 2;
+        }
+    }
+}

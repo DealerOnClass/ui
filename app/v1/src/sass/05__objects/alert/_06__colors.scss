@@ -1,0 +1,15 @@
+@if $alert__default-palette {
+    @include alert-color-variation($default__palette);
+}
+@if $alert__inverse-palette {
+    @include alert-color-variation($inverse__palette);
+}
+@if $alert__primary-palette {
+    @include alert-color-variation($primary__palette);
+}
+@if $alert__neutral-palette {
+    @include alert-color-variation($neutral__palette);
+}
+@if $alert__state-palette {
+    @include alert-color-variation($state__palette);
+}

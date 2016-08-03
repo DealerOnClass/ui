@@ -1,0 +1,26 @@
+//
+//  Units
+$navbar__contrast:              $global__contrast;
+$navbar__radius:                $global__radius;
+$navbar__x:                     $global__x;
+$navbar__y:                     $global__y * 1.5;
+//
+//  Color
+$navbar__default-palette:       true !default;
+$navbar__inverse-palette:       true !default;
+$navbar__primary-palette:       true !default;
+$navbar__neutral-palette:       true !default;
+$navbar__state-palette:         true !default;
+//
+//  Components
+$navbar__link__padding:         $navbar__y $navbar__x;
+$navbar__link--active__color:   $white;
+$navbar__link--active__border:  $primary__color;
+$navbar__link--active__bg:      $primary__color;
+$navbar__link--active__shadow:  inset 0 $three__pixels $five__pixels rgba(0, 0, 0, 0.125);
+//
+$navbar-stacked__link__padding: $navbar__y $navbar__x $navbar__y ( $navbar__x * 2 );
+//
+//  $navbar-sidebar__width:         18em;
+//
+$navbar-profile-img:            $navbar__y * 2;

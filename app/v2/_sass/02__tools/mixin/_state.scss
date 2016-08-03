@@ -1,0 +1,56 @@
+//  LVHA
+@mixin visited-state {
+    &:visited {
+        @content;
+    }
+}
+
+@mixin hover-state {
+    &:hover {
+        @content;
+    }
+}
+
+@mixin focus-state {
+    &:focus {
+        @content;
+    }
+}
+
+@mixin active-state {
+    &:active {
+        @content;
+    }
+}
+
+@mixin state {
+    &:hover,
+    &:active {
+        @content;
+    }
+}
+
+@mixin state-and-active {
+    &:hover,
+    &:active,
+    &.active {
+        @content;
+    }
+}
+
+@mixin state-and-active-and-open {
+    &:hover,
+    &:active,
+    &.active,
+    &.open {
+        @content;
+    }
+}
+
+@mixin state-and-self {
+    &,
+    &:hover,
+    &:active {
+        @content;
+    }
+}

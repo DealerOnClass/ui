@@ -1,0 +1,60 @@
+@mixin navbar-color-variation($input__palette) {
+    @each $class__name, $color in $input__palette {
+        .navbar-#{$class__name} {
+
+            color: check-color($color, 80, inherit, $white);
+            border: 0 none;
+            background-color: $color;
+
+            a.navbar-item,
+            button.navbar-item {
+                @if ($color != white) {
+                    @include state-and-active {
+                        background-color: shade($color, $navbar__contrast);
+                    }
+                }
+            }
+
+            .navbar-item.dropdown {
+                @if ($color != white) {
+                    @include state-and-active-and-open {
+                        background-color: shade($color, $navbar__contrast);
+                    }
+
+                    .dropdown-menu {
+                        background-color: shade($color, $navbar__contrast);
+                    }
+
+                    a.dropdown-item {
+                        @include state-and-active {
+                            background-color: shade($color, $navbar__contrast * 1.5);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin navbar-size-variation($unit__y, $unit__x, $input__palette) {
+    @each $class__name, $size in $input__palette {
+
+        $x: ($unit__x * strip-unit($size));
+        $y: ($unit__y * strip-unit($size));
+
+        .navbar-#{$class__name} {
+
+            .navbar-item {
+
+                &.dropdown {
+                    padding: 0;
+                }
+
+                &,
+                &.dropdown > .dropdown-toggle {
+                    padding: $y $unit__x;
+                }
+            }
+        }
+    }
+}

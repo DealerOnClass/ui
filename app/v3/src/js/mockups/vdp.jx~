@@ -1,0 +1,190 @@
+/*
+ * Vdp Price Drop
+ */
+(function(){
+	var _priceDrop     = document.querySelector(".js-vdp-sidebar-notifications-pricedrop");
+	var _priceDropLink = document.querySelector(".js-vdp-sidebar-notifications-pricedrop-link");
+	var _delay         = 2000;
+	var _isVisible	   = true;
+
+	_priceDropLink.addEventListener('click', function(event){
+		event.preventDefault();
+		SlideToggle();
+	});
+
+	setTimeout(function() { SlideToggle(); }, _delay);
+
+	function SlideDown() {
+		_priceDrop.classList.add("down");
+		_isVisible = false;
+	}
+
+	function SlideUp() {
+		_priceDrop.classList.remove("down");
+		_isVisible = true;
+	}
+
+	function SlideToggle() {
+		if (_isVisible) {
+			SlideDown();
+		} else {
+			SlideUp();
+		}
+	}
+})();
+/*
+ * Vdp Carousel
+ */
+(function(){
+	var carousel           = ".js-vdp-carousel",
+		$carousel          = $(carousel),
+		_carousel          = document.querySelector(carousel),
+		_carouselLeft      = document.querySelector(".js-control-left"),
+		_carouselRight     = document.querySelector(".js-control-right"),
+		_vdpBodyContainer  = document.querySelector(".js-vdp-body-container");
+	var _scrollAnimationSpeed      = 500,
+		_scrollVisibilityThreshold = 400;
+	var _clickXPos  = 0,
+		_scrollXPos = 0,
+		_isScrolled = false,
+		_curDown    = false;
+	var _curOffset = 0,
+		_isOffset  = true,
+		_gutter	   = 15;
+
+	window.addEventListener('load', OffsetControl);
+	window.addEventListener('resize', OffsetControl);
+	_carousel.addEventListener('scroll', FadeControl);
+	_carousel.addEventListener('mousemove', MouseMove);
+	_carousel.addEventListener('mousedown', MouseDown);
+	_carousel.addEventListener('mouseup', MouseUp);
+	_carousel.addEventListener('mouseleave', MouseLeave);
+	_carouselLeft.addEventListener('click', ScrollLeft);
+	_carouselRight.addEventListener('click', ScrollRight);
+
+	function OffsetControl(evt) {
+		if (_isOffset) {
+			_curOffset = _vdpBodyContainer.offsetLeft + _gutter;
+			_carousel.style.transform = "translate3d(" + _curOffset + "px,0,0)";
+		}
+	}
+
+	function ScrollLeft(evt) {
+		evt.preventDefault();
+		$carousel.animate({
+			scrollLeft: '-=500'
+		}, _scrollAnimationSpeed);
+	}
+
+	function ScrollRight(evt) {
+		evt.preventDefault();
+		$carousel.animate({
+			scrollLeft: '+=500'
+		}, _scrollAnimationSpeed);
+	}
+
+	function MouseMove(evt) {
+		evt.preventDefault();
+		if (_curDown === true) {
+			var _previousMouseX = _clickXPos;
+			var _currentMouseX = _scrollXPos - evt.pageX;
+			var _distanceTravelled = _currentMouseX + _previousMouseX;
+			var _offsetThreshold = (_curOffset - _distanceTravelled);
+
+			var _offset = _carousel.getAttribute("data-offset") | 0;
+			var _offsetLast = _carousel.getAttribute("data-offset-last") | 0;
+			var _scroll = _carousel.getAttribute("data-scroll") | 0;
+
+			console.log("Offset threshold: " + _offsetThreshold);
+			console.log("Offset currently: " + _curOffset);
+
+				//	if (_distanceTravelled > 0) {
+				//		console.log("scrolling left");
+				//		if (_offset <= _curOffset) {
+				//			_offset = _distanceTravelled + _offsetLast;
+				//			_carousel.setAttribute("data-offset", _offset);
+				//		}
+				//	} else {
+				//		console.log("scrolling right");
+				//	}
+
+			// if(_distanceTravelled > 0){
+			// 	if(_scroll >= 0){
+			// 		_scroll -= _distanceTravelled;
+			// 		_carousel.setAttribute("data-scroll", _scroll);
+			// 	}
+			// 	else if(_offset >= _curOffset){
+			// 		_offset -= _distanceTravelled;
+			// 		_carousel.setAttribute("data-offset", _offset);
+			// 	}
+			// }else{
+			// 	if(_offset < _curOffset){
+			// 		_scroll = 0;
+			// 		_offset -= _distanceTravelled;
+			// 		_carousel.setAttribute("data-offset", _offset);
+			// 	}
+			// 	else if(_scroll >= 0 && _scroll <= _carousel.scrollWidth){
+			// 		_scroll -= _distanceTravelled;
+			// 		_offset = _curOffset;
+			// 		_carousel.setAttribute("data-scroll", _scroll);
+			// 	}
+			// }
+			// 		_carousel.style.transform = "translate3d("+ (_curOffset-_offset) +"px,0,0)";
+			// 		_carousel.scrollLeft = _scroll;
+
+			//	console.log("Offset threshold: " + _offsetThreshold);
+			//	console.log("Distance travelled: " + _distanceTravelled);
+			//	console.log("Test: " + _distanceTravelled);
+
+			_carousel.setAttribute("data-distance-travelled", _distanceTravelled);
+
+			var test = parseFloat(_lastDistanceTravelled) + parseFloat(_distanceTravelled);
+
+			if (test < _curOffset) {
+				_carousel.style.transform = "translate3d(" + ((test * -1) + _curOffset) + "px,0,0)";
+			} else {
+				_carousel.style.transform = "translate3d(0,0,0)";
+				_carousel.scrollLeft = (_distanceTravelled - _curOffset);
+			}
+		}
+	}
+
+	function MouseDown(evt) {
+		evt.preventDefault();
+		_clickXPos = evt.pageX;
+		_scrollXPos = _carousel.scrollLeft;
+		_curDown = true;
+	}
+
+	function MouseUp(evt) {
+		_carousel.setAttribute("data-offset-last", (_carousel.getAttribute("data-offset") | 0));
+		_curDown = false;
+	}
+
+	function MouseLeave(evt) {
+		_curDown = false;
+	}
+
+	function FadeControl() {
+		if (_carousel.scrollLeft < _scrollVisibilityThreshold) {
+			_carouselLeft.style.opacity = Normalize(_carousel.scrollLeft,0,_scrollVisibilityThreshold,0,1);
+		}
+	}
+
+	function Normalize(oldValue,oldMin, oldMax, newMin, newMax) {
+		//	http://stackoverflow.com/questions/5731863/mapping-a-numeric-range-onto-another
+
+		var _oldMin   = oldMin;
+		var _oldMax   = oldMax;
+		var _oldRange = _oldMax - _oldMin;
+		var _oldValue = oldValue; //
+
+		var _newMin   = 0;
+		var _newMax   = 1;
+		var _newRange = _newMax - _newMin;
+		var _newValue = ((_oldValue - _oldMin) * _newRange / _oldRange) + _newMin;
+
+		return _newValue;
+	}
+
+})();

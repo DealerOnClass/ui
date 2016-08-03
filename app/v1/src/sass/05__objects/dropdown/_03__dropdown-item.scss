@@ -1,0 +1,52 @@
+.dropdown-menu-header {
+    padding: ( $dropdown__y * 1.5 ) ( $dropdown__x * 1.5 );
+}
+
+.dropdown-menu-body {
+    padding: ( $dropdown__x * 1.5 );
+    min-width: 200px;
+}
+
+.dropdown-menu > li {
+
+    &.dropdown-header,
+    > a {
+        position: relative;
+
+        display: block;
+        clear: both;
+
+        padding: $dropdown-menu__link__padding;
+
+        white-space: nowrap;
+
+        background-color: $white;
+        border-right: $one__true__pixel solid;
+        border-left: $one__true__pixel solid;
+    }
+
+    &:first-child.dropdown-header,
+    &:first-child > a {
+        border-top: $one__true__pixel solid;
+        border-top-left-radius: $dropdown__radius;
+        border-top-right-radius: $dropdown__radius;
+    }
+
+    &:last-child.dropdown-header,
+    &:last-child > a {
+        border-bottom: $one__true__pixel solid;
+        border-bottom-right-radius: $dropdown__radius;
+        border-bottom-left-radius: $dropdown__radius;
+    }
+
+    > a.active,
+    &.active > a,
+    &.open > a {
+        @include state-and-self {
+            color: $dropdown-menu__link--active__color;
+            border-color: transparent;
+            background-color: $dropdown-menu__link--active__bg;
+        }
+    }
+}
+

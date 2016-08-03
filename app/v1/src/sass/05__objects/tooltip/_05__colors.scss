@@ -1,0 +1,16 @@
+@if $tooltip__default-palette {
+    @include tooltip-color-variation($default__palette);
+}
+@if $tooltip__inverse-palette {
+    @include tooltip-color-variation($inverse__palette);
+}
+@if $tooltip__primary-palette {
+    @include tooltip-color-variation($primary__palette);
+}
+@if $tooltip__neutral-palette {
+    @include tooltip-color-variation($neutral__palette);
+}
+@if $tooltip__state-palette {
+    @include tooltip-color-variation($state__palette);
+}
+

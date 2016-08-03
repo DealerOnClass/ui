@@ -1,0 +1,19 @@
+.navbar-brand {
+    float: left;
+
+    padding: $navbar__link__padding;
+}
+
+.navbar-brand-svg {
+    position: relative;
+    display: inline-block;
+}
+
+.navbar-brand-svg:after {
+    content:"";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}

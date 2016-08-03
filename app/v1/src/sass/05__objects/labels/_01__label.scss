@@ -1,0 +1,13 @@
+.label {
+    font-size: $label__font-size;
+
+    display: inline-block;
+
+    padding: $label__padding;
+
+    text-align: center;
+    white-space: nowrap;
+
+    border: $one__true__pixel solid;
+    border-radius: $label__radius;
+}

@@ -1,0 +1,58 @@
+.navbar {
+    position: relative;
+
+    border: $one__true__pixel solid;
+    border-radius: $navbar__radius;
+
+    @include clearfix;
+    //  @media (max-width: $grid-float-breakpoint-max) {
+    //      overflow: hidden;
+    //  }
+}
+
+.navbar > .container,
+.navbar > .container-fluid {
+    margin-right: $global__gutter / -2;
+    margin-left: $global__gutter / -2;
+}
+
+.navbar .dropdown-menu {
+    overflow: hidden;
+
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    box-shadow: none;
+
+    > li:first-child > a {
+        border-radius: 0;
+    }
+
+    @media (max-width: $grid-float-breakpoint-max) {
+        position: relative;
+        width: 100%;
+        border-radius: 0;
+    }
+}
+
+.navbar .caret {
+    line-height: $base__line-height;
+
+    display: inline-block;
+
+    margin-left: $navbar__x / 2;
+}
+
+//  .container,
+//  .container-fluid {
+//      > .navbar-header,
+//      > .navbar-collapse {
+//          margin-right: $global__gutter * -1;
+//          margin-left: $global__gutter * -1;
+//
+//          @media (min-width:  $grid-float-breakpoint) {
+//              margin-right: 0;
+//              margin-left: 0;
+//          }
+//      }
+//  }
+//

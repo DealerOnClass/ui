@@ -1,0 +1,41 @@
+.navbar-nav {
+    > li > a {
+        padding: $navbar__link__padding;
+    }
+
+    > li > a.active,
+    > li.active > a,
+    > li.open > a {
+        @include state-and-self {
+            color: $navbar__link--active__color;
+            border-color: $navbar__link--active__border;
+            background-color: $navbar__link--active__bg;
+        }
+    }
+
+    > li > a:active {
+        box-shadow: $navbar__link--active__shadow;
+    }
+
+    > li > a[disabled] {
+        background-color: transparent!important;
+        @include state-disabled;
+    }
+
+    @media (min-width: $grid-float-breakpoint) {
+        float: left;
+
+        margin: 0;
+
+        > li {
+            float: left;
+        }
+    }
+
+    @media (max-width: $grid-float-breakpoint-max) {
+        > li {
+            clear: both;
+        }
+    }
+}
+

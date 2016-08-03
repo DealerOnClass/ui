@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>DealerOn UI Kit - Query Language 01</title>
+        <link href="css/screen.css" rel="stylesheet">
+    </head>
+
+    <body class="demo pricing">
+        <nav class="navbar navbar-main navbar-static-top">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <object class="logo__svg" data='img/logo__symbol.svg' type="image/svg+xml"></object>
+                </a>
+            </div>
+            <a class="navbar-brand pull-right" href="index.html"><i class="fa fa-home"></i></a>
+        </nav>
+
+        <div class="container">
+            <hr class="invisible">
+            <h3>Query Creation</h3>
+            <div class="panel-wizard-container">
+                <div class="panel panel-alt1 panel-wizard">
+                    <a class="panel-heading btn" href="#query__creation__collapse__step1" data-toggle="collapse">
+                        <span class="panel-wizard-step">Name and describe your query</span>
+                        <i class="panel-wizard-icon fa fa-plus fa-sm" data-toggle="collapse__icon"></i>
+                    </a>
+                    <div class="panel-collapse collapse in" id="query__creation__collapse__step1">
+                        <div class="panel-body">
+                            <form class="form form-horizontal text-left" action="">
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">Name:</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" type="text" placeholder="John Doe's pricing template">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">Description:</label>
+                                    <div class="col-sm-8">
+                                        <textarea class="form-control" rows="3" placeholder="Use for John Doe's vehicles."></textarea>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="panel-footer">
+                            <form class="form form-horizontal" action="">
+                                <div class="form-group">
+                                    <div class="col-sm-offset-4 col-sm-8">
+                                        <div class="pull-right">
+                                            <a class="btn btn-default" data-toggle="panel-wizard__next" href="javaScript:void(0)">Next</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-alt1 panel-wizard">
+                    <a class="panel-heading btn" href="#query__creation__collapse__step2" data-toggle="collapse">
+                        <span class="panel-wizard-step">Create your query</span>
+                        <i class="panel-wizard-icon fa fa-plus fa-sm" data-toggle="collapse__icon"></i>
+                    </a>
+                    <div class="panel-collapse collapse" id="query__creation__collapse__step2">
+                        <div class="panel-body">
+                            <div><strong>How to use:</strong></div>
+                            <ul>
+                                <li>Create a query by dragging toolbox items onto the workbench.</li>
+                                <li>Rearrange workbench items by dragging.</li>
+                            </ul>
+                            <div class="row">
+                                <div class="col-xs-4 col-sm-4 col-md-4">
+                                    <div class="sortable-body">
+                                        <h5>Toolbox</h5>
+                                        <div id="query__creation__toolbox" class="sortable-toolbox">
+                                            <div class="btn btn-default btn-block clearfix sortable sortable-base" data-type="group">
+                                                <span class="sortable-text">New Group</span>
+                                                <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                                            </div>
+                                            <div class="btn btn-default btn-block clearfix sortable" data-type="b_joiner">
+                                                <span class="sortable-text">or</span>
+                                                <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                                            </div>
+                                            <div class="btn btn-default btn-block clearfix sortable" data-type="b_joiner">
+                                                <span class="sortable-text">and</span>
+                                                <i class="sortable-drag fa fa-ellipsis-v fa-sm"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-8 col-sm-8 col-md-8">
+                                    <div class="sortable-body">
+                                        <h5>
+                                            Workbench
+                                            <div class="btn-group pull-right">
+                                                <button data-target="#cancel_modal" class="btn btn-default sortable-remove-all" data-toggle="modal">Clear</button>
+                                                <button class="btn btn-default sortable-groupem" data-action="lockgroup"><i class="fa fa-chain"></i></button>
+                                                <button class="btn btn-default sortable-ungroupem" data-action="unlockgroup"><i class="fa fa-chain-broken"></i></button>
+                                                <button class="btn btn-default sortable-removegroup" data-action="removegroup"><i class="fa fa-times"></i></button>
+                                                <button class="btn btn-default sortable-editgroup" data-action="editgroup"><i class="fa fa-pencil"></i></button>
+                                            </div>
+                                        </h5>
+                                        <div id="query__creation__workbench" class="sortable-workbench btn-group-sentence"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-footer">
+                            <form class="form form-horizontal" action="">
+                                <div class="form-group">
+                                    <div class="col-sm-offset-4 col-sm-8">
+                                        <div class="pull-right">
+                                            <a class="btn btn-default" data-toggle="panel-wizard__prev" href="javaScript:void(0)">Previous</a>
+                                            <a class="btn btn-default" data-toggle="panel-wizard__done" href="javaScript:void(0)">Done</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Query Modal -->
+        <div class="modal fade" id="query_modal">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close btn btn-default" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                        <h4 id="modal-title" class="modal-title">Create A Group</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="query__creation__preview" class="btn-group-sentence"></div>
+                        <hr class="row">
+                    </div>
+                    <div class="modal-body">
+                        <ul class="nav nav-tabs">
+                            <li><a href="#parameter_tab" data-toggle="tab">Parameter</a></li>
+                            <li><a href="#operator_tab" data-toggle="tab">Operator</a></li>
+                            <li><a href="#value_tab" data-toggle="tab">Value</a></li>
+                            <!--<li><a href="#joiner_tab" data-toggle="tab">Joiner</a></li>-->
+                        </ul>
+                        <div class="tab-content">
+                            <div id="parameter_tab" class="tab-pane in active">
+                                <attr title="Body style" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="1,2,5,6">
+                                <span class="sortable-text">Body Style</span>
+                                </attr>
+                                <attr title="Carfax1owner" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="1,2">
+                                <span class="sortable-text">Carfax1owner</span>
+                                </attr>
+                                <attr title="City MPG" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="1,2,3,4,7">
+                                <span class="sortable-text">City MPG</span>
+                                </attr>
+                                <attr title="Cpo" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="1">
+                                <span class="sortable-text">CPO</span>
+                                </attr>
+                                <attr title="Days" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="1,2,3,4,7">
+                                <span class="sortable-text">Days</span>
+                                </attr>
+                                <attr title="Dealership" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="1,2,5,6">
+                                <span class="sortable-text">Dealership</span>
+                                </attr>
+                                <attr title="Drivetrain" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="1,2,5,6">
+                                <span class="sortable-text">Drivetrain</span>
+                                </attr>
+                                <attr title="Exterior color" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="1,2,5,6">
+                                <span class="sortable-text">Ext color</span>
+                                </attr>
+                                <attr title="Features" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="1">
+                                <span class="sortable-text">Features</span>
+                                </attr>
+                                <attr title="Fuel type" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="1,2,5,6">
+                                <span class="sortable-text">Fuel Type</span>
+                                </attr>
+                                <attr title="Hwy MPG" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="1,2,3,4,7">
+                                <span class="sortable-text">Hwy MPG</span>
+                                </attr>
+                                <attr title="Interior color" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="1,2,5,6">
+                                <span class="sortable-text">Int Color</span>
+                                </attr>
+                                <attr title="Internet price" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="1,2,3,4,7">
+                                <span class="sortable-text">Internet Price</span>
+                                </attr>
+                                <attr title="Location" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="1,2,5,6">
+                                <span class="sortable-text">Location</span>
+                                </attr>
+                                <attr title="Lot order" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="1,2">
+                                <span class="sortable-text">Lot Order</span>
+                                </attr>
+                                <attr title="Make" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="1,2,5,6">
+                                <span class="sortable-text">Make</span>
+                                </attr>
+                                <attr title="Mileage" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="1,2,3,4,7">
+                                <span class="sortable-text">Mileage</span>
+                                </attr>
+                                <attr title="Model" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="1,2,5,6">
+                                <span class="sortable-text">Model</span>
+                                </attr>
+                                <attr title="Msrp" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="1,2,3,4,7">
+                                <span class="sortable-text">MSRP</span>
+                                </attr>
+                                <attr title="Special" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="1">
+                                <span class="sortable-text">Special</span>
+                                </attr>
+                                <attr title="Stock number" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="1,2,5,6">
+                                <span class="sortable-text">Stock Number</span>
+                                </attr>
+                                <attr title="Tags" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="1,2,5,6">
+                                <span class="sortable-text">Tags</span>
+                                </attr>
+                                <attr title="Transmission" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="1,2,5,6">
+                                <span class="sortable-text">Transmission</span>
+                                </attr>
+                                <attr title="Trim" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="1,2,5,6">
+                                <span class="sortable-text">Trim</span>
+                                </attr>
+                                <attr title="Vehicle location" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="8">
+                                <span class="sortable-text">Car Location</span>
+                                </attr>
+                                <attr title="Vin" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="1,2,5,6">
+                                <span class="sortable-text">Vin</span>
+                                </attr>
+                                <attr title="Year" class="btn btn-default clearfix sortable" data-type="parameter" data-accepts="1,2,3,4">
+                                <span class="sortable-text">Year</span>
+                                </attr>
+                            </div>
+                            <div id="operator_tab" class="tab-pane">
+                                <attr title="Equals" class="btn btn-default clearfix sortable" data-type="operator" data-id="1">
+                                <span class="sortable-text">is equal to</span>
+                                </attr>
+                                <attr title="Except" class="btn btn-default clearfix sortable" data-type="operator" data-id="2">
+                                <span class="sortable-text">except</span>
+                                </attr>
+                                <attr title="Greater than or Equal to" class="btn btn-default clearfix sortable" data-type="operator" data-id="3">
+                                <span class="sortable-text">greater or equal to</span>
+                                </attr>
+                                <attr title="Less than or Equal to" class="btn btn-default clearfix sortable" data-type="operator" data-id="4">
+                                <span class="sortable-text">less or equal to</span>
+                                </attr>
+                                <attr title="Like" class="btn btn-default clearfix sortable" data-type="operator" data-id="5">
+                                <span class="sortable-text">is like</span>
+                                </attr>
+                                <attr title="Not like" class="btn btn-default clearfix sortable" data-type="operator" data-id="6">
+                                <span class="sortable-text">is not like</span>
+                                </attr>
+                                <attr title="Between" class="btn btn-default clearfix sortable" data-type="operator" data-id="7">
+                                <span class="sortable-text">between</span>
+                                </attr>
+                                <attr title="Near" class="btn btn-default clearfix sortable" data-type="operator" data-id="8">
+                                <span class="sortable-text">near</span>
+                                </attr>
+                            </div>
+                            <div id="value_tab" class="tab-pane">
+                                <attr title="String" class="btn btn-default clearfix sortable" data-type="value">
+                                <span class="sortable-text">String</span>
+                                </attr>
+                                <attr title="String" class="btn btn-default clearfix sortable" data-type="value">
+                                <span class="sortable-text">String</span>
+                                </attr>
+                                <attr title="String" class="btn btn-default clearfix sortable" data-type="value">
+                                <span class="sortable-text">String</span>
+                                </attr>
+                                <attr title="String" class="btn btn-default clearfix sortable" data-type="value">
+                                <span class="sortable-text">String</span>
+                                </attr>
+                                <attr title="String" class="btn btn-default clearfix sortable" data-type="value">
+                                <span class="sortable-text">String</span>
+                                </attr>
+                                <attr title="String" class="btn btn-default clearfix sortable" data-type="value">
+                                <span class="sortable-text">String</span>
+                                </attr>
+                                <attr title="String" class="btn btn-default clearfix sortable" data-type="value">
+                                <span class="sortable-text">String</span>
+                                </attr>
+                                <attr title="String" class="btn btn-default clearfix sortable" data-type="value">
+                                <span class="sortable-text">String</span>
+                                </attr>
+                                <attr title="String" class="btn btn-default clearfix sortable" data-type="value">
+                                <span class="sortable-text">String</span>
+                                </attr>
+                                <attr title="String" class="btn btn-default clearfix sortable" data-type="value">
+                                <span class="sortable-text">String</span>
+                                </attr>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default sortable-finished" data-dismiss="modal" onclick='UpdateWorkbench("#query__creation__preview", "#query__creation__workbench");'>I'm Done</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cancel Modal -->
+        <div class="modal fade" id="cancel_modal">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close btn btn-default" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                        <h4 id="modal-title" class="modal-title">Clear Workbench</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Are you sure?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="btn-group">
+                            <button class="btn btn-default sortable-finished" data-dismiss="modal" onclick="ClearPreviewAndWorkbench()">Yes</button>
+                            <button class="btn btn-default sortable-remove-all" data-dismiss="modal">No</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Remove Modal -->
+        <div class="modal fade" id="remove_modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close btn btn-default" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                        <h4 id="modal-title" class="modal-title">Remove Items</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="query__remove__preview" class="btn-sentence"></div>
+                        <hr class="row">
+                    </div>
+                    <div class="modal-body">
+                        <p>Are you sure?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="btn-group">
+                            <button class="btn btn-default sortable-finished" data-dismiss="modal" onclick="QueryRemove()">Yes</button>
+                            <button class="btn btn-default sortable-remove-all" data-dismiss="modal">No</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SCRIPTS -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/tether.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/jquery.easing.min.js"></script>
+
+        <script src="js/sortable.js"></script>
+        <script src="js/functions.js"></script>
+        <script src="js/querylang/querylang__01.js"></script>
+    </body>
+
+</html>
+

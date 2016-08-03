@@ -1,0 +1,37 @@
+span[data-toggle='tooltip'] {
+    position: relative;
+
+    padding: 0 ( $tooltip__x / 2 );
+
+    border-bottom: $one__true__pixel dashed;
+    display: inline-block;
+
+    &:after {
+        font-family: $fa-font-name;
+
+        position: absolute;
+        top: ( $base__line-height * $base__font-unit ) * -0.25;
+        right: 0;
+
+        display: block;
+
+        content: '#{$tooltip-text--default__icon}';
+    }
+}
+
+span[data-toggle='tooltip'][data-style='success']:after {
+    content: '#{$tooltip-text--success__icon}';
+}
+
+span[data-toggle='tooltip'][data-style='info']:after {
+    content: '#{$tooltip-text--info__icon}';
+}
+
+span[data-toggle='tooltip'][data-style='warning']:after {
+    content: '#{$tooltip-text--warning__icon}';
+}
+
+span[data-toggle='tooltip'][data-style='danger']:after {
+    content: '#{$tooltip-text--danger__icon}';
+}
+

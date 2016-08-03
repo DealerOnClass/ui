@@ -1,0 +1,13 @@
+<nav class="nav nav--navbar site-nav">
+
+    <a class="nav__item nav__item--svg" href="{{ site.baseurl }}/">
+        <object class="logo site-logo" data="{{ '/images/logo__symbol.svg' | prepend: site.baseurl }}" type="image/svg+xml">
+            <img class="logo site-logo" src="{{ '/images/logo__symbol.svg' | prepend: site.baseurl }}" alt="">
+        </object>
+    </a>
+
+    {% assign pagelist = site.pages | sort: 'navorder' %}
+    {% assign navgroup = 'main' %}
+    {% include nav.html %}
+
+</nav>

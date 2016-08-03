@@ -1,0 +1,16 @@
+@mixin label-color-variation($input__palette) {
+    @each $class__name, $color in $input__palette {
+        .label-#{$class__name} {
+            color: check-color($color, 80, inherit, $white);
+            border-color: transparent;
+            background-color: $color;
+        }
+
+        a.label-#{$class__name} {
+            @include state {
+                color: check-color($color, 80, inherit, $white);
+                background-color: shade($color, $label__contrast);
+            }
+        }
+    }
+}

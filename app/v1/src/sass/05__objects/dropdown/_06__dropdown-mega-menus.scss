@@ -1,0 +1,26 @@
+//
+//  Use:
+//
+//  <nav class="navbar navbar-mega-menu">
+//    ...
+//    <div class="dropdown dropdown-mega-menu">
+//      ...
+//      <div class="dropdown-menu">
+//        ...
+//        <div class="container">
+//
+//
+.navbar-mega-menu .navbar-nav,
+.navbar-mega-menu .dropdown-mega-menu {
+    position: static!important;
+}
+
+.navbar-mega-menu .dropdown-mega-menu .dropdown-menu {
+    width: 100%;
+    //  margin-right: $one__true__pixel * -1;
+    //  margin-left: $one__true__pixel * -1;
+    padding-top: $dropdown__y;
+    padding-bottom: $dropdown__y;
+
+    border-radius: 0;
+}

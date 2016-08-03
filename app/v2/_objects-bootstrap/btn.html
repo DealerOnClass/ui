@@ -1,0 +1,54 @@
+---
+navgroup: "objects"
+navorder: 1
+navtitle: "button"
+category: [objects]
+
+name: "btn"
+
+base-grid: false
+base-grid-col: col-md-6
+base-hide-code: true
+base: |
+    <button type="button" class="btn">I'm a button</button>
+
+variant: true
+variants-grid: false
+variants-grid-col: col-md-6
+variants-hide-code: true
+variants:
+    - name: block
+      base: |
+          <button type="button" class="btn btn-block">I'm a block button</button>
+
+    - name: link
+      base: |
+          <a href="" class="btn btn-link">I'm a link button</a>
+
+    - name: rounded
+      base: |
+          <a href="" class="btn btn-rounded">I'm a rounded button</a>
+
+    - name: states
+      base: |
+          <a href="" class="active btn">I'm an active button</a>
+          <a href="" class="btn">I'm a button</a>
+          <a disabled href="" class="btn">I'm a disabled button</a>
+
+size: true
+size-grid: false
+size-grid-col: col-md-3
+size-hide-code: true
+size-base-use: true
+size-base: |
+    <button type="button" class="btn btn-rounded">I'm a button</button>
+
+theme: true
+theme-grid: true
+theme-grid-col: col-md-3
+theme-hide-code: true
+theme-base-use: true
+theme-base: |
+    <button type="button" class="btn">I'm a button</button>
+
+---

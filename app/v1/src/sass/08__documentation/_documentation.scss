@@ -1,0 +1,58 @@
+//
+// Architecture based on Harry Roberts ITCSS
+// http://csswizardry.net/talks/2014/11/itcss-dafed.pdf
+//
+// 01__settings:    Globally-available settings.
+//                  Config Switches.
+//                  Brand Colours, etc.
+//
+// 02__tools:       Globally-available tools.
+//                  Public mixins.
+//                  Helper functions.
+//
+// 03__generic:     Ground zero styles.
+//                  Low-specificity, far-reaching.
+//                  Resets, Normalize.css, etc.
+//
+// 04__base:        Unclassed HTMl elemetns.
+//                  H1-H6, basic links, lists, etc.
+//                  Last layer we see type selectors
+//                  ( ul {} )
+//
+// 05__objects:     OOCSS.
+//                  Design patterns.
+//                  No cosmetics.
+//                  Begin using classes exclusively.
+//                  Agnostically named.
+//                  ( .ui-list {} )
+//
+// UPDATE:          NOT NEEDED
+// 06__components:  Designed pieces of UI.
+//                  Still only using classes.
+//                  More explicitly name.
+//                  ( .products-list {} )
+//
+// 07__trumps:      Overrides, helpers, utilities.
+//                  Only affect one piece of the DOM at a time.
+//                  Usually carry !important
+//
+//
+//
+// Naming Conventions
+//
+// .parent
+// .parent-child
+//
+// .navbar
+// .navbar-brand
+//
+// On Bootstrap 4
+//
+// Not included media query hover.
+// http://drafts.csswg.org/mediaqueries/#hover
+//
+//
+// MODIFICATIONS
+//
+// changed global__y in navbar
+// changed gloabl__y in table

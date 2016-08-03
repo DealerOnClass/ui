@@ -1,0 +1,12 @@
+.sortable-drag {
+    position: absolute;
+    top: 50%;
+    right: $btn__x;
+    margin-top: -1 * $btn__y;
+}
+
+.sortable-workbench {
+    .sortable-drag {
+        display: none;
+    }
+}

@@ -1,0 +1,19 @@
+//
+//  Units
+$footer__x: $global__x;
+$footer__y: rhythm($global__y);
+//
+//  Base
+.footer {
+    padding-top: $footer__y;
+    padding-bottom: $footer__y;
+}
+
+.site-footer {
+    color: $white;
+    background-color: tint($inverse__color, 70%);
+
+    a {
+        color: inherit;
+    }
+}

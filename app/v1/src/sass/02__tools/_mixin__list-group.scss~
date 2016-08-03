@@ -1,0 +1,173 @@
+@mixin list-group-color-variation($input__palette) {
+    @each $class__name, $color in $input__palette {
+        .list-group-#{$class__name} {
+            @if $list-group__solid-color {
+                .list-group-item {
+                    color: check-color($color, 80, inherit, $white);
+                    border-color: $color;
+                    background-color: $color;
+
+                    &:not(:last-child) {
+                        border-bottom-color: shade($color, $list-group__contrast);
+                    }
+                }
+                a.list-group-item {
+                    @include state {
+                        color: check-color($color, 80, inherit, $white);
+                        border-color: shade($color, $list-group__contrast);
+                        background-color: shade($color, $list-group__contrast);
+                    }
+                }
+            } @else {
+                .list-group-item {
+                    color: check-color($color, 80, inherit, shade($color, $list-group__contrast));
+                    border-color: check-color($color, 80, inherit, shade($color, $list-group__contrast));
+                }
+                a.list-group-item {
+                    @include state {
+                        color: check-color($color, 80, inherit, shade($color, $list-group__contrast * 2));
+                    }
+                }
+            }
+        }
+    }
+}
+@mixin list-group-item-color-variation($input__palette) {
+    @each $class__name, $color in $input__palette {
+        .list-group-item-#{$class__name} {
+            @if $list-group__solid-color {
+                color: check-color($color, 80, inherit, $white);
+                border-color: $color;
+                background-color: $color;
+            } @else {
+                color: check-color($color, 80, inherit, shade($color, $list-group__contrast));
+                border-color: check-color($color, 80, inherit, shade($color, $list-group__contrast));
+                background-color: transparent;
+            }
+        }
+        a.list-group-item-#{$class__name} {
+            @if $list-group__solid-color {
+                color: check-color($color, 80, inherit, $white);
+                border-color: $color;
+                background-color: $color;
+
+                @include state {
+                    border-color: shade($color, $list-group__contrast);
+                    background-color: shade($color, $list-group__contrast);
+                }
+            } @else {
+                color: check-color($color, 80, inherit, shade($color, $list-group__contrast));
+                border-color: check-color($color, 80, inherit, shade($color, $list-group__contrast));
+                background-color: transparent;
+            }
+        }
+    }
+}
+//  @mixin list-group-variant($state, $background) {
+//
+//      $color:  check-color($background, 70, red, white);
+//
+//      .list-group-#{$state} {
+//          //color:             shade($color, 25%);
+//          color:  $color;
+//
+//          .list-group-item {
+//              background-color:  $background;
+//              border-color:      shade($background, 25%);
+//
+//              a {
+//                  color: $color;
+//              }
+//          }
+//
+//          a.list-group-item,
+//          button.list-group-item {
+//              color: $color;
+//
+//              .list-group-item-heading {
+//                  color: inherit;
+//              }
+//
+//              &:hover,
+//              &:focus {
+//                  color:             $color;
+//                  background-color:  darken($background, 5%);
+//              }
+//              &.active,
+//              &.active:hover,
+//              &.active:focus {
+//                  color:             $color;
+//                  background-color:  darken($background, 5%);
+//                  border-color:      darken($background, 5%);
+//              }
+//          }
+//      }
+//  }
+//
+//  @mixin list-group-item-variant($state, $background) {
+//
+//      @if $list-group__contextual--desaturated {
+//
+//          $color:       shade($background, 40%);
+//          $background:  tint($background, 70%);
+//
+//          .list-group-item-#{$state} {
+//              color:             $color;
+//              background-color:  $background;
+//          }
+//
+//          a.list-group-item-#{$state},
+//          button.list-group-item-#{$state} {
+//              color: $color;
+//
+//              .list-group-item-heading {
+//                  color: inherit;
+//              }
+//
+//              &:hover,
+//              &:focus {
+//                  color:             $color;
+//                  background-color:  shade($background, 5%);
+//              }
+//              &.active,
+//              &.active:hover,
+//              &.active:focus {
+//                  color:             $color;
+//                  background-color:  shade($background, 5%);
+//                  border-color:      shade($background, 5%);
+//              }
+//          }
+//      } @else {
+//          $color:       white;
+//          $background:  $background;
+//
+//          .list-group-item-#{$state} {
+//              color:             $color;
+//              background-color:  $background;
+//              border-color:      shade($background, 5%);
+//          }
+//
+//          a.list-group-item-#{$state},
+//          button.list-group-item-#{$state} {
+//              color: $color;
+//
+//              .list-group-item-heading {
+//                  color: inherit;
+//              }
+//
+//              &:hover,
+//              &:focus {
+//                  color:             $color;
+//                  background-color:  shade($background, 5%);
+//                  border-color:      shade($background, 5%);
+//              }
+//              &.active,
+//              &.active:hover,
+//              &.active:focus {
+//                  color:             $color;
+//                  background-color:  shade($background, 5%);
+//                  border-color:      shade($background, 5%);
+//              }
+//          }
+//      }
+//  }

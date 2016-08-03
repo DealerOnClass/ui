@@ -1,0 +1,568 @@
+/*
+ * Imports
+ */
+/*
+ * Imports
+ */
+/*
+ * Breakpoints
+ * $m-mobile:   $media-mobile:   544px;
+ * $m-tablet:   $media-tablet:   768px;
+ * $m-desktop:  $media-desktop:  992px;
+ * $m-large:    $media-large:    1200px;
+ */
+/*
+ * GrayScale
+ */
+/*
+ * Colors
+ */
+/*
+ * States
+ */
+/*
+ * Colors
+ */
+/*
+ * Icon
+ */
+/*
+ * Sans Serif
+ */
+/*
+ * 00 Global Output
+ * $o-a-c:  $output-all-components:  true;
+ * $o-a-t:  $output-all-themes:      true;
+ */
+/*
+ * 03 Base Output
+ */
+/*
+ * 04 Base Output
+ */
+/*
+ * 05 Object Output
+ */
+/*
+ * 06 Utilities Output
+ */
+/*
+ * Root
+ */
+/*
+ * Assets
+ */
+/*
+ * Ratios
+ */
+/*
+ * Global Unit
+ * $g-u:  $global-unit:        1rem;
+ * $g-m:  $global-multiplier:  1;
+ */
+/*
+ * Global Unit Abstracts
+ * $g-c:  $global-contrast:        (10% * $g-m);
+ * $g-g:  $global-gutter:          ($g-u * $g-m);
+ * $g-r:  $global-radius:          (($g-u * 0.30) * $g-m);
+ * $g-x:  $global-leftandorright:  (($g-u * 0.75) * $g-m);
+ * $g-y:  $global-topandorbottom:  (($g-u * 0.50) * $g-m);
+ */
+/*
+ * Typography
+ * $t-u:   $type-unit:        1em;
+ * $t-r:   $type-ratio:       $major-third;
+ * $t-fs:  $type-fontsize:    16px;
+ * $t-lh:  $type-lineheight:  1.618;
+ */
+/*
+ * Global Spacers
+ * $s-x-1:  $spacer-x-1:  $g-x;
+ * ...
+ * $s-y-1:  $spacer-y-1:  $g-y;
+ * ...
+ * $spacers: map for mixin
+ */
+/*
+ * Global Z
+ * $g-z-dropdown:  $global-z-dropdown:  1000
+ */
+/*
+ * 02 Tools
+ */
+/*
+ * Base
+ */
+/*
+ * Variations
+ */
+/*
+ * 04 Base
+ */
+/*
+ * Type Declaration
+ */
+@font-face {
+    font-family: "Avenir";
+    font-weight: 400; 
+
+    src: url("../../font/avenirltstd-roman-webfont.eot");
+    src: url("../../font/avenirltstd-roman-webfont.eot?#iefix") format("embedded-opentype"), url("../../font/avenirltstd-roman-webfont.woff") format("woff"), url("../../font/avenirltstd-roman-webfont.ttf") format("truetype"), url("../../font/avenirltstd-roman-webfont.svg#svgavenirltstd-roman-webfont") format("#svg");
+}
+
+@font-face {
+    font-family: "Avenir";
+    font-weight: 500; 
+
+    src: url("../../font/avenirltstd-medium-webfont.eot");
+    src: url("../../font/avenirltstd-medium-webfont.eot?#iefix") format("embedded-opentype"), url("../../font/avenirltstd-medium-webfont.woff") format("woff"), url("../../font/avenirltstd-medium-webfont.ttf") format("truetype"), url("../../font/avenirltstd-medium-webfont.svg#svgavenirltstd-medium-webfont") format("#svg");
+}
+
+@font-face {
+    font-family: "Avenir";
+    font-weight: 700; 
+
+    src: url("../../font/avenirheavy-webfont.eot");
+    src: url("../../font/avenirheavy-webfont.eot?#iefix") format("embedded-opentype"), url("../../font/avenirheavy-webfont.woff") format("woff"), url("../../font/avenirheavy-webfont.ttf") format("truetype"), url("../../font/avenirheavy-webfont.svg#svgavenirheavy-webfont") format("#svg");
+}
+
+/*
+ * Export
+ */
+/*
+ *
+ */
+.vdp {
+    font-family: "Avenir", sans-serif;
+    padding-bottom: 120px;
+    color: #25334d;
+    background-color: #f5f5f5;
+}
+.vdp .strong {
+    font-weight: 700;
+}
+.vdp .btn-rounded {
+    line-height: 1;
+    border-radius: 12px;
+}
+.vdp .panel {
+    margin-bottom: 1px;
+    border-radius: 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/*
+ * Vdp Breadcrumb
+ */
+.vdp-breadcrumb {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+.vdp-breadcrumb .container,
+.vdp-breadcrumb .breadcrumb {
+    background-color: white;
+}
+.vdp-breadcrumb .container {
+    background-clip: content-box;
+}
+.vdp-breadcrumb .breadcrumb {
+    margin-bottom: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/*
+ * Vdp Carousel
+ */
+.vdp-carousel-wrapper {
+    position: relative;
+    overflow: hidden;
+    background-color: #333;
+
+    backface-visibility: hidden;
+}
+
+.vdp-carousel-controls {
+    position: relative;
+    z-index: 300;
+
+    backface-visibility: hidden;
+}
+
+.vdp-carousel-controls-navbar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+
+    backface-visibility: hidden;
+}
+.vdp-carousel-controls-navbar .nav > li > a {
+    color: white;
+    background-color: transparent !important;
+}
+
+.vdp-carousel-controls-slide {
+    display: none;
+
+    backface-visibility: hidden;
+}
+@media (min-width: 992px) {
+    .vdp-carousel-controls-slide {
+        display: initial;
+    }
+}
+.vdp-carousel-controls-slide .control {
+    position: absolute;
+    top: 200px;
+    left: 15px;
+    display: flex;
+    align-items: center;
+    height: 3em;
+    margin-top: -1.5em;
+    color: white;
+}
+.vdp-carousel-controls-slide .control-right {
+    right: 15px;
+    left: auto;
+}
+
+.vdp-carousel {
+    display: flex;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 100%;
+    height: 320px;
+    background-color: #333;
+
+    backface-visibility: hidden;
+}
+@media (min-width: 992px) {
+    .vdp-carousel {
+        height: 400px;
+    }
+}
+
+.vdp-carousel-item {
+    display: inline-flex;
+    flex-direction: row;
+    width: auto;
+    height: 100%;
+}
+@media (min-width: 992px) {
+    .vdp-carousel-item {
+        flex-direction: column;
+    }
+}
+
+.not-b-lazy .vdp-carousel-item .vdp-carousel-image {
+    opacity: 0.35;
+}
+
+@media (min-width: 992px) {
+    .not-b-lazy .vdp-carousel-item:nth-child(even) .vdp-carousel-image:nth-child(even) {
+        opacity: 0.2;
+    }
+    .not-b-lazy .vdp-carousel-item:nth-child(odd) .vdp-carousel-image:nth-child(odd) {
+        opacity: 0.2;
+    }
+}
+
+@media (max-width: 991px) {
+    .not-b-lazy .vdp-carousel-item:nth-child(odd):not(:first-child) .vdp-carousel-image:nth-child(odd),
+    .not-b-lazy .vdp-carousel-item:nth-child(even) .vdp-carousel-image:nth-child(odd) {
+        opacity: 0.2;
+    }
+}
+
+.vdp-carousel-image {
+    height: 100%;
+}
+@media (min-width: 992px) {
+    .vdp-carousel-image {
+        height: 50%;
+    }
+}
+
+.vdp-carousel-item.hero .vdp-carousel-image {
+    height: 100%;
+}
+
+/*
+ * Vdp Carousel Active
+ */
+.vdp-carousel .vdp-carousel-image {
+    transition-timing-function: cubic-bezier(0.6, 0, 0.2, 1);
+    transition-duration: 0.5s;
+    transition-property: opacity;
+}
+
+.js-gallery-init .js-vdp-carousel-image {
+    position: absolute;
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    transition-duration: 0.5s;
+    transition-property: opacity, transform, height, width !important;
+}
+
+.js-gallery-active .vdp-carousel-item {
+    flex-direction: row;
+}
+
+.js-gallery-active .js-vdp-carousel-image {
+    position: absolute;
+    height: 50%;
+}
+.js-gallery-active .js-vdp-carousel-image.clone {
+    border: 4px solid lime;
+}
+.js-gallery-active .js-vdp-carousel-image.active {
+    top: 0 !important;
+    opacity: 0.7 !important;
+    border: 4px solid red;
+}
+
+/*
+ * Vdp Pricing Notifications
+ */
+.vdp-sidebar-heading {
+    position: relative;
+    z-index: 100;
+    top: 1px;
+}
+.vdp-sidebar-heading .nav {
+    position: absolute;
+    top: -43px;
+    right: 0;
+}
+.vdp-sidebar-heading .nav > li:last-child > a {
+    margin-right: 0;
+}
+
+.vdp-sidebar-notifications-pricedrop {
+    position: relative;
+    min-width: 170px;
+    transition: transform 0.25s cubic-bezier(0.6, 0, 0.2, 1);
+    transform: translate3d(0, -250%, 0);
+
+    backface-visibility: hidden;
+}
+.vdp-sidebar-notifications-pricedrop.down {
+    transform: translate3d(0, 0, 0);
+}
+.vdp-sidebar-notifications-pricedrop > a {
+    font-weight: 600;
+    color: #c93131;
+    background-color: white;
+}
+.vdp-sidebar-notifications-pricedrop > div {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 250%;
+    margin-right: 2px;
+    padding: 10px 15px;
+    color: white;
+    background-color: #c93131;
+}
+.vdp-sidebar-notifications-pricedrop > div .btn {
+    color: white;
+    border-color: currentColor;
+}
+
+.vdp-sidebar-notifications-yousave > a {
+    font-weight: 600;
+    color: white;
+    background-color: #fa6900;
+}
+
+.vdp-sidebar-body {
+    position: relative;
+    z-index: 300;
+    background-color: white;
+
+    backface-visibility: hidden;
+}
+
+/*
+ * Vdp Price
+ */
+.vdp-price {
+    position: relative;
+}
+
+.vdp-price-price {
+    font-size: 3em;
+    font-weight: 700;
+    line-height: 1;
+    position: absolute;
+    right: 0;
+    bottom: -10px;
+}
+.vdp-price-price > sup {
+    font-size: 0.5em;
+    line-height: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/*
+ * Vdp Calculate Payments
+ */
+.vdp-calculate-payments ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*
+ * Vdp Pricing Details
+ */
+.vdp-pricing-details {
+    margin-bottom: 10px;
+}
+.vdp-pricing-details th,
+.vdp-pricing-details td {
+    padding: 2px 0 !important;
+    border: 0 !important;
+}
+
+/*
+ * Vdp Pricing Details Button
+ */
+.vdp-pricing-buttons {
+    margin-bottom: 10px;
+}
+
+/*
+ * Vdp Body
+ */
+.vdp-body {
+    margin-top: 30px;
+}
+
+/*
+ * Vdp Vehicle Title
+ */
+/*
+ * Vdp Vehicle Ratings
+ */
+.vdp-vehicle-ratings .active {
+    color: #fab000;
+}
+
+.vdp-vehicle-ratings .inactive {
+    color: #dedede;
+}
+
+/*
+ * Vdp Vehicle Reviews
+ */
+/*
+ * Vdp Vehicle Confirm Availability
+ */
+/*
+ * Vdp Vehicle Features
+ */
+.vdp-feature-icon {
+    vertical-align: middle;
+}
+
+.vdp-feature-body {
+    vertical-align: middle;
+}
+
+.vdp-feature-body-small {
+    font-size: 0.65em;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.vdp-feature-body-title {
+    margin: 0;
+}
+
+/*
+ * Vdp Vehicle Description
+ */
+.vdp-vehicle-description {
+    margin-bottom: 10px;
+}
+
+/*
+ * Vdp Eligible Benefits
+ */
+/*
+ * Vdp Tabs
+ */
+.vdp-tabs-wrapper {
+    padding: 0;
+}
+
+.vdp-tabs {
+    margin-top: -1px;
+}
+.vdp-tabs > li.active > a {
+    border-top-color: transparent !important;
+}
+.vdp-tabs > li.active:first-child > a {
+    border-left-color: transparent !important;
+}
+.vdp-tabs > li.active:last-child > a {
+    border-right-color: transparent !important;
+}
+.vdp-tabs > li > a {
+    border-radius: 0 !important;
+    background-color: #f5f5f5;
+}
+.vdp-tabs > li:first-child > a {
+    margin-left: -1px;
+}
+.vdp-tabs > li:last-child > a {
+    margin-right: -1px;
+}
+
+.vdp-tab-content-wrapper {
+    overflow-y: auto;
+    height: 240px;
+    padding: 0;
+}
+
+.vdp-tab-content {
+    padding: 15px;
+}
+
+/*
+ * Vdp Input Group
+ */
+.vdp-input-group {
+    margin-bottom: 10px;
+}
+.vdp-input-group > .form-control,
+.vdp-input-group > .input-group-addon,
+.vdp-input-group > .input-group-btn > .btn {
+    height: 40px;
+    padding: 8px 16px;
+}
+
+/*
+ * Vdp Disclaimer
+ */
+.vdp-disclaimer {
+    margin-bottom: 0;
+}
+
+/*
+ * Lazy Load
+ */
+.use-b-lazy .b-lazy {
+    transition: opacity 500ms ease-in-out;
+    opacity: 0;
+}
+
+.use-b-lazy .b-lazy.b-loaded {
+    opacity: 1;
+}

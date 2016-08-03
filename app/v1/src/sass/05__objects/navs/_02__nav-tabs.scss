@@ -1,0 +1,47 @@
+.nav-tabs,
+.nav-pills {
+
+    > li {
+        float: left;
+    }
+
+    > li + li {
+        margin-left: $two__true__pixels;
+        border-radius: $nav__radius;
+    }
+
+    > li > a {
+        border: $one__true__pixel solid;
+        border-radius: $nav__radius;
+    }
+
+    > li > a.active,
+    > li.active > a,
+    > li.open > a {
+        @include state-and-self {
+            color: $nav__link--active__color;
+            border-color: transparent;
+            background-color: $nav__link--active__bg;
+        }
+    }
+}
+
+.nav-tabs {
+    //  border-bottom: $one__true__pixel solid;
+
+    > li > a {
+        border-bottom-color: transparent;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    .dropdown-menu {
+        margin-top: $one__true__pixel * -1;
+
+        &,
+        & > li > a:first-child {
+            border-top-right-radius: 0;
+            border-top-left-radius: 0;
+        }
+    }
+}

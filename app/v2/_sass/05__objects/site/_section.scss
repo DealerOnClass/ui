@@ -1,0 +1,9 @@
+//
+//  Units
+$section__x: $global__x;
+$section__y: rhythm($global__y);
+//
+//  Base
+.section {
+    margin-bottom: rhythm(3);
+}

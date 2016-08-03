@@ -1,0 +1,20 @@
+@mixin progress-color-variation($input__palette) {
+    @each $class__name, $color in $input__palette {
+        .progress-bar-#{$class__name} {
+            color: check-color($color, 80, inherit, $white);
+            background-color: $color;
+        }
+    }
+}
+
+@mixin progress-size-variation($unit__y, $unit__x, $input__palette) {
+    @each $class__name, $size in $input__palette {
+
+        $x: ($unit__x * strip-unit($size));
+        $y: ($unit__y * strip-unit($size));
+
+        .progress-#{$class__name} {
+            height: ($y * negative(0.5)) + $global__unit;
+        }
+    }
+}

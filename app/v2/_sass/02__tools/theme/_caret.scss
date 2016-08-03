@@ -1,0 +1,19 @@
+@mixin caret($direction, $size, $offset) {
+    top: 50%;
+
+    width: 0;
+    height: 0;
+    margin-top: $offset;
+
+    vertical-align: middle;
+
+    @if $direction == top {
+        border: $size solid transparent;
+        border-top-color: currentColor;
+    }
+
+    @if $direction == bottom {
+        border: $size solid transparent;
+        border-bottom-color: currentColor;
+    }
+}

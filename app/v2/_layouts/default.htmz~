@@ -1,0 +1,38 @@
+---
+layout: compress
+---
+<!DOCTYPE html>
+
+<html>
+
+    {% include head.html %}
+
+    <body>
+
+        <nav class="oncanvas-nav nav nav--navbar">
+            {% assign pagelist = site.pages %}
+            {% assign navgroup = 'main' %}
+            {% include nav.html %}
+        </nav>
+
+        <main class="offcanvas">
+
+            <nav class="offcanvas-nav nav nav--sidebar">
+                {% assign pagelist = site.objects %}
+                {% assign navgroup = 'objects' %}
+                {% include nav.html %}
+            </nav>
+
+            <div class="offcanvas-body">
+                {{ content }}
+            </div>
+
+        </main>
+
+        {% include footer.html %}
+
+        {% include js.html %}
+
+    </body>
+
+</html>

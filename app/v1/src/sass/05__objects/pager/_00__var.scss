@@ -1,0 +1,23 @@
+//
+//  Units
+$pager__contrast:                   $global__contrast;
+$pager__radius:                     $global__radius;
+$pager__x:                          $global__x;
+$pager__y:                          $global__y;
+//
+//  Color
+$pager__default-palette:            true !default;
+$pager__inverse-palette:            true !default;
+$pager__primary-palette:            true !default;
+$pager__neutral-palette:            true !default;
+$pager__state-palette:              true !default;
+//
+//  Components
+$pager__link__padding:              $global__y $global__x;
+$pager__link__radius:               ($pager__y * 2) + $base__line-height;
+$pager__link--active__color:        $white;
+$pager__link--active__bg:           $primary__color;
+//
+$pager__use-icon:                   true !default;
+$pager__next__icon:                 $fa-var-angle-right;
+$pager__previous__icon:             $fa-var-angle-left;

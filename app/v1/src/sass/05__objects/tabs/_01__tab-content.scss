@@ -1,0 +1,19 @@
+.tab-content {
+    //  padding: $tab__y $tab__x;
+
+    > .tab-pane {
+        display: none;
+    }
+
+    > .active {
+        display: block;
+    }
+
+    &.well {
+        border-top-left-radius: 0;
+    }
+
+    .nav-justified + &.well {
+        border-top-right-radius: 0;
+    }
+}

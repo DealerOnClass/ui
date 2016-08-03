@@ -1,0 +1,86 @@
+---
+navgroup: "objects"
+navorder: 1
+navtitle: "progress bar"
+category: [objects]
+
+name: "progress-bar"
+
+base-grid: false
+base-grid-col: col-md-6
+base-hide-code: true
+base: |
+    <div class="progress">
+        <div class="progress-bar progress-bar-xs" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+            <span class="sr-only">60% Complete</span>
+        </div>
+    </div>
+
+variant: true
+variants-grid: false
+variants-grid-col: col-md-6
+variants-hide-code: true
+variants:
+    - name: animated
+      base: |
+          <div class="progress">
+              <div class="progress-bar progress-bar-striped active" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                  <span class="sr-only">60% Complete</span>
+              </div>
+          </div>
+
+    - name: rounded
+      base: |
+          <div class="progress progress-rounded">
+              <div class="progress-bar progress-bar-striped" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                  <span class="sr-only">60% Complete</span>
+              </div>
+          </div>
+
+    - name: stacked
+      base: |
+          <div class="progress">
+              <div class="progress-bar progress-bar-success" style="width: 35%">
+                  <span class="sr-only">35% Complete (success)</span>
+              </div>
+              <div class="progress-bar progress-bar-warning progress-bar-striped" style="width: 20%">
+                  <span class="sr-only">20% Complete (warning)</span>
+              </div>
+              <div class="progress-bar progress-bar-danger" style="width: 10%">
+                  <span class="sr-only">10% Complete (danger)</span>
+              </div>
+          </div>
+
+    - name: striped
+      base: |
+          <div class="progress">
+              <div class="progress-bar progress-bar-striped" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                  <span class="sr-only">60% Complete</span>
+              </div>
+          </div>
+
+size: true
+size-grid: false
+size-grid-col: col-md-3
+size-hide-code: true
+size-base-use: true
+size-base: |
+    <div class="progress">
+        <div class="progress-bar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+            <span class="sr-only">60% Complete</span>
+        </div>
+    </div>
+
+theme: true
+theme-grid: true
+theme-grid-col: col-md-3
+theme-hide-code: true
+theme-base-use: true
+theme-base: |
+    <div class="progress">
+        <div class="progress-bar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+            <span class="sr-only">60% Complete</span>
+        </div>
+    </div>
+
+---

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>DealerOn UI Kit - Pricing 02</title>
+        <link href="css/screen.css" rel="stylesheet">
+    </head>
+
+    <body class="demo pricing">
+        <nav class="navbar navbar-dealeron navbar-fixed-top">
+            <div class="navbar-header">
+                <a href="#ttest51" id="sidebar__icon" class="navbar-brand" data-toggle="collapse">
+                    <span class="icon-bar-wrapper icon-bar-animate">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </span>
+                </a>
+                <a class="navbar-brand" href="#"><img class="logo__svg" src='img/logo__symbol.svg'></a>
+            </div>
+            <a class="navbar-brand pull-right" href="index.html"><i class="fa fa-home"></i></a>
+        </nav>
+
+        <nav id="navbar-main" class="navbar navbar-dealeron navbar-sidebar">
+            <div id="ttest51" class="navbar-sidebar-collapse collapse width" data-animate-icon="#sidebar__icon">
+                <div class="navbar-sidebar-wrapper">
+                    <div class="navbar-sidebar-body">
+                        <h3>Yo</h3>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <header>
+                <h3>Welcome, Admin</h3>
+                <p>You have 4 pricing templates.</p>
+                <a class="btn btn-default" href="pricing__03.html">Create New</a>
+            </header>
+            <section>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Template</th>
+                                <th width="25%">Description</th>
+                                <th>OEM</th>
+                                <th>State</th>
+                                <th>Lots</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Default Template 1</td>
+                                <td>Short descriptive text here. When it runs on multiple lines it looks like this.</td>
+                                <td>Honda</td>
+                                <td>TX, VA</td>
+                                <td>
+                                    <a class="btn btn-default" href="#default_template_1_modal" data-toggle="modal">2</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-default" href="" disabled>View</a>
+                                    <a class="btn btn-default" href="" disabled>Edit</a>
+                                    <a class="btn btn-default" href="" disabled>Delete</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Default Template 2</td>
+                                <td>Short descriptive text here.</td>
+                                <td>Lamborghini</td>
+                                <td>CA</td>
+                                <td><a class="btn btn-default" disabled>1</a></td>
+                                <td>
+                                    <a class="btn btn-default" href="" disabled>View</a>
+                                    <a class="btn btn-default" href="" disabled>Edit</a>
+                                    <a class="btn btn-default" href="" disabled>Delete</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Default Template 3</td>
+                                <td>Short descriptive text here.</td>
+                                <td>Ferrari</td>
+                                <td>FL</td>
+                                <td>
+                                    <a class="btn btn-default" disabled>1</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-default" href="#default_template_3_modal" data-toggle="modal">View</a>
+                                    <a class="btn btn-default" href="" disabled>Edit</a>
+                                    <a class="btn btn-default" href="" disabled>Delete</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Default Template 4</td>
+                                <td>Short descriptive text here.</td>
+                                <td>Fiat</td>
+                                <td>MI</td>
+                                <td><a class="btn btn-default" disabled>1</a></td>
+                                <td>
+                                    <a class="btn btn-default" href="" disabled>View</a>
+                                    <a class="btn btn-default" href="" disabled>Edit</a>
+                                    <a class="btn btn-default" href="" disabled>Delete</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+
+        <!-- MODALS -->
+        <div class="modal fade" id="default_template_1_modal">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close btn btn-default" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                        <h4 id="modal-title" class="modal-title">
+                            Default Template 1 - Associated Lots
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Dealer ID</th>
+                                    <th>Dealer Name</th>
+                                    <th>Lot ID</th>
+                                    <th>Lot</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#22064</td>
+                                    <td>Another Dealer Name</td>
+                                    <td>#42122056</td>
+                                    <td>Another Lot</td>
+                                    <td>
+                                        <a class="btn btn-default" href="" disabled>View</a>
+                                        <a class="btn btn-default" href="" disabled>Edit</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#40226</td>
+                                    <td>Yet Again Dealer Name</td>
+                                    <td>#24561220</td>
+                                    <td>And Another Lot</td>
+                                    <td>
+                                        <a class="btn btn-default" href="" disabled>View</a>
+                                        <a class="btn btn-default" href="" disabled>Edit</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+
+        <div class="modal fade" id="default_template_3_modal">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close btn btn-default" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                        <h4 id="modal-title" class="modal-title">
+                            Default Template 3 - Preview
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h5>Enter Your Prices</h5>
+                                <form class="form form-horizontal text-left" action="">
+                                    <div class="form-group">
+                                        <label class="col-sm-6 control-label">MSRP:</label>
+                                        <div class="col-sm-6"><input class="form-control" type="text" placeholder="$XX,XXX"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-6 control-label">Retail Price:</label>
+                                        <div class="col-sm-6"><input class="form-control" type="text" placeholder="$XX,XXX"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-6 control-label">Dealer Discount:</label>
+                                        <div class="col-sm-6"><input class="form-control" type="text" placeholder="$XX,XXX"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-6 control-label">You Save:</label>
+                                        <div class="col-sm-6"><input class="form-control" type="text" placeholder="$XX,XXX"></div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-sm-6 col-divider">
+                                <h5>Preview</h5>
+                                <form class="form form-horizontal text-left" action="">
+                                    <div class="form-group">
+                                        <label class="col-sm-6 control-label">MSRP:</label>
+                                        <label class="col-sm-6 control-label">$XX,XXX</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-6 control-label">Retail Price:</label>
+                                        <label class="col-sm-6 control-label">$XX,XXX</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-6 control-label">Dealer Discount:</label>
+                                        <label class="col-sm-6 control-label">$XX,XXX</label>
+                                    </div>
+                                    <hr>
+                                    <div class="form-group">
+                                        <label class="col-sm-6 control-label">You Save:</label>
+                                        <label class="col-sm-6 control-label">$XX,XXX</label>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+
+        <!-- SCRIPTS -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/tether.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/jquery.easing.min.js"></script>
+        <script src="js/functions.js"></script>
+    </body>
+
+</html>
+

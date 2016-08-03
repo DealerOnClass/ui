@@ -1,0 +1,21 @@
+//
+//  Units
+$list-group__contrast:              $global__contrast;
+$list-group__radius:                $global__radius;
+$list-group__x:                     $global__x;
+$list-group__y:                     $global__y;
+//
+//  Color
+$list-group__default-palette:       true !default;
+$list-group__inverse-palette:       true !default;
+$list-group__primary-palette:       true !default;
+$list-group__neutral-palette:       true !default;
+$list-group__state-palette:         true !default;
+//
+//  Components
+$list-group-item__padding:          $list-group__y $list-group__x;
+$list-group-item__radius:           $list-group__radius;
+//
+$list-group-item--active__color:    $white;
+$list-group-item--active__border:   $primary__color;
+$list-group-item--active__bg:       $primary__color;

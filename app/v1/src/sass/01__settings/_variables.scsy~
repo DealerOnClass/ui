@@ -1,0 +1,163 @@
+//  Base Colours
+$white:                 white;
+$black:                 black;
+$gray__01:              mix($black,$white,10%);
+$gray__02:              mix($black,$white,20%);
+$gray__03:              mix($black,$white,30%);
+$gray__04:              mix($black,$white,40%);
+$gray__05:              mix($black,$white,50%);
+$gray__06:              mix($black,$white,60%);
+$gray__07:              mix($black,$white,70%);
+$gray__08:              mix($black,$white,80%);
+$gray__09:              mix($black,$white,90%);
+
+//  State Colours
+$state--success:        #5cb85c !default;
+$state--info:           #5bc0de !default;
+$state--warning:        #f0ad4e !default;
+$state--danger:         #d9534f !default;
+
+//  Palette Colours
+$palette__blue:         #1c4181;
+$palette__dark--blue:   #15294b;
+$palette__orange:       #f36c0a;
+$palette__dark--gray:   #252931;
+$palette__gray:         #74777d;
+$palette__light--gray:  #f3f3f3;
+
+//  Mouse
+$cursor-disabled:       not-allowed;
+
+//  Typeface
+$sans--regular:         'AvenirRegular';
+$sans--semibold:        'AvenirMedium';
+$sans--bold:            'AvenirHeavy';
+$mono--regular:         'SourceCodePro';
+
+//  Typography
+$master__font-size:     18;
+$base__font-size:       ($master__font-size / 16) * 100%;
+$base__font-ratio:      1.333;
+$base__font-unit:       1em;
+$base__line-height:     1.5;
+
+//  Utilities
+$help-block__color:     $gray__06;
+
+//  Grid
+$grid__gutter:          30px;
+$grid__columns:         12;
+$grid__has__pull:       yes !default;
+$grid__has__push:       yes !default;
+$grid__has__offset:     yes !default;
+$screen-xs-min:         480px !default;
+$screen-sm-min:         768px !default;
+$screen-md-min:         992px !default;
+$screen-lg-min:         1200px !default;
+$screen-xs-max:         ($screen-sm-min - 1) !default;
+$screen-sm-max:         ($screen-md-min - 1) !default;
+$screen-md-max:         ($screen-lg-min - 1) !default;
+$container-sm:          750px !default;
+$container-md:          970px !default;
+$container-lg:          1170px !default;
+
+//  Body                body
+$body__font:            $sans--regular;
+$body__line-height:     $base__line-height;
+$body__color:           $palette__dark--gray;
+$body__min-width:       300px;
+
+//  Heading             h1-h6, small
+$heading__font:         $sans--semibold;
+$h5__font-size:         $base__font-unit;
+$h6__font-size:         $h5__font-size / $base__font-ratio;
+$h4__font-size:         $h5__font-size * $base__font-ratio;
+$h3__font-size:         $h4__font-size * $base__font-ratio;
+$h2__font-size:         $h3__font-size * $base__font-ratio;
+$h1__font-size:         $h2__font-size * $base__font-ratio;
+
+//  Secondary Text      h$.small
+$heading__small__size:  .7em;
+$heading__small__color: $gray__03;
+
+//  Lead Text           p
+$lead__font-size:       1.15em;
+
+//  Strong              strong
+$strong__font:          $sans--bold;
+
+//  List                ul, ol
+$list__is-inside:       yes !default;
+$list__padding:         $grid__gutter;
+
+//  Definition List     .dl-horizontal
+$dl__horizontal__width: 10em;
+
+//  Code                code, kbd, pre, samp
+$code__font:            $mono--regular;
+$mark__bg:              $palette__blue;
+$mark__color:           $white;
+
+//  Tables
+$table__has__striped:           yes !default;
+$table__has__bordered:          yes !default;
+$table__has__hover:             yes !default;
+$table__has__condensed:         yes !default;
+$table__has__contextual:        yes !default;
+$table__is__responsive:         yes !default;
+$table__padding:                .5em;
+$table__border__color:          $gray__02;
+$table--condensed__padding:     $table__padding / 2;
+$table--striped__bg:            $gray__01;
+$table--hover__bg:              $gray__01;
+$table--contextual--active:     $gray__01;
+$table--contextual--success:    tint($state--success, 60%);
+$table--contextual--info:       tint($state--info, 60%);
+$table--contextual--warning:    tint($state--warning, 60%);
+$table--contextual--danger:     tint($state--danger, 60%);
+
+//  Forms
+$legend__color:                 $body__color;
+$legend__border__color:         $body__color;
+$label__font:                   $sans--bold;
+$form-control__padding:         rhythm(.4) rhythm(.6);
+$form-control__color:           $body__color;
+$form-control__bg:              $gray__01;
+$form-control__border:          $gray__02;
+$form-control__radius:          rhythm(.2);
+$input__border__focus:          tint($state--info, 30%);    //  Focus Color
+$input__color__placeholder:     $gray__04;                  //  Placeholder Font Color
+$input__bg--disabled:           $gray__02;
+$input__height--base:           $base__line-height * $base__font-unit;
+$input__height--small:          ($base__line-height / 2) * $base__font-unit;
+$input__height--large:          ($base__line-height * 2) * $base__font-unit;
+$radio__label__min-height:      rhythm(.5);
+$radio__label__padding:         rhythm(1);
+$radio--inline__padding:        rhythm(1);
+$radio--inline__margin:         rhythm(.5);
+
+$form__vertical-rhythm:         rhythm(.5);
+$form--small__vertical-rhythm:  $form__vertical-rhythm * $base__font-ratio;
+$form--large__vertical-rhythm:  $form__vertical-rhythm * $base__font-ratio;
+$form--small__font-size:        $h6__font-size;
+$form--large__font-size:        $h4__font-size;
+
+$form-control--success:         tint($state--success, 60%);
+$form-control--warning:         tint($state--warning, 60%);
+$form-control--danger:          tint($state--danger, 60%);
+
+//  Logo
+$logo__font:                    $sans--bold;
+$logo__accent__color:           $white;
+
+//  Navbar
+$navbar-dealeron__bg:               $palette__blue;
+$navbar-dealeron__color:            $white;
+$navbar-dealeron__navbar-brand__bg: shade($navbar-dealeron__bg, 15%);
+
+
+
+
+
+
+

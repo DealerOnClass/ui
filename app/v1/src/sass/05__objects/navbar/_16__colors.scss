@@ -1,0 +1,15 @@
+@if $navbar__default-palette {
+    @include navbar-color-variation($default__palette);
+}
+@if $navbar__inverse-palette {
+    @include navbar-color-variation($inverse__palette);
+}
+@if $navbar__primary-palette {
+    @include navbar-color-variation($primary__palette);
+}
+@if $navbar__neutral-palette {
+    @include navbar-color-variation($neutral__palette);
+}
+@if $navbar__state-palette {
+    @include navbar-color-variation($state__palette);
+}

@@ -1,0 +1,244 @@
+---
+navgroup: "objects"
+navorder: 1
+navtitle: "card"
+category: [objects]
+
+name: "card"
+
+base-grid: false
+base-grid-col: col-md-6
+base-hide-code: true
+base: |
+    <div class="card">
+        <div class="card-block">
+            I'm text inside of a card-block.
+        </div>
+    </div>
+
+variant: true
+variants-grid: false
+variants-grid-col: col-md-6
+variants-hide-code: true
+variants:
+    - name: content
+      base: |
+          <div class="card">
+              <div class="card-header">
+                  Card Header
+              </div>
+              <img class="card-img" src="http://placehold.it/360x180" alt="Card image cap">
+              <div class="card-block">
+                  <h4 class="card-title">Card title</h4>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Cras justo odio</li>
+                  <li class="list-group-item">Dapibus ac facilisis in</li>
+                  <li class="list-group-item">Vestibulum at eros</li>
+              </ul>
+              <div class="card-footer">
+                  Card Footer
+              </div>
+          </div>
+
+    - name: Header
+      base: |
+          <div class="card">
+              <div class="card-header">
+                  Featured
+              </div>
+              <div class="card-block">
+                  <h4 class="card-title">Special title treatment</h4>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn">Go somewhere</a>
+              </div>
+          </div>
+
+    - name: Footer
+      base: |
+          <div class="card">
+              <div class="card-block">
+                  <h4 class="card-title">Special title treatment</h4>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn">Go somewhere</a>
+              </div>
+              <div class="card-footer">
+                  2 days ago
+              </div>
+          </div>
+
+    - name: Image Cap
+      base: |
+          <div class="card">
+              <img class="card-img" src="http://placehold.it/360x180" alt="Card image cap">
+              <div class="card-block">
+                  <h4 class="card-title">Card title</h4>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><small>Last updated 3 mins ago</small></p>
+              </div>
+          </div>
+
+    - name: Image Overlay
+      base: |
+          <div class="card">
+              <div class="card-header">
+                  Some title
+              </div>
+              <div class="card-block card-img-overlay-wrapper">
+                  <img class="card-img" src="http://placehold.it/360x180" alt="Card image cap">
+                  <div class="card-img-overlay">
+                      <h4 class="card-title">Card title</h4>
+                      <p class="card-text"><small>Last updated 3 mins ago</small></p>
+                  </div>
+              </div>
+          </div>
+
+    - name: Card Group
+      base: |
+          <div class="card-group">
+              <div class="card">
+                  <img class="card-img" src="http://placehold.it/360x180" alt="Card image cap">
+                  <div class="card-block">
+                      <h4 class="card-title">Card title</h4>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <p class="card-text"><small>Last updated 3 mins ago</small></p>
+                  </div>
+              </div>
+              <div class="card">
+                  <img class="card-img" src="http://placehold.it/360x180" alt="Card image cap">
+                  <div class="card-block">
+                      <h4 class="card-title">Card title</h4>
+                      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                      <p class="card-text"><small>Last updated 3 mins ago</small></p>
+                  </div>
+              </div>
+              <div class="card">
+                  <img class="card-img" src="http://placehold.it/360x180" alt="Card image cap">
+                  <div class="card-block">
+                      <h4 class="card-title">Card title</h4>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                      <p class="card-text"><small>Last updated 3 mins ago</small></p>
+                  </div>
+              </div>
+          </div>
+
+    - name: Card Deck
+      base: |
+          <div class="card-deck-wrapper">
+              <div class="card-deck">
+                  <div class="card">
+                      <img class="card-img" src="http://placehold.it/360x180" alt="Card image cap">
+                      <div class="card-block">
+                          <h4 class="card-title">Card title</h4>
+                          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                          <p class="card-text"><small>Last updated 3 mins ago</small></p>
+                      </div>
+                  </div>
+                  <div class="card">
+                      <img class="card-img" src="http://placehold.it/360x180" alt="Card image cap">
+                      <div class="card-block">
+                          <h4 class="card-title">Card title</h4>
+                          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                          <p class="card-text"><small>Last updated 3 mins ago</small></p>
+                      </div>
+                  </div>
+                  <div class="card">
+                      <img class="card-img" src="http://placehold.it/360x180" alt="Card image cap">
+                      <div class="card-block">
+                          <h4 class="card-title">Card title</h4>
+                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                          <p class="card-text"><small>Last updated 3 mins ago</small></p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+    - name: Card Columns
+      base: |
+          <div class="card-columns">
+              <div class="card">
+                  <img class="card-img" src="http://placehold.it/360x180" alt="Card image cap">
+                  <div class="card-block">
+                      <h4 class="card-title">Card title that wraps to a new line</h4>
+                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  </div>
+              </div>
+              <div class="card card-block">
+                  <blockquote class="card-blockquote">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                      <footer>
+                          <small>
+                              Someone famous in <cite title="Source Title">Source Title</cite>
+                          </small>
+                      </footer>
+                  </blockquote>
+              </div>
+              <div class="card">
+                  <img class="card-img" src="http://placehold.it/360x180" alt="Card image cap">
+                  <div class="card-block">
+                      <h4 class="card-title">Card title</h4>
+                      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                      <p class="card-text"><small>Last updated 3 mins ago</small></p>
+                  </div>
+              </div>
+              <div class="card card-block card-primary text-center">
+                  <blockquote class="card-blockquote">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
+                      <footer>
+                          <small>
+                              Someone famous in <cite title="Source Title">Source Title</cite>
+                          </small>
+                      </footer>
+                  </blockquote>
+              </div>
+              <div class="card card-block text-center">
+                  <h4 class="card-title">Card title</h4>
+                  <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                  <p class="card-text"><small>Last updated 3 mins ago</small></p>
+              </div>
+              <div class="card">
+                  <img class="card-img" src="http://placehold.it/360x180" alt="Card image cap">
+              </div>
+              <div class="card card-block text-right">
+                  <blockquote class="card-blockquote">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                      <footer>
+                          <small>
+                              Someone famous in <cite title="Source Title">Source Title</cite>
+                          </small>
+                      </footer>
+                  </blockquote>
+              </div>
+              <div class="card card-block">
+                  <h4 class="card-title">Card title</h4>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                  <p class="card-text"><small>Last updated 3 mins ago</small></p>
+              </div>
+          </div>
+
+size: true
+size-grid: false
+size-grid-col: col-md-3
+size-hide-code: true
+size-base-use: true
+size-base: |
+    <div class="card">
+        <div class="card-block">
+            I'm text inside of a card-block.
+        </div>
+    </div>
+
+theme: true
+theme-grid: false
+theme-grid-col: col-md-3
+theme-hide-code: true
+theme-base-use: true
+theme-base: |
+    <div class="card">
+        <div class="card-block">
+            I'm text inside of a card-block.
+        </div>
+    </div>
+
+---

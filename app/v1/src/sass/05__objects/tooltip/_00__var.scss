@@ -1,0 +1,35 @@
+//
+//  Units
+$tooltip__contrast:             $global__contrast;
+$tooltip__radius:               $global__radius;
+$tooltip__x:                    $global__x;
+$tooltip__y:                    $global__y;
+//
+//  Colors
+$tooltip__default-palette:      true !default;
+$tooltip__inverse-palette:      true !default;
+$tooltip__primary-palette:      true !default;
+$tooltip__neutral-palette:      true !default;
+$tooltip__state-palette:        true !default;
+//
+//  Base
+$tooltip__font-size:            $h6__font-size;
+$tooltip__bg:                   $white;
+$tooltip__offset:               $six__true__pixels;
+$tooltip__opacity:              $gray__01;
+$tooltip__max-width:            200px;
+//
+//  Components
+$tooltip-inner__bg:             $primary__color;
+$tooltip-inner__color:          white;
+$tooltip-inner__padding:        $global__y $global__x;
+$tooltip-inner__radius:         $global__radius;
+//
+$tooltip-arrow__color:          $primary__color;
+$tooltip-arrow__width:          rhythm(.25);
+//
+$tooltip-text--default__icon:   $fa-var-exclamation-circle;
+$tooltip-text--success__icon:   $fa-var-check-circle;
+$tooltip-text--info__icon:      $fa-var-info-circle;
+$tooltip-text--warning__icon:   $fa-var-exclamation-circle;
+$tooltip-text--danger__icon:    $fa-var-times-circle;

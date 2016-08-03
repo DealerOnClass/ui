@@ -1,0 +1,16 @@
+.carousel-control-flat {
+    .carousel-control {
+        opacity: 1;
+
+        &.left,
+        &.right {
+            background-color: $carousel-control-flat__control__bg;
+            background-image: none;
+
+            &:hover {
+                background-color: $carousel-control-flat__control--hover__bg;
+            }
+        }
+    }
+}
+

@@ -1,0 +1,26 @@
+//
+//  Var
+$img__contrast:     $global__contrast;
+$img__radius:       $global__radius;
+$img__x:            $global__x;
+$img__y:            $global__y;
+@if $output__global {
+    @if $output__img {
+        //
+        //  Base
+        .img-responsive {
+            max-width: 100%;
+        }
+
+        .img-thumbnail,
+        .img-rounded {
+            overflow: hidden;
+            border-radius: $img__radius;
+        }
+
+        .img-circle {
+            overflow: hidden;
+            border-radius: 50%;
+        }
+    }
+}

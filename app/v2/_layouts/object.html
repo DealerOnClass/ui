@@ -1,0 +1,259 @@
+---
+layout: default
+---
+
+{% capture object-title %}{{ page.name | downcase }}{% endcapture %}
+{% capture object-title-raw %}{{ page.name | downcase }}{% endcapture %}
+{% capture object-title-class %}{{ page.name | downcase }}-{% endcapture %}
+{% capture object-title-id %}#{{ page.name | downcase }}-{% endcapture %}
+
+<header class="header page-header">
+    <div class="btn-group btn-group-pagination btn-group-flush btn-group-md btn-group-justified btn-group-white page-navbar">
+        {% if page.previous and page.previous.category contains "objects" %}
+        <a class="btn-group-item btn is-previous" href="{{ page.previous.url | prepend: site.baseurl }}">
+            {{ page.previous.navtitle | capitalize }}
+        </a>
+        {% endif %}
+        {% if page.next and page.next.category contains "objects" %}
+        <a class="btn-group-item btn is-next" href="{{ page.next.url | prepend: site.baseurl }}">
+            {{ page.next.navtitle | capitalize }}
+        </a>
+        {% endif %}
+    </div>
+</header>
+
+<!-- used for javascript - do not delete - start -->
+<span id="js-object-id" data-object-id="{{ object-title-raw }}"></span>
+<!-- used for javascript - do not delete - end -->
+
+<div id="js-object-root" class="container page-interior-container {{ page.name | prepend: 'page-interior-' }}">
+
+
+
+    <section id="js-object-base" class="section">
+
+        <header class="header object-header">
+            <h3 class="object-section-title">{{ object-title }}</h3>
+        </header>
+
+        <div class="row object-row {% if page.base-hide-code %}{{ 'object-hide-code' }}{% endif %}">
+            {% if page.base-grid %}
+            <div class="col-sm-12">
+                <h5 class="object-section-subtitle">base</h5>
+            </div>
+            <div id="{{ object-title | prepend: '#' | append: '-base' }}" class="object-wrapper {{ page.base-grid-col }}">
+                {{ page.base }}
+                {% highlight html %}
+{{ page.base }}{% endhighlight %}
+                <div class="object-copy">
+                    <button class="object-copy__btn btn btn-xs" data-clipboard-target="{{ object-title | prepend: '#' | append: '-base-code' }}"><i class="fa fa-files-o"></i></button>
+                    <textarea class="object-copy__textarea" id="{{ object-title | append: '-base-code' }}">
+                        {{ page.base }}
+                    </textarea>
+                </div>
+            </div>
+            {% else %}
+            <div class="col-sm-12">
+                <h5 class="object-section-subtitle">base</h5>
+            </div>
+            <div id="{{ object-title | prepend: '#' | append: '-base' }}" class="object-wrapper col-sm-12">
+                {{ page.base }}
+                {% highlight html %}
+{{ page.base }}{% endhighlight %}
+                <div class="object-copy">
+                    <button class="object-copy__btn btn btn-xs" data-clipboard-target="{{ object-title | prepend: '#' | append: '-base-code' }}"><i class="fa fa-files-o"></i></button>
+                    <textarea class="object-copy__textarea" id="{{ object-title | append: '-base-code' }}">
+                        {{ page.base }}
+                    </textarea>
+                </div>
+            </div>
+
+            {% endif %}
+        </div>
+    </section>
+
+
+
+    {% if page.variant %}
+    {% if page.variants %}
+    <section id="js-object-variations" class="section">
+
+        <header class="header">
+            <h3 class="object-section-title">Variations</h3>
+        </header>
+
+        {% for variant in page.variants %}
+        <div class="row object-row {% if page.variants-hide-code %}{{ 'object-hide-code' }}{% endif %}">
+            {% if page.variants-grid %}
+            <div class="col-sm-12">
+                <h5 class="object-section-subtitle">{{ variant.name }}</h5>
+            </div>
+            <div id="{{ variant.name | prepend: object-title-id }}" class="object-wrapper {{ page.variants-grid-col }}">
+                {{ variant.base }}
+                {% highlight html %}
+{{ variant.base }}{% endhighlight %}
+                <div class="object-copy">
+                    <button class="object-copy__btn btn btn-xs" data-clipboard-target="{{ variant.name | prepend: '#' | append: '-base-code' }}"><i class="fa fa-files-o"></i></button>
+                    <textarea class="object-copy__textarea" id="{{ variant.name | append: '-base-code' }}">
+                        {{ variant.base }}
+                    </textarea>
+                </div>
+            </div>
+            {% else %}
+            <div class="col-sm-12">
+                <h5 class="object-section-subtitle">{{ variant.name }}</h5>
+            </div>
+            <div id="{{ variant.name | prepend: object-title-id }}" class="col-sm-12 object-wrapper">
+                {{ variant.base }}
+                {% highlight html %}
+{{ variant.base }}{% endhighlight %}
+                <div class="object-copy">
+                    <button class="object-copy__btn btn btn-xs" data-clipboard-target="{{ variant.name | prepend: '#' | append: '-base-code' }}"><i class="fa fa-files-o"></i></button>
+                    <textarea class="object-copy__textarea" id="{{ variant.name | append: '-base-code' }}">
+                        {{ variant.base }}
+                    </textarea>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+
+    </section>
+    {% endif %}
+    {% endif %}
+
+
+    {% if page.size %}
+    <section id="js-object-themes" class="section">
+
+        <header class="header">
+            <h3 class="object-section-title">Sizes</h3>
+        </header>
+
+        {% for size in site.sizes %}
+        <div class="row object-row {% if page.theme-hide-code %}{{ 'object-hide-code' }}{% endif %}">
+            <div class="col-sm-12">
+                <h5 class="object-section-subtitle">{{ size | capitalize }}</h5>
+            </div>
+            {% if page.size-grid %}
+            <div id="{{ size | prepend: object-title-id }}" class="object-wrapper {{ page.size-grid-col }}" data-object-change="{{ size }}">
+                {% if page.size-base-use %}
+                {{ page.size-base }}
+                {% highlight html %}
+{{ page.size-base }}{% endhighlight %}
+                <div class="object-copy">
+                    <button class="object-copy__btn btn btn-xs" data-clipboard-target="{{ size | prepend: '#' | append: '-base-code' }}"><i class="fa fa-files-o"></i></button>
+                    <textarea class="object-copy__textarea" id="{{  | append: '-base-code' }}">
+                        {{ page.size-base }}
+                    </textarea>
+                </div>
+                {% else %}
+                {{ page.base }}
+                {% highlight html %}
+{{ page.base }}{% endhighlight %}
+                <div class="object-copy">
+                    <button class="object-copy__btn btn btn-xs" data-clipboard-target="{{ size | prepend: '#' | append: '-base-code' }}"><i class="fa fa-files-o"></i></button>
+                    <textarea class="object-copy__textarea" id="{{ size | append: '-base-code' }}">
+                        {{ page.base }}
+                    </textarea>
+                </div>
+                {% endif %}
+            </div>
+            {% else %}
+            <div id="{{  | prepend: object-title-id }}" class="object-wrapper col-sm-12" data-object-change="{{ size }}">
+                {% if page.size-base-use %}
+                {{ page.size-base }}
+                {% highlight html %}
+{{ page.size-base }}{% endhighlight %}
+                <div class="object-copy">
+                    <button class="object-copy__btn btn btn-xs" data-clipboard-target="{{ size | prepend: '#' | append: '-base-code' }}"><i class="fa fa-files-o"></i></button>
+                    <textarea class="object-copy__textarea" id="{{ size | append: '-base-code' }}">
+                        {{ page.size-base }}
+                    </textarea>
+                </div>
+                {% else %}
+                {{ page.base }}
+                {% highlight html %}
+{{ page.base }}{% endhighlight %}
+                <div class="object-copy">
+                    <button class="object-copy__btn btn btn-xs" data-clipboard-target="{{ size | prepend: '#' | append: '-base-code' }}"><i class="fa fa-files-o"></i></button>
+                    <textarea class="object-copy__textarea" id="{{ size | append: '-base-code' }}">
+                        {{ page.base }}
+                    </textarea>
+                </div>
+                {% endif %}
+            </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </section>
+    {% endif %}
+
+
+    {% if page.theme %}
+    <section id="js-object-themes" class="section">
+
+        <header class="header">
+            <h3 class="object-section-title">Themes</h3>
+        </header>
+
+        {% for palette in site.palettes %}
+        <h5 class="object-section-subtitle">{{ palette.id | capitalize }}</h5>
+        <div class="row object-row {% if page.theme-hide-code %}{{ 'object-hide-code' }}{% endif %}">
+            {% for color in palette.colors %}
+            {% if page.theme-grid %}
+            <div id="{{ color | prepend: object-title-id }}" class="object-wrapper {{ page.theme-grid-col }}" data-object-change="{{ color }}">
+                {% if page.theme-base-use %}
+                {{ page.theme-base }}
+                {% highlight html %}
+{{ page.theme-base }}{% endhighlight %}
+                <div class="object-copy">
+                    <button class="object-copy__btn btn btn-xs" data-clipboard-target="{{ color | prepend: '#' | append: '-base-code' }}"><i class="fa fa-files-o"></i></button>
+                    <textarea class="object-copy__textarea" id="{{ color | append: '-base-code' }}">
+                        {{ page.theme-base }}
+                    </textarea>
+                </div>
+                {% else %}
+                {{ page.base }}
+                {% highlight html %}
+{{ page.base }}{% endhighlight %}
+                <div class="object-copy">
+                    <button class="object-copy__btn btn btn-xs" data-clipboard-target="{{ color | prepend: '#' | append: '-base-code' }}"><i class="fa fa-files-o"></i></button>
+                    <textarea class="object-copy__textarea" id="{{ color | append: '-base-code' }}">
+                        {{ page.base }}
+                    </textarea>
+                </div>
+                {% endif %}
+            </div>
+            {% else %}
+            <div id="{{ color | prepend: object-title-id }}" class="object-wrapper col-sm-12" data-object-change="{{ color }}">
+                {% if page.theme-base-use %}
+                {{ page.theme-base }}
+                {% highlight html %}
+{{ page.theme-base }}{% endhighlight %}
+                <div class="object-copy">
+                    <button class="object-copy__btn btn btn-xs" data-clipboard-target="{{ color | prepend: '#' | append: '-base-code' }}"><i class="fa fa-files-o"></i></button>
+                    <textarea class="object-copy__textarea" id="{{ color | append: '-base-code' }}">
+                        {{ page.theme-base }}
+                    </textarea>
+                </div>
+                {% else %}
+                {{ page.base }}
+                {% highlight html %}
+{{ page.base }}{% endhighlight %}
+                <div class="object-copy">
+                    <button class="object-copy__btn btn btn-xs" data-clipboard-target="{{ color | prepend: '#' | append: '-base-code' }}"><i class="fa fa-files-o"></i></button>
+                    <textarea class="object-copy__textarea" id="{{ color | append: '-base-code' }}">
+                        {{ page.base }}
+                    </textarea>
+                </div>
+                {% endif %}
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </section>
+    {% endif %}
+
+</div>

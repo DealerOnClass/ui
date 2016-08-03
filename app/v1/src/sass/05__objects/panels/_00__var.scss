@@ -1,0 +1,28 @@
+//
+//  Units
+$panel__contrast:               $global__contrast;
+$panel__radius:                 $global__radius;
+$panel__x:                      $global__x;
+$panel__y:                      $global__y * 1.5;
+//
+//  Color
+$panel__default-palette:        true !default;
+$panel__inverse-palette:        true !default;
+$panel__primary-palette:        true !default;
+$panel__neutral-palette:        true !default;
+$panel__state-palette:          true !default;
+//
+//  Base
+$panel__radius:                 $panel__radius;
+//
+//  Components
+$panel-heading__padding:        $panel__y $panel__x;
+$panel-heading__bg:             $gray__01;
+//
+$panel-body__padding:           $panel__y $panel__x;
+//
+$panel-footer__padding:         $panel__x;
+$panel-footer__bg:              $gray__01;
+//
+$panel-wizard-step-counter:     true !default;
+$panel-wizard-true-accordion:   true !default;

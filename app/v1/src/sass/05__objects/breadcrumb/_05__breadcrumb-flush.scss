@@ -1,0 +1,16 @@
+.breadcrumb-flush {
+    border-radius: 0;
+}
+
+.breadcrumb-text > li > a {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+
+    @include state-and-self {
+        background-color: transparent;
+    }
+    @include state {
+        opacity: 0.7;
+    }
+}

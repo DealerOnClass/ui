@@ -1,0 +1,10 @@
+.sortable__text {
+    display: inline-block;
+    float: left;
+    overflow: hidden;
+
+    width: 80%;
+
+    text-align: left;
+    text-overflow: ellipsis;
+}

@@ -1,0 +1,23 @@
+.overflow-text {
+    overflow: hidden;
+
+    text-align: left;
+    text-overflow: ellipsis;
+}
+.sortable-text {
+    display: inline-block;
+    float: left;
+
+    @extend .overflow-text;
+}
+.sortable-text-label {
+    &:after {
+        content: ':';
+    }
+}
+.sortable-text-value {
+    float: right;
+    &:before {
+        content: '$';
+    }
+}

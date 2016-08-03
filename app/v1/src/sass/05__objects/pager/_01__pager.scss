@@ -1,0 +1,35 @@
+.pager {
+    padding-left:  0;
+    list-style:    none;
+    text-align:    center;
+
+    @include clearfix;
+
+    > li {
+        display: inline;
+    }
+
+    > li > a {
+        padding: $pager__link__padding;
+        border: $one__true__pixel solid;
+        border-radius: $pager__link__radius;
+    }
+
+    > li.active > a,
+    > li > a.active {
+        @include state-and-self {
+            color: $pager__link--active__color;
+            border-color: transparent;
+            background-color: $pager__link--active__bg;
+        }
+    }
+
+    > .next {
+        float: right;
+    }
+
+    > .previous {
+        float: left;
+    }
+}
+

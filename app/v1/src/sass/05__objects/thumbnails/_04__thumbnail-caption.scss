@@ -1,0 +1,11 @@
+.thumbnail .caption {
+    padding: $thumbnail-caption__padding;
+
+    &:last-child {
+        border-top: $one__true__pixel solid;
+    }
+
+    &:first-child {
+        border-bottom: $one__true__pixel solid;
+    }
+}

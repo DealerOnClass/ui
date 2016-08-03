@@ -1,0 +1,143 @@
+//
+//  Units
+$grid__columns: 12;
+$grid__gutter:  $global__gutter;
+$grid__x:       $global__x;
+$grid__y:       $global__y;
+//
+//  Options
+$grid__has__pull:            true !default;
+$grid__has__push:            true !default;
+$grid__has__offset:          true !default;
+$grid-float-breakpoint:      $screen-sm-min !default;
+$grid-float-breakpoint-max:  ($grid-float-breakpoint - 1) !default;
+$offcanvas-breakpoint:       $screen-md-min !default;
+$offcanvas-breakpoint-max:   ($offcanvas-breakpoint - 1) !default;
+//
+//  Base
+.container {
+
+    @include container-fixed;
+
+    @media (min-width: $screen-sm-min) {
+        max-width: $container-sm;
+    }
+
+    @media (min-width: $screen-md-min) {
+        max-width: $container-md;
+    }
+
+    @media (min-width: $screen-lg-min) {
+        max-width: $container-lg;
+    }
+}
+
+.container-fluid {
+
+    @include container-fixed;
+}
+
+.row {
+    @include make-row;
+}
+
+@include make-grid-columns;
+
+@include make-grid(xxs);
+
+@media (min-width: $screen-xs-min) {
+    @include make-grid(xs);
+}
+
+@media (min-width: $screen-sm-min) {
+    @include make-grid(sm);
+}
+
+@media (min-width: $screen-md-min) {
+    @include make-grid(md);
+}
+
+@media (min-width: $screen-lg-min) {
+    @include make-grid(lg);
+}
+
+//
+//  Variations
+.col {
+    @include column($grid__gutter);
+    position: relative;
+    box-sizing: border-box;
+    float: left;
+    min-width: 10em;
+}
+
+.gutter-x {
+    &.row [class*="col-"],
+    &[class*="col-"] {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+//
+//  Page Specific
+.page-container {
+    padding-left: $grid__gutter * 5;
+    margin-top: rhythm(3);
+}
+
+.page-card {
+    .card {
+        max-width: 20em;
+    }
+}
+
+.page-dropdown {
+    .dropdown-toggle,
+    .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-menu {
+        position: relative;
+    }
+}
+
+.page-grid {
+    //  &.container {
+    //      max-width: 100%;
+    //  }
+
+    .object-wrapper [class*="col-"] {
+        background-color: rgba(0, 0, 0, 0.1);
+        background-clip: content-box;
+    }
+}
+
+.page-media {
+    .media-body {
+        max-width: 28em;
+    }
+}
+
+.page-modal {
+    .show-modal {
+        @include row($global__x);
+        position: relative;
+        display: block;
+
+        &.modal-sm,
+        &.modal-md,
+        &.modal-lg {
+            width: 100%;
+            max-width: 28em;
+        }
+
+        .modal-dialog {
+            @include column($global__x);
+            width: 100%;
+            max-width: 28em;
+            margin-left: 0;
+        }
+    }
+}

@@ -1,0 +1,16 @@
+@if $badge__default-palette {
+    @include badge-color-variation($default__palette);
+}
+@if $badge__inverse-palette {
+    @include badge-color-variation($inverse__palette);
+}
+@if $badge__primary-palette {
+    @include badge-color-variation($primary__palette);
+}
+@if $badge__neutral-palette {
+    @include badge-color-variation($neutral__palette);
+}
+@if $badge__state-palette {
+    @include badge-color-variation($state__palette);
+}
+

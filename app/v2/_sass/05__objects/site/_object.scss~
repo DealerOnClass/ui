@@ -1,0 +1,103 @@
+.object-section-subtitle {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: $h6__font-size;
+    font-weight: 700;
+    margin-bottom: rhythm(1);
+    color: tint($inverse__color, 40%);
+}
+
+.object-section-title {
+    margin-bottom: rhythm(1);
+}
+
+.object-header {
+    text-transform: capitalize;
+}
+
+.object-row,
+.object-wrapper {
+    margin-bottom: rhythm(1);
+}
+
+.object-hide-code {
+    .highlight {
+        display: none;
+    }
+}
+
+.object-copy {
+    position: absolute;
+    top: 0;
+    left: negative($global__x * 3);
+}
+
+.object-copy__btn {
+    position: relative;
+    z-index: 3000;
+    border-radius: 50%;
+    height: rhythm(1.5);
+    width: rhythm(1.5);
+    transform: scale(0.4);
+    background-color: #dc143c;
+    border-color: #dc143c;
+    color: #dc143c;
+    transition-property: transform, color, box-shadow;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-in-out;
+
+    &:hover {
+        transform: scale(1);
+        box-shadow: 0 $three__pixels $nine__pixels rgba(0, 0, 0, 0.5);
+        color: $white;
+    }
+}
+
+.object-copy__textarea {
+    height: 0;
+    width: 0;
+    border: 0 none;
+    color: transparent;
+    resize: none;
+    position: absolute;
+}
+
+.copied::after {
+    font-size: 0.75em;
+
+    position: absolute;
+    top: 12%;
+    right: 110%;
+
+    display: block;
+
+    padding: 2px 3px;
+
+    content: "copied";
+    animation: showcopied 1.5s ease;
+
+    opacity: 0;
+    color: #fff;
+    border-radius: 3px;
+    background-color: $accent__color;
+
+    will-change: opacity, transform;
+}
+
+@keyframes showcopied {
+    0% {
+        transform: translateX(100%);
+
+        opacity: 0;
+    }
+
+    70% {
+        transform: translateX(0);
+
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

@@ -1,0 +1,23 @@
+//
+//  Units
+$progress__contrast:            $global__contrast;
+$progress__radius:              $global__radius;
+$progress__x:                   $global__x;
+$progress__y:                   $global__y;
+//
+//  Colors
+$progress__default-palette:     true !default;
+$progress__inverse-palette:     true !default;
+$progress__primary-palette:     true !default;
+$progress__neutral-palette:     true !default;
+$progress__state-palette:       true !default;
+//
+//  Base
+$progress__height:              $base__line-height * $base__font-unit;
+$progress__radius:              $progress__radius;
+$progress__vertical-rhythm:     ($progress__y * 2);
+//
+//  Components
+$progress-bar__color:           white;
+$progress-bar__fg:              $primary__color;
+$progress-bar__bg:              $gray__01;

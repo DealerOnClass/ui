@@ -1,0 +1,188 @@
+//
+//  Var
+$form__contrast:  $global__contrast;
+$form__radius:    $global__radius;
+$form__x:         $global__x;
+$form__y:         $global__y;
+@if $output__global {
+    @if $output__form {
+        //
+        //  Base
+        fieldset {
+            min-width: 0;
+        }
+
+        legend {
+            display: block;
+            width: 100%;
+            color: inherit;
+            border-bottom: 1px solid;
+        }
+
+        label {
+            display: inline-block;
+            max-width: 100%;
+        }
+
+        [type="search"] {
+            appearance: none;
+        }
+
+        [type="radio"],
+        [type="checkbox"] {
+            margin-top: 5px;
+        }
+
+        [type="file"] {
+            display: block;
+        }
+
+        [type="range"] {
+            display: block;
+            width: 100%;
+        }
+
+        [multiple],
+        [size] {
+            height: auto;
+        }
+
+        //  input[type="file"]:focus,
+        //  input[type="radio"]:focus,
+        //  input[type="checkbox"]:focus {
+        //      @include tab-focus;
+        //  }
+
+        output {
+            display: block;
+        }
+
+
+        .form-control {
+            display: block;
+
+            box-sizing: border-box;
+            width: 100%;
+            padding: $form__y $form__x;
+
+            transition: border-color 0.1s ease-in-out;
+
+            border: $one__pixel solid;
+            border-radius: $form__radius;
+
+            //  @include form-control-focus;
+            //  @include placeholder;
+        }
+
+        .form-control-rounded {
+            //
+        }
+
+        .form-group {
+            @include clearfix;
+
+            margin-bottom: rhythm(1);
+        }
+
+        //
+        //  Variations
+        .form-inline {
+
+            .form-group,
+            .form-control,
+            .form-control-static,
+            .input-group:not([class*='col-']),
+            .radio,
+            .checkbox {
+                display: inline-block;
+
+                width: auto;
+
+                vertical-align: middle;
+            }
+
+            .input-group:not([class*='col-']) {
+                display: inline-table;
+
+                .input-group-addon,
+                .input-group-btn,
+                .form-control {
+                    width: auto;
+                }
+
+                > .form-control {
+                    width: 100%;
+                }
+            }
+
+            .radio,
+            .checkbox {
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+
+            > .btn,
+            > .form-control,
+            > .form-control-static,
+            > .radio,
+            > .checkbox {
+                margin-bottom: $form__y;
+            }
+        }
+
+        .form-horizontal {
+
+            .form-group {
+                @include make-row;
+            }
+        }
+
+        .radio,
+        .checkbox {
+            position: relative;
+
+            display: block;
+
+            margin-bottom: rhythm(1);
+            margin-left: $form__x / 1.5;
+
+            label {
+                padding-left: $form__x;
+
+                cursor: pointer;
+            }
+        }
+
+        //  [type='radio'],
+        //  [type='checkbox'] {
+        //      position: absolute;
+
+        //      margin-left: $form__x * -1.5;
+        //  }
+
+        //  .radio + .radio,
+        //  .checkbox + .checkbox {
+        //      margin-top: rhythm(-0.25);
+        //  }
+
+        .radio-inline,
+        .checkbox-inline {
+            position: relative;
+
+            display: inline-block;
+
+            margin-bottom: rhythm(1);
+            margin-left: $form__x;
+            padding-left: $form__x;
+
+            cursor: pointer;
+            vertical-align: middle;
+        }
+
+        .radio-inline + .radio-inline,
+        .checkbox-inline + .checkbox-inline {
+            margin-top: 0;
+            margin-left: $form__x;
+        }
+    }
+}

@@ -1,0 +1,56 @@
+//
+//  Raw Spacers
+//
+//  Allows for calculations not using rhythm mixin
+//  Ex: ..\05__objects\dropdowns\_00__variables.scss
+//
+$raw__radius:      .25 !default;
+$raw__x:           .6 !default;
+$raw__y:           .4 !default;
+//
+//  General Spacers
+$global__radius:           rhythm($raw__radius) !default;
+$global__x:                rhythm($raw__x) !default;
+$global__y:                rhythm($raw__y) !default;
+$global__gutter:           30px !default;
+$global__contrast:         10% !default;
+//
+//  General Options
+$global__wire:             false !default;
+//
+//  Pixel Units            //   Equivalent to pixels in unit "$base__font-unit"
+$one__pixel:               $base__font-unit / $master__font-size;
+$two__pixels:              $one__pixel * 2;
+$three__pixels:            $one__pixel * 3;
+$four__pixels:             $one__pixel * 4;
+$five__pixels:             $one__pixel * 5;
+$six__pixels:              $one__pixel * 6;
+$eight__pixels:            $one__pixel * 8;
+$nine__pixels:             $one__pixel * 9;
+$twelve__pixels:           $one__pixel * 12;
+//
+//  True Pixel Units       //   Consistent across all device screens
+$one__true__pixel:         1px;
+$two__true__pixels:        $one__true__pixel * 2;
+$three__true__pixels:      $one__true__pixel * 3;
+$four__true__pixels:       $one__true__pixel * 4;
+$five__true__pixels:       $one__true__pixel * 5;
+$six__true__pixels:        $one__true__pixel * 6;
+$eight__true__pixels:      $one__true__pixel * 8;
+$nine__true__pixels:       $one__true__pixel * 9;
+$twelve__true__pixels:     $one__true__pixel * 12;
+//
+//  Zindex
+$zindex-navbar:            1000 !default;
+$zindex-dropdown:          1000 !default;
+$zindex-navbar-sidebar:    1025 !default;
+$zindex-navbar-fixed:      1030 !default;
+$zindex-modal-background:  1040 !default;
+$zindex-modal:             1050 !default;
+$zindex-popover:           1060 !default;
+$zindex-tooltip:           1070 !default;
+$zindex-btn-toTop:         1080 !default;
+//
+//  Cursor States
+$cursor-disabled:          not-allowed;
+

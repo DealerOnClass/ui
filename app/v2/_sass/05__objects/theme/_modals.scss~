@@ -1,0 +1,207 @@
+//
+//  Var
+$modal__contrast:  $global__contrast;
+$modal__radius:    $global__radius;
+$modal__x:         $global__x;
+$modal__y:         $global__y;
+//
+$modal__border:             $gray__02;
+$modal--lg__width:          900px !default;
+$modal--md__width:          600px !default;
+$modal--sm__width:          300px !default;
+$modal-content__bg:         $white;
+$modal-content__shadow:     0 $three__pixels $nine__pixels rgba(0, 0, 0, 0.5);
+$modal-backdrop__bg:        rgba(0, 0, 0, 0.5);
+$modal-backdrop__opacity:   0.5;
+@if $output__global {
+    @if $output__modals {
+        //
+        //  Base
+        .modal-open {
+            overflow: hidden;
+        }
+
+        .modal {
+            position: fixed;
+            z-index: $zindex-modal;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            display: none;
+            overflow: hidden;
+
+            outline: 0;
+
+            -webkit-overflow-scrolling: touch;
+
+            &.fade .modal-dialog {
+                transform: translate(0, -25%);
+                transition: transform 0.3 ease-out;
+
+            }
+
+            &.in .modal-dialog {
+                transform: translate(0, 0);
+            }
+        }
+
+        .modal-header,
+        .modal-body,
+        .modal-footer {
+
+            &:only-child {
+                border: $modal__radius;
+            }
+
+            &:first-child {
+                border-top-right-radius: $modal__radius;
+                border-top-left-radius: $modal__radius;
+            }
+
+            &:last-child {
+                border-bottom-right-radius: $modal__radius;
+                border-bottom-left-radius: $modal__radius;
+            }
+        }
+
+        .modal-body,
+        .modal-footer {
+
+            &:first-child {
+                border-bottom: $one__pixel solid $modal__border;
+
+                + .modal-header {
+                    margin-top: negative($one__pixel);
+                    margin-bottom: negative($one__pixel);
+                }
+            }
+
+            &:last-child {
+                border-top: $one__pixel solid $modal__border;
+            }
+        }
+
+        .modal-open .modal {
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        .modal-dialog {
+            position: relative;
+
+            width: auto;
+            margin: $global__gutter;
+
+            @media (min-width: $screen-sm-min) {
+                width: $modal--md__width;
+                margin: $grid__gutter auto;
+            }
+        }
+
+        .modal-content {
+            position: relative;
+
+            border-radius: $modal__radius;
+            outline: 0;
+            background-color: $modal-content__bg;
+            background-clip: padding-box;
+            box-shadow: $modal-content__shadow;
+        }
+
+        .modal-backdrop {
+            position: fixed;
+            z-index: $zindex-modal-background;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            background-color: $modal-backdrop__bg;
+
+            &.fade {
+                opacity: 0;
+            }
+
+            &.in {
+                opacity: $modal-backdrop__opacity;
+            }
+        }
+
+        .modal-header {
+            padding: $modal__x;
+            position: relative;
+            z-index: 10;
+
+            .close {
+                line-height: 1;
+
+                position: absolute;
+                top: 0;
+                right: $modal__x / 3;
+
+                padding: $global__x;
+
+                border-radius: $modal__radius;
+            }
+        }
+
+        .modal-title {
+            margin: 0;
+        }
+
+        .modal-body {
+            position: relative;
+
+            padding: $modal__x;
+        }
+
+        .modal-footer {
+            @include clearfix;
+
+            padding: $modal__x;
+        }
+
+        .modal-scrollbar-measure {
+            position: absolute;
+            top: -9999px;
+
+            overflow: scroll;
+
+            width: 50px;
+            height: 50px;
+        }
+        //
+        //  Variations
+        @media (min-width: $screen-sm-min) {
+            .modal-sm {
+                width: $modal--sm__width;
+            }
+        }
+
+        .modal-md {
+            width: $modal--md__width;
+        }
+
+        @media (min-width: $screen-md-min) {
+            .modal-lg {
+                width: $modal--lg__width;
+            }
+        }
+        //  //
+        //  //  Sizing
+            //  @include modal-size-variation($modal__y, $modal__x, $default__sizing);
+        //
+        //  Colors
+        @if $output__global--theme {
+            @if $output__modals--theme {
+                @include modal-color-variation($default__palette);
+                @include modal-color-variation($inverse__palette);
+                @include modal-color-variation($primary__palette);
+                @include modal-color-variation($neutral__palette);
+                @include modal-color-variation($state__palette);
+            }
+        }
+    }
+}

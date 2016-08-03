@@ -1,0 +1,62 @@
+//
+//  Var
+$btn__contrast:  $global__contrast;
+$btn__radius:    $global__radius;
+$btn__x:         $global__x;
+$btn__y:         $global__y;
+@if $output__global {
+    @if $output__btn {
+        //
+        //  Base
+        .btn {
+            color: inherit;
+            display: inline-block;
+
+            padding: $btn__y $btn__x;
+
+            white-space: nowrap;
+
+            border: $one__pixel solid;
+            border-radius: $btn__radius;
+
+            &.active {
+                color: $white;
+                border-color: $primary__color;
+                background-color: $primary__color;
+            }
+        }
+        //
+        //  Variations
+        .btn-link {
+            border-color: transparent;
+        }
+
+        .btn-block {
+            display: block;
+            width: 100%;
+        }
+
+        .btn-rounded {
+            border-radius: ($btn__y * 2) + $global__line-height;
+            padding: $btn__y ($btn__x * 1.5);
+        }
+        //
+        //  Sizing
+        @if $output__global--sizes {
+            @if $output__btn--sizes {
+                @include btn-size-variation($btn__y, $btn__x, $default__sizing);
+            }
+        }
+        //
+        //  Colors
+        @if $output__global--theme {
+            @if $output__btn--theme {
+                @include btn-color-variation($default__palette);
+                @include btn-color-variation($inverse__palette);
+                @include btn-color-variation($primary__palette);
+                @include btn-color-variation($neutral__palette);
+                @include btn-color-variation($state__palette);
+            }
+        }
+    }
+}

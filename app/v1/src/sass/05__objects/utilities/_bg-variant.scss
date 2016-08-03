@@ -1,0 +1,18 @@
+@if $bg__default-palette {
+    @include bg-color-variation($default__palette);
+}
+@if $bg__inverse-palette {
+    @include bg-color-variation($inverse__palette);
+}
+@if $bg__primary-palette {
+    @include bg-color-variation($primary__palette);
+}
+@if $bg__neutral-palette {
+    @include bg-color-variation($neutral__palette);
+}
+@if $bg__state-palette {
+    @include bg-color-variation($state__palette);
+}
+@if $bg__opacity-palette {
+    @include bg-color-variation($opacity__palette);
+}

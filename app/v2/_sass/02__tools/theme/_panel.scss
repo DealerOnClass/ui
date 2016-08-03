@@ -1,0 +1,56 @@
+@mixin panel-color-variation($input__palette) {
+    @each $class__name, $color in $input__palette {
+        .panel-#{$class__name} {
+
+            .panel-heading {
+                color: check-color($color, 80, inherit, $white);
+                border-color: check-color($color, 80, shade($color, $panel__contrast), $color);
+                background-color: $color;
+            }
+
+            .panel-heading.btn {
+                @include state {
+                    @extend %panel-active-item;
+                }
+            }
+
+            //  used for accordion
+            //  .panel-heading.current {
+            //      @extend %panel-active-item;
+            //  }
+
+            %panel-active-item {
+                border-color: shade($color, $panel__contrast);
+                background-color: shade($color, $panel__contrast);
+            }
+
+            .panel-body,
+            .panel-footer {
+                border-color: $gray__02;
+            }
+
+            //  used for accordion
+            //  &.panel-wizard:before {
+            //      color: shade($color, $panel__contrast * 1.5);
+            //  }
+        }
+    }
+}
+
+
+@mixin panel-size-variation($unit__y, $unit__x, $input__palette) {
+    @each $class__name, $size in $input__palette {
+
+        $x: ($unit__x * strip-unit($size));
+        $y: ($unit__y * strip-unit($size));
+
+        .panel-#{$class__name} {
+
+            .panel-heading,
+            .panel-body,
+            .panel-footer {
+                padding: $y $x;
+            }
+        }
+    }
+}

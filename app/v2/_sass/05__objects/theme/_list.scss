@@ -1,0 +1,35 @@
+@if $output__global {
+    @if $output__list {
+        //
+        //  Base
+        ul,
+        ol {
+            list-style-position: inside;
+
+            ul,
+            ol {
+                padding-left: $global__x;
+            }
+        }
+
+        .list-unstyled {
+            @extend %list-unstyled;
+        }
+
+        .list-inline > li {
+            @extend %list-unstyled;
+
+            display: inline-block;
+        }
+
+        %list-unstyled {
+            padding-left: 0;
+
+            list-style: none;
+        }
+
+        .list-push-bottom-1x > li {
+            margin-bottom: rhythm(0.5);
+        }
+    }
+}

@@ -1,0 +1,72 @@
+.has-feedback {
+    position: relative;
+
+    .form-control {
+        padding-right: ( $form__x * 2 ) + $base__font-unit;
+    }
+}
+
+.form-control-feedback {
+    position: absolute;
+    z-index: 2; // Ensure icon is above input groups
+    top: 0;
+    right: 0;
+
+    height: $base__font-unit;
+
+    text-align: center;
+    pointer-events: none;
+}
+
+.has-feedback {
+
+    .form-control-feedback {
+        top: 50%;
+        right: $form__x;
+
+        margin-top: $base__font-unit / -2;
+    }
+
+    label ~ .form-control-feedback {
+        margin-top: calc( #{$form__y * $base__line-height} + #{$two__true__pixels} );
+    }
+
+    label.sr-only ~ .form-control-feedback {
+        margin-top: calc( #{$form__y} + #{$two__true__pixels} );
+    }
+}
+
+.form-horizontal .has-feedback {
+
+    .form-control-feedback {
+        right: $form__x * 2;    // Multiply by 2 b/c form-horizontal adds padding to form-group
+    }
+    //  Still need a solution for lables breaking line on mobile or under 991px...
+}
+
+@if $form-feedback__use-icon {
+
+    .has-feedback .form-control-feedback:before {
+        display: none;  //  Disable HTML font awesome icons if exist
+    }
+
+    .has-feedback .form-control-feedback:after {
+        font-family: $fa-font-name;
+
+        display: block;
+
+        width: 1em;
+    }
+
+    .has-success .form-control-feedback:after {
+        content: '#{$has-success__icon}';
+    }
+
+    .has-warning .form-control-feedback:after {
+        content: '#{$has-warning__icon}';
+    }
+
+    .has-danger .form-control-feedback:after {
+        content: '#{$has-danger__icon}';
+    }
+}

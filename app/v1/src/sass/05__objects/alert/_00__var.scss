@@ -1,0 +1,20 @@
+//
+//  Units
+$alert__contrast:               $global__contrast;
+$alert__radius:                 $global__radius;
+$alert__x:                      $global__x * 1.5;
+$alert__y:                      $global__y * 1.5;
+//
+//  Colors
+$alert__default-palette:        true !default;
+$alert__inverse-palette:        true !default;
+$alert__primary-palette:        true !default;
+$alert__neutral-palette:        true !default;
+$alert__state-palette:          true !default;
+//
+//  Base
+$alert__padding:                $alert__y $alert__x;
+$alert__radius:                 $alert__radius;
+//
+//  Components
+$alert-disclaimer__font-size:   $h6__font-size;

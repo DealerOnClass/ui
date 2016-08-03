@@ -1,0 +1,23 @@
+.nav {
+    margin-bottom: 0;
+    padding-left: 0;
+
+    list-style: none;
+
+    &,
+    > li,
+    > li > a,
+    .nav-item {
+        position: relative;
+
+        display: block;
+    }
+
+    > li > a,
+    .nav-item {
+        box-sizing: border-box;
+        padding: $nav__link__padding;
+    }
+
+    @include clearfix;
+}

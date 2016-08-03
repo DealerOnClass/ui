@@ -1,0 +1,6 @@
+.form-horizontal {
+
+    .form-group {
+        @include make-row;
+    }
+}

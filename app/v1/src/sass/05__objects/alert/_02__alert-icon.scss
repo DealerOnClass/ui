@@ -1,0 +1,15 @@
+.alert-icon {
+    position: relative;
+    top: $alert__y / 4;
+
+    float: left;
+
+    padding-right: $alert__x;
+    padding-bottom: $alert__x;
+}
+
+.alert-body {
+    display: table-cell;
+
+    width: 10000px;
+}

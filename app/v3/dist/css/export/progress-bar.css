@@ -1,0 +1,175 @@
+/*
+ * Imports
+ */
+/*
+ * Imports
+ */
+/*
+ * Breakpoints
+ * $m-mobile:   $media-mobile:   544px;
+ * $m-tablet:   $media-tablet:   768px;
+ * $m-desktop:  $media-desktop:  992px;
+ * $m-large:    $media-large:    1200px;
+ */
+/*
+ * GrayScale
+ */
+/*
+ * Colors
+ */
+/*
+ * States
+ */
+/*
+ * Colors
+ */
+/*
+ * Icon
+ */
+/*
+ * Sans Serif
+ */
+/*
+ * 00 Global Output
+ * $o-a-c:  $output-all-components:  true;
+ * $o-a-t:  $output-all-themes:      true;
+ */
+/*
+ * 03 Base Output
+ */
+/*
+ * 04 Base Output
+ */
+/*
+ * 05 Object Output
+ */
+/*
+ * 06 Utilities Output
+ */
+/*
+ * Root
+ */
+/*
+ * Assets
+ */
+/*
+ * Ratios
+ */
+/*
+ * Global Unit
+ * $g-u:  $global-unit:        1rem;
+ * $g-m:  $global-multiplier:  1;
+ */
+/*
+ * Global Unit Abstracts
+ * $g-c:  $global-contrast:        (10% * $g-m);
+ * $g-g:  $global-gutter:          ($g-u * $g-m);
+ * $g-r:  $global-radius:          (($g-u * 0.30) * $g-m);
+ * $g-x:  $global-leftandorright:  (($g-u * 0.75) * $g-m);
+ * $g-y:  $global-topandorbottom:  (($g-u * 0.50) * $g-m);
+ */
+/*
+ * Typography
+ * $t-u:   $type-unit:        1em;
+ * $t-r:   $type-ratio:       $major-third;
+ * $t-fs:  $type-fontsize:    16px;
+ * $t-lh:  $type-lineheight:  1.618;
+ */
+/*
+ * Global Spacers
+ * $s-x-1:  $spacer-x-1:  $g-x;
+ * ...
+ * $s-y-1:  $spacer-y-1:  $g-y;
+ * ...
+ * $spacers: map for mixin
+ */
+/*
+ * Global Z
+ * $g-z-dropdown:  $global-z-dropdown:  1000
+ */
+/*
+ * 02 Tools
+ */
+/*
+ * Base
+ */
+/*
+ * Variations
+ */
+/*
+ * Export
+ */
+/*
+ * Units
+ */
+/*
+ * Colors
+ */
+/*
+ * Base
+ */
+.progress[value],
+.progress[value]::-webkit-progress-bar,
+.progress {
+    position: relative;
+    display: flex;
+    height: 1.618rem;
+    border-radius: 0.3rem;
+    background-color: #e4e4e4;
+}
+
+.progress[value]::-webkit-progress-value,
+.progress-bar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    border-radius: 0.3rem;
+    background-color: #3662ad;
+}
+.progress[value]::-webkit-progress-value > span,
+.progress-bar > span {
+    overflow: hidden;
+    padding-right: 0.375rem;
+    padding-left: 0.375rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.progress[value]:before {
+    position: absolute;
+    z-index: 1010;
+    overflow: hidden;
+    padding-right: 0.375rem;
+    padding-left: 0.375rem;
+    content: attr(value) "% Complete";
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #fff;
+}
+
+/*
+ * Variations
+ */
+.progress-striped[value]::-webkit-progress-bar,
+.progress-striped .progress-bar {
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent); 
+    background-size: 2rem 2rem;
+}
+
+@keyframes progress-bar-stripes {
+    from {
+        background-position: 2rem 0;
+    }
+    to {
+        background-position: 0 0;
+    }
+}
+
+.progress-animated .progress-bar {
+    animation: progress-bar-stripes 2s linear infinite;
+}
+
+/*
+ * Theme
+ */

@@ -1,0 +1,28 @@
+@mixin list-group-color-variation($input__palette) {
+    @each $class__name, $color in $input__palette {
+        .list-group-#{$class__name} {
+            background-color: $color;
+
+            a.list-group-item {
+                @include state {
+                    color: check-color($color, 80, inherit, $white);
+                    background-color: shade($color, $list-group__contrast);
+                }
+            }
+
+            .list-group-item {
+                color: check-color($color, 80, inherit, $white);
+                border-color: transparent;
+                background-color: $color;
+
+                &.active {
+                    background-color: shade($color, $list-group__contrast);
+                }
+
+                &:not(:last-child) {
+                    border-bottom-color: rgba(0,0,0,0.15);
+                }
+            }
+        }
+    }
+}

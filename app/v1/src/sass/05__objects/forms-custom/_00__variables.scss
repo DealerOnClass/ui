@@ -1,0 +1,23 @@
+//  Units
+$c__radius:                     $global__radius;
+$c__x:                          $global__x;
+$c__y:                          $global__y;
+//  Base
+$c-input__color:                $body__color;
+$c-input__horizontal-padding:   $c__x * 2;
+$c-checkbox-indicator__radius:  $c__radius;
+$-radio-indicator__radius:      50%;
+$c-select__padding:             $c__y $c__x;
+$c-select__border:              $gray__02;
+$c-select__radius:              $c__radius;
+$file-custom__input__padding:   $c__y $c__x;
+$file-custom__input__color:     $body__color;
+$file-custom__input__bg:        white;
+$file-custom__input__border:    $gray__02;
+$file-custom__input__radius:    $c__radius;
+$file-custom__button__padding:  $c__y $c__x;
+$file-custom__button__color:    $body__color;
+$file-custom__button__bg:       $gray__01;
+$file-custom__button__border:   $gray__02;
+$file-custom__button__radius:   0 $c__radius $c__radius 0;
+

@@ -1,0 +1,46 @@
+//  Units
+$form__contrast:                   $global__contrast;
+$form__radius:                     $global__radius;
+$form__x:                          $global__x;
+$form__y:                          $global__y;
+//  Color Options
+$form-feedback__default-palette:   false !default;
+$form-feedback__primary-palette:   false !default;
+$form-feedback__neutral-palette:   false !default;
+$form-feedback__state-palette:     true !default;
+//  Form Control
+$form-control__bg:                 $gray__01;
+$form-control__border:             $gray__02;
+$form-control__color:              $body__color;
+$form-control__padding:            $form__y $form__x;
+$form-control__radius:             $form__radius;
+//  Form Control Static
+$form-control-static__padding:     $form__y 0;
+//  Form Control Feedback
+$has-success__icon:                $fa-var-check;
+$has-warning__icon:                $fa-var-warning;
+$has-danger__icon:                  $fa-var-remove;
+//  Base
+$legend__color:                    $body__color;
+$legend__border__color:            $body__color;
+$label__font:                      $sans--bold;
+$input__border__focus:             tint($state--info, 30%);
+$input__color__placeholder:        $gray__04;
+$input__bg--disabled:              $gray__02;
+$input__height--base:              $base__line-height * $base__font-unit;
+$input__height--small:             ($base__line-height / 2) * $base__font-unit;
+$input__height--large:             ($base__line-height * 2) * $base__font-unit;
+$form__vertical-padding:           $form__y;
+$form__horizontal-padding:         $form__x;
+$form--small__font-size:           $h6__font-size;
+$form--large__font-size:           $h4__font-size;
+$form-control--success:            $state--success;
+$form-control--warning:            $state--warning;
+$form-control--danger:             $state--danger;
+$input-group-addon__color:         $body__color;
+$input-group-addon__bg:            $gray__01;
+$input-group-addon__border:        $gray__02;
+$input-group-addon__radius:        $form__radius;
+$input-group-addon-sm__font-size:  $h6__font-size;
+$input-group-addon-lg__font-size:  $h4__font-size;
+

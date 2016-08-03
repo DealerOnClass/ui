@@ -1,0 +1,15 @@
+@if $list-group__default-palette {
+    @include list-group-color-variation($default__palette);
+}
+@if $list-group__inverse-palette {
+    @include list-group-color-variation($inverse__palette);
+}
+@if $list-group__primary-palette {
+    @include list-group-color-variation($primary__palette);
+}
+@if $list-group__neutral-palette {
+    @include list-group-color-variation($neutral__palette);
+}
+@if $list-group__state-palette {
+    @include list-group-color-variation($state__palette);
+}

@@ -1,0 +1,34 @@
+//  Well Base
+.well {
+    margin-bottom: $well__vertical-rhythm;
+    padding: $well__padding;
+
+    border: $one__pixel solid $well__border;
+    border-radius: $well__radius;
+    background-color: $well__bg;
+
+    @include box-shadow(inset 0 $one__pixel $one__pixel rgba(0,0,0,0.05));
+    blockquote {
+        border-color: #dddddd;
+        border-color: rgba(0,0,0,0.15);
+    }
+}
+
+//  Well Variations
+.well-lg {
+    padding: $well--lg__padding;
+
+    border-radius: $well--lg__radius;
+}
+
+.well-sm {
+    padding: $well--sm__padding;
+
+    border-radius: $well--sm__radius;
+}
+
+.well-xs {
+    padding: $well--xs__padding;
+
+    border-radius: $well--xs__radius;
+}

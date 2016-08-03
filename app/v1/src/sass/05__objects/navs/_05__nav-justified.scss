@@ -1,0 +1,31 @@
+.nav-justified {
+    display: table;
+
+    width: 100%;
+
+    table-layout: fixed;
+    border-spacing: $two__true__pixels;
+
+    > li {
+        position: relative;
+        top: $two__true__pixels;
+
+        display: table-cell;
+        float: none;
+
+        width: 1%;
+    }
+
+    > li > a {
+        text-align: center;
+    }
+
+    > .dropdown .dropdown-menu {
+        top: auto;
+        left: auto;
+    }
+
+    &:after {
+        display: none;
+    }
+}

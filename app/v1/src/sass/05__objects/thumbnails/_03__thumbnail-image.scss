@@ -1,0 +1,23 @@
+.thumbnail {
+    > img,
+    a > img {
+        margin-right: auto;
+        margin-left: auto;
+
+        @include img-responsive;
+
+        &:only-child {
+            border-radius: $thumbnail__radius;
+        }
+
+        &:first-child {
+            border-top-right-radius: $thumbnail__radius;
+            border-top-left-radius: $thumbnail__radius;
+        }
+
+        &:last-child {
+            border-bottom-right-radius: $thumbnail__radius;
+            border-bottom-left-radius: $thumbnail__radius;
+        }
+    }
+}

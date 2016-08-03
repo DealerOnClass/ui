@@ -1,0 +1,45 @@
+//
+//  Dropdown Caret
+@if $dropdown__has__caret {
+    .dropdown-toggle .caret {
+        @if $dropdown__caret__use-icon {
+            &:after {
+                font-family: $fa-font-name;
+
+                content: '#{$dropdown__caret__icon}';
+            }
+        } @else {
+            border-top: $caret__width-base solid;
+            border-bottom: $caret__width-base solid transparent;
+
+            @extend %caret;
+        }
+    }
+} @else {
+    .dropdown-toggle .caret:after {
+        content: '\00a0';
+    }
+}
+
+//
+//  Dropup Caret
+@if $dropup__has__caret {
+    .dropup-toggle .caret {
+        @if $dropup__caret__use-icon {
+            &:after {
+                font-family: $fa-font-name;
+
+                content: '#{$dropup__caret__icon}';
+            }
+        } @else {
+            border-top: $caret__width-base solid transparent;
+            border-bottom: $caret__width-base solid;
+
+            @extend %caret;
+        }
+    }
+} @else {
+    .dropup-toggle .caret:after {
+        content: '\00a0';
+    }
+}

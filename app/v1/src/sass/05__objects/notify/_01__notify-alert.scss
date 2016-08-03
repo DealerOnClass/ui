@@ -1,0 +1,41 @@
+@-webkit-keyframes alert {
+    0%, 100%, 50% {
+        opacity: 1;
+    }
+
+    25%, 75% {
+        opacity: 0;
+    }
+}
+
+@keyframes alert {
+    0%, 100%, 50% {
+        opacity: 1;
+    }
+
+    25%, 75% {
+        opacity: 0;
+    }
+}
+
+.notify {
+    position: relative;
+}
+
+.notify-icon {
+    position: absolute;
+    top: rhythm(-.25);
+    left: rhythm(-.25);
+}
+
+.notify-icon-alert {
+    animation: alert 2s ease infinite;
+}
+
+.notify-right {
+
+    .notify-icon {
+        left: auto;
+        right: rhythm(-.25);
+    }
+}

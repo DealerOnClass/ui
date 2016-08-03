@@ -1,0 +1,34 @@
+@mixin pager-color-variation($input__palette) {
+    @each $class__name, $color in $input__palette {
+        .pager-#{$class__name} {
+
+            .pager-item {
+                color: check-color($color, 80, inherit, $white);
+                border-color: transparent;
+                background-color: $color;
+
+                @include state-and-active {
+                    background-color: shade($color, $pager__contrast);
+                }
+
+                &[disabled] {
+                    @include state-and-self {
+                        background-color: $color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin pager-size-variation($unit__y, $unit__x, $input__palette) {
+    @each $class__name, $size in $input__palette {
+
+        $x: ($unit__x * strip-unit($size));
+        $y: ($unit__y * strip-unit($size));
+
+        .pager-#{$class__name} .pager-item {
+            padding: $y $x;
+        }
+    }
+}

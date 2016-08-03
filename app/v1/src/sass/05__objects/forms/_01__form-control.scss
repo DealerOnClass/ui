@@ -1,0 +1,29 @@
+.form-control {
+    display: block;
+
+    box-sizing: border-box;
+    width: 100%;
+    padding: $form-control__padding;
+
+    transition: border-color ease-in-out 0.1s, box-shadow ease-in-out 0.1s;
+
+    color: $form-control__color;
+    border: $one__true__pixel solid $form-control__border;
+    border-radius: $form-control__radius;
+    background-color: $form-control__bg;
+    background-image: none;
+
+    @include form-control-focus;
+    @include placeholder;
+
+    &[disabled],
+    &[readonly],
+    fieldset[disabled] & {
+        opacity: 1;
+        background-color: $input__bg--disabled;
+    }
+}
+
+.form-control-flat {
+    border-color: transparent;
+}

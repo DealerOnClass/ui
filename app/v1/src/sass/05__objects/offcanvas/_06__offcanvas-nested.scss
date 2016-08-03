@@ -1,0 +1,17 @@
+.offcanvas-nested {
+    position: relative;
+
+    &,
+    .offcanvas-nav .navbar-sidebar-wrapper {
+        height: 50vh;
+    }
+
+    .offcanvas-body {
+        width: 10000px;
+    }
+
+    .offcanvas-inner {
+        height: 100%;
+        padding: 0;
+    }
+}

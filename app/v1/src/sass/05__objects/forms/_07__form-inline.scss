@@ -1,0 +1,43 @@
+.form-inline {
+
+    .form-group,
+    .form-control,
+    .form-control-static,
+    .input-group:not([class*='col-']),
+    .radio,
+    .checkbox {
+        display: inline-block;
+
+        width: auto;
+
+        vertical-align: middle;
+    }
+
+    .input-group:not([class*='col-']) {
+        display: inline-table;
+
+        .input-group-addon,
+        .input-group-btn,
+        .form-control {
+            width: auto;
+        }
+
+        > .form-control {
+            width: 100%;
+        }
+    }
+
+    .radio,
+    .checkbox {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    > .btn,
+    > .form-control,
+    > .form-control-static,
+    > .radio,
+    > .checkbox {
+        margin-bottom: $form__y;
+    }
+}

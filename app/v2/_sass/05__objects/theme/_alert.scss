@@ -1,0 +1,50 @@
+//
+//  Var
+$alert__contrast:  $global__contrast;
+$alert__radius:    $global__radius;
+$alert__x:         $global__x;
+$alert__y:         $global__y;
+@if $output__global {
+    @if $output__alert {
+        //
+        //  Base
+        .alert {
+            padding: $alert__y $alert__x;
+
+            border: $one__pixel solid;
+            border-radius: $alert__radius;
+        }
+        //
+        //  Variations
+        .alert-dismissible {
+            .close {
+                position: relative;
+                top: negative($alert__y * 0.5);
+                right: negative($alert__x * 0.5);
+
+                float: right;
+
+                padding: $alert__y;
+            }
+        }
+        //
+        //  Sizing
+        @if $output__global--sizes {
+            @if $output__alert--sizes {
+                @include alert-size-variation($alert__y, $alert__x, $default__sizing);
+            }
+        }
+        //
+        //  Colors
+        @if $output__global--theme {
+            @if $output__alert--theme {
+                @include alert-color-variation($default__palette);
+                @include alert-color-variation($inverse__palette);
+                @include alert-color-variation($primary__palette);
+                @include alert-color-variation($neutral__palette);
+                @include alert-color-variation($state__palette);
+                @include alert-color-variation($classic__palette);
+            }
+        }
+    }
+}

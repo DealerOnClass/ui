@@ -1,0 +1,77 @@
+//
+//  Page Specific
+.page-interior-container {
+    margin-top: rhythm(3);
+    padding-left: $grid__gutter * 5;
+
+    .object-row {
+        //
+    }
+}
+
+.page-interior-card {
+    .card {
+        max-width: 20em;
+    }
+}
+
+.page-interior-dropdown {
+    .dropdown-toggle,
+    .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-menu {
+        position: relative;
+    }
+}
+
+.page-interior-grid {
+    .object-wrapper [class*="col-"] {
+        background-color: rgba(0, 0, 0, 0.1);
+        background-clip: content-box;
+    }
+}
+
+.page-interior-media {
+    .media-body {
+        max-width: 28em;
+    }
+}
+
+.page-interior-modal {
+    .show-modal {
+        @include row($global__x);
+        position: relative;
+        display: block;
+
+        .modal-dialog {
+            @include column($global__x);
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+}
+
+.page-interior-popover {
+    .popover {
+        position: relative;
+
+        display: block;
+    }
+}
+
+.page-interior-card {
+    .card {
+        margin-bottom: rhythm(1);
+    }
+}
+
+.page-interior-text {
+    overflow-x: hidden;
+}
+
+[class*="page-interior"] .breadcrumb {
+    box-shadow: 0 $two__pixels $three__pixels rgba(0, 0, 0, 0.1);
+    margin-bottom: rhythm(1);
+}

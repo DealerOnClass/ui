@@ -1,0 +1,12 @@
+.breadcrumb > li {
+    float: left;
+    display: block;
+
+    &.active {
+        font-family: $breadcrumb__link--active__font;
+
+        padding: $breadcrumb__padding;
+        position: relative;
+        top: $one__true__pixel;
+    }
+}

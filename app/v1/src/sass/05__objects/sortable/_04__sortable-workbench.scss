@@ -1,0 +1,42 @@
+.sortable-workbench {
+    position: relative;
+    top: $global__x / -2;
+
+    min-height: 10em;
+    margin-right: $global__x / -1.5;
+    margin-left: $global__x / -1.5;
+    padding: ( $global__x / 2 ) ( $global__x / 2 ) 0;
+
+    border: $two__pixels dotted $gray__02;
+    border-radius: $global__radius;
+
+    &:before {
+        position: absolute;
+        z-index: 1;
+        top: $global__y;
+        left: $global__x;
+
+        content: 'Drop items from Toolbox here';
+
+        color: $gray__02;
+    }
+    &:after {
+        display: block;
+        clear: both;
+
+        content: '';
+    }
+    .sortable-text {
+        white-space: normal;
+    }
+    .sortable-text-value {
+        padding-right: $btn__x * 3.5;
+    }
+}
+
+.sortable-workbench-single {
+
+    &:before {
+        content: 'Drop item from Toolbox here';
+    }
+}

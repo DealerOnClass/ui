@@ -1,0 +1,27 @@
+//
+//  Units
+$btn__contrast:                 $global__contrast;
+$btn__radius:                   $global__radius;
+$btn__x:                        $global__x;
+$btn__y:                        $global__y;
+//
+//  Color
+$btn__default-palette:          true !default;
+$btn__inverse-palette:          true !default;
+$btn__primary-palette:          true !default;
+$btn__neutral-palette:          true !default;
+$btn__state-palette:            true !default;
+//
+//  Base
+$btn__padding:                  $btn__y $btn__x;
+$btn__radius:                   $btn__radius;
+$btn--active__shadow:           inset 0 $three__pixels $five__pixels rgba(0, 0, 0, 0.125);
+//
+$btn__link--active__color:      $white;
+$btn__link--active__bg:         $primary__color;
+//
+//  Variations
+$btn--lg__padding:              ( $btn__y * ( $base__font-ratio * 2 ) ) ( $btn__x * ( $base__font-ratio * 2 ) );
+$btn--md__padding:              ( $btn__y * $base__font-ratio ) ( $btn__x * $base__font-ratio );
+$btn--sm__padding:              ( $btn__y / $base__font-ratio ) ( $btn__x / $base__font-ratio );
+$btn--xs__padding:              ( $btn__y / ( $base__font-ratio * 2 ) ) ( $btn__x / $base__font-ratio );

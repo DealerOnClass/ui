@@ -1,0 +1,5 @@
+.sortable-body {
+    @media (max-width: $screen-xs-min) {
+        margin-top: rhythm(2);
+    }
+}

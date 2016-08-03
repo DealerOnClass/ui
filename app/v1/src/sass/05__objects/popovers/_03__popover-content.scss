@@ -1,0 +1,18 @@
+.popover-content {
+    padding: $popover-content__padding;
+
+    border-bottom: $one__true__pixel solid;
+    border-right: $one__true__pixel solid;
+    border-left: $one__true__pixel solid;
+
+    border-bottom-right-radius: $panel__radius;
+    border-bottom-left-radius: $panel__radius;
+    background-color: $popover-content__bg;
+
+    .arrow + &,
+    .popover-arrow + & {
+        border-top-left-radius: $panel__radius;
+        border-top-right-radius: $panel__radius;
+    }
+}
+

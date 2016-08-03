@@ -1,0 +1,454 @@
+//
+//  Colors
+//
+//  Base Colours
+$white:                 white;
+$black:                 black;
+$gray__01:              mix($black,$white,10%);
+$gray__02:              mix($black,$white,20%);
+$gray__03:              mix($black,$white,30%);
+$gray__04:              mix($black,$white,40%);
+$gray__05:              mix($black,$white,50%);
+$gray__06:              mix($black,$white,60%);
+$gray__07:              mix($black,$white,70%);
+$gray__08:              mix($black,$white,80%);
+$gray__09:              mix($black,$white,90%);
+
+//  State Colours
+$state--success:        #5cb85c !default;
+$state--info:           #5bc0de !default;
+$state--warning:        #f0ad4e !default;
+$state--danger:         #d9534f !default;
+
+//  Palette Colours
+$palette__blue:         #1c4181;
+$palette__dark--blue:   #15294b;
+$palette__orange:       #f36c0a;
+$palette__dark--gray:   #252931;
+$palette__gray:         #74777d;
+$palette__light--gray:  #f3f3f3;
+
+//  Z Index
+$zindex-navbar:            1000 !default;
+$zindex-dropdown:          1000 !default;
+$zindex-popover:           1060 !default;
+$zindex-tooltip:           1070 !default;
+$zindex-navbar-fixed:      1030 !default;
+$zindex-modal-background:  1040 !default;
+$zindex-modal:             1050 !default;
+
+//  Typeface
+$sans--regular:         'AvenirRegular';
+$sans--semibold:        'AvenirMedium';
+$sans--bold:            'AvenirHeavy';
+$mono--regular:         'SourceCodePro';
+
+//  Typography
+$master__font-size:     18;
+$base__font-size:       ($master__font-size / 16) * 100%;
+$base__font-ratio:      1.333;
+$base__font-unit:       1em;
+$base__line-height:     1.5;
+
+//  Pixels
+$one__pixel:            $base__font-unit / $master__font-size;
+$two__pixels:           $one__pixel * 2;
+$three__pixels:         $one__pixel * 3;
+$four__pixels:          $one__pixel * 4;
+$five__pixels:          $one__pixel * 5;
+
+//  Mouse
+$cursor-disabled:       not-allowed;
+
+//  Utilities
+$help-block__color:     $gray__06;
+
+//  Body
+$body__font:            $sans--regular;
+$body__line-height:     $base__line-height;
+$body__color:           $palette__dark--gray;
+$body__min-width:       300px;
+
+//  Heading
+$heading__font:         $sans--semibold;
+$h5__font-size:         $base__font-unit;
+$h6__font-size:         $h5__font-size / $base__font-ratio;
+$h4__font-size:         $h5__font-size * $base__font-ratio;
+$h3__font-size:         $h4__font-size * $base__font-ratio;
+$h2__font-size:         $h3__font-size * $base__font-ratio;
+$h1__font-size:         $h2__font-size * $base__font-ratio;
+
+$link__color:           $palette__blue;
+$link--hover__color:    shade($link__color, 20%);
+
+//  Secondary Text
+$heading__small__size:  .7em;
+$heading__small__color: $gray__03;
+
+//  Lead Text
+$lead__font-size:       1.15em;
+
+//  Strong
+$strong__font:          $sans--bold;
+
+//  List
+$list__is-inside:       yes !default;
+$list__padding:         rhythm(1);
+
+//  Definition List
+$dl__horizontal__width:    rhythm(5);
+$dl__horizontal__padding:  rhythm(1);
+
+//  Code
+$code__font:            $mono--regular;
+$mark__bg:              $palette__orange;
+$mark__color:           $white;
+
+//
+//  Objects
+//
+//  Grid
+//
+$grid__gutter:                  30px;
+$grid__columns:                 12;
+$grid__has__pull:               yes !default;
+$grid__has__push:               yes !default;
+$grid__has__offset:             yes !default;
+$screen-xs-min:                 480px !default;
+$screen-sm-min:                 768px !default;
+$screen-md-min:                 992px !default;
+$screen-lg-min:                 1200px !default;
+$screen-xs-max:                 ($screen-sm-min - 1) !default;
+$screen-sm-max:                 ($screen-md-min - 1) !default;
+$screen-md-max:                 ($screen-lg-min - 1) !default;
+$container-sm:                  750px !default;
+$container-md:                  970px !default;
+$container-lg:                  1170px !default;
+$grid-float-breakpoint:         $screen-sm-min !default;
+$grid-float-breakpoint-max:     ($grid-float-breakpoint - 1) default;
+
+//  Tables
+$table__has__striped:           yes !default;
+$table__has__bordered:          yes !default;
+$table__has__hover:             yes !default;
+$table__has__condensed:         yes !default;
+$table__has__contextual:        yes !default;
+$table__is__responsive:         yes !default;
+
+$table__padding:                .5em;
+$table__border__color:          $gray__02;
+
+$table--condensed__padding:     $table__padding / 2;
+$table--striped__bg:            $gray__01;
+$table--hover__bg:              $gray__01;
+
+$table--contextual--active:     $gray__01;
+$table--contextual--success:    tint($state--success, 60%);
+$table--contextual--info:       tint($state--info, 60%);
+$table--contextual--warning:    tint($state--warning, 60%);
+$table--contextual--danger:     tint($state--danger, 60%);
+
+//  Forms
+$legend__color:                 $body__color;
+$legend__border__color:         $body__color;
+$label__font:                   $sans--bold;
+$form-control__color:           $body__color;
+$form-control__bg:              $gray__01;
+$form-control__border:          $gray__02;
+$form-control__radius:          rhythm(.2);
+$input__border__focus:          tint($state--info, 30%);    //  Focus Color
+$input__color__placeholder:     $gray__04;                  //  Placeholder Font Color
+$input__bg--disabled:           $gray__02;
+
+$input__height--base:           $base__line-height * $base__font-unit;
+$input__height--small:          ($base__line-height / 2) * $base__font-unit;
+$input__height--large:          ($base__line-height * 2) * $base__font-unit;
+
+$form__vertical-padding:        rhythm(.4);
+$form__horizontal-padding:      $form__vertical-padding * $base__font-ratio;
+
+$form--small__font-size:        $h6__font-size;
+$form--large__font-size:        $h4__font-size;
+
+$form-control--success:         $state--success;
+$form-control--warning:         $state--warning;
+$form-control--danger:          $state--danger;
+
+$input-group-addon__color:          $body__color;
+$input-group-addon__bg:             $gray__01;
+$input-group-addon__border:         $gray__02;
+$input-group-addon__radius:         rhythm(.2);
+$input-group-addon-sm__font-size:   $h6__font-size;
+$input-group-addon-lg__font-size:   $h4__font-size;
+
+//  Buttons
+$btn__has__border:              yes !default;
+$btn__radius:                   rhythm(.2);
+$btn__padding:                  rhythm(.4) rhythm(.5);
+
+$btn--xs__font-size:            $h6__font-size / $base__font-ratio;
+$btn--sm__font-size:            $h6__font-size;
+$btn--lg__font-size:            $h4__font-size;
+
+$btn--hover__color:             $palette__blue;
+
+$btn-link__color:               $gray__07;
+$btn-link--hover__color:        $gray__07;
+$btn-link--disabled__color:     $gray__07;
+
+$btn-block__vertical-rhythm:    rhythm(.5);
+
+$btn--default__bg:              $gray__01;
+$btn--primary__bg:              $palette__blue;
+$btn--success__bg:              $state--success;
+$btn--info__bg:                 $state--info;
+$btn--warning__bg:              $state--warning;
+$btn--danger__bg:               $state--danger;
+
+//  Dropdowns
+$caret-width-base:                         rhythm(.2);
+$caret-width-large:                        rhythm(.3);
+
+$dropdown-menu__bg:                        $gray__01;
+$dropdown-menu__border:                    $gray__02;
+$dropdown-menu__radius:                    rhythm(.2);
+
+$dropdown-menu__divider__bg:               $gray__02;
+
+$dropdown-menu__link__padding:             rhythm(.5) rhythm(.5);
+$dropdown-menu__link__color:               $body__color;
+
+$dropdown-menu__link--hover__color:        $body__color;
+$dropdown-menu__link--hover__bg:           shade($gray__01, 10%);
+
+$dropdown-menu__link--active__color:       $gray__06;
+$dropdown-menu__link--active__bg:          $gray__06;
+
+$dropdown-menu__link--disabled__color:     $gray__06;
+
+$dropdown-header__font-size:               $h6__font-size;
+$dropdown-header__color:                   $body__color;
+$dropdown-header__vertical-padding:        .5;      // Using Rem
+$dropdown-header__horizontal-padding:      .5;      // Using Rem
+
+//  Navs
+$nav__link__padding:                    rhythm(.5) rhythm(.5);
+
+$nav__link--hover__bg:                  $gray__02;
+$nav__link--hover__border:              $gray__02;
+
+$nav__link--disabled__color:            $gray__02;
+$nav__link--disabled--hover__color:     $gray__02;
+
+$nav-tabs__radius:                      rhythm(.2);
+$nav-tabs__border:                      $gray__02;
+$nav-tabs--hover__border:               $gray__02;
+
+$nav-tabs--active__color:               white;
+$nav-tabs--active__bg:                  $palette__blue;
+$nav-tabs--active__border:              $palette__blue;
+
+$nav-pills__radius:                     $nav-tabs__radius;
+$nav-pills--active__color:              white;
+$nav-pills--active__bg:                 $palette__blue;
+
+$nav-justified__link__vertical-rhythm:  rhythm(.5);
+$nav-tabs-justified__radius:            $nav-tabs__radius;
+$nav-tabs-justified__border:            $nav-tabs__border;
+$nav-tabs-justified--active__border:    $nav-tabs__border;
+
+//  Navbar
+$navbar__radius:                        rhythm(.2);
+$navbar-collapse__padding:              $grid__gutter / 2;
+$navbar-collapse__max-height:           340px;
+
+$navbar-brand__padding:                 rhythm(.5) rhythm(.5);
+$navbar-brand__margin-left:             rhythm(.5) * -1;
+
+$navbar-toggle__radius:                 0;
+$navbar-toggle__border:                 $gray__01;
+
+$navbar-toggle__icon-bar__bg:           $body__color;
+$navbar-toggle__icon-bar__width:        rhythm(.75);
+
+$navbar-toggle__padding:                rhythm(.5) rhythm(.75);
+
+$navbar-nav__link__vertical__padding:   rhythm(.5);
+
+$navbar-form__vertical-padding:         rhythm(.5);
+$navbar-form__horizontal-padding:       rhythm(.5);
+
+$navbar-text__vertical-padding:         rhythm(.5);
+$navbar-text__horizontal-margin:        rhythm(.5);
+
+$navbar-right__padding:                 rhythm(.5);
+
+
+$navbar-default__bg:                    $gray__01;
+$navbar-default__border:                $gray__02;
+$navbar-default__color:                 $body__color;
+
+$navbar-default-brand__color:           $body__color;
+$navbar-default-brand--hover__bg:       $gray__02;
+$navbar-default-brand--hover__color:    $gray__02;
+
+$navbar-default-toggle__border:         $gray__02;
+$navbar-default-toggle--hover__bg:      $gray__02;
+$navbar-default-toggle-icon-bar__bg:    $body__color;
+
+$navbar-default__link__color:           $body__color;
+
+$navbar-default__link--hover__bg:       $gray__02;
+$navbar-default__link--hover__color:    $body__color;
+
+$navbar-default__link--active__bg:      $gray__02;
+$navbar-default__link--active__color:   $body__color;
+
+$navbar-default__link--disabled__bg:    $gray__02;
+$navbar-default__link--disabled__color: $gray__02;
+
+
+
+$navbar-inverse__bg:                    invert($gray__01);
+$navbar-inverse__border:                invert($gray__02);
+$navbar-inverse__color:                 invert($body__color);
+
+$navbar-inverse-brand__color:           invert($body__color);
+$navbar-inverse-brand--hover__bg:       invert($gray__02);
+$navbar-inverse-brand--hover__color:    invert($gray__02);
+
+$navbar-inverse-toggle__border:         invert($gray__02);
+$navbar-inverse-toggle--hover__bg:      invert($gray__02);
+$navbar-inverse-toggle-icon-bar__bg:    invert($body__color);
+
+$navbar-inverse__link__color:           invert($body__color);
+
+$navbar-inverse__link--hover__bg:       invert($gray__02);
+$navbar-inverse__link--hover__color:    invert($body__color);
+
+$navbar-inverse__link--active__bg:      invert($gray__02);
+$navbar-inverse__link--active__color:   invert($body__color);
+
+$navbar-inverse__link--disabled__bg:    invert($gray__02);
+$navbar-inverse__link--disabled__color: invert($gray__02);
+
+//  Breadcrumb
+$breadcrumb__padding:                   rhythm(.5) rhythm(.5);
+$breadcrumb__vertical-rhythm:           rhythm(1);
+$breadcrumb__bg:                        $gray__01;
+$breadcrumb__border:                    $gray__02;
+$breadcrumb__radius:                    rhythm(.2);
+
+$breadcrumb__separator:                 "/";
+$breadcrumb__separator__color:          $body__color;
+
+$breadcrumb__link--active__color:       $body__color;
+
+//  Pagination
+$pagination__radius:                    rhythm(.2);
+$pagination__padding:                   rhythm(.5) rhythm(.5);
+$pagination__color:                     $body__color;
+$pagination__bg:                        $gray__01;
+$pagination__border:                    $gray__02;
+
+$pagination--xs__font-size:             $h6__font-size / $base__font-ratio;
+$pagination--sm__font-size:             $h6__font-size;
+$pagination--lg__font-size:             $h4__font-size;
+
+$pagination--hover__color:              $body__color;
+$pagination--hover__bg:                 $gray__02;
+$pagination--hover__border:             $gray__02;
+
+$pagination--active__color:             white;
+$pagination--active__bg:                $palette__blue;
+$pagination--active__border:            $palette__blue;
+
+$pagination--disabled__color:           $gray__03;
+$pagination--disabled__bg:              $gray__01;
+$pagination--disabled__border:          $gray__02;
+
+//  Pager
+$pager__link__vertical-padding:         rhythm(.5);
+$pager__link__horizontal-padding:       rhythm(1);
+
+$pager__link__bg:                       $gray__01;
+$pager__link__border:                   $gray__02;
+$pager__link__radius:                   $pager__link__vertical-padding * 2;
+$pager__link--hover__bg:                $gray__02;
+$pager__link--disabled__color:          $gray__04;
+
+//  Labels
+$label__padding:                        rhythm(.2) rhythm(.4);
+$label__color:                          $body__color;
+$label__radius:                         rhythm(.2);
+
+$label__link--hover__color:             $gray__02;
+
+$label--default__bg:                    $palette__blue;
+$label--primary__bg:                    $palette__orange;
+$label--success__bg:                    $state--success;
+$label--info__bg:                       $state--info;
+$label--warning__bg:                    $state--warning;
+$label--danger__bg:                     $state--danger;
+
+//  Badges
+$badge__padding:                        0 rhythm(.4);
+$badge__bg:                             $gray__01;
+$badge__color:                          $body__color;
+$badge__radius:                         rhythm(.8);
+
+$badge--active__bg:                     shade($nav-pills__active__bg, 30%);
+$badge--active__color:                  white;
+
+$badge__link--hover__color:             $gray__02;
+
+//  Jumbotron
+$jumbotron__padding:                    rhythm(1) rhythm(1);
+$jumbotron__vertical-rhythm:            rhythm(1);
+$jumbotron__color:                      $body__color;
+$jumbotron__bg:                         $gray__01;
+$jumbotron__radius:                     rhythm(.2);
+$jumbotron__font-size:                  $lead__font-size;
+
+$jumbotron__heading-color:              $body__color;
+
+//  Thumbnails
+$thumbnail__vertical-padding:             rhythm(.2);
+$thumbnail__horizontal-padding:           rhythm(.2);
+$thumbnail__vertical-rhythm:              rhythm(1);
+$thumbnail__bg:                           $gray__01;
+$thumbnail__border:                       $gray__01;
+$thumbnail__radius:                       rhythm(.2);
+
+$thumbnail__caption__vertical-padding:    rhythm(0);
+$thumbnail__caption__horizontal-padding:  rhythm(.5);
+$thumbnail__caption__color:               $body__color;
+
+$thumbnail__link--hover__border:          $palette__orange;
+
+//  Alerts
+$alert__padding:            rhythm(.5) rhythm(.5);
+$alert__vertical-rhythm:    rhythm(1);
+$alert__radius:             rhythm(.2);
+
+$alert--success__bg:        $state--success;
+$alert--info__bg:           $state--info;
+$alert--warning__bg:        $state--warning;
+$alert--danger__bg:         $state--danger;
+
+//  Progress Bars
+
+
+
+//
+//  Components
+//
+//  Logo
+$logo__font:                            $sans--bold;
+$logo__accent__color:                   $white;
+
+//  Navbar
+$navbar-dealeron__bg:                   $palette__orange;
+$navbar-dealeron__color:                $white;
+$navbar-dealeron__navbar-brand__bg:     shade($navbar-dealeron__bg, 15%);
+

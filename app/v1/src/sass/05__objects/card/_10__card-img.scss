@@ -1,0 +1,19 @@
+.card-img {
+    display: block;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+.card-img-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    padding: $card__y $card__x;
+
+    color: $card-img-overlay__color;
+    border-radius: $card__radius;
+    background-color: $card-img-overlay__bg;
+}

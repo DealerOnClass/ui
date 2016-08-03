@@ -1,0 +1,11 @@
+//
+//  Var
+$logo__height:  rhythm(0.75);
+//
+//  Base
+.logo {
+    position: relative;
+    height: $logo__height;
+    top: negative($logo__height / 4);
+    margin-bottom: negative($logo__height / 2);
+}

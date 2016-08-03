@@ -1,0 +1,57 @@
+//
+//  Var
+$input-group__contrast:  $global__contrast;
+$input-group__radius:    $global__radius;
+$input-group__x:         $global__x;
+$input-group__y:         $global__y;
+@if $output__global {
+    @if $output__input-group {
+        //
+        //  Base
+        .input-group {
+            display: flex;
+        }
+
+        .input-group-item {
+            max-width: 100%;
+
+            &:first-child {
+                &,
+                > .dropdown-toggle {
+                    border-radius: $input-group__radius 0 0 $input-group__radius;
+                }
+            }
+
+            &:last-child {
+                &,
+                > .dropdown-toggle {
+                    border-radius: 0 $input-group__radius $input-group__radius 0;
+                }
+            }
+
+            &:not(:last-child) {
+                &,
+                > .dropdown-toggle {
+                    border-right: 0;
+                }
+            }
+        }
+
+        .input-group-addon {
+            padding: $form__y $form__x;
+            border: $one__pixel solid;
+
+            &.dropdown {
+                padding: 0;
+                border: 0;
+            }
+        }
+        //
+        //  Sizing
+        @if $output__global--sizes {
+            @if $output__input-group--sizes {
+                @include input-group-size-variation($input-group__y, $input-group__x, $default__sizing);
+            }
+        }
+    }
+}

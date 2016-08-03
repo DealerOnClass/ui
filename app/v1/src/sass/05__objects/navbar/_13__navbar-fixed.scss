@@ -1,0 +1,40 @@
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+    border-right: 0 none;
+    border-left: 0 none;
+
+    .navbar-collapse {
+        max-height: 340px;
+
+        @media (max-device-width: $screen-xs-min) and (orientation: landscape) {
+            max-height: 200px;
+        }
+    }
+}
+
+
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+    position: fixed;
+    z-index: $zindex-navbar-fixed;
+    right: 0;
+    left: 0;
+
+    border-radius: 0;
+}
+
+.navbar-fixed-top {
+    top: 0;
+}
+
+.navbar-fixed-bottom {
+    bottom: 0;
+}
+
+.navbar-ghost {
+    width: 100%;
+    height: ( $navbar__y * 2 ) + $base__line-height;
+    visibility: hidden;
+
+    @include clearfix;
+}

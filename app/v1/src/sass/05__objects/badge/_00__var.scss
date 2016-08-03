@@ -1,0 +1,17 @@
+//
+//  Units
+$badge__contrast:            $global__contrast;
+$badge__radius:              $global__radius;
+$badge__x:                   $global__x / 1.5;
+$badge__y:                   $global__y;
+//
+//  Color
+$badge__default-palette:     true !default;
+$badge__inverse-palette:     true !default;
+$badge__primary-palette:     true !default;
+$badge__neutral-palette:     true !default;
+$badge__state-palette:       true !default;
+//
+//  Base
+$badge__padding:             ( $badge__x / 3 ) $badge__x ( $badge__x / 4 );
+$badge__radius:              ( $badge__x * 2 );

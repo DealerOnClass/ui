@@ -1,0 +1,25 @@
+@mixin popover-color-variation($input__palette) {
+    @each $class__name, $color in $input__palette {
+        .popover-#{$class__name} {
+
+            color: check-color($color, 80, inherit, $white);
+
+            .popover-title,
+            .popover-content {
+                border-color: check-color($color, 80, shade($color, $panel__contrast), $color);
+            }
+
+            .popover-title {
+                background-color: $color;
+            }
+
+            &.left {
+                .arrow,
+                .popover-arrow {
+                    border-left-color: check-color($color, 80, shade($color, $panel__contrast), $color);
+                }
+            }
+        }
+    }
+}
+

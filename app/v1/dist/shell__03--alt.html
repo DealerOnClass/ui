@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>DealerOn UI Kit - Shell 03 - Alt</title>
+        <link href="css/screen.css" rel="stylesheet">
+    </head>
+
+    <body class="offcanvas-wrapper">
+
+        <nav id="nav" class="navbar navbar-main navbar-static-top" oncanvas-nav>
+            <a id="navbar-sidebar-link" href="#navbar-sidebar" class="navbar-brand navbar-brand-svg" data-toggle="collapse">
+                <i id="navbar-sidebar-icon" class="fa fa-navicon fa-fw"></i>
+                <object class="logo__svg" data='img/logo__symbol.svg' type="image/svg+xml">
+                    <img class="logo__svg" src="img/logo__symbol.svg" alt="">
+                </object>
+            </a>
+            <ul class="nav navbar-nav navbar-left-override">
+                <li class="dropdown hidden-xs">
+                    <a href="#" data-toggle="dropdown">Accounts</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="">Account 1</a></li>
+                        <li><a href="">Account 2</a></li>
+                        <li><a href="">Account 3</a></li>
+                        <li><a href="">Account 4</a></li>
+                        <li><a href="">Account 5</a></li>
+                        <li class="divider"></li>
+                        <li><a href="">View All Accounts</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown hidden-xs">
+                    <a href="#" data-toggle="dropdown">Locations</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="">Account 1</a></li>
+                        <li><a href="">Account 2</a></li>
+                        <li><a href="">Account 3</a></li>
+                        <li><a href="">Account 4</a></li>
+                        <li><a href="">Account 5</a></li>
+                        <li class="divider"></li>
+                        <li><a href="">View All Locations</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown hidden-xs">
+                    <a href="#" data-toggle="dropdown">Products</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="">Account 1</a></li>
+                        <li><a href="">Account 2</a></li>
+                        <li><a href="">Account 3</a></li>
+                        <li><a href="">Account 4</a></li>
+                        <li><a href="">Account 5</a></li>
+                        <li class="divider"></li>
+                        <li><a href="">View All Products</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right-override">
+                <li>
+                    <form id="navbar-search-form" class="navbar-search-form form-inline collapse width">
+                        <input id="navbar-search-form-input" class="form-control" type="text">
+                    </form>
+                </li>
+                <li>
+                    <a id="navbar-search-link" href="#navbar-search-form" class="navbar-link" data-toggle="collapse">
+                        <i class="fa fa-search"></i>
+                    </a>
+                </li>
+                <li>
+                    <a id="navbar-profile-link" href="#navbar-profile-collapse" data-toggle="collapse" data-disable="notify">
+                        <div class="navbar-profile notify">
+                            <img class="navbar-profile-img" src="img/mario.png" alt="Itsa me Mario!">
+                            <i class="fa fa-exclamation fa-sm notify-icon notify-icon-alert"></i>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="offcanvas" offcanvas-set-top="oncanvas-nav">
+
+            <nav id="navbar-sidebar-parent" class="offcanvas-nav navbar navbar-inverse navbar-stacked navbar-sidebar">
+                <div id="navbar-sidebar" class="navbar-sidebar-collapse collapse width in">
+                    <div id="navbar-sidebar-wrapper" class="navbar-sidebar-wrapper" offcanvas-set-height="oncanvas-nav">
+                        <hr class="divider">
+                        <!--<div style="display: table;">-->
+                        <div>
+                            <!--<div>-->
+                            <div style="position: absolute; top: 0; right: 0; background-color: #2a303c; z-index: 1000; height: 100%;">
+                                <div id="Content" class="collapse width">
+                                    <ul class="nav navbar-nav dropdown-menu" style="width: 18em;">
+                                        <li>
+                                            <a href="" class="dropdown-toggle collapsed" data-toggle="collapse" data-target="#Content">
+                                                <i class="fa fa-file fa-fw"></i>
+                                                Content
+                                                <span class="fa fa-angle-left fa-fw pull-right"></span>
+                                            </a>
+                                        </li>
+                                        <li><a href="">Item 1</a></li>
+                                        <li><a href="">Item 2</a></li>
+                                        <li><a href="">Item 3</a></li>
+                                        <li><a href="">Item 4</a></li>
+                                    </ul>
+                                </div>
+                                <div id="Leads" class="collapse width">
+                                    <ul class="nav navbar-nav dropdown-menu" style="width: 18em;">
+                                        <li>
+                                            <a href="" class="dropdown-toggle collapsed" data-toggle="collapse" data-target="#Leads">
+                                                <i class="fa fa-file fa-fw"></i>
+                                                Leads
+                                                <span class="fa fa-angle-left fa-fw pull-right"></span>
+                                            </a>
+                                        </li>
+                                        <li><a href="">Item 1</a></li>
+                                        <li><a href="">Item 2</a></li>
+                                        <li><a href="">Item 3</a></li>
+                                        <li><a href="">Item 4</a></li>
+                                    </ul>
+                                </div>
+                                <div id="Inventory" class="collapse width">
+                                    <ul class="nav navbar-nav dropdown-menu" style="width: 18em;">
+                                        <li>
+                                            <a href="" class="dropdown-toggle collapsed" data-toggle="collapse" data-target="#Inventory">
+                                                <i class="fa fa-file fa-fw"></i>
+                                                Inventory
+                                                <span class="fa fa-angle-left fa-fw pull-right"></span>
+                                            </a>
+                                        </li>
+                                        <li><a href="">Item 1</a></li>
+                                        <li><a href="">Item 2</a></li>
+                                        <li><a href="">Item 3</a></li>
+                                        <li><a href="">Item 4</a></li>
+                                    </ul>
+                                </div>
+                                <div id="Reporting" class="collapse width">
+                                    <ul class="nav navbar-nav dropdown-menu" style="width: 18em;">
+                                        <li>
+                                            <a href="" class="dropdown-toggle collapsed" data-toggle="collapse" data-target="#Reporting">
+                                                <i class="fa fa-file fa-fw"></i>
+                                                Reporting
+                                                <span class="fa fa-angle-left fa-fw pull-right"></span>
+                                            </a>
+                                        </li>
+                                        <li><a href="">Item 1</a></li>
+                                        <li><a href="">Item 2</a></li>
+                                        <li><a href="">Item 3</a></li>
+                                        <li><a href="">Item 4</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <ul class="nav navbar-nav" style="display: table-cell; width: 10000px; background-color: #343c4b">
+                                <li class="dropdown" style="width: 18em;">
+                                    <a href="" class="dropdown-toggle collapsed" data-toggle="collapse" data-target="#Content">
+                                        <i class="fa fa-file fa-fw"></i>
+                                        Content
+                                        <span class="fa fa-angle-right fa-fw pull-right"></span>
+                                    </a>
+                                </li>
+                                <li class="dropdown" style="width: 18em;">
+                                    <a href="" class="dropdown-toggle collapsed" data-toggle="collapse" data-target="#Leads">
+                                        <i class="fa fa-rocket fa-fw"></i>
+                                        Leads
+                                        <span class="fa fa-angle-right fa-fw pull-right"></span>
+                                    </a>
+                                </li>
+                                <li class="dropdown" style="width: 18em;">
+                                    <a href="" class="dropdown-toggle collapsed" data-toggle="collapse" data-target="#Inventory">
+                                        <i class="fa fa-shopping-cart fa-fw"></i>
+                                        Inventory
+                                        <span class="fa fa-angle-right fa-fw pull-right"></span>
+                                    </a>
+                                </li>
+                                <li class="dropdown" style="width: 18em;">
+                                    <a href="" class="dropdown-toggle collapsed" data-toggle="collapse" data-target="#Reporting">
+                                        <i class="fa fa-area-chart fa-fw"></i>
+                                        Reporting
+                                        <span class="fa fa-angle-right fa-fw pull-right"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <div id="offcanvas-body" class="offcanvas-body">
+                <div id="navbar-profile-collapse" class="collapse">
+                    <div class="bg-default" offcanvas-set-height="oncanvas-nav" style="overflow-y: auto">
+                        <div class="bg-main">
+                            <hr class="divider">
+                            <ul class="nav nav-main nav-tabs nav-flush">
+                                <li class="active">
+                                    <a href="#User" data-toggle="tab">Profile</a>
+                                </li>
+                                <li>
+                                    <a href="#Settings" data-toggle="tab">Settings</a>
+                                </li>
+                                <li>
+                                    <a href="#Support" data-toggle="tab" data-disable="notify">
+                                        Support
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#Billing" data-toggle="tab">Billing</a>
+                                </li>
+                            </ul>
+                            <hr class="divider">
+                        </div>
+                        <div class="hero hero-sm">
+                            <div class="container tab-content">
+                                <div class="tab-pane active" id="User">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <h4>Welcome Mario!</h4>
+                                            <p><a href="mailto:mario@email.com">mario@email.com</a></p>
+                                            <a class="btn btn-main btn-xs" href="">Logout Son</a>
+                                        </div>
+                                        <hr class="visible-xs invisible">
+                                        <hr class="visible-xs">
+                                        <hr class="visible-xs invisible">
+                                        <div class="col-sm-6">
+                                            <h4>Update Settings</h4>
+                                            <table class="table table-borderless table-flush">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>User Name</td>
+                                                        <td><input class="form-control form-control-sm" id="" placeholder="John Doe" type="text"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Password</td>
+                                                        <td><input class="form-control form-control-sm" id="inputPassword" placeholder="Password" type="password"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Email</td>
+                                                        <td><input class="form-control form-control-sm" id="" placeholder="John@email.com" type="email"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td><a class="btn btn-main btn-xs" href="">Submit</a></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="Settings">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <h4>Inbox</h4>
+
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    <img class="img-circle" src="img/mario.png" alt="Itsa me mario!" height="50" width="50">
+                                                </div>
+                                                <div class="media-body">
+                                                    <h5>Its ame Mario!<br><small>09/02/2015</small></h5>
+                                                    <p>Adipisicing rerum architecto nobis qui accusamus, rem!</p>
+                                                    <ul class="nav navbar-nav navbar-right-override">
+                                                        <li><a href=""><i class="fa fa-paper-plane"></i></a></li>
+                                                        <li><a href=""><i class="fa fa-mail-forward"></i></a></li>
+                                                        <li><a href=""><i class="fa fa-mail-reply"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    <img class="img-circle" src="img/yoshi.png" alt="Itsa me yoshi!" height="50" width="50">
+                                                </div>
+                                                <div class="media-body">
+                                                    <h5>I like eggs!<br><small>09/03/2015</small></h5>
+                                                    <p>Sit perferendis ipsam doloribus ipsam laboriosam. Ut vel explicabo placeat vitae tempora. Veniam.</p>
+                                                    <ul class="nav navbar-nav navbar-right-override">
+                                                        <li><a href=""><i class="fa fa-paper-plane"></i></a></li>
+                                                        <li><a href=""><i class="fa fa-mail-forward"></i></a></li>
+                                                        <li><a href=""><i class="fa fa-mail-reply"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    <img class="img-circle" src="img/wario.png" alt="Itsa me wario!" height="50" width="50">
+                                                </div>
+                                                <div class="media-body">
+                                                    <h5>Inventory Update<br><small>09/04/2015</small></h5>
+                                                    <p>Consectetur rem quisquam esse molestias omnis in labore perferendis, illo nam laboriosam sequi amet! Esse porro amet ut rem pariatur?</p>
+                                                    <ul class="nav navbar-nav navbar-right-override">
+                                                        <li><a href=""><i class="fa fa-paper-plane"></i></a></li>
+                                                        <li><a href=""><i class="fa fa-mail-forward"></i></a></li>
+                                                        <li><a href=""><i class="fa fa-mail-reply"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="Support">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <h4>Your Support Team</h4>
+                                            <div class="list-group list-group-default list-group-flush">
+                                                <div class="list-group-item media media-profile media-flush">
+                                                    <div class="media-left">
+                                                        <img class="img-circle" src="img/mario.png" alt="Itsa me Mario!" height="50" width="50">
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <div class="navbar raw">
+                                                            <span class="navbar-text pull-left">Mario</span>
+                                                            <ul class="nav navbar-nav navbar-right-override">
+                                                                <li><a href=""><i class="fa fa-phone"></i></a></li>
+                                                                <li><a href=""><i class="fa fa-envelope"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="list-group-item media media-profile media-flush">
+                                                    <div class="media-left">
+                                                        <img class="img-circle" src="img/yoshi.png" alt="Itsa me yoshi!" height="50" width="50">
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <div class="navbar raw">
+                                                            <span class="navbar-text pull-left">Yoshi</span>
+                                                            <ul class="nav navbar-nav navbar-right-override">
+                                                                <li><a href=""><i class="fa fa-phone"></i></a></li>
+                                                                <li><a href=""><i class="fa fa-envelope"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="list-group-item media media-profile media-flush">
+                                                    <div class="media-left">
+                                                        <img class="img-circle" src="img/wario.png" alt="Itsa me wario!" height="50" width="50">
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <div class="navbar raw">
+                                                            <span class="navbar-text pull-left">Wario</span>
+                                                            <ul class="nav navbar-nav navbar-right-override">
+                                                                <li><a href=""><i class="fa fa-phone"></i></a></li>
+                                                                <li><a href=""><i class="fa fa-envelope"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <h4>Open Tickets</h4>
+                                            <table class="table table-default table-flush">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Name</th>
+                                                        <th>Date</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><a href="">Fix navbar</a></td>
+                                                        <td>9/14/12</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><a href="">Stupid button</a></td>
+                                                        <td>10/14/12</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><a href="">homepage banner</a></td>
+                                                        <td>11/14/12</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <a class="btn btn-xs btn-main" href="">Create a support ticket</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="Billing">
+                                    <h4>Billing</h4>
+                                    <table class="table table-default table-flush">
+                                        <thead>
+                                            <tr>
+                                                <th>Invoice #</th>
+                                                <th>Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><a href="">02013</a></td>
+                                                <td>9/14/12</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="">02016</a></td>
+                                                <td>10/14/12</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="">02019</a></td>
+                                                <td>11/14/12</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <a class="btn btn-xs btn-main" href="">View All Invoices</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="offcanvas-inner" class="offcanvas-inner" offcanvas-set-height="oncanvas-nav" offcanvas-set-width="window">
+
+                    <ol class="breadcrumb breadcrumb-default breadcrumb-flush">
+                        <li><a href="#">Site Content</a></li>
+                        <li class="active">Edit Staff Members</li>
+                    </ol>
+
+                    <div class="hero">
+                        <div class="container">
+                            <h2>Shell 03 - Alt</h2>
+                            <h4>Nav is Magical</h4>
+                            <hr>
+                            <div class="media">
+                                <div class="media-left">
+                                    <p style="width: 5em">
+                                        Elit id pariatur tempora ipsa officia nostrum.</small>
+                                </p>
+                            </div>
+                            <div class="media-body">
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-4">
+                                        <p>Ipsum molestias accusamus nulla illo ex deleniti error tempora sunt voluptas consectetur aliquid debitis? Mollitia veritatis exercitationem a iure omnis doloremque?</p>
+                                        <p>Nihil rerum omnis quas maiores maxime ipsum accusamus. Vero explicabo rem quas dignissimos maxime! Blanditiis nihil eius ullam commodi suscipit!</p>
+                                        <p>Saepe inventore at exercitationem veniam vel. Dolorum autem.</p>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4">
+                                        <p>Elit soluta reprehenderit repellendus nulla ducimus provident ipsa veritatis!</p>
+                                        <p>Reprehenderit ex omnis distinctio nostrum veniam consequuntur distinctio adipisci quos hic officiis omnis exercitationem. Doloremque a neque saepe magni labore error necessitatibus! Et alias praesentium eum odio tempora soluta. Id ut accusamus aliquam corrupti debitis quisquam. Eum mollitia velit libero qui.</p>
+                                    </div>
+                                </div>
+                                <p>
+                                    <a class="btn btn-cta" data-toggle="modal" href="#myModal">Default Modal</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="invisible">
+                    <div class="row">
+                        <hr>
+                    </div>
+                    <hr class="invisible">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-offset-3 col-sm-6">
+                                <h2>Lorem incidunt.</h2>
+                                <p>Ipsum molestias accusamus nulla illo ex deleniti error tempora sunt voluptas consectetur aliquid debitis? Mollitia veritatis exercitationem a iure omnis doloremque?</p>
+                                <p>Nihil rerum omnis quas maiores maxime ipsum accusamus. Vero explicabo rem quas dignissimos maxime! Blanditiis nihil eius ullam commodi suscipit!</p>
+                                <p>Saepe inventore at exercitationem veniam vel. Dolorum autem.</p>
+                                <p>Elit soluta reprehenderit repellendus nulla ducimus provident ipsa veritatis!</p>
+                                <p>Reprehenderit ex omnis distinctio nostrum veniam consequuntur distinctio adipisci quos hic officiis omnis exercitationem. Doloremque a neque saepe magni labore error necessitatibus! Et alias praesentium eum odio tempora soluta. Id ut accusamus aliquam corrupti debitis quisquam. Eum mollitia velit libero qui.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="offcanvas-backdrop"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="myModal" class="modal modal-cta fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <h4 id="modal-title" class="modal-title">Modal title
+                        <a class="anchorjs-link" href="#modal-title">
+                            <span class="anchorjs-icon"></span>
+                        </a>
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <p>One fine body…</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-default" data-dismiss="modal">Close</a>
+                    <a href="#" class="btn btn-default">Save changes</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/tether.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/functions.js"></script>
+</body>
+
+</html>
+

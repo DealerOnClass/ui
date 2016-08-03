@@ -1,0 +1,880 @@
+---
+layout:     default
+title:      Inventory
+navgroup:   "mockups"
+navorder:   2
+---
+<div class="btn-group btn-group-breadcrumb btn-group-flush btn-group-white btn-group-md page-navbar" aria-label="Basic example">
+    <a class="btn-group-item btn" href="#">home</a>
+    <span class="btn-group-item btn" href="#">Search Feeds</span>
+</div>
+<div class="container hero" style="max-width: 85%; padding-bottom: 0;">
+    <div class="clearfix">
+        <div class="pull-left">
+            <h3 class="margin-x text-muted">34 Available Feeds</h3>
+        </div>
+        <div class="pull-right" style="padding-right: .15em">
+            <a class="btn btn-link" href="" data-toggle="modal" data-target="#createNewFeed">
+                <i class="fa fa-plus"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<div id="something-otherthan" class="container hero" style="max-width: 85%; padding-bottom: 0;">
+    <div class="bg-white js-navbar-sticky page-navbar" data-sticky-offset=".oncanvas-nav">
+        <nav class="nav nav-default nav-tabs nav-flush nav-white">
+            <a class="nav-item active" href="#Feeds" data-toggle="tab">Feeds</a>
+            <a class="nav-item" href="#LotsSource" data-toggle="tab">Lots Source</a>
+            <a class="nav-item" href="#Lots" data-toggle="tab">Lots</a>
+            <a class="nav-item" href="#DealerDisplayLots" data-toggle="tab">Dealer Display Lots</a>
+        </nav>
+    </div>
+</div>
+<div class="tab-content">
+    <div class="tab-pane active" id="Feeds">
+        <div id="something" class="container" style="max-width: 85%">
+            <div id="something-else" data-sticky-offset=".oncanvas-nav,.js-navbar-sticky"></div>
+        </div>
+        <div class="hero hero-sm" style="padding-top: 0;">
+            <div id="js-container" class="container" style="max-width: 85%">
+                <div id="js-slide-wrapper" class="slide-over-wrapper">
+                    <div id="js-slide-over" class="slide-over slide-over-is-hidden">
+                        <div class="slide-over-item slide-over-item-visible table-sticky-wrapper">
+                            <div id="js-slide-table" class="table-responsive fade in">
+                                <table class="table table-right-flush table-lg table-striped table-borderless table-sticky">
+                                    <thead id="js-slide-table-head">
+                                        <tr>
+                                            <th>
+                                                <a href="">Title:<i class="fa fa-caret-down fa-fw">
+                                                    </i>
+                                                </a>
+                                            </th>
+                                            <th>
+                                                <a href="">Upload Progress:<i class="fa fa-caret-down fa-fw">
+                                                    </i>
+                                                </a>
+                                            </th>
+                                            <th>
+                                                <a href="">Last Run:<i class="fa fa-caret-down fa-fw">
+                                                    </i>
+                                                </a>
+                                            </th>
+                                            <th>
+                                                <a href="">Duration:<i class="fa fa-caret-down fa-fw">
+                                                    </i>
+                                                </a>
+                                            </th>
+                                            <th>
+                                                <a href="">Errors:<i class="fa fa-caret-down fa-fw">
+                                                    </i>
+                                                </a>
+                                            </th>
+                                            <th>
+                                                <a href="">Lot Sources<i class="fa fa-caret-down fa-fw">
+                                                    </i>
+                                                </a>
+                                            </th>
+                                            <th>
+                                            </th>
+                                            <th>
+                                            </th>
+                                            <th>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Feed 001</strong></td>
+                                            <td>
+                                                <div class="progress progress-xs">
+                                                    <div class="progress-bar progress-bar-warning" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100" style="width: 35%;">
+                                                        <span class="sr-only">35% Complete</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>6/3/2016</td>
+                                            <td>5mins</td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="" data-toggle="modal" data-target="#viewFeedErrors">0</a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="">4</a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="">
+                                                    <i class="fa fa-refresh">
+                                                    </i>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="">
+                                                    <i class="fa fa-times">
+                                                    </i>
+                                                </a>
+                                            </td>
+                                            <td class="slide-over-toggle-wrapper">
+                                                <button onclick="SlideOpen(this)" class="btn btn-xs btn-link slide-over-toggle">
+                                                    <i class="fa fa-chevron-right"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Feed 002</strong></td>
+                                            <td>
+                                                <div class="progress progress-xs">
+                                                    <div class="progress-bar progress-bar-warning" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
+                                                        <span class="sr-only">50% Complete</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>6/3/2016</td>
+                                            <td>10mins</td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="" data-toggle="modal" data-target="#viewFeedErrors">3</a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="">1</a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="">
+                                                    <i class="fa fa-refresh">
+                                                    </i>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="">
+                                                    <i class="fa fa-times">
+                                                    </i>
+                                                </a>
+                                            </td>
+                                            <td class="slide-over-toggle-wrapper">
+                                                <button onclick="SlideOpen(this)" class="btn btn-xs btn-link slide-over-toggle">
+                                                    <i class="fa fa-chevron-right"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Feed 003</strong></td>
+                                            <td>
+                                                <div class="progress progress-xs">
+                                                    <div class="progress-bar progress-bar-warning" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" style="width: 15%;">
+                                                        <span class="sr-only">15% Complete</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>6/3/2020</td>
+                                            <td>60sec</td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="" data-toggle="modal" data-target="#viewFeedErrors">21</a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="">0</a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="">
+                                                    <i class="fa fa-refresh">
+                                                    </i>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="">
+                                                    <i class="fa fa-times">
+                                                    </i>
+                                                </a>
+                                            </td>
+                                            <td class="slide-over-toggle-wrapper">
+                                                <button onclick="SlideOpen(this)" class="btn btn-xs btn-link slide-over-toggle">
+                                                    <i class="fa fa-chevron-right"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Feed 004</strong></td>
+                                            <td>
+                                                <div class="progress progress-xs">
+                                                    <div class="progress-bar progress-bar-warning" aria-valuenow="7" aria-valuemin="0" aria-valuemax="100" style="width: 7%;">
+                                                        <span class="sr-only">7% Complete</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>6/3/2020</td>
+                                            <td>60sec</td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="" data-toggle="modal" data-target="#viewFeedErrors">9</a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="">0</a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="">
+                                                    <i class="fa fa-refresh">
+                                                    </i>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="">
+                                                    <i class="fa fa-times">
+                                                    </i>
+                                                </a>
+                                            </td>
+                                            <td class="slide-over-toggle-wrapper">
+                                                <button onclick="SlideOpen(this)" class="btn btn-xs btn-link slide-over-toggle">
+                                                    <i class="fa fa-chevron-right"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Feed 005</strong></td>
+                                            <td>
+                                                <div class="progress progress-xs">
+                                                    <div class="progress-bar progress-bar-warning" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+                                                        <span class="sr-only">80% Complete</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>6/3/2020</td>
+                                            <td>20min</td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="" data-toggle="modal" data-target="#viewFeedErrors">0</a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="">0</a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="">
+                                                    <i class="fa fa-refresh">
+                                                    </i>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="">
+                                                    <i class="fa fa-times">
+                                                    </i>
+                                                </a>
+                                            </td>
+                                            <td class="slide-over-toggle-wrapper">
+                                                <button onclick="SlideOpen(this)" class="btn btn-xs btn-link slide-over-toggle">
+                                                    <i class="fa fa-chevron-right"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Feed 006</strong></td>
+                                            <td>
+                                                <div class="progress progress-xs">
+                                                    <div class="progress-bar progress-bar-success" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+                                                        <span class="sr-only">100% Complete</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>6/3/2020</td>
+                                            <td>60sec</td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="" data-toggle="modal" data-target="#viewFeedErrors">21</a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="">0</a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="">
+                                                    <i class="fa fa-refresh">
+                                                    </i>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="">
+                                                    <i class="fa fa-times">
+                                                    </i>
+                                                </a>
+                                            </td>
+                                            <td class="slide-over-toggle-wrapper">
+                                                <button onclick="SlideOpen(this)" class="btn btn-xs btn-link slide-over-toggle">
+                                                    <i class="fa fa-chevron-right"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Feed 007</strong></td>
+                                            <td>
+                                                <div class="progress progress-xs">
+                                                    <div class="progress-bar progress-bar-warning" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100" style="width: 5%;">
+                                                        <span class="sr-only">5% Complete</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>6/3/2020</td>
+                                            <td>60sec</td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="" data-toggle="modal" data-target="#viewFeedErrors">9</a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="">0</a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="">
+                                                    <i class="fa fa-refresh">
+                                                    </i>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="">
+                                                    <i class="fa fa-times">
+                                                    </i>
+                                                </a>
+                                            </td>
+                                            <td class="slide-over-toggle-wrapper">
+                                                <button onclick="SlideOpen(this)" class="btn btn-xs btn-link slide-over-toggle">
+                                                    <i class="fa fa-chevron-right"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Feed 008</strong></td>
+                                            <td>25%</td>
+                                            <td>6/3/2020</td>
+                                            <td>20min</td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="" data-toggle="modal" data-target="#viewFeedErrors">0</a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="">0</a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="">
+                                                    <i class="fa fa-refresh">
+                                                    </i>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="">
+                                                    <i class="fa fa-times">
+                                                    </i>
+                                                </a>
+                                            </td>
+                                            <td class="slide-over-toggle-wrapper">
+                                                <button onclick="SlideOpen(this)" class="btn btn-xs btn-link slide-over-toggle">
+                                                    <i class="fa fa-chevron-right"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Feed 009</strong></td>
+                                            <td>15%</td>
+                                            <td>6/3/2020</td>
+                                            <td>60sec</td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="" data-toggle="modal" data-target="#viewFeedErrors">21</a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="">0</a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="">
+                                                    <i class="fa fa-refresh">
+                                                    </i>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="">
+                                                    <i class="fa fa-times">
+                                                    </i>
+                                                </a>
+                                            </td>
+                                            <td class="slide-over-toggle-wrapper">
+                                                <button onclick="SlideOpen(this)" class="btn btn-xs btn-link slide-over-toggle">
+                                                    <i class="fa fa-chevron-right"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Feed 010</strong></td>
+                                            <td>12%</td>
+                                            <td>6/3/2020</td>
+                                            <td>60sec</td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="" data-toggle="modal" data-target="#viewFeedErrors">9</a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="">0</a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="">
+                                                    <i class="fa fa-refresh">
+                                                    </i>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="">
+                                                    <i class="fa fa-times">
+                                                    </i>
+                                                </a>
+                                            </td>
+                                            <td class="slide-over-toggle-wrapper">
+                                                <button onclick="SlideOpen(this)" class="btn btn-xs btn-link slide-over-toggle">
+                                                    <i class="fa fa-chevron-right"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Feed 011</strong></td>
+                                            <td>25%</td>
+                                            <td>6/3/2020</td>
+                                            <td>20min</td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="" data-toggle="modal" data-target="#viewFeedErrors">0</a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="">0</a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="">
+                                                    <i class="fa fa-refresh">
+                                                    </i>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="">
+                                                    <i class="fa fa-times">
+                                                    </i>
+                                                </a>
+                                            </td>
+                                            <td class="slide-over-toggle-wrapper">
+                                                <button onclick="SlideOpen(this)" class="btn btn-xs btn-link slide-over-toggle">
+                                                    <i class="fa fa-chevron-right"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Feed 012</strong></td>
+                                            <td>25%</td>
+                                            <td>6/3/2020</td>
+                                            <td>20min</td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="" data-toggle="modal" data-target="#viewFeedErrors">0</a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="">0</a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="">
+                                                    <i class="fa fa-refresh">
+                                                    </i>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-xs btn-link" href="">
+                                                    <i class="fa fa-times">
+                                                    </i>
+                                                </a>
+                                            </td>
+                                            <td class="slide-over-toggle-wrapper">
+                                                <button onclick="SlideOpen(this)" class="btn btn-xs btn-link slide-over-toggle">
+                                                    <i class="fa fa-chevron-right"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="slide-over-item slide-over-item-hidden">
+                            <div class="clearfix" style="margin-top: 4em; visibility: hidden;">
+                                <div class="pull-left">
+                                    <button onclick="SlideClose(this)" class="btn btn-xs btn-link slide-over-toggle">
+                                        <i class="fa fa-remove">
+                                        </i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <ul class="nav nav-pills nav-stacked nav-flush nav-white">
+                                        <li class="active">
+                                            <a href="#tab1" data-toggle="tab">Contact Details</a>
+                                        </li>
+                                        <li>
+                                            <a href="#tab2" data-toggle="tab">Campaign Details</a>
+                                        </li>
+                                        <li>
+                                            <a href="#tab3" data-toggle="tab">Lead Details</a>
+                                        </li>
+                                        <li>
+                                            <a href="#tab4" data-toggle="tab">Purchase Vehicle</a>
+                                        </li>
+                                        <li>
+                                            <a href="#tab5" data-toggle="tab">Trade-In Vehicle</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="tab-content">
+                                        <div id="tab1" class="tab-pane active">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <ul class="list-unstyled list-push-bottom-1x">
+                                                        <li>
+                                                            <span class="text-muted-75">Lead Source:</span>
+                                                            <br>
+                                                            <span>Website - ePrice Inventory New</span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="text-muted-75">Name:</span>
+                                                            <br>
+                                                            <span>Jintian Pan</span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="text-muted-75">Email:</span>
+                                                            <br>
+                                                            <span>
+                                                                <a href="mailto:519698554@qq.com">519698554@qq.com</a>
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="text-muted-75">Phone:</span>
+                                                            <br>
+                                                            <span>(818) 658-4156</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <ul class="list-unstyled list-push-bottom-1x">
+                                                        <li>
+                                                            <span class="text-muted-75">Address:</span>
+                                                            <br>
+                                                            <span>12345 Bblahlah Dr #123,<br>Something Terrace, CHX 32345</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="tab2" class="tab-pane fade">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <ul class="list-unstyled list-push-bottom-1x">
+                                                        <li>
+                                                            <span class="text-muted-75">Campaign Name:</span>
+                                                            <br>
+                                                            <span>
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="text-muted-75">Medium:</span>
+                                                            <br>
+                                                            <span>
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="text-muted-75">Source:</span>
+                                                            <br>
+                                                            <span>
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="text-muted-75">Campaign Term:</span>
+                                                            <br>
+                                                            <span>
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <ul class="list-unstyled list-push-bottom-1x">
+                                                        <li>
+                                                            <span class="text-muted-75">Campaign Content:</span>
+                                                            <br>
+                                                            <span>
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="text-muted-75">Entry URL:</span>
+                                                            <br>
+                                                            <span>http://www.lutherbrookdalehonda.com/</span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="text-muted-75">Referrer:</span>
+                                                            <br>
+                                                            <span>http://www.kbb.com/dealers/brooklyn-center_mn/luther-brookdale-honda/70799/?vehicleid=412776</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="tab3" class="tab-pane fade">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <ul class="list-unstyled list-push-bottom-1x">
+                                                        <li>
+                                                            <span class="text-muted-75">Lead Id:</span>
+                                                            <br>
+                                                            <span>7257737</span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="text-muted-75">Submitted At:</span>
+                                                            <br>
+                                                            <span>5/5/2016 7:18:00 AM</span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="text-muted-75">Lead IP Address:</span>
+                                                            <br>
+                                                            <span>71.10.96.114</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <ul class="list-unstyled list-push-bottom-1x">
+                                                        <li>
+                                                            <span class="text-muted-75">Custom Form:</span>
+                                                            <br>
+                                                            <span>No</span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="text-muted-75">Lead Submission Page:</span>
+                                                            <br>
+                                                            <span>http://www.lutherbrookdalehonda.com/used-Minneapolis-2012-Honda-Accord+Sedan-LX-1HGCP2F3XCA149375</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="tab4" class="tab-pane fade">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <ul class="list-unstyled list-push-bottom-1x">
+                                                        <li>
+                                                            <span class="text-muted-75">Year:</span>
+                                                            <br>
+                                                            <span>2012</span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="text-muted-75">Make:</span>
+                                                            <br>
+                                                            <span>Honda</span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="text-muted-75">Model:</span>
+                                                            <br>
+                                                            <span>Accord Sedan</span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="text-muted-75">Trim:</span>
+                                                            <br>
+                                                            <span>LX</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <ul class="list-unstyled list-push-bottom-1x">
+                                                        <li>
+                                                            <span class="text-muted-75">Price Range:</span>
+                                                            <br>
+                                                            <span>
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="text-muted-75">Stock Number:</span>
+                                                            <br>
+                                                            <span>P25325</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="tab5" class="tab-pane fade">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <ul class="list-unstyled list-push-bottom-1x">
+                                                        <li>
+                                                            <span class="text-muted-75">Year:</span>
+                                                            <br>
+                                                            <span>
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="text-muted-75">Make:</span>
+                                                            <br>
+                                                            <span>
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="text-muted-75">Model:</span>
+                                                            <br>
+                                                            <span>
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="text-muted-75">Trim:</span>
+                                                            <br>
+                                                            <span>
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <ul class="list-unstyled list-push-bottom-1x">
+                                                        <li>
+                                                            <span class="text-muted-75">Mileage:</span>
+                                                            <br>
+                                                            <span>
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="text-muted-75">Condition:</span>
+                                                            <br>
+                                                            <span>
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="text-muted-75">Options:</span>
+                                                            <br>
+                                                            <span>
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="LotsSource">
+        Lot Sources
+    </div>
+    <div class="tab-pane fade" id="Lots">
+        Sources
+    </div>
+    <div class="tab-pane fade" id="DealerDisplayLots">
+        Dealer Display Lots
+    </div>
+</div>
+<div id="createNewFeed" class="modal modal-cta fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">x</span>
+                </button>
+                <h4 id="modal-title" class="margin-vert_5x">
+                    Create New Feed
+                    <a class="anchorjs-link" href="#modal-title">
+                        <span class="anchorjs-icon"></span>
+                    </a>
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="" class="col-sm-4 control-label">Name:</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="" placeholder="Feed 001" type="text">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-sm-4 control-label">URL:</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="" placeholder="http://feed001.com/blah/" type="text">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-sm-4 control-label">Protocol:</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="" placeholder="SSNChicken" type="text">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-sm-4 control-label">Username:</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="" placeholder="Icecream" type="text">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-sm-4 control-label">Password:</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="" placeholder="Isdelicious!" type="text">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-default">Save</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="viewFeedErrors" class="modal modal-danger fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">x</span>
+                </button>
+                <h4 id="modal-title" class="margin-vert_5x">
+                    Feed 001 Errors
+                    <a class="anchorjs-link" href="#modal-title">
+                        <span class="anchorjs-icon"></span>
+                    </a>
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Vin</th>
+                                <th>Error</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>31454612</td>
+                                <td>
+                                    <p>Adipisicing dolorum quos atque blanditiis earum ut. Reprehenderit veritatis obcaecati accusamus velit quia ullam mollitia. Libero quis molestias nam placeat. </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>31454612</td>
+                                <td>
+                                    <p>Adipisicing dolorum quos atque blanditiis earum ut. Reprehenderit veritatis obcaecati accusamus velit quia ullam mollitia. Libero quis molestias nam placeat. </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>31454612</td>
+                                <td>
+                                    <p>Adipisicing dolorum quos atque blanditiis earum ut. Reprehenderit veritatis obcaecati accusamus velit quia ullam mollitia. Libero quis molestias nam placeat. </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>31454612</td>
+                                <td>
+                                    <p>Adipisicing dolorum quos atque blanditiis earum ut. Reprehenderit veritatis obcaecati accusamus velit quia ullam mollitia. Libero quis molestias nam placeat. </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>31454612</td>
+                                <td>
+                                    <p>Adipisicing dolorum quos atque blanditiis earum ut. Reprehenderit veritatis obcaecati accusamus velit quia ullam mollitia. Libero quis molestias nam placeat. </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>31454612</td>
+                                <td>
+                                    <p>Adipisicing dolorum quos atque blanditiis earum ut. Reprehenderit veritatis obcaecati accusamus velit quia ullam mollitia. Libero quis molestias nam placeat. </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!--<div class="modal-footer">-->
+                <!--<a href="#" class="btn btn-default">Save</a>-->
+                <!--</div>-->
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>

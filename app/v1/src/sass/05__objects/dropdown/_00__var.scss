@@ -1,0 +1,34 @@
+//
+//  Units
+$dropdown__contrast:                    $global__contrast;
+$dropdown__radius:                      $global__radius;
+$dropdown__x:                           $global__x;
+$dropdown__y:                           $global__y * 1.5;
+//
+//  Color
+$dropdown-menu__default-palette:        true !default;
+$dropdown-menu__inverse-palette:        true !default;
+$dropdown-menu__primary-palette:        true !default;
+$dropdown-menu__neutral-palette:        true !default;
+$dropdown-menu__state-palette:          true !default;
+//
+//  Base
+$dropdown__use-btn__color:              true !default;
+//
+//  Components
+$dropdown-menu__shadow:                 0 $six__pixels $twelve__pixels rgba(0,0,0,0.175);
+//
+$dropdown-menu__link__padding:          $dropdown__y $dropdown__x;
+$dropdown-menu__link--active__color:    $white;
+$dropdown-menu__link--active__border:   $primary__color;
+$dropdown-menu__link--active__bg:       $primary__color;
+//
+$dropdown-header__font:                 $primary__font--bold;
+//
+$dropdown__has__caret:                  true !default;
+$dropdown__caret__use-icon:             true !default;
+$dropdown__caret__icon:                 $fa-var-angle-down;
+//
+$dropup__has__caret:                    true !default;
+$dropup__caret__use-icon:               true !default;
+$dropup__caret__icon:                   $fa-var-angle-up;

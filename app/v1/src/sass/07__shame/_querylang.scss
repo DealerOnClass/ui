@@ -1,0 +1,46 @@
+#query__creation__preview {
+    overflow: hidden;
+    width: 100%;
+}
+#parameter_tab,
+#operator_tab,
+#value_tab {
+    .sortable {
+        margin-right: 1%;
+        margin-bottom: $global__gutter / 4;
+        width: 48%;
+        @media (min-width: $screen-xs-min) {
+            width: 31.5%;
+        }
+    }
+}
+#query__creation__workbench.btn-group-sentence {
+    .btn {
+        &[data-type="group"],
+        &[data-type="nested"],
+        &[data-type="b_joiner"] {
+            border-radius: $btn__radius!important;
+            clear: both;
+            display: block;
+            width: auto;
+        }
+        &[data-type="b_joiner"] {
+            width: 5em!important;
+        }
+        &[data-type="nested"],
+        &[data-type="b_joiner"] + .btn {
+            border-top-left-radius: $btn__radius;
+            border-bottom-left-radius: $btn__radius;
+        }
+        &[data-type="nested"],
+        &[data-type="combined"] {
+            border-top-right-radius: $btn__radius!important;
+            border-bottom-right-radius: $btn__radius!important;
+        }
+        &[data-type="nested"] {
+            padding-left: $btn__x / 1.5;
+            padding-right: $btn__x / 1.5;
+        }
+    }
+}
+

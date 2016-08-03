@@ -1,0 +1,203 @@
+---
+navgroup: "objects"
+navorder: 1
+navtitle: "navbar"
+category: [objects]
+
+name: "navbar"
+
+base-grid: false
+base-grid-col: col-md-6
+base-hide-code: true
+base: |
+    <nav class="navbar">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-item navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <i class="fa fa-navicon"></i>
+                </button>
+                <a class="navbar-item navbar-brand" href="#">Logo</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="nav navbar-nav">
+                    <a class="navbar-item active" href="#">active</a>
+                    <a class="navbar-item" href="#">link</a>
+                    <div class="navbar-item dropdown" href="#">
+                        <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div>
+                    <a class="navbar-item" href="#" disabled>disabled</a>
+                </div>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+variant: true
+variants-grid: false
+variants-grid-col: col-md-6
+variants-hide-code: true
+variants:
+    - name: navbar-form
+      base: |
+          <nav class="navbar">
+              <div class="container-fluid">
+                  <!-- Brand and toggle get grouped for better mobile display -->
+                  <div class="navbar-header">
+                      <button type="button" class="navbar-item navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                          <span class="sr-only">Toggle navigation</span>
+                          <i class="fa fa-navicon"></i>
+                      </button>
+                      <a class="navbar-item navbar-brand" href="#">Logo</a>
+                  </div>
+                  <!-- Collect the nav links, forms, and other content for toggling -->
+                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                      <div class="nav navbar-nav">
+                          <a class="navbar-item active" href="#">active</a>
+                          <a class="navbar-item" href="#">link</a>
+                          <div class="navbar-item dropdown" href="#">
+                              <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Dropdown
+                              </button>
+                              <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                  <a class="dropdown-item" href="#">Action</a>
+                                  <a class="dropdown-item" href="#">Another action</a>
+                                  <a class="dropdown-item" href="#">Something else here</a>
+                              </div>
+                          </div>
+                          <a class="navbar-item" href="#" disabled>disabled</a>
+                      </div>
+                      <form class="navbar-form navbar-left form-inline">
+                          <input class="navbar-item form-control" placeholder="Search" type="text">
+                          <button class="navbar-item" type="submit">Submit</button>
+                      </form>
+                  </div>
+                  <!-- /.navbar-collapse -->
+              </div>
+              <!-- /.container-fluid -->
+          </nav>
+
+    - name: navbar-text
+      base: |
+          <nav class="navbar">
+              <div class="container-fluid">
+                  <!-- Brand and toggle get grouped for better mobile display -->
+                  <div class="navbar-header">
+                      <button type="button" class="navbar-item navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                          <span class="sr-only">Toggle navigation</span>
+                          <i class="fa fa-navicon"></i>
+                      </button>
+                      <a class="navbar-item navbar-brand" href="#">Logo</a>
+                  </div>
+                  <!-- Collect the nav links, forms, and other content for toggling -->
+                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                      <div class="nav navbar-nav">
+                          <a class="navbar-item active" href="#">active</a>
+                          <a class="navbar-item" href="#">link</a>
+                          <div class="navbar-item dropdown" href="#">
+                              <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Dropdown
+                              </button>
+                              <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                  <a class="dropdown-item" href="#">Action</a>
+                                  <a class="dropdown-item" href="#">Another action</a>
+                                  <a class="dropdown-item" href="#">Something else here</a>
+                              </div>
+                          </div>
+                          <a class="navbar-item" href="#" disabled>disabled</a>
+                          <span class="navbar-item">not a link.</span>
+                      </div>
+                  </div>
+                  <!-- /.navbar-collapse -->
+              </div>
+              <!-- /.container-fluid -->
+          </nav>
+
+size: true
+size-grid: false
+size-grid-col: col-md-3
+size-hide-code: true
+size-base-use: true
+size-base: |
+    <nav class="navbar">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-item navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <i class="fa fa-navicon"></i>
+                </button>
+                <a class="navbar-item navbar-brand" href="#">Logo</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="nav navbar-nav">
+                    <a class="navbar-item active" href="#">active</a>
+                    <a class="navbar-item" href="#">link</a>
+                    <div class="navbar-item dropdown" href="#">
+                        <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div>
+                    <a class="navbar-item" href="#" disabled>disabled</a>
+                </div>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+theme: true
+theme-grid: false
+theme-grid-col: col-md-3
+theme-hide-code: true
+theme-base-use: false
+theme-base: |
+    <nav class="navbar">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-item navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <i class="fa fa-navicon"></i>
+                </button>
+                <a class="navbar-item navbar-brand" href="#">Logo</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="nav navbar-nav">
+                    <a class="navbar-item active" href="#">active</a>
+                    <a class="navbar-item" href="#">link</a>
+                    <div class="navbar-item dropdown" href="#">
+                        <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div>
+                    <a class="navbar-item" href="#" disabled>disabled</a>
+                </div>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+---

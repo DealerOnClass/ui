@@ -1,0 +1,27 @@
+@mixin pager-color-variation($input__palette) {
+    @each $class__name, $color in $input__palette {
+        .pager-#{$class__name} {
+            color: check-color($color, 80, inherit, $white);
+
+            a {
+                color: inherit;
+            }
+
+            > li > a {
+                border-color: transparent;
+                background-color: $color;
+                @include state {
+                    background-color: shade($color, $pager__contrast);
+                }
+            }
+
+            > li.active > a,
+            > li > a.active {
+                @include state-and-self {
+                    border-color: transparent;
+                    background-color: shade($color, $pager__contrast);
+                }
+            }
+        }
+    }
+}

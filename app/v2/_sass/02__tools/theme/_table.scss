@@ -1,0 +1,87 @@
+@mixin table-color-variation($input__palette) {
+    @each $class__name, $color in $input__palette {
+
+        .table-#{$class__name} {
+            color: check-color($color, 80, inherit, $white);
+            background-color: $color;
+
+            td,
+            th {
+                border-color: shade($color, $table__contrast);
+            }
+
+            &.table-bordered {
+                border-color: shade($color, $table__contrast);
+
+                td,
+                th {
+                    border-color: shade($color, $table__contrast);
+                }
+            }
+
+            &.table-striped {
+
+                > tbody > tr:nth-of-type(odd) {
+
+                    > td,
+                    > th, {
+                        background-color: shade($color, $table__contrast);
+                    }
+                }
+            }
+
+            &.table-hover {
+
+                tr:hover {
+
+                    td,
+                    th {
+                        background-color: shade($color, $table__contrast);
+                    }
+                }
+            }
+        }
+
+
+        .table {
+
+            td.#{$class__name},
+            th.#{$class__name},
+            tr.#{$class__name} td,
+            tr.#{$class__name} th {
+                color: check-color($color, 80, inherit, $white);
+                border-color: $color;
+                background-color: $color;
+            }
+        }
+
+        .table-hover {
+
+            td.#{$class__name}:hover,
+            th.#{$class__name}:hover,
+            tr.#{$class__name}:hover td,
+            tr:hover .#{$class__name},
+            tr.#{$class__name}:hover th {
+                color: check-color($color, 80, inherit, $white);
+                border-color: shade($color, $table__contrast);
+                background-color: shade($color, $table__contrast);
+            }
+        }
+    }
+}
+
+@mixin table-size-variation($unit__y, $unit__x, $input__palette) {
+    @each $class__name, $size in $input__palette {
+
+        $x: ($unit__x * strip-unit($size));
+        $y: ($unit__y * strip-unit($size));
+
+        .table-#{$class__name} {
+
+            th,
+            td {
+                padding: $y $unit__x;
+            }
+        }
+    }
+}

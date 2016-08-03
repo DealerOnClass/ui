@@ -1,0 +1,25 @@
+.media-right,
+.media > .pull-right {
+    padding-left: $media__gutter;
+}
+
+.media-left,
+.media > .pull-left {
+    padding-right: $media__gutter;
+}
+
+.media-left,
+.media-right{
+    display: table-cell;
+
+    vertical-align: top;
+}
+
+.media-middle {
+    vertical-align: middle;
+}
+
+.media-bottom {
+    vertical-align: bottom;
+}
+

@@ -1,0 +1,19 @@
+.navbar-mega-menu,
+.dropdown-mega-menu {
+    position: static!important;
+}
+.dropdown-mega-menu .dropdown-menu {
+    padding-top: $dropdown__y;
+}
+
+@media (min-width:  $grid-float-breakpoint) {
+    .navbar-mega-menu.navbar-right .dropdown-mega-menu {
+        right: 0;
+        left: auto;
+    }
+
+    .navbar-mega-menu.navbar-left .dropdown-mega-menu {
+        right: auto;
+        left: $global__gutter / 2;
+    }
+}

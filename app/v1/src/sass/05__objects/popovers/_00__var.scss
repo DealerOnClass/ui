@@ -1,0 +1,30 @@
+//
+//  Units
+$popover__contrast:             $global__contrast;
+$popover__radius:               $global__radius;
+$popover__x:                    $global__x;
+$popover__y:                    $global__y;
+//
+//  Colors
+$popover__default-palette:      true !default;
+$popover__inverse-palette:      true !default;
+$popover__primary-palette:      true !default;
+$popover__neutral-palette:      true !default;
+$popover__state-palette:        true !default;
+//
+//  Base
+$popover__max-width:            15em;
+//
+//  Components
+$popover-title__bg:             $white;
+$popover-title__padding:        $popover__y $popover__x;
+$popover-title__border:         $gray__02;
+//
+$popover-content__bg:           $white;
+$popover-content__padding:      $popover__y $popover__x;
+//
+$popover-arrow__offset:         $one__true__pixel;
+$popover-arrow--inner__color:   white;
+$popover-arrow--inner__width:   10px;
+$popover-arrow--outer__color:   $body__color;
+$popover-arrow--outer__width:   $popover-arrow__inner__width + 1;

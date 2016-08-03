@@ -1,0 +1,16 @@
+@mixin badge-color-variation($input__palette) {
+    @each $class__name, $color in $input__palette {
+        .badge-#{$class__name} {
+            color: check-color($color, 80, inherit, $white);
+            background-color: $color;
+        }
+
+        a.badge-#{$class__name} {
+            @include state {
+                color: check-color($color, 80, inherit, $white);
+                background-color: shade($color, $badge__contrast);
+            }
+        }
+    }
+}
+

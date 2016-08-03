@@ -1,0 +1,32 @@
+//
+//  Units
+$modal__contrast:           $global__contrast;
+$modal__radius:             $global__radius;
+$modal__x:                  $global__x;
+$modal__y:                  $global__y;
+//
+//  Color
+$modal__default-palette:    true !default;
+$modal__inverse-palette:    true !default;
+$modal__primary-palette:    true !default;
+$modal__neutral-palette:    true !default;
+$modal__state-palette:      true !default;
+//
+//  Base
+$modal__border:             $gray__02;
+$modal--lg__width:          900px !default;
+$modal--md__width:          600px !default;
+$modal--sm__width:          300px !default;
+//
+//  Components
+$modal-content__bg:         white;
+$modal-content__shadow:     0 $three__pixels $nine__pixels rgba(0,0,0,0.5);
+//
+$modal-backdrop__bg:        $black;
+$modal-backdrop__opacity:   .5;
+//
+$modal-header__padding:     $modal__y $modal__x ( $modal__y / 1.5 );
+//
+$modal-body__padding:       $modal__y $modal__x;
+//
+$modal-footer__padding:     $modal__x;

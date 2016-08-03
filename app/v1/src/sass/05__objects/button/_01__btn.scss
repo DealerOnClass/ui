@@ -1,0 +1,40 @@
+.btn {
+    display: inline-block;
+
+    box-sizing: border-box;
+    padding: $btn__padding;
+
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    border: $one__true__pixel solid;
+    border-radius: $btn__radius;
+    background-color: transparent;
+
+    touch-action: manipulation;
+
+    .btn-group.open > &,
+    &.active,
+    &.open {
+        color: $btn__link--active__color;
+        border-color: transparent;
+        background-color: $btn__link--active__bg;
+    }
+
+    &[active] {
+        color: $btn__link--active__color;
+        background-color: $btn__link--active__bg;
+    }
+}
+
+label.btn + input[type="file"] {
+    overflow: hidden;
+    height: .1px;
+    width: .1px;
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}

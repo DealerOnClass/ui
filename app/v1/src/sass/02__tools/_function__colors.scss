@@ -1,0 +1,25 @@
+//
+//
+// http://sass-guidelin.es/
+// Slightly lighten a color
+//
+// Usage:
+// a:hover {
+//      color: tint($link__color, 10%);
+// }
+//
+@function tint($color, $percentage) {
+    @return mix(white, $color, $percentage);
+}
+
+// Slightly darken a color
+//
+// Usage:
+// a:hover {
+//      color: shade($link__color, 10%);
+// }
+//
+@function shade($color, $percentage) {
+    @return mix(black, $color, $percentage);
+}
+

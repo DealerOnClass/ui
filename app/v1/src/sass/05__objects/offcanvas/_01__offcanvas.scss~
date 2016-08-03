@@ -1,0 +1,43 @@
+.offcanvas-test {
+    display: table;
+    overflow: hidden;
+    zoom: 1;
+}
+.offcanvas-test-nav {
+}
+.offcanvas-test-body {
+}
+.offcanvas-test-inner {
+}
+//  .offcanvas,
+//  .offcanvas-wrapper {
+//      position: fixed;
+//      top: 0;
+//      right: 0;
+//      bottom: 0;
+//      left: 0;
+//
+//      overflow: hidden;
+//
+//      width: 100%;
+//      height: 100%;
+//  }
+//
+//  .offcanvas {
+//      display: table;
+//      overflow: hidden;
+//      zoom: 1;
+//
+//      background-color: $inverse__color;
+//  }
+//
+//  //
+//  //  Repair "repaints on scroll" performance issue
+//  .offcanvas,
+//  .offcanvas-wrapper,
+//  .offcanvas-nav,
+//  .offcanvas-inner,
+//  .navbar-sidebar-wrapper {
+//      transform: translateZ(0);
+//      backface-visibility: hidden;
+//  }

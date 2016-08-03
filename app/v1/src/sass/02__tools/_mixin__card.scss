@@ -1,0 +1,19 @@
+@mixin card-color-variation($input__palette) {
+    @each $class__name, $color in $input__palette {
+        .card-#{$class__name} {
+
+            color: check-color($color, 80, inherit, $white);
+
+            .card-block {
+                border-color: transparent;
+                background-color: $color;
+            }
+
+            .card-header,
+            .card-footer {
+                background-color:  shade($color, $card__contrast);
+                border-color:      transparent;
+            }
+        }
+    }
+}

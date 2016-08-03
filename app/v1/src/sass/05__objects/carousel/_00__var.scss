@@ -1,0 +1,27 @@
+//  Units
+$carousel__contrast:                          $global__contrast;
+$carousel__radius:                            $global__radius;
+$carousel__x:                                 $global__x;
+$carousel__y:                                 $global__y;
+//  Carousel-Caption
+$carousel-caption__color:                     $white;
+$carousel-caption__text-shadow:               0 $one__pixel $two__pixels rgba(0,0,0,.6) !default;
+//  Carousel-Control
+$carousel-control__color:                     $white;
+$carousel-control__font-size:                 1em;
+$carousel-control__opacity:                   .7;
+$carousel-control--hover__opacity:            1;
+$carousel-control__text-shadow:               0 $one__pixel $two__pixels rgba(0,0,0,.6) !default;
+$carousel-control__width:                     15%;
+//  Carousel-Indicator
+$carousel-indicator__border:                  $gray__02;
+$carousel-indicator--active__bg:              $gray__02;
+//  Carousel-Control-Flat
+$carousel-control-flat__control__bg:          rgba(0,0,0,0.4);
+$carousel-control-flat__control--hover__bg:   rgba(0,0,0,0.6);
+//  Carousel-Control-Position
+$carousel-control-position__control__height:  3em;
+$carousel-control-position__control__width:   6em;
+$carousel-control-position__vert:             middle !default;
+$carousel-control-position__horz:             middle !default;
+

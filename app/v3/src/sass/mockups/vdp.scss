@@ -1,0 +1,497 @@
+/*
+ * Imports
+ */
+@import
+	"config";
+/*
+ * Export
+ */
+$vdp-gutter: 15px;
+$vdp-breadcrumb-z: 200;
+$vdp-carousel-z: 100;
+$vdp-body-z: 200;
+/*
+ *
+ */
+.vdp {
+    font-family: "Avenir", sans-serif;
+    padding-bottom: 120px;
+    color: #25334d;
+    background-color: #f5f5f5;
+    .strong {
+        font-weight: 700;
+    }
+    .btn-rounded {
+        line-height: 1;
+        border-radius: 12px;
+    }
+    .panel {
+        margin-bottom: 1px;
+        border-radius: 0;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+}
+/*
+ * Vdp Breadcrumb
+ */
+.vdp-breadcrumb {
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    .container,
+    .breadcrumb {
+        background-color: white;
+    }
+    .container {
+        background-clip: content-box;
+    }
+    .breadcrumb {
+        margin-bottom: 0;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
+/*
+ * Vdp Carousel
+ */
+.vdp-carousel-wrapper {
+    position: relative;
+    overflow: hidden;
+    background-color: #333;
+
+    backface-visibility: hidden;
+}
+.js-vdp-carousel-wrapper {
+    //	transition: transform 0.25s cubic-bezier(0.6, 0, 0.2, 1);
+}
+.vdp-carousel-controls {
+    position: relative;
+    z-index: 300;
+
+    backface-visibility: hidden;
+}
+.vdp-carousel-controls-navbar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+
+    backface-visibility: hidden;
+    .nav > li > a {
+        color: white;
+        background-color: transparent !important;
+    }
+}
+.vdp-carousel-controls-slide {
+    display: none;
+
+    backface-visibility: hidden;
+    @media (min-width: 992px) {
+        display: initial;
+    }
+    .control {
+        $height: 3em;
+        position: absolute;
+        top: 200px;
+        left: 15px;
+        display: flex;
+        align-items: center;
+        height: $height;
+        margin-top: negative($height / 2);
+        color: white;
+    }
+    .control-right {
+        right: 15px;
+        left: auto;
+    }
+}
+.vdp-carousel {
+    display: flex;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 100%;
+    height: 320px;
+    background-color: #333;
+
+    backface-visibility: hidden;
+    //	transition: transform 0.25s cubic-bezier(0.6, 0, 0.2, 1);
+    //	cursor: -moz-grab;
+    //	cursor: grab;
+    //	cursor: -webkit-grab;
+    //	&:active {
+    //		cursor: -moz-grabbing;
+    //		cursor: grabbing;
+    //		cursor: -webkit-grabbing;
+    //	}
+    @media (min-width: 992px) {
+        height: 400px;
+    }
+}
+.vdp-carousel-item {
+    display: inline-flex;
+    flex-direction: row;
+    width: auto;
+    height: 100%;
+    @media (min-width: 992px) {
+        flex-direction: column;
+    }
+}
+.not-b-lazy {
+	.vdp-carousel-item {
+		// 	Demo - Start
+		.vdp-carousel-image {
+			opacity: 0.35;
+		}
+		@media (min-width: 992px) {
+			&:nth-child(even) {
+				.vdp-carousel-image:nth-child(even) {
+					opacity: 0.2;
+				}
+			}
+			&:nth-child(odd) {
+				.vdp-carousel-image:nth-child(odd) {
+					opacity: 0.2;
+				}
+			}
+		}
+		@media (max-width: 991px) {
+			&:nth-child(odd):not(:first-child),
+			&:nth-child(even) {
+				.vdp-carousel-image:nth-child(odd) {
+					opacity: 0.2;
+				}
+			}
+		}
+		//	Demo - End
+	}
+}
+.vdp-carousel-image {
+    height: 100%;
+    @media (min-width: 992px) {
+        height: 50%;
+    }
+}
+.vdp-carousel-item.hero {
+    .vdp-carousel-image {
+        height: 100%;
+    }
+}
+/*
+ * Vdp Carousel Active
+ */
+$transition: 0.5s;
+.vdp-carousel {
+    //	backface-visibility: hidden;
+    .vdp-carousel-image {
+        transition-timing-function: cubic-bezier(0.6, 0, 0.2, 1);
+        transition-duration: $transition;
+        transition-property: opacity;
+    }
+}
+.js-gallery-init {
+    .js-vdp-carousel-image {
+        position: absolute;
+        transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+        transition-duration: $transition;
+        transition-property: opacity, transform, height, width !important;
+    }
+}
+.js-gallery-active {
+    .vdp-carousel-item {
+        flex-direction: row;
+    }
+    .js-vdp-carousel-image {
+        position: absolute;
+        height: 50%;
+        //	opacity: 0.15 !important;
+        &.clone {
+            border: 4px solid lime;
+            //	top: 0 !important;
+        }
+        &.active {
+            //	position: absolute;
+            top: 0 !important;
+            opacity: 0.7 !important;
+            border: 4px solid red;
+        }
+    }
+}
+//	.js-gallery-init {
+//	    .vdp-carousel-image {
+//	        opacity: 0.1 !important;
+//	    }
+//	}
+//	.js-gallery-active {
+//	    .vdp-carousel-item {
+//	        flex-direction: row;
+//	        border: 1px solid red;
+//	    }
+//	    .vdp-carousel-image {
+//			$offset: 8em;
+//	        height: calc(100% - #{$offset});
+//	        border: 1px solid blue;
+//			position: relative;
+//			top: ($offset / 2);
+//			margin: 0 20em;
+//	    }
+//	}
+//	.js-gallery-init {
+//	    .js-gallery-image-clone {
+//	        position: absolute;
+//	        z-index: 100;
+//	        margin: 0 !important;
+//	        transition-delay: 0;
+//	        transition-duration: 0.5s;
+//	        transition-property: height, left, top !important;
+//	        opacity: 1 !important;
+//	        backface-visibility: hidden;
+//	        &.animated {
+//	            top: 0 !important;
+//	            height: 100% !important;
+//	            padding: 0 !important;
+//	        }
+//	    }
+//	}
+/*
+ * Vdp Pricing Notifications
+ */
+.vdp-sidebar-heading {
+    position: relative;
+    z-index: 100;
+    top: 1px;
+    .nav {
+        position: absolute;
+        top: -43px;
+        right: 0;
+        > li:last-child > a {
+            margin-right: 0;
+        }
+    }
+}
+.vdp-sidebar-notifications-pricedrop {
+    $height: 250%;
+    position: relative;
+    min-width: 170px;
+    transition: transform 0.25s cubic-bezier(0.6, 0, 0.2, 1);
+    transform: translate3d(0, negative($height), 0);
+    //	transition: transform 0.25s ease-in-out;
+
+    backface-visibility: hidden;
+    &.down {
+        transform: translate3d(0, 0, 0);
+    }
+    > a {
+        font-weight: 600;
+        color: #c93131;
+        background-color: white;
+    }
+    > div {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: $height;
+        margin-right: 2px;
+        padding: 10px 15px;
+        color: white;
+        background-color: #c93131;
+        .btn {
+            color: white;
+            border-color: currentColor;
+        }
+    }
+}
+.vdp-sidebar-notifications-yousave {
+    > a {
+        font-weight: 600;
+        color: white;
+        background-color: #fa6900;
+    }
+}
+.vdp-sidebar-body {
+    position: relative;
+    z-index: 300;
+    background-color: white;
+
+    backface-visibility: hidden;
+}
+/*
+ * Vdp Price
+ */
+.vdp-price {
+    position: relative;
+}
+.vdp-price-price {
+    font-size: 3em;
+    font-weight: 700;
+    line-height: 1;
+    position: absolute;
+    right: 0;
+    bottom: -10px; // size of margin
+    > sup {
+        font-size: 0.5em;
+        line-height: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+/*
+ * Vdp Calculate Payments
+ */
+.vdp-calculate-payments {
+    ul {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+/*
+ * Vdp Pricing Details
+ */
+.vdp-pricing-details {
+    margin-bottom: 10px;
+    th,
+    td {
+        padding: 2px 0 !important;
+        border: 0 !important;
+    }
+}
+/*
+ * Vdp Pricing Details Button
+ */
+.vdp-pricing-buttons {
+    margin-bottom: 10px;
+}
+/*
+ * Vdp Body
+ */
+.vdp-body {
+    margin-top: 30px;
+}
+/*
+ * Vdp Vehicle Title
+ */
+.vdp-vehicle-title {
+}
+/*
+ * Vdp Vehicle Ratings
+ */
+.vdp-vehicle-ratings {
+    .active {
+        color: #fab000;
+    }
+    .inactive {
+        color: #dedede;
+    }
+}
+/*
+ * Vdp Vehicle Reviews
+ */
+.vdp-vehicle-reviews {
+}
+/*
+ * Vdp Vehicle Confirm Availability
+ */
+.vdp-vehicle-confirmavailability {
+}
+/*
+ * Vdp Vehicle Features
+ */
+.vdp-vehicle-features {
+}
+.vdp-feature {
+}
+.vdp-feature-icon {
+    vertical-align: middle;
+}
+.vdp-feature-body {
+    vertical-align: middle;
+}
+.vdp-feature-body-small {
+    font-size: 0.65em;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+.vdp-feature-body-title {
+    margin: 0;
+}
+/*
+ * Vdp Vehicle Description
+ */
+.vdp-vehicle-description {
+    margin-bottom: 10px;
+}
+/*
+ * Vdp Eligible Benefits
+ */
+.vdp-eligible-benefits {
+}
+/*
+ * Vdp Tabs
+ */
+.vdp-tabs-wrapper {
+    padding: 0;
+}
+.vdp-tabs {
+    margin-top: -1px;
+    > li.active > a {
+        border-top-color: transparent !important;
+    }
+    > li.active:first-child > a {
+        border-left-color: transparent !important;
+    }
+    > li.active:last-child > a {
+        border-right-color: transparent !important;
+    }
+    > li > a {
+        border-radius: 0 !important;
+        background-color: #f5f5f5;
+    }
+    > li:first-child > a {
+        margin-left: -1px;
+    }
+    > li:last-child > a {
+        margin-right: -1px;
+    }
+}
+.vdp-tab-content-wrapper {
+    overflow-y: auto;
+    height: 240px;
+    padding: 0;
+}
+.vdp-tab-content {
+    padding: 15px;
+}
+/*
+ * Vdp Input Group
+ */
+.vdp-input-group {
+    margin-bottom: 10px;
+    > .form-control,
+    > .input-group-addon,
+    > .input-group-btn > .btn {
+        height: 40px;
+        padding: 8px 16px;
+        //	font-size: 18px;
+    }
+}
+/*
+ * Vdp Disclaimer
+ */
+.vdp-disclaimer {
+    margin-bottom: 0;
+}
+/*
+ * Lazy Load
+ */
+.use-b-lazy {
+	.b-lazy {
+		transition: opacity 500ms ease-in-out;
+		opacity: 0;
+	}
+	.b-lazy.b-loaded {
+		opacity: 1;
+	}
+}

@@ -1,0 +1,149 @@
+//
+//  Var
+$pager__contrast:        $global__contrast;
+$pager__flex:            $global__flex;
+$pager__radius:          $global__radius;
+$pager__x:               $global__x;
+$pager__y:               $global__y;
+$pager__use-icon:        true !default;
+$pager__next__icon:      $fa-var-angle-right;
+$pager__previous__icon:  $fa-var-angle-left;
+@if $output__global {
+    @if $output__pager {
+        //
+        //  Base
+        .pager {
+            display: flex;
+        }
+
+        .pager-item {
+            //
+        }
+
+        .pager {
+            @include clearfix;
+
+            padding-left: 0;
+
+            list-style: none;
+
+            text-align: center;
+
+            > li {
+                display: inline;
+            }
+
+            > li > a {
+                display: inline-block;
+                padding: $pager__y $pager__x;
+
+                border: $one__pixel solid;
+                border-radius: $pager__radius;
+            }
+
+            > .active > a,
+            > li > .active {
+                @include state-and-self {
+                    color: $white;
+                    border-color: transparent;
+                    background-color: $primary__color;
+                }
+            }
+
+            > .next {
+                float: right;
+            }
+
+            > .previous {
+                float: left;
+            }
+        }
+
+        .pager-rounded {
+
+            > li > a {
+                border-radius: ($pager__y * 2) + $global__line-height;
+            }
+        }
+
+        .pager-flush {
+
+            > li > a {
+                border-radius: 0;
+            }
+        }
+
+        .pager-justified {
+            display: flex;
+
+            > li {
+                flex: 1 0 auto;
+            }
+
+            > li > a {
+                display: block;
+            }
+
+            .previous {
+                text-align: left;
+            }
+
+            .next {
+                text-align: right;
+            }
+        }
+
+        @if $pager__use-icon {
+            .pager {
+
+                .next > a:after,
+                .previous > a:before {
+                    line-height: 1;
+                    font-family: $fa-font-name;
+                }
+
+                .next > a:after {
+                    content: "#{$pager__next__icon}";
+                    margin-left: $pager__x / 2;
+                }
+
+                .previous > a:before {
+                    content: "#{$pager__previous__icon}";
+                    margin-right: $pager__x / 2;
+                }
+            }
+        } @else {
+            .pager {
+
+                .next > a:after {
+                    content: "\00BB";
+                    margin-left: $pager__x / 2;
+                }
+
+                .previous > a:before {
+                    content: "\00AB";
+                    margin-right: $pager__x / 2;
+                }
+            }
+        }
+        //
+        //  Sizing
+        @if $output__global--sizes {
+            @if $output__pager--sizes {
+                @include pager-size-variation($pager__y, $pager__x, $default__sizing);
+            }
+        }
+        //
+        //  Colors
+        @if $output__global--theme {
+            @if $output__pager--theme {
+                @include pager-color-variation($default__palette);
+                @include pager-color-variation($inverse__palette);
+                @include pager-color-variation($primary__palette);
+                @include pager-color-variation($neutral__palette);
+                @include pager-color-variation($state__palette);
+                @include pager-color-variation($classic__palette);
+            }
+        }
+    }
+}

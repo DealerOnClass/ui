@@ -1,0 +1,71 @@
+@mixin popover-color-variation($input__palette) {
+    @each $class__name, $color in $input__palette {
+        .popover-#{$class__name} {
+
+            .popover-title,
+            .popover-content {
+                border-color: check-color($color, 80, shade($color, $panel__contrast), $color);
+            }
+
+            .popover-title {
+                color: check-color($color, 80, inherit, $white);
+                background-color: $color;
+            }
+
+            &.top,
+            &.popover-top,
+            &.bs-tether-element-attached-bottom {
+                .arrow,
+                .popover-arrow {
+                    border-top-color: shade($color, $popover__contrast * 2);
+                }
+            }
+
+            &.right,
+            &.popover-right,
+            &.bs-tether-element-attached-left {
+                .arrow,
+                .popover-arrow {
+                    border-right-color: shade($color, $popover__contrast * 2);
+                }
+            }
+
+            &.bottom,
+            &.popover-bottom,
+            &.bs-tether-element-attached-top {
+                .arrow,
+                .popover-arrow {
+                    &,
+                    &:after {
+                        border-bottom-color: $color;
+                    }
+                }
+            }
+
+            &.left,
+            &.popover-left,
+            &.bs-tether-element-attached-right {
+                .arrow,
+                .popover-arrow {
+                    border-left-color: shade($color, $popover__contrast * 2);
+                }
+            }
+        }
+    }
+}
+
+@mixin popover-size-variation($unit__y, $unit__x, $input__palette) {
+    @each $class__name, $size in $input__palette {
+
+        $x: ($unit__x * strip-unit($size));
+        $y: ($unit__y * strip-unit($size));
+
+        .popover-#{$class__name} {
+
+            .popover-title,
+            .popover-content {
+                padding: $y $x;
+            }
+        }
+    }
+}
