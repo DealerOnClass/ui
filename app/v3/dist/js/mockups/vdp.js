@@ -65,6 +65,7 @@
 		_carouselRight     = document.querySelector(".js-control-right"),
 		_carouselImages    = document.querySelectorAll(".js-vdp-carousel-image"),
 		_vdpBodyContainer  = document.querySelector(".js-vdp-body-container");
+		_galleryActiveItem = document.querySelector(".gallery-active");
 	//	carousel controls
 	var _scrollAnimationDuration   = 250,
 		_scrollVisibilityThreshold = 400,
@@ -90,7 +91,12 @@
 		galleryXOffset = 0,
 		galleryXGutter = 30,
 		galleryYCenter = 0,
-		top, width, height;
+		galleryPrevious,
+		galleryCurrent,
+		galleryNext,
+		galleryCounter = 0,
+		value = 0,
+		selector, top, width, height;
 
 	window.addEventListener('load', Init);
 	window.addEventListener('resize', Init);
@@ -121,9 +127,9 @@
 
 	function CarouselLeft(evt) {
 		evt.preventDefault();
-		//	if (galleryActive) {
-		//		GalleryLeft();
-		//	} else {
+		if (galleryActive) {
+			GalleryPrev();
+		} else {
 			var initialPosition = _carousel.getAttribute("data-translated") | 0;
 			var finalPosition   = initialPosition + _scrollDistance;
 			if (finalPosition >= 0){
@@ -134,14 +140,14 @@
 				//	_carouselLeft.style.opacity = 1;
 			}
 			//	_carouselRight.style.opacity = 1;
-		//	}
+		}
 	}
 
 	function CarouselRight(evt) {
 		evt.preventDefault();
-		//	if (galleryActive) {
-		//		GalleryRight();
-		//	} else {
+		if (galleryActive) {
+			GalleryNext();
+		} else {
 			var threshold       = ((_carousel.scrollWidth - document.body.scrollWidth) * -1) + _offset;
 			var initialPosition = _carousel.getAttribute("data-translated") | 0;
 			var finalPosition   = initialPosition - _scrollDistance;
@@ -153,7 +159,7 @@
 				//	_carouselRight.style.opacity = 1;
 			}
 			//	_carouselLeft.style.opacity = 1;
-		//	}
+		}
 	}
 
 	function CarouselAnimateX(start, end, duration, direction) {
@@ -251,18 +257,14 @@
 
 	function GalleryStart(_image) {
 		galleryActive    = true;
-		//	_imageClone       = _image.cloneNode(true);
-		//	_imageClone.classList.add("clone");
-		//	_image.parentElement.insertBefore(_imageClone, _image);
-		_image.classList.add("active");
 		_carousel.classList.add("js-gallery-active");
 
 		GalleryAnimateImages(_carouselImages, _image).then(_ => CarouselSetWidth());
 
 		var initialPosition = 0;
 		var finalPosition;
-		finalPosition = document.querySelector(".js-vdp-carousel-image.active").getAttribute("data-translated");
-		finalPosition = ((finalPosition) - ((document.body.scrollWidth / 2) - (_image.offsetWidth / 2)));
+		finalPosition = document.querySelector(".gallery-active").getAttribute("data-translated");
+		finalPosition = ((finalPosition) - ((document.body.scrollWidth / 2) - (_image.offsetWidth)));
 		finalPosition = (finalPosition * -1);
 		CarouselAnimateX(0, finalPosition, 0.5, "right");
 	}
@@ -272,25 +274,50 @@
 		_carousel.classList.remove("js-gallery-init");
 	}
 
-	function GalleryLeft() {
-		console.log("prev item");
+	function GalleryPrev() {
+		value = parseInt(document.querySelector(".gallery-next").getAttribute("data-count"));
+		galleryCounter++;
+		selector = (galleryCounter + value) - 1;
+		selector = "#vdp-carousel-image-" + selector;
+        var prev = document.querySelector(selector);
+		console.log(prev);
 	}
 
-	function GalleryRight() {
-		console.log("next item");
+	function GalleryNext() {
+		value = parseInt(document.querySelector(".gallery-next").getAttribute("data-count"));
+		galleryCounter++;
+		selector = (galleryCounter + value) - 1;
+		selector = "#vdp-carousel-image-" + selector;
+        var next = document.querySelector(selector);
+		console.log(next);
 	}
 
 	function GalleryAnimateImages(images, image) {
 		return new Promise(function(resolve, reject) {
-			images.forEach(function(current_value){
+			images.forEach(function(current_value, index, array){
 				width = parseInt(current_value.style.width);
 				height = parseInt(current_value.style.height);
+
 				if (current_value.parentElement.classList.contains("hero")) {
 					SetDimensions(current_value, (height / 2), (width / 2));
+					galleryYCenter = ((_carousel.offsetHeight / 2) - (image.offsetHeight / 2));
+				} else if (current_value === image) {
+					SetDimensions(current_value, (height * 2), (width * 2));
+					galleryYCenter = 0;
 				} else {
 					SetDimensions(current_value, height, width);
+					galleryYCenter = ((_carousel.offsetHeight / 2) - (image.offsetHeight / 2));
 				}
-				galleryYCenter = ((_carousel.offsetHeight / 2) - (image.offsetHeight / 2));
+
+				if (current_value === image) {
+					galleryPrevious = array[index - 1];
+					galleryCurrent = array[index];
+					galleryNext = array[index + 1];
+					galleryPrevious.classList.add("gallery-prev");
+					galleryCurrent.classList.add("gallery-active");
+					galleryNext.classList.add("gallery-next");
+				}
+
 				galleryXOffset += image.offsetWidth + galleryXGutter;
 				current_value.setAttribute("data-translated", galleryXOffset);
 				current_value.style.transform = "translateX(" + galleryXOffset + "px)" + "translateY(" + galleryYCenter + "px)";
