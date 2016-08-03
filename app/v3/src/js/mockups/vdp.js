@@ -244,11 +244,11 @@
 
 	function GalleryInit() {
 		return new Promise(function(resolve, reject) {
-			_carouselImages.forEach(function(current_value){
-				current_value.style.transform = "translateX(" + current_value.offsetLeft + "px)" + "translateY(" + current_value.offsetTop + "px)";
-				current_value.style.width  = current_value.offsetWidth + "px";
-				current_value.style.height = current_value.offsetHeight + "px";
-			});
+			////	_carouselImages.forEach(function(current_value){
+			////		current_value.style.transform = "translateX(" + current_value.offsetLeft + "px)" + "translateY(" + current_value.offsetTop + "px)";
+			////		current_value.style.width  = current_value.offsetWidth + "px";
+			////		current_value.style.height = current_value.offsetHeight + "px";
+			////	});
 			_carousel.classList.add("js-gallery-init");
 			resolve();
 			return;
@@ -257,40 +257,92 @@
 
 	function GalleryStart(_image) {
 		galleryActive    = true;
+		_image.classList.add("gallery-active");
+
+		// animation happens
 		_carousel.classList.add("js-gallery-active");
 
-		GalleryAnimateImages(_carouselImages, _image).then(_ => CarouselSetWidth());
+		CarouselSetWidth();
+		
 
 		var initialPosition = 0;
-		var finalPosition;
-		finalPosition = document.querySelector(".gallery-active").getAttribute("data-translated");
-		finalPosition = ((finalPosition) - ((document.body.scrollWidth / 2) - (_image.offsetWidth)));
-		finalPosition = (finalPosition * -1);
-		CarouselAnimateX(0, finalPosition, 0.5, "right");
+		var imagePosition = _image.offsetLeft;
+		var desiredEndPosition = (document.body.scrollWidth / 2) - (_image.offsetWidth / 2);
+		var slideDistance = imagePosition - desiredEndPosition;		console.log(slideDistance);
+		
+
+		var finalPosition = slideDistance * -1		
+		CarouselTranslateX(finalPosition);
 	}
 
 	function GalleryClose() {
 		_carousel.classList.remove("js-gallery-active");
-		_carousel.classList.remove("js-gallery-init");
 	}
 
 	function GalleryPrev() {
-		value = parseInt(document.querySelector(".gallery-next").getAttribute("data-count"));
-		galleryCounter++;
-		selector = (galleryCounter + value) - 1;
-		selector = "#vdp-carousel-image-" + selector;
-        var prev = document.querySelector(selector);
-		console.log(prev);
+		GalleryCycleImages("prev");
 	}
 
 	function GalleryNext() {
-		value = parseInt(document.querySelector(".gallery-next").getAttribute("data-count"));
-		galleryCounter++;
-		selector = (galleryCounter + value) - 1;
-		selector = "#vdp-carousel-image-" + selector;
-        var next = document.querySelector(selector);
-		console.log(next);
+		GalleryCycleImages("next");
 	}
+
+	function GalleryCycleImages(direction) {
+		var activeImage = _carousel.querySelector(".gallery-active");
+		var activeCount = parseInt(activeImage.getAttribute("data-count"));
+		var nextImage = _carousel.querySelector("[data-count='" + (activeCount + 1) + "']");
+		var prevImage = _carousel.querySelector("[data-count='" + (activeCount - 1) + "']");
+
+		if (direction === "next" && nextImage) {
+			//	if(prevImage){
+			//		prevImage.classList.remove("gallery-prev");
+			//	}
+			//
+			//	activeImage.classList.add("gallery-prev");
+			//	activeImage.classList.remove("gallery-active");
+
+			//	var advanceItem = _carousel.querySelector("#vdp-carousel-image-" + (parseInt(nextImage.getAttribute("data-count")) + 1));
+
+			//	nextImage.classList.add("gallery-active");
+			//	nextImage.classList.remove("gallery-next");
+
+			//	if(advanceItem){
+			//		advanceItem.classList.add("gallery-next");
+			//	}
+		} else if (direction === "prev" && prevImage) {
+			//	if(nextImage){
+			//		nextImage.classList.remove("gallery-next");
+			//	}
+
+			//	activeImage.classList.add("gallery-next");
+			//	activeImage.classList.remove("gallery-active");
+
+			//	var advanceItem = _carousel.querySelector("#vdp-carousel-image-" + (parseInt(prevImage.getAttribute("data-count")) - 1));
+
+			//	prevImage.classList.add("gallery-active");
+			//	prevImage.classList.remove("gallery-prev");
+
+			//	if(advanceItem){
+			//		advanceItem.classList.add("gallery-prev");
+			//	}
+		}
+	}
+
+	var nextEvent = new CustomEvent(
+		"next",
+		{
+			bubbles: true,
+			cancelable: true
+		}
+	);
+
+	var prevEvent = new CustomEvent(
+		"prev",
+		{
+			bubbles: true,
+			cancelable: true
+		}
+	);
 
 	function GalleryAnimateImages(images, image) {
 		return new Promise(function(resolve, reject) {
@@ -298,29 +350,41 @@
 				width = parseInt(current_value.style.width);
 				height = parseInt(current_value.style.height);
 
+				var stupid;
 				if (current_value.parentElement.classList.contains("hero")) {
 					SetDimensions(current_value, (height / 2), (width / 2));
 					galleryYCenter = ((_carousel.offsetHeight / 2) - (image.offsetHeight / 2));
+
+					galleryXOffset += current_value.offsetWidth + galleryXGutter;
+					current_value.setAttribute("data-translated", galleryXOffset);
+					current_value.style.transform = "translateX(" + galleryXOffset + "px)" + "translateY(" + galleryYCenter + "px)";
 				} else if (current_value === image) {
 					SetDimensions(current_value, (height * 2), (width * 2));
 					galleryYCenter = 0;
+					//
+					current_value.classList.add("gallery-active");
+					console.log(current_value.offsetWidth);
+					//	galleryXOffset += image.offsetWidth;
+					current_value.setAttribute("data-translated", (galleryXOffset + (galleryXGutter / 2)));
+					current_value.style.transform = "translateX(" + (galleryXOffset + (galleryXGutter / 2)) + "px)" + "translateY(" + galleryYCenter + "px)";
 				} else {
 					SetDimensions(current_value, height, width);
 					galleryYCenter = ((_carousel.offsetHeight / 2) - (image.offsetHeight / 2));
+
+					galleryXOffset += current_value.offsetWidth + galleryXGutter;
+					current_value.setAttribute("data-translated", galleryXOffset);
+					current_value.style.transform = "translateX(" + galleryXOffset + "px)" + "translateY(" + galleryYCenter + "px)";
 				}
 
-				if (current_value === image) {
-					galleryPrevious = array[index - 1];
-					galleryCurrent = array[index];
-					galleryNext = array[index + 1];
-					galleryPrevious.classList.add("gallery-prev");
-					galleryCurrent.classList.add("gallery-active");
-					galleryNext.classList.add("gallery-next");
-				}
-
-				galleryXOffset += image.offsetWidth + galleryXGutter;
-				current_value.setAttribute("data-translated", galleryXOffset);
-				current_value.style.transform = "translateX(" + galleryXOffset + "px)" + "translateY(" + galleryYCenter + "px)";
+				//	if (current_value === image) {
+				//		current_value.classList.add("gallery-active");
+				//		//	galleryPrevious = array[index - 1];
+				//		//	galleryCurrent = array[index];
+				//		//	galleryNext = array[index + 1];
+				//		//	galleryPrevious.classList.add("gallery-prev");
+				//		//	galleryCurrent.classList.add("gallery-active");
+				//		//	galleryNext.classList.add("gallery-next");
+				//	}
 			});
 			resolve();
 			return;

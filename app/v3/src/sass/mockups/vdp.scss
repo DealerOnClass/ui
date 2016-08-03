@@ -187,34 +187,77 @@ $transition: 0.5s;
 }
 .js-gallery-init {
     .js-vdp-carousel-image {
-        position: absolute;
+        ////	position: absolute;
         //	transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
-        transition-timing-function: ease-in-out;
-        transition-duration: $transition;
-        transition-property: opacity, transform, height, width !important;
+	//transition-timing-function: ease-in-out;
+	//transition-duration: $transition;
+	//transition-property: opacity, transform, height, width !important;
     }
 }
+body,
+main {
+    &:before,
+    &:after {
+        content: "";
+        position: fixed;
+        display: block;
+        width: 1px;
+        height: 100%;
+        z-index: 2000;
+        top: 0;
+        background-color: red;
+    }
+}
+body {
+    &:before {
+        left: 20%;
+    }
+    &:after {
+        left: 50%;
+    }
+}
+main {
+    &:before {
+        left: 80%;
+    }
+    &:after { display: none;}
+}
+$vdp-gutter: 1em;
 .js-gallery-active {
-    .vdp-carousel-item {
-        flex-direction: row;
-    }
-    .js-vdp-carousel-image {
-        position: absolute;
-        height: 50%;
-        opacity: 0.1 !important;
-    }
-	.gallery-prev {
-		border: 4px solid yellow;
+	.vdp-carousel-item {
+		flex-direction: row;
+		align-items: center;
+	}
+	.js-vdp-carousel-image {
+		height: 50% !important;
+		margin-right: $vdp-gutter;
+		margin-left: $vdp-gutter;
 	}
 	.gallery-active {
-		z-index: 1000;
-		//	padding: 1em;
-		opacity: 1 !important;
-		border: 4px solid orange;
+		height: 100% !important;
+		/*border: 4px solid red;*/
 	}
-	.gallery-next {
-		border: 4px solid red;
-	}
+    ////	.vdp-carousel-item {
+    ////	    flex-direction: row;
+    ////	}
+    ////	.js-vdp-carousel-image {
+    ////	    position: absolute;
+    ////	    height: 50%;
+    ////	    opacity: 0.25 !important;
+	////		border: 1px solid black;
+    ////	}
+	////	.gallery-prev {
+	////		border: 4px solid yellow;
+	////	}
+	////	.gallery-active {
+	////		z-index: 1000;
+	////		//	padding: 1em;
+	////		opacity: 0.5 !important;
+	////		border: 4px solid orange;
+	////	}
+	////	.gallery-next {
+	////		border: 4px solid red;
+	////	}
 }
 //	.js-gallery-inactive {
 //	    .vdp-carousel-item {
