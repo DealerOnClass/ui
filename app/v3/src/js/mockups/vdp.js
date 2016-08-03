@@ -86,6 +86,9 @@
 		_galleryActive = false,
 		_opacityAnim = 500,
 		_imageClone;
+	//	gallery animation
+	var leftIncrement = 0,
+		offset 	      = 300;
 
 	window.addEventListener('load', Init);
 	window.addEventListener('resize', Init);
@@ -218,6 +221,10 @@
 		if (_mouseClick){
 			if (!_galleryActive) {
 				GalleryInit().then(_ => GalleryStart(evt.target));
+			} else {
+				if (!evt.target.classList.contains("js-vdp-carousel-image")) {
+					GalleryClose();
+				}
 			}
 		}
 		_mouseDown = false;
@@ -243,33 +250,19 @@
 	function GalleryStart(_image) {
 		_galleryActive    = true;
 		var top, width, height, test, count, scroll;
-		var leftIncrement = 0;
-		var offset        = 300;
-		var _carImages    = document.querySelectorAll(".js-vdp-carousel-image");
 		//	_imageClone       = _image.cloneNode(true);
 		//	_imageClone.classList.add("clone");
 		//	_image.parentElement.insertBefore(_imageClone, _image);
-		//	_image.classList.add("active");
 		_carousel.classList.add("js-gallery-active");
 
-		_carImages.forEach(function(current_value){
-			width = current_value.style.width;
-			height = current_value.style.height;
-			if (current_value.parentElement.classList.contains("hero")) {
-				current_value.style.width = (parseInt(width) / 2) + "px";
-				current_value.style.height = (parseInt(height) / 2) + "px";
-			} else if (current_value === _imageClone) {
-				current_value.style.width = (parseInt(width) * 2) + "px";
-				current_value.style.height = (parseInt(height) * 2) + "px";
-			} else {
-				current_value.style.width = width + "px";
-				current_value.style.height = height + "px";
-			}
-			leftIncrement += offset;
-			current_value.style.transform = "translateX(" + leftIncrement + "px)" + "translateY(100px)";
-		});
+		GalleryAnimateImages(_carouselImages, _image).then(_ => console.log("images done"));
 
-		setTimeout(function() { CarouselSetWidth(); }, 1000);
+		var initialPosition = 0;
+		var finalPosition = document.querySelector(".js-vdp-carousel-image.active").getAttribute("data-translated");
+		finalPosition = (Number(finalPosition) - (document.body.scrollWidth / 2));
+		finalPosition = (finalPosition + (_image.offsetWidth / 2));
+		finalPosition = (finalPosition * -1);
+		CarouselAnimateX(0, finalPosition, 0.5, "right").then(_ => CarouselSetWidth());
 
 		//	count = parseInt(_image.getAttribute("id"));
 		//	if (count === 0) {
@@ -283,7 +276,7 @@
 
 	function GalleryClose() {
 		_carousel.classList.remove("js-gallery-active");
-		$(".js-gallery-image-active").removeClass("js-gallery-image-active");
+		_carousel.classList.remove("js-gallery-init");
 	}
 
 	function GalleryLeft() {
@@ -292,6 +285,28 @@
 
 	function GalleryRight() {
 		console.log("next item");
+	}
+
+	function GalleryAnimateImages(images, image) {
+		return new Promise(function(resolve, reject) {
+			images.forEach(function(current_value){
+				width = current_value.style.width;
+				height = current_value.style.height;
+				if (current_value === image) {
+					current_value.classList.add("active");
+				} else {
+					if (current_value.parentElement.classList.contains("hero")) {
+						current_value.style.width = (parseInt(width) / 2) + "px";
+						current_value.style.height = (parseInt(height) / 2) + "px";
+					}
+					leftIncrement += offset;
+				}
+				current_value.setAttribute("data-translated", leftIncrement);
+				current_value.style.transform = "translateX(" + leftIncrement + "px)" + "translateY(100px)";
+			});
+			resolve();
+			return;
+		});
 	}
 
 	function FadeControl() {

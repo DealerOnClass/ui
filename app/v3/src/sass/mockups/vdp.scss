@@ -213,41 +213,19 @@ $transition: 0.5s;
         }
     }
 }
-//	.js-gallery-init {
-//	    .vdp-carousel-image {
-//	        opacity: 0.1 !important;
-//	    }
-//	}
-//	.js-gallery-active {
+//	.js-gallery-inactive {
 //	    .vdp-carousel-item {
-//	        flex-direction: row;
-//	        border: 1px solid red;
+//	        flex-direction: column !important;
 //	    }
-//	    .vdp-carousel-image {
-//			$offset: 8em;
-//	        height: calc(100% - #{$offset});
-//	        border: 1px solid blue;
-//			position: relative;
-//			top: ($offset / 2);
-//			margin: 0 20em;
-//	    }
-//	}
-//	.js-gallery-init {
-//	    .js-gallery-image-clone {
-//	        position: absolute;
-//	        z-index: 100;
-//	        margin: 0 !important;
-//	        transition-delay: 0;
-//	        transition-duration: 0.5s;
-//	        transition-property: height, left, top !important;
-//	        opacity: 1 !important;
-//	        backface-visibility: hidden;
-//	        &.animated {
-//	            top: 0 !important;
-//	            height: 100% !important;
-//	            padding: 0 !important;
-//	        }
-//	    }
+//	    .js-vdp-carousel-image {
+//			position: static;
+//			transform: initial !important;
+//		}
+//		.hero {
+//			.js-vpd-carousel-image {
+//				border: 2px solid blue;
+//			}
+//		}
 //	}
 /*
  * Vdp Pricing Notifications
