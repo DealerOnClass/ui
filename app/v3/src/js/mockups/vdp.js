@@ -83,12 +83,14 @@
 	var	_mouseDown    = false;
 	//	carousel start
 	var _mouseClick	= true,
-		_galleryActive = false,
 		_opacityAnim = 500,
 		_imageClone;
 	//	gallery animation
-	var leftIncrement = 0,
-		offset 	      = 300;
+	var galleryActive = false,
+		galleryXOffset = 0,
+		galleryXGutter = 30,
+		galleryYCenter = 0,
+		top, width, height;
 
 	window.addEventListener('load', Init);
 	window.addEventListener('resize', Init);
@@ -106,7 +108,7 @@
 	function OffsetInit(evt) {
 		return new Promise(function(resolve, reject) {
 			_offset                     = _vdpBodyContainer.offsetLeft + _gutter;
-			_carousel.style.paddingLeft = _offset + "px";
+			//	_carousel.style.paddingLeft = _offset + "px";
 			resolve();
 			return;
 		});
@@ -119,9 +121,9 @@
 
 	function CarouselLeft(evt) {
 		evt.preventDefault();
-		if (_galleryActive) {
-			GalleryLeft();
-		} else {
+		//	if (galleryActive) {
+		//		GalleryLeft();
+		//	} else {
 			var initialPosition = _carousel.getAttribute("data-translated") | 0;
 			var finalPosition   = initialPosition + _scrollDistance;
 			if (finalPosition >= 0){
@@ -132,14 +134,14 @@
 				//	_carouselLeft.style.opacity = 1;
 			}
 			//	_carouselRight.style.opacity = 1;
-		}
+		//	}
 	}
 
 	function CarouselRight(evt) {
 		evt.preventDefault();
-		if (_galleryActive) {
-			GalleryRight();
-		} else {
+		//	if (galleryActive) {
+		//		GalleryRight();
+		//	} else {
 			var threshold       = ((_carousel.scrollWidth - document.body.scrollWidth) * -1) + _offset;
 			var initialPosition = _carousel.getAttribute("data-translated") | 0;
 			var finalPosition   = initialPosition - _scrollDistance;
@@ -151,7 +153,7 @@
 				//	_carouselRight.style.opacity = 1;
 			}
 			//	_carouselLeft.style.opacity = 1;
-		}
+		//	}
 	}
 
 	function CarouselAnimateX(start, end, duration, direction) {
@@ -219,7 +221,7 @@
 
 	function MouseUp(evt) {
 		if (_mouseClick){
-			if (!_galleryActive) {
+			if (!galleryActive) {
 				GalleryInit().then(_ => GalleryStart(evt.target));
 			} else {
 				if (!evt.target.classList.contains("js-vdp-carousel-image")) {
@@ -248,30 +250,21 @@
 	}
 
 	function GalleryStart(_image) {
-		_galleryActive    = true;
-		var top, width, height, test, count, scroll;
+		galleryActive    = true;
 		//	_imageClone       = _image.cloneNode(true);
 		//	_imageClone.classList.add("clone");
 		//	_image.parentElement.insertBefore(_imageClone, _image);
+		_image.classList.add("active");
 		_carousel.classList.add("js-gallery-active");
 
-		GalleryAnimateImages(_carouselImages, _image).then(_ => console.log("images done"));
+		GalleryAnimateImages(_carouselImages, _image).then(_ => CarouselSetWidth());
 
 		var initialPosition = 0;
-		var finalPosition = document.querySelector(".js-vdp-carousel-image.active").getAttribute("data-translated");
-		finalPosition = (Number(finalPosition) - (document.body.scrollWidth / 2));
-		finalPosition = (finalPosition + (_image.offsetWidth / 2));
+		var finalPosition;
+		finalPosition = document.querySelector(".js-vdp-carousel-image.active").getAttribute("data-translated");
+		finalPosition = ((finalPosition) - ((document.body.scrollWidth / 2) - (_image.offsetWidth / 2)));
 		finalPosition = (finalPosition * -1);
-		CarouselAnimateX(0, finalPosition, 0.5, "right").then(_ => CarouselSetWidth());
-
-		//	count = parseInt(_image.getAttribute("id"));
-		//	if (count === 0) {
-		//		scroll = count;
-		//	} else {
-		//		scroll = count * (offset + _image.offsetWidth);
-		//	}
-		//	var initialPosition = _carousel.getAttribute("data-translated") | 0;
-		//	CarouselAnimateX(initialPosition, scroll, 0.5, "right");
+		CarouselAnimateX(0, finalPosition, 0.5, "right");
 	}
 
 	function GalleryClose() {
@@ -290,23 +283,26 @@
 	function GalleryAnimateImages(images, image) {
 		return new Promise(function(resolve, reject) {
 			images.forEach(function(current_value){
-				width = current_value.style.width;
-				height = current_value.style.height;
-				if (current_value === image) {
-					current_value.classList.add("active");
+				width = parseInt(current_value.style.width);
+				height = parseInt(current_value.style.height);
+				if (current_value.parentElement.classList.contains("hero")) {
+					SetDimensions(current_value, (height / 2), (width / 2));
 				} else {
-					if (current_value.parentElement.classList.contains("hero")) {
-						current_value.style.width = (parseInt(width) / 2) + "px";
-						current_value.style.height = (parseInt(height) / 2) + "px";
-					}
-					leftIncrement += offset;
+					SetDimensions(current_value, height, width);
 				}
-				current_value.setAttribute("data-translated", leftIncrement);
-				current_value.style.transform = "translateX(" + leftIncrement + "px)" + "translateY(100px)";
+				galleryYCenter = ((_carousel.offsetHeight / 2) - (image.offsetHeight / 2));
+				galleryXOffset += image.offsetWidth + galleryXGutter;
+				current_value.setAttribute("data-translated", galleryXOffset);
+				current_value.style.transform = "translateX(" + galleryXOffset + "px)" + "translateY(" + galleryYCenter + "px)";
 			});
 			resolve();
 			return;
 		});
+	}
+
+	function SetDimensions(el, height, width) {
+		el.style.height = height + "px";
+		el.style.width = width + "px";
 	}
 
 	function FadeControl() {

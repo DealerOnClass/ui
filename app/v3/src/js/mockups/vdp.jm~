@@ -87,9 +87,8 @@
 		_imageClone;
 	//	gallery animation
 	var galleryActive = false,
-		galleryXOffset = 0,
-		galleryXGutter = 30,
-		galleryYCenter = 0,
+		galleryOffset = 0,
+		galleryGutter = 30,
 		top, width, height;
 
 	window.addEventListener('load', Init);
@@ -283,26 +282,20 @@
 	function GalleryAnimateImages(images, image) {
 		return new Promise(function(resolve, reject) {
 			images.forEach(function(current_value){
-				width = parseInt(current_value.style.width);
-				height = parseInt(current_value.style.height);
+				width = current_value.style.width;
+				height = current_value.style.height;
 				if (current_value.parentElement.classList.contains("hero")) {
-					SetDimensions(current_value, (height / 2), (width / 2));
-				} else {
-					SetDimensions(current_value, height, width);
+					current_value.style.width = (parseInt(width) / 2) + "px";
+					current_value.style.height = (parseInt(height) / 2) + "px";
 				}
-				galleryYCenter = ((_carousel.offsetHeight / 2) - (image.offsetHeight / 2));
-				galleryXOffset += image.offsetWidth + galleryXGutter;
-				current_value.setAttribute("data-translated", galleryXOffset);
-				current_value.style.transform = "translateX(" + galleryXOffset + "px)" + "translateY(" + galleryYCenter + "px)";
+				var galleryYCenter = ((_carousel.offsetHeight / 2) - (image.offsetHeight / 2));
+				galleryOffset += image.offsetWidth + galleryGutter;
+				current_value.setAttribute("data-translated", galleryOffset);
+				current_value.style.transform = "translateX(" + galleryOffset + "px)" + "translateY(" + galleryYCenter + "px)";
 			});
 			resolve();
 			return;
 		});
-	}
-
-	function SetDimensions(el, height, width) {
-		el.style.height = height + "px";
-		el.style.width = width + "px";
 	}
 
 	function FadeControl() {
