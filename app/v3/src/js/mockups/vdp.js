@@ -71,6 +71,10 @@
 	var	galleryXGutter = 30;
 	var	galleryYCenter = 0;
 	var	selector, top, width, height;
+	//	clone
+	var galleryActiveImageClone;
+	// 	animations
+	var _cssAnimationDuration = 250;
 
 	window.addEventListener("load", Init);
 	window.addEventListener("resize", Init);
@@ -83,7 +87,6 @@
 
 	function Init(evt) {
 		OffsetInit();
-		GalleryInit();
 	}
 
 	function OffsetInit(evt) {
@@ -161,8 +164,8 @@
 	};
 
 	function CarouselTranslateX(distance) {
-		_carousel.style.transform = "translate3d(" + distance + "px,0,0)";
-		_carousel.setAttribute("data-translated", distance);
+		_carousel.style.transform = "translate3d(" + Math.round(distance) + "px,0,0)";
+		_carousel.setAttribute("data-translated", Math.round(distance));
 	}
 
 	function MouseDown(evt) {
@@ -203,8 +206,7 @@
 		if (_mouseClick){
 			if (!galleryActive) {
 				if (evt.target.classList.contains("js-vdp-carousel-image")) {
-					GalleryStart(evt.target);
-					//GalleryInit().then(_ => GalleryStart(evt.target));
+					GalleryInit().then(_ => GalleryStart(evt.target));
 				};
 			} else {
 				if (!evt.target.classList.contains("js-vdp-carousel-image")) {
@@ -232,41 +234,84 @@
 
 	function GalleryInit() {
 		return new Promise(function(resolve, reject) {
-			_carouselImages.forEach(function(current_value){
-				//	current_value.style.transform = "translateX(" + current_value.offsetLeft + "px)" + "translateY(" + current_value.offsetTop + "px)";
-				//	console.log(current_value);
-				//	current_value.style.width  = current_value.offsetWidth + "px";
-				//	current_value.style.height = current_value.offsetHeight + "px";
-			});
-			_carousel.classList.add("js-gallery-init");
+			////	_carouselImages.forEach(function(current_value){
+			////		current_value.style.transform = "translateX(" + current_value.offsetLeft + "px)" + "translateY(" + current_value.offsetTop + "px)";
+			////		current_value.style.width  = current_value.offsetWidth + "px";
+			////		current_value.style.height = current_value.offsetHeight + "px";
+			////	});
+			_carouselWrapper.classList.add("js-gallery-init");
 			resolve();
 			return;
 		});
 	}
 
 	function GalleryStart(_image) {
-		galleryActive    = true;
-		_image.classList.add("gallery-active");
+		galleryActive    = true;							   // set gallery active
+		GalleryCloneActiveImage(_image);                       // clone image
+		_image.classList.add("gallery-active");                // make image active
+		_carouselWrapper.classList.add("js-gallery-fade");   // animate to gallery view
+		setTimeout(function(){
+			_carouselWrapper.classList.add("js-gallery-build");
+			_carousel.style.width = _carousel.scrollWidth + "px";  // reset carousel width
+			ActivateTargetGalleryImage(_image);                    // scroll to image
+		}, _cssAnimationDuration);
+		//	destroy clone
+		setTimeout(function(){
+			_carouselWrapper.classList.add("js-gallery-active");
+		}, (_cssAnimationDuration * 2));
+		setTimeout(function(){
+			_carouselWrapper.classList.remove("js-gallery-fade");
+			galleryActiveImageClone.parentNode.removeChild(galleryActiveImageClone);
+		}, (_cssAnimationDuration * 3));
+	}
 
-		// animation happens
-		_carouselWrapper.classList.add("js-gallery-active");
-
-		_carousel.style.width = _carousel.scrollWidth + "px";
-
-		ActivateTargetGalleryImage(_image);
+	function GalleryCloneActiveImage(image) {
+		return new Promise(function(resolve, reject) {
+			//	clone init
+			var x;
+			var y = 100;
+			var scaleTransform = " scale(2,2)";
+			//	clone create
+			galleryActiveImageClone = image.cloneNode(true);
+			//	galleryActiveImageClone.setAttribute("src","http://placehold.it/640x480");
+			galleryActiveImageClone.classList.add("clone");
+			//	if clone is hero
+			if (image.classList.contains("vdp-carousel-hero")) {
+				galleryActiveImageClone.style.height = image.offsetHeight * 2;
+				galleryActiveImageClone.style.width = image.offsetWidth * 2;
+				y = 0;
+				scaleTransform = "";
+			}
+			//	set initial clone position
+			galleryActiveImageClone.style.transform = "translateX(" + image.getBoundingClientRect().left + "px)" + "translateY(" + image.offsetTop + "px)";
+			//	place clone
+			_carouselWrapper.appendChild(galleryActiveImageClone);
+			//	set final clone position
+			x = ((document.body.scrollWidth / 2) - (image.offsetWidth / 2));
+			galleryActiveImageClone.style.transform = "translateX(" + x + "px)" + "translateY(" + y + "px)" + scaleTransform;
+			//	resolve
+			resolve();
+			return;
+		});
 	}
 
 	function GalleryClose() {
 		var activeImage = _carousel.querySelector(".gallery-active");
 		galleryActive    = false;
-		_carouselWrapper.classList.remove("js-gallery-active");
 
 		_carousel.style.width = _paddedScrollWidth + "px";
 
 		var distance = activeImage.offsetLeft + _mouseMovedTotal;
+
 		SlideCarousel(distance);
 
 		activeImage.classList.remove("gallery-active");
+
+		_carouselWrapper.classList.remove("js-gallery-build");
+		_carouselWrapper.classList.remove("js-gallery-active");
+		setTimeout(function(){
+			_carouselWrapper.classList.remove("js-gallery-init");
+		}, (_cssAnimationDuration));
 	}
 
 	function GalleryPrev() {
@@ -295,12 +340,11 @@
 	}
 
 	function ActivateTargetGalleryImage(_image){
-		//	TODO:
-		//	Make it work with height transition!!!, or not...
 		var imagePosition = _image.offsetLeft;
 		var desiredEndPosition = (document.body.scrollWidth / 2) - (_image.offsetWidth / 2);
 		var slideDistance = imagePosition - desiredEndPosition;
 		var translation = slideDistance * -1;
+
 		CarouselTranslateX(translation);
 	}
 
