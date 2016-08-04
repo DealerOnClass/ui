@@ -213,21 +213,16 @@ $transition: 0.5s;
 /*
  * Vdp Carousel Active
  */
-.vdp-carousel {
-    backface-visibility: hidden;
-    .vdp-carousel-image {
-        transition-timing-function: cubic-bezier(0.6, 0, 0.2, 1);
-        transition-duration: $transition;
-        transition-property: opacity;
-    }
-}
-$test-transition: false;
+$test-transition: true;
 .js-gallery-init {
+    backface-visibility: hidden;
 	@if $test-transition {
 		.js-vdp-carousel-image {
+			transform: scale(1,1);
 			transition-timing-function: ease-in-out;
 			transition-duration: $transition;
-			transition-property: opacity, transform, height, width !important;
+			transition-property: z-index, opacity, transform !important;
+			//	transition-property:opacity, transform, height, width !important;
 		}
 	}
 }
@@ -249,9 +244,10 @@ $vdp-gutter: 1em;
 		opacity: 0.15 !important;
 	}
 	.gallery-active {
-		height: 100% !important;
+		z-index: 2000;
+		transform: scale(2,2);
+		//	height: 100% !important;
 		opacity: 1 !important;
-		/*border: 4px solid red;*/
 	}
 }
 /*
@@ -493,7 +489,7 @@ $vdp-gutter: 1em;
 /*
  * Guides
  */
-/*body,
+body,
 main {
     &:before,
     &:after {
@@ -509,7 +505,7 @@ main {
 }
 body {
     &:before {
-        left: 20%;
+        left: 43%;
     }
     &:after {
         left: 50%;
@@ -517,7 +513,7 @@ body {
 }
 main {
     &:before {
-        left: 80%;
+        left: 57%;
     }
     &:after { display: none;}
-}*/
+}

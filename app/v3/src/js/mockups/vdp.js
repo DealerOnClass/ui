@@ -83,6 +83,7 @@
 
 	function Init(evt) {
 		OffsetInit();
+		GalleryInit();
 	}
 
 	function OffsetInit(evt) {
@@ -202,7 +203,8 @@
 		if (_mouseClick){
 			if (!galleryActive) {
 				if (evt.target.classList.contains("js-vdp-carousel-image")) {
-					GalleryInit().then(_ => GalleryStart(evt.target));
+					GalleryStart(evt.target);
+					//GalleryInit().then(_ => GalleryStart(evt.target));
 				};
 			} else {
 				if (!evt.target.classList.contains("js-vdp-carousel-image")) {
@@ -230,11 +232,12 @@
 
 	function GalleryInit() {
 		return new Promise(function(resolve, reject) {
-			////	_carouselImages.forEach(function(current_value){
-			////		current_value.style.transform = "translateX(" + current_value.offsetLeft + "px)" + "translateY(" + current_value.offsetTop + "px)";
-			////		current_value.style.width  = current_value.offsetWidth + "px";
-			////		current_value.style.height = current_value.offsetHeight + "px";
-			////	});
+			_carouselImages.forEach(function(current_value){
+				//	current_value.style.transform = "translateX(" + current_value.offsetLeft + "px)" + "translateY(" + current_value.offsetTop + "px)";
+				//	console.log(current_value);
+				//	current_value.style.width  = current_value.offsetWidth + "px";
+				//	current_value.style.height = current_value.offsetHeight + "px";
+			});
 			_carousel.classList.add("js-gallery-init");
 			resolve();
 			return;
@@ -292,11 +295,12 @@
 	}
 
 	function ActivateTargetGalleryImage(_image){
+		//	TODO:
+		//	Make it work with height transition!!!, or not...
 		var imagePosition = _image.offsetLeft;
 		var desiredEndPosition = (document.body.scrollWidth / 2) - (_image.offsetWidth / 2);
 		var slideDistance = imagePosition - desiredEndPosition;
 		var translation = slideDistance * -1;
-
 		CarouselTranslateX(translation);
 	}
 
