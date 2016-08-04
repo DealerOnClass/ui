@@ -114,7 +114,7 @@
 	function OffsetInit(evt) {
 		return new Promise(function(resolve, reject) {
 			_offset                     = _vdpBodyContainer.offsetLeft + _gutter;
-			//	_carousel.style.paddingLeft = _offset + "px";
+			_carousel.style.paddingLeft = _offset + "px";
 			resolve();
 			return;
 		});
@@ -263,16 +263,26 @@
 		_carousel.classList.add("js-gallery-active");
 
 		CarouselSetWidth();
-		
 
-		var initialPosition = 0;
+		SlideToTargetImage(_image);
+	}
+
+	function SlideToTargetImage(_image, animate){
 		var imagePosition = _image.offsetLeft;
 		var desiredEndPosition = (document.body.scrollWidth / 2) - (_image.offsetWidth / 2);
-		var slideDistance = imagePosition - desiredEndPosition;		console.log(slideDistance);
-		
+		var slideDistance = imagePosition - desiredEndPosition;
+		var translation = slideDistance * -1;
 
-		var finalPosition = slideDistance * -1		
-		CarouselTranslateX(finalPosition);
+		// if(animate){
+		// 	var initialPosition = parseInt(_carousel.getAttribute("data-translated"));
+		// 	var finalPosition = initialPosition - translation;
+		// 	console.log(finalPosition);
+		// 	var direction = finalPosition > 0 ? "right" : "left";
+		// 	console.log(direction);
+		// 	CarouselAnimateX(initialPosition, finalPosition, 0.5, direction);
+		// } else {
+		CarouselTranslateX(translation);	
+		// }		
 	}
 
 	function GalleryClose() {
@@ -294,55 +304,15 @@
 		var prevImage = _carousel.querySelector("[data-count='" + (activeCount - 1) + "']");
 
 		if (direction === "next" && nextImage) {
-			//	if(prevImage){
-			//		prevImage.classList.remove("gallery-prev");
-			//	}
-			//
-			//	activeImage.classList.add("gallery-prev");
-			//	activeImage.classList.remove("gallery-active");
-
-			//	var advanceItem = _carousel.querySelector("#vdp-carousel-image-" + (parseInt(nextImage.getAttribute("data-count")) + 1));
-
-			//	nextImage.classList.add("gallery-active");
-			//	nextImage.classList.remove("gallery-next");
-
-			//	if(advanceItem){
-			//		advanceItem.classList.add("gallery-next");
-			//	}
+			activeImage.classList.remove("gallery-active");
+			nextImage.classList.add("gallery-active");
+			SlideToTargetImage(nextImage, true);
 		} else if (direction === "prev" && prevImage) {
-			//	if(nextImage){
-			//		nextImage.classList.remove("gallery-next");
-			//	}
-
-			//	activeImage.classList.add("gallery-next");
-			//	activeImage.classList.remove("gallery-active");
-
-			//	var advanceItem = _carousel.querySelector("#vdp-carousel-image-" + (parseInt(prevImage.getAttribute("data-count")) - 1));
-
-			//	prevImage.classList.add("gallery-active");
-			//	prevImage.classList.remove("gallery-prev");
-
-			//	if(advanceItem){
-			//		advanceItem.classList.add("gallery-prev");
-			//	}
+			activeImage.classList.remove("gallery-active");
+			prevImage.classList.add("gallery-active");
+			SlideToTargetImage(prevImage, true);
 		}
 	}
-
-	var nextEvent = new CustomEvent(
-		"next",
-		{
-			bubbles: true,
-			cancelable: true
-		}
-	);
-
-	var prevEvent = new CustomEvent(
-		"prev",
-		{
-			bubbles: true,
-			cancelable: true
-		}
-	);
 
 	function GalleryAnimateImages(images, image) {
 		return new Promise(function(resolve, reject) {

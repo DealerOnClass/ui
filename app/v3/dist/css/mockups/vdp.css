@@ -295,6 +295,12 @@
     transition-property: opacity;
 }
 
+.js-gallery-init .js-vdp-carousel-image {
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.5s;
+    transition-property: opacity, transform, height, width !important;
+}
+
 body:before,
 body:after,
 main:before,
@@ -325,19 +331,24 @@ main:after {
     display: none;
 }
 
+.js-gallery-active {
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.5s;
+    transition-property: transform !important;
+}
 .js-gallery-active .vdp-carousel-item {
     flex-direction: row;
     align-items: center;
 }
-
 .js-gallery-active .js-vdp-carousel-image {
     height: 50% !important;
-    margin-right: 1em;
-    margin-left: 1em;
+    margin-right: 0;
+    margin-left: 0;
+    opacity: 0.15 !important;
 }
-
 .js-gallery-active .gallery-active {
     height: 100% !important;
+    opacity: 1 !important;
     /*border: 4px solid red;*/
 }
 
