@@ -52,56 +52,19 @@ $vdp-body-z: 200;
 /*
  * Vdp Carousel
  */
-$transition: 0.5s;
 .vdp-carousel-wrapper {
     position: relative;
     overflow: hidden;
     background-color: #333;
 
     backface-visibility: hidden;
-	&:after,
-	&:before {
-		content: "";
-		display: block;
-		position: absolute;
-		top: 0;
-		height: 100%;
-		width: 400px;
-		z-index: 250;
-		user-select: none;
-		transition-timing-function: ease-in-out;
-		transition-duration: $transition;
-		transition-property: width, background !important;
-	}
-	$opacity: 0.4;
-	&:before {
-		left: 0;
-		background: linear-gradient(to right, rgba(0,0,0,$opacity), rgba(0,0,0,0));
-	}
-	&:after {
-		right: 0;
-		background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,$opacity));
-	}
-}
-.js-gallery-active {
-	$opacity: 0.8;
-	&:after,
-	&:before {
-		width: 600px;
-	}
-	&:before {
-		background: linear-gradient(to right, rgba(0,0,0,$opacity), rgba(0,0,0,0));
-	}
-	&:after {
-		background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,$opacity));
-	}
 }
 .js-vdp-carousel-wrapper {
     //	transition: transform 0.25s cubic-bezier(0.6, 0, 0.2, 1);
 }
 .vdp-carousel-controls {
     position: relative;
-    z-index: 500;
+    z-index: 300;
 
     backface-visibility: hidden;
 }
@@ -171,35 +134,33 @@ $transition: 0.5s;
     }
 }
 .vdp-carousel-item {
-	user-select: none;
 	// 	Demo - Start
-	//	.vdp-carousel-image {
-	//		opacity: 0.35;
-	//	}
-	//	@media (min-width: 992px) {
-	//		&:nth-child(even) {
-	//			.vdp-carousel-image:nth-child(even) {
-	//				opacity: 0.2;
-	//			}
-	//		}
-	//		&:nth-child(odd) {
-	//			.vdp-carousel-image:nth-child(odd) {
-	//				opacity: 0.2;
-	//			}
-	//		}
-	//	}
-	//	@media (max-width: 991px) {
-	//		&:nth-child(odd):not(:first-child),
-	//		&:nth-child(even) {
-	//			.vdp-carousel-image:nth-child(odd) {
-	//				opacity: 0.2;
-	//			}
-	//		}
-	//	}
+	.vdp-carousel-image {
+		opacity: 0.35;
+	}
+	@media (min-width: 992px) {
+		&:nth-child(even) {
+			.vdp-carousel-image:nth-child(even) {
+				opacity: 0.2;
+			}
+		}
+		&:nth-child(odd) {
+			.vdp-carousel-image:nth-child(odd) {
+				opacity: 0.2;
+			}
+		}
+	}
+	@media (max-width: 991px) {
+		&:nth-child(odd):not(:first-child),
+		&:nth-child(even) {
+			.vdp-carousel-image:nth-child(odd) {
+				opacity: 0.2;
+			}
+		}
+	}
 	//	Demo - End
 }
 .vdp-carousel-image {
-	user-select: none;
     height: 100%;
     @media (min-width: 992px) {
         height: 50%;
@@ -213,31 +174,57 @@ $transition: 0.5s;
 /*
  * Vdp Carousel Active
  */
+$transition: 0.5s;
 .vdp-carousel {
-    backface-visibility: hidden;
+    //	backface-visibility: hidden;
     .vdp-carousel-image {
         transition-timing-function: cubic-bezier(0.6, 0, 0.2, 1);
         transition-duration: $transition;
         transition-property: opacity;
     }
 }
-$test-transition: false;
 .js-gallery-init {
-	@if $test-transition {
-		.js-vdp-carousel-image {
-			transition-timing-function: ease-in-out;
-			transition-duration: $transition;
-			transition-property: opacity, transform, height, width !important;
-		}
-	}
+    .js-vdp-carousel-image {
+        ////	position: absolute;
+        //	transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+		/*transition-timing-function: ease-in-out;
+		transition-duration: $transition;
+		transition-property: opacity, transform, height, width !important;*/
+    }
 }
+/*body,
+main {
+    &:before,
+    &:after {
+        content: "";
+        position: fixed;
+        display: block;
+        width: 1px;
+        height: 100%;
+        z-index: 2000;
+        top: 0;
+        background-color: red;
+    }
+}
+body {
+    &:before {
+        left: 20%;
+    }
+    &:after {
+        left: 50%;
+    }
+}
+main {
+    &:before {
+        left: 80%;
+    }
+    &:after { display: none;}
+}*/
 $vdp-gutter: 1em;
 .js-gallery-active {
-	.vdp-carousel {
-		transition-timing-function: ease-in-out;
-		transition-duration: $transition;
-		transition-property: transform !important;
-	}
+    transition-timing-function: ease-in-out;
+    transition-duration: $transition;
+    transition-property: transform !important;
 	.vdp-carousel-item {
 		flex-direction: row;
 		align-items: center;
@@ -253,7 +240,42 @@ $vdp-gutter: 1em;
 		opacity: 1 !important;
 		/*border: 4px solid red;*/
 	}
+    ////	.vdp-carousel-item {
+    ////	    flex-direction: row;
+    ////	}
+    ////	.js-vdp-carousel-image {
+    ////	    position: absolute;
+    ////	    height: 50%;
+    ////	    opacity: 0.25 !important;
+	////		border: 1px solid black;
+    ////	}
+	////	.gallery-prev {
+	////		border: 4px solid yellow;
+	////	}
+	////	.gallery-active {
+	////		z-index: 1000;
+	////		//	padding: 1em;
+	////		opacity: 0.5 !important;
+	////		border: 4px solid orange;
+	////	}
+	////	.gallery-next {
+	////		border: 4px solid red;
+	////	}
 }
+//	.js-gallery-inactive {
+//	    .vdp-carousel-item {
+//	        flex-direction: column !important;
+//	    }
+//	    .js-vdp-carousel-image {
+//			position: static;
+//			transform: initial !important;
+//		}
+//		.hero {
+//			.js-vpd-carousel-image {
+//				border: 2px solid blue;
+//			}
+//		}
+//	}
 /*
  * Vdp Pricing Notifications
  */
@@ -372,8 +394,6 @@ $vdp-gutter: 1em;
  * Vdp Body
  */
 .vdp-body {
-	position: relative;
-	z-index: 1000;
     margin-top: 30px;
 }
 /*
@@ -490,34 +510,3 @@ $vdp-gutter: 1em;
 .vdp-disclaimer {
     margin-bottom: 0;
 }
-/*
- * Guides
- */
-/*body,
-main {
-    &:before,
-    &:after {
-        content: "";
-        position: fixed;
-        display: block;
-        width: 1px;
-        height: 100%;
-        z-index: 2000;
-        top: 0;
-        background-color: red;
-    }
-}
-body {
-    &:before {
-        left: 20%;
-    }
-    &:after {
-        left: 50%;
-    }
-}
-main {
-    &:before {
-        left: 80%;
-    }
-    &:after { display: none;}
-}*/

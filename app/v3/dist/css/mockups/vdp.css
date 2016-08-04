@@ -180,10 +180,45 @@
 
     backface-visibility: hidden;
 }
+.vdp-carousel-wrapper:after,
+.vdp-carousel-wrapper:before {
+    position: absolute;
+    z-index: 250;
+    top: 0;
+    display: block;
+    width: 400px;
+    height: 100%;
+    content: "";
+    user-select: none;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.5s;
+    transition-property: width, background !important;
+}
+.vdp-carousel-wrapper:before {
+    left: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.4), transparent);
+}
+.vdp-carousel-wrapper:after {
+    right: 0;
+    background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.4));
+}
+
+.js-gallery-active:after,
+.js-gallery-active:before {
+    width: 600px;
+}
+
+.js-gallery-active:before {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.js-gallery-active:after {
+    background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.8));
+}
 
 .vdp-carousel-controls {
     position: relative;
-    z-index: 300;
+    z-index: 500;
 
     backface-visibility: hidden;
 }
@@ -253,28 +288,13 @@
     }
 }
 
-.not-b-lazy .vdp-carousel-item .vdp-carousel-image {
-    opacity: 0.35;
-}
-
-@media (min-width: 992px) {
-    .not-b-lazy .vdp-carousel-item:nth-child(even) .vdp-carousel-image:nth-child(even) {
-        opacity: 0.2;
-    }
-    .not-b-lazy .vdp-carousel-item:nth-child(odd) .vdp-carousel-image:nth-child(odd) {
-        opacity: 0.2;
-    }
-}
-
-@media (max-width: 991px) {
-    .not-b-lazy .vdp-carousel-item:nth-child(odd):not(:first-child) .vdp-carousel-image:nth-child(odd),
-    .not-b-lazy .vdp-carousel-item:nth-child(even) .vdp-carousel-image:nth-child(odd) {
-        opacity: 0.2;
-    }
+.vdp-carousel-item {
+    user-select: none;
 }
 
 .vdp-carousel-image {
-    height: 100%;
+    height: 100%; 
+    user-select: none;
 }
 @media (min-width: 992px) {
     .vdp-carousel-image {
@@ -289,63 +309,33 @@
 /*
  * Vdp Carousel Active
  */
+.vdp-carousel {
+    backface-visibility: hidden;
+}
 .vdp-carousel .vdp-carousel-image {
     transition-timing-function: cubic-bezier(0.6, 0, 0.2, 1);
     transition-duration: 0.5s;
     transition-property: opacity;
 }
 
-.js-gallery-init .js-vdp-carousel-image {
-    transition-timing-function: ease-in-out;
-    transition-duration: 0.5s;
-    transition-property: opacity, transform, height, width !important;
-}
-
-body:before,
-body:after,
-main:before,
-main:after {
-    position: fixed;
-    z-index: 2000;
-    top: 0;
-    display: block;
-    width: 1px;
-    height: 100%;
-    content: "";
-    background-color: red;
-}
-
-body:before {
-    left: 20%;
-}
-
-body:after {
-    left: 50%;
-}
-
-main:before {
-    left: 80%;
-}
-
-main:after {
-    display: none;
-}
-
-.js-gallery-active {
+.js-gallery-active .vdp-carousel {
     transition-timing-function: ease-in-out;
     transition-duration: 0.5s;
     transition-property: transform !important;
 }
+
 .js-gallery-active .vdp-carousel-item {
     flex-direction: row;
     align-items: center;
 }
+
 .js-gallery-active .js-vdp-carousel-image {
     height: 50% !important;
-    margin-right: 0;
-    margin-left: 0;
+    margin-right: 1em;
+    margin-left: 1em;
     opacity: 0.15 !important;
 }
+
 .js-gallery-active .gallery-active {
     height: 100% !important;
     opacity: 1 !important;
@@ -473,6 +463,8 @@ main:after {
  * Vdp Body
  */
 .vdp-body {
+    position: relative;
+    z-index: 1000;
     margin-top: 30px;
 }
 
@@ -589,13 +581,33 @@ main:after {
 }
 
 /*
- * Lazy Load
+ * Guides
  */
-.use-b-lazy .b-lazy {
-    transition: opacity 500ms ease-in-out;
-    opacity: 0;
+/*body,
+main {
+    &:before,
+    &:after {
+        content: "";
+        position: fixed;
+        display: block;
+        width: 1px;
+        height: 100%;
+        z-index: 2000;
+        top: 0;
+        background-color: red;
+    }
 }
-
-.use-b-lazy .b-lazy.b-loaded {
-    opacity: 1;
+body {
+    &:before {
+        left: 20%;
+    }
+    &:after {
+        left: 50%;
+    }
 }
+main {
+    &:before {
+        left: 80%;
+    }
+    &:after { display: none;}
+}*/

@@ -1,24 +1,4 @@
 /*
- * Vdp Lazy Load Images
- */
-//	(function(){
-//		var bLazy = new Blazy({
-//			selector: '.vdp-carousel-image',
-//			success: function(ele){
-//				// Image has loaded
-//				// Do your business here
-//			}
-//		   , error: function(ele, msg){
-//			  if(msg === 'missing'){
-//				  console.log("Data-src is missing");
-//			  }
-//			  else if(msg === 'invalid'){
-//				  console.log("Data-src is invalid");
-//			  }
-//		  }
-//		});
-//	})();
-/*
  * Vdp Price Drop
  */
 (function(){
@@ -27,7 +7,7 @@
 	var _delay         = 2000;
 	var _isVisible	   = true;
 
-	_priceDropLink.addEventListener('click', function(event){
+	_priceDropLink.addEventListener("click", function(event){
 		event.preventDefault();
 		SlideToggle();
 	});
@@ -56,73 +36,60 @@
  * Vdp Carousel
  */
 (function(){
-	var carousel           = ".js-vdp-carousel",
-		carouselLeft	   = ".js-control-left",
-		$carousel          = $(carousel),
-		$carouselLeft	   = $(carouselLeft),
-		_carousel          = document.querySelector(carousel),
-		_carouselLeft      = document.querySelector(carouselLeft),
-		_carouselRight     = document.querySelector(".js-control-right"),
-		_carouselImages    = document.querySelectorAll(".js-vdp-carousel-image"),
-		_vdpBodyContainer  = document.querySelector(".js-vdp-body-container");
-		_galleryActiveItem = document.querySelector(".gallery-active");
+	var carouselWrapper    = ".js-vdp-carousel-wrapper";
+	var carousel           = ".js-vdp-carousel";
+	var carouselLeft	   = ".js-control-left";
+	var	_carouselWrapper   = document.querySelector(carouselWrapper);
+	var	_carousel          = document.querySelector(carousel);
+	var	_carouselLeft      = document.querySelector(carouselLeft);
+	var	_carouselRight     = document.querySelector(".js-control-right");
+	var	_carouselImages    = document.querySelectorAll(".js-vdp-carousel-image");
+	var	_vdpBodyContainer  = document.querySelector(".js-vdp-body-container");
+	var	_galleryActiveItem = document.querySelector(".gallery-active");
 	//	carousel controls
-	var _scrollAnimationDuration   = 250,
-		_scrollVisibilityThreshold = 400,
-		_scrollDistance			   = 300,
-		_scrollWidth 			   = 0;
+	var _scrollAnimationDuration   = 0.5;
+	var	_scrollVisibilityThreshold = 400;
+	var	_scrollDistance			   = 300;
+	var	_paddedScrollWidth		   = 0;
 	//	offset control
-	var _gutter	= 15,
-		_offset;
+	var _gutter	= 15;
+	var	_offset;
 	//	mouse move
-	var _carouselMoved,
-		_mouseMoved,
-		_mouseMovedTotal,
-		_mouseCurrentXPos,
-		_threshold;
+	var _carouselMoved;
+	var	_mouseMoved;
+	var	_mouseMovedTotal;
+	var	_mouseCurrentXPos;
 	//	mouse down
-	var	_mouseDown    = false;
+	var	_mouseDown = false;
 	//	carousel start
-	var _mouseClick	= true,
-		_opacityAnim = 500,
-		_imageClone;
+	var _mouseClick  = true;
+	var	_opacityAnim = 500;
+	var	_imageClone;
 	//	gallery animation
-	var galleryActive = false,
-		galleryXOffset = 0,
-		galleryXGutter = 30,
-		galleryYCenter = 0,
-		galleryPrevious,
-		galleryCurrent,
-		galleryNext,
-		galleryCounter = 0,
-		value = 0,
-		selector, top, width, height;
+	var galleryActive  = false;
+	var	galleryXOffset = 0;
+	var	galleryXGutter = 30;
+	var	galleryYCenter = 0;
+	var	selector, top, width, height;
 
-	window.addEventListener('load', Init);
-	window.addEventListener('resize', Init);
-	_carousel.addEventListener('mousedown', MouseDown);
-	_carousel.addEventListener('mouseleave', MouseLeave);
-	_carousel.addEventListener('mousemove', MouseMove);
-	_carousel.addEventListener('mouseup', MouseUp);
-	_carouselLeft.addEventListener('click', CarouselLeft);
-	_carouselRight.addEventListener('click', CarouselRight);
+	window.addEventListener("load", Init);
+	window.addEventListener("resize", Init);
+	_carousel.addEventListener("mousedown", MouseDown);
+	_carousel.addEventListener("mouseleave", MouseLeave);
+	_carousel.addEventListener("mousemove", MouseMove);
+	_carousel.addEventListener("mouseup", MouseUp);
+	_carouselLeft.addEventListener("click", CarouselLeft);
+	_carouselRight.addEventListener("click", CarouselRight);
 
 	function Init(evt) {
-		OffsetInit().then(_ => CarouselSetWidth());
+		OffsetInit();
 	}
 
 	function OffsetInit(evt) {
-		return new Promise(function(resolve, reject) {
-			_offset                     = _vdpBodyContainer.offsetLeft + _gutter;
-			_carousel.style.paddingLeft = _offset + "px";
-			resolve();
-			return;
-		});
-	}
-
-	function CarouselSetWidth() {
-		_scrollWidth          = _carousel.scrollWidth;
-		_carousel.style.width = _scrollWidth + _offset + "px";
+		_offset                     = _vdpBodyContainer.offsetLeft + _gutter;
+		_carousel.style.paddingLeft = _offset + "px";
+		_paddedScrollWidth          = _carousel.scrollWidth + _offset;
+		_carousel.style.width       = _paddedScrollWidth + "px";
 	}
 
 	function CarouselLeft(evt) {
@@ -133,10 +100,10 @@
 			var initialPosition = _carousel.getAttribute("data-translated") | 0;
 			var finalPosition   = initialPosition + _scrollDistance;
 			if (finalPosition >= 0){
-				CarouselAnimateX(initialPosition, 0, 0.5, "left").then(_ => alert("yup"));
+				CarouselAnimateX(initialPosition, 0, _scrollAnimationDuration, "left").then(_ => console.log("yup"));
 				//	_carouselLeft.style.opacity = 0;
 			} else {
-				CarouselAnimateX(initialPosition, finalPosition, 0.5, "left");
+				CarouselAnimateX(initialPosition, finalPosition, _scrollAnimationDuration, "left");
 				//	_carouselLeft.style.opacity = 1;
 			}
 			//	_carouselRight.style.opacity = 1;
@@ -152,10 +119,10 @@
 			var initialPosition = _carousel.getAttribute("data-translated") | 0;
 			var finalPosition   = initialPosition - _scrollDistance;
 			if (finalPosition <= threshold){
-				CarouselAnimateX(initialPosition, threshold, 0.5, "right").then(_ => alert("yup"));
+				CarouselAnimateX(initialPosition, threshold, _scrollAnimationDuration, "right").then(_ => console.log("yup"));
 				//	_carouselRight.style.opacity = 0;
 			} else {
-				CarouselAnimateX(initialPosition, finalPosition, 0.5, "right");
+				CarouselAnimateX(initialPosition, finalPosition, _scrollAnimationDuration, "right");
 				//	_carouselRight.style.opacity = 1;
 			}
 			//	_carouselLeft.style.opacity = 1;
@@ -167,7 +134,9 @@
 			var currentValue;
 			var changeInValue = end - start;
 			if (changeInValue === 0) {
-				return Promise.reject("bad changeInValue");
+				// figure out handle to handle for end cases
+				// return Promise.reject("bad changeInValue");
+				return;
 			}
 			var totalIterations = duration * 60;
 			var iterationCount = 0;
@@ -205,41 +174,58 @@
 
 	function MouseMove(evt) {
 		evt.preventDefault();
-		if (_mouseDown === true) {
-			_mouseClick    = false;
+		if (!galleryActive && _mouseDown === true) {
+			HideControls();
 			_mouseMoved    = evt.pageX - _mouseCurrentXPos;
 			_carouselMoved = _mouseMoved + _mouseMovedTotal;
-			_threshold     = ((_carousel.scrollWidth - document.body.scrollWidth) * -1) + _offset;
+			SlideCarousel(_carouselMoved);
+		}
+		_mouseClick    = false;
+	}
 
-			if (_carouselMoved > 0){
-				CarouselTranslateX(0);
-				//	_carouselRight.style.opacity = 0;
-			} else if (_carouselMoved <= _threshold){
-				CarouselTranslateX(_threshold);
-				//	_carouselLeft.style.opacity = 0;
-			} else {
-				CarouselTranslateX(_carouselMoved);
-				//	_carouselLeft.style.opacity = 1;
-				//	_carouselLeft.style.opacity = 1;
-			}
+	function SlideCarousel(distance){
+		var threshold = ((_carousel.scrollWidth - document.body.scrollWidth) * -1) + _offset;
+		if (distance > 0){
+			CarouselTranslateX(0);
+			//	_carouselRight.style.opacity = 0;
+		} else if (distance <= threshold){
+			CarouselTranslateX(threshold);
+			//	_carouselLeft.style.opacity = 0;
+		} else {
+			CarouselTranslateX(distance);
+			//	_carouselLeft.style.opacity = 1;
+			//	_carouselLeft.style.opacity = 1;
 		}
 	}
 
 	function MouseUp(evt) {
 		if (_mouseClick){
 			if (!galleryActive) {
-				GalleryInit().then(_ => GalleryStart(evt.target));
+				if (evt.target.classList.contains("js-vdp-carousel-image")) {
+					GalleryInit().then(_ => GalleryStart(evt.target));
+				};
 			} else {
 				if (!evt.target.classList.contains("js-vdp-carousel-image")) {
 					GalleryClose();
 				}
 			}
 		}
+		ShowControls();
 		_mouseDown = false;
 	}
 
 	function MouseLeave(evt) {
 		_mouseDown = false;
+	}
+
+	function HideControls(){
+		_carouselRight.style.display = "none";
+		_carouselLeft.style.display = "none";
+	}
+
+	function ShowControls(){
+		_carouselRight.style.display = "initial";
+		_carouselLeft.style.display = "initial";
 	}
 
 	function GalleryInit() {
@@ -260,33 +246,24 @@
 		_image.classList.add("gallery-active");
 
 		// animation happens
-		_carousel.classList.add("js-gallery-active");
+		_carouselWrapper.classList.add("js-gallery-active");
 
-		CarouselSetWidth();
+		_carousel.style.width = _carousel.scrollWidth + "px";
 
-		SlideToTargetImage(_image);
-	}
-
-	function SlideToTargetImage(_image, animate){
-		var imagePosition = _image.offsetLeft;
-		var desiredEndPosition = (document.body.scrollWidth / 2) - (_image.offsetWidth / 2);
-		var slideDistance = imagePosition - desiredEndPosition;
-		var translation = slideDistance * -1;
-
-		// if(animate){
-		// 	var initialPosition = parseInt(_carousel.getAttribute("data-translated"));
-		// 	var finalPosition = initialPosition - translation;
-		// 	console.log(finalPosition);
-		// 	var direction = finalPosition > 0 ? "right" : "left";
-		// 	console.log(direction);
-		// 	CarouselAnimateX(initialPosition, finalPosition, 0.5, direction);
-		// } else {
-		CarouselTranslateX(translation);	
-		// }		
+		ActivateTargetGalleryImage(_image);
 	}
 
 	function GalleryClose() {
-		_carousel.classList.remove("js-gallery-active");
+		var activeImage = _carousel.querySelector(".gallery-active");
+		galleryActive    = false;
+		_carouselWrapper.classList.remove("js-gallery-active");
+
+		_carousel.style.width = _paddedScrollWidth + "px";
+
+		var distance = activeImage.offsetLeft + _mouseMovedTotal;
+		SlideCarousel(distance);
+
+		activeImage.classList.remove("gallery-active");
 	}
 
 	function GalleryPrev() {
@@ -306,60 +283,58 @@
 		if (direction === "next" && nextImage) {
 			activeImage.classList.remove("gallery-active");
 			nextImage.classList.add("gallery-active");
-			SlideToTargetImage(nextImage, true);
+			ActivateTargetGalleryImage(nextImage);
 		} else if (direction === "prev" && prevImage) {
 			activeImage.classList.remove("gallery-active");
 			prevImage.classList.add("gallery-active");
-			SlideToTargetImage(prevImage, true);
+			ActivateTargetGalleryImage(prevImage);
 		}
 	}
 
-	function GalleryAnimateImages(images, image) {
-		return new Promise(function(resolve, reject) {
-			images.forEach(function(current_value, index, array){
-				width = parseInt(current_value.style.width);
-				height = parseInt(current_value.style.height);
+	function ActivateTargetGalleryImage(_image){
+		var imagePosition = _image.offsetLeft;
+		var desiredEndPosition = (document.body.scrollWidth / 2) - (_image.offsetWidth / 2);
+		var slideDistance = imagePosition - desiredEndPosition;
+		var translation = slideDistance * -1;
 
-				var stupid;
-				if (current_value.parentElement.classList.contains("hero")) {
-					SetDimensions(current_value, (height / 2), (width / 2));
-					galleryYCenter = ((_carousel.offsetHeight / 2) - (image.offsetHeight / 2));
-
-					galleryXOffset += current_value.offsetWidth + galleryXGutter;
-					current_value.setAttribute("data-translated", galleryXOffset);
-					current_value.style.transform = "translateX(" + galleryXOffset + "px)" + "translateY(" + galleryYCenter + "px)";
-				} else if (current_value === image) {
-					SetDimensions(current_value, (height * 2), (width * 2));
-					galleryYCenter = 0;
-					//
-					current_value.classList.add("gallery-active");
-					console.log(current_value.offsetWidth);
-					//	galleryXOffset += image.offsetWidth;
-					current_value.setAttribute("data-translated", (galleryXOffset + (galleryXGutter / 2)));
-					current_value.style.transform = "translateX(" + (galleryXOffset + (galleryXGutter / 2)) + "px)" + "translateY(" + galleryYCenter + "px)";
-				} else {
-					SetDimensions(current_value, height, width);
-					galleryYCenter = ((_carousel.offsetHeight / 2) - (image.offsetHeight / 2));
-
-					galleryXOffset += current_value.offsetWidth + galleryXGutter;
-					current_value.setAttribute("data-translated", galleryXOffset);
-					current_value.style.transform = "translateX(" + galleryXOffset + "px)" + "translateY(" + galleryYCenter + "px)";
-				}
-
-				//	if (current_value === image) {
-				//		current_value.classList.add("gallery-active");
-				//		//	galleryPrevious = array[index - 1];
-				//		//	galleryCurrent = array[index];
-				//		//	galleryNext = array[index + 1];
-				//		//	galleryPrevious.classList.add("gallery-prev");
-				//		//	galleryCurrent.classList.add("gallery-active");
-				//		//	galleryNext.classList.add("gallery-next");
-				//	}
-			});
-			resolve();
-			return;
-		});
+		CarouselTranslateX(translation);
 	}
+
+	// function GalleryAnimateImages(images, image) {
+	// 	return new Promise(function(resolve, reject) {
+	// 		images.forEach(function(current_value, index, array){
+	// 			width = parseInt(current_value.style.width);
+	// 			height = parseInt(current_value.style.height);
+
+	// 			if (current_value.parentElement.classList.contains("hero")) {
+	// 				SetDimensions(current_value, (height / 2), (width / 2));
+	// 				galleryYCenter = ((_carousel.offsetHeight / 2) - (image.offsetHeight / 2));
+
+	// 				galleryXOffset += current_value.offsetWidth + galleryXGutter;
+	// 				current_value.setAttribute("data-translated", galleryXOffset);
+	// 				current_value.style.transform = "translateX(" + galleryXOffset + "px)" + "translateY(" + galleryYCenter + "px)";
+	// 			} else if (current_value === image) {
+	// 				SetDimensions(current_value, (height * 2), (width * 2));
+	// 				galleryYCenter = 0;
+	// 				//
+	// 				current_value.classList.add("gallery-active");
+	// 				console.log(current_value.offsetWidth);
+	// 				//	galleryXOffset += image.offsetWidth;
+	// 				current_value.setAttribute("data-translated", (galleryXOffset + (galleryXGutter / 2)));
+	// 				current_value.style.transform = "translateX(" + (galleryXOffset + (galleryXGutter / 2)) + "px)" + "translateY(" + galleryYCenter + "px)";
+	// 			} else {
+	// 				SetDimensions(current_value, height, width);
+	// 				galleryYCenter = ((_carousel.offsetHeight / 2) - (image.offsetHeight / 2));
+
+	// 				galleryXOffset += current_value.offsetWidth + galleryXGutter;
+	// 				current_value.setAttribute("data-translated", galleryXOffset);
+	// 				current_value.style.transform = "translateX(" + galleryXOffset + "px)" + "translateY(" + galleryYCenter + "px)";
+	// 			}
+	// 		});
+	// 		resolve();
+	// 		return;
+	// 	});
+	// }
 
 	function SetDimensions(el, height, width) {
 		el.style.height = height + "px";
