@@ -67,7 +67,7 @@ $transition: 0.25s;
 		&:before {
 			backface-visibility: hidden;
 			content: "";
-			display: block;
+			display: none;
 			position: absolute;
 			top: 0;
 			height: 100%;
@@ -193,6 +193,9 @@ $test-transition: true;
 @media (min-width: 992px) {
 	.js-gallery-init {
 		backface-visibility: hidden;
+        transition-timing-function: ease-in-out;
+        transition-duration: $transition;
+        transition-property: opacity !important;
 		.vdp-carousel {
 			backface-visibility: hidden;
 			transition-timing-function: ease-in-out;

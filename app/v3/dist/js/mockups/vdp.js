@@ -70,6 +70,7 @@
 	var	galleryXGutter = 30;
 	var	galleryYCenter = 0;
 	var galleryActiveImage;
+	var galleryOpeningPosition = 0;
 	var	selector, top, width, height;
 	//	clone
 	var galleryActiveImageClone;
@@ -97,13 +98,11 @@
 		});
 	}
 
-	HideControls();
-
 	function Init(evt) {
 		windowWidth = window.innerWidth;
 		if (windowWidth > mediaQuery) {
-			//	_offset                     = _vdpBodyContainer.offsetLeft + _gutter;
-			_offset                     = 0;
+			_offset                     = _vdpBodyContainer.offsetLeft + _gutter;
+			// _offset                     = 0;
 			_carousel.style.paddingLeft = _offset + "px";
 			_paddedScrollWidth          = _carousel.scrollWidth + _offset;
 			_carousel.style.width       = _paddedScrollWidth + "px";
@@ -115,7 +114,7 @@
 	function CarouselLeft(evt) {
 		evt.stopPropagation();
 		if (galleryActive) {
-			GalleryPrev();
+			GalleryCycleImages("left", 1);
 		} else {
 			var initialPosition = _carousel.getAttribute("data-translated") | 0;
 			var finalPosition   = initialPosition + _scrollDistance;
@@ -133,7 +132,7 @@
 	function CarouselRight(evt) {
 		evt.stopPropagation();
 		if (galleryActive) {
-			GalleryNext();
+			GalleryCycleImages("right", 1);
 		} else {
 			var threshold       = ((_carousel.scrollWidth - document.body.scrollWidth) * -1) + _offset;
 			var initialPosition = _carousel.getAttribute("data-translated") | 0;
@@ -193,7 +192,6 @@
 
 	function MouseMove(evt) {
 		if (!galleryActive && _mouseDown === true) {
-			//	HideControls();
 			_mouseMoved    = evt.pageX - _mouseCurrentXPos;
 			_carouselMoved = _mouseMoved + _mouseMovedTotal;
 			SlideCarousel(_carouselMoved);
@@ -203,6 +201,9 @@
 
 	function SlideCarousel(distance){
 		var threshold = ((_carousel.scrollWidth - document.body.scrollWidth) * -1) + _offset;
+		console.log("scrollwidth" + _carousel.scrollWidth);
+		console.log("threshold" + threshold);
+		console.log("distance" + distance);
 		if (distance > 0){
 			CarouselTranslateX(0);
 			//	_carouselRight.style.opacity = 0;
@@ -218,26 +219,24 @@
 
 	function MouseUp(evt) {
 		if (_mouseClick){
-			if (!galleryActive) {
-				if (evt.target.classList.contains("js-vdp-carousel-image")) {
+			if (evt.target.classList.contains("js-vdp-carousel-image")) {
+				if (!galleryActive) {
 					GalleryInit().then(_ => GalleryStart(evt.target));
-				};
-			} else {
-				if (!evt.target.classList.contains("js-vdp-carousel-image") && !evt.target.classList.contains("js-gallery-control")) {
-					GalleryClose();
-				} else if (evt.target.classList.contains("js-vdp-carousel-image")) {
+				} else {
 					galleryActiveImage = _carousel.querySelector(".gallery-active");
 					var galleryActiveImageCount = parseInt(galleryActiveImage.getAttribute("data-count"));
 					var thisCount = parseInt(evt.target.getAttribute("data-count"));
-					if (galleryActiveImageCount > thisCount) {
-						_carouselLeft.click();
+					var countDifference = thisCount - galleryActiveImageCount;
+					if (countDifference > 0) {
+						GalleryCycleImages("right", Math.abs(countDifference));
 					} else {
-						_carouselRight.click();
+						GalleryCycleImages("left", Math.abs(countDifference));
 					}
 				}
+			} else if (!evt.target.classList.contains("js-gallery-control")) {
+				GalleryClose();
 			}
 		}
-		ShowControls();
 		_mouseDown = false;
 	}
 
@@ -266,6 +265,8 @@
 
 	function GalleryStart(_image) {
 		galleryActive    = true;							   // set gallery active
+		galleryOpeningPosition = _image.offsetLeft;
+		console.log(galleryOpeningPosition);
 		GalleryCloneActiveImage(_image);                       // clone image
 		_image.classList.add("gallery-active");                // make image active
 		_carouselWrapper.classList.add("js-gallery-fade");   // animate to gallery view
@@ -286,13 +287,10 @@
 
 	function GalleryCloneActiveImage(image) {
 		return new Promise(function(resolve, reject) {
-			//	clone init
 			var x;
 			var y = 100;
 			var scaleTransform = " scale(2,2)";
-			//	clone create
 			galleryActiveImageClone = image.cloneNode(true);
-			//	galleryActiveImageClone.setAttribute("src","http://placehold.it/640x480");
 			galleryActiveImageClone.classList.add("clone");
 			//	if clone is hero
 			if (image.classList.contains("vdp-carousel-hero")) {
@@ -308,7 +306,6 @@
 			//	set final clone position
 			x = ((document.body.scrollWidth / 2) - (image.offsetWidth / 2));
 			galleryActiveImageClone.style.transform = "translateX(" + x + "px)" + "translateY(" + y + "px)" + scaleTransform;
-			//	resolve
 			resolve();
 			return;
 		});
@@ -318,40 +315,40 @@
 		galleryActiveImage = _carousel.querySelector(".gallery-active");
 		galleryActive    = false;
 
-		_carousel.style.width = _paddedScrollWidth + "px";
+		_carouselWrapper.classList.add("js-gallery-fade");   // animate to gallery view
 
-		var distance = galleryActiveImage.offsetLeft + _mouseMovedTotal;
-
-		SlideCarousel(distance);
-
-		galleryActiveImage.classList.remove("gallery-active");
-
-		_carouselWrapper.classList.remove("js-gallery-build");
-		_carouselWrapper.classList.remove("js-gallery-active");
 		setTimeout(function(){
-			_carouselWrapper.classList.remove("js-gallery-init");
+			_carouselWrapper.classList.remove("js-gallery-active");
+			galleryActiveImage.classList.remove("gallery-active");
 		}, (_cssAnimationDuration));
+
+		setTimeout(function(){
+			_carouselWrapper.classList.remove("js-gallery-build");
+			_carousel.style.width = _paddedScrollWidth + "px";
+			var distance = galleryOpeningPosition - ((document.body.scrollWidth / 2) - (galleryActiveImage.offsetWidth / 2));
+			SlideCarousel(distance * -1);	
+		}, (_cssAnimationDuration * 2));
+		
+		setTimeout(function(){	
+			_carouselWrapper.classList.remove("js-gallery-fade");   // animate to gallery view
+		}, (_cssAnimationDuration * 3));
+		
+		setTimeout(function(){	
+			_carouselWrapper.classList.remove("js-gallery-init");
+		}, (_cssAnimationDuration * 4));
 	}
 
-	function GalleryPrev() {
-		GalleryCycleImages("prev");
-	}
-
-	function GalleryNext() {
-		GalleryCycleImages("next");
-	}
-
-	function GalleryCycleImages(direction) {
+	function GalleryCycleImages(direction, slideCount) {
 		var galleryActiveImage = _carousel.querySelector(".gallery-active");
 		var activeCount = parseInt(galleryActiveImage.getAttribute("data-count"));
-		var nextImage = _carousel.querySelector("[data-count='" + (activeCount + 1) + "']");
-		var prevImage = _carousel.querySelector("[data-count='" + (activeCount - 1) + "']");
+		var nextImage = _carousel.querySelector("[data-count='" + (activeCount + slideCount) + "']");
+		var prevImage = _carousel.querySelector("[data-count='" + (activeCount - slideCount) + "']");
 
-		if (direction === "next" && nextImage) {
+		if (direction === "right" && nextImage) {
 			galleryActiveImage.classList.remove("gallery-active");
 			nextImage.classList.add("gallery-active");
 			GallerySlideToImage(nextImage);
-		} else if (direction === "prev" && prevImage) {
+		} else if (direction === "left" && prevImage) {
 			galleryActiveImage.classList.remove("gallery-active");
 			prevImage.classList.add("gallery-active");
 			GallerySlideToImage(prevImage);

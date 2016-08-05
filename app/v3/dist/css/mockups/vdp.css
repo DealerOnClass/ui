@@ -186,7 +186,7 @@
         position: absolute;
         z-index: 250;
         top: 0;
-        display: block;
+        display: none;
         width: 200px;
         height: 100%;
         content: "";
@@ -311,6 +311,10 @@
  */
 @media (min-width: 992px) {
     .js-gallery-init {
+        transition-timing-function: ease-in-out;
+        transition-duration: 0.25s;
+        transition-property: opacity !important; 
+
         backface-visibility: hidden;
     }
     .js-gallery-init .vdp-carousel {
