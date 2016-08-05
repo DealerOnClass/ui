@@ -45,7 +45,6 @@
 	var	_carouselRight     = document.querySelector(".js-control-right");
 	var	_carouselImages    = document.querySelectorAll(".js-vdp-carousel-image");
 	var	_vdpBodyContainer  = document.querySelector(".js-vdp-body-container");
-	var	_galleryActiveItem = document.querySelector(".gallery-active");
 	//	carousel controls
 	var _scrollAnimationDuration   = 0.5;
 	var	_scrollVisibilityThreshold = 400;
@@ -70,34 +69,51 @@
 	var	galleryXOffset = 0;
 	var	galleryXGutter = 30;
 	var	galleryYCenter = 0;
+	var galleryActiveImage;
 	var	selector, top, width, height;
 	//	clone
 	var galleryActiveImageClone;
 	// 	animations
 	var _cssAnimationDuration = 250;
+	//	resize
+	var windowWidth;
+	var mediaQuery = 992; // eg min-width: 992px "tablet"-ish
 
-	window.addEventListener("load", Init);
-	window.addEventListener("resize", Init);
-	_carousel.addEventListener("mousedown", MouseDown);
-	_carousel.addEventListener("mouseleave", MouseLeave);
-	_carousel.addEventListener("mousemove", MouseMove);
-	_carousel.addEventListener("mouseup", MouseUp);
-	_carouselLeft.addEventListener("click", CarouselLeft);
-	_carouselRight.addEventListener("click", CarouselRight);
+	window.addEventListener("load",           Init);
+	window.addEventListener("resize",         Init);
+	ListenerAttribution(_carouselWrapper,"mousedown",   MouseDown);
+	ListenerAttribution(_carouselWrapper,"mouseleave",  MouseLeave);
+	ListenerAttribution(_carouselWrapper,"mousemove",   MouseMove);
+	ListenerAttribution(_carouselWrapper,"mouseup",     MouseUp);
+	ListenerAttribution(_carouselLeft,"click",   CarouselLeft);
+	ListenerAttribution(_carouselRight,"click",  CarouselRight);
 
-	function Init(evt) {
-		OffsetInit();
+	function ListenerAttribution(element, event, handler){
+		element.addEventListener(event, function(e){
+			if(windowWidth > mediaQuery) {
+				e.preventDefault();
+				handler(e);
+			}
+		});
 	}
 
-	function OffsetInit(evt) {
-		_offset                     = _vdpBodyContainer.offsetLeft + _gutter;
-		_carousel.style.paddingLeft = _offset + "px";
-		_paddedScrollWidth          = _carousel.scrollWidth + _offset;
-		_carousel.style.width       = _paddedScrollWidth + "px";
+	HideControls();
+
+	function Init(evt) {
+		windowWidth = window.innerWidth;
+		if (windowWidth > mediaQuery) {
+			//	_offset                     = _vdpBodyContainer.offsetLeft + _gutter;
+			_offset                     = 0;
+			_carousel.style.paddingLeft = _offset + "px";
+			_paddedScrollWidth          = _carousel.scrollWidth + _offset;
+			_carousel.style.width       = _paddedScrollWidth + "px";
+		} else {
+			_carousel.removeAttribute("style");
+		}
 	}
 
 	function CarouselLeft(evt) {
-		evt.preventDefault();
+		evt.stopPropagation();
 		if (galleryActive) {
 			GalleryPrev();
 		} else {
@@ -115,7 +131,7 @@
 	}
 
 	function CarouselRight(evt) {
-		evt.preventDefault();
+		evt.stopPropagation();
 		if (galleryActive) {
 			GalleryNext();
 		} else {
@@ -123,7 +139,7 @@
 			var initialPosition = _carousel.getAttribute("data-translated") | 0;
 			var finalPosition   = initialPosition - _scrollDistance;
 			if (finalPosition <= threshold){
-				CarouselAnimateX(initialPosition, threshold, _scrollAnimationDuration, "right").then(_ => console.log("yup"));
+				CarouselAnimateX(initialPosition, threshold, _scrollAnimationDuration, "right");
 				//	_carouselRight.style.opacity = 0;
 			} else {
 				CarouselAnimateX(initialPosition, finalPosition, _scrollAnimationDuration, "right");
@@ -133,7 +149,7 @@
 		}
 	}
 
-	function CarouselAnimateX(start, end, duration, direction) {
+	function CarouselAnimateX(start, end, animduration, direction) {
 		return new Promise(function(resolve, reject) {
 			var currentValue;
 			var changeInValue = end - start;
@@ -142,7 +158,7 @@
 				// return Promise.reject("bad changeInValue");
 				return;
 			}
-			var totalIterations = duration * 60;
+			var totalIterations = animduration * 60;
 			var iterationCount = 0;
 			function Animate() {
 				currentValue = easeOutCubic(iterationCount, start, changeInValue, totalIterations);
@@ -169,7 +185,6 @@
 	}
 
 	function MouseDown(evt) {
-		evt.preventDefault();
 		_mouseClick       = true;
 		_mouseDown        = true;
 		_mouseCurrentXPos = evt.pageX;
@@ -177,9 +192,8 @@
 	}
 
 	function MouseMove(evt) {
-		evt.preventDefault();
 		if (!galleryActive && _mouseDown === true) {
-			HideControls();
+			//	HideControls();
 			_mouseMoved    = evt.pageX - _mouseCurrentXPos;
 			_carouselMoved = _mouseMoved + _mouseMovedTotal;
 			SlideCarousel(_carouselMoved);
@@ -209,8 +223,17 @@
 					GalleryInit().then(_ => GalleryStart(evt.target));
 				};
 			} else {
-				if (!evt.target.classList.contains("js-vdp-carousel-image")) {
+				if (!evt.target.classList.contains("js-vdp-carousel-image") && !evt.target.classList.contains("js-gallery-control")) {
 					GalleryClose();
+				} else if (evt.target.classList.contains("js-vdp-carousel-image")) {
+					galleryActiveImage = _carousel.querySelector(".gallery-active");
+					var galleryActiveImageCount = parseInt(galleryActiveImage.getAttribute("data-count"));
+					var thisCount = parseInt(evt.target.getAttribute("data-count"));
+					if (galleryActiveImageCount > thisCount) {
+						_carouselLeft.click();
+					} else {
+						_carouselRight.click();
+					}
 				}
 			}
 		}
@@ -228,17 +251,13 @@
 	}
 
 	function ShowControls(){
-		_carouselRight.style.display = "initial";
-		_carouselLeft.style.display = "initial";
+		_carouselRight.style.display = "";
+		_carouselLeft.style.display = "";
 	}
 
 	function GalleryInit() {
 		return new Promise(function(resolve, reject) {
-			////	_carouselImages.forEach(function(current_value){
-			////		current_value.style.transform = "translateX(" + current_value.offsetLeft + "px)" + "translateY(" + current_value.offsetTop + "px)";
-			////		current_value.style.width  = current_value.offsetWidth + "px";
-			////		current_value.style.height = current_value.offsetHeight + "px";
-			////	});
+			ShowControls();
 			_carouselWrapper.classList.add("js-gallery-init");
 			resolve();
 			return;
@@ -253,7 +272,7 @@
 		setTimeout(function(){
 			_carouselWrapper.classList.add("js-gallery-build");
 			_carousel.style.width = _carousel.scrollWidth + "px";  // reset carousel width
-			ActivateTargetGalleryImage(_image);                    // scroll to image
+			GallerySlideToImage(_image);                    // scroll to image
 		}, _cssAnimationDuration);
 		//	destroy clone
 		setTimeout(function(){
@@ -296,16 +315,16 @@
 	}
 
 	function GalleryClose() {
-		var activeImage = _carousel.querySelector(".gallery-active");
+		galleryActiveImage = _carousel.querySelector(".gallery-active");
 		galleryActive    = false;
 
 		_carousel.style.width = _paddedScrollWidth + "px";
 
-		var distance = activeImage.offsetLeft + _mouseMovedTotal;
+		var distance = galleryActiveImage.offsetLeft + _mouseMovedTotal;
 
 		SlideCarousel(distance);
 
-		activeImage.classList.remove("gallery-active");
+		galleryActiveImage.classList.remove("gallery-active");
 
 		_carouselWrapper.classList.remove("js-gallery-build");
 		_carouselWrapper.classList.remove("js-gallery-active");
@@ -323,66 +342,29 @@
 	}
 
 	function GalleryCycleImages(direction) {
-		var activeImage = _carousel.querySelector(".gallery-active");
-		var activeCount = parseInt(activeImage.getAttribute("data-count"));
+		var galleryActiveImage = _carousel.querySelector(".gallery-active");
+		var activeCount = parseInt(galleryActiveImage.getAttribute("data-count"));
 		var nextImage = _carousel.querySelector("[data-count='" + (activeCount + 1) + "']");
 		var prevImage = _carousel.querySelector("[data-count='" + (activeCount - 1) + "']");
 
 		if (direction === "next" && nextImage) {
-			activeImage.classList.remove("gallery-active");
+			galleryActiveImage.classList.remove("gallery-active");
 			nextImage.classList.add("gallery-active");
-			ActivateTargetGalleryImage(nextImage);
+			GallerySlideToImage(nextImage);
 		} else if (direction === "prev" && prevImage) {
-			activeImage.classList.remove("gallery-active");
+			galleryActiveImage.classList.remove("gallery-active");
 			prevImage.classList.add("gallery-active");
-			ActivateTargetGalleryImage(prevImage);
+			GallerySlideToImage(prevImage);
 		}
 	}
 
-	function ActivateTargetGalleryImage(_image){
+	function GallerySlideToImage(_image){
 		var imagePosition = _image.offsetLeft;
 		var desiredEndPosition = (document.body.scrollWidth / 2) - (_image.offsetWidth / 2);
 		var slideDistance = imagePosition - desiredEndPosition;
 		var translation = slideDistance * -1;
-
 		CarouselTranslateX(translation);
 	}
-
-	// function GalleryAnimateImages(images, image) {
-	// 	return new Promise(function(resolve, reject) {
-	// 		images.forEach(function(current_value, index, array){
-	// 			width = parseInt(current_value.style.width);
-	// 			height = parseInt(current_value.style.height);
-
-	// 			if (current_value.parentElement.classList.contains("hero")) {
-	// 				SetDimensions(current_value, (height / 2), (width / 2));
-	// 				galleryYCenter = ((_carousel.offsetHeight / 2) - (image.offsetHeight / 2));
-
-	// 				galleryXOffset += current_value.offsetWidth + galleryXGutter;
-	// 				current_value.setAttribute("data-translated", galleryXOffset);
-	// 				current_value.style.transform = "translateX(" + galleryXOffset + "px)" + "translateY(" + galleryYCenter + "px)";
-	// 			} else if (current_value === image) {
-	// 				SetDimensions(current_value, (height * 2), (width * 2));
-	// 				galleryYCenter = 0;
-	// 				//
-	// 				current_value.classList.add("gallery-active");
-	// 				console.log(current_value.offsetWidth);
-	// 				//	galleryXOffset += image.offsetWidth;
-	// 				current_value.setAttribute("data-translated", (galleryXOffset + (galleryXGutter / 2)));
-	// 				current_value.style.transform = "translateX(" + (galleryXOffset + (galleryXGutter / 2)) + "px)" + "translateY(" + galleryYCenter + "px)";
-	// 			} else {
-	// 				SetDimensions(current_value, height, width);
-	// 				galleryYCenter = ((_carousel.offsetHeight / 2) - (image.offsetHeight / 2));
-
-	// 				galleryXOffset += current_value.offsetWidth + galleryXGutter;
-	// 				current_value.setAttribute("data-translated", galleryXOffset);
-	// 				current_value.style.transform = "translateX(" + galleryXOffset + "px)" + "translateY(" + galleryYCenter + "px)";
-	// 			}
-	// 		});
-	// 		resolve();
-	// 		return;
-	// 	});
-	// }
 
 	function SetDimensions(el, height, width) {
 		el.style.height = height + "px";

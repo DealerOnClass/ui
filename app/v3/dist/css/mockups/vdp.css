@@ -180,27 +180,31 @@
 
     backface-visibility: hidden;
 }
-.vdp-carousel-wrapper:after,
-.vdp-carousel-wrapper:before {
-    position: absolute;
-    z-index: 250;
-    top: 0;
-    display: block;
-    width: 200px;
-    height: 100%;
-    content: "";
-    user-select: none;
-    transition-timing-function: ease-in-out;
-    transition-duration: 0.25s;
-    transition-property: width, background !important;
-}
-.vdp-carousel-wrapper:before {
-    left: 0;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.4), transparent);
-}
-.vdp-carousel-wrapper:after {
-    right: 0;
-    background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.4));
+@media (min-width: 992px) {
+    .vdp-carousel-wrapper:after,
+    .vdp-carousel-wrapper:before {
+        position: absolute;
+        z-index: 250;
+        top: 0;
+        display: block;
+        width: 200px;
+        height: 100%;
+        content: "";
+        user-select: none;
+        transition-timing-function: ease-in-out;
+        transition-duration: 0.25s;
+        transition-property: width, background !important; 
+
+        backface-visibility: hidden;
+    }
+    .vdp-carousel-wrapper:before {
+        left: 0;
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.4), transparent);
+    }
+    .vdp-carousel-wrapper:after {
+        right: 0;
+        background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.4));
+    }
 }
 
 .js-gallery-fade:after,
@@ -262,16 +266,16 @@
 
 .vdp-carousel {
     display: flex;
-    overflow-x: hidden;
+    overflow-x: scroll;
     overflow-y: hidden;
     width: 100%;
     height: 320px;
-    background-color: #333;
 
     backface-visibility: hidden;
 }
 @media (min-width: 992px) {
     .vdp-carousel {
+        overflow-x: hidden; 
         height: 400px;
     }
 }
@@ -305,62 +309,61 @@
 /*
  * Vdp Carousel Active
  */
-.js-gallery-init {
-    backface-visibility: hidden;
-}
-.js-gallery-init .vdp-carousel {
-    transition-timing-function: ease-in-out;
-    transition-duration: 0.25s;
-    transition-property: transform !important;
-}
-.js-gallery-init .vdp-carousel-image {
-    transition-timing-function: ease-in-out;
-    transition-duration: 0.25s;
-    transition-property: transform, z-index, opacity !important; 
-    transform: scale(1, 1);
-}
+@media (min-width: 992px) {
+    .js-gallery-init {
+        backface-visibility: hidden;
+    }
+    .js-gallery-init .vdp-carousel {
+        transition-timing-function: ease-in-out;
+        transition-duration: 0.25s;
+        transition-property: transform !important; 
 
-.js-gallery-fade .vdp-carousel-image {
-    opacity: 0 !important;
-}
+        backface-visibility: hidden;
+    }
+    .js-gallery-init .vdp-carousel-image {
+        transition-timing-function: ease-in-out;
+        transition-duration: 0.25s;
+        transition-property: transform, z-index, opacity !important; 
+        transform: scale(1, 1);
 
-.js-gallery-fade .clone {
-    position: absolute;
-    z-index: 4000;
-    top: 0;
-    left: 0;
-    margin: 0 !important;
-    transition-timing-function: ease-in-out;
-    transition-duration: 0.25s;
-    transition-property: z-index, opacity, top, transform !important; 
-    opacity: 1 !important;
-}
-.js-gallery-fade .clone.vdp-carousel-hero {
-    height: 100% !important;
-}
-
-.js-gallery-build .vdp-carousel-item {
-    flex-direction: row;
-    align-items: center;
-}
-
-.js-gallery-build .vdp-carousel-image {
-    height: 50% !important;
-    margin-right: 1em;
-    margin-left: 1em;
-}
-
-.js-gallery-build .gallery-active {
-    z-index: 2000;
-    transform: scale(2, 2);
-}
-
-.js-gallery-active .vdp-carousel-image {
-    opacity: 0.25 !important;
-}
-
-.js-gallery-active .gallery-active {
-    opacity: 1 !important;
+        backface-visibility: hidden;
+    }
+    .js-gallery-fade .vdp-carousel-image {
+        opacity: 0 !important;
+    }
+    .js-gallery-fade .clone {
+        position: absolute;
+        z-index: 4000;
+        top: 0;
+        left: 0;
+        margin: 0 !important;
+        transition-timing-function: ease-in-out;
+        transition-duration: 0.25s;
+        transition-property: z-index, opacity, top, transform !important; 
+        opacity: 1 !important;
+    }
+    .js-gallery-fade .clone.vdp-carousel-hero {
+        height: 100% !important;
+    }
+    .js-gallery-build .vdp-carousel-item {
+        flex-direction: row;
+        align-items: center;
+    }
+    .js-gallery-build .vdp-carousel-image {
+        height: 50% !important;
+        margin-right: 1em;
+        margin-left: 1em;
+    }
+    .js-gallery-build .gallery-active {
+        z-index: 2000;
+        transform: scale(2, 2);
+    }
+    .js-gallery-active .vdp-carousel-image {
+        opacity: 0.25 !important;
+    }
+    .js-gallery-active .gallery-active {
+        opacity: 1 !important;
+    }
 }
 
 /*
@@ -382,11 +385,15 @@
 
 .vdp-sidebar-notifications-pricedrop {
     position: relative;
-    min-width: 170px;
     transition: transform 0.25s cubic-bezier(0.6, 0, 0.2, 1);
     transform: translate3d(0, -250%, 0);
 
     backface-visibility: hidden;
+}
+@media (min-width: 768) {
+    .vdp-sidebar-notifications-pricedrop {
+        min-width: 170px;
+    }
 }
 .vdp-sidebar-notifications-pricedrop.down {
     transform: translate3d(0, 0, 0);

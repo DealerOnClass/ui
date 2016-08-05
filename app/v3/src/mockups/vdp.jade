@@ -49,10 +49,10 @@ block content
 								i.fa.fa-refresh
 								| &nbsp; 360&deg;
 				.vdp-carousel-controls-slide
-					a.btn.control.control-left.js-control-left(href="")
-						i.fa.fa-chevron-left
-					a.btn.control.control-right.js-control-right(href="")
-						i.fa.fa-chevron-right
+					a.btn.js-gallery-control.control.control-left.js-control-left(href="")
+						i.js-gallery-control.fa.fa-chevron-left
+					a.btn.js-gallery-control.control.control-right.js-control-right(href="")
+						i.js-gallery-control.fa.fa-chevron-right
 			.vdp-carousel.js-vdp-carousel
 				.vdp-carousel-item.hero
 					img.vdp-carousel-image.vdp-carousel-hero.b-lazy.js-vdp-carousel-image#vdp-carousel-image-0(data-count="0" src="http://ip.dlron.us/assets/inventory/photos/1781/3gcuktec5gg217436-1.jpg")
@@ -97,7 +97,242 @@ block content
 		.vdp-body
 			.js-vdp-body-container.container
 				.row
-					.col-lg-8.col-md-7
+					.col-md-5.col-md-push-7.col-lg-4.col-lg-push-8
+						.panel
+							.vdp-sidebar-heading
+								.nav.nav-tabs
+									li.vdp-sidebar-notifications-pricedrop.js-vdp-sidebar-notifications-pricedrop
+										a.js-vdp-sidebar-notifications-pricedrop-link(href="#")
+											span <span class="visible-sm-inline visible-md-inline visible-lg-inline">Recent</span> Price Drop&nbsp;
+											i.fa.fa-exclamation
+										div
+											span Reduced by $500 from 5/21/2016
+											a.btn.btn-sm.btn-rounded
+												| Get <span class="visible-sm-inline visible-md-inline visible-lg-inline">Price Drop</span> Alert
+									li.vdp-sidebar-notifications-yousave
+										a(href="#")
+											span You Save: <sup>$</sup>6,283
+							.vdp-sidebar-body.panel-heading.visible-sm.visible-xs
+								.vdp-vehicle-title
+									ul.list-inline.small.text-muted
+										li Vin: 3GCUKREC4GG120117
+										li Stock: P23219
+										li Model: CK15543
+									h1.h4.strong 2016 Chevrolet Silverado 1500 Work Truck Extended Cab w/ Cheese
+									ul.list-inline.small
+										li.vdp-vehicle-ratings
+											i.fa.fa-star.active
+											i.fa.fa-star.active
+											i.fa.fa-star.active
+											i.fa.fa-star.inactive
+											i.fa.fa-star.inactive
+										li.vdp-vehicle-reviews.text-muted.
+											 3.73(49) Reviews - Edmunds.com
+										li.vdp-vehicle-confirmavailability.text-muted
+											a.btn.btn-sm.btn-default.btn-rounded(href="#")
+												i.fa.fa-check.text-muted
+												span.text-muted
+													| &nbsp;Confirm Availability
+						.panel
+							.vdp-sidebar-body.panel-body
+								ul.list-inline.small
+									li.text-muted MSRP: $51,625
+								h2.h4.vdp-price
+									span.vdp-price-label Internet Price:
+									span.vdp-price-price &nbsp;<sup>$</sup>45,432
+								.vdp-calculate-payments
+									ul.list-inline.text-muted
+										li.small
+											| Lease
+											br
+											| $880/mo
+										li.small
+											| Finance
+											br
+											| $880/mo
+										li
+											a.btn.btn-sm.btn-default.btn-rounded(href="#" style="margin-right: 10px;")
+												i.fa.fa-calculator.text-muted
+												| &nbsp;
+												i.fa.fa-caret-down.text-muted
+											a.btn.btn-sm.btn-default.btn-rounded(href="#")
+												i.fa.fa-check.text-muted
+												span.text-muted
+													| &nbsp;Only 13 Left!
+								.input-group.vdp-input-group
+									input.form-control(type="text", placeholder="You@email.com")
+									span.input-group-btn
+										button.btn.btn-primary(type="button")
+											i.fa.fa-tag
+											strong &nbsp;Get Sale Price
+								p.vdp-disclaimer.small
+									| Please Note: We provide Savings on our vehicles daily based on current inventory supply. Check to see if this vehicle  qualifies for a Sale Price.
+						.panel
+							.panel-body
+								table.vdp-pricing-details.table
+									thead
+										tr
+											th
+												h3.h5.strong Savings
+									tbody
+										tr.strong
+											td MSRP:
+											td $51,625
+										tr.strong
+											td Dealer Discount:
+											td $3,819
+										tr
+											td WE Retail Consumer Cash:
+											td $2,000
+										tr
+											td West 2016 Bonus Cash:
+											td $500
+										tr
+											td WE Chrysler Capital 2016 Bonus:
+											td $500
+										tr
+											td West 2016 RETAIL Bonus:
+											td $1,000
+										tr
+											td Internet Price:
+											td $45,432
+										tr.strong
+											td OFF MSRP:
+											td $6,283
+								.row.vdp-pricing-buttons
+									.col-sm-6
+										a.btn.btn-default.btn-block(href="") Button
+									.col-sm-6
+										a.btn.btn-default.btn-block(href="") Button
+
+								table.vdp-pricing-details.table
+									thead
+										tr
+											th
+												h3.h5.strong Extra Savings
+									tbody
+										tr
+											td 2016 Conquest Lease to Retail:
+											td $1,000
+										tr
+											td 2016 MY USAA Member:
+											td $500
+										tr
+											td 2016 Returning Lessee:
+											td $500
+										tr
+											td 2016/2015 MY Military Program:
+											td $500
+										tr
+											td 2016 Returning Lessee Retail LBC:
+											td $2,000
+						.panel
+							.vdp-sidebar-heading
+								.nav.nav-tabs
+									li.vdp-sidebar-notifications-pricedrop.js-vdp-sidebar-notifications-pricedrop
+										a.js-vdp-sidebar-notifications-pricedrop-link(href="#")
+											span Recent Price Drop&nbsp;
+											i.fa.fa-exclamation
+										div
+											span Reduced by $500 from 5/21/2016
+											a.btn.btn-sm.btn-rounded
+												| Get Price Drop Alert
+									li.vdp-sidebar-notifications-yousave
+										a(href="#")
+											span You Save: <sup>$</sup>6,283
+							.vdp-sidebar-body.panel-body
+								ul.list-inline.small
+									li.text-muted MSRP: $51,625
+								h2.h4.vdp-price
+									span.vdp-price-label Internet Price:
+									span.vdp-price-price &nbsp;<sup>$</sup>45,432
+								.vdp-calculate-payments
+									ul.list-inline.text-muted
+										li.small
+											| Lease
+											br
+											| $880/mo
+										li.small
+											| Finance
+											br
+											| $880/mo
+										li
+											a.btn.btn-sm.btn-default.btn-rounded(href="#" style="margin-right: 10px;")
+												i.fa.fa-calculator.text-muted
+												| &nbsp;
+												i.fa.fa-caret-down.text-muted
+											a.btn.btn-sm.btn-default.btn-rounded(href="#")
+												i.fa.fa-check.text-muted
+												span.text-muted
+													| &nbsp;Only 13 Left!
+								.input-group.vdp-input-group
+									input.form-control(type="text", placeholder="You@email.com")
+									span.input-group-btn
+										button.btn.btn-primary(type="button")
+											i.fa.fa-tag
+											strong &nbsp;Get Sale Price
+								p.vdp-disclaimer.small
+									| Please Note: We provide Savings on our vehicles daily based on current inventory supply. Check to see if this vehicle  qualifies for a Sale Price.
+						.panel
+							.panel-body
+								table.vdp-pricing-details.table
+									thead
+										tr
+											th
+												h3.h5.strong Savings
+									tbody
+										tr.strong
+											td MSRP:
+											td $51,625
+										tr.strong
+											td Dealer Discount:
+											td $3,819
+										tr
+											td WE Retail Consumer Cash:
+											td $2,000
+										tr
+											td West 2016 Bonus Cash:
+											td $500
+										tr
+											td WE Chrysler Capital 2016 Bonus:
+											td $500
+										tr
+											td West 2016 RETAIL Bonus:
+											td $1,000
+										tr
+											td Internet Price:
+											td $45,432
+										tr.strong
+											td OFF MSRP:
+											td $6,283
+								.row.vdp-pricing-buttons
+									.col-sm-6
+										a.btn.btn-default.btn-block(href="") Button
+									.col-sm-6
+										a.btn.btn-default.btn-block(href="") Button
+
+								table.vdp-pricing-details.table
+									thead
+										tr
+											th
+												h3.h5.strong Extra Savings
+									tbody
+										tr
+											td 2016 Conquest Lease to Retail:
+											td $1,000
+										tr
+											td 2016 MY USAA Member:
+											td $500
+										tr
+											td 2016 Returning Lessee:
+											td $500
+										tr
+											td 2016/2015 MY Military Program:
+											td $500
+										tr
+											td 2016 Returning Lessee Retail LBC:
+											td $2,000
+					.col-md-7.col-md-pull-5.col-lg-8.col-lg-pull-4
 						.panel
 							.panel-heading
 								.vdp-vehicle-title
@@ -221,113 +456,5 @@ block content
 										| Reviews
 									.tab-pane#warranty(role="tabpanel")
 										| Warranty
-					.col-lg-4.col-md-5
-						.panel
-							.vdp-sidebar-heading
-								.nav.nav-tabs
-									li.vdp-sidebar-notifications-pricedrop.js-vdp-sidebar-notifications-pricedrop
-										a.js-vdp-sidebar-notifications-pricedrop-link(href="#")
-											span Recent Price Drop&nbsp;
-											i.fa.fa-exclamation
-										div
-											span Reduced by $500 from 5/21/2016
-											a.btn.btn-sm.btn-rounded
-												| Get Price Drop Alert
-									li.vdp-sidebar-notifications-yousave
-										a(href="#")
-											span You Save: <sup>$</sup>6,283
-							.vdp-sidebar-body.panel-body
-								ul.list-inline.small
-									li.text-muted MSRP: $51,625
-								h2.h4.vdp-price
-									span.vdp-price-label Internet Price:
-									span.vdp-price-price &nbsp;<sup>$</sup>45,432
-								.vdp-calculate-payments
-									ul.list-inline.text-muted
-										li.small
-											| Lease
-											br
-											| $880/mo
-										li.small
-											| Finance
-											br
-											| $880/mo
-										li
-											a.btn.btn-sm.btn-default.btn-rounded(href="#" style="margin-right: 10px;")
-												i.fa.fa-calculator.text-muted
-												| &nbsp;
-												i.fa.fa-caret-down.text-muted
-											a.btn.btn-sm.btn-default.btn-rounded(href="#")
-												i.fa.fa-check.text-muted
-												span.text-muted
-													| &nbsp;Only 13 Left!
-								.input-group.vdp-input-group
-									input.form-control(type="text", placeholder="You@email.com")
-									span.input-group-btn
-										button.btn.btn-primary(type="button")
-											i.fa.fa-tag
-											strong &nbsp;Get Sale Price
-								p.vdp-disclaimer.small
-									| Please Note: We provide Savings on our vehicles daily based on current inventory supply. Check to see if this vehicle  qualifies for a Sale Price.
-
-						.panel
-							.panel-body
-								table.vdp-pricing-details.table
-									thead
-										tr
-											th
-												h3.h5.strong Savings
-									tbody
-										tr.strong
-											td MSRP:
-											td $51,625
-										tr.strong
-											td Dealer Discount:
-											td $3,819
-										tr
-											td WE Retail Consumer Cash:
-											td $2,000
-										tr
-											td West 2016 Bonus Cash:
-											td $500
-										tr
-											td WE Chrysler Capital 2016 Bonus:
-											td $500
-										tr
-											td West 2016 RETAIL Bonus:
-											td $1,000
-										tr
-											td Internet Price:
-											td $45,432
-										tr.strong
-											td OFF MSRP:
-											td $6,283
-								.row.vdp-pricing-buttons
-									.col-sm-6
-										a.btn.btn-default.btn-block(href="") Button
-									.col-sm-6
-										a.btn.btn-default.btn-block(href="") Button
-
-								table.vdp-pricing-details.table
-									thead
-										tr
-											th
-												h3.h5.strong Extra Savings
-									tbody
-										tr
-											td 2016 Conquest Lease to Retail:
-											td $1,000
-										tr
-											td 2016 MY USAA Member:
-											td $500
-										tr
-											td 2016 Returning Lessee:
-											td $500
-										tr
-											td 2016/2015 MY Military Program:
-											td $500
-										tr
-											td 2016 Returning Lessee Retail LBC:
-											td $2,000
 block script
 	script(defer src="../js/mockups/vdp.js")
