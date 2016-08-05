@@ -201,9 +201,6 @@
 
 	function SlideCarousel(distance){
 		var threshold = ((_carousel.scrollWidth - document.body.scrollWidth) * -1) + _offset;
-		console.log("scrollwidth" + _carousel.scrollWidth);
-		console.log("threshold" + threshold);
-		console.log("distance" + distance);
 		if (distance > 0){
 			CarouselTranslateX(0);
 			//	_carouselRight.style.opacity = 0;
