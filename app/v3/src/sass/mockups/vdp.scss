@@ -57,50 +57,52 @@ $transition: 0.25s;
     position: relative;
     overflow: hidden;
     background-color: #333;
-	//	background-image: url("http://ip.dlron.us/assets/inventory/photos/1781/3gcuktec5gg217436-8.jpg");
-	//	background-repeat: no-repeat;
-	//	background-size: contain;
-	//	background-position: left top;
+    //	background-image: url("http://ip.dlron.us/assets/inventory/photos/1781/3gcuktec5gg217436-8.jpg");
+    //	background-repeat: no-repeat;
+    //	background-size: contain;
+    //	background-position: left top;
+
     backface-visibility: hidden;
-	@media(min-width: 992px) {
-		&:after,
-		&:before {
-			backface-visibility: hidden;
-			content: "";
-			display: none;
-			position: absolute;
-			top: 0;
-			height: 100%;
-			width: 200px;
-			z-index: 250;
-			user-select: none;
-			transition-timing-function: ease-in-out;
-			transition-duration: $transition;
-			transition-property: width, background !important;
-		}
-		$opacity: 0.4;
-		&:before {
-			left: 0;
-			background: linear-gradient(to right, rgba(0,0,0,$opacity), rgba(0,0,0,0));
-		}
-		&:after {
-			right: 0;
-			background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,$opacity));
-		}
-	}
+    @media(min-width: 992px) {
+        $opacity: 0.4;
+        &:after,
+        &:before {
+            position: absolute;
+            z-index: 250;
+            top: 0;
+            display: none;
+            width: 200px;
+            height: 100%;
+            content: "";
+            user-select: none;
+            transition-timing-function: ease-in-out;
+            transition-duration: $transition;
+            transition-property: width, background !important;
+
+            backface-visibility: hidden;
+        }
+        &:before {
+            left: 0;
+            background: linear-gradient(to right, rgba(0,0,0,$opacity), rgba(0,0,0,0));
+        }
+        &:after {
+            right: 0;
+            background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,$opacity));
+        }
+    }
 }
 .js-gallery-fade {
-	$opacity: 0.8;
-	&:after,
-	&:before {
-		width: 600px;
-	}
-	&:before {
-		background: linear-gradient(to right, rgba(0,0,0,$opacity), rgba(0,0,0,0));
-	}
-	&:after {
-		background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,$opacity));
-	}
+    $opacity: 0.8;
+    &:after,
+    &:before {
+        width: 600px;
+    }
+    &:before {
+        background: linear-gradient(to right, rgba(0,0,0,$opacity), rgba(0,0,0,0));
+    }
+    &:after {
+        background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,$opacity));
+    }
 }
 .vdp-carousel-controls {
     position: relative;
@@ -133,9 +135,13 @@ $transition: 0.25s;
         left: 15px;
         display: flex;
         align-items: center;
+        justify-content: center;
+        width: $height;
         height: $height;
         margin-top: negative($height / 2);
         color: white;
+        border-radius: 50%;
+        background-color: rgba(0,0,0,0.35);
     }
     .control-right {
         right: 15px;
@@ -148,21 +154,21 @@ $transition: 0.25s;
     overflow-y: hidden;
     width: 100%;
     height: 320px;
+    //	transition: transform 0.25s cubic-bezier(0.6, 0, 0.2, 1);
+    cursor:    -moz-grab;
+    cursor:         grab;
+    cursor: -webkit-grab;
     //	background-color: #333;
 
     backface-visibility: hidden;
-    //	transition: transform 0.25s cubic-bezier(0.6, 0, 0.2, 1);
-    //	cursor: -moz-grab;
-    //	cursor: grab;
-    //	cursor: -webkit-grab;
-    //	&:active {
-    //		cursor: -moz-grabbing;
-    //		cursor: grabbing;
-    //		cursor: -webkit-grabbing;
-    //	}
+    &:active {
+        cursor:    -moz-grabbing;
+        cursor:         grabbing;
+        cursor: -webkit-grabbing;
+    }
     @media (min-width: 992px) {
+        overflow-x: hidden;
         height: 400px;
-		overflow-x: hidden;
     }
 }
 .vdp-carousel-item {
@@ -175,8 +181,8 @@ $transition: 0.25s;
     }
 }
 .vdp-carousel-image {
-	user-select: none;
     height: 100%;
+    user-select: none;
     @media (min-width: 992px) {
         height: 50%;
     }
@@ -186,73 +192,87 @@ $transition: 0.25s;
         height: 100%;
     }
 }
+//	.hero--bg {
+//		@media(min-width: 992px) {
+//			width: calc((100% - 940px) / 2);
+//		}
+//		@media(min-width: 1200px) {
+//			width: calc((100% - 1140px) / 2);
+//		}
+//		.vdp-carousel-image {
+//			height: 100%!important;
+//		}
+//	}
 /*
  * Vdp Carousel Active
  */
 $test-transition: true;
 @media (min-width: 992px) {
-	.js-gallery-init {
-		backface-visibility: hidden;
+    $vdp-gutter: 1em;
+    .js-gallery-init {
         transition-timing-function: ease-in-out;
         transition-duration: $transition;
         transition-property: opacity !important;
-		.vdp-carousel {
-			backface-visibility: hidden;
-			transition-timing-function: ease-in-out;
-			transition-duration: $transition;
-			transition-property: transform !important;
-		}
-		.vdp-carousel-image {
-			backface-visibility: hidden;
-			transform: scale(1,1);
-			transition-timing-function: ease-in-out;
-			transition-duration: $transition;
-			transition-property: transform, z-index, opacity !important;
-		}
-	}
-	$vdp-gutter: 1em;
-	.js-gallery-fade {
-		.vdp-carousel-image {
-			opacity: 0 !important;
-		}
-		.clone {
-			z-index: 4000;
-			top: 0;
-			left: 0;
-			margin: 0 !important;
-			position: absolute;
-			opacity: 1 !important;
-			transition-timing-function: ease-in-out;
-			transition-duration: $transition;
-			transition-property: z-index, opacity, top, transform !important;
-			&.vdp-carousel-hero {
-				height: 100% !important;
-			}
-		}
-	}
-	.js-gallery-build {
-		.vdp-carousel-item {
-			flex-direction: row;
-			align-items: center;
-		}
-		.vdp-carousel-image {
-			height: 50% !important;
-			margin-right: $vdp-gutter;
-			margin-left: $vdp-gutter;
-		}
-		.gallery-active {
-			z-index: 2000;
-			transform: scale(2,2);
-		}
-	}
-	.js-gallery-active {
-		.vdp-carousel-image {
-			opacity: 0.25 !important;
-		}
-		.gallery-active {
-			opacity: 1 !important;
-		}
-	}
+
+        backface-visibility: hidden;
+        .vdp-carousel {
+            transition-timing-function: ease-in-out;
+            transition-duration: $transition;
+            transition-property: transform !important;
+
+            backface-visibility: hidden;
+        }
+        .vdp-carousel-image {
+            transition-timing-function: ease-in-out;
+            transition-duration: $transition;
+            transition-property: transform, z-index, opacity !important;
+            transform: scale(1,1);
+
+            backface-visibility: hidden;
+        }
+    }
+    .js-gallery-fade {
+        .vdp-carousel-image {
+            opacity: 0 !important;
+        }
+        .clone {
+            position: absolute;
+            z-index: 4000;
+            top: 0;
+            left: 0;
+            margin: 0 !important;
+            transition-timing-function: ease-in-out;
+            transition-duration: $transition;
+            transition-property: z-index, opacity, top, transform !important;
+            opacity: 1 !important;
+            &.vdp-carousel-hero {
+                height: 100% !important;
+            }
+        }
+    }
+    .js-gallery-build {
+        .vdp-carousel-item {
+            flex-direction: row;
+            align-items: center;
+        }
+        .vdp-carousel-image {
+            height: 50% !important;
+            margin-right: $vdp-gutter;
+            margin-left: $vdp-gutter;
+        }
+        .gallery-active {
+            z-index: 2000;
+            transform: scale(2,2);
+        }
+    }
+    .js-gallery-active {
+        .vdp-carousel-image {
+            opacity: 0.25 !important;
+        }
+        .gallery-active {
+            opacity: 1 !important;
+        }
+    }
 }
 /*
  * Vdp Pricing Notifications
@@ -275,12 +295,12 @@ $test-transition: true;
     position: relative;
     transition: transform 0.25s cubic-bezier(0.6, 0, 0.2, 1);
     transform: translate3d(0, negative($height), 0);
-    //	transition: transform 0.25s ease-in-out;
-	@media (min-width: 768) {
-		min-width: 170px;
-	}
 
     backface-visibility: hidden;
+    //	transition: transform 0.25s ease-in-out;
+    @media (min-width: 768) {
+        min-width: 170px;
+    }
     &.down {
         transform: translate3d(0, 0, 0);
     }
@@ -374,8 +394,8 @@ $test-transition: true;
  * Vdp Body
  */
 .vdp-body {
-	position: relative;
-	z-index: 9000;
+    position: relative;
+    z-index: 9000;
     margin-top: 30px;
 }
 /*
@@ -497,32 +517,34 @@ $test-transition: true;
  */
 $useguides: false;
 @if $useguides {
-	body,
-	main {
-		&:before,
-		&:after {
-			content: "";
-			position: fixed;
-			display: block;
-			width: 1px;
-			height: 100%;
-			z-index: 2000;
-			top: 0;
-			background-color: red;
-		}
-	}
-	body {
-		&:before {
-			left: 684px;
-		}
-		&:after {
-			left: 50%;
-		}
-	}
-	main {
-		&:before {
-			left: 1216px;
-		}
-		&:after { display: none;}
-	}
+    body,
+    main {
+        &:before,
+        &:after {
+            position: fixed;
+            z-index: 2000;
+            top: 0;
+            display: block;
+            width: 1px;
+            height: 100%;
+            content: "";
+            background-color: red;
+        }
+    }
+    body {
+        &:before {
+            left: 684px;
+        }
+        &:after {
+            left: 50%;
+        }
+    }
+    main {
+        &:before {
+            left: 1216px;
+        }
+        &:after {
+            display: none;
+        }
+    }
 }

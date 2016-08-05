@@ -44,6 +44,7 @@
 	var	_carouselLeft      = document.querySelector(carouselLeft);
 	var	_carouselRight     = document.querySelector(".js-control-right");
 	var	_carouselImages    = document.querySelectorAll(".js-vdp-carousel-image");
+	var _carouselFirstImage= document.querySelector(".hero--bg");
 	var	_vdpBodyContainer  = document.querySelector(".js-vdp-body-container");
 	//	carousel controls
 	var _scrollAnimationDuration   = 0.5;
@@ -101,9 +102,9 @@
 	function Init(evt) {
 		windowWidth = window.innerWidth;
 		if (windowWidth > mediaQuery) {
-			_offset                     = _vdpBodyContainer.offsetLeft + _gutter;
-			// _offset                     = 0;
-			_carousel.style.paddingLeft = _offset + "px";
+			_offset                     = 0;
+			//	_offset                     = _vdpBodyContainer.offsetLeft + _gutter;
+			//	_carousel.style.paddingLeft = _offset + "px";
 			_paddedScrollWidth          = _carousel.scrollWidth + _offset;
 			_carousel.style.width       = _paddedScrollWidth + "px";
 		} else {
@@ -214,6 +215,23 @@
 		}
 	}
 
+	window.addEventListener("keydown", function () {
+		if (galleryActive) {
+			console.log(event.keyCode);
+			switch (event.keyCode) {
+				case 27:
+					GalleryClose();
+					break;
+				case 37:
+					GalleryCycleImages("left", 1);
+					break;
+				case 39:
+					GalleryCycleImages("right", 1);
+					break;
+			}
+		}
+	});
+
 	function MouseUp(evt) {
 		if (_mouseClick){
 			if (evt.target.classList.contains("js-vdp-carousel-image")) {
@@ -323,14 +341,14 @@
 			_carouselWrapper.classList.remove("js-gallery-build");
 			_carousel.style.width = _paddedScrollWidth + "px";
 			var distance = galleryOpeningPosition - ((document.body.scrollWidth / 2) - (galleryActiveImage.offsetWidth / 2));
-			SlideCarousel(distance * -1);	
+			SlideCarousel(distance * -1);
 		}, (_cssAnimationDuration * 2));
-		
-		setTimeout(function(){	
+
+		setTimeout(function(){
 			_carouselWrapper.classList.remove("js-gallery-fade");   // animate to gallery view
 		}, (_cssAnimationDuration * 3));
-		
-		setTimeout(function(){	
+
+		setTimeout(function(){
 			_carouselWrapper.classList.remove("js-gallery-init");
 		}, (_cssAnimationDuration * 4));
 	}
