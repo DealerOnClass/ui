@@ -46,6 +46,7 @@
 	var	_carouselImages    = document.querySelectorAll(".js-vdp-carousel-image");
 	var _carouselFirstImage= document.querySelector(".hero--bg");
 	var	_vdpBodyContainer  = document.querySelector(".js-vdp-body-container");
+	var salePrice		   = document.querySelector("#getSalePriceEntryForm");
 	//	carousel controls
 	var _scrollAnimationDuration   = 0.5;
 	var	_scrollVisibilityThreshold = 400;
@@ -84,7 +85,9 @@
 
 	window.addEventListener("load",        Init);
 	window.addEventListener("resize",      Init);
-	ListenerAttribution(window,            "keydown",     KeysYo);
+	//	salePrice.addEventListener("click",	   FocusThis);
+	//	salePrice.addEventListener("keydown",  TypeThis);
+	ListenerAttribution(document.body,	   "keydown",     KeysYo);
 	ListenerAttribution(document.body,     "mousedown",   MouseDown);
 	ListenerAttribution(document.body,     "mouseup",     MouseUp);
 	ListenerAttribution(_carouselWrapper,  "mouseleave",  MouseLeave);
@@ -94,11 +97,19 @@
 
 	function ListenerAttribution(element, event, handler) {
 		element.addEventListener(event, function(e){
-			if(windowWidth >= mediaQuery) {
+			if(windowWidth >= mediaQuery && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
 				e.preventDefault();
 				handler(e);
 			}
 		});
+	}
+
+	function FocusThis(evt) {
+		evt.target.focus();
+	}
+
+	function TypeThis(evt) {
+		evt.target.value = evt.keyCode;
 	}
 
 	function Init(evt) {
@@ -192,6 +203,7 @@
 	}
 
 	function MouseDown(evt) {
+		document.activeElement.blur();
 		_mouseClick       = true;
 		_mouseDown        = true;
 		_mouseCurrentXPos = evt.pageX;
@@ -225,7 +237,7 @@
 
 	function KeysYo(evt) {
 		if (galleryActive) {
-			switch (event.keyCode) {
+			switch (evt.keyCode) {
 				case 27: // ESC
 					GalleryClose();
 					break;
@@ -237,7 +249,7 @@
 					break;
 			}
 		} else {
-			switch (event.keyCode) {
+			switch (evt.keyCode) {
 				case 37: // Left
 					CarouselLeft(evt);
 					break;

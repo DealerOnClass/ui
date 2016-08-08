@@ -443,10 +443,10 @@ $transition: 0.25s;
 .vdp-carousel-image {
     height: 100%;
     user-select: none;
-    &:hover {
-        opacity: 0.85 !important;
-    }
     @media (min-width: $gallery-media) {
+		&:hover {
+			opacity: 0.85 !important;
+		}
         height: 50%;
     }
 }
@@ -496,9 +496,11 @@ $test-transition: true;
             transform: scale(1,1);
 
             backface-visibility: hidden;
-            &:hover {
-                cursor: pointer;
-            }
+			@media (min-width: $gallery-media) {
+				&:hover {
+					cursor: pointer;
+				}
+			}
         }
     }
     .js-gallery-fade {
@@ -888,3 +890,12 @@ $useguides: false;
 //			right: 0;
 //		}
 //	}
+/*
+ * Vdp Footer
+ */
+.vdp-footer .stuff {
+	li:not(:last-child) {
+		border-right: 1px solid #ccc;
+		line-height: 1;
+	}
+}

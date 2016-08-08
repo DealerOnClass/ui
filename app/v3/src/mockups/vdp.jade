@@ -456,10 +456,10 @@ block content
 													.vdp-feature-body.media-body
 														span.vdp-feature-body-small.text-muted Ext/Int
 														h3.h5.strong.vdp-feature-body-title
-															i.fa.fa-drop
-															| Ruby Metallic /
-															i.fa.fa-drop
-															| Dark Ash
+															i.fa.fa-tint(style="color: #cf140b;")
+															| &nbsp; Red Hot /
+															i.fa.fa-tint(style="color: #323232;")
+															| &nbsp; Jet Black
 												li.vdp-feature.media
 													.vdp-feature-icon.media-left
 														img(src="../img/hp-icon.png")
@@ -829,7 +829,33 @@ block content
 									label.col-md-5.control-label Your Monthly Payment:
 									.col-md-7
 										input#payment.form-control(type='text', name='payment')
-
+	//
+	//	Footer
+	footer.vdp-footer.full.pad-vert-2x
+		.container
+			.row
+				.col-md-12
+					ul.list-unstyled.list-inline.pull-left
+						li.providerLogo
+							a(href='' target='_blank')
+								img(src='http://cdn.dlron.us/assets/logos/DealerOn/DealerOn_darkgray.png', alt='DealerOn')
+						li.stuff.copyright
+							ul.list-inline
+								li Copyright &copy; 2016
+								li by
+								li
+									a(href="") DealerOn
+								li
+									span.copyrightSitemap
+										a(href='/sitemap.aspx') Sitemap
+								li
+									span.copyrightPrivacy
+										a(href='/privacy.aspx') Privacy
+								li
+									span
+										| Rothbard Chevrolet
+										| <span>712</span> East Gude Drive, Derwood, MD 20850
+										| Sales: 855-293-2193
 	//	Modal General Modal
 	.modal.fade#epriceFormModal(tabindex='-1', role='dialog')
 		.modal-dialog(role='document')
