@@ -2,7 +2,8 @@
  * Imports
  */
 @import
-	"config";
+	"config",
+	"extend";
 /*
  * Export
  */
@@ -11,7 +12,224 @@ $vdp-breadcrumb-z: 200;
 $vdp-carousel-z: 100;
 $vdp-body-z: 200;
 /*
- *
+ * From Rothbard Chevy
+ */
+.desktop .manuLogo,
+.desktop .headerBtns {
+    display: none;
+}
+.desktop .tel3,
+.desktop .tel4,
+.desktop .dealerName,
+.mobile .dealerName {
+    display: none;
+}
+.desktop .tel li label {
+    margin-bottom: 0;
+}
+.dealerName h2 {
+}
+.socialMedia .fa {
+    font-size: 1.6em;
+}
+.desktop .dealerLogo img {
+    height: 55px;
+}
+/* mobile */
+.mobile .dealerLogo {
+}
+
+@media (max-width:991px) {
+    .desktop .dealerLogo img {
+        height: 40px;
+    }
+    .desktop .manuLogo img {
+        width: 80px;
+    }
+}
+
+@media (max-width:767px) {
+    .mobile .manuLogo img {
+        height: 45px;
+        margin-right: 10px;
+    }
+    .mobile .dealerLogo img {
+        height: 30px;
+        margin-top: 8px;
+    }
+}
+
+@media (max-width:370px) {
+    .mobile .manuLogo {
+        display: none;
+    }
+}
+/*------------------------------------*
+	$NAV_RESET
+\*------------------------------------*/
+.navbar {
+    min-height: 1em;
+}/*~14~*/
+.navbar-static-top {
+    border-width: 0;
+}
+.navbar-nav li .dropdown-menu {
+    overflow: hidden;
+    min-width: 120px;
+    padding: 0;
+}
+.navbar-default .navbar-collapse {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+@media (min-width:992px) {
+    .navbar-nav li:last-child .dropdown-menu {
+        right: 0;
+        left: auto;
+        text-align: right;
+    }
+}
+
+/*------------------------------------*
+	$NAV_DESKTOP
+\*------------------------------------*/
+@media (min-width:992px) {
+    /*	SM,MD,LG			homepage link			*/
+    .navbar.navbar-default #homePage {
+        border-radius: 0;
+    }
+}
+/*	ALL		bg			navbar					*/
+#nav {
+    background: #f3f3f3;
+}
+.navbar.navbar-default {
+    margin-bottom: 0;
+    border-top: none;
+    border-bottom: none;
+    border-radius: 0;
+    background: #f3f3f3;
+}
+/*	ALL		border		navbar-variation		*/
+.navbar-static-top {
+    border-width: 0;
+}
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+    border-width: 0 0 1px;
+    border-radius: 0;
+}
+/*	ALL		color		navbar					*/
+.navbar-default .navbar-nav li a {
+    //	text-transform: uppercase;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #333;
+}
+/*	ALL		border		navbar caret			*/
+.navbar-default .navbar-nav .dropdown a .caret {
+    display: none;
+}
+/*	ALL		:hover		navbar li a				*/
+.navbar-default .navbar-nav .open a,
+.navbar-default .navbar-nav .open a:hover,
+.navbar-default .navbar-nav .open a:focus {
+    color: #fff;
+    border-color: transparent;
+    background-color: #888;
+}
+/*	ALL		various		dropdown menu			*/
+.navbar-default .dropdown-menu {
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+    border-radius: 0;/*box-shadow: 0 6px 12px rgba(0, 0, 0, 0.176);*/
+    background-color: #888;
+}
+/*	ALL		color		dropdown menu li a		*/
+.navbar-default .dropdown-menu li a {
+    line-height: 1.6em;
+    text-transform: none;
+    color: #fff;
+    border-right: none;
+    border-bottom: 1px solid #333;
+}
+.navbar-default .dropdown-menu li:last-child a {
+    border-bottom: none;
+}
+/*	ALL		:hover		dropdown menu li a		*/
+.navbar-default .open .dropdown-menu li a:hover,
+.navbar-default .open .dropdown-menu li a:focus {
+    text-decoration: none;
+    color: #fff;
+    background-color: #053561;
+}
+/*	ALL		:active		dropdown menu li a		*/
+.navbar-default .open .dropdown-menu li a:active {
+    text-decoration: none;
+    color: #fff;
+    background-color: #666;
+}
+
+@media (min-width: 992px) {
+    #nav {
+        font-family: "proxima_nova_rgbold", Arial, Helvetica, sans-serif;
+    }
+}
+
+
+/*------------------------------------*
+	$NAV_MOBILE
+\*------------------------------------*/
+@media (max-width:991px) {
+    /*	XS		bg			navbar					*/
+    .navbar.navbar-default {
+        border-top: transparent;
+        border-bottom: transparent;
+        border-radius: 0;
+        background: #f3f3f3;
+    }
+}
+/*------------------------------------*
+	$NAV_MOBILE_BUTTON
+\*------------------------------------*/
+/*	XS		icon-size	toggle button			*/
+.navbar-default .navbar-toggle {
+    font-size: 1.33em;
+}
+/*	XS		bg			toggle button			*/
+.navbar-default .navbar-toggle,
+.navbar-default .navbar-toggle:focus {
+    margin: 0;
+    padding: 0.714em 1.2em;
+    color: #fff;
+    border-color: transparent;
+    border-radius: 0;
+    background-color: #fa6900;
+}
+/*	XS		:hover		toggle button			*/
+.navbar-default .navbar-toggle:hover {
+    color: #fff;
+    border-color: transparent;
+    background-color: #f2761c;
+}
+/*	XS		:active		toggle button			*/
+.navbar-default .navbar-toggle:active {
+    border-top-color: #000;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.225) inset;
+}
+.static-to-nav {
+    top: 1px;
+    left: 0;
+	z-index: 2000; // TEMP
+}
+.static-to-nav .btn {
+    line-height: 49px !important;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-radius: 0;
+}
+/*
+ * Base
  */
 .vdp {
     font-family: "Avenir", sans-serif;
@@ -20,6 +238,26 @@ $vdp-body-z: 200;
     background-color: #f5f5f5;
     .strong {
         font-weight: 700;
+    }
+    .btn {
+        white-space: nowrap;
+    }
+    .btn-text {
+        cursor: default !important;
+        &,
+        &:hover,
+        &:focus,
+        &:active {
+            //	border-color: #ccc !important;
+            border-color: transparent !important;
+        }
+        &:hover,
+        &:focus,
+        &:active {
+            color: #777 !important;
+            background-color: transparent !important;
+            box-shadow: none !important;
+        }
     }
     .btn-rounded {
         line-height: 1;
@@ -41,17 +279,34 @@ $vdp-body-z: 200;
         background-color: white;
     }
     .container {
-        background-clip: content-box;
+        padding-right: 0;
     }
     .breadcrumb {
         margin-bottom: 0;
         padding-top: 10px;
         padding-bottom: 10px;
     }
+    .name-this-later {
+        float: none !important;
+        @media (max-width: 767px) {
+			margin-bottom: -32px;
+		}
+        @media (min-width: 768px) {
+            float: right !important;
+        }
+    }
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        @media (min-width: 768px) {
+            display: block;
+        }
+    }
 }
 /*
  * Vdp Carousel
  */
+$gallery-media: 1200px;
 $transition: 0.25s;
 .vdp-carousel-wrapper {
     position: relative;
@@ -63,7 +318,7 @@ $transition: 0.25s;
     //	background-position: left top;
 
     backface-visibility: hidden;
-    @media(min-width: 992px) {
+    @media(min-width: $gallery-media) {
         $opacity: 0.4;
         &:after,
         &:before {
@@ -125,7 +380,7 @@ $transition: 0.25s;
     display: none;
 
     backface-visibility: hidden;
-    @media (min-width: 992px) {
+    @media (min-width: $gallery-media) {
         display: initial;
     }
     .control {
@@ -153,37 +408,42 @@ $transition: 0.25s;
     overflow-x: scroll;
     overflow-y: hidden;
     width: 100%;
-    height: 320px;
+    height: 25vh;
     //	transition: transform 0.25s cubic-bezier(0.6, 0, 0.2, 1);
-    cursor:    -moz-grab;
-    cursor:         grab;
-    cursor: -webkit-grab;
+    cursor: pointer;
+    //	cursor:    -moz-grab;
+    //	cursor:         grab;
+    //	cursor: -webkit-grab;
     //	background-color: #333;
 
     backface-visibility: hidden;
-    &:active {
-        cursor:    -moz-grabbing;
-        cursor:         grabbing;
-        cursor: -webkit-grabbing;
-    }
-    @media (min-width: 992px) {
+    //	&:active {
+    //	    cursor:    -moz-grabbing;
+    //	    cursor:         grabbing;
+    //	    cursor: -webkit-grabbing;
+    //	}
+    @media (min-width: $gallery-media) {
         overflow-x: hidden;
         height: 400px;
     }
 }
 .vdp-carousel-item {
     display: inline-flex;
+    flex-shrink: 0;
     flex-direction: row;
     width: auto;
     height: 100%;
-    @media (min-width: 992px) {
+    @media (min-width: $gallery-media) {
         flex-direction: column;
     }
 }
 .vdp-carousel-image {
     height: 100%;
     user-select: none;
-    @media (min-width: 992px) {
+    &:hover {
+        opacity: 0.85 !important;
+    }
+    @media (min-width: $gallery-media) {
         height: 50%;
     }
 }
@@ -193,7 +453,7 @@ $transition: 0.25s;
     }
 }
 //	.hero--bg {
-//		@media(min-width: 992px) {
+//		@media(min-width: $gallery-media) {
 //			width: calc((100% - 940px) / 2);
 //		}
 //		@media(min-width: 1200px) {
@@ -207,7 +467,7 @@ $transition: 0.25s;
  * Vdp Carousel Active
  */
 $test-transition: true;
-@media (min-width: 992px) {
+@media (min-width: $gallery-media) {
     $vdp-gutter: 1em;
     .js-gallery-init {
         transition-timing-function: ease-in-out;
@@ -221,6 +481,10 @@ $test-transition: true;
             transition-property: transform !important;
 
             backface-visibility: hidden;
+            &,
+            &:hover {
+                cursor: initial;
+            }
         }
         .vdp-carousel-image {
             transition-timing-function: ease-in-out;
@@ -229,6 +493,9 @@ $test-transition: true;
             transform: scale(1,1);
 
             backface-visibility: hidden;
+            &:hover {
+                cursor: pointer;
+            }
         }
     }
     .js-gallery-fade {
@@ -268,9 +535,15 @@ $test-transition: true;
     .js-gallery-active {
         .vdp-carousel-image {
             opacity: 0.25 !important;
+            &:hover {
+                opacity: 0.35 !important;
+            }
         }
         .gallery-active {
-            opacity: 1 !important;
+            &,
+            &:hover {
+                opacity: 1 !important;
+            }
         }
     }
 }
@@ -284,7 +557,10 @@ $test-transition: true;
     .nav {
         position: absolute;
         top: -43px;
-        right: 0;
+        right: -1px;
+        a {
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
         > li:last-child > a {
             margin-right: 0;
         }
@@ -330,9 +606,15 @@ $test-transition: true;
 }
 .vdp-sidebar-notifications-yousave {
     > a {
-        font-weight: 600;
-        color: white;
-        background-color: #fa6900;
+        &,
+        &:hover,
+        &:focus,
+        &:active {
+			cursor: default !important;
+            font-weight: 600;
+            color: #43ab3e;
+            background-color: white !important;
+        }
     }
 }
 .vdp-sidebar-body {
@@ -348,20 +630,27 @@ $test-transition: true;
 .vdp-price {
     position: relative;
 }
+.vdp-price-label {
+	position: relative;
+	top: -1em;
+	display: block;
+}
 .vdp-price-price {
-    font-size: 3em;
-    font-weight: 700;
-    line-height: 1;
-    position: absolute;
-    right: 0;
-    bottom: -10px; // size of margin
-    > sup {
-        font-size: 0.5em;
-        line-height: 1;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
+	font-size: 3em;
+	font-weight: 700;
+	line-height: 1;
+	@media (min-width: 992px) {
+		position: absolute;
+		right: 0;
+		bottom: -10px; // size of margin
+		> sup {
+			font-size: 0.5em;
+			line-height: 1;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
 }
 /*
  * Vdp Calculate Payments
@@ -371,6 +660,41 @@ $test-transition: true;
         display: flex;
         align-items: center;
         justify-content: space-between;
+    }
+}
+/*
+ * Vdp Get Sale Price
+ */
+.vdp-getsaleprice {
+    .form-control {
+        border-color: #fa6900;
+        &::-webkit-input-placeholder {
+            font-weight: 700;
+            color: #fa6900;
+        }
+        &:-moz-placeholder {
+            font-weight: 700;
+            color: #fa6900;
+        }
+        &::-moz-placeholder {
+            font-weight: 700;
+            color: #fa6900;
+        }
+        &:-ms-input-placeholder {
+            font-weight: 700;
+            color: #fa6900;
+        }
+    }
+    .btn-primary {
+        border-color: #fa6900;
+        background-color: #fa6900;
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            border-color: shade(#fa6900, 10%);
+            background-color: shade(#fa6900, 10%);
+        }
     }
 }
 /*
@@ -395,7 +719,7 @@ $test-transition: true;
  */
 .vdp-body {
     position: relative;
-    z-index: 9000;
+    z-index: 1040;
     margin-top: 30px;
 }
 /*
@@ -548,3 +872,14 @@ $useguides: false;
         }
     }
 }
+/*
+ * Vdp Modal REVISIT
+ */
+//	.vdp-modal-header {
+//		position: relative;
+//		.close {
+//			position: absolute;
+//			top: 0;
+//			right: 0;
+//		}
+//	}

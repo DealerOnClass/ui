@@ -237,6 +237,7 @@ function jekyllwatch() {
 function scripts() {
 	return gulp.src(paths.scripts.src)
 		.pipe(plumber())
+        .pipe(gulpif(isProd, uglify()))
         .pipe(gulpif(isProd, gulp.dest(paths.scripts.export)))
 		.pipe(gulp.dest(paths.scripts.dist))
         .pipe(browsersync.stream());

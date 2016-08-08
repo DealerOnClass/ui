@@ -11,31 +11,169 @@
     <title>VDP</title>
   </head>
   <body>
+    <div class="headerWrapper full">
+      <header>
+        <div id="dealerInfo" class="full">
+          <!-- Hidden on mobile-->
+          <div class="desktop container hidden-xs pad-x">
+            <div id="leftBlockInfo" class="pull-left margin-vert-1x">
+              <ul class="list-inline vert-middle margin-bottom-x">
+                <li class="manuLogo margin-right_5x"><a href="/"><img src="http://cdn.dlron.us/assets/logos/transparent/chevrolet.png" title="chevrolet" alt="chevrolet" class="img-responsive"></a></li>
+                <li class="dealerLogo"><a id="headerDealerLogo" href="/"><img src="http://cdn.dlron.us/assets/misc/9682/logo.png" title="Rothbard Chevrolet" alt="Rothbard Chevrolet" class="img-responsive"></a></li>
+                <li class="dealerName">
+                  <h3>Rothbard Chevrolet</h3>
+                </li>
+              </ul>
+            </div>
+            <div id="rightBlockInfo" class="pull-right margin-top-1x margin-bottom_5x">
+              <div class="openBlockLeft margin-right-1x margin-vert-1x pull-left"></div>
+              <div class="chatBlock pull-left"></div>
+              <ul id="telSet1" class="tel list-pad-x list-unstyled text-right pull-left">
+                <li class="tel1">
+                  <label>Sales</label>
+                  <!--	span.callNowClass 855-293-2138-->
+                </li>
+                <li class="tel2">
+                  <label>Service</label>							855-293-2138
+                </li>
+                <li class="tel3">
+                  <label>Parts</label>							855-293-2138
+                </li>
+                <li class="tel4">
+                  <label>Body Shop</label>							855-293-2138
+                </li>
+              </ul>
+              <ul class="list-unstyled text-right pull-left margin-left-2x">
+                <li class="adr pad-bottom_5x">712 East Gude Drive<br>							Derwood, MD 20850</li>
+                <li class="socialMediaList">
+                  <ul class="list-inline list-pad-x"></ul>
+                </li>
+                <li class="headerBtns"><a href="http://design5mileonefranchise.dealeron.com/hours.aspx" class="btn btn-alt1 btn-sm headerBtns1"><i class="fa fa-map-marker"></i>	Get Directions</a></li>
+              </ul>
+              <div class="openBlockRight margin-left-1x margin-top-1x pull-left"></div>
+            </div>
+          </div>
+          <!-- Visible on mobile-->
+          <div class="mobile container visible-xs">
+            <div class="brand row row pad-vert_5x">
+              <div class="col-xs-12"><a href="/">
+                  <div class="manuLogo pull-left hideXXS"><img src="http://cdn.dlron.us/assets/logos/transparent/chevrolet.png" title="chevrolet" alt="chevrolet" class="img-responsive"></div>
+                  <div class="dealerLogo pull-left pad-left_5x"><img src="http://cdn.dlron.us/assets/misc/9682/logo.png" title="Rothbard Chevrolet" alt="Rothbard Chevrolet" class="img-responsive"></div></a>
+                <div class="dealerName pull-left pad-left_5x">Rothbard Chevrolet</div>
+                <div class="chatBlock pull-right"></div>
+              </div>
+            </div>
+            <div class="contact row">
+              <div class="col-xs-12">
+                <div class="static-to-nav btn-group"><a id="clickToCallHeaderEvent" class="btn btn-nav btn-nav1 callNowClass"><i class="fa fa-mobile"></i><span>
+                      &nbsp;
+                      Call
+                      <!--| 855-293-2138--></span></a><a id="mobileDirectionsButtonEvent" href="//maps.google.com/maps?saddr=Current+Location&amp;daddr=712 East Gude Drive,+Derwood,+MD+20850" class="btn btn-nav btn-nav2"><i class="fa fa-road"></i><span>&nbsp;</span>Directions</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <nav>
+        <div id="nav" class="full">
+          <div id="nav-container" class="container">
+            <div class="js-vdp-navbar navbar navbar-default navbar-static-top">
+              <div id="navbar-header" class="navbar-header">
+                <button id="open-right" type="button" class="navbar-toggle"><span id="menu-icon" class="fa fa-bars fa-lg"></span></button>
+              </div>
+              <div id="navbar-collapse" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                  <li class="dropdown"><a id="homePage" data-href="/" href="/" class="qmparent homepage homedropdown">Home</a></li>
+                  <li class="dropdown dropdown-has-children"><a id="parent_1" data-href="/searchnew.aspx" href="/searchnew.aspx" class="qmparent newvehiclesdropdown">New Vehicles</a>
+                    <ul class="dropdown-menu nopad">
+                      <li class="hideOnMobile"><a id="2_child_2" href="/searchnew.aspx" class="searchinventorychild">Search Inventory</a></li>
+                      <li><a id="2_child_3" href="/testdrive.aspx" class="scheduletestdrivechild">Schedule Test Drive</a></li>
+                      <li><a id="2_child_5" href="/trade.aspx" class="tradeappraisalchild">Trade Appraisal</a></li>
+                      <li><a id="2_child_6" href="/showroom.aspx" class="virtualshowroomchild">Virtual Showroom</a></li>
+                      <li><a id="2_child_7" href="/research.html" class="chevroletcamarochild">2014 Chevrolet Camaro</a></li>
+                      <li><a id="2_child_8" href="/findmycar.aspx?type=New" class="findmycarchild">Find My Car</a></li>
+                      <li><a id="2_child_9" href="/testpage.html" class="customcontentpagewinventorychild">Custom Content Page w inventory</a></li>
+                      <li><a id="2_child_10" href="/custom24.html" class="noinventorychild">noinventory</a></li>
+                      <li><a id="2_child_11" href="/inventory-page.html" class="inventorypagechild">inventory page</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown dropdown-has-children"><a id="parent_2" data-href="/searchused.aspx" href="/searchused.aspx" class="qmparent usedvehiclesdropdown">Used Vehicles</a>
+                    <ul class="dropdown-menu nopad">
+                      <li class="hideOnMobile"><a id="3_child_2" href="/searchused.aspx" class="searchinventorychild">Search Inventory</a></li>
+                      <li><a id="3_child_3" href="/testdrive.aspx?type=Used" class="scheduletestdrivechild">Schedule Test Drive</a></li>
+                      <li><a id="3_child_4" href="/quote.aspx?type=Used" class="quickquotechild">Quick Quote</a></li>
+                      <li><a id="3_child_5" href="/findmycar.aspx" class="findmycarchild">Find My Car</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown dropdown-has-children"><a id="parent_3" data-href="/service.aspx" href="/service.aspx" class="qmparent servicepartsdropdown">Service & Parts</a>
+                    <ul class="dropdown-menu nopad">
+                      <li><a id="4_child_2" href="/service.aspx" class="servicedepartmentchild">Service Department</a></li>
+                      <li><a id="4_child_3" href="/serviceappmt.aspx" class="requestanappointmentchild">Request an Appointment</a></li>
+                      <li><a id="4_child_4" href="/orderparts.aspx" class="orderpartschild">Order Parts</a></li>
+                      <li><a id="4_child_5" href="/testtesttesttest.html" class="testmodelpagechild">Test model page</a></li>
+                      <li><a id="4_child_6" href="/rentals.aspx" class="rentalcarreservationchild">Rental Car Reservation</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown dropdown-has-children"><a id="parent_4" data-href="/specials.aspx" href="/specials.aspx" class="qmparent specialsdropdown">Specials</a>
+                    <ul class="dropdown-menu nopad">
+                      <li><a id="5_child_2" href="/newspecials.aspx" class="newspecialschild">New Specials</a></li>
+                      <li><a id="5_child_3" href="/usedspecials.aspx" class="preownedspecialschild">Pre-Owned Specials</a></li>
+                      <li><a id="5_child_4" href="/service-parts-specials.aspx" class="servicepartsspecialschild">Service & Parts Specials</a></li>
+                      <li><a id="5_child_5" href="/manufacturer-specials.aspx" class="manufacturerspecialschild">Manufacturer Specials</a></li>
+                      <li><a id="5_child_6" href="/custom14.html" class="salesspecialchild">Sales Special</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown dropdown-has-children"><a id="parent_5" data-href="/finance.aspx" href="/finance.aspx" class="qmparent financedropdown">Finance</a>
+                    <ul class="dropdown-menu nopad">
+                      <li><a id="6_child_2" href="/finance.aspx" class="financedepartmentchild">Finance Department</a></li>
+                      <li><a id="6_child_3" href="/preapproved.aspx" class="getpreapprovedchild">Get Pre-approved</a></li>
+                      <li><a id="6_child_4" href="/paymentcalc.aspx" class="paymentcalculatorchild">Payment Calculator</a></li>
+                      <li><a id="6_child_5" href="/trade.aspx" class="tradeappraisalchild">Trade Appraisal</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown dropdown-has-children"><a id="parent_6" data-href="/aboutus.aspx" href="/aboutus.aspx" class="qmparent aboutusdropdown">About Us</a>
+                    <ul class="dropdown-menu nopad">
+                      <li><a id="7_child_2" href="/aboutus.aspx" class="ourdealershipchild">Our Dealership</a></li>
+                      <li><a id="7_child_3" href="/staff.aspx" class="meetourstaffchild">Meet Our Staff</a></li>
+                      <li><a id="7_child_4" href="/careers.aspx" class="careerschild">Careers</a></li>
+                      <li><a id="7_child_5" href="/knjkhsdfkjlhsdf.html" class="testpagechild">Test page</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown"><a id="parent_8" data-href="/blogs/1208/" href="/blogs/1208/" class="qmparent ourblogdropdown">Our Blog</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
     <main class="vdp">
       <!---->
       <!--	Breadcrumb-->
-      <div class="vdp-breadcrumb">
+      <div class="vdp-breadcrumb visible-sm-inline visible-md-inline visible-lg-inline">
         <div class="container">
           <div class="pull-left">
             <ol class="breadcrumb">
               <li><a href="#">Search New</a></li>
               <li><a href="#">Chevrolet</a></li>
-              <li class="active">2016 Chevrolet Silverado 1500 Work Truck Extended Cab</li>
+              <li class="active">2016 Chevrolet Silverado 1500</li>
             </ol>
           </div>
           <div class="pull-right">
-            <ul class="nav nav-pills">
-              <li><a href="#"><i class="fa fa-envelope"></i>&nbsp; Email</a></li>
-              <li><a href="#"><i class="fa fa-print"></i>&nbsp; Print</a></li>
-              <li><a href="#"><i class="fa fa-mobile"></i>&nbsp; Text</a></li>
-            </ul>
+            <div class="name-this-later">
+              <ul class="nav nav-pills">
+                <li><a href="#"><i class="fa fa-envelope"></i>&nbsp; Email</a></li>
+                <li class="visible-sm-inline visible-md-inline visible-lg-inline"><a href="#"><i class="fa fa-print"></i>&nbsp; Print</a></li>
+                <li><a href="#"><i class="fa fa-mobile"></i>&nbsp; Text</a></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
       <!---->
       <!--	Carousel-->
       <div class="vdp-carousel-wrapper js-vdp-carousel-wrapper">
-        <div class="vdp-carousel-controls container">
+        <div class="vdp-carousel-controls container invisible">
           <div class="vdp-carousel-controls-navbar">
             <ul class="nav nav-pills small">
               <li><a href="#"><i class="fa fa-play-circle"></i>&nbsp; Video</a></li>
@@ -46,21 +184,19 @@
           <div class="vdp-carousel-controls-slide"><a href="" class="btn js-gallery-control control control-left js-control-left"><i class="js-gallery-control fa fa-chevron-left"></i></a><a href="" class="btn js-gallery-control control control-right js-control-right"><i class="js-gallery-control fa fa-chevron-right"></i></a></div>
         </div>
         <div class="vdp-carousel js-vdp-carousel">
-          <!--	.vdp-carousel-item.hero--bg-->
-          <!--		img.vdp-carousel-image.b-lazy.js-vdp-carousel-image(src="http://ip.dlron.us/assets/inventory/photos/1781/3gcuktec5gg217436-2.jpg")-->
-          <div class="vdp-carousel-item hero"><img id="vdp-carousel-image-0" data-count="0" src="http://ip.dlron.us/assets/inventory/photos/1781/3gcuktec5gg217436-1.jpg" class="vdp-carousel-image vdp-carousel-hero b-lazy js-vdp-carousel-image"></div>
-          <div class="vdp-carousel-item"><img id="vdp-carousel-image-1" data-count="1" src="http://ip.dlron.us/assets/inventory/photos/1781/3gcuktec5gg217436-2.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"><img id="vdp-carousel-image-2" data-count="2" src="http://ip.dlron.us/assets/inventory/photos/1781/3gcuktec5gg217436-3.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"></div>
-          <div class="vdp-carousel-item"><img id="vdp-carousel-image-3" data-count="3" src="http://ip.dlron.us/assets/inventory/photos/1781/3gcuktec5gg217436-4.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"><img id="vdp-carousel-image-4" data-count="4" src="http://ip.dlron.us/assets/inventory/photos/1781/3gcuktec5gg217436-5.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"></div>
-          <div class="vdp-carousel-item"><img id="vdp-carousel-image-5" data-count="5" src="http://ip.dlron.us/assets/inventory/photos/1781/3gcuktec5gg217436-6.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"><img id="vdp-carousel-image-6" data-count="6" src="http://ip.dlron.us/assets/inventory/photos/1781/3gcuktec5gg217436-7.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"></div>
-          <div class="vdp-carousel-item"><img id="vdp-carousel-image-7" data-count="7" src="http://ip.dlron.us/assets/inventory/photos/1781/3gcuktec5gg217436-8.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"><img id="vdp-carousel-image-8" data-count="8" src="http://ip.dlron.us/assets/inventory/photos/1781/3gcuktec5gg217436-9.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"></div>
-          <div class="vdp-carousel-item"><img id="vdp-carousel-image-9" data-count="9" src="http://ip.dlron.us/assets/inventory/photos/1781/3gcuktec5gg217436-10.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"><img id="vdp-carousel-image-10" data-count="10" src="http://ip.dlron.us/assets/inventory/photos/1781/3gcuktec5gg217436-11.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"></div>
-          <div class="vdp-carousel-item"><img id="vdp-carousel-image-11" data-count="11" src="http://ip.dlron.us/assets/inventory/photos/1781/3gcuktec5gg217436-12.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"><img id="vdp-carousel-image-12" data-count="12" src="http://ip.dlron.us/assets/inventory/photos/1781/3gcuktec5gg217436-13.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"></div>
-          <div class="vdp-carousel-item"><img id="vdp-carousel-image-13" data-count="13" src="http://ip.dlron.us/assets/inventory/photos/1781/3gcuktec5gg217436-14.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"><img id="vdp-carousel-image-14" data-count="14" src="http://ip.dlron.us/assets/inventory/photos/1781/3gcuktec5gg217436-15.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"></div>
-          <div class="vdp-carousel-item"><img id="vdp-carousel-image-15" data-count="15" src="http://ip.dlron.us/assets/inventory/photos/1781/3gcuktec5gg217436-16.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"><img id="vdp-carousel-image-16" data-count="16" src="http://ip.dlron.us/assets/inventory/photos/1781/3gcuktec5gg217436-17.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"></div>
-          <div class="vdp-carousel-item"><img id="vdp-carousel-image-17" data-count="17" src="http://ip.dlron.us/assets/inventory/photos/1781/3gcuktec5gg217436-18.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"><img id="vdp-carousel-image-18" data-count="18" src="http://ip.dlron.us/assets/inventory/photos/1781/3gcuktec5gg217436-19.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"></div>
-          <div class="vdp-carousel-item"><img id="vdp-carousel-image-19" data-count="19" src="http://ip.dlron.us/assets/inventory/photos/1781/3gcuktec5gg217436-20.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"><img id="vdp-carousel-image-20" data-count="20" src="http://ip.dlron.us/assets/inventory/photos/1781/3gcuktec5gg217436-21.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"></div>
-          <div class="vdp-carousel-item"><img id="vdp-carousel-image-21" data-count="21" src="http://ip.dlron.us/assets/inventory/photos/1781/3gcuktec5gg217436-22.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"><img id="vdp-carousel-image-22" data-count="22" src="http://ip.dlron.us/assets/inventory/photos/1781/3gcuktec5gg217436-23.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"></div>
-          <div class="vdp-carousel-item"><img id="vdp-carousel-image-23" data-count="23" src="http://ip.dlron.us/assets/inventory/photos/1781/3gcuktec5gg217436-24.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"><img id="vdp-carousel-image-24" data-count="24" src="http://ip.dlron.us/assets/inventory/photos/1781/3gcuktec5gg217436-25.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"></div>
+          <div class="vdp-carousel-item hero"><img id="vdp-carousel-image-0" data-count="0" src="../img/vehicle-images1.jpg" class="vdp-carousel-image vdp-carousel-hero b-lazy js-vdp-carousel-image"></div>
+          <div class="vdp-carousel-item"><img id="vdp-carousel-image-1" data-count="1" src="../img/vehicle-images2.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"><img id="vdp-carousel-image-2" data-count="2" src="../img/vehicle-images3.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"></div>
+          <div class="vdp-carousel-item"><img id="vdp-carousel-image-3" data-count="3" src="../img/vehicle-images4.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"><img id="vdp-carousel-image-4" data-count="4" src="../img/vehicle-images5.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"></div>
+          <div class="vdp-carousel-item"><img id="vdp-carousel-image-5" data-count="5" src="../img/vehicle-images6.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"><img id="vdp-carousel-image-6" data-count="6" src="../img/vehicle-images7.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"></div>
+          <div class="vdp-carousel-item"><img id="vdp-carousel-image-7" data-count="7" src="../img/vehicle-images8.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"><img id="vdp-carousel-image-8" data-count="8" src="../img/vehicle-images9.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"></div>
+          <div class="vdp-carousel-item"><img id="vdp-carousel-image-9" data-count="9" src="../img/vehicle-images10.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"><img id="vdp-carousel-image-10" data-count="10" src="../img/vehicle-images11.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"></div>
+          <div class="vdp-carousel-item"><img id="vdp-carousel-image-11" data-count="11" src="../img/vehicle-images12.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"><img id="vdp-carousel-image-12" data-count="12" src="../img/vehicle-images13.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"></div>
+          <div class="vdp-carousel-item"><img id="vdp-carousel-image-13" data-count="13" src="../img/vehicle-images14.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"><img id="vdp-carousel-image-14" data-count="14" src="../img/vehicle-images15.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"></div>
+          <div class="vdp-carousel-item"><img id="vdp-carousel-image-15" data-count="15" src="../img/vehicle-images16.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"><img id="vdp-carousel-image-16" data-count="16" src="../img/vehicle-images17.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"></div>
+          <div class="vdp-carousel-item"><img id="vdp-carousel-image-17" data-count="17" src="../img/vehicle-images18.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"><img id="vdp-carousel-image-18" data-count="18" src="../img/vehicle-images19.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"></div>
+          <div class="vdp-carousel-item"><img id="vdp-carousel-image-19" data-count="19" src="../img/vehicle-images20.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"><img id="vdp-carousel-image-20" data-count="20" src="../img/vehicle-images21.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"></div>
+          <div class="vdp-carousel-item"><img id="vdp-carousel-image-21" data-count="21" src="../img/vehicle-images22.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"><img id="vdp-carousel-image-22" data-count="22" src="../img/vehicle-images23.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"></div>
+          <div class="vdp-carousel-item"><img id="vdp-carousel-image-23" data-count="23" src="../img/vehicle-images24.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"><img id="vdp-carousel-image-24" data-count="24" src="../img/vehicle-images25.jpg" class="vdp-carousel-image b-lazy js-vdp-carousel-image"></div>
         </div>
       </div>
       <!---->
@@ -73,43 +209,41 @@
                 <div class="vdp-sidebar-heading">
                   <div class="nav nav-tabs">
                     <li class="vdp-sidebar-notifications-pricedrop js-vdp-sidebar-notifications-pricedrop"><a href="#" class="js-vdp-sidebar-notifications-pricedrop-link"><span><span class="visible-sm-inline visible-md-inline visible-lg-inline">Recent</span> Price Drop&nbsp;</span><i class="fa fa-exclamation"></i></a>
-                      <div><span>Reduced by $500 from 5/21/2016</span><a class="btn btn-sm btn-rounded">Get <span class="visible-sm-inline visible-md-inline visible-lg-inline">Price Drop</span> Alert</a></div>
+                      <div><span>Reduced by $500 from 5/21/2016</span><a data-title="Get Price Drop Alert" data-open="#epriceFormModal" type="button" class="btn btn-sm btn-rounded js-vdp-modal">Get <span class="visible-sm-inline visible-md-inline visible-lg-inline">Price Drop</span> Alert</a></div>
                     </li>
                     <li class="vdp-sidebar-notifications-yousave"><a href="#"><span>You Save: <sup>$</sup>6,283</span></a></li>
                   </div>
                 </div>
-                <div class="vdp-sidebar-body panel-heading visible-sm visible-xs">
+                <div style="border-bottom: 1px solid #efefef; margin-bottom: 5px;" class="vdp-sidebar-body panel-heading visible-sm visible-xs">
                   <div class="vdp-vehicle-title">
                     <ul class="list-inline small text-muted">
                       <li>Vin: 3GCUKREC4GG120117</li>
                       <li>Stock: P23219</li>
                       <li>Model: CK15543</li>
                     </ul>
-                    <h1 class="h4 strong">2016 Chevrolet Silverado 1500 Work Truck Extended Cab w/ Cheese</h1>
+                    <h1 class="h4 strong">2016 Chevrolet Silverado 1500 Work Truck Extended Cab</h1>
                     <ul class="list-inline small">
-                      <li class="vdp-vehicle-ratings"><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star inactive"></i><i class="fa fa-star inactive"></i></li>
-                      <li class="vdp-vehicle-reviews text-muted"> 3.73(49) Reviews - Edmunds.com</li>
-                      <li class="vdp-vehicle-confirmavailability text-muted"><a href="#" class="btn btn-sm btn-default btn-rounded"><i class="fa fa-check text-muted"></i><span class="text-muted">&nbsp;Confirm Availability</span></a></li>
+                      <li style="margin-bottom: 10px;" class="vdp-vehicle-ratings"><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star inactive"></i><i class="fa fa-star inactive"></i></li>
+                      <li class="vdp-vehicle-reviews text-muted">3.73(49) Reviews - Edmunds.com</li>
+                      <li class="vdp-vehicle-confirmavailability text-muted"><a data-title="Confirm Availability" data-open="#epriceFormModal" class="btn btn-sm btn-default btn-rounded js-vdp-modal"><i class="fa fa-check text-muted"><span class="text-muted">&nbsp;Confirm Availability</span></i></a></li>
                     </ul>
                   </div>
                 </div>
-              </div>
-              <div class="panel">
                 <div class="vdp-sidebar-body panel-body">
                   <ul class="list-inline small">
-                    <li class="text-muted">MSRP: $51,625</li>
+                    <li class="text-muted invisible">MSRP: $51,625</li>
+                    <!--	Hide MSRP-->
                   </ul>
                   <h2 class="h4 vdp-price"><span class="vdp-price-label">Internet Price:</span><span class="vdp-price-price">&nbsp;<sup>$</sup>45,432</span></h2>
                   <div class="vdp-calculate-payments">
                     <ul class="list-inline text-muted">
                       <li class="small">Lease<br>$880/mo</li>
                       <li class="small">Finance<br>$880/mo</li>
-                      <li><a href="#" style="margin-right: 10px;" class="btn btn-sm btn-default btn-rounded"><i class="fa fa-calculator text-muted"></i>&nbsp;<i class="fa fa-caret-down text-muted"></i></a><a href="#" class="btn btn-sm btn-default btn-rounded"><i class="fa fa-check text-muted"></i><span class="text-muted">&nbsp;Only 13 Left!</span></a></li>
+                      <li><a href="#" data-open="#paymentCalcModal" data-title="Payment Calculator" style="margin-right: 10px;" class="btn btn-sm btn-default btn-rounded js-vdp-modal"><i class="fa fa-calculator text-muted"></i>&nbsp;<i class="fa fa-caret-down text-muted"></i></a><span class="btn btn-sm btn-default btn-rounded btn-text"><i class="fa fa-check text-muted"></i><span class="text-muted">&nbsp;Only 13 Left!</span></span></li>
                     </ul>
                   </div>
-                  <div class="input-group vdp-input-group">
-                    <input type="text" placeholder="You@email.com" class="form-control"><span class="input-group-btn">
-                      <button type="button" class="btn btn-primary"><i class="fa fa-tag"></i><strong>&nbsp;Get Sale Price</strong></button></span>
+                  <div class="vdp-getsaleprice input-group vdp-input-group">
+                    <input id="getSalePriceEntryForm" type="text" placeholder="You@email.com" value="" class="form-control"><span class="input-group-btn"><a data-email="#getSalePriceEntryForm" data-title="Get Sale Price" data-open="#epriceFormModal" type="button" class="btn btn-primary js-vdp-modal"><i class="fa fa-tag"></i><strong>&nbsp;Get Sale Price</strong></a></span>
                   </div>
                   <p class="vdp-disclaimer small">Please Note: We provide Savings on our vehicles daily based on current inventory supply. Check to see if this vehicle  qualifies for a Sale Price.</p>
                 </div>
@@ -159,9 +293,9 @@
                       </tr>
                     </tbody>
                   </table>
-                  <div class="row vdp-pricing-buttons">
-                    <div class="col-sm-6"><a href="" class="btn btn-default btn-block">Button</a></div>
-                    <div class="col-sm-6"><a href="" class="btn btn-default btn-block">Button</a></div>
+                  <div class="vdp-pricing-buttons clearfix margin-top-1x">
+                    <button class="btn btn-default btn-block">Value Your Trade</button>
+                    <button class="btn btn-default btn-block">Financing</button>
                   </div>
                   <table class="vdp-pricing-details table">
                     <thead>
@@ -199,7 +333,7 @@
             </div>
             <div class="col-md-7 col-md-pull-5 col-lg-8 col-lg-pull-4">
               <div class="panel">
-                <div class="panel-heading">
+                <div class="panel-heading hidden-xs">
                   <div class="vdp-vehicle-title">
                     <ul class="list-inline small text-muted">
                       <li>Vin: 3GCUKREC4GG120117</li>
@@ -210,7 +344,7 @@
                     <ul class="list-inline small">
                       <li class="vdp-vehicle-ratings"><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star inactive"></i><i class="fa fa-star inactive"></i></li>
                       <li class="vdp-vehicle-reviews text-muted"> 3.73(49) Reviews - Edmunds.com</li>
-                      <li class="vdp-vehicle-confirmavailability text-muted"><a href="#" class="btn btn-sm btn-default btn-rounded"><i class="fa fa-check text-muted"></i><span class="text-muted">&nbsp;Confirm Availability</span></a></li>
+                      <li class="vdp-vehicle-confirmavailability text-muted"><a data-title="Confirm Availability" data-open="#epriceFormModal" class="btn btn-sm btn-default btn-rounded js-vdp-modal"><i class="fa fa-check text-muted"></i><span class="text-muted">&nbsp;Confirm Availability</span></a></li>
                     </ul>
                   </div>
                 </div>
@@ -220,37 +354,37 @@
                       <div class="vdp-vehicle-features">
                         <ul class="list-unstyled">
                           <li class="vdp-feature media">
-                            <div class="vdp-feature-icon media-left"><img src="http://placehold.it/24x24"></div>
+                            <div class="vdp-feature-icon media-left"><img src="../img/gas-icon.png"></div>
                             <div class="vdp-feature-body media-body"><span class="vdp-feature-body-small text-muted">City/Hwy</span>
                               <h3 class="h5 strong vdp-feature-body-title">30/20mpg</h3>
                             </div>
                           </li>
                           <li class="vdp-feature media">
-                            <div class="vdp-feature-icon media-left"><img src="http://placehold.it/24x24"></div>
+                            <div class="vdp-feature-icon media-left"><img src="../img/body-icon.png"></div>
                             <div class="vdp-feature-body media-body"><span class="vdp-feature-body-small text-muted">Body Style</span>
                               <h3 class="h5 strong vdp-feature-body-title">4WD Crew Cab 143.5" LT w/2LT</h3>
                             </div>
                           </li>
                           <li class="vdp-feature media">
-                            <div class="vdp-feature-icon media-left"><img src="http://placehold.it/24x24"></div>
+                            <div class="vdp-feature-icon media-left"><img src="../img/colors-icon.png"></div>
                             <div class="vdp-feature-body media-body"><span class="vdp-feature-body-small text-muted">Ext/Int</span>
                               <h3 class="h5 strong vdp-feature-body-title"><i class="fa fa-drop"></i>Ruby Metallic /<i class="fa fa-drop"></i>Dark Ash</h3>
                             </div>
                           </li>
                           <li class="vdp-feature media">
-                            <div class="vdp-feature-icon media-left"><img src="http://placehold.it/24x24"></div>
+                            <div class="vdp-feature-icon media-left"><img src="../img/hp-icon.png"></div>
                             <div class="vdp-feature-body media-body"><span class="vdp-feature-body-small text-muted">Horsepower</span>
                               <h3 class="h5 strong vdp-feature-body-title">349hp</h3>
                             </div>
                           </li>
                           <li class="vdp-feature media">
-                            <div class="vdp-feature-icon media-left"><img src="http://placehold.it/24x24"></div>
+                            <div class="vdp-feature-icon media-left"><img src="../img/engine-icon.png"></div>
                             <div class="vdp-feature-body media-body"><span class="vdp-feature-body-small text-muted">Engine</span>
                               <h3 class="h5 strong vdp-feature-body-title">8Cyl - 6.7L</h3>
                             </div>
                           </li>
                           <li class="vdp-feature media">
-                            <div class="vdp-feature-icon media-left"><img src="http://placehold.it/24x24"></div>
+                            <div class="vdp-feature-icon media-left"><img src="../img/transmission-icon.png"></div>
                             <div class="vdp-feature-body media-body"><span class="vdp-feature-body-small text-muted">Transmission</span>
                               <h3 class="h5 strong vdp-feature-body-title">6 Speed FWD</h3>
                             </div>
@@ -261,9 +395,9 @@
                     <div class="col-lg-6">
                       <div class="vdp-vehicle-description">
                         <h3 class="h5 strong">Vehicle Description</h3>
-                        <p>This car is made of cheese. All rebates to dealer. All prior sales excluded. In stock units only. 0% offers may be in lieu of factory rebates, and are based on approved tier 1 credit through GM Financial. Leases include 10K miles per year with $0.25 per mile over penalty. Purchase Payment based on tier credit through preferred lender. Lease Payment based on approved tier 1 credit through GM Financial. Payment includes title, registration...<strong>read more</strong></p>
+                        <p>All rebates to dealer. All prior sales excluded. In stock units only. 0% offers may be in lieu of factory rebates, and are based on approved tier 1 credit through GM Financial. Leases include 10K miles per year with $0.25 per mile over penalty. Purchase Payment based on tier credit through preferred lender. Lease Payment based on approved tier 1 credit through GM Financial. Payment includes title, registration...<strong>read more</strong></p>
                       </div>
-                      <div class="vdp-eligible-benefits">
+                      <div style="margin-top: 20px;" class="vdp-eligible-benefits">
                         <h3 class="h5 strong">Eligible Benefits</h3>
                         <ul class="list-inline">
                           <li><img src="http://placehold.it/60x40"></li>
@@ -281,14 +415,14 @@
                   <ul role="tablist" class="vdp-tabs nav nav-tabs nav-justified">
                     <li role="presentation" class="active"><a href="#features" role="tab" data-toggle="tab" class="strong">Features</a></li>
                     <li role="presentation"><a href="#options" role="tab" data-toggle="tab" class="strong">Options</a></li>
-                    <li role="presentation"><a href="#reviews" role="tab" data-toggle="tab" class="strong">Reviews</a></li>
+                    <li role="presentation"><a href="#specs" role="tab" data-toggle="tab" class="strong">Specs</a></li>
                     <li role="presentation"><a href="#warranty" role="tab" data-toggle="tab" class="strong">Warranty</a></li>
                   </ul>
                 </div>
                 <div class="vdp-tab-content-wrapper panel-body">
                   <div class="vdp-tab-content tab-content">
                     <div id="features" role="tabpanel" class="tab-pane active">
-                      <h3 class="h5 strong">Comfort</h3>
+                      <h5>Comfort</h5>
                       <ul>
                         <li>Audio system with AM/FM radio, CD player (reads MP3 format), digital media card, digital radio, satellite radio, touch screen, color screen and MyLink</li>
                         <li>Steering wheel mounted remote audio controls</li>
@@ -308,12 +442,260 @@
                         <li>Body-color heated driver and passenger power door mirrors</li>
                         <li>Front and rear windows with one-touch on two windows</li>
                         <li>Internet navigation system with arrows and voice</li>
-                        <li>ExteriorFront and rear alloy wheels: 17" x 8.0"Chrome front and rear bumpersFront and rear 265/65-17 and all-terrain tiresSafetyABSFour-wheel disc brakes: four ventilatedRear mechanical limited-slip differentialElectronic traction controlHeadlights: low beam bulb with projector beam lenses Bi-XenonHeadlight control with dusk sensorFront fog lightsIntelligent driver and passenger front airbagFront side airbagFront and rear curtain airbagTwo height-adjustable front seat and rear seat head restraintsHeight adjustable driver front seat belts with pre-tensioners, height adjustable passenger front seat belts with pre-tensioners, center front seat beltsRear seat belt, passenger rear seat belt, 3-point center rear seat beltIntermittent windshield wipersTechnicalEngine: 4.3L EcoTec3 V 6 and variable valve timingGasoline direct fuel injectionPrimary fuel type: E85, Secondary fuel type: unleadedPower (SAE): 297 hp @ 5,300 rpm; 330 ft lb of torque @ 3,900 rpmIndependent front wishbone suspension with stabilizer bar and coil springs, rigid rear beam suspension with leaf springsHeavy duty suspensionTransmission: automatic with manual mode and column shifter</li>
+                      </ul>
+                      <h5>Exterior</h5>
+                      <ul>
+                        <li>Front and rear alloy wheels: 17" x 8.0"</li>
+                        <li>Chrome front and rear bumpers</li>
+                        <li>Front and rear 255/70-17 and all-season tires</li>
+                      </ul>
+                      <h5>Safety</h5>
+                      <ul>
+                        <li>ABS</li>
+                        <li>Four-wheel disc brakes: four ventilated</li>
+                        <li>Electronic traction control</li>
+                        <li>Headlights: low beam bulb with projector beam lenses Bi-Xenon</li>
+                        <li>Headlight control with dusk sensor</li>
+                        <li>Intelligent driver and passenger front airbag</li>
+                        <li>Front side airbag</li>
+                        <li>Front and rear curtain airbag</li>
+                        <li>Two height-adjustable front seat and rear seat head restraints</li>
+                        <li>Height adjustable driver front seat belts with pre-tensioners, height adjustable passenger front seat belts with pre-tensioners, center front seat belts</li>
+                        <li>Rear seat belt, passenger rear seat belt, 3-point center rear seat belt</li>
+                        <li>Intermittent windshield wipers</li>
+                      </ul>
+                      <h5>Technical</h5>
+                      <ul>
+                        <li>Engine: 4.3L EcoTec3 V 6 and variable valve timing</li>
+                        <li>Gasoline direct fuel injection</li>
+                        <li>Primary fuel type: E85, Secondary fuel type: unleaded</li>
+                        <li>Power (SAE): 297 hp @ 5,300 rpm; 330 ft lb of torque @ 3,900 rpm</li>
+                        <li>Independent front wishbone suspension with stabilizer bar and coil springs, rigid rear beam suspension with leaf springs</li>
+                        <li>Transmission: automatic with manual mode and column shifter</li>
                       </ul>
                     </div>
-                    <div id="options" role="tabpanel" class="tab-pane">Options</div>
-                    <div id="reviews" role="tabpanel" class="tab-pane">Reviews</div>
-                    <div id="warranty" role="tabpanel" class="tab-pane">Warranty</div>
+                    <div id="options" role="tabpanel" class="tab-pane">
+                      <p>Four Wheel Drive, Power Steering, Abs, 4-Wheel Disc Brakes, Aluminum Wheels, Conventional Spare Tire, Tow Hooks, Daytime Running Lights, Hid Headlights, Heated Mirrors, Power Mirror(S), Privacy Glass, Keyless Entry, Power Door Locks, Am/Fm Stereo, Mp3 Player, Bluetooth Connection, Auxiliary Audio Input, Smart Device Integration, Cd Player, Hd Radio, Satellite Radio, Telematics, Wifi Hotspot, Split Bench Seat, Driver Adjustable Lumbar, Pass-Through Rear Seat, Rear Bench Seat, Floor Mats, Cruise Control, Steering Wheel Audio Controls, Leather Steering Wheel, Adjustable Steering Wheel, Power Windows, A/C, Driver Vanity Mirror, Passenger Vanity Mirror, Driver Illuminated Vanity Mirror, Passenger Illuminated Visor Mirror, Traction Control, Stability Control, Driver Air Bag, Passenger Air Bag, Front Side Air Bag, Front Head Air Bag, Rear Head Air Bag, Passenger Air Bag Sensor, Navigation From Telematics, Tire Pressure Monitor</p>
+                    </div>
+                    <div id="specs" role="tabpanel" class="tab-pane">
+                      <h5>Engine
+                        <li>cc: 4300</li>
+                        <li>cc: 5328</li>
+                        <li>Liters: 4.3</li>
+                        <li>Liters: 5.3</li>
+                        <li>bore: 96.0</li>
+                        <li>bore: 99.6</li>
+                        <li>stroke: 92.0</li>
+                        <li>compression ratio: 11.0 (comp ratio)</li>
+                        <li>number of cylinders: 6</li>
+                        <li>number of cylinders: 8</li>
+                        <li>configuration: V</li>
+                        <li>location: front</li>
+                        <li>block composition: light alloy</li>
+                        <li>head composition: light alloy</li>
+                        <li>valve gear type: overhead valve (OHV)</li>
+                        <li>variable valve timing/camshaft: yes</li>
+                        <li>number of valves per cylinder: 2</li>
+                        <li>engine code: L83 (code)</li>
+                        <li>engine code: LV3 (code)</li>
+                      </h5>
+                      <h5>Power
+                        <li>measurement standard: SAE</li>
+                        <li>Maximum power kW: 221 (kW)</li>
+                        <li>Maximum power kW: 265 (kW)</li>
+                        <li>Maximum power kW: 283 (kW)</li>
+                        <li>Maximum power hp/PS: 297 (hp/PS)</li>
+                        <li>Maximum power hp/PS: 355 (hp/PS)</li>
+                        <li>Maximum power hp/PS: 380 (hp/PS)</li>
+                        <li>rpm for maximum power: 5300 (rpm max hp)</li>
+                        <li>rpm for maximum power: 5600 (rpm max hp)</li>
+                        <li>maximum torque lb ft: 330 (max torq lb ft)</li>
+                        <li>maximum torque lb ft: 383 (max torq lb ft)</li>
+                        <li>maximum torque lb ft: 416 (max torq lb ft)</li>
+                        <li>maximum torque Nm: 447 (max torq Nm)</li>
+                        <li>maximum torque Nm: 519 (max torq Nm)</li>
+                        <li>maximum torque Nm: 564 (max torq Nm)</li>
+                        <li>rpm for maximum torque: 3900 (rpm max torq)</li>
+                        <li>rpm for maximum torque: 4100 (rpm max torq)</li>
+                        <li>torque standard: SAE</li>
+                      </h5>
+                      <h5>Power steering
+                        <li>vehicle speed proportional: no</li>
+                        <li>type: electric</li>
+                        <li>variable rack: -</li>
+                      </h5>
+                      <h5>Transmission
+                        <li>Transmission type: automatic</li>
+                        <li>number of speeds: 6</li>
+                        <li>mode select (auto only): yes</li>
+                        <li>manual mode (auto only): yes</li>
+                        <li>shift lever location: column</li>
+                        <li>1st gear ratio :1: 4.030 (1st)</li>
+                        <li>2nd gear ratio :1: 2.360 (2nd)</li>
+                        <li>3rd gear ratio :1: 1.530 (3rd)</li>
+                        <li>4th gear ratio :1: 1.150 (4th)</li>
+                        <li>5th gear ratio :1: 0.850 (5th)</li>
+                        <li>6th gear ratio :1: 0.670 (6th)</li>
+                        <li>reverse gear ratio :1: 3.060 (rev)</li>
+                        <li>low/high gear ranges: yes</li>
+                        <li>transmission code: 6L80 (code)</li>
+                        <li>manual sequential: no</li>
+                        <li>automatic mode - manual: no</li>
+                        <li>transmission description: automatic with manual mode (auto with man)</li>
+                      </h5>
+                      <h5>Suspension
+                        <li>type: beam</li>
+                        <li>type: wishbone</li>
+                        <li>stabilizer bar: no</li>
+                        <li>stabilizer bar: yes</li>
+                        <li>location: front (frt)</li>
+                        <li>location: rear</li>
+                        <li>wheel dependence: independent (ind)</li>
+                        <li>wheel dependence: rigid</li>
+                        <li>spring type: coil</li>
+                        <li>spring type: leaf</li>
+                      </h5>
+                      <h5>Wheels
+                        <li>location: front</li>
+                        <li>location: rear</li>
+                        <li>rim type: alloy</li>
+                        <li>rim type: alloy chrome</li>
+                        <li>rim diameter: 17</li>
+                        <li>rim diameter: 18</li>
+                        <li>rim diameter: 20</li>
+                        <li>rim diameter: 22</li>
+                        <li>rim width: 8.0 (rim wid)</li>
+                        <li>rim width: 8.5 (rim wid)</li>
+                        <li>rim width: 9.0 (rim wid)</li>
+                        <li>wheel covers: partial (part)</li>
+                        <li>locking wheel nuts: yes</li>
+                      </h5>
+                      <h5>Tires
+                        <li>location: front</li>
+                        <li>location: rear</li>
+                        <li>tire width: 255 (tire wid)</li>
+                        <li>tire width: 265 (tire wid)</li>
+                        <li>tire width: 275 (tire wid)</li>
+                        <li>tire width: 285 (tire wid)</li>
+                        <li>tire profile: 45</li>
+                        <li>tire profile: 55</li>
+                        <li>tire profile: 65</li>
+                        <li>tire profile: 70</li>
+                        <li>tire rating: H</li>
+                        <li>tire rating: S</li>
+                        <li>tread type: all-season</li>
+                        <li>tread type: all-terrain</li>
+                        <li>sidewall type: black sidewall</li>
+                        <li>sidewall type: outline white letters (out white ltrs)</li>
+                        <li>type: all seasons</li>
+                        <li>type: all terrain</li>
+                        <li>official brochure tire size: yes</li>
+                      </h5>
+                      <h5>Steering wheel
+                        <li>type: leather covered</li>
+                        <li>height adjustment: yes</li>
+                        <li>telescopic adjustment: no</li>
+                        <li>telescopic adjustment: yes</li>
+                        <li>electric adjustment: no</li>
+                        <li>heated: no</li>
+                        <li>multi-function: yes</li>
+                        <li>easy entry: none</li>
+                      </h5>
+                      <h5>Disc brakes
+                        <li>number of: 4</li>
+                        <li>number of ventilated discs: 4</li>
+                      </h5>
+                      <h5>ABS
+                        <li>Brake assist system</li>
+                        <li>Brake assist system: not available (not avail)</li>
+                      </h5>
+                      <h5>Fuel system
+                        <li>injection/carburetion: gasoline direct injection (gas dir inj)</li>
+                        <li>Fuel tank</li>
+                        <li>type: main</li>
+                        <li>capacity (l): 98 (cap (l))</li>
+                        <li>capacity (gal): 26.0 (cap (gal))</li>
+                      </h5>
+                      <Weights>
+                        <li>gross vehicle weight (kg): 3220 (gvw (kg))</li>
+                        <li>published curb weight (kg): 2387 (curb wt (kg))</li>
+                        <li>gross trailer weight braked (kg): 3220 (GTW braked)</li>
+                        <li>gross trailer weight unbraked (kg): 907 (GTW unbraked)</li>
+                        <li>payload allowance (kg): 821 (payload (kg))</li>
+                        <li>gross vehicle weight (lbs): 7100 (gvw (lbs))</li>
+                        <li>published curb weight (lbs): 5263 (curb wt (lbs))</li>
+                        <li>gross trailer weight braked (lbs): 7100 (GTW braked)</li>
+                        <li>gross trailer weight unbraked (lbs): 2000 (GTW unbraked)</li>
+                        <li>payload allowance (lbs): 1810 (payload (lbs))</li>
+                      </Weights>
+                      <h5>Drive
+                        <li>Driven wheels: 4x4</li>
+                        <li>four wheel drive type: full and part-time (full & part)</li>
+                        <li>descent control system: no</li>
+                        <li>selection: manual & automatic (man & auto)</li>
+                        <li>Electronic traction control</li>
+                      </h5>
+                    </div>
+                    <div id="warranty" role="tabpanel" class="tab-pane">
+                      <ul>
+                        <li>Basic: 36 Months/36,000 Mileage</li>
+                        <li>Powertrain: 60 Months/60,000 Mileage</li>
+                        <li>Corrosion: 72 Months/100,000 Mileage</li>
+                        <li>Paint: 36 Months/36,000 Mileage</li>
+                        <li>Full Service: 24 Months/24,000 Mileage</li>
+                        <li>Roadside Assistance: 60 Months/100,000 Mileage</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--	.row-->
+          <!--		.col-md-5.col-md-push-7.col-lg-4.col-lg-push-8-->
+          <!--		.col-md-7.col-md-pull-5.col-lg-8.col-lg-pull-4-->
+          <div style="margin-top: 20px;" class="panel">
+            <div style="border-bottom: 1px solid #efefef" class="panel-heading">
+              <h5 class="strong">Customers Who Viewed This Vehicle Also Viewed</h5>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-sm-4 col-md-3">
+                  <div class="panel">
+                    <div class="panel-body"><img src="../img/recently-viewed-3.jpg" class="img-responsive">
+                      <h5 class="strong">2016 Chevrolet Silverado 1500 LT</h5>
+                      <ul class="list-unstyled">
+                        <li class="clearfix"><span class="pull-left">List Price:</span><span class="pull-right">$44,090</span></li>
+                        <li class="strong clearfix"><span class="pull-left">Internet Price:</span><span class="pull-right">$38,900</span></li>
+                      </ul>
+                      <!--	ul.list-unstyled-->
+                      <!--		li Mileage: 5-->
+                      <!--		li Body Style: 4WD Double Cab 143.5" LT-->
+                      <!--		li Transmission: Automatic-->
+                      <!--		li Ext. Color: Summit White--><a href="#" class="btn btn-sm btn-rounded btn-default">Details</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4 col-md-3">
+                  <div class="panel">
+                    <div class="panel-body"><img src="../img/recently-viewed-2.jpg" class="img-responsive">
+                      <h5 class="strong">2016 Chevrolet Silverado 1500 LT</h5>
+                      <ul class="list-unstyled">
+                        <li class="clearfix"><span class="pull-left">List Price:</span><span class="pull-right">$44,090</span></li>
+                        <li class="strong clearfix"><span class="pull-left">Internet Price:</span><span class="pull-right">$38,900</span></li>
+                      </ul><a href="#" class="btn btn-sm btn-rounded btn-default">Details</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4 col-md-3">
+                  <div class="panel">
+                    <div class="panel-body"><img src="../img/recently-viewed-1.jpg" class="img-responsive">
+                      <h5 class="strong">2016 Chevrolet Silverado 1500 LT</h5>
+                      <ul class="list-unstyled">
+                        <li class="clearfix"><span class="pull-left">List Price:</span><span class="pull-right">$44,090</span></li>
+                        <li class="strong clearfix"><span class="pull-left">Internet Price:</span><span class="pull-right">$38,900</span></li>
+                      </ul><a href="#" class="btn btn-sm btn-rounded btn-default">Details</a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -322,6 +704,169 @@
         </div>
       </div>
     </main>
+    <!--	Modal Other Modal-->
+    <div id="paymentCalcModal" tabindex="-1" role="dialog" class="modal fade">
+      <div role="document" class="modal-dialog">
+        <div class="modal-content">
+          <div class="vdp-modal-header modal-header">
+            <button type="button" data-dismiss="modal" aria-hidden="true" class="close"><i class="fa fa-times"></i></button>
+          </div>
+          <div style="padding: 0;" class="modal-body">
+            <form id="fm_calc" name="fm_calc" class="form-horizontal">
+              <div style="margin: 0;" class="panel panel-default">
+                <div style="border-radius: 0;" class="panel-heading">Estimate Your Monthly Payment</div>
+                <div class="panel-body">
+                  <div class="form-group">
+                    <label for="amount" class="col-md-5 control-label">Loan Amount:</label>
+                    <div class="col-md-7">
+                      <input type="text" placeholder="Loan Amount" name="amount" onchange="calculate(this);" value="" maxlength="20" class="form-control">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="downpayment" class="col-md-5 control-label">Less Down Payment:</label>
+                    <div class="col-md-7">
+                      <input type="text" name="downpayment" onchange="calculate(this);" value="0" class="form-control">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="tradein" class="col-md-5 control-label">Less Trade-In:</label>
+                    <div class="col-md-7">
+                      <input type="text" name="tradein" value="0" onchange="calculate(this);" class="form-control">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="term" class="col-md-5 control-label">Term:</label>
+                    <div class="col-md-7">
+                      <select id="term" name="term" onchange="calculate(this);" class="form-control">
+                        <option value="12">12 months</option>
+                        <option value="24">24 months</option>
+                        <option value="36">36 months</option>
+                        <option value="48">48 months</option>
+                        <option value="60">60 months</option>
+                        <option value="66">66 months</option>
+                        <option value="72">72 months</option>
+                        <option value="84">84 months</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="rate" class="col-md-5 control-label">Interest Rate:</label>
+                    <div class="col-md-7">
+                      <select id="rate" name="rate" onchange="calculate(this);" class="form-control">
+                        <option value="0">0%</option>
+                        <option value="0.9">0.9%</option>
+                        <option value="1.9">1.9%</option>
+                        <option value="2.9">2.9%</option>
+                        <option value="3.9" selected="selected">3.9%</option>
+                        <option value="4.9">4.9%</option>
+                        <option value="5.9">5.9%</option>
+                        <option value="6.9">6.9%</option>
+                        <option value="7.9">7.9%</option>
+                        <option value="8.9">8.9%</option>
+                        <option value="9.9">9.9%</option>
+                        <option value="10.9">10.9%</option>
+                        <option value="11.9">11.9%</option>
+                        <option value="12.9">12.9%</option>
+                        <option value="13.9">13.9%</option>
+                        <option value="14.9">14.9%</option>
+                        <option value="15.9">15.9%</option>
+                        <option value="16.9">16.9%</option>
+                        <option value="17.9">17.9%</option>
+                        <option value="18.9">18.9%</option>
+                        <option value="19.9">19.9%</option>
+                        <option value="20.9">20.9%</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-md-4 col-md-offset-5">
+                      <input id="fSubmit1" type="button" value="Calculate" onclick="calculate(this); ResetTracker(); trackerHook(15, 'click');" class="btn btn-main">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-md-5 control-label">Your Monthly Payment:</label>
+                    <div class="col-md-7">
+                      <input id="payment" type="text" name="payment" class="form-control">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--	Modal General Modal-->
+    <div id="epriceFormModal" tabindex="-1" role="dialog" class="modal fade">
+      <div role="document" class="modal-dialog">
+        <div class="modal-content">
+          <div class="vdp-modal-header modal-header">
+            <button type="button" data-dismiss="modal" aria-hidden="true" class="close"><i class="fa fa-times"></i></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-xs-12">
+                <form id="epriceForm" name="epriceForm" novalidate="novalidate" class="form-horizontal">
+                  <div class="epriceTitle">
+                    <h2 id="defaultEPriceTitle" class="margin-top-x defaultEPrice">Request More Info</h2>
+                    <h2 id="priceDropAlertTitle" style="display:none;" class="priceDropAlert">Get Price Drop Alert</h2>
+                  </div>
+                  <p id="defaultEPriceComments" class="ePriceComments defaultEPrice">We turn our inventory daily, please check with the dealer to confirm vehicle availability.</p>
+                  <p style="display:none;" class="ePriceComments priceDropAlert">Fill out the form below to be notified about changes to 2015 Chevrolet Silverado 2500HD Service Body 4WD's price.</p>
+                  <div class="row hidden-xs">
+                    <div class="col-xs-6">
+                      <div class="epriceImage"><img id="eprice_photo" src="http://ip.dlron.us/assets/inventory/photos/1781/thumbs/1gb1kueg1ff652342-1-320.jpg" class="img-responsive"></div>
+                    </div>
+                    <div class="col-xs-6 nopad">
+                      <div class="epriceVehicleComments"><span id="eprice_vehName" class="vehName"><b>2015 Chevrolet Silverado 2500HD Service Body 4WD</b></span><br><span class="vehColor">Color:</span><span id="eprice_vehColor">Summit White</span><br><span class="vehStock">Stock #:</span><span id="eprice_vehStock">CP22605</span><br><span class="vehVin">VIN:</span><span id="eprice_vehVin">1GB1KUEG1FF652342</span><span id="eprice_vehModel" style="visibility:hidden;">Silverado 2500HD</span><span id="eprice_vehYear" style="visibility:hidden;">2015</span><span id="eprice_vehLocation" style="visibility:hidden;">9682</span></div>
+                    </div>
+                  </div><span id="eprice_vehId" style="visibility:hidden;">745299720150831</span><span class="required">*Required Fields</span><br>
+                  <div class="form-group">
+                    <label for="txtfirst_name" class="col-md-4 control-label">*First Name:</label>
+                    <div class="col-md-8">
+                      <input id="txtfirst_name" type="text" name="FirstName" data-dlron-type="firstname" required="" placeholder="First Name" autocomplete="given-name" style="text-transform: capitalize;" class="form-control">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="txtlast_name" class="col-md-4 control-label">*Last Name:</label>
+                    <div class="col-md-8">
+                      <input id="txtlast_name" type="text" name="LastName" data-dlron-type="lastname" required="" placeholder="Last Name" autocomplete="family-name" style="text-transform: capitalize;" class="form-control">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="txtEmail" class="col-md-4 control-label">*Email:</label>
+                    <div class="col-md-8">
+                      <input id="txtEmail" type="text" name="Email" data-dlron-type="email" required="" placeholder="Email Address" autocomplete="email" class="form-control">
+                    </div>
+                  </div>
+                  <div style="display: block;" class="form-group defaultEPrice reserveThisVehicle">
+                    <label for="txtPhone" class="col-md-4 control-label phoneToolTip">*Phone:</label>
+                    <!--.has-error-->
+                    <div class="col-md-8">
+                      <input id="txtPhone" type="tel" name="Phone" data-dlron-type="phone" required="" placeholder="Phone Number" autocomplete="tel-national" class="form-control">
+                      <!--	label.has-error(for='txtPhone') Please enter a valid phone number in the format (123) 456-7890 x5555.-->
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="txtComments" class="col-md-4 control-label">Comments:</label>
+                    <div class="col-md-8">
+                      <textarea id="txtComments" type="text" rows="3" name="Comments" data-dlron-type="comment" placeholder="Comments" class="form-control"></textarea>
+                    </div>
+                  </div>
+                  <p id="defaultDisclaimer" class="defaultEPrice"></p>
+                  <div class="form-group">
+                    <div class="col-md-offset-4 col-md-8">
+                      <button id="submit" type="submit" name="Submit" value="Get Quote" class="btn btn-main defaultEPrice">Get Quote</button>
+                      <button id="submit" type="submit" name="Submit" value="Get Price Drop Alert" style="display:none;" class="btn btn-main priceDropAlert">Get Price Drop Alert</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.js"></script>
     <script defer src="../js/mockups/vdp.js"></script>
