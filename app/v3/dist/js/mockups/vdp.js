@@ -221,7 +221,7 @@
 
 	function CarouselKeys(evt) {
 		var ListenedKeys = [27,35,36,37,39];
-		if(windowWidth < mediaQuery && ListenedKeys.indexOf(evt.keyCode) < 0 || evt.target.tagName === 'INPUT' || evt.target.tagName === 'TEXTAREA'){
+		if(windowWidth < mediaQuery || ListenedKeys.indexOf(evt.keyCode) < 0 || evt.target.tagName === 'INPUT' || evt.target.tagName === 'TEXTAREA'){
 			return;
 		}
 
@@ -321,7 +321,8 @@
 			}, _cssAnimationDuration);
 
 			setTimeout(function(){
-				_carousel.style.width = _carousel.scrollWidth + "px";  // reset carousel width
+				// more le-stupid (pad 150 extra to account for scaled final image)
+				_carousel.style.width = _carousel.scrollWidth + 150 + "px";  // reset carousel width
 				GallerySlideToImage(_image);                    // scroll to image
 			}, (_cssAnimationDuration * 2));
 

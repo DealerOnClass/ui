@@ -824,7 +824,7 @@ block content
 											option(value='20.9') 20.9%
 								.form-group
 									.col-md-4.col-md-offset-5
-										input#fSubmit1.btn.btn-main(type='button', value='Calculate', onclick="calculate(this); ResetTracker(); trackerHook(15, 'click');")
+										input#fSubmit1.btn.btn-main(type='button', value='Calculate')
 								.form-group
 									label.col-md-5.control-label Your Monthly Payment:
 									.col-md-7
@@ -922,7 +922,7 @@ block content
 								p#defaultDisclaimer.defaultEPrice
 								.form-group
 									.col-md-offset-4.col-md-8
-										button#submit.btn.btn-main.defaultEPrice(type='submit', name='Submit', value='Get Quote') Get Quote
-										button#submit.btn.btn-main.priceDropAlert(type='submit', name='Submit', value='Get Price Drop Alert', style='display:none;') Get Price Drop Alert
+										input#submit.btn.btn-main.defaultEPrice(type='submit', name='Submit', value='Get Quote') Get Quote
+										input#submit.btn.btn-main.priceDropAlert(type='submit', name='Submit', value='Get Price Drop Alert', style='display:none;') Get Price Drop Alert
 block script
 	script(defer src="../js/mockups/vdp.js")
