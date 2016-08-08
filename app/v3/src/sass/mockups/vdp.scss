@@ -538,6 +538,7 @@ $test-transition: true;
         }
     }
     .js-gallery-active {
+
         .vdp-carousel-image {
             opacity: 0.25 !important;
             &:hover {
@@ -551,6 +552,11 @@ $test-transition: true;
             }
         }
     }
+}
+//	le stupid
+.le-stupid {
+	padding-left: 150px;
+	margin-left: -150px;
 }
 /*
  * Vdp Pricing Notifications

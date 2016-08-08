@@ -85,9 +85,7 @@
 
 	window.addEventListener("load",        Init);
 	window.addEventListener("resize",      Init);
-	//	salePrice.addEventListener("click",	   FocusThis);
-	//	salePrice.addEventListener("keydown",  TypeThis);
-	ListenerAttribution(document.body,	   "keydown",     KeysYo);
+	ListenerAttribution(document.body,	   "keydown",     GalleryKeys);
 	ListenerAttribution(document.body,     "mousedown",   MouseDown);
 	ListenerAttribution(document.body,     "mouseup",     MouseUp);
 	ListenerAttribution(_carouselWrapper,  "mouseleave",  MouseLeave);
@@ -104,20 +102,10 @@
 		});
 	}
 
-	function FocusThis(evt) {
-		evt.target.focus();
-	}
-
-	function TypeThis(evt) {
-		evt.target.value = evt.keyCode;
-	}
-
 	function Init(evt) {
 		windowWidth = window.innerWidth;
 		if (windowWidth >= mediaQuery) {
 			_offset                     = 0;
-			//	_offset                     = _vdpBodyContainer.offsetLeft + _gutter;
-			//	_carousel.style.paddingLeft = _offset + "px";
 			_paddedScrollWidth          = _carousel.scrollWidth + _offset;
 			_carousel.style.width       = _paddedScrollWidth + "px";
 			var i = 0, len = _carouselImages.length, centerPosition = 0;
@@ -224,18 +212,14 @@
 		var threshold = ((_carousel.scrollWidth - document.body.scrollWidth) * -1) + _offset;
 		if (distance > 0){
 			CarouselTranslateX(0);
-			//	_carouselRight.style.opacity = 0;
 		} else if (distance <= threshold){
 			CarouselTranslateX(threshold);
-			//	_carouselLeft.style.opacity = 0;
 		} else {
 			CarouselTranslateX(distance);
-			//	_carouselLeft.style.opacity = 1;
-			//	_carouselLeft.style.opacity = 1;
 		}
 	}
 
-	function KeysYo(evt) {
+	function GalleryKeys(evt) {
 		if (galleryActive) {
 			switch (evt.keyCode) {
 				case 27: // ESC
@@ -400,6 +384,7 @@
 		var nextImage = _carousel.querySelector("[data-count='" + (activeCount + slideCount) + "']");
 		var prevImage = _carousel.querySelector("[data-count='" + (activeCount - slideCount) + "']");
 
+
 		if (direction === "right" && nextImage) {
 			galleryActiveImage.classList.remove("gallery-active");
 			nextImage.classList.add("gallery-active");
@@ -412,6 +397,11 @@
 	}
 
 	function GallerySlideToImage(_image){
+		if(parseInt(_image.getAttribute("data-count")) === 0){
+			_carousel.classList.add("le-stupid");
+		} else {
+			_carousel.classList.remove("le-stupid");
+		}
 		var imagePosition = _image.offsetLeft;
 		var desiredEndPosition = (document.body.scrollWidth / 2) - (_image.offsetWidth / 2);
 		var slideDistance = imagePosition - desiredEndPosition;
