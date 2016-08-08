@@ -2041,7 +2041,7 @@ a:focus {
     overflow-x: scroll;
     overflow-y: hidden;
     width: 100%;
-    height: 25vh;
+    height: 220px;
     cursor: pointer;
 
     backface-visibility: hidden;
@@ -2234,6 +2234,11 @@ a:focus {
 
     backface-visibility: hidden;
 }
+@media (min-width: 992px) {
+    .vdp-sidebar-body {
+        padding-top: 30px;
+    }
+}
 
 /*
  * Vdp Price
@@ -2242,19 +2247,11 @@ a:focus {
     position: relative;
 }
 
-.vdp-price-label {
-    position: relative;
-    top: -1em;
-    display: block;
-}
-
-.vdp-price-price {
-    font-size: 3em;
-    font-weight: 700;
-    line-height: 1;
-}
 @media (min-width: 992px) {
     .vdp-price-price {
+        font-size: 3em;
+        font-weight: 700;
+        line-height: 1;
         position: absolute;
         right: 0;
         bottom: -10px;

@@ -161,8 +161,8 @@ block content
 											a#7_child_4.careerschild(href='/careers.aspx') Careers
 										li
 											a#7_child_5.testpagechild(href='/knjkhsdfkjlhsdf.html') Test page
-								li.dropdown
-									a#parent_8.qmparent.ourblogdropdown(data-href='/blogs/1208/', href='/blogs/1208/') Our Blog
+								//	li.dropdown
+								//		a#parent_8.qmparent.ourblogdropdown(data-href='/blogs/1208/', href='/blogs/1208/') Our Blog
 	main.vdp
 		//
 		//	Breadcrumb
@@ -271,7 +271,7 @@ block content
 												| Get <span class="visible-sm-inline visible-md-inline visible-lg-inline">Price Drop</span> Alert
 									li.vdp-sidebar-notifications-yousave
 										a(href="#")
-											span You Save: <sup>$</sup>6,283
+											span You Save: <sup>$</sup>7,319
 							.vdp-sidebar-body.panel-heading.visible-sm.visible-xs(style="border-bottom: 1px solid #efefef; margin-bottom: 5px;")
 								.vdp-vehicle-title
 									ul.list-inline.small.text-muted
@@ -286,39 +286,68 @@ block content
 											i.fa.fa-star.active
 											i.fa.fa-star.inactive
 											i.fa.fa-star.inactive
-										li.vdp-vehicle-reviews.text-muted.
-											3.73(49) Reviews - Edmunds.com
+										li.vdp-vehicle-reviews.text-muted(style="margin-bottom: 10px;")
+											| 3.73 (49) Reviews - Edmunds.com
 										li.vdp-vehicle-confirmavailability.text-muted
 											a.btn.btn-sm.btn-default.btn-rounded.js-vdp-modal(data-title="Confirm Availability" data-open="#epriceFormModal")
 												i.fa.fa-check.text-muted
-													span.text-muted
-														| &nbsp;Confirm Availability
+												span.text-muted &nbsp; Confirm Availability
+									ul.list-inline.small
+										li
+											a.btn.btn-sm.btn-rounded.btn-default(href="#")
+												i.fa.fa-envelope.text-muted
+												span.text-muted &nbsp; Email
+										li
+											a.btn.btn-sm.btn-rounded.btn-default(href="#")
+												i.fa.fa-mobile.text-muted
+												span.text-muted &nbsp; Text
 							.vdp-sidebar-body.panel-body
-								ul.list-inline.small
-									li.text-muted.invisible MSRP: $51,625
-									//	Hide MSRP
-								h2.h4.vdp-price
-									span.vdp-price-label Internet Price:
-									span.vdp-price-price &nbsp;<sup>$</sup>45,432
-								.vdp-calculate-payments
+								//	Hide MSRP
+								ul.list-inline.small.hidden
+									li.text-muted MSRP: $51,625
+								div.hidden-md.hidden-lg
+									h2.h4.strong
+										span Internet Price: &nbsp;
+										span $44,306
 									ul.list-inline.text-muted
-										li.small
-											| Lease
-											br
-											| $880/mo
-										li.small
-											| Finance
-											br
-											| $880/mo
+										li Lease $880/mo
+										li Finance $880/mo
 										li
 											a.btn.btn-sm.btn-default.btn-rounded.js-vdp-modal(href="#" data-open="#paymentCalcModal" data-title="Payment Calculator" style="margin-right: 10px;")
 												i.fa.fa-calculator.text-muted
 												| &nbsp;
 												i.fa.fa-caret-down.text-muted
-											span.btn.btn-sm.btn-default.btn-rounded.btn-text
+											span.btn.btn-default.btn-rounded.btn-text
 												i.fa.fa-check.text-muted
 												span.text-muted
 													| &nbsp;Only 13 Left!
+
+								div.visible-md.visible-lg
+									h2.h4.vdp-price
+										span.vdp-price-label Internet Price:
+										span.vdp-price-price
+											span.hidden-xs &nbsp;
+											sup $
+											| 44,306
+									.vdp-calculate-payments
+										ul.list-inline.text-muted
+											li.small
+												| Lease
+												br
+												| $880/mo
+											li.small
+												| Finance
+												br
+												| $880/mo
+											li
+												a.btn.btn-sm.btn-default.btn-rounded.js-vdp-modal(href="#" data-open="#paymentCalcModal" data-title="Payment Calculator" style="margin-right: 10px;")
+													i.fa.fa-calculator.text-muted
+													| &nbsp;
+													i.fa.fa-caret-down.text-muted
+												span.btn.btn-sm.btn-default.btn-rounded.btn-text
+													i.fa.fa-check.text-muted
+													span.text-muted
+														| &nbsp;Only 13 Left!
 								.vdp-getsaleprice.input-group.vdp-input-group
 									input#getSalePriceEntryForm.form-control(type="text", placeholder="You@email.com" value="")
 									span.input-group-btn
@@ -342,28 +371,25 @@ block content
 											td Dealer Discount:
 											td $3,819
 										tr
-											td WE Retail Consumer Cash:
+											td Retail Consumer Cash:
 											td $2,000
 										tr
-											td West 2016 Bonus Cash:
+											td 2016 Bonus Cash:
 											td $500
 										tr
-											td WE Chrysler Capital 2016 Bonus:
-											td $500
-										tr
-											td West 2016 RETAIL Bonus:
+											td 2016 RETAIL Bonus:
 											td $1,000
 										tr
 											td Internet Price:
-											td $45,432
+											td $44,306
 										tr.strong
 											td OFF MSRP:
-											td $6,283
-								.vdp-pricing-buttons.clearfix.margin-top-1x
-									button.btn.btn-default.btn-block() Value Your Trade
-									button.btn.btn-default.btn-block() Financing
-
-								table.vdp-pricing-details.table
+											td $7,319
+										tr
+											// BAD
+											td(colspan="2")
+												button.btn.btn-default.btn-block() Value Your Trade
+												button.btn.btn-default.btn-block() Financing
 									thead
 										tr
 											th
@@ -386,7 +412,7 @@ block content
 											td $2,000
 					.col-md-7.col-md-pull-5.col-lg-8.col-lg-pull-4
 						.panel
-							.panel-heading.hidden-xs
+							.panel-heading.hidden-xs.hidden-sm
 								.vdp-vehicle-title
 									ul.list-inline.small.text-muted
 										li Vin: 3GCUKREC4GG120117
@@ -401,7 +427,7 @@ block content
 											i.fa.fa-star.inactive
 											i.fa.fa-star.inactive
 										li.vdp-vehicle-reviews.text-muted.
-											 3.73(49) Reviews - Edmunds.com
+											 3.73 (49) Reviews - Edmunds.com
 										li.vdp-vehicle-confirmavailability.text-muted
 											a.btn.btn-sm.btn-default.btn-rounded.js-vdp-modal(data-title="Confirm Availability" data-open="#epriceFormModal")
 												i.fa.fa-check.text-muted
@@ -410,7 +436,7 @@ block content
 							.panel-body
 								.row
 									.col-lg-6
-										.vdp-vehicle-features
+										.vdp-vehicle-features(style="margin-bottom: 40px;")
 											ul.list-unstyled
 												li.vdp-feature.media
 													.vdp-feature-icon.media-left
@@ -456,17 +482,13 @@ block content
 										.vdp-vehicle-description
 											h3.h5.strong Vehicle Description
 											p All rebates to dealer. All prior sales excluded. In stock units only. 0% offers may be in lieu of factory rebates, and are based on approved tier 1 credit through GM Financial. Leases include 10K miles per year with $0.25 per mile over penalty. Purchase Payment based on tier credit through preferred lender. Lease Payment based on approved tier 1 credit through GM Financial. Payment includes title, registration...<strong>read more</strong>
-										.vdp-eligible-benefits(style="margin-top: 20px;")
+										.vdp-eligible-benefits(style="margin-top: 40px;")
 											h3.h5.strong Eligible Benefits
 											ul.list-inline
 												li
-													img(src="http://placehold.it/60x40")
+													img(src="../img/carfax.png")
 												li
-													img(src="http://placehold.it/60x40")
-												li
-													img(src="http://placehold.it/60x40")
-												li
-													img(src="http://placehold.it/60x40")
+													img(src="../img/gooddeal.png")
 						.panel
 							.vdp-tabs-wrapper.panel-heading
 								ul.vdp-tabs.nav.nav-tabs.nav-justified(role="tablist")

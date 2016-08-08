@@ -139,7 +139,8 @@
                       <li><a id="7_child_5" href="/knjkhsdfkjlhsdf.html" class="testpagechild">Test page</a></li>
                     </ul>
                   </li>
-                  <li class="dropdown"><a id="parent_8" data-href="/blogs/1208/" href="/blogs/1208/" class="qmparent ourblogdropdown">Our Blog</a></li>
+                  <!--	li.dropdown-->
+                  <!--		a#parent_8.qmparent.ourblogdropdown(data-href='/blogs/1208/', href='/blogs/1208/') Our Blog-->
                 </ul>
               </div>
             </div>
@@ -211,7 +212,7 @@
                     <li class="vdp-sidebar-notifications-pricedrop js-vdp-sidebar-notifications-pricedrop"><a href="#" class="js-vdp-sidebar-notifications-pricedrop-link"><span><span class="visible-sm-inline visible-md-inline visible-lg-inline">Recent</span> Price Drop&nbsp;</span><i class="fa fa-exclamation"></i></a>
                       <div><span>Reduced by $500 from 5/21/2016</span><a data-title="Get Price Drop Alert" data-open="#epriceFormModal" type="button" class="btn btn-sm btn-rounded js-vdp-modal">Get <span class="visible-sm-inline visible-md-inline visible-lg-inline">Price Drop</span> Alert</a></div>
                     </li>
-                    <li class="vdp-sidebar-notifications-yousave"><a href="#"><span>You Save: <sup>$</sup>6,283</span></a></li>
+                    <li class="vdp-sidebar-notifications-yousave"><a href="#"><span>You Save: <sup>$</sup>7,319</span></a></li>
                   </div>
                 </div>
                 <div style="border-bottom: 1px solid #efefef; margin-bottom: 5px;" class="vdp-sidebar-body panel-heading visible-sm visible-xs">
@@ -224,23 +225,37 @@
                     <h1 class="h4 strong">2016 Chevrolet Silverado 1500 Work Truck Extended Cab</h1>
                     <ul class="list-inline small">
                       <li style="margin-bottom: 10px;" class="vdp-vehicle-ratings"><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star inactive"></i><i class="fa fa-star inactive"></i></li>
-                      <li class="vdp-vehicle-reviews text-muted">3.73(49) Reviews - Edmunds.com</li>
-                      <li class="vdp-vehicle-confirmavailability text-muted"><a data-title="Confirm Availability" data-open="#epriceFormModal" class="btn btn-sm btn-default btn-rounded js-vdp-modal"><i class="fa fa-check text-muted"><span class="text-muted">&nbsp;Confirm Availability</span></i></a></li>
+                      <li style="margin-bottom: 10px;" class="vdp-vehicle-reviews text-muted">3.73 (49) Reviews - Edmunds.com</li>
+                      <li class="vdp-vehicle-confirmavailability text-muted"><a data-title="Confirm Availability" data-open="#epriceFormModal" class="btn btn-sm btn-default btn-rounded js-vdp-modal"><i class="fa fa-check text-muted"></i><span class="text-muted">&nbsp; Confirm Availability</span></a></li>
+                    </ul>
+                    <ul class="list-inline small">
+                      <li><a href="#" class="btn btn-sm btn-rounded btn-default"><i class="fa fa-envelope text-muted"></i><span class="text-muted">&nbsp; Email</span></a></li>
+                      <li><a href="#" class="btn btn-sm btn-rounded btn-default"><i class="fa fa-mobile text-muted"></i><span class="text-muted">&nbsp; Text</span></a></li>
                     </ul>
                   </div>
                 </div>
                 <div class="vdp-sidebar-body panel-body">
-                  <ul class="list-inline small">
-                    <li class="text-muted invisible">MSRP: $51,625</li>
-                    <!--	Hide MSRP-->
+                  <!--	Hide MSRP-->
+                  <ul class="list-inline small hidden">
+                    <li class="text-muted">MSRP: $51,625</li>
                   </ul>
-                  <h2 class="h4 vdp-price"><span class="vdp-price-label">Internet Price:</span><span class="vdp-price-price">&nbsp;<sup>$</sup>45,432</span></h2>
-                  <div class="vdp-calculate-payments">
+                  <div class="hidden-md hidden-lg">
+                    <h2 class="h4 strong"><span>Internet Price: &nbsp;</span><span>$44,306</span></h2>
                     <ul class="list-inline text-muted">
-                      <li class="small">Lease<br>$880/mo</li>
-                      <li class="small">Finance<br>$880/mo</li>
-                      <li><a href="#" data-open="#paymentCalcModal" data-title="Payment Calculator" style="margin-right: 10px;" class="btn btn-sm btn-default btn-rounded js-vdp-modal"><i class="fa fa-calculator text-muted"></i>&nbsp;<i class="fa fa-caret-down text-muted"></i></a><span class="btn btn-sm btn-default btn-rounded btn-text"><i class="fa fa-check text-muted"></i><span class="text-muted">&nbsp;Only 13 Left!</span></span></li>
+                      <li>Lease $880/mo</li>
+                      <li>Finance $880/mo</li>
+                      <li><a href="#" data-open="#paymentCalcModal" data-title="Payment Calculator" style="margin-right: 10px;" class="btn btn-sm btn-default btn-rounded js-vdp-modal"><i class="fa fa-calculator text-muted"></i>&nbsp;<i class="fa fa-caret-down text-muted"></i></a><span class="btn btn-default btn-rounded btn-text"><i class="fa fa-check text-muted"></i><span class="text-muted">&nbsp;Only 13 Left!</span></span></li>
                     </ul>
+                  </div>
+                  <div class="visible-md visible-lg">
+                    <h2 class="h4 vdp-price"><span class="vdp-price-label">Internet Price:</span><span class="vdp-price-price"><span class="hidden-xs">&nbsp;</span><sup>$</sup>44,306</span></h2>
+                    <div class="vdp-calculate-payments">
+                      <ul class="list-inline text-muted">
+                        <li class="small">Lease<br>$880/mo</li>
+                        <li class="small">Finance<br>$880/mo</li>
+                        <li><a href="#" data-open="#paymentCalcModal" data-title="Payment Calculator" style="margin-right: 10px;" class="btn btn-sm btn-default btn-rounded js-vdp-modal"><i class="fa fa-calculator text-muted"></i>&nbsp;<i class="fa fa-caret-down text-muted"></i></a><span class="btn btn-sm btn-default btn-rounded btn-text"><i class="fa fa-check text-muted"></i><span class="text-muted">&nbsp;Only 13 Left!</span></span></li>
+                      </ul>
+                    </div>
                   </div>
                   <div class="vdp-getsaleprice input-group vdp-input-group">
                     <input id="getSalePriceEntryForm" type="text" placeholder="You@email.com" value="" class="form-control"><span class="input-group-btn"><a data-email="#getSalePriceEntryForm" data-title="Get Sale Price" data-open="#epriceFormModal" type="button" class="btn btn-primary js-vdp-modal"><i class="fa fa-tag"></i><strong>&nbsp;Get Sale Price</strong></a></span>
@@ -268,36 +283,33 @@
                         <td>$3,819</td>
                       </tr>
                       <tr>
-                        <td>WE Retail Consumer Cash:</td>
+                        <td>Retail Consumer Cash:</td>
                         <td>$2,000</td>
                       </tr>
                       <tr>
-                        <td>West 2016 Bonus Cash:</td>
+                        <td>2016 Bonus Cash:</td>
                         <td>$500</td>
                       </tr>
                       <tr>
-                        <td>WE Chrysler Capital 2016 Bonus:</td>
-                        <td>$500</td>
-                      </tr>
-                      <tr>
-                        <td>West 2016 RETAIL Bonus:</td>
+                        <td>2016 RETAIL Bonus:</td>
                         <td>$1,000</td>
                       </tr>
                       <tr>
                         <td>Internet Price:</td>
-                        <td>$45,432</td>
+                        <td>$44,306</td>
                       </tr>
                       <tr class="strong">
                         <td>OFF MSRP:</td>
-                        <td>$6,283</td>
+                        <td>$7,319</td>
+                      </tr>
+                      <tr>
+                        <!-- BAD-->
+                        <td colspan="2">
+                          <button class="btn btn-default btn-block">Value Your Trade</button>
+                          <button class="btn btn-default btn-block">Financing</button>
+                        </td>
                       </tr>
                     </tbody>
-                  </table>
-                  <div class="vdp-pricing-buttons clearfix margin-top-1x">
-                    <button class="btn btn-default btn-block">Value Your Trade</button>
-                    <button class="btn btn-default btn-block">Financing</button>
-                  </div>
-                  <table class="vdp-pricing-details table">
                     <thead>
                       <tr>
                         <th>
@@ -333,7 +345,7 @@
             </div>
             <div class="col-md-7 col-md-pull-5 col-lg-8 col-lg-pull-4">
               <div class="panel">
-                <div class="panel-heading hidden-xs">
+                <div class="panel-heading hidden-xs hidden-sm">
                   <div class="vdp-vehicle-title">
                     <ul class="list-inline small text-muted">
                       <li>Vin: 3GCUKREC4GG120117</li>
@@ -343,7 +355,7 @@
                     <h1 class="h4 strong">2016 Chevrolet Silverado 1500 Work Truck Extended Cab w/ Cheese</h1>
                     <ul class="list-inline small">
                       <li class="vdp-vehicle-ratings"><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star inactive"></i><i class="fa fa-star inactive"></i></li>
-                      <li class="vdp-vehicle-reviews text-muted"> 3.73(49) Reviews - Edmunds.com</li>
+                      <li class="vdp-vehicle-reviews text-muted"> 3.73 (49) Reviews - Edmunds.com</li>
                       <li class="vdp-vehicle-confirmavailability text-muted"><a data-title="Confirm Availability" data-open="#epriceFormModal" class="btn btn-sm btn-default btn-rounded js-vdp-modal"><i class="fa fa-check text-muted"></i><span class="text-muted">&nbsp;Confirm Availability</span></a></li>
                     </ul>
                   </div>
@@ -351,7 +363,7 @@
                 <div class="panel-body">
                   <div class="row">
                     <div class="col-lg-6">
-                      <div class="vdp-vehicle-features">
+                      <div style="margin-bottom: 40px;" class="vdp-vehicle-features">
                         <ul class="list-unstyled">
                           <li class="vdp-feature media">
                             <div class="vdp-feature-icon media-left"><img src="../img/gas-icon.png"></div>
@@ -397,13 +409,11 @@
                         <h3 class="h5 strong">Vehicle Description</h3>
                         <p>All rebates to dealer. All prior sales excluded. In stock units only. 0% offers may be in lieu of factory rebates, and are based on approved tier 1 credit through GM Financial. Leases include 10K miles per year with $0.25 per mile over penalty. Purchase Payment based on tier credit through preferred lender. Lease Payment based on approved tier 1 credit through GM Financial. Payment includes title, registration...<strong>read more</strong></p>
                       </div>
-                      <div style="margin-top: 20px;" class="vdp-eligible-benefits">
+                      <div style="margin-top: 40px;" class="vdp-eligible-benefits">
                         <h3 class="h5 strong">Eligible Benefits</h3>
                         <ul class="list-inline">
-                          <li><img src="http://placehold.it/60x40"></li>
-                          <li><img src="http://placehold.it/60x40"></li>
-                          <li><img src="http://placehold.it/60x40"></li>
-                          <li><img src="http://placehold.it/60x40"></li>
+                          <li><img src="../img/carfax.png"></li>
+                          <li><img src="../img/gooddeal.png"></li>
                         </ul>
                       </div>
                     </div>

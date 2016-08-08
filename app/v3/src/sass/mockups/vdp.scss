@@ -222,6 +222,9 @@ $vdp-body-z: 200;
     left: 0;
 	z-index: 2000; // TEMP
 }
+.navbar-static-top {
+	//	z-index: 2010;
+}
 .static-to-nav .btn {
     line-height: 49px !important;
     padding-top: 0;
@@ -408,7 +411,7 @@ $transition: 0.25s;
     overflow-x: scroll;
     overflow-y: hidden;
     width: 100%;
-    height: 25vh;
+	height: 220px;
     //	transition: transform 0.25s cubic-bezier(0.6, 0, 0.2, 1);
     cursor: pointer;
     //	cursor:    -moz-grab;
@@ -623,6 +626,9 @@ $test-transition: true;
     background-color: white;
 
     backface-visibility: hidden;
+	@media (min-width: 992px) {
+		padding-top: 30px;
+	}
 }
 /*
  * Vdp Price
@@ -630,16 +636,12 @@ $test-transition: true;
 .vdp-price {
     position: relative;
 }
-.vdp-price-label {
-	position: relative;
-	top: -1em;
-	display: block;
-}
+.vdp-price-label {}
 .vdp-price-price {
-	font-size: 3em;
-	font-weight: 700;
-	line-height: 1;
 	@media (min-width: 992px) {
+		font-size: 3em;
+		font-weight: 700;
+		line-height: 1;
 		position: absolute;
 		right: 0;
 		bottom: -10px; // size of margin
