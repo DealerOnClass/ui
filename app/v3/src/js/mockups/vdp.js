@@ -232,10 +232,10 @@
 					GalleryClose();
 					break;
 				case 35: // End
-					GalleryCycleImages("right", SlideCount(_carouselImages.length - 1));
+					GalleryCycleImages("right", Math.abs(SlideCount(_carouselImages.length - 1)));
 					break;
 				case 36: // Home
-					GalleryCycleImages("left", SlideCount(0));
+					GalleryCycleImages("left", Math.abs(SlideCount(0)));
 					break;
 				case 37: // Left
 					GalleryCycleImages("left", 1);
@@ -267,9 +267,9 @@
 				} else {
 					var countDifference = SlideCount(parseInt(evt.target.getAttribute("data-count")));
 					if (countDifference > 0) {
-						GalleryCycleImages("right", countDifference);
+						GalleryCycleImages("right", Math.abs(countDifference));
 					} else {
-						GalleryCycleImages("left", countDifference);
+						GalleryCycleImages("left", Math.abs(countDifference));
 					}
 				}
 			} else if (galleryActive && !evt.target.classList.contains("js-gallery-control")) {
@@ -282,7 +282,8 @@
 	function SlideCount(_targetCount){
 		galleryActiveImage = _carousel.querySelector(".gallery-active");
 		var galleryActiveImageCount = parseInt(galleryActiveImage.getAttribute("data-count"));
-		return Math.abs(_targetCount - galleryActiveImageCount);
+		console.log(_targetCount - galleryActiveImageCount);
+		return _targetCount - galleryActiveImageCount;
 	}
 
 	function MouseLeave(evt) {
