@@ -81,11 +81,11 @@
 	var _cssAnimationDuration = 225;
 	//	resize
 	var windowWidth;
-	var mediaQuery = 1200; // eg min-width: 992px "tablet"-ish
+	var mediaQuery = 1200; // eg min-width: 1200px "tablet"-ish
 
 	window.addEventListener("load",        Init);
 	window.addEventListener("resize",      Init);
-	ListenerAttribution(document.body,	   "keydown",     GalleryKeys);
+	document.body.addEventListener("keydown",     CarouselKeys);
 	ListenerAttribution(document.body,     "mousedown",   MouseDown);
 	ListenerAttribution(document.body,     "mouseup",     MouseUp);
 	ListenerAttribution(_carouselWrapper,  "mouseleave",  MouseLeave);
@@ -204,7 +204,7 @@
 			_carouselMoved = _mouseMoved + _mouseMovedTotal;
 			SlideCarousel(_carouselMoved);
 		}
-		_mouseClick    = false;
+		_mouseClick = false;
 	}
 
 	function SlideCarousel(distance){
@@ -219,11 +219,23 @@
 		}
 	}
 
-	function GalleryKeys(evt) {
+	function CarouselKeys(evt) {
+		var ListenedKeys = [27,35,36,37,39];
+		if(windowWidth < mediaQuery && ListenedKeys.indexOf(evt.keyCode) < 0 || evt.target.tagName === 'INPUT' || evt.target.tagName === 'TEXTAREA'){
+			return;
+		}
+
 		if (galleryActive) {
+			evt.preventDefault();
 			switch (evt.keyCode) {
 				case 27: // ESC
 					GalleryClose();
+					break;
+				case 35: // End
+					GalleryCycleImages("right", SlideCount(_carouselImages.length - 1));
+					break;
+				case 36: // Home
+					GalleryCycleImages("left", SlideCount(0));
 					break;
 				case 37: // Left
 					GalleryCycleImages("left", 1);
@@ -235,14 +247,16 @@
 		} else {
 			switch (evt.keyCode) {
 				case 37: // Left
+					evt.preventDefault();
 					CarouselLeft(evt);
 					break;
 				case 39: // Right
+					evt.preventDefault();
 					CarouselRight(evt);
 					break;
 			}
 		}
-	};
+	}
 
 	function MouseUp(evt) {
 		if (_mouseClick){
@@ -251,14 +265,11 @@
 					//	GalleryInit().then(_ => GalleryStart(evt.target));
 					GalleryInit().then(function(){GalleryStart(evt.target)});
 				} else {
-					galleryActiveImage = _carousel.querySelector(".gallery-active");
-					var galleryActiveImageCount = parseInt(galleryActiveImage.getAttribute("data-count"));
-					var thisCount = parseInt(evt.target.getAttribute("data-count"));
-					var countDifference = thisCount - galleryActiveImageCount;
+					var countDifference = SlideCount(parseInt(evt.target.getAttribute("data-count")));
 					if (countDifference > 0) {
-						GalleryCycleImages("right", Math.abs(countDifference));
+						GalleryCycleImages("right", countDifference);
 					} else {
-						GalleryCycleImages("left", Math.abs(countDifference));
+						GalleryCycleImages("left", countDifference);
 					}
 				}
 			} else if (galleryActive && !evt.target.classList.contains("js-gallery-control")) {
@@ -268,23 +279,28 @@
 		_mouseDown = false;
 	}
 
+	function SlideCount(_targetCount){
+		galleryActiveImage = _carousel.querySelector(".gallery-active");
+		var galleryActiveImageCount = parseInt(galleryActiveImage.getAttribute("data-count"));
+		return Math.abs(_targetCount - galleryActiveImageCount);
+	}
+
 	function MouseLeave(evt) {
 		_mouseDown = false;
 	}
 
-	function HideControls(){
-		_carouselRight.style.display = "none";
-		_carouselLeft.style.display = "none";
-	}
+	// function HideControls(){
+	// 	_carouselRight.style.display = "none";
+	// 	_carouselLeft.style.display = "none";
+	// }
 
-	function ShowControls(){
-		_carouselRight.style.display = "";
-		_carouselLeft.style.display = "";
-	}
+	// function ShowControls(){
+	// 	_carouselRight.style.display = "";
+	// 	_carouselLeft.style.display = "";
+	// }
 
 	function GalleryInit() {
 		return new Promise(function(resolve, reject) {
-			ShowControls();
 			_carouselWrapper.classList.add("js-gallery-init");
 			resolve();
 			return;
@@ -383,7 +399,6 @@
 		var activeCount = parseInt(galleryActiveImage.getAttribute("data-count"));
 		var nextImage = _carousel.querySelector("[data-count='" + (activeCount + slideCount) + "']");
 		var prevImage = _carousel.querySelector("[data-count='" + (activeCount - slideCount) + "']");
-
 
 		if (direction === "right" && nextImage) {
 			galleryActiveImage.classList.remove("gallery-active");
