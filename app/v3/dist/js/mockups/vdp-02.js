@@ -1,1 +1,246 @@
-!function(){function e(){i.classList.add("down"),l=!1}function t(){i.classList.remove("down"),l=!0}function n(){l?e():t()}var i=document.querySelector(".js-vdp-sidebar-notifications-pricedrop"),o=document.querySelector(".js-vdp-sidebar-notifications-pricedrop-link"),s=2e3,l=!0;o.addEventListener("click",function(e){e.preventDefault(),n()}),setTimeout(function(){n()},s)}(),function(){function e(e){S=g.scrollWidth,D=E.offsetLeft+k,g.style.paddingLeft=D+"px"}function t(e){e.preventDefault(),C?y.animate({scrollLeft:"-=500"},h):y.animate({scrollLeft:"-=500"},h)}function n(e){e.preventDefault(),C?y.animate({scrollLeft:"+=500"},h):y.animate({scrollLeft:"+=500"},h)}function i(e){e.preventDefault(),x===!0&&(b=!1,f=T,u=W-e.pageX,p=u+f,o(g,p))}function o(e,t){e.scrollLeft=t}function s(e){e.preventDefault(),b=!0,T=e.pageX,W=g.scrollLeft,x=!0}function l(e){if(b){if(C)return;a(e.target)}x=!1}function c(e){x=!1}function a(e){C=!0,"1"!=j.style.opacity&&(j.style.opacity="1"),g.classList.add("js-gallery-init"),v=e.cloneNode(!0),v.style.left=e.getBoundingClientRect().left+"px",v.style.top=e.offsetTop+"px",v.classList.add("js-gallery-image-clone"),e.classList.add("js-gallery-image-clicked"),g.appendChild(v);var t=window.innerWidth/2-2*e.offsetWidth/2;setTimeout(function(){$(".js-gallery-image-clone").addClass("animated"),$(".js-gallery-image-clone").css("left",t+"px")},150),setTimeout(function(){g.classList.add("js-gallery-active")},250),setTimeout(function(){var t=e.offsetWidth,n=e.offsetLeft,i=window.innerWidth;y.animate({scrollLeft:n-(i/2-t/2)},500)},500)}function r(){g.scrollLeft<q&&(j.style.opacity=d(g.scrollLeft,0,q,0,1))}function d(e,t,n,i,o){var s=t,l=n,c=l-s,a=e,r=0,d=1,f=d-r,u=(a-s)*f/c+r;return u}var f,u,p,v,L=".js-vdp-carousel",m=".js-control-left",y=$(L),g=($(m),document.querySelector(L)),j=document.querySelector(m),w=document.querySelector(".js-control-right"),E=document.querySelector(".js-vdp-body-container"),h=500,q=400,S=0,k=15,D=0,T=0,W=0,x=!1,b=!0,C=!1;window.addEventListener("load",e),window.addEventListener("resize",e),g.addEventListener("scroll",r),g.addEventListener("mousemove",i),g.addEventListener("mousedown",s),g.addEventListener("mouseup",l),g.addEventListener("mouseleave",c),j.addEventListener("click",t),w.addEventListener("click",n)}();
+/*
+ * Vdp Price Drop
+ */
+(function(){
+	var _priceDrop     = document.querySelector(".js-vdp-sidebar-notifications-pricedrop");
+	var _priceDropLink = document.querySelector(".js-vdp-sidebar-notifications-pricedrop-link");
+	var _delay         = 2000;
+	var _isVisible	   = true;
+
+	_priceDropLink.addEventListener('click', function(event){
+		event.preventDefault();
+		SlideToggle();
+	});
+
+	setTimeout(function() { SlideToggle(); }, _delay);
+
+	function SlideDown() {
+		_priceDrop.classList.add("down");
+		_isVisible = false;
+	}
+
+	function SlideUp() {
+		_priceDrop.classList.remove("down");
+		_isVisible = true;
+	}
+
+	function SlideToggle() {
+		if (_isVisible) {
+			SlideDown();
+		} else {
+			SlideUp();
+		}
+	}
+})();
+/*
+ * Vdp Carousel
+ */
+(function(){
+	var carousel           = ".js-vdp-carousel",
+		carouselLeft	   = ".js-control-left",
+		$carousel          = $(carousel),
+		$carouselLeft	   = $(carouselLeft),
+		_carousel          = document.querySelector(carousel),
+		_carouselLeft      = document.querySelector(carouselLeft),
+		_carouselRight     = document.querySelector(".js-control-right"),
+		_vdpBodyContainer  = document.querySelector(".js-vdp-body-container");
+	//	carousel controls
+	var _scrollAnimationSpeed      = 500,
+		_scrollVisibilityThreshold = 400,
+		_scrollWidth 			   = 0;
+	//	offset control
+	var _gutter	= 15,
+		_offset = 0;
+	//	mouse move
+	var _clickXPos  = 0,
+		_scrollXPos = 0,
+		_previousMouseX,
+		_currentMouseX,
+		_distanceTravelled;
+	//	mouse down
+	var	_curDown    = false;
+	//	carousel start
+	var _isClick	= true,
+		_galleryActive = false,
+		_opacityAnim = 500,
+		_parentItem,
+		_imageClone;
+
+	window.addEventListener('load', OffsetControl);
+	window.addEventListener('resize', OffsetControl);
+	_carousel.addEventListener('scroll', FadeControl);
+	_carousel.addEventListener('mousemove', MouseMove);
+	_carousel.addEventListener('mousedown', MouseDown);
+	_carousel.addEventListener('mouseup', MouseUp);
+	_carousel.addEventListener('mouseleave', MouseLeave);
+	_carouselLeft.addEventListener('click', ScrollLeft);
+	_carouselRight.addEventListener('click', ScrollRight);
+
+	function OffsetControl(evt) {
+		_scrollWidth = _carousel.scrollWidth;
+		_offset = _vdpBodyContainer.offsetLeft + _gutter;
+		_carousel.style.paddingLeft = _offset + "px";
+	}
+
+	function ScrollLeft(evt) {
+		evt.preventDefault();
+		if (_galleryActive) {
+			//GalleryLeft();
+			$carousel.animate({
+				scrollLeft: '-=500'
+			}, _scrollAnimationSpeed);
+		} else {
+			$carousel.animate({
+				scrollLeft: '-=500'
+			}, _scrollAnimationSpeed);
+		}
+	}
+
+	function ScrollRight(evt) {
+		evt.preventDefault();
+		if (_galleryActive) {
+			//GalleryRight();
+			$carousel.animate({
+				scrollLeft: '+=500'
+			}, _scrollAnimationSpeed);
+		} else {
+			$carousel.animate({
+				scrollLeft: '+=500'
+			}, _scrollAnimationSpeed);
+		}
+	}
+
+	function MouseMove(evt) {
+		evt.preventDefault();
+		if (_curDown === true) {
+			_isClick = false;
+			_previousMouseX    = _clickXPos;
+			_currentMouseX     = _scrollXPos - evt.pageX;
+			_distanceTravelled = _currentMouseX + _previousMouseX;
+			ScrollToLeft(_carousel, _distanceTravelled);
+		}
+	}
+
+	function ScrollToLeft(el, distance) {
+		el.scrollLeft = distance;
+	}
+
+	function MouseDown(evt) {
+		evt.preventDefault();
+		_isClick = true;
+		_clickXPos = evt.pageX;
+		_scrollXPos = _carousel.scrollLeft;
+		_curDown = true;
+	}
+
+	function MouseUp(evt) {
+		if (_isClick){
+			if (_galleryActive) {
+				return;
+				//	if (evt.target.classList.contains("js-gallery-image-clone") == false) {
+				//		GalleryClose();
+				//		_galleryActive = false;
+				//		_curDown = false;
+				//	} else {
+				//		_curDown = false;
+				//		return;
+				//	}
+			} else {
+				GalleryStart(evt.target);
+			}
+		}
+		_curDown = false;
+	}
+
+	function MouseLeave(evt) {
+		_curDown = false;
+	}
+
+	function GalleryStart(_image) {
+		_galleryActive = true;
+		//	TODO: make it scale to size, instead of opacity
+		if (_carouselLeft.style.opacity != "1") {
+			_carouselLeft.style.opacity = "1";
+		}
+		_carousel.classList.add("js-gallery-init");
+		_imageClone = _image.cloneNode(true);
+		//	B
+		_imageClone.style.left = _image.getBoundingClientRect().left + "px";
+		//	A
+		//	_imageClone.style.transform = 'translate3d(' + _image.getBoundingClientRect().left + "px,0,0)";
+		_imageClone.style.top = _image.offsetTop + "px";
+		_imageClone.classList.add("js-gallery-image-clone");
+		_image.classList.add("js-gallery-image-clicked");
+		_carousel.appendChild(_imageClone);
+
+		var test = (window.innerWidth / 2) - ((_image.offsetWidth * 2) / 2);
+
+		setTimeout(function() {
+			$(".js-gallery-image-clone").addClass("animated");
+			//	A
+			//	$(".js-gallery-image-clone").css('transform', 'translate3d(' + test + "px,0,0)");
+			//	B
+			$(".js-gallery-image-clone").css("left", test + "px");
+	    }, 150);
+
+		setTimeout(function() {
+			_carousel.classList.add("js-gallery-active");
+	    }, 250);
+
+		setTimeout(function() {
+			var elW = _image.offsetWidth;
+			var elS = _image.offsetLeft;
+			var win = window.innerWidth;
+			$carousel.animate({
+				scrollLeft: elS - ((win / 2) - (elW / 2))
+			}, 500);
+		}, 500);
+
+	}
+
+	//	function GalleryClose() {
+	//		_carousel.classList.remove("js-gallery-active");
+	//		$(".js-gallery-image-active").removeClass("js-gallery-image-active");
+	//	}
+
+	function GalleryLeft() {
+		console.log("prev item");
+	}
+
+	function GalleryRight() {
+		console.log("next item");
+		//	$("js-gallery-image-clicked");
+	}
+
+	function FadeControl() {
+		if (_carousel.scrollLeft < _scrollVisibilityThreshold) {
+			_carouselLeft.style.opacity = Normalize(_carousel.scrollLeft,0,_scrollVisibilityThreshold,0,1);
+		}
+		//	//	Determine end of scroll && fade for controlRight
+		//	console.log(_carousel.scrollLeft);
+		//	console.log(_carousel.offsetWidth + _offset);
+		//	console.log(_carousel.scrollLeft - _carousel.offsetWidth);
+		//	//	if () {
+		//	//		//	_carouselRight.style.opacity = Normalize(_carousel.scrollLeft,0,_scrollVisibilityThreshold,0,1);
+		//	//		console.log("chicken is good");
+		//	//	}
+	}
+
+	function Normalize(oldValue,oldMin, oldMax, newMin, newMax) {
+		//	http://stackoverflow.com/questions/5731863/mapping-a-numeric-range-onto-another
+
+		var _oldMin   = oldMin;
+		var _oldMax   = oldMax;
+		var _oldRange = _oldMax - _oldMin;
+		var _oldValue = oldValue; //
+
+		var _newMin   = 0;
+		var _newMax   = 1;
+		var _newRange = _newMax - _newMin;
+		var _newValue = ((_oldValue - _oldMin) * _newRange / _oldRange) + _newMin;
+
+		return _newValue;
+	}
+
+})();
+

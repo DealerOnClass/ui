@@ -1,1 +1,61 @@
-!function(){function t(t){var a=r.find(".active"),n=a.nextAll(),e=a.prevAll();n.each(function(){$(this).addClass("is-next")}),e.removeClass("is-next"),$(t).parent().removeClass("is-next")}function a(){var t=r.find(".active"),a=c.length,n=t.prevAll().length+1,e=n/a*100+"%";return e}function n(t){i.css("width",t).attr("aria-valuenow",t)}var e=".credit-app ",i=$(e+"[data-credit-progress-bar]"),r=$(e+"[data-credit-progress]"),c=r.find("[data-toggle='tab']"),d=$(e+"[data-credit-prev]"),o=$(e+"[data-credit-next]");n(a()),t(),$(e+"[data-toggle='tab']").on("shown.bs.tab",function(e){n(a()),t(e.target)}),d.on("click",function(t){var a=r.find(".active"),n=a.prev().find("[data-toggle='tab']");$(n).tab("show")}),o.on("click",function(t){var a=r.find(".active"),n=a.next().find("[data-toggle='tab']");$(n).tab("show")})}();
+(function(){
+	var _page_selector = ".credit-app ";
+	var _progressBar   = $(_page_selector + "[data-credit-progress-bar]");
+	var _tab           = $(_page_selector + "[data-credit-progress]");
+	var _tabs          = _tab.find("[data-toggle='tab']");
+	var _pagerPrev	  = $(_page_selector + "[data-credit-prev]");
+	var _pagerNext	  = $(_page_selector + "[data-credit-next]");
+
+	//
+	//	Init
+	UpdateProgressBar(TabProgress());
+	TabStyle();
+
+	//
+	//	Click Navigation
+	$(_page_selector + "[data-toggle='tab']").on("shown.bs.tab", function (e) {
+		UpdateProgressBar(TabProgress());
+		TabStyle(e.target);
+	})
+	_pagerPrev.on("click", function (e) {
+		var activeTab = _tab.find(".active");
+		var prevTab = activeTab.prev().find("[data-toggle='tab']");
+		$(prevTab).tab('show');
+	})
+	_pagerNext.on("click", function (e) {
+		var activeTab = _tab.find(".active");
+		var nextTab = activeTab.next().find("[data-toggle='tab']");
+		$(nextTab).tab('show');
+	})
+
+	//
+	//	Add classes to tabs based on which are inactive/next
+	function TabStyle(self) {
+		var activeTab = _tab.find(".active");
+		var nextTabs  = activeTab.nextAll();
+		var prevTabs  = activeTab.prevAll();
+		nextTabs.each(function() {
+			$(this).addClass("is-next");
+		});
+		prevTabs.removeClass("is-next");
+		$(self).parent().removeClass("is-next");
+	}
+
+	//
+	//	Get tab percentage based on number of items in nav
+	function TabProgress() {
+		var activeTab        = _tab.find(".active");
+		var totalTab         = _tabs.length;
+		var currentTab	     = activeTab.prevAll().length + 1;
+
+		var progress = (currentTab / totalTab) * 100 + "%";
+
+		return progress;
+	};
+
+	//
+	//	Add width to progress bar based returned from "TabProgress" funct
+	function UpdateProgressBar(progress) {
+		_progressBar.css("width", progress).attr("aria-valuenow", progress);
+	}
+})()

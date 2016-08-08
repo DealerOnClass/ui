@@ -82,14 +82,15 @@
 	var windowWidth;
 	var mediaQuery = 1200; // eg min-width: 992px "tablet"-ish
 
-	window.addEventListener("load",           Init);
-	window.addEventListener("resize",         Init);
-	ListenerAttribution(document.body,"mousedown",   MouseDown);
-	ListenerAttribution(document.body,"mouseup",     MouseUp);
-	ListenerAttribution(_carouselWrapper,"mouseleave",  MouseLeave);
-	ListenerAttribution(_carouselWrapper,"mousemove",   MouseMove);
-	ListenerAttribution(_carouselLeft,"click",   CarouselLeft);
-	ListenerAttribution(_carouselRight,"click",  CarouselRight);
+	window.addEventListener("load",        Init);
+	window.addEventListener("resize",      Init);
+	ListenerAttribution(window,            "keydown",     KeysYo);
+	ListenerAttribution(document.body,     "mousedown",   MouseDown);
+	ListenerAttribution(document.body,     "mouseup",     MouseUp);
+	ListenerAttribution(_carouselWrapper,  "mouseleave",  MouseLeave);
+	ListenerAttribution(_carouselWrapper,  "mousemove",   MouseMove);
+	ListenerAttribution(_carouselLeft,     "click",       CarouselLeft);
+	ListenerAttribution(_carouselRight,    "click",       CarouselRight);
 
 	function ListenerAttribution(element, event, handler) {
 		element.addEventListener(event, function(e){
@@ -222,7 +223,7 @@
 		}
 	}
 
-	window.addEventListener("keydown", function (evt) {
+	function KeysYo(evt) {
 		if (galleryActive) {
 			switch (event.keyCode) {
 				case 27: // ESC
@@ -245,7 +246,7 @@
 					break;
 			}
 		}
-	});
+	};
 
 	function MouseUp(evt) {
 		if (_mouseClick){

@@ -2421,8 +2421,13 @@ a:focus {
 
 .vdp-tab-content-wrapper {
     overflow-y: auto;
-    height: 240px;
+    height: 240px; 
     padding: 0;
+}
+@media (min-width: 992px) {
+    .vdp-tab-content-wrapper {
+        height: 400px;
+    }
 }
 
 .vdp-tab-content {

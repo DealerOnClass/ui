@@ -813,8 +813,11 @@ $test-transition: true;
 }
 .vdp-tab-content-wrapper {
     overflow-y: auto;
-    height: 240px;
     padding: 0;
+	height: 240px;
+	@media (min-width: 992px) {
+		height: 400px;
+	}
 }
 .vdp-tab-content {
     padding: 15px;
