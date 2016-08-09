@@ -1,0 +1,19 @@
+/*
+ * Vdp Carousel
+ */
+.carousel {
+    overflow: hidden; 
+    width: 100%;
+    background-color: #333;
+}
+
+.carousel__item {
+    position: absolute;
+    transition: transform 0.5s ease-in-out;
+
+    backface-visibility: hidden;
+}
+
+.carousel__item img {
+    max-width: 100%;
+}

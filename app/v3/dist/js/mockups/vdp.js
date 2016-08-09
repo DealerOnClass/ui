@@ -95,7 +95,7 @@
 
 	function ListenerAttribution(element, event, handler) {
 		element.addEventListener(event, function(e){
-			if(windowWidth >= mediaQuery && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+			if (windowWidth >= mediaQuery && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
 				e.preventDefault();
 				handler(e);
 			}
@@ -108,7 +108,9 @@
 			_offset                     = 0;
 			_paddedScrollWidth          = _carousel.scrollWidth + _offset;
 			_carousel.style.width       = _paddedScrollWidth + "px";
-			var i = 0, len = _carouselImages.length, centerPosition = 0;
+			var i = 0;
+			var len = _carouselImages.length;
+			var centerPosition = 0;
 			for(i; i < len; i++){
 				centerPosition = _carouselImages[i].offsetLeft + _carouselImages[i].offsetWidth / 2;
 				_carouselImages[i].setAttribute("data-initial", centerPosition);
@@ -221,7 +223,7 @@
 
 	function CarouselKeys(evt) {
 		var ListenedKeys = [27,35,36,37,39];
-		if(windowWidth < mediaQuery || ListenedKeys.indexOf(evt.keyCode) < 0 || evt.target.tagName === 'INPUT' || evt.target.tagName === 'TEXTAREA'){
+		if (windowWidth < mediaQuery || ListenedKeys.indexOf(evt.keyCode) < 0 || evt.target.tagName === 'INPUT' || evt.target.tagName === 'TEXTAREA'){
 			return;
 		}
 
@@ -280,25 +282,15 @@
 	}
 
 	function SlideCount(_targetCount){
-		galleryActiveImage = _carousel.querySelector(".gallery-active");
+		galleryActiveImage          = _carousel.querySelector(".gallery-active");
 		var galleryActiveImageCount = parseInt(galleryActiveImage.getAttribute("data-count"));
-		console.log(_targetCount - galleryActiveImageCount);
+		//	console.log(_targetCount - galleryActiveImageCount);
 		return _targetCount - galleryActiveImageCount;
 	}
 
 	function MouseLeave(evt) {
 		_mouseDown = false;
 	}
-
-	// function HideControls(){
-	// 	_carouselRight.style.display = "none";
-	// 	_carouselLeft.style.display = "none";
-	// }
-
-	// function ShowControls(){
-	// 	_carouselRight.style.display = "";
-	// 	_carouselLeft.style.display = "";
-	// }
 
 	function GalleryInit() {
 		return new Promise(function(resolve, reject) {
@@ -309,9 +301,9 @@
 	}
 
 	function GalleryStart(_image) {
-		if(!galleryTransitioning){
-			galleryTransitioning = true;
-			galleryActive    = true;							   // set gallery active
+		if (!galleryTransitioning){
+			galleryTransitioning   = true;
+			galleryActive          = true;							   // set gallery active
 			galleryOpeningPosition = _image.offsetLeft;
 			GalleryCloneActiveImage(_image);                       // clone image
 			_image.classList.add("gallery-active");                // make image active
@@ -366,10 +358,10 @@
 	}
 
 	function GalleryClose() {
-		if(!galleryTransitioning){
+		if (!galleryTransitioning){
 			galleryTransitioning = true;
-			galleryActiveImage = _carousel.querySelector(".gallery-active");
-			galleryActive    = false;
+			galleryActiveImage   = _carousel.querySelector(".gallery-active");
+			galleryActive        = false;
 
 			_carouselWrapper.classList.add("js-gallery-fade");   // animate to gallery view
 
@@ -381,7 +373,7 @@
 			setTimeout(function(){
 				_carouselWrapper.classList.remove("js-gallery-build");
 				_carousel.style.width = _paddedScrollWidth + "px";
-				var distance = parseInt(galleryActiveImage.getAttribute("data-initial")) - (document.body.scrollWidth / 2);
+				var distance          = parseInt(galleryActiveImage.getAttribute("data-initial")) - (document.body.scrollWidth / 2);
 				SlideCarousel(distance * -1);
 			}, (_cssAnimationDuration * 2));
 
@@ -398,9 +390,9 @@
 
 	function GalleryCycleImages(direction, slideCount) {
 		var galleryActiveImage = _carousel.querySelector(".gallery-active");
-		var activeCount = parseInt(galleryActiveImage.getAttribute("data-count"));
-		var nextImage = _carousel.querySelector("[data-count='" + (activeCount + slideCount) + "']");
-		var prevImage = _carousel.querySelector("[data-count='" + (activeCount - slideCount) + "']");
+		var activeCount        = parseInt(galleryActiveImage.getAttribute("data-count"));
+		var nextImage          = _carousel.querySelector("[data-count='" + (activeCount + slideCount) + "']");
+		var prevImage          = _carousel.querySelector("[data-count='" + (activeCount - slideCount) + "']");
 
 		if (direction === "right" && nextImage) {
 			galleryActiveImage.classList.remove("gallery-active");
@@ -426,31 +418,26 @@
 		CarouselTranslateX(translation);
 	}
 
-	function SetDimensions(el, height, width) {
-		el.style.height = height + "px";
-		el.style.width = width + "px";
-	}
+	//	function FadeControl() {
+	//		if (_carousel.scrollLeft < _scrollVisibilityThreshold) {
+	//			_carouselLeft.style.opacity = Normalize(_carousel.scrollLeft,0,_scrollVisibilityThreshold,0,1);
+	//		}
+	//	}
 
-	function FadeControl() {
-		if (_carousel.scrollLeft < _scrollVisibilityThreshold) {
-			_carouselLeft.style.opacity = Normalize(_carousel.scrollLeft,0,_scrollVisibilityThreshold,0,1);
-		}
-	}
+	//	function Normalize(oldValue,oldMin, oldMax, newMin, newMax) {
+	//		//	http://stackoverflow.com/questions/5731863/mapping-a-numeric-range-onto-another
+	//		var _oldMin   = oldMin;
+	//		var _oldMax   = oldMax;
+	//		var _oldRange = _oldMax - _oldMin;
+	//		var _oldValue = oldValue;
 
-	function Normalize(oldValue,oldMin, oldMax, newMin, newMax) {
-		//	http://stackoverflow.com/questions/5731863/mapping-a-numeric-range-onto-another
-		var _oldMin   = oldMin;
-		var _oldMax   = oldMax;
-		var _oldRange = _oldMax - _oldMin;
-		var _oldValue = oldValue;
+	//		var _newMin   = 0;
+	//		var _newMax   = 1;
+	//		var _newRange = _newMax - _newMin;
+	//		var _newValue = ((_oldValue - _oldMin) * _newRange / _oldRange) + _newMin;
 
-		var _newMin   = 0;
-		var _newMax   = 1;
-		var _newRange = _newMax - _newMin;
-		var _newValue = ((_oldValue - _oldMin) * _newRange / _oldRange) + _newMin;
-
-		return _newValue;
-	};
+	//		return _newValue;
+	//	};
 
 })();
 
