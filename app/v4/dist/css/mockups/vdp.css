@@ -2,18 +2,87 @@
  * Vdp Carousel
  */
 .carousel {
-    overflow: hidden; 
+    position: relative;
+    z-index: 100; 
+    overflow: hidden;
     width: 100%;
     background-color: #333;
 }
 
-.carousel__item {
-    position: absolute;
-    transition: transform 0.5s ease-in-out;
+.carousel__outer {
+    transition: transform 0.5s ease-in-out; 
+
+    backface-visibility: hidden;
+}
+.carousel__outer.dragging {
+    transition: none;
+}
+
+.carousel__inner {
+    transition: transform 0.5s ease-in-out; 
 
     backface-visibility: hidden;
 }
 
-.carousel__item img {
-    max-width: 100%;
+.carousel__item {
+    position: absolute;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.5s;
+    transition-property: transform, width;
+
+    backface-visibility: hidden;
 }
+
+.carousel__item--active {
+    border: 1px solid lime;
+}
+
+.carousel__item img {
+    max-width: 100%; 
+
+    backface-visibility: hidden;
+}
+
+/*
+ * Vdp Carousel Controls
+ */
+.carousel__controls {
+    position: relative;
+    z-index: 200;
+    width: 100%;
+    transition: opacity 0.25s ease-in-out;
+}
+.carousel__controls.carousel__controls--hidden {
+    pointer-events: none; 
+    opacity: 0;
+}
+
+.carousel__control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: inherit;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%; 
+    background-color: white;
+}
+
+.carousel__control--right {
+    right: 0;
+}
+
+/*
+ * Utilities
+ */
+.fade {
+    transition: opacity 0.5s ease-in-out; 
+    opacity: 0;
+}
+
+.in {
+    opacity: 1;
+}
+
+/*
+ * Guides
+ */

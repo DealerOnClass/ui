@@ -5,16 +5,104 @@
 	background-color: #333;
 	width: 100%;
 	overflow: hidden;
+	position: relative;
+	z-index: 100;
 }
 .carousel__outer {
+	backface-visibility: hidden;
+	transition: transform 0.5s ease-in-out;
+	&.dragging {
+		transition: none;
+	}
 }
 .carousel__inner {
+	backface-visibility: hidden;
+	transition: transform 0.5s ease-in-out;
 }
 .carousel__item {
 	position: absolute;
-	transition: transform 0.5s ease-in-out;
+	transition-property: transform, width;
+	transition-duration: 0.5s;
+	transition-timing-function: ease-in-out;
 	backface-visibility: hidden;
 }
+.carousel__item--active {
+	border: 1px solid lime;
+}
 .carousel__item img {
+	backface-visibility: hidden;
 	max-width: 100%;
+}
+/*
+ * Vdp Carousel Controls
+ */
+.carousel__controls {
+	position: relative;
+	z-index: 200;
+	width: 100%;
+	transition: opacity 0.25s ease-in-out;
+	&.carousel__controls--hidden {
+		opacity: 0;
+		pointer-events: none;
+	}
+}
+.carousel__control {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	color: inherit;
+	background-color: white;
+	border: 4px solid rgba(0,0,0,0.1);
+	border-radius: 50%;
+}
+.carousel__control--right {
+	right: 0;
+}
+/*
+ * Utilities
+ */
+.fade {
+	opacity: 0;
+	transition: opacity 0.5s ease-in-out;
+}
+.in {
+	opacity: 1;
+}
+/*
+ * Guides
+ */
+$useguides: false;
+$center: 50%;
+$offset: 134px;
+@if $useguides {
+    body,
+    main {
+        &:before,
+        &:after {
+            position: fixed;
+            z-index: 2000;
+            top: 0;
+            display: block;
+            width: 1px;
+            height: 100%;
+            content: "";
+            background-color: red;
+        }
+    }
+    body {
+        &:before {
+            left: calc(#{$center} - #{$offset});
+        }
+        &:after {
+            left: $center;
+        }
+    }
+    main {
+        &:before {
+            left: calc(#{$center} + #{$offset});
+        }
+        &:after {
+            display: none;
+        }
+    }
 }
