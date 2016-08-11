@@ -225,6 +225,7 @@ var Carousel = (function(){
 		galleryActiveX   = (document.body.scrollWidth / 2) - (galleryActiveBCR.width / 2);
 		galleryActiveY   = (carouselMaxHeight / 2) - (galleryActiveBCR.height / 2);
 
+		carousel.classList.add("carousel--active");
 		image.parentElement.setAttribute("data-style", image.parentElement.getAttribute("style"));
 		image.parentElement.style.transform = "translateX(" + galleryActiveX + "px) translateY(" + galleryActiveY + "px)";
 		image.parentElement.classList.add("carousel__item--active");
@@ -252,6 +253,7 @@ var Carousel = (function(){
 
 	GalleryClose = function() {
 		galleryActive = false;
+		carousel.classList.remove("carousel--active");
 		document.querySelector(".carousel__item--active").classList.remove("carousel__item--active");
 		carouselInner.removeAttribute("style");
 		carouselInner.removeAttribute("data-translated");

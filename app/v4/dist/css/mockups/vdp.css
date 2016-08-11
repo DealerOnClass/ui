@@ -9,6 +9,10 @@
     background-color: #333;
 }
 
+.carousel--active .carousel__item {
+    opacity: 0.2;
+}
+
 .carousel__outer {
     transition: transform 0.5s ease-in-out; 
 
@@ -28,17 +32,22 @@
     position: absolute;
     transition-timing-function: ease-in-out;
     transition-duration: 0.5s;
-    transition-property: transform, width;
+    transition-property: transform, width, opacity, z-index;
 
     backface-visibility: hidden;
 }
 
 .carousel__item--active {
-    border: 1px solid lime;
+    z-index: 300; 
+    opacity: 1 !important;
+}
+.carousel__item--active .carousel__image {
+    transform: scale(1.75, 1.75);
 }
 
-.carousel__item img {
+.carousel__image {
     max-width: 100%; 
+    transition: transform 0.5s ease-in-out;
 
     backface-visibility: hidden;
 }
@@ -51,6 +60,8 @@
     z-index: 200;
     width: 100%;
     transition: opacity 0.25s ease-in-out;
+
+    backface-visibility: hidden;
 }
 .carousel__controls.carousel__controls--hidden {
     pointer-events: none; 

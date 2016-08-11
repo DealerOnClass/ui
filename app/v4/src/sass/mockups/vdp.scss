@@ -8,6 +8,11 @@
 	position: relative;
 	z-index: 100;
 }
+.carousel--active {
+	.carousel__item {
+		opacity: 0.2;
+	}
+}
 .carousel__outer {
 	backface-visibility: hidden;
 	transition: transform 0.5s ease-in-out;
@@ -21,15 +26,20 @@
 }
 .carousel__item {
 	position: absolute;
-	transition-property: transform, width;
+	transition-property: transform, width, opacity, z-index;
 	transition-duration: 0.5s;
 	transition-timing-function: ease-in-out;
 	backface-visibility: hidden;
 }
 .carousel__item--active {
-	border: 1px solid lime;
+	opacity: 1 !important;
+	z-index: 300;
+	.carousel__image {
+		transform: scale(1.75,1.75);
+	}
 }
-.carousel__item img {
+.carousel__image {
+	transition: transform 0.5s ease-in-out;
 	backface-visibility: hidden;
 	max-width: 100%;
 }
@@ -41,6 +51,7 @@
 	z-index: 200;
 	width: 100%;
 	transition: opacity 0.25s ease-in-out;
+	backface-visibility: hidden;
 	&.carousel__controls--hidden {
 		opacity: 0;
 		pointer-events: none;
