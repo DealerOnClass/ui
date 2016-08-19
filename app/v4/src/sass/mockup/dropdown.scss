@@ -1,0 +1,30 @@
+/*
+ * Dropdown
+ */
+.dropdown {
+	display: inline-block;
+	position: relative;
+}
+.dropdown__toggle {
+	display: inline-flex;
+	padding: 0.5rem 1rem;
+	border: 1px solid;
+	border-radius: 0.25rem;
+}
+.dropdown__menu {
+	display: none;
+	flex-direction: column;
+	border: 1px solid;
+	border-radius: 0.25rem;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	min-width: 10em;
+}
+.dropdown__menu__item {
+	display: inline-flex;
+	padding: 0.5rem 1rem;
+}
+.dropdown--open .dropdown__menu {
+	display: flex;
+}

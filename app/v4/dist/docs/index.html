@@ -1,0 +1,3648 @@
+<!doctype html>
+
+
+
+
+<html lang="en">
+<head>
+  
+  <meta charset="utf-8" />
+
+<title>SassDoc - v1.0.0</title>
+<link rel="stylesheet" href="assets/css/main.css" />
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'>
+<meta name="viewport" content="width=device-width">
+<meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible">
+
+<!-- Thanks to Sass-lang.com for the icons -->
+<link href="http://sass-lang.com/favicon.ico" rel="shortcut icon">
+
+</head>
+<body>
+
+  
+  <aside class="sidebar" role="nav">
+    
+  <div class="sidebar__header">
+  <h1 class="sidebar__title">
+    
+      SassDoc - 1.0.0
+    
+  </h1>
+</div>
+
+<div class="sidebar__body">
+  
+  
+    <button type="button" class="btn-toggle  js-btn-toggle" data-alt="Open all">Close all</button>
+
+    
+    
+      <p class="sidebar__item  sidebar__item--heading" data-slug="colors"><a href="#colors">colors</a></p>
+
+      
+      
+        <div>
+
+        
+        
+
+        
+        
+          <p class="sidebar__item  sidebar__item--sub-heading" data-slug="colors-function"><a href="#colors-function">functions</a></p>
+
+          
+          
+            <ul class="list-unstyled">
+            <li class="sidebar__item  sassdoc__item" data-name="shade" data-type="function">
+              <a href="#function-shade">shade
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="tint" data-type="function">
+              <a href="#function-tint">tint
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="check-color" data-type="function">
+              <a href="#function-check-color">check-color
+              
+              
+              </a>
+            </li>
+            </ul>
+          
+        
+        
+      
+        
+
+        
+        
+
+        
+        
+          <p class="sidebar__item  sidebar__item--sub-heading" data-slug="colors-variable"><a href="#colors-variable">variables</a></p>
+
+          
+          
+            <ul class="list-unstyled">
+            <li class="sidebar__item  sassdoc__item" data-name="white" data-type="variable">
+              <a href="#variable-white">white
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="black" data-type="variable">
+              <a href="#variable-black">black
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="grayscale" data-type="variable">
+              <a href="#variable-grayscale">grayscale
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="default-color" data-type="variable">
+              <a href="#variable-default-color">default-color
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="primary-color" data-type="variable">
+              <a href="#variable-primary-color">primary-color
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="accent-color" data-type="variable">
+              <a href="#variable-accent-color">accent-color
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="inverse-color" data-type="variable">
+              <a href="#variable-inverse-color">inverse-color
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="state-success" data-type="variable">
+              <a href="#variable-state-success">state-success
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="state-info" data-type="variable">
+              <a href="#variable-state-info">state-info
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="state-warning" data-type="variable">
+              <a href="#variable-state-warning">state-warning
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="state-danger" data-type="variable">
+              <a href="#variable-state-danger">state-danger
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="default__palette" data-type="variable">
+              <a href="#variable-default__palette">default__palette
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="inverse__palette" data-type="variable">
+              <a href="#variable-inverse__palette">inverse__palette
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="primary__palette" data-type="variable">
+              <a href="#variable-primary__palette">primary__palette
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="neutral__palette" data-type="variable">
+              <a href="#variable-neutral__palette">neutral__palette
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="state__palette" data-type="variable">
+              <a href="#variable-state__palette">state__palette
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="classic__palette" data-type="variable">
+              <a href="#variable-classic__palette">classic__palette
+              
+              
+              </a>
+            </li>
+            </ul>
+          
+        
+        </div>
+      
+
+    
+      <p class="sidebar__item  sidebar__item--heading" data-slug="undefined"><a href="#undefined">Ungrouped</a></p>
+
+      
+      
+        <div>
+
+        
+        
+
+        
+        
+          <p class="sidebar__item  sidebar__item--sub-heading" data-slug="undefined-function"><a href="#undefined-function">functions</a></p>
+
+          
+          
+            <ul class="list-unstyled">
+            <li class="sidebar__item  sassdoc__item" data-name="strip-unit" data-type="function">
+              <a href="#function-strip-unit">strip-unit
+              
+              
+              </a>
+            </li>
+            </ul>
+          
+        
+        </div>
+      
+
+    
+      <p class="sidebar__item  sidebar__item--heading" data-slug="breakpoints"><a href="#breakpoints">breakpoints</a></p>
+
+      
+      
+        <div>
+
+        
+        
+
+        
+        
+          <p class="sidebar__item  sidebar__item--sub-heading" data-slug="breakpoints-variable"><a href="#breakpoints-variable">variables</a></p>
+
+          
+          
+            <ul class="list-unstyled">
+            <li class="sidebar__item  sassdoc__item" data-name="breakpoint-mobile" data-type="variable">
+              <a href="#variable-breakpoint-mobile">breakpoint-mobile
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="breakpoint-tablet" data-type="variable">
+              <a href="#variable-breakpoint-tablet">breakpoint-tablet
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="breakpoint-desktop" data-type="variable">
+              <a href="#variable-breakpoint-desktop">breakpoint-desktop
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="breakpoint-large" data-type="variable">
+              <a href="#variable-breakpoint-large">breakpoint-large
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="breakpoints" data-type="variable">
+              <a href="#variable-breakpoints">breakpoints
+              
+              
+              </a>
+            </li>
+            </ul>
+          
+        
+        </div>
+      
+
+    
+      <p class="sidebar__item  sidebar__item--heading" data-slug="fonts"><a href="#fonts">fonts</a></p>
+
+      
+      
+        <div>
+
+        
+        
+
+        
+        
+          <p class="sidebar__item  sidebar__item--sub-heading" data-slug="fonts-variable"><a href="#fonts-variable">variables</a></p>
+
+          
+          
+            <ul class="list-unstyled">
+            <li class="sidebar__item  sassdoc__item" data-name="icon" data-type="variable">
+              <a href="#variable-icon">icon
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="sans" data-type="variable">
+              <a href="#variable-sans">sans
+              
+              
+              </a>
+            </li>
+            </ul>
+          
+        
+        </div>
+      
+
+    
+      <p class="sidebar__item  sidebar__item--heading" data-slug="paths"><a href="#paths">paths</a></p>
+
+      
+      
+        <div>
+
+        
+        
+
+        
+        
+          <p class="sidebar__item  sidebar__item--sub-heading" data-slug="paths-variable"><a href="#paths-variable">variables</a></p>
+
+          
+          
+            <ul class="list-unstyled">
+            <li class="sidebar__item  sassdoc__item" data-name="g-root" data-type="variable">
+              <a href="#variable-g-root">g-root
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="g-font" data-type="variable">
+              <a href="#variable-g-font">g-font
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="g-img" data-type="variable">
+              <a href="#variable-g-img">g-img
+              
+              
+              </a>
+            </li>
+            </ul>
+          
+        
+        </div>
+      
+
+    
+  
+</div>
+
+
+  </aside>
+
+  
+  <article class="main" role="main">
+
+    
+    <header class="header" role="banner">
+  <div class="container">
+  
+    <div class="header__description">
+      <p>DealerOn CMS UserInterface code</p>
+
+    </div>
+  
+
+    <div class="sassdoc__searchbar  searchbar">
+       <label for="js-search-input" class="visually-hidden">Search</label>
+       <div class="searchbar__form" id="js-search">
+         <input name="search" type="search" class="searchbar__field" autocomplete="off" autofocus id="js-search-input" placeholder="Search" />
+         <ul class="searchbar__suggestions" id="js-search-suggestions"></ul>
+       </div>
+     </div>
+  </div>
+</header>
+
+
+    <div class="container">
+    
+
+  
+  
+
+    
+    
+      <section class="main__section">
+        <h1 class="main__heading" id="colors">colors</h1>
+
+        
+        
+
+          
+          
+
+          
+          
+            <section class="main__sub-section" id="colors-function">
+              <h2 class="main__heading--secondary">functions</h2>
+
+              
+              
+                <section class="main__item  item" id="function-shade">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#function-shade">shade</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="relative  clear  code--collapsed">
+  <pre class="item__code  item__code--togglable  language-scss"
+    data-current-state="collapsed"
+    data-expanded="@function shade() { 
+    $output: mix($black, $input, $percentage);
+    @return $output;
+ }"
+    data-collapsed="@function shade() { ... }"><code>@function shade() { ... }</code></pre>
+
+  
+</div>
+
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    <h3 class="item__sub-heading">Parameters</h3>
+
+
+
+  <p>None.</p>
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+  
+    
+    
+
+  
+    
+    
+
+
+  
+    
+      
+      <h3 class="item__sub-heading">Requires</h3>
+      <ul class="list-unstyled">
+    
+
+    
+      <li>
+        <a href="#variable-black"><code>black</code></a>
+        
+      </li>
+    
+  
+
+
+
+
+</ul>
+
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="function-tint">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#function-tint">tint</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="relative  clear  code--collapsed">
+  <pre class="item__code  item__code--togglable  language-scss"
+    data-current-state="collapsed"
+    data-expanded="@function tint() { 
+    $output: mix($white, $input, $percentage);
+    @return $output;
+ }"
+    data-collapsed="@function tint() { ... }"><code>@function tint() { ... }</code></pre>
+
+  
+</div>
+
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    <h3 class="item__sub-heading">Parameters</h3>
+
+
+
+  <p>None.</p>
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+  
+    
+    
+
+  
+    
+    
+
+
+  
+    
+      
+      <h3 class="item__sub-heading">Requires</h3>
+      <ul class="list-unstyled">
+    
+
+    
+      <li>
+        <a href="#variable-white"><code>white</code></a>
+        
+      </li>
+    
+  
+
+
+
+
+</ul>
+
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="function-check-color">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#function-check-color">check-color</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="relative  clear  code--collapsed">
+  <pre class="item__code  item__code--togglable  language-scss"
+    data-current-state="collapsed"
+    data-expanded="@function check-color() { 
+    @if (lightness($color) &gt; $threshold) {
+        @return $over; // Lighter backgorund, return dark color
+    } @else {
+        @return $under; // Darker background, return light color
+    }
+ }"
+    data-collapsed="@function check-color() { ... }"><code>@function check-color() { ... }</code></pre>
+
+  
+</div>
+
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    <h3 class="item__sub-heading">Parameters</h3>
+
+
+
+  <p>None.</p>
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+            </section>
+          
+        
+
+          
+          
+
+          
+          
+            <section class="main__sub-section" id="colors-variable">
+              <h2 class="main__heading--secondary">variables</h2>
+
+              
+              
+                <section class="main__item  item" id="variable-white">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#variable-white">white</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+<div class="relative  clear">
+  <pre class="item__code  language-scss"><code>$white: #fff;</code></pre>
+
+  
+</div>
+
+
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+  
+
+    
+      
+      <h3 class="item__sub-heading">Used by</h3>
+      <ul class="list-unstyled  list-inline">
+    
+
+    <li><a href="#function-tint"><code>tint</code></a></li>
+  
+
+
+
+
+</ul>
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="variable-black">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#variable-black">black</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+<div class="relative  clear">
+  <pre class="item__code  language-scss"><code>$black: #000;</code></pre>
+
+  
+</div>
+
+
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+  
+
+    
+      
+      <h3 class="item__sub-heading">Used by</h3>
+      <ul class="list-unstyled  list-inline">
+    
+
+    <li><a href="#function-shade"><code>shade</code></a></li>
+  
+
+
+
+
+</ul>
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="variable-grayscale">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#variable-grayscale">grayscale</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+<div class="relative  clear">
+  <pre class="item__code  language-scss"><code>$grayscale: (
+	&quot;01&quot;:  mix($black, $white, 10%),
+	&quot;02&quot;:  mix($black, $white, 20%),
+	&quot;03&quot;:  mix($black, $white, 30%),
+	&quot;04&quot;:  mix($black, $white, 40%),
+	&quot;05&quot;:  mix($black, $white, 50%),
+	&quot;06&quot;:  mix($black, $white, 60%),
+	&quot;07&quot;:  mix($black, $white, 70%),
+	&quot;08&quot;:  mix($black, $white, 80%),
+	&quot;09&quot;:  mix($black, $white, 90%),
+) !default;</code></pre>
+
+  
+</div>
+
+
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="variable-default-color">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#variable-default-color">default-color</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+<div class="relative  clear">
+  <pre class="item__code  language-scss"><code>$default-color: #e4e4e4;</code></pre>
+
+  
+</div>
+
+
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="variable-primary-color">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#variable-primary-color">primary-color</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+<div class="relative  clear">
+  <pre class="item__code  language-scss"><code>$primary-color: #3662ad;</code></pre>
+
+  
+</div>
+
+
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="variable-accent-color">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#variable-accent-color">accent-color</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+<div class="relative  clear">
+  <pre class="item__code  language-scss"><code>$accent-color: #f36c0a;</code></pre>
+
+  
+</div>
+
+
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="variable-inverse-color">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#variable-inverse-color">inverse-color</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+<div class="relative  clear">
+  <pre class="item__code  language-scss"><code>$inverse-color: mix($primary-color, map-get($grayscale, 08), 20%);</code></pre>
+
+  
+</div>
+
+
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="variable-state-success">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#variable-state-success">state-success</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+<div class="relative  clear">
+  <pre class="item__code  language-scss"><code>$state-success: #5cb85c !default;</code></pre>
+
+  
+</div>
+
+
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="variable-state-info">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#variable-state-info">state-info</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+<div class="relative  clear">
+  <pre class="item__code  language-scss"><code>$state-info: #5bc0de !default;</code></pre>
+
+  
+</div>
+
+
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="variable-state-warning">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#variable-state-warning">state-warning</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+<div class="relative  clear">
+  <pre class="item__code  language-scss"><code>$state-warning: #f0ad4e !default;</code></pre>
+
+  
+</div>
+
+
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="variable-state-danger">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#variable-state-danger">state-danger</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+<div class="relative  clear">
+  <pre class="item__code  language-scss"><code>$state-danger: #d9534f !default;</code></pre>
+
+  
+</div>
+
+
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="variable-default__palette">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#variable-default__palette">default__palette</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+<div class="relative  clear">
+  <pre class="item__code  language-scss"><code>$default__palette: (
+    &#39;default&#39;:  $default__color,
+) !default;</code></pre>
+
+  
+</div>
+
+
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="variable-inverse__palette">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#variable-inverse__palette">inverse__palette</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+<div class="relative  clear">
+  <pre class="item__code  language-scss"><code>$inverse__palette: (
+    &#39;inverse&#39;: $inverse__color,
+) !default;</code></pre>
+
+  
+</div>
+
+
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="variable-primary__palette">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#variable-primary__palette">primary__palette</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+<div class="relative  clear">
+  <pre class="item__code  language-scss"><code>$primary__palette: (
+    &#39;cta&#39;:   $accent__color,
+    &#39;main&#39;:  $primary__color,
+) !default;</code></pre>
+
+  
+</div>
+
+
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="variable-neutral__palette">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#variable-neutral__palette">neutral__palette</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+<div class="relative  clear">
+  <pre class="item__code  language-scss"><code>$neutral__palette: (
+    &#39;alt1&#39;:  mix($primary__color, map-get($grayscale, 07), 50%),
+    &#39;alt2&#39;:  mix($primary__color, map-get($grayscale, 05), 45%),
+    &#39;alt3&#39;:  mix($primary__color, map-get($grayscale, 03), 40%),
+) !default;</code></pre>
+
+  
+</div>
+
+
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="variable-state__palette">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#variable-state__palette">state__palette</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+<div class="relative  clear">
+  <pre class="item__code  language-scss"><code>$state__palette: (
+    &#39;success&#39;:  $state--success,
+    &#39;info&#39;:     $state--info,
+    &#39;warning&#39;:  $state--warning,
+    &#39;danger&#39;:   $state--danger,
+) !default;</code></pre>
+
+  
+</div>
+
+
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="variable-classic__palette">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#variable-classic__palette">classic__palette</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+<div class="relative  clear">
+  <pre class="item__code  language-scss"><code>$classic__palette: (
+    &#39;white&#39;:  $white,
+    &#39;black&#39;:  $black,
+) !default;</code></pre>
+
+  
+</div>
+
+
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+            </section>
+          
+        
+
+      </section>
+    
+      <section class="main__section">
+        <h1 class="main__heading" id="undefined">Ungrouped</h1>
+
+        
+        
+
+          
+          
+
+          
+          
+            <section class="main__sub-section" id="undefined-function">
+              <h2 class="main__heading--secondary">functions</h2>
+
+              
+              
+                <section class="main__item  item" id="function-strip-unit">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#function-strip-unit">strip-unit</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="relative  clear  code--collapsed">
+  <pre class="item__code  item__code--togglable  language-scss"
+    data-current-state="collapsed"
+    data-expanded="@function strip-unit() { 
+    @if type-of($number) == &#39;number&#39; and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+    @return $number;
+ }"
+    data-collapsed="@function strip-unit() { ... }"><code>@function strip-unit() { ... }</code></pre>
+
+  
+</div>
+
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    <h3 class="item__sub-heading">Parameters</h3>
+
+
+
+  <p>None.</p>
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Returns</h3>
+
+  <p class="sassdoc__item-description"><p>Unitless number</p>
+
+  
+    Number
+  
+  </p>
+
+
+  
+    
+    
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+            </section>
+          
+        
+
+      </section>
+    
+      <section class="main__section">
+        <h1 class="main__heading" id="breakpoints">breakpoints</h1>
+
+        
+        
+
+          
+          
+
+          
+          
+            <section class="main__sub-section" id="breakpoints-variable">
+              <h2 class="main__heading--secondary">variables</h2>
+
+              
+              
+                <section class="main__item  item" id="variable-breakpoint-mobile">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#variable-breakpoint-mobile">breakpoint-mobile</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+<div class="relative  clear">
+  <pre class="item__code  language-scss"><code>$breakpoint-mobile: 544px;</code></pre>
+
+  
+</div>
+
+
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="variable-breakpoint-tablet">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#variable-breakpoint-tablet">breakpoint-tablet</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+<div class="relative  clear">
+  <pre class="item__code  language-scss"><code>$breakpoint-tablet: 768px;</code></pre>
+
+  
+</div>
+
+
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="variable-breakpoint-desktop">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#variable-breakpoint-desktop">breakpoint-desktop</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+<div class="relative  clear">
+  <pre class="item__code  language-scss"><code>$breakpoint-desktop: 992px;</code></pre>
+
+  
+</div>
+
+
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="variable-breakpoint-large">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#variable-breakpoint-large">breakpoint-large</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+<div class="relative  clear">
+  <pre class="item__code  language-scss"><code>$breakpoint-large: 1200px;</code></pre>
+
+  
+</div>
+
+
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="variable-breakpoints">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#variable-breakpoints">breakpoints</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+<div class="relative  clear">
+  <pre class="item__code  language-scss"><code>$breakpoints: (
+	&quot;sm&quot;:  $breakpoint-mobile,
+	&quot;md&quot;:  $breakpoint-tablet,
+	&quot;lg&quot;:  $breakpoint-desktop,
+	&quot;xl&quot;:  $breakpoint-large,
+) !default;</code></pre>
+
+  
+</div>
+
+
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+            </section>
+          
+        
+
+      </section>
+    
+      <section class="main__section">
+        <h1 class="main__heading" id="fonts">fonts</h1>
+
+        
+        
+
+          
+          
+
+          
+          
+            <section class="main__sub-section" id="fonts-variable">
+              <h2 class="main__heading--secondary">variables</h2>
+
+              
+              
+                <section class="main__item  item" id="variable-icon">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#variable-icon">icon</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+<div class="relative  clear">
+  <pre class="item__code  language-scss"><code>$icon: (
+	&quot;FontAwesome&quot;: (
+		(
+            &quot;name&quot;: &quot;fontawesome-webfont&quot;,
+            &quot;formats&quot;: (&quot;eot&quot;, &quot;woff2&quot;, &quot;woff&quot;, &quot;ttf&quot;, &quot;svg&quot;)
+		),
+	)
+);</code></pre>
+
+  
+</div>
+
+
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="variable-sans">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#variable-sans">sans</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+<div class="relative  clear">
+  <pre class="item__code  language-scss"><code>$sans: (
+    &quot;Avenir&quot;: (
+        (
+            &quot;name&quot;: &quot;avenirltstd-roman-webfont&quot;,
+            &quot;formats&quot;: (&quot;eot&quot;, &quot;woff&quot;, &quot;ttf&quot;, &quot;svg&quot;),
+            &quot;weight&quot;: &quot;400&quot;
+        ), (
+            &quot;name&quot;: &quot;avenirltstd-medium-webfont&quot;,
+            &quot;formats&quot;: (&quot;eot&quot;, &quot;woff&quot;, &quot;ttf&quot;, &quot;svg&quot;),
+            &quot;weight&quot;: &quot;500&quot;
+        ), (
+            &quot;name&quot;: &quot;avenirheavy-webfont&quot;,
+            &quot;formats&quot;: (&quot;eot&quot;, &quot;woff&quot;, &quot;ttf&quot;, &quot;svg&quot;),
+            &quot;weight&quot;: &quot;700&quot;
+        ),
+    )
+);</code></pre>
+
+  
+</div>
+
+
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+            </section>
+          
+        
+
+      </section>
+    
+      <section class="main__section">
+        <h1 class="main__heading" id="paths">paths</h1>
+
+        
+        
+
+          
+          
+
+          
+          
+            <section class="main__sub-section" id="paths-variable">
+              <h2 class="main__heading--secondary">variables</h2>
+
+              
+              
+                <section class="main__item  item" id="variable-g-root">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#variable-g-root">g-root</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+<div class="relative  clear">
+  <pre class="item__code  language-scss"><code>$g-root: &quot;../&quot;;</code></pre>
+
+  
+</div>
+
+
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="variable-g-font">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#variable-g-font">g-font</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+<div class="relative  clear">
+  <pre class="item__code  language-scss"><code>$g-font: $g-root + &quot;font/&quot;;</code></pre>
+
+  
+</div>
+
+
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="variable-g-img">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#variable-g-img">g-img</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+<div class="relative  clear">
+  <pre class="item__code  language-scss"><code>$g-img: $g-root + &quot;img/&quot;;</code></pre>
+
+  
+</div>
+
+
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+            </section>
+          
+        
+
+      </section>
+    
+
+  
+
+
+    </div>
+
+    
+    
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      
+        <div class="footer__project-info  project-info">
+          <!-- Name and URL -->
+          
+            <span class="project-info__name">SassDoc</span>
+          
+
+          <!-- Version -->
+          <span class="project-info__version"> - v1.0.0</span>
+
+          <!-- License -->
+          
+          <span class="project-info__license">, under
+            
+              ISC
+            
+            </span>
+          
+        </div>
+      
+
+      
+        <span class="footer__watermark">Built with <a href="https://github.com/SassDoc/sassdoc">SassDoc</a>.</span>
+      
+    </div>
+  </footer>
+
+
+  </article>
+
+
+  
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script>
+<script src="assets/js/main.min.js"></script>
+
+</body>
+</html>

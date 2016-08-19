@@ -1,0 +1,20 @@
+/*
+ * Base
+ */
+@mixin text-weight() {
+.text-bold {
+    font-weight: 700 !important;
+}
+.text-normal {
+    font-weight: 400 !important;
+}
+.text-italic {
+    font-style: italic !important;
+}
+}
+/*
+ * Output
+ */
+@if $o-text-weight {
+	@include text-weight();
+}

@@ -14,6 +14,7 @@ var plumber      = require('gulp-plumber');
 var rename       = require('gulp-rename');
 var run        	 = require('gulp-run');
 var sass         = require('gulp-sass');
+var sassdoc      = require('gulp-sassdoc');
 var sourcemaps   = require('gulp-sourcemaps');
 var uglify       = require('gulp-uglify');
 var util         = require('gulp-util');
@@ -83,6 +84,7 @@ var paths = {
     styles: {
         src:     './app/v' + vers + '/src/sass/**/*.scss',
         dist:    './app/v' + vers + '/dist/css/',
+        docs:    './app/v' + vers + '/dist/docs/',
 		export:  '\\\\assets2\\assets-dfs\\assets\\ui\\v' + vers + '\\css\\',
     }
 }
@@ -253,6 +255,9 @@ function serve() {
 function styles() {
     return gulp.src(paths.styles.src)
 		.pipe(sass().on('error', sass.logError))
+		//	.pipe(sassdoc({
+		//		dest: paths.styles.docs
+		//	}))
 		.pipe(gulpif(isProd, sourcemaps.init()))
         .pipe(gulpif(isProd, autoprefixer({
             browsers: ['last 3 versions'],
@@ -271,10 +276,10 @@ function styles() {
 };
 
 function watch() {
-	gulp.watch(paths.font.src, font);
-	gulp.watch(paths.html.src, html);
-	gulp.watch(paths.img.src, img);
-	gulp.watch(paths.jade.src, jade);
-	gulp.watch(paths.scripts.src, scripts);
-	gulp.watch(paths.styles.src, styles);
+	gulp.watch(paths.font.src).on('change', font);
+	gulp.watch(paths.html.src).on('change', html);
+	gulp.watch(paths.img.src).on('change', img);
+	gulp.watch(paths.jade.src).on('change', jade);
+	gulp.watch(paths.scripts.src).on('change', scripts);
+	gulp.watch(paths.styles.src).on('change', styles);
 };

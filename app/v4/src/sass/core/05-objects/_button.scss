@@ -1,0 +1,66 @@
+/*
+ * Units
+ */
+$btn-c: $g-c;
+$btn-r: $g-r;
+$btn-x: $g-x;
+$btn-y: $g-y;
+/*
+ * Colors
+ */
+$btn-border: transparent;
+$btn-bg: $default__color;
+$btn-fc-active: $white;
+$btn-bg-active: $primary__color;
+/*
+ * Base
+ */
+@mixin btn() {
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    padding: $btn-y $btn-x;
+    white-space: nowrap;
+    border: 1px solid $btn-border;
+    border-radius: $btn-r;
+    background-color: $btn-bg;
+	user-select: none;
+
+    @include state--hover("inherit", $btn-bg, $btn-c);
+    @include state--focus("inherit", $btn-bg, $btn-c);
+    @include state--active("inherit", $btn-bg, ($btn-c * 2));
+    @include state--class("active", $btn-fc-active, $btn-bg-active);
+    @include state--attr("aria-expanded=true", $btn-fc-active, $btn-bg-active, ($btn-c * 2));
+    @include state--attr("active=true", $btn-fc-active, $btn-bg-active, ($btn-c * 2));
+}
+/*
+ * Variations
+ */
+.btn-block {
+    display: flex;
+    width: 100%;
+}
+label.btn {
+    input {
+        display: none;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+}
+}
+/*
+ * Theme
+ */
+//	@include btn-color-variation($default__palette);
+//	@include btn-color-variation($inverse__palette);
+//	@include btn-color-variation($primary__palette);
+//	@include btn-color-variation($neutral__palette);
+//	@include btn-color-variation($state__palette);
+//	@include btn-color-variation($classic__palette);
+/*
+ * Output
+ */
+@if $o-btn {
+	@include btn();
+}

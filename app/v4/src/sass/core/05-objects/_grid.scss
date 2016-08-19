@@ -1,0 +1,22 @@
+/*
+ * Var
+ */
+$grid-columns:  12;
+$grid-gutter:   $g-g;
+$grid-pull:     false;
+$grid-push:     false;
+$grid-offset:   true;
+/*
+ * Base
+ */
+@mixin grid() {
+	@include container;
+	@include row;
+	@include column;
+}
+/*
+ * Output
+ */
+@if $o-grid {
+	@include grid();
+}

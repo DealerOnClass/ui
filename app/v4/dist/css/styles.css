@@ -1,0 +1,1314 @@
+@charset "UTF-8";
+/*
+ * Breakpoints
+ * $m-mobile:   $media-mobile:   544px;
+ * $m-tablet:   $media-tablet:   768px;
+ * $m-desktop:  $media-desktop:  992px;
+ * $m-large:    $media-large:    1200px;
+ */
+/*
+ * GrayScale
+ */
+/*
+ * Colors
+ */
+/*
+ * States
+ */
+/*
+ * Colors
+ */
+/*
+ * Icon
+ */
+/*
+ * Sans Serif
+ */
+/*
+ * 03 Base Output
+ */
+/*
+ * 04 Base Output
+ */
+/*
+ * 05 Object Output
+ */
+/*
+ * 06 Utilities Output
+ */
+/*
+ * Root
+ */
+/*
+ * Assets
+ */
+/*
+ * Ratios
+ */
+/*
+ * Global Unit
+ * $g-u:  $global-unit:        1rem;
+ * $g-m:  $global-multiplier:  1;
+ */
+/*
+ * Global Unit Abstracts
+ * $g-c:  $global-contrast:        (10% * $g-m);
+ * $g-g:  $global-gutter:          ($g-u * $g-m);
+ * $g-r:  $global-radius:          (($g-u * 0.30) * $g-m);
+ * $g-x:  $global-leftandorright:  (($g-u * 0.75) * $g-m);
+ * $g-y:  $global-topandorbottom:  (($g-u * 0.50) * $g-m);
+ */
+/*
+ * Typography
+ * $t-u:   $type-unit:        1em;
+ * $t-r:   $type-ratio:       $major-third;
+ * $t-fs:  $type-fontsize:    16px;
+ * $t-lh:  $type-lineheight:  1.618;
+ */
+/*
+ * Global Spacers
+ * $s-x-1:  $spacer-x-1:  $g-x;
+ * ...
+ * $s-y-1:  $spacer-y-1:  $g-y;
+ * ...
+ * $spacers: map for mixin
+ */
+/*
+ * Global Z
+ * $g-z-dropdown:  $global-z-dropdown:  1000
+ */
+/*
+ * Base
+ */
+/*
+ * Variations
+ */
+/*
+ * Reset
+ */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+input,
+select,
+button,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    font: inherit;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    text-decoration: none;
+    border: 0;
+    outline: 0;
+    background: none;
+}
+
+ul,
+ol {
+    list-style-position: inside;
+}
+
+table {
+    border-spacing: 0; 
+    border-collapse: collapse;
+}
+
+input[type="button"],
+input[type="submit"],
+button {
+    cursor: pointer;
+}
+
+input:not([class]),
+textarea:not([class]),
+button:not([class]),
+select:not([class]) {
+    border: 1px solid;
+}
+
+a,
+area,
+button,
+[role="button"],
+input,
+label,
+select,
+summary,
+textarea {
+    -ms-touch-action: manipulation;
+        touch-action: manipulation;
+}
+
+label {
+    white-space: nowrap;
+}
+
+[disabled] {
+    cursor: not-allowed; 
+    opacity: 0.5;
+}
+
+[disabled]:hover,
+[disabled]:focus,
+[disabled]:active {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+progress[value] {
+    width: 100%;
+    color: black;
+    border: 0;
+
+    appearance: none;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: inherit;
+}
+
+/*
+ * Type Declaration
+ */
+@font-face {
+    font-family: "Avenir";
+    font-weight: 400; 
+    src: url("../font/avenirltstd-roman-webfont.eot");
+    src: url("../font/avenirltstd-roman-webfont.eot?#iefix") format("embedded-opentype"), url("../font/avenirltstd-roman-webfont.woff") format("woff"), url("../font/avenirltstd-roman-webfont.ttf") format("truetype"), url("../font/avenirltstd-roman-webfont.svg#svgavenirltstd-roman-webfont") format("#svg");
+}
+
+@font-face {
+    font-family: "Avenir";
+    font-weight: 500; 
+
+    src: url("../font/avenirltstd-medium-webfont.eot");
+    src: url("../font/avenirltstd-medium-webfont.eot?#iefix") format("embedded-opentype"), url("../font/avenirltstd-medium-webfont.woff") format("woff"), url("../font/avenirltstd-medium-webfont.ttf") format("truetype"), url("../font/avenirltstd-medium-webfont.svg#svgavenirltstd-medium-webfont") format("#svg");
+}
+
+@font-face {
+    font-family: "Avenir";
+    font-weight: 700; 
+
+    src: url("../font/avenirheavy-webfont.eot");
+    src: url("../font/avenirheavy-webfont.eot?#iefix") format("embedded-opentype"), url("../font/avenirheavy-webfont.woff") format("woff"), url("../font/avenirheavy-webfont.ttf") format("truetype"), url("../font/avenirheavy-webfont.svg#svgavenirheavy-webfont") format("#svg");
+}
+
+/*
+ * Icon Declaration
+ */
+@font-face {
+    font-family: "FontAwesome";
+
+    src: url("../font/fontawesome-webfont.eot");
+    src: url("../font/fontawesome-webfont.eot?#iefix") format("embedded-opentype"), url("../font/fontawesome-webfont.woff2") format("woff2"), url("../font/fontawesome-webfont.woff") format("woff"), url("../font/fontawesome-webfont.ttf") format("truetype"), url("../font/fontawesome-webfont.svg#svgfontawesome-webfont") format("#svg");
+}
+
+/*!
+ *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+ */
+.fa {
+    font: normal normal normal 14px/1 "FontAwesome";
+    font-size: 14px;
+    line-height: inherit;
+    display: inline-block;
+
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* makes the font 33% larger relative to the icon container */
+.fa-sm {
+    font-size: 0.8em;
+}
+
+.fa-lg {
+    font-size: 1.33333em;
+    line-height: 0.75em;
+    vertical-align: -15%;
+}
+
+.fa-2x {
+    font-size: 2em;
+}
+
+.fa-3x {
+    font-size: 3em;
+}
+
+.fa-4x {
+    font-size: 4em;
+}
+
+.fa-5x {
+    font-size: 5em;
+}
+
+.fa-fw {
+    width: 1.28571em;
+    text-align: center;
+}
+
+/* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
+   readers do not read off random characters that represent icons */
+.fa-calendar:before {
+    content: "";
+}
+
+.fa-navicon:before,
+.fa-reorder:before,
+.fa-bars:before {
+    content: "";
+}
+
+/*
+ * Var
+ */
+/*
+ * Colors
+ */
+/*
+ * Base
+ */
+html {
+    font-size: 100%;
+}
+
+body {
+    font-family: "Avenir", sans-serif;
+    font-weight: 400;
+    line-height: 1.618;
+    color: #343c4b;
+}
+
+/*
+ * Headings
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1;
+    margin-top: 1.618rem;
+    margin-bottom: 0.809rem;
+}
+
+.h1 {
+    font-size: 2.44141em;
+}
+
+.h2 {
+    font-size: 1.95313em;
+}
+
+.h3 {
+    font-size: 1.5625em;
+}
+
+.h4 {
+    font-size: 1.25em;
+}
+
+.h5 {
+    font-size: 1em;
+}
+
+.h6,
+.small,
+small {
+    font-size: 0.8em;
+}
+
+/*
+ * Paragraphs
+ */
+p {
+    margin-bottom: 0.809em;
+}
+
+/*
+ * Strong
+ */
+strong {
+    font-weight: 700;
+}
+
+/*
+ * Italics
+ */
+em {
+    font-style: italic;
+}
+
+/*
+ * Links
+ */
+a {
+    color: #3662ad;
+}
+
+/*
+ * Lists
+ */
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+    padding-left: 1rem;
+}
+
+ul,
+ol {
+    margin-bottom: 1.618em;
+}
+
+/*
+ * Definition List
+ */
+dl {
+    margin-bottom: 1.618em;
+}
+
+/*
+ * Code
+ */
+/*
+ * Tables
+ */
+table {
+    margin-bottom: 1.618em;
+}
+
+/*
+ * Forms
+ */
+form {
+    margin-bottom: 1.618em;
+}
+
+/*
+ * Address
+ */
+address {
+    margin-bottom: 1.618em;
+}
+
+/*
+ * Blockquote
+ */
+blockquote {
+    margin-bottom: 1.618em;
+}
+blockquote cite:before {
+    content: "\2014";
+}
+
+/*
+ * Display Headings
+ */
+.display-1 {
+    font-size: 5.96046em;
+}
+
+.display-2 {
+    font-size: 4.76837em;
+}
+
+.display-3 {
+    font-size: 3.8147em;
+}
+
+.display-4 {
+    font-size: 3.05176em;
+}
+
+/*
+ * Lead
+ */
+.lead {
+    font-size: 1.125em;
+}
+
+/*
+ * Marks
+ */
+mark {
+    background-color: yellow;
+}
+
+/*
+ * Delete
+ */
+del,
+s {
+    text-decoration: line-through;
+}
+
+/*
+ * Insert
+ */
+ins,
+u {
+    text-decoration: underline;
+}
+
+/*
+ * Abbreviations
+ */
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+/*
+ * Horizontal Rule
+ */
+hr {
+    height: 1px;
+    border: 0;
+    background-color: #343c4b;
+}
+
+/*
+ * Horizontal Description List
+ */
+.dl-horizontal {
+    margin-right: -1rem;
+    margin-left: -1rem;
+}
+.dl-horizontal:after {
+    display: table; 
+    clear: both;
+    content: "";
+}
+
+/*
+ * Code
+ */
+code,
+mark,
+kbd,
+pre,
+samp {
+    font-family: monospace;
+}
+
+kbd {
+    padding: 0.2rem;
+    color: white;
+    background-color: black;
+}
+
+/*
+ * Units
+ */
+/*
+ * Colors
+ */
+/*
+ * Base
+ */
+/*
+ * Variations
+ */
+/*
+ * Theme
+ */
+/*
+ * Output
+ */
+/*
+ * Units
+ */
+/*
+ * Colors
+ */
+/*
+ * Base
+ */
+/*
+ * Output
+ */
+/*
+ * Units
+ */
+/*
+ * Colors
+ */
+/*
+ * Base
+ */
+/*
+ * Output
+ */
+/*
+ * Var
+ */
+/*
+ * Colors
+ */
+/*
+ * Base
+ */
+/*
+ * Theme
+ */
+/*
+ * Output
+ */
+/*
+ * Units
+ */
+/*
+ * Colors
+ */
+/*
+ * Base
+ */
+/*
+ * Theme
+ */
+/*
+ * Output
+ */
+/*
+ * Units
+ */
+/*
+ * Colors
+ */
+/*
+ * Base
+ */
+/*
+ * Output
+ */
+/*
+ * Units
+ */
+/*
+ * Colors
+ */
+/*
+ * Base
+ */
+/*
+ * Theme
+ */
+/*
+ * Output
+ */
+/*
+ * Var
+ */
+/*
+ * Colors
+ */
+/*
+ * Base
+ */
+/*
+ * Variations
+ */
+/*
+ * Theme
+/*
+ * Output
+ */
+/*
+ * Units
+ */
+/*
+ * Colors
+ */
+/*
+ * Base
+ */
+/*
+ * Var
+ */
+/*
+ * Base
+ */
+/*
+ * Units
+ */
+/*
+ * Colors
+ */
+/*
+ * Base
+ */
+/*
+ * Theme
+ */
+/*
+ * Output
+ */
+/*
+ * Units
+ */
+/*
+ * Colors
+ */
+/*
+ * Base
+ */
+/*
+ * Theme
+/*
+ * Output
+ */
+.form-group {
+    display: flex;
+    margin-bottom: 0.809em;
+}
+
+.form-control,
+.form-control-label,
+.form-control-static {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #cdcdcd;
+    border-radius: 0.3rem;
+    background-color: #fff;
+}
+
+.form-control-label,
+.form-control-static {
+    border-color: transparent;
+}
+
+.radio,
+.checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.809em;
+}
+.radio label,
+.checkbox label {
+    padding-left: 0.75rem;
+    cursor: pointer;
+}
+.radio input,
+.checkbox input {
+    width: 1.5rem;
+    margin-left: -0.75rem;
+}
+
+/*
+ * Variations
+ */
+.form-inline {
+    display: flex;
+}
+.form-inline .form-group,
+.form-inline .form-control,
+.form-inline .form-control-label,
+.form-inline .form-control-static,
+.form-inline .radio,
+.form-inline .checkbox {
+    margin-bottom: 0;
+}
+.form-inline .form-group {
+    align-items: baseline;
+}
+
+.radio-inline,
+.checkbox-inline {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 0.809em;
+    padding-left: 0.75rem;
+    cursor: pointer;
+}
+.radio-inline input,
+.checkbox-inline input {
+    width: 1.5rem;
+    margin-left: -0.75rem;
+}
+
+/*
+ * Var
+ */
+/*
+ * Base
+ */
+/*
+ * Output
+ */
+/*
+ * Units
+ */
+/*
+ * Colors
+ */
+/*
+ * Base
+ */
+/*
+ * Output
+ */
+/*
+ * Units
+ */
+/*
+ * Colors
+ */
+/*
+ * Base
+ */
+/*
+ * Variations
+ */
+/*
+ * Theme
+ */
+/*
+ * Output
+ */
+/*
+ * Units
+ */
+/*
+ * Colors
+ */
+/*
+ * Base
+ */
+/*
+ * Variations
+ */
+/*
+ * Theme
+ */
+/*
+ * Output
+ */
+/*
+ * Units
+ */
+/*
+ * Colors
+ */
+/*
+ * Base
+ */
+/*
+ * Output
+ */
+/*
+ * Units
+ */
+/*
+ * Colors
+ */
+/*
+ * Base
+ */
+/*
+ * Theme
+ */
+/*
+ * Output
+ */
+/*
+ * Units
+ */
+/*
+ * Colors
+ */
+/*
+ * Base
+ */
+/*
+ * Variations
+ */
+/*
+ * Theme
+ */
+/*
+ * Output
+ */
+/*
+ * Units
+ */
+/*
+ * Colors
+ */
+/*
+ * Base
+ */
+/*
+ * Theme
+ */
+/*
+ * Output
+ */
+/*
+ * Units
+ */
+/*
+ * Colors
+ */
+/*
+ * Base
+ */
+/*
+ * Theme
+ */
+/*
+ * Output
+ */
+.navbar {
+    display: flex;
+    background-color: #e4e4e4;
+}
+
+.navbar-group {
+    display: inline-flex;
+}
+
+.navbar .dropdown,
+.navbar .form-control,
+.navbar .input-group,
+.navbar .input-group .form-control,
+.navbar .input-group .input-group-addon,
+.navbar .input-group,
+.navbar .pagination,
+.navbar-item {
+    display: inline-flex;
+    width: auto; 
+    padding: 0.5rem 0.75rem;
+    border: 1px solid transparent;
+    background-color: #e4e4e4;
+}
+
+.navbar .input-group,
+.navbar .pagination {
+    padding: 0;
+    border: 0;
+}
+
+.navbar .dropdown-toggle,
+.navbar .input-group-addon,
+.navbar .pagination-link,
+.navbar-link {
+    color: inherit;
+}
+.navbar .dropdown-toggle:hover,
+.navbar .input-group-addon:hover,
+.navbar .pagination-link:hover,
+.navbar-link:hover {
+    background-color: #cdcdcd;
+}
+.navbar .dropdown-toggle:focus,
+.navbar .input-group-addon:focus,
+.navbar .pagination-link:focus,
+.navbar-link:focus {
+    background-color: #cdcdcd;
+}
+.navbar .dropdown-toggle:active,
+.navbar .input-group-addon:active,
+.navbar .pagination-link:active,
+.navbar-link:active {
+    background-color: #b6b6b6;
+}
+.navbar .dropdown-toggle[aria-expanded=true],
+.navbar .input-group-addon[aria-expanded=true],
+.navbar .pagination-link[aria-expanded=true],
+.navbar-link[aria-expanded=true] {
+    background-color: #b6b6b6;
+}
+
+.navbar .dropdown-item,
+.navbar .pagination-item {
+    border-radius: 0 !important;
+}
+
+.navbar .open .dropdown-toggle {
+    color: #fff;
+    background-color: #3662ad;
+}
+
+.navbar-header,
+.navbar-logo {
+    margin-right: auto;
+}
+
+.navbar-header {
+    display: flex;
+}
+
+.navbar .dropdown {
+    padding: 0;
+    border: 0;
+}
+.navbar .dropdown .dropdown-toggle {
+    border: 1px solid transparent;
+    border-radius: 0 !important;
+}
+.navbar .dropdown:last-child .dropdown-menu {
+    right: 0;
+    left: auto;
+}
+
+.navbar-svg {
+    position: relative;
+}
+.navbar-svg:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: "";
+}
+.navbar-svg object,
+.navbar-svg img {
+    position: relative;
+    top: 0.25em; 
+    height: 1em;
+}
+
+/*
+ * Variations
+ */
+.navbar-responsive {
+    flex-direction: column;
+}
+@media (min-width: 768px) {
+    .navbar-responsive {
+        flex-direction: row;
+    }
+}
+@media (min-width: 768px) {
+    .navbar-responsive .navbar-toggle {
+        display: none;
+    }
+}
+.navbar-responsive .navbar-item {
+    flex: 1 0 auto;
+}
+.navbar-responsive .navbar-collapse {
+    display: flex;
+    flex-direction: column;
+}
+@media (min-width: 768px) {
+    .navbar-responsive .navbar-collapse {
+        flex-direction: row;
+        height: initial !important;
+    }
+}
+.navbar-responsive .navbar-collapse.collapse {
+    display: none;
+}
+@media (min-width: 768px) {
+    .navbar-responsive .navbar-collapse.collapse {
+        display: flex;
+    }
+}
+.navbar-responsive .navbar-collapse.in {
+    display: flex;
+}
+
+.navbar-stacked {
+    display: inline-flex;
+    flex-direction: column;
+}
+.navbar-stacked .navbar-item,
+.navbar-stacked .dropdown,
+.navbar-stacked .dropdown-toggle {
+    flex-grow: 1;
+}
+
+.navbar-thing {
+    justify-content: space-between;
+}
+.navbar-thing .navbar-group {
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+}
+.navbar-thing .navbar-group:first-child {
+    border-left: 0 none;
+}
+.navbar-thing .navbar-group:last-child {
+    border-right: 0 none;
+}
+
+/*
+ * Units
+ */
+/*
+ * Base
+ */
+/*
+ * Variations
+ */
+/*
+ * Theme
+ */
+/*
+ * Output
+ */
+/*
+ * Units
+ */
+/*
+ * Colors
+ */
+/*
+ * Base
+ */
+/*
+ * Theme
+ */
+/*
+ * Output
+ */
+/*
+ * Units
+ */
+/*
+ * Colors
+ */
+/*
+ * Base
+ */
+/*
+ * Theme
+ */
+/*
+ * Output
+ */
+/*
+ * Units
+ */
+/*
+ * Colors
+ */
+/*
+ * Base
+ */
+/*
+ * Theme
+ */
+/*
+ * Output
+ */
+/*
+ * Units
+ */
+/*
+ * Colors
+ */
+/*
+ * Base
+ */
+/*
+ * Theme
+ */
+/*
+ * Output
+ */
+/*
+ * Output
+ */
+/*
+ * Units
+ */
+/*
+ * Colors
+ */
+/*
+ * Base
+ */
+/*
+ * Theme
+ */
+/*
+ * Output
+ */
+/*
+ * Units
+ */
+/*
+ * Colors
+ */
+/*
+ * Base
+ */
+/*
+ * Output
+ */
+/*
+ * Units
+ */
+/*
+ * Colors
+ */
+/*
+ * Base
+ */
+/*
+ * Theme
+ */
+/*
+ * Output
+ */
+/*
+ * Units
+ */
+/*
+ * Colors
+ */
+/*
+ * Base
+ */
+/*
+ * Theme
+ */
+/*
+ * Output
+ */
+/*
+ * Theme
+ */
+/*
+ * Output
+ */
+/*
+ * Base
+ */
+/*
+ * Output
+ */
+/*
+ * Screen Reader
+ */
+/*
+ * Output
+ */
+/*
+ * Spacers
+ */
+/*
+ * Output
+ */
+/*
+ * Base
+ */
+/*
+ * Output
+ */
+/*
+ * Base
+ */
+/*
+ * Output
+ */
+/*
+ * Base
+ */
+/*
+ * Output
+ */
+/*
+ * Base
+ */
+/*
+ * Output
+ */
+/*
+ * Wireframe
+ */

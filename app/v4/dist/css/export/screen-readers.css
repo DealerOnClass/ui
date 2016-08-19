@@ -1,0 +1,118 @@
+/*
+ * Imports
+ */
+/*
+ * Breakpoints
+ * $m-mobile:   $media-mobile:   544px;
+ * $m-tablet:   $media-tablet:   768px;
+ * $m-desktop:  $media-desktop:  992px;
+ * $m-large:    $media-large:    1200px;
+ */
+/*
+ * GrayScale
+ */
+/*
+ * Colors
+ */
+/*
+ * States
+ */
+/*
+ * Colors
+ */
+/*
+ * Icon
+ */
+/*
+ * Sans Serif
+ */
+/*
+ * 00 Global Output
+ * $o-a-c:  $output-all-components:  true;
+ * $o-a-t:  $output-all-themes:      true;
+ */
+/*
+ * 03 Base Output
+ */
+/*
+ * 04 Base Output
+ */
+/*
+ * 05 Object Output
+ */
+/*
+ * 06 Utilities Output
+ */
+/*
+ * Root
+ */
+/*
+ * Assets
+ */
+/*
+ * Ratios
+ */
+/*
+ * Global Unit
+ * $g-u:  $global-unit:        1rem;
+ * $g-m:  $global-multiplier:  1;
+ */
+/*
+ * Global Unit Abstracts
+ * $g-c:  $global-contrast:        (10% * $g-m);
+ * $g-g:  $global-gutter:          ($g-u * $g-m);
+ * $g-r:  $global-radius:          (($g-u * 0.30) * $g-m);
+ * $g-x:  $global-leftandorright:  (($g-u * 0.75) * $g-m);
+ * $g-y:  $global-topandorbottom:  (($g-u * 0.50) * $g-m);
+ */
+/*
+ * Typography
+ * $t-u:   $type-unit:        1em;
+ * $t-r:   $type-ratio:       $major-third;
+ * $t-fs:  $type-fontsize:    16px;
+ * $t-lh:  $type-lineheight:  1.618;
+ */
+/*
+ * Global Spacers
+ * $s-x-1:  $spacer-x-1:  $g-x;
+ * ...
+ * $s-y-1:  $spacer-y-1:  $g-y;
+ * ...
+ * $spacers: map for mixin
+ */
+/*
+ * Global Z
+ * $g-z-dropdown:  $global-z-dropdown:  1000
+ */
+/*
+ * Base
+ */
+/*
+ * Variations
+ */
+/*
+ * Export
+ */
+/*
+ * Screen Reader
+ */
+.sr-only {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+    position: static;
+    overflow: visible;
+    clip: auto; 
+    width: auto;
+    height: auto;
+    margin: 0;
+}

@@ -1,0 +1,40 @@
+* {
+    font: inherit; 
+    margin: 0;
+    padding: 0;
+    color: inherit;
+}
+
+body {
+    margin-top: 1em;
+    margin-left: 1em;
+}
+
+.pos-parent {
+    position: relative;
+    width: 10em;
+    height: 10em;
+    border: 1px solid;
+}
+.pos-parent + .pos-parent {
+    margin-top: 1em;
+}
+
+.pos-child {
+    position: absolute;
+    border: 1px solid;
+}
+
+.pos-center-y {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.pos-center-x {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.pos-center-x.pos-center-y {
+    transform: translateX(-50%) translateY(-50%);
+}

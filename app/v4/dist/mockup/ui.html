@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=7">
+		<title>v4 Home</title>
+		<link rel="stylesheet" href="../css/core/styles.css">
+	</head>
+	<body>
+		<nav class="oncanvas-navbar navbar">
+			<a href="#" class="navbar-item navbar-link navbar-logo">DealerOn</a>
+		</nav>
+		<main class="oncanvas-body">
+			<nav class="offcanvas-sidebar sidebar">
+				<a class="sidebar-item sidebar-link" href="">Alert</a>
+				<a class="sidebar-item sidebar-link" href="">Alert Dismissible</a>
+				<a class="sidebar-item sidebar-link" href="">Button</a>
+				<a class="sidebar-item sidebar-link" href="">Button Group Inline</a>
+				<a class="sidebar-item sidebar-link" href="">Button Group Justified</a>
+				<a class="sidebar-item sidebar-link" href="">Button Group Stacked</a>
+				<a class="sidebar-item sidebar-link" href="">Card</a>
+				<a class="sidebar-item sidebar-link" href="">Card Group</a>
+				<a class="sidebar-item sidebar-link" href="">Dropdown</a>
+				<a class="sidebar-item sidebar-link" href="">Forms</a>
+				<a class="sidebar-item sidebar-link" href="">Forms Inline</a>
+				<a class="sidebar-item sidebar-link" href="">List Group Inline</a>
+				<a class="sidebar-item sidebar-link" href="">List Group Stacked</a>
+				<a class="sidebar-item sidebar-link" href="">Media</a>
+				<a class="sidebar-item sidebar-link" href="">Media Bottom</a>
+				<a class="sidebar-item sidebar-link" href="">Media Middle</a>
+				<a class="sidebar-item sidebar-link" href="">Media Nested</a>
+				<a class="sidebar-item sidebar-link" href="">Navbar</a>
+			</nav>
+			<div class="oncanvas-body-inner">
+				<div class="container py4">
+					<h3>Alert</h3>
+					<div class="alert">
+						I'm an alert.
+					</div>
+					<hr class="my2">
+					<h3>Alert Dismissible</h3>
+					<div class="alert">
+						I'm an alert.
+						<button data-dismiss="alert" class="close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<hr class="my2">
+					<h3>Button</h3>
+					<button class="btn" type="button">button</button>
+					<hr class="my2">
+					<h3>Button Group Inline</h3>
+					<div class="btn-group-inline">
+						<button class="btn" type="button">button</button>
+						<button class="btn" type="button">button</button>
+						<button class="btn" type="button">button</button>
+					</div>
+					<hr class="my2">
+					<h3>Button Group Justified</h3>
+					<div class="btn-group-inline btn-group-justified">
+						<button class="btn" type="button">button</button>
+						<button class="btn" type="button">button</button>
+						<button class="btn" type="button">button</button>
+					</div>
+					<hr class="my2">
+					<h3>Button Group Stacked</h3>
+					<div class="btn-group-stacked">
+						<button class="btn" type="button">button</button>
+						<button class="btn" type="button">button</button>
+						<button class="btn" type="button">button</button>
+					</div>
+					<hr class="my2">
+					<h3>Card</h3>
+					<div class="card">
+						<div class="card-header">Card Header</div>
+						<div class="card-body">Card Body</div>
+						<div class="card-footer">Card Footer</div>
+					</div>
+					<hr class="my2">
+					<h3>Card Group</h3>
+					<div class="card-group">
+						<div class="card">
+							<div class="card-header">Card Header</div>
+							<div class="card-body">Card Body</div>
+							<div class="card-footer">Card Footer</div>
+						</div>
+						<div class="card">
+							<div class="card-header">Card Header</div>
+							<div class="card-body">Card Body</div>
+							<div class="card-footer">Card Footer</div>
+						</div>
+						<div class="card">
+							<div class="card-header">Card Header</div>
+							<div class="card-body">Card Body</div>
+							<div class="card-footer">Card Footer</div>
+						</div>
+					</div>
+					<hr class="my2">
+					<h3>Dropdown</h3>
+					<div class="dropdown">
+						<button data-toggle="dropdown" class="dropdown-toggle">Dropdown</button>
+						<div class="dropdown-menu">
+							<a href="#" class="dropdown-item dropdown-link">Item 1</a>
+							<a href="#" class="dropdown-item dropdown-link">Item 2</a>
+							<div class="dropdown-item dropdown-divider">
+							</div>
+							<a href="#" class="dropdown-item dropdown-link">Item 3</a>
+						</div>
+					</div>
+					<hr class="my2">
+					<h3>Forms</h3>
+					<form>
+						<div class="form-group">
+							<label class="form-label" for="exampleInputEmail1">Email address</label>
+							<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+							<small class="form-helper-text text-muted">We'll never share your email with anyone else.</small>
+						</div>
+						<div class="form-group">
+							<label class="form-label" for="exampleInputPassword1">Password</label>
+							<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+						</div>
+						<div class="form-group">
+							<label class="form-label" for="exampleSelect1">Example select</label>
+							<select class="form-control" id="exampleSelect1">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label class="form-label" for="exampleSelect2">Example multiple select</label>
+							<select multiple class="form-control" id="exampleSelect2">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label class="form-label" for="exampleInputFile">File input</label>
+							<input type="file" class="form-control-file" id="exampleInputFile">
+							<small class="form-helper-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+						</div>
+						<div class="radio">
+							<label>
+								<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+								Option one is this and that—be sure to include why it's great
+							</label>
+						</div>
+						<div class="radio">
+							<label>
+								<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+								Option two can be something else and selecting it will deselect option one
+							</label>
+						</div>
+						<div class="radio disabled">
+							<label>
+								<input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
+								Option three is disabled
+							</label>
+						</div>
+						<div class="checkbox">
+							<label>
+								<input type="checkbox">
+								Check me out
+							</label>
+						</div>
+						<button type="submit" class="btn">Submit</button>
+					</form>
+					<hr class="my2">
+					<h3>Forms Inline</h3>
+					<form class="form-inline">
+						<div class="form-group">
+							<label class="form-label" class="form-label" for="exampleInputEmail1">Email address</label>
+							<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+							<small class="form-helper-text text-muted">We'll never share your email with anyone else.</small>
+						</div>
+						<div class="form-group">
+							<label class="form-label" class="form-label" for="exampleInputPassword1">Password</label>
+							<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+						</div>
+						<div class="form-group">
+							<label class="form-label" for="exampleSelect1">Example select</label>
+							<select class="form-control" id="exampleSelect1">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label class="form-label" for="exampleSelect2">Example multiple select</label>
+							<select multiple class="form-control" id="exampleSelect2">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label class="form-label" for="exampleInputFile">File input</label>
+							<input type="file" class="form-control-file" id="exampleInputFile">
+							<small class="form-helper-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+						</div>
+						<div class="radio">
+							<label>
+								<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+								Option one is this and that—be sure to include why it's great
+							</label>
+						</div>
+						<div class="radio">
+							<label>
+								<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+								Option two can be something else and selecting it will deselect option one
+							</label>
+						</div>
+						<div class="radio disabled">
+							<label>
+								<input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
+								Option three is disabled
+							</label>
+						</div>
+						<div class="checkbox">
+							<label>
+								<input type="checkbox">
+								Check me out
+							</label>
+						</div>
+						<button type="submit" class="btn">Submit</button>
+					</form>
+					<hr class="my2">
+					<h3>List Group Inline</h3>
+					<div class="list-group-inline">
+						<div class="list-group-item">List Group Item</div>
+						<div class="list-group-item">List Group Item</div>
+						<div class="list-group-item">List Group Item</div>
+					</div>
+					<hr class="my2">
+					<h3>List Group Stacked</h3>
+					<div class="list-group-stacked">
+						<div class="list-group-item">List Group Item</div>
+						<div class="list-group-item">List Group Item</div>
+						<div class="list-group-item">List Group Item</div>
+					</div>
+					<hr class="my2">
+					<h3>Media</h3>
+					<div class="media">
+						<div class="media-object">
+							<img src="http://placehold.it/64x64" alt="">
+						</div>
+						<div class="media-body">
+							<p>I"m a media body. Elit error illum eum eos ipsa repellat? Quas dolores cum quam est vel optio perspiciatis fuga eveniet. Sapiente assumenda vitae eveniet maxime nulla, quasi? Totam odit consequatur sint quasi iste.</p>
+							<p>Dolor alias vitae minus molestias laboriosam placeat doloribus commodi repudiandae, debitis! Unde mollitia pariatur nemo error ad laboriosam similique enim quasi assumenda! Ducimus numquam repellendus numquam voluptatibus amet dignissimos? Fugiat.</p>
+						</div>
+					</div>
+					<hr class="my2">
+					<h3>Media Bottom</h3>
+					<div class="media media-bottom">
+						<div class="media-object">
+							<img src="http://placehold.it/64x64" alt="">
+						</div>
+						<div class="media-body">
+							<p>I"m a media body. Elit error illum eum eos ipsa repellat? Quas dolores cum quam est vel optio perspiciatis fuga eveniet. Sapiente assumenda vitae eveniet maxime nulla, quasi? Totam odit consequatur sint quasi iste.</p>
+							<p>Dolor alias vitae minus molestias laboriosam placeat doloribus commodi repudiandae, debitis! Unde mollitia pariatur nemo error ad laboriosam similique enim quasi assumenda! Ducimus numquam repellendus numquam voluptatibus amet dignissimos? Fugiat.</p>
+						</div>
+					</div>
+					<hr class="my2">
+					<h3>Media Middle</h3>
+					<div class="media media-middle">
+						<div class="media-object">
+							<img src="http://placehold.it/64x64" alt="">
+						</div>
+						<div class="media-body">
+							<p>I"m a media body. Elit error illum eum eos ipsa repellat? Quas dolores cum quam est vel optio perspiciatis fuga eveniet. Sapiente assumenda vitae eveniet maxime nulla, quasi? Totam odit consequatur sint quasi iste.</p>
+							<p>Dolor alias vitae minus molestias laboriosam placeat doloribus commodi repudiandae, debitis! Unde mollitia pariatur nemo error ad laboriosam similique enim quasi assumenda! Ducimus numquam repellendus numquam voluptatibus amet dignissimos? Fugiat.</p>
+						</div>
+					</div>
+					<hr class="my2">
+					<h3>Media Nested</h3>
+					<div class="media">
+						<div class="media-object">
+							<img src="http://placehold.it/64x64" alt="">
+						</div>
+						<div class="media-body">
+							<p>I"m a media body. Elit error illum eum eos ipsa repellat? Quas dolores cum quam est vel optio perspiciatis fuga eveniet. Sapiente assumenda vitae eveniet maxime nulla, quasi? Totam odit consequatur sint quasi iste.</p>
+							<p>Dolor alias vitae minus molestias laboriosam placeat doloribus commodi repudiandae, debitis! Unde mollitia pariatur nemo error ad laboriosam similique enim quasi assumenda! Ducimus numquam repellendus numquam voluptatibus amet dignissimos? Fugiat.</p>
+							<div class="media">
+								<div class="media-object">
+									<img src="http://placehold.it/64x64" alt="Media left image placeholder">
+								</div>
+								<div class="media-body">
+									<p>I"m a media body. Elit error illum eum eos ipsa repellat? Quas dolores cum quam est vel optio perspiciatis fuga eveniet. Sapiente assumenda vitae eveniet maxime nulla, quasi? Totam odit consequatur sint quasi iste.</p>
+									<p>Dolor alias vitae minus molestias laboriosam placeat doloribus commodi repudiandae, debitis! Unde mollitia pariatur nemo error ad laboriosam similique enim quasi assumenda! Ducimus numquam repellendus numquam voluptatibus amet dignissimos? Fugiat.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<hr class="my2">
+					<h3>Navbar</h3>
+					<nav class="navbar">
+						<a href="#" class="navbar-item navbar-link navbar-logo">I"m a Logo</a>
+						<span class="navbar-item">I"m text</span>
+						<a href="#" class="navbar-item navbar-link">I"m a link</a>
+						<button class="navbar-item navbar-link">I"m a button</button>
+						<div class="dropdown">
+							<button data-toggle="dropdown" class="dropdown-toggle">Dropdown</button>
+							<div class="dropdown-menu">
+								<a href="#" class="dropdown-item dropdown-link">Item 1</a>
+								<a href="#" class="dropdown-item dropdown-link">Item 2</a>
+								<div class="dropdown-item dropdown-divider">
+								</div>
+								<a href="#" class="dropdown-item dropdown-link">Item 3</a>
+							</div>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</main>
+		<script src="../js/vendor/jquery.js"></script>
+		<script src="../js/vendor/bootstrap.js"></script>
+	</body>
+</html>

@@ -766,40 +766,251 @@ navorder:   2
                     </a>
                 </h4>
             </div>
-            <div class="modal-body">
-                <form class="form-horizontal">
-                    <div class="form-group">
-                        <label for="" class="col-sm-4 control-label">Name:</label>
-                        <div class="col-sm-8">
-                            <input class="form-control" id="" placeholder="Feed 001" type="text">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="" class="col-sm-4 control-label">URL:</label>
-                        <div class="col-sm-8">
-                            <input class="form-control" id="" placeholder="http://feed001.com/blah/" type="text">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="" class="col-sm-4 control-label">Protocol:</label>
-                        <div class="col-sm-8">
-                            <input class="form-control" id="" placeholder="SSNChicken" type="text">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="" class="col-sm-4 control-label">Username:</label>
-                        <div class="col-sm-8">
-                            <input class="form-control" id="" placeholder="Icecream" type="text">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="" class="col-sm-4 control-label">Password:</label>
-                        <div class="col-sm-8">
-                            <input class="form-control" id="" placeholder="Isdelicious!" type="text">
-                        </div>
-                    </div>
-                </form>
-            </div>
+			<div class="modal-body">
+				<div class="text text-center">General Config</div>
+				<div class="form-group">
+					<label class="col-sm-4 control-label">
+						<span>Name</span>
+						<span>:</span>
+					</label>
+					<input type="text" class="col-sm-8 form-control" placeholder="Enter Name" name="name" value="">
+				</div>
+				<div class="form-group">
+					<label class="col-sm-4 control-label">
+						<span>URL</span>
+						<span>:</span>
+					</label>
+					<input type="text" class="col-sm-8 form-control" placeholder="Enter URL" name="url" value="">
+				</div>
+				<div class="form-group">
+					<label class="col-sm-4 control-label">Protocol</label>
+					<form class="col-sm-8 form-control">
+						<input type="radio" name="protocol" value="ftp" checked="">
+						<span>
+						</span>
+						<span>ftp</span>
+						<br>
+						<input type="radio" name="protocol" value="sftp">
+						<span>
+						</span>
+						<span>sftp</span>
+						<br>
+					</form>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-4 control-label">
+						<span>Username</span>
+						<span>:</span>
+					</label>
+					<input type="text" class="col-sm-8 form-control" placeholder="Enter Username" name="username" value="">
+				</div>
+				<div class="form-group">
+					<label class="col-sm-4 control-label">
+						<span>Password</span>
+						<span>:</span>
+					</label>
+					<input type="text" class="col-sm-8 form-control" placeholder="Enter Password" name="password" value="">
+				</div>
+				<div class="form-group">
+					<label class="col-sm-4 control-label">
+						<span>Delimiter</span>
+						<span>:</span>
+					</label>
+					<input type="text" class="col-sm-8 form-control" placeholder="Enter Delimiter" name="delimiter" value="">
+				</div>
+				<div class="form-group">
+					<label class="col-sm-4 control-label">
+						<span>Feed Dealer ID</span>
+						<span>:</span>
+					</label>
+					<input type="text" class="col-sm-8 form-control" placeholder="Enter Feed Dealer ID" name="provider" value="">
+				</div>
+				<div class="form-group">
+					<label class="col-sm-4 control-label">
+						<span>VIN</span>
+						<span>:</span>
+					</label>
+					<input type="text" class="col-sm-8 form-control" placeholder="Enter VIN" name="vin" value="">
+				</div>
+				<div class="form-group">
+					<label class="col-sm-4 control-label">
+						<span>Filename</span>
+						<span>:</span>
+					</label>
+					<input type="text" class="col-sm-8 form-control" placeholder="Enter Filename" name="filename">
+				</div>
+				<div class="form-group">
+					<label class="col-sm-4 control-label">
+						<span>Has Headers?</span>
+						<span>:</span>
+					</label>
+					<input type="checkbox" class="col-sm-8" name="hasHeaders" checked="">
+				</div>
+				<span>
+				</span>
+				<hr>
+				<div class="form-group">
+					<label class="col-sm-4 control-label">
+						<span>Is Quoted?</span>
+						<span>:</span>
+					</label>
+					<input type="checkbox" class="col-sm-8" name="isQuoted" checked="">
+				</div>
+				<span>
+				</span>
+				<hr>
+				<div class="form-group">
+					<label class="col-sm-4 control-label">
+						<span>Is Secure?</span>
+						<span>:</span>
+					</label>
+					<input type="checkbox" class="col-sm-8" name="isSecure">
+				</div>
+				<span>
+				</span>
+				<hr>
+				<div class="form-group">
+					<label class="col-sm-4 control-label">
+						<span>Is Zipped?</span>
+						<span>:</span>
+					</label>
+					<input type="checkbox" class="col-sm-8" name="isZipped">
+				</div>
+				<span>
+				</span>
+				<hr>
+				<div class="form-group">
+					<label class="col-sm-4 control-label">
+						<span>Local Server?</span>
+						<span>:</span>
+					</label>
+					<input type="checkbox" class="col-sm-8" name="localServer" checked="">
+				</div>
+				<span>
+				</span>
+				<hr>
+				<div class="form-group">
+					<label class="col-sm-4 control-label">
+						<span>Multiple Lines Per Vin?</span>
+						<span>:</span>
+					</label>
+					<input type="checkbox" class="col-sm-8" name="multipleLinesPerVin" checked="">
+				</div>
+				<span>
+				</span>
+				<hr>
+				<div class="text text-center">Mappings</div>
+				<div class="form-group">
+					<label class="col-sm-4 control-label">
+						<span>Column Header</span>
+						<span>:</span>
+					</label>
+					<input type="text" class="col-sm-8 form-control" placeholder="Enter Column Header" name="inFile" value="test header">
+				</div>
+				<div class="form-group">
+					<label class="col-sm-4 control-label">
+						<span>Vehicle Field</span>
+						<span>:</span>
+					</label>
+					<select class="col-sm-8 form-control" name="inVehicle">
+						<option value="BodyStyle">BodyStyle</option>
+						<option value="BookValue">BookValue</option>
+						<option value="CarfaxOneOwner">CarfaxOneOwner</option>
+						<option value="Category">Category</option>
+						<option value="ChromeStyleID">ChromeStyleID</option>
+						<option value="Comments">Comments</option>
+						<option value="Comments1">Comments1</option>
+						<option value="Comments2">Comments2</option>
+						<option value="Comments3">Comments3</option>
+						<option value="Comments4">Comments4</option>
+						<option value="Comments5">Comments5</option>
+						<option value="Cpo">Cpo</option>
+						<option value="Days">Days</option>
+						<option value="Description1">Description1</option>
+						<option value="Description2">Description2</option>
+						<option value="Display">Display</option>
+						<option value="Doors">Doors</option>
+						<option value="DriveTrainType">DriveTrainType</option>
+						<option value="Engine">Engine</option>
+						<option value="EngineCylinders">EngineCylinders</option>
+						<option value="EngineDisp">EngineDisp</option>
+						<option value="ExtColor">ExtColor</option>
+						<option value="ExtColorCode">ExtColorCode</option>
+						<option value="ExtColorGeneric">ExtColorGeneric</option>
+						<option value="ExteriorEquipment">ExteriorEquipment</option>
+						<option value="Features">Features</option>
+						<option value="FeedId">FeedId</option>
+						<option value="FuelType">FuelType</option>
+						<option value="IsHybrid">IsHybrid</option>
+						<option value="InventoryPhotosCount">InventoryPhotosCount</option>
+						<option value="StockPhotosCount">StockPhotosCount</option>
+						<option value="ImageList">ImageList</option>
+						<option value="IntColor">IntColor</option>
+						<option value="IntColorCode">IntColorCode</option>
+						<option value="IntColorGeneric">IntColorGeneric</option>
+						<option value="InteriorEquipment">InteriorEquipment</option>
+						<option value="InternetPrice">InternetPrice</option>
+						<option value="InTransit">InTransit</option>
+						<option value="Invoice">Invoice</option>
+						<option value="IsSpecial">IsSpecial</option>
+						<option value="IsUpdated">IsUpdated</option>
+						<option value="Make">Make</option>
+						<option value="MechanicalEquipment">MechanicalEquipment</option>
+						<option value="MediaLink">MediaLink</option>
+						<option value="Mileage">Mileage</option>
+						<option value="Model">Model</option>
+						<option value="ModelCode">ModelCode</option>
+						<option value="MpgCity">MpgCity</option>
+						<option value="MpgHwy">MpgHwy</option>
+						<option value="Msrp">Msrp</option>
+						<option value="OptionalEquipment">OptionalEquipment</option>
+						<option value="OptionalEquipmentShort">OptionalEquipmentShort</option>
+						<option value="Options">Options</option>
+						<option value="Other">Other</option>
+						<option value="OtherPrice1">OtherPrice1</option>
+						<option value="OtherPrice2">OtherPrice2</option>
+						<option value="OtherPrice3">OtherPrice3</option>
+						<option value="OtherPrice4">OtherPrice4</option>
+						<option value="OtherPrice5">OtherPrice5</option>
+						<option value="OtherPrice6">OtherPrice6</option>
+						<option value="OtherPrice7">OtherPrice7</option>
+						<option value="PackageCode">PackageCode</option>
+						<option value="Packages">Packages</option>
+						<option value="PassengerCapacity">PassengerCapacity</option>
+						<option value="Pricing">Pricing</option>
+						<option value="Rebates">Rebates</option>
+						<option value="RawRebates">RawRebates</option>
+						<option value="SafetyEquipment">SafetyEquipment</option>
+						<option value="SellingPrice">SellingPrice</option>
+						<option value="SpecialPrice">SpecialPrice</option>
+						<option value="SpecialsId">SpecialsId</option>
+						<option value="StandardEquipment">StandardEquipment</option>
+						<option value="StockNum">StockNum</option>
+						<option value="StockPhotos">StockPhotos</option>
+						<option value="StyleDescription">StyleDescription</option>
+						<option value="Tags">Tags</option>
+						<option value="TechSpecs">TechSpecs</option>
+						<option value="Transmission">Transmission</option>
+						<option value="Trim">Trim</option>
+						<option value="Type">Type</option>
+						<option value="Upholstery">Upholstery</option>
+						<option value="ReferenceId">ReferenceId</option>
+						<option value="VideoLink">VideoLink</option>
+						<option value="Warranty">Warranty</option>
+						<option value="WhenCreated">WhenCreated</option>
+						<option value="WhenDecoded">WhenDecoded</option>
+						<option value="WhenInStock">WhenInStock</option>
+						<option value="WhenPhotosUpdated">WhenPhotosUpdated</option>
+						<option value="WhenSpecialStarts">WhenSpecialStarts</option>
+						<option value="WhenSpecialEnds">WhenSpecialEnds</option>
+						<option value="WhenUpdated">WhenUpdated</option>
+						<option value="Year">Year</option>
+						<option value="DownloadedInventoryPhotos">DownloadedInventoryPhotos</option>
+						<option value="DownloadedStockPhotos">DownloadedStockPhotos</option>
+					</select>
+				</div>
+				<button class="btn btn-cta">Add Mapping</button>
+			</div>
             <div class="modal-footer">
                 <a href="#" class="btn btn-default">Save</a>
             </div>

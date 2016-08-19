@@ -1,0 +1,29 @@
+///	Mobile
+///	@type Length
+///	@group Breakpoints
+$breakpoint-mobile:     544px;
+
+///	Tablet
+///	@type Length
+///	@group Breakpoints
+$breakpoint-tablet:     768px;
+
+///	Desktop
+///	@type Length
+///	@group Breakpoints
+$breakpoint-desktop:    992px;
+
+///	Large
+///	@type Length
+///	@group Breakpoints
+$breakpoint-large:      1200px;
+
+///	Breakpoints
+///	@type Map
+///	@group Breakpoints
+$breakpoints:  (
+	"sm":  $breakpoint-mobile,
+	"md":  $breakpoint-tablet,
+	"lg":  $breakpoint-desktop,
+	"xl":  $breakpoint-large,
+) !default;
