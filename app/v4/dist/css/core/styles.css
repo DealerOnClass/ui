@@ -130,12 +130,19 @@ h6 {
     display: inline-flex;
 }
 
-.dropdown-item,
-.dropdown-toggle {
+.dropdown-toggle,
+.dropdown-item {
     display: inline-flex;
     padding: 0.4rem 0.8rem;
-    border: 1px solid rgba(0, 0, 0, 0.1);
     background-color: #e4e4e4;
+}
+
+.dropdown-toggle {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+    border: 1px solid transparent;
 }
 
 .dropdown-menu {
@@ -149,9 +156,6 @@ h6 {
     border: 1px solid rgba(0, 0, 0, 0.1);
     background-color: #e4e4e4;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-.dropdown-menu .dropdown-item {
-    border-color: transparent;
 }
 
 .open .dropdown-menu {
