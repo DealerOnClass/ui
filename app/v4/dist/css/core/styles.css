@@ -29,7 +29,7 @@ body {
 hr {
     height: 1px;
     margin: 0.8em 0;
-    background-color: #d4d4d4;
+    background-color: #ccc;
 }
 
 h1,
@@ -70,7 +70,7 @@ h6 {
     display: flex;
     padding: 0.4em 0.8em;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    background-color: #e4e4e4;
+    background-color: #e6e6e6;
 }
 
 .alert .close {
@@ -83,7 +83,7 @@ h6 {
     display: inline-flex;
     padding: 0.4em 0.8em;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    background-color: #e4e4e4;
+    background-color: #e6e6e6;
 }
 
 .btn-group-inline {
@@ -112,7 +112,7 @@ h6 {
 .card-footer {
     padding: 0.4em 0.8em;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    background-color: #e4e4e4;
+    background-color: #e6e6e6;
 }
 
 .card-group {
@@ -134,7 +134,7 @@ h6 {
 .dropdown-item {
     display: inline-flex;
     padding: 0.4rem 0.8rem;
-    background-color: #e4e4e4;
+    background-color: #e6e6e6;
 }
 
 .dropdown-toggle {
@@ -147,14 +147,14 @@ h6 {
 
 .dropdown-menu {
     position: absolute;
-    z-index: 1000;
+    z-index: 750;
     top: 100%;
     left: 0;
     display: none;
     flex-direction: column;
     min-width: 200px;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    background-color: #e4e4e4;
+    background-color: #e6e6e6;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
@@ -166,7 +166,7 @@ h6 {
     height: 1px;
     padding: 0;
     border: 0;
-    background-color: #d4d4d4;
+    background-color: #ccc;
 }
 
 .form-group {
@@ -188,7 +188,7 @@ h6 {
 
 .form-control {
     border: 1px solid rgba(0, 0, 0, 0.1);
-    background-color: #e4e4e4;
+    background-color: #e6e6e6;
 }
 
 .radio,
@@ -223,6 +223,85 @@ h6 {
     flex-basis: 100%;
 }
 
+.histogram {
+    position: relative;
+    display: flex;
+    height: 20em;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.histogram-body {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    margin: 0 0 2em 2em;
+    border-width: 0 0 1px 1px;
+    border-style: solid;
+    border-color: #ccc;
+}
+
+.histogram-x-body {
+    display: flex;
+    flex-grow: 1;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.histogram-x-bar {
+    flex-grow: 1;
+    background-color: #3662ad;
+}
+.histogram-x-bar:not(:last-child) {
+    border-right: 1px solid white;
+}
+
+.histogram-x-label {
+    position: absolute;
+    bottom: -2em;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.histogram-labels {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    overflow: hidden;
+}
+
+.histogram-y-labels {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-between;
+    width: 2em;
+    margin-bottom: 2em;
+    padding: 0.5em 0;
+}
+
+.histogram-y-label:after {
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 0.5em + 1px);
+    display: block;
+    width: 100em;
+    height: 1px;
+    margin-top: -1px;
+    content: "";
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
 .list-unstyled,
 .list-inline {
     list-style: none;
@@ -244,7 +323,7 @@ h6 {
 .list-group-item {
     padding: 0.4em 0.8em;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    background-color: #e4e4e4;
+    background-color: #e6e6e6;
 }
 
 .container {
@@ -317,7 +396,7 @@ h6 {
 .navbar {
     display: flex;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    background-color: #e4e4e4;
+    background-color: #e6e6e6;
 }
 
 .navbar-group {
@@ -342,9 +421,15 @@ h6 {
     border: 0;
 }
 
+.navbar-primary {
+    color: #fff;
+    border-color: #3662ad;
+    background-color: #3662ad;
+}
+
 .oncanvas-navbar {
     position: fixed;
-    z-index: 100;
+    z-index: 1000;
     top: 0;
     right: 0;
     left: 0;
@@ -354,26 +439,28 @@ h6 {
 
 .oncanvas-body {
     margin-top: calc(((0.8 + 1.6) * 1em) + 2px);
+    background-color: #f4f4f4;
 }
 
 .oncanvas-body-inner {
-    width: calc(100% - 20em);
-    margin-left: 20em;
+    width: calc(100% - 15em);
+    margin-left: 15em;
 }
 
 .offcanvas-sidebar {
     position: fixed;
+    z-index: 500;
     top: calc(((0.8 + 1.6) * 1em) + 2px);
     bottom: 0;
     left: 0;
-    width: 20em;
+    width: 15em;
 }
 
 .sidebar {
     display: flex;
     flex-direction: column;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    background-color: #e4e4e4;
+    background-color: #e6e6e6;
 
     backface-visibility: hidden;
 }
@@ -384,7 +471,22 @@ h6 {
 
 .sidebar-item {
     display: flex;
+    margin-right: -1px;
     padding: 0.4em 0.8em;
+}
+
+.sidebar-link:hover,
+.sidebar-link:focus {
+    background-color: #e6e6e6;
+}
+
+.sidebar-link:active {
+    background-color: #ccc;
+}
+
+.sidebar-white {
+    border-color: transparent;
+    background-color: #fff;
 }
 
 .my2 {
@@ -400,4 +502,8 @@ h6 {
 .py4 {
     padding-top: 8rem;
     padding-bottom: 8rem;
+}
+
+.invisible {
+    visibility: hidden;
 }

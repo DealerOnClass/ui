@@ -2,9 +2,9 @@
 //
 //	Colors
 //
-$color-white: #fff;
-$color-black: #000;
-$color-grayscale: (
+$color-white: #ffffff;
+$color-black: #000000;
+$color-grayscale:  (
 	"01":  mix($color-black, $color-white, 10%),
 	"02":  mix($color-black, $color-white, 20%),
 	"03":  mix($color-black, $color-white, 30%),
@@ -60,7 +60,7 @@ body {
 hr {
     height: 1px;
     margin: 0.8em 0;
-    background-color: map-get($color-grayscale, "02");
+    background-color: map-get($color-grayscale, 02);
 }
 //
 //	Headings
@@ -99,7 +99,7 @@ h6 {
     display: flex;
     padding: 0.4em 0.8em;
     border: 1px solid rgba(0,0,0,0.1);
-    background-color: map-get($color-grayscale, "01");
+    background-color: map-get($color-grayscale, 01);
 }
 .alert .close {
     position: absolute;
@@ -113,7 +113,7 @@ h6 {
     display: inline-flex;
     padding: 0.4em 0.8em;
     border: 1px solid rgba(0,0,0,0.1);
-    background-color: map-get($color-grayscale, "01");
+    background-color: map-get($color-grayscale, 01);
 }
 //
 //	Button Group
@@ -143,7 +143,7 @@ h6 {
 .card-footer {
     padding: 0.4em 0.8em;
     border: 1px solid rgba(0,0,0,0.1);
-    background-color: map-get($color-grayscale, "01");
+    background-color: map-get($color-grayscale, 01);
 }
 .card-group {
     display: flex;
@@ -165,7 +165,7 @@ h6 {
 .dropdown-item {
     display: inline-flex;
     padding: 0.4rem 0.8rem;
-    background-color: map-get($color-grayscale, "01");
+    background-color: map-get($color-grayscale, 01);
 }
 .dropdown-toggle {
     border: 1px solid rgba(0,0,0,0.1);
@@ -182,7 +182,7 @@ h6 {
     flex-direction: column;
     min-width: 200px;
     border: 1px solid rgba(0,0,0,0.1);
-    background-color: map-get($color-grayscale, "01");
+    background-color: map-get($color-grayscale, 01);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 .open .dropdown-menu {
@@ -192,7 +192,7 @@ h6 {
     height: 1px;
     padding: 0;
     border: 0;
-    background-color: map-get($color-grayscale, "02");
+    background-color: map-get($color-grayscale, 02);
 }
 //
 //	Forms
@@ -213,7 +213,7 @@ h6 {
 }
 .form-control {
     border: 1px solid rgba(0,0,0,0.1);
-    background-color: map-get($color-grayscale, "01");
+    background-color: map-get($color-grayscale, 01);
 }
 .radio,
 .checkbox {
@@ -246,93 +246,45 @@ h6 {
     }
 }
 //
-//	Histogram
+//	Graphs
 //
-.histogram {
-    position: relative;
-    display: flex;
-    height: 20em;
-    border: 1px solid rgba(0,0,0,0.1);
+.graph {
+	height: 20em;
+	display: flex;
+	position: relative;
+	border: 1px solid rgba(0,0,0,0.1);
 }
-.histogram-body {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    margin: 0 0 2em 2em;
-    border-width: 0 0 1px 1px;
-    border-style: solid;
-    border-color: map-get($color-grayscale, "02");
+.graph-body {
+	display: flex;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: 0 0 2em 2em;
+	border-width: 0 0 1px 1px;
+	border-style: solid;
+	border-color: rgba(0,0,0,0.1);
 }
-.histogram-x-body {
-    display: flex;
-    flex-grow: 1;
-    align-items: flex-end;
-    justify-content: space-between;
+.graph-labels {
+	display: flex;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
 }
-.histogram-x-bar {
-    flex-grow: 1;
-    background-color: $color-primary;
-    &:not(:last-child) {
-        border-right: 1px solid white;
-    }
-}
-.histogram-x-label {
-    position: absolute;
-    bottom: -2em;
-    left: 0;
-    width: 100%;
-    text-align: center;
-}
-.histogram-labels {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    overflow: hidden;
-}
-//	.histogram-x-labels {
-//	    position: absolute;
-//	    right: 0;
-//	    bottom: 0;
-//	    left: 0;
-//	    display: flex;
-//	    align-items: center;
-//	    justify-content: space-between;
-//	    height: 2em;
-//	    margin-left: 2em;
-//	}
-//	.histogram-x-label {
-//	    flex-grow: 1;
-//	    text-align: center;
-//	}
-.histogram-y-labels {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    justify-content: space-between;
-    width: 2em;
-    margin-bottom: 2em;
-    padding: 0.5em 0;
-}
-.histogram-y-label:after {
-    position: absolute;
-    top: 50%;
-    left: calc(100% + 0.5em + 1px);
-    display: block;
-    width: 100em;
-    height: 1px;
-    margin-top: -1px;
-    content: "";
-    background-color: rgba(0,0,0,0.2);
+.graph-x-labels {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 0 0.5em;
+	margin-left: 2em;
+	height: 2em;
 }
 //
 //	Lists
@@ -357,7 +309,7 @@ h6 {
 .list-group-item {
     padding: 0.4em 0.8em;
     border: 1px solid rgba(0,0,0,0.1);
-    background-color: map-get($color-grayscale, "01");
+    background-color: map-get($color-grayscale, 01);
 }
 //
 //	Grid
@@ -426,7 +378,7 @@ h6 {
 .navbar {
     display: flex;
     border: 1px solid rgba(0,0,0,0.1);
-    background-color: map-get($color-grayscale, "01");
+    background-color: map-get($color-grayscale, 01);
 }
 .navbar-group {
     display: inline-flex;
@@ -449,9 +401,9 @@ h6 {
 //	Navbar Colors
 //
 .navbar-primary {
-    color: $color-white;
-    border-color: $color-primary;
-    background-color: $color-primary;
+	color: $color-white;
+	border-color: $color-primary;
+	background-color: $color-primary;
 }
 //
 //
@@ -468,7 +420,7 @@ h6 {
 }
 .oncanvas-body {
     margin-top: calc(((0.8 + 1.6) * 1em) + 2px);
-    background-color: #f4f4f4;
+	background-color: #f4f4f4;
 }
 .oncanvas-body-inner {
     width: calc(100% - 15em);
@@ -476,11 +428,11 @@ h6 {
 }
 .offcanvas-sidebar {
     position: fixed;
-    z-index: $zindex-offcanvas-sidebar;
     top: calc(((0.8 + 1.6) * 1em) + 2px);
-    bottom: 0;
     left: 0;
+	bottom: 0;
     width: 15em;
+    z-index: $zindex-offcanvas-sidebar;
 }
 //
 //	Sidebar
@@ -489,33 +441,22 @@ h6 {
     display: flex;
     flex-direction: column;
     border: 1px solid rgba(0,0,0,0.1);
-    background-color: map-get($color-grayscale, "01");
-
-    backface-visibility: hidden;
+    background-color: map-get($color-grayscale, 01);
+	backface-visibility: hidden;
 }
 .sidebar-group {
     display: flex;
 }
 .sidebar-item {
     display: flex;
-    margin-right: -1px;
     padding: 0.4em 0.8em;
-}
-.sidebar-link {
-    &:hover,
-    &:focus {
-        background-color: map-get($color-grayscale, "01");
-    }
-    &:active {
-        background-color: map-get($color-grayscale, "02");
-    }
 }
 //
 //	Sidebar Colors
 //
 .sidebar-white {
-    border-color: transparent;
-    background-color: $color-white;
+	border-color: $color-white;
+	background-color: $color-white;
 }
 //
 //	Utilities
@@ -531,7 +472,4 @@ h6 {
 .py4 {
     padding-top: 8rem;
     padding-bottom: 8rem;
-}
-.invisible {
-    visibility: hidden;
 }

@@ -8,77 +8,78 @@
 		<link rel="stylesheet" href="../css/core/styles.css">
 	</head>
 	<body>
-		<nav class="oncanvas-navbar navbar">
+		<nav class="oncanvas-navbar navbar navbar-primary">
 			<a href="#" class="navbar-item navbar-link navbar-logo">DealerOn</a>
 		</nav>
 		<main class="oncanvas-body">
-			<nav class="offcanvas-sidebar sidebar">
-				<a class="sidebar-item sidebar-link" href="">Alert</a>
-				<a class="sidebar-item sidebar-link" href="">Alert Dismissible</a>
-				<a class="sidebar-item sidebar-link" href="">Button</a>
-				<a class="sidebar-item sidebar-link" href="">Button Group Inline</a>
-				<a class="sidebar-item sidebar-link" href="">Button Group Justified</a>
-				<a class="sidebar-item sidebar-link" href="">Button Group Stacked</a>
-				<a class="sidebar-item sidebar-link" href="">Card</a>
-				<a class="sidebar-item sidebar-link" href="">Card Group</a>
-				<a class="sidebar-item sidebar-link" href="">Dropdown</a>
-				<a class="sidebar-item sidebar-link" href="">Forms</a>
-				<a class="sidebar-item sidebar-link" href="">Forms Inline</a>
-				<a class="sidebar-item sidebar-link" href="">List Group Inline</a>
-				<a class="sidebar-item sidebar-link" href="">List Group Stacked</a>
-				<a class="sidebar-item sidebar-link" href="">Media</a>
-				<a class="sidebar-item sidebar-link" href="">Media Bottom</a>
-				<a class="sidebar-item sidebar-link" href="">Media Middle</a>
-				<a class="sidebar-item sidebar-link" href="">Media Nested</a>
-				<a class="sidebar-item sidebar-link" href="">Navbar</a>
+			<nav class="offcanvas-sidebar sidebar sidebar-white">
+				<a class="sidebar-item sidebar-link" href="#Alert">Alert</a>
+				<a class="sidebar-item sidebar-link" href="#AlertDismissible">Alert Dismissible</a>
+				<a class="sidebar-item sidebar-link" href="#Button">Button</a>
+				<a class="sidebar-item sidebar-link" href="#ButtonGroupInline">Button Group Inline</a>
+				<a class="sidebar-item sidebar-link" href="#ButtonGroupJustified">Button Group Justified</a>
+				<a class="sidebar-item sidebar-link" href="#ButtonGroupStacked">Button Group Stacked</a>
+				<a class="sidebar-item sidebar-link" href="#Card">Card</a>
+				<a class="sidebar-item sidebar-link" href="#CardGroup">Card Group</a>
+				<a class="sidebar-item sidebar-link" href="#Dropdown">Dropdown</a>
+				<a class="sidebar-item sidebar-link" href="#Forms">Forms</a>
+				<a class="sidebar-item sidebar-link" href="#FormsInline">Forms Inline</a>
+				<a class="sidebar-item sidebar-link" href="#Histogram">Histogram</a>
+				<a class="sidebar-item sidebar-link" href="#ListGroupInline">List Group Inline</a>
+				<a class="sidebar-item sidebar-link" href="#ListGroupStacked">List Group Stacked</a>
+				<a class="sidebar-item sidebar-link" href="#Media">Media</a>
+				<a class="sidebar-item sidebar-link" href="#MediaBottom">Media Bottom</a>
+				<a class="sidebar-item sidebar-link" href="#MediaMiddle">Media Middle</a>
+				<a class="sidebar-item sidebar-link" href="#MediaNested">Media Nested</a>
+				<a class="sidebar-item sidebar-link" href="#Navbar">Navbar</a>
 			</nav>
 			<div class="oncanvas-body-inner">
 				<div class="container py4">
-					<h3>Alert</h3>
+					<h3 id="Alert">Alert</h3>
 					<div class="alert">
 						I'm an alert.
 					</div>
-					<hr class="my2">
-					<h3>Alert Dismissible</h3>
+					<hr class="my4 invisible">
+					<h3 id="AlertDismissible">Alert Dismissible</h3>
 					<div class="alert">
 						I'm an alert.
 						<button data-dismiss="alert" class="close">
 							<span aria-hidden="true">&times;</span>
 						</button>
 					</div>
-					<hr class="my2">
-					<h3>Button</h3>
+					<hr class="my4 invisible">
+					<h3 id="Button">Button</h3>
 					<button class="btn" type="button">button</button>
-					<hr class="my2">
-					<h3>Button Group Inline</h3>
+					<hr class="my4 invisible">
+					<h3 id="ButtonGroupInline">Button Group Inline</h3>
 					<div class="btn-group-inline">
 						<button class="btn" type="button">button</button>
 						<button class="btn" type="button">button</button>
 						<button class="btn" type="button">button</button>
 					</div>
-					<hr class="my2">
-					<h3>Button Group Justified</h3>
+					<hr class="my4 invisible">
+					<h3 id="ButtonGroupJustified">Button Group Justified</h3>
 					<div class="btn-group-inline btn-group-justified">
 						<button class="btn" type="button">button</button>
 						<button class="btn" type="button">button</button>
 						<button class="btn" type="button">button</button>
 					</div>
-					<hr class="my2">
-					<h3>Button Group Stacked</h3>
+					<hr class="my4 invisible">
+					<h3 id="ButtonGroupStacked">Button Group Stacked</h3>
 					<div class="btn-group-stacked">
 						<button class="btn" type="button">button</button>
 						<button class="btn" type="button">button</button>
 						<button class="btn" type="button">button</button>
 					</div>
-					<hr class="my2">
-					<h3>Card</h3>
+					<hr class="my4 invisible">
+					<h3 id="Card">Card</h3>
 					<div class="card">
 						<div class="card-header">Card Header</div>
 						<div class="card-body">Card Body</div>
 						<div class="card-footer">Card Footer</div>
 					</div>
-					<hr class="my2">
-					<h3>Card Group</h3>
+					<hr class="my4 invisible">
+					<h3 id="CardGroup">Card Group</h3>
 					<div class="card-group">
 						<div class="card">
 							<div class="card-header">Card Header</div>
@@ -96,8 +97,8 @@
 							<div class="card-footer">Card Footer</div>
 						</div>
 					</div>
-					<hr class="my2">
-					<h3>Dropdown</h3>
+					<hr class="my4 invisible">
+					<h3 id="Dropdown">Dropdown</h3>
 					<div class="dropdown">
 						<button data-toggle="dropdown" class="dropdown-toggle">Dropdown</button>
 						<div class="dropdown-menu">
@@ -108,8 +109,8 @@
 							<a href="#" class="dropdown-item dropdown-link">Item 3</a>
 						</div>
 					</div>
-					<hr class="my2">
-					<h3>Forms</h3>
+					<hr class="my4 invisible">
+					<h3 id="Forms">Forms</h3>
 					<form>
 						<div class="form-group">
 							<label class="form-label" for="exampleInputEmail1">Email address</label>
@@ -171,8 +172,8 @@
 						</div>
 						<button type="submit" class="btn">Submit</button>
 					</form>
-					<hr class="my2">
-					<h3>Forms Inline</h3>
+					<hr class="my4 invisible">
+					<h3 id="FormsInline">Forms Inline</h3>
 					<form class="form-inline">
 						<div class="form-group">
 							<label class="form-label" class="form-label" for="exampleInputEmail1">Email address</label>
@@ -234,22 +235,50 @@
 						</div>
 						<button type="submit" class="btn">Submit</button>
 					</form>
-					<hr class="my2">
-					<h3>List Group Inline</h3>
+					<hr class="my4 invisible">
+					<h3 id="Histogram">Histogram</h3>
+					<div class="histogram">
+						<div class="histogram-body">
+							<div class="histogram-x-body">
+								<!-- normalized value piped into style as height -->
+								<span class="histogram-x-bar" style="height: 10%;"><span class="histogram-x-label">1</span></span>
+								<span class="histogram-x-bar" style="height: 20%;"><span class="histogram-x-label">2</span></span>
+								<span class="histogram-x-bar" style="height: 70%;"><span class="histogram-x-label">7</span></span>
+								<span class="histogram-x-bar" style="height: 40%;"><span class="histogram-x-label">4</span></span>
+								<span class="histogram-x-bar" style="height: 30%;"><span class="histogram-x-label">3</span></span>
+							</div>
+						</div>
+						<div class="histogram-labels">
+							<!--<div class="histogram-x-labels">-->
+								<!--<span class="histogram-x-label">1</span>-->
+								<!--<span class="histogram-x-label">2</span>-->
+								<!--<span class="histogram-x-label">7</span>-->
+								<!--<span class="histogram-x-label">4</span>-->
+								<!--<span class="histogram-x-label">3</span>-->
+							<!--</div>-->
+							<div class="histogram-y-labels">
+								<span class="histogram-y-label">10</span>
+								<span class="histogram-y-label">20</span>
+								<span class="histogram-y-label">30</span>
+							</div>
+						</div>
+					</div>
+					<hr class="my4 invisible">
+					<h3 id="ListGroupInline">List Group Inline</h3>
 					<div class="list-group-inline">
 						<div class="list-group-item">List Group Item</div>
 						<div class="list-group-item">List Group Item</div>
 						<div class="list-group-item">List Group Item</div>
 					</div>
-					<hr class="my2">
-					<h3>List Group Stacked</h3>
+					<hr class="my4 invisible">
+					<h3 id="ListGroupStacked">List Group Stacked</h3>
 					<div class="list-group-stacked">
 						<div class="list-group-item">List Group Item</div>
 						<div class="list-group-item">List Group Item</div>
 						<div class="list-group-item">List Group Item</div>
 					</div>
-					<hr class="my2">
-					<h3>Media</h3>
+					<hr class="my4 invisible">
+					<h3 id="Media">Media</h3>
 					<div class="media">
 						<div class="media-object">
 							<img src="http://placehold.it/64x64" alt="">
@@ -259,8 +288,8 @@
 							<p>Dolor alias vitae minus molestias laboriosam placeat doloribus commodi repudiandae, debitis! Unde mollitia pariatur nemo error ad laboriosam similique enim quasi assumenda! Ducimus numquam repellendus numquam voluptatibus amet dignissimos? Fugiat.</p>
 						</div>
 					</div>
-					<hr class="my2">
-					<h3>Media Bottom</h3>
+					<hr class="my4 invisible">
+					<h3 id="MediaBottom">Media Bottom</h3>
 					<div class="media media-bottom">
 						<div class="media-object">
 							<img src="http://placehold.it/64x64" alt="">
@@ -270,8 +299,8 @@
 							<p>Dolor alias vitae minus molestias laboriosam placeat doloribus commodi repudiandae, debitis! Unde mollitia pariatur nemo error ad laboriosam similique enim quasi assumenda! Ducimus numquam repellendus numquam voluptatibus amet dignissimos? Fugiat.</p>
 						</div>
 					</div>
-					<hr class="my2">
-					<h3>Media Middle</h3>
+					<hr class="my4 invisible">
+					<h3 id="MediaMiddle">Media Middle</h3>
 					<div class="media media-middle">
 						<div class="media-object">
 							<img src="http://placehold.it/64x64" alt="">
@@ -281,8 +310,8 @@
 							<p>Dolor alias vitae minus molestias laboriosam placeat doloribus commodi repudiandae, debitis! Unde mollitia pariatur nemo error ad laboriosam similique enim quasi assumenda! Ducimus numquam repellendus numquam voluptatibus amet dignissimos? Fugiat.</p>
 						</div>
 					</div>
-					<hr class="my2">
-					<h3>Media Nested</h3>
+					<hr class="my4 invisible">
+					<h3 id="MediaNested">Media Nested</h3>
 					<div class="media">
 						<div class="media-object">
 							<img src="http://placehold.it/64x64" alt="">
@@ -301,8 +330,8 @@
 							</div>
 						</div>
 					</div>
-					<hr class="my2">
-					<h3>Navbar</h3>
+					<hr class="my4 invisible">
+					<h3 id="Navbar">Navbar</h3>
 					<nav class="navbar">
 						<a href="#" class="navbar-item navbar-link navbar-logo">I"m a Logo</a>
 						<span class="navbar-item">I"m text</span>
