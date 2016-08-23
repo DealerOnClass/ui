@@ -16,8 +16,6 @@ $media-max-xl: 1199px;
 $color-white: #fff;
 $color-black: #000;
 $grayscale: (
-	"0025":  mix($color-black, $color-white, 2.5%),
-	"005":  mix($color-black, $color-white, 5%),
 	"01":  mix($color-black, $color-white, 10%),
 	"02":  mix($color-black, $color-white, 20%),
 	"03":  mix($color-black, $color-white, 30%),
@@ -41,7 +39,7 @@ $zindex-dropdown-menu: 750;
 $zindex-offcanvas-body: 900;
 $zindex-oncanvas-navbar: 1000;
 $zindex-offcanvas-sidebar: 1100;
-$zindex-offcanvas-backdrop: 1050;
+$zindex-offcanvas-backdrop: 1200;
 $zindex-modal-backdrop: 1400;
 $zindex-modal: 1500;
 //
@@ -66,14 +64,20 @@ $zindex-modal: 1500;
 @font-face {
     font-family: "Avenir";
     font-weight: 400;
-	src: url($font-path + "avenirltstd-roman-webfont.eot");
-	src: url($font-path + "avenirltstd-roman-webfont.eot?#iefix") format("embedded-opentype"), url($font-path + "avenirltstd-roman-webfont.woff") format("woff"), url($font-path + "avenirltstd-roman-webfont.ttf") format("truetype"), url($font-path + "avenirltstd-roman-webfont.svg#svgavenirltstd-roman-webfont") format("#svg");
+    src: url($font-path + "avenirltstd-roman-webfont.eot");
+    src: url($font-path + "avenirltstd-roman-webfont.eot?#iefix") format("embedded-opentype"),
+	 	 url($font-path + "avenirltstd-roman-webfont.woff") format("woff"),
+	 	 url($font-path + "avenirltstd-roman-webfont.ttf") format("truetype"),
+	 	 url($font-path + "avenirltstd-roman-webfont.svg#svgavenirltstd-roman-webfont") format("#svg");
 }
 @font-face {
     font-family: "Avenir";
     font-weight: 700;
-	src: url($font-path + "avenirheavy-webfont.eot");
-	src: url($font-path + "avenirheavy-webfont.eot?#iefix") format("embedded-opentype"), url($font-path + "avenirheavy-webfont.woff") format("woff"), url($font-path + "avenirheavy-webfont.ttf") format("truetype"), url($font-path + "avenirheavy-webfont.svg#svgavenirheavy-webfont") format("#svg");
+    src: url($font-path + "avenirheavy-webfont.eot");
+    src: url($font-path + "avenirheavy-webfont.eot?#iefix") format("embedded-opentype"),
+		 url($font-path + "avenirheavy-webfont.woff") format("woff"),
+		 url($font-path + "avenirheavy-webfont.ttf") format("truetype"),
+	 	 url($font-path + "avenirheavy-webfont.svg#svgavenirheavy-webfont") format("#svg");
 }
 body {
     font-family: "Avenir", sans-serif;
@@ -116,7 +120,7 @@ h6 {
     font-size: 0.8em;
 }
 strong {
-    font-weight: 700;
+	font-weight: 700;
 }
 //
 //	Alerts
@@ -300,9 +304,9 @@ strong {
 }
 .histogram-x-bar {
     flex-grow: 1;
-    border-right: 1px solid white;
-    border-left: 1px solid white;
     background-color: $color-primary;
+	border-left: 1px solid white;
+	border-right: 1px solid white;
 }
 .histogram-x-label {
     position: absolute;
@@ -461,7 +465,6 @@ strong {
     display: none;
     overflow: hidden;
     outline: 0;
-
     -webkit-overflow-scrolling: touch;
 }
 .modal.fade .modal-dialog {
@@ -479,8 +482,7 @@ strong {
     position: relative;
     width: auto;
     margin: 0.75rem;
-
-    backface-visibility: hidden;
+	backface-visibility: hidden;
 }
 .modal-backdrop {
     position: fixed;
@@ -490,8 +492,7 @@ strong {
     bottom: 0;
     left: 0;
     background-color: rgba(0,0,0,0.5);
-
-    backface-visibility: hidden;
+	backface-visibility: hidden;
 }
 .modal-backdrop.fade {
     opacity: 0;
@@ -587,32 +588,17 @@ strong {
     top: 0;
     right: 0;
     left: 0;
-
     backface-visibility: hidden;
 }
 .oncanvas-body {
-    z-index: $zindex-offcanvas-body;
+    width: calc(100% - 15em);
     margin-top: calc(((0.8 + 1.6) * 1em) + 2px);
-    transition-timing-function: ease-in-out;
-    transition-duration: 0s, 0.25s;
-    transition-property: width, margin-left;
-    backface-visibility: hidden;
-	background-color: map-get($grayscale, "0025");
-    @media (min-width: $media-min-lg) {
-        width: calc(100% - 15em);
-        margin-left: 15em;
-    }
-}
-.offcanvas-toggle {
-    align-items: center;
-    &:after {
-        font-family: "FontAwesome";
-        font-size: 14px;
-        content: "\f0c9";
-    }
-    @media (min-width: $media-min-lg) {
-        display: none;
-    }
+    margin-left: 15em;
+	transition-property: width, margin-left;
+	transition-duration: 0.25s;
+	transition-timing-function: ease-in-out;
+	backface-visibility: hidden;
+	z-index: $zindex-offcanvas-body;
 }
 .offcanvas-sidebar {
     position: fixed;
@@ -620,76 +606,71 @@ strong {
     top: calc(((0.8 + 1.6) * 1em) + 2px);
     bottom: 0;
     left: 0;
-    overflow-x: hidden;
-    overflow-y: auto;
     width: 15em;
-    transition-timing-function: ease-in-out;
-    transition-duration: 0.25s;
-    transition-property: transform;
-
-    backface-visibility: hidden;
-	box-shadow: 1px 0 4px rgba(0,0,0,0.2);
-    @media (max-width: $media-max-lg) {
-        top: 0;
-        transform: translateX(-105%);
-    }
+	transition: transform 0.25s ease-in-out;
+	backface-visibility: hidden;
+	overflow-x: hidden;
+	overflow-y: auto;
 }
-.offcanvas-backdrop:before {
-    position: fixed;
-    z-index: $zindex-offcanvas-backdrop;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: block;
-    content: "";
-    transition: opacity 0.25s ease-in-out;
-    pointer-events: none;
-    opacity: 0;
-    background-color: rgba(0,0,0,0.25);
+.offcanvas-backdrop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: black;
+	opacity: 0.3;
+	z-index: $zindex-offcanvas-backdrop;
 }
-.sidebar-is-open {
-    .offcanvas-sidebar {
-        transform: translateX(0);
-    }
-    @media (max-width: $media-max-lg) {
-        & {
-            overflow: hidden;
-        }
-        .offcanvas-backdrop:before {
-            pointer-events: initial;
-            opacity: 1;
-        }
-    }
+@media (min-width: $media-min-lg) {
+	.desktop-offcanvas-is-closed {
+		.oncanvas-body {
+			width: 100%;
+			margin-left: 0;
+		}
+		.offcanvas-sidebar {
+			transform: translateX(-15em);
+		}
+	}
+}
+@media (max-width: $media-max-lg) {
+	.mobile-offcanvas-is-closed {
+		.oncanvas-body {
+			width: 100%;
+			margin-left: 0;
+		}
+		.offcanvas-sidebar {
+			transform: translateX(-15em);
+		}
+	}
+	.mobile-offcanvas-is-open {
+		.oncanvas-body {
+			width: 100%;
+			margin-left: 0;
+		}
+		.offcanvas-sidebar {
+			top: 0;
+		}
+	}
 }
 //
 //	Sidebar
 //
 .sidebar {
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
     border: 1px solid rgba(0,0,0,0.1);
     background-color: map-get($grayscale, "01");
-
     backface-visibility: hidden;
 }
-.sidebar-header,
-.sidebar-body {
+.sidebar-group {
     display: flex;
-    flex-direction: column;
-}
-.sidebar-header {
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-	padding: 0.4em 0;
 }
 .sidebar-item {
     display: flex;
-    flex-shrink: 0;
     margin-right: -1px;
     padding: 0.4em 0.8em;
-	.form-control {
-		width: 100%;
-	}
+	flex-shrink: 0;
 }
 .sidebar-link {
     &:hover,
@@ -737,9 +718,9 @@ strong {
 //	tag-links-to-adjust-for-fixed-header/
 //
 .anchor-offset:before {
-    display: block;
-    visibility: hidden;
-    height: 200px;
-    margin-top: -200px;
-    content: "";
+	content: "";
+	display: block;
+	visibility: hidden;
+	height: 200px;
+	margin-top: -200px;
 }
