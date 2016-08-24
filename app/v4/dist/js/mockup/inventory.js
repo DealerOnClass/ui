@@ -1,1 +1,61 @@
-var FeedColumnMapping=function(){var e,t,n,l,a=document.querySelectorAll(".js-columnmapping__button--duplicate"),r=document.querySelectorAll(".js-columnmapping__button--delete");return Init=function(){AddEventListeners()},AddEventListeners=function(){for(var e=0;e<a.length;e++)a[e].addEventListener("click",DuplicateItem);for(var e=0;e<r.length;e++)r[e].addEventListener("click",DeleteItem)},DuplicateItem=function(a){a.preventDefault(),"BUTTON"===a.target.tagName&&(e=a.target.parentElement.parentElement,t=e.cloneNode(!0),e.parentElement.appendChild(t),n=t.querySelector(".js-columnmapping__button--duplicate"),n.addEventListener("click",DuplicateItem),l=t.querySelector(".js-columnmapping__button--delete"),l.addEventListener("click",DeleteItem))},DeleteItem=function(t){t.preventDefault(),"BUTTON"===t.target.tagName&&(e=t.target.parentElement.parentElement,e.remove())},{init:Init}}();FeedColumnMapping.init();
+/*
+ * Feed Mapping Module
+ */
+var FeedColumnMapping = (function(){
+
+	var parent;
+	var clone;
+	var DuplicateButtonClone;
+	var DeleteButtonClone;
+	var DuplicateButtons = document.querySelectorAll(".js-columnmapping__button--duplicate");
+	var DeleteButtons    = document.querySelectorAll(".js-columnmapping__button--delete");
+
+	Init = function() {
+		AddEventListeners();
+	}
+
+	AddEventListeners = function() {
+		for (var i = 0; i < DuplicateButtons.length; i++) {
+			DuplicateButtons[i].addEventListener("click", DuplicateItem);
+		}
+		for (var i = 0; i < DeleteButtons.length; i++) {
+			DeleteButtons[i].addEventListener("click", DeleteItem);
+		}
+	}
+
+	DuplicateItem = function(evt) {
+		evt.preventDefault();
+		if (evt.target.tagName === "BUTTON") {
+			parent = evt.target.parentElement.parentElement;
+		} else {
+			return;
+		}
+
+		clone  = parent.cloneNode(true);
+		parent.parentElement.appendChild(clone);
+
+		DuplicateButtonClone = clone.querySelector(".js-columnmapping__button--duplicate");
+		DuplicateButtonClone.addEventListener("click", DuplicateItem);
+
+		DeleteButtonClone = clone.querySelector(".js-columnmapping__button--delete");
+		DeleteButtonClone.addEventListener("click", DeleteItem);
+	}
+
+	DeleteItem = function(evt) {
+		evt.preventDefault();
+		if (evt.target.tagName === "BUTTON") {
+			parent = evt.target.parentElement.parentElement;
+		} else {
+			return;
+		}
+
+		parent.remove();
+	}
+
+	return {
+		init: Init
+	}
+
+}())
+
+FeedColumnMapping.init();
