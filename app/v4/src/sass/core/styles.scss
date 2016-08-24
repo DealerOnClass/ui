@@ -27,8 +27,40 @@ $grayscale: (
 	"07":  mix($color-black, $color-white, 70%),
 	"08":  mix($color-black, $color-white, 80%),
 	"09":  mix($color-black, $color-white, 90%),
-) !default;
-$color-primary: #3662ad;
+);
+$color-default:  #e4e4e4;
+$color-primary:  #3662ad;
+$color-accent:   #f36c0a;
+$color-inverse:  mix($color-primary, map-get($grayscale, "08"), 20%);
+$color-state-success:  #5cb85c !default;
+$color-state-info:     #5bc0de !default;
+$color-state-warning:  #f0ad4e !default;
+$color-state-danger:   #d9534f !default;
+$palette-default: (
+    'default':  $color-default,
+);
+$palette-inverse:  (
+    'inverse': $color-inverse,
+);
+$palette-primary: (
+    'cta':   $color-accent,
+    'main':  $color-primary,
+);
+$palette-neutral: (
+    'alt1':  mix($color-primary, map-get($grayscale, "07"), 50%),
+    'alt2':  mix($color-primary, map-get($grayscale, "05"), 45%),
+    'alt3':  mix($color-primary, map-get($grayscale, "03"), 40%),
+);
+$palette-state: (
+    'success':  $color-state-success,
+    'info':     $color-state-info,
+    'warning':  $color-state-warning,
+    'danger':   $color-state-danger,
+);
+$palette-classic: (
+    'white':  $color-white,
+    'black':  $color-black,
+);
 //
 //	Paths
 //
@@ -61,7 +93,7 @@ $zindex-modal: 1500;
     background-color: transparent;
 }
 //
-//	Typography
+//	Typeface
 //
 @font-face {
     font-family: "Avenir";
@@ -75,6 +107,15 @@ $zindex-modal: 1500;
 	src: url($font-path + "avenirheavy-webfont.eot");
 	src: url($font-path + "avenirheavy-webfont.eot?#iefix") format("embedded-opentype"), url($font-path + "avenirheavy-webfont.woff") format("woff"), url($font-path + "avenirheavy-webfont.ttf") format("truetype"), url($font-path + "avenirheavy-webfont.svg#svgavenirheavy-webfont") format("#svg");
 }
+//
+//	Font Awesome
+//
+.fa {
+	line-height: inherit !important;
+}
+//
+//	Typography
+//
 body {
     font-family: "Avenir", sans-serif;
     line-height: 1.6;
@@ -360,6 +401,19 @@ strong {
     background-color: rgba(0,0,0,0.2);
 }
 //
+//	Input Groups
+//
+.input-group {
+    display: flex;
+    align-items: center;
+}
+.input-group-addon {
+    display: inline-flex;
+    padding: 0.4em 0.8em;
+    border: 1px solid rgba(0,0,0,0.1);
+    background-color: map-get($grayscale, "01");
+}
+//
 //	Lists
 //
 .list-unstyled,
@@ -597,7 +651,6 @@ strong {
     transition-duration: 0s, 0.25s;
     transition-property: width, margin-left;
     backface-visibility: hidden;
-	background-color: map-get($grayscale, "0025");
     @media (min-width: $media-min-lg) {
         width: calc(100% - 15em);
         margin-left: 15em;
@@ -743,3 +796,20 @@ strong {
     margin-top: -200px;
     content: "";
 }
+//
+//	Color Utilities
+//
+//	@mixin bg-color-variation($input) {
+//	    @each $class, $color in $input {
+//			.bg-#{$class} {
+//				background-color: $color;
+//			}
+//		}
+//	}
+//	@include bg-color-variation($palette-default);
+//	@include bg-color-variation($palette-inverse);
+//	@include bg-color-variation($palette-primary);
+//	@include bg-color-variation($palette-neutral);
+//	@include bg-color-variation($palette-state);
+//	@include bg-color-variation($palette-classic);
+//	@include bg-color-variation($grayscale);
