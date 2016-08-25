@@ -100,6 +100,30 @@ strong {
     top: 0.4em;
     right: 0.8em;
 }
+.alert-success,
+.alert-info,
+.alert-warning,
+.alert-danger {
+	.close {
+		color: inherit;
+	}
+}
+.alert-success {
+	color: $color-white;
+	background-color: $color-state-success;
+}
+.alert-info {
+	color: $color-white;
+	background-color: $color-state-info;
+}
+.alert-warning {
+	color: $color-white;
+	background-color: $color-state-warning;
+}
+.alert-danger {
+	color: $color-white;
+	background-color: $color-state-danger;
+}
 //
 //	Buttons
 //
@@ -396,11 +420,19 @@ strong {
 .list-group-stacked {
     display: flex;
     flex-direction: column;
+	width: 100%;
 }
 .list-group-item {
     padding: 0.4em 0.8em;
     border: 1px solid rgba(0,0,0,0.1);
-    background-color: map-get($grayscale, "01");
+}
+//
+//	List Group contains alerts
+//
+.list-group-item.alert {
+	& + & {
+		margin-top: 0.8em;
+	}
 }
 //
 //	Links
@@ -1149,6 +1181,9 @@ button {
         margin-right: 0.2rem;
         border-radius: 8px;
     }
+}
+.nav-stacked {
+	flex-direction: column;
 }
 //
 //
