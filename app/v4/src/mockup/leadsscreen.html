@@ -8,7 +8,7 @@
 		<link rel="stylesheet" href="../css/core/styles.css">
 		<link rel="stylesheet" href="../css/vendor/font-awesome/font-awesome.css">
 	</head>
-	<body>
+	<body class="bg-0025">
 		<nav class="oncanvas-navbar navbar navbar-primary">
 			<a class="offcanvas-toggle js-offcanvas-toggle navbar-item navbar-link" href="#Collapse"></a>
 			<a class="navbar-item navbar-link navbar-logo" href="../index.html">DealerOn</a>
@@ -17,7 +17,7 @@
 			<div class="sidebar-header">
 				<span class="sidebar-item">Select Dealer</span>
 				<div class="sidebar-item">
-					<div class="input-group">
+					<div class="input-group input-group-rounded">
 						<input type="text" placeholder="5211" aria-describedby="basic-addon1" class="form-control">
 						<a id="basic-addon1" class="btn input-group-addon" href="#">
 							<i class="fa fa-search"></i>
@@ -27,10 +27,131 @@
 			</div>
 		</nav>
 		<div class="oncanvas-body">
-			<div class="container py4">
-				<nav class="navbar">
-					<a class="navbar-item navbar-link" href="">Hello</a>
+			<div class="container-lg pt2">
+				<h3 class="h4 mb2">Viewing (12) Leads</h3>
+				<nav class="navbar navbar-white bxs1 mb2">
+					<div class="navbar-group">
+						<span class="navbar-item">Showing</span>
+						<div class="navbar-item dropdown">
+							<button data-toggle="dropdown" class="dropdown-toggle">3/18/2013</button>
+							<div class="dropdown-menu">
+								<a href="#" class="dropdown-item dropdown-link">Item 1</a>
+								<a href="#" class="dropdown-item dropdown-link">Item 2</a>
+								<div class="dropdown-item dropdown-divider">
+								</div>
+								<a href="#" class="dropdown-item dropdown-link">Item 3</a>
+							</div>
+						</div>
+						<span class="navbar-item">to</span>
+						<div class="navbar-item dropdown">
+							<button data-toggle="dropdown" class="dropdown-toggle">3/18/2014</button>
+							<div class="dropdown-menu">
+								<a href="#" class="dropdown-item dropdown-link">Item 1</a>
+								<a href="#" class="dropdown-item dropdown-link">Item 2</a>
+								<div class="dropdown-item dropdown-divider"></div>
+								<a href="#" class="dropdown-item dropdown-link">Item 3</a>
+							</div>
+						</div>
+					</div>
+					<div class="navbar-row">
+						<div class="navbar-group">
+							<span class="navbar-item">from</span>
+							<div class="navbar-item dropdown">
+								<button data-toggle="dropdown" class="dropdown-toggle">All Lead Sources</button>
+								<div class="dropdown-menu">
+									<a href="#" class="dropdown-item dropdown-link">Item 1</a>
+									<a href="#" class="dropdown-item dropdown-link">Item 2</a>
+									<div class="dropdown-item dropdown-divider"></div>
+									<a href="#" class="dropdown-item dropdown-link">Item 3</a>
+								</div>
+							</div>
+						</div>
+						<div class="navbar-group mlo">
+							<button class="navbar-item navbar-link" type="submit" ng-click="fetchLeads()">Submit</button>
+						</div>
+					</div>
 				</nav>
+				<nav class="navbar navbar-white bxs1 mb2">
+					<div class="navbar-group">
+						<span class="navbar-item">Filter by</span>
+						<div class="navbar-item input-group">
+							<input class="form-control ng-pristine ng-untouched ng-valid" style="border-right: 0 none;" placeholder="Search..." type="text" ng-model="filterString">
+							<button class="input-group-addon" type="button" ng-click="clearFilter()">
+								<i class="fa fa-times fa-danger"></i>
+							</button>
+						</div>
+						<span class="navbar-item">within field(s)</span>
+						<div class="navbar-item dropdown">
+							<button data-toggle="dropdown" class="dropdown-toggle">All Fields</button>
+							<div class="dropdown-menu">
+								<a href="#" class="dropdown-item dropdown-link">Item 1</a>
+								<a href="#" class="dropdown-item dropdown-link">Item 2</a>
+								<div class="dropdown-item dropdown-divider"></div>
+								<a href="#" class="dropdown-item dropdown-link">Item 3</a>
+							</div>
+						</div>
+					</div>
+					<div class="navbar-group mlo">
+						<button class="navbar-item navbar-link" type="submit" ng-click="exportCSV()">Export</button>
+					</div>
+				</nav>
+				<div class="table-responsive bxs1">
+					<table class="table table-white table-nowrap table-left-flush table-striped table-borderless" ng-show="!showLeadDetails">
+						<thead>
+							<tr>
+								<th></th>
+								<th>Lead ID<button ng-click="sortBy('Id');" class="btn btn-link"><i class="fa fa-caret-down fa-fw"></i></button> </th>
+								<th>Lead Source<button ng-click="sortBy('SourceName');" class="btn btn-link"><i class="fa fa-caret-down fa-fw"></i></button> </th>
+								<th>Name<button ng-click="sortBy('LastName');" class="btn btn-link"><i class="fa fa-caret-down fa-fw"></i></button> </th>
+								<th>Email<button ng-click="sortBy('Email');" class="btn btn-link"><i class="fa fa-caret-down fa-fw"></i></button> </th>
+								<th>Phone<button ng-click="sortBy('Phone');" class="btn btn-link"><i class="fa fa-caret-down fa-fw"></i></button> </th>
+								<th>Date<button ng-click="sortBy('DateReceived');" class="btn btn-link"><i class="fa fa-caret-down fa-fw"></i></button></th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- ngRepeat: lead in leads | filter: filterExpression | orderBy:propertyName:reverse -->
+							<tr ng-repeat="lead in leads | filter: filterExpression | orderBy:propertyName:reverse" id="7772622" class="ng-scope">
+								<td class="slide-over-toggle-wrapper">
+									<button ng-click="slideOpen(lead.Id, lead)" class="btn btn-xs btn-link slide-over-toggle">
+										<i class="fa fa-chevron-right text-main"></i>
+									</button>
+								</td>
+								<td class="ng-binding">7772622</td>
+								<td class="ng-binding"><i class="fa fa-check fa-offset ng-hide" ng-show="lead.CompletedCreditApp"></i>Website Mobile - ePrice Details New</td>
+								<td class="ng-binding">He Jiawei</td>
+								<td class="ng-binding">he412950342@gmail.com</td>
+								<td class="ng-binding">(917) 519-1062</td>
+								<td class="ng-binding">2016-08-09 10:08 PM</td>
+							</tr>
+							<tr ng-repeat="lead in leads | filter: filterExpression | orderBy:propertyName:reverse" id="7772622" class="ng-scope">
+								<td class="slide-over-toggle-wrapper">
+									<button ng-click="slideOpen(lead.Id, lead)" class="btn btn-xs btn-link slide-over-toggle">
+										<i class="fa fa-chevron-right text-main"></i>
+									</button>
+								</td>
+								<td class="ng-binding">7772622</td>
+								<td class="ng-binding"><i class="fa fa-check fa-offset ng-hide" ng-show="lead.CompletedCreditApp"></i>Website Mobile - ePrice Details New</td>
+								<td class="ng-binding">He Jiawei</td>
+								<td class="ng-binding">he412950342@gmail.com</td>
+								<td class="ng-binding">(917) 519-1062</td>
+								<td class="ng-binding">2016-08-09 10:08 PM</td>
+							</tr>
+							<tr ng-repeat="lead in leads | filter: filterExpression | orderBy:propertyName:reverse" id="7772622" class="ng-scope">
+								<td class="slide-over-toggle-wrapper">
+									<button ng-click="slideOpen(lead.Id, lead)" class="btn btn-xs btn-link slide-over-toggle">
+										<i class="fa fa-chevron-right text-main"></i>
+									</button>
+								</td>
+								<td class="ng-binding">7772622</td>
+								<td class="ng-binding"><i class="fa fa-check fa-offset ng-hide" ng-show="lead.CompletedCreditApp"></i>Website Mobile - ePrice Details New</td>
+								<td class="ng-binding">He Jiawei</td>
+								<td class="ng-binding">he412950342@gmail.com</td>
+								<td class="ng-binding">(917) 519-1062</td>
+								<td class="ng-binding">2016-08-09 10:08 PM</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 			</div>
 		</div>
 		<div class="offcanvas-backdrop js-offcanvas-backdrop"></div>

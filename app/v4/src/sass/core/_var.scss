@@ -1,0 +1,82 @@
+//
+//	Breakpoints
+//
+$media-min-sm: 544px;
+$media-min-md: 768px;
+$media-min-lg: 992px;
+$media-min-xl: 1200px;
+$media-max-sm: 543px;
+$media-max-md: 767px;
+$media-max-lg: 991px;
+$media-max-xl: 1199px;
+//
+//	Colors
+//
+$color-white: #fff;
+$color-black: #000;
+$grayscale: (
+	"0025":  mix($color-black, $color-white, 2.5%),
+	"005":  mix($color-black, $color-white, 5%),
+	"01":  mix($color-black, $color-white, 10%),
+	"02":  mix($color-black, $color-white, 20%),
+	"03":  mix($color-black, $color-white, 30%),
+	"04":  mix($color-black, $color-white, 40%),
+	"05":  mix($color-black, $color-white, 50%),
+	"06":  mix($color-black, $color-white, 60%),
+	"07":  mix($color-black, $color-white, 70%),
+	"08":  mix($color-black, $color-white, 80%),
+	"09":  mix($color-black, $color-white, 90%),
+);
+$color-default: #e4e4e4;
+$color-primary: #3662ad;
+$color-accent: #f36c0a;
+$color-inverse: mix($color-primary, map-get($grayscale, "08"), 20%);
+$color-state-success: #5cb85c !default;
+$color-state-info: #5bc0de !default;
+$color-state-warning: #f0ad4e !default;
+$color-state-danger: #d9534f !default;
+$palette-default: (
+    "default":  $color-default,
+);
+$palette-inverse: (
+    "inverse": $color-inverse,
+);
+$palette-primary: (
+    "cta":   $color-accent,
+    "main":  $color-primary,
+);
+$palette-neutral: (
+    "alt1":  mix($color-primary, map-get($grayscale, "07"), 50%),
+    "alt2":  mix($color-primary, map-get($grayscale, "05"), 45%),
+    "alt3":  mix($color-primary, map-get($grayscale, "03"), 40%),
+);
+$palette-state: (
+    "success":  $color-state-success,
+    "info":     $color-state-info,
+    "warning":  $color-state-warning,
+    "danger":   $color-state-danger,
+);
+$palette-classic: (
+    "white":  $color-white,
+    "black":  $color-black,
+);
+//
+//	Grid
+//
+$grid-gutter: 1rem;
+//
+//	Paths
+//
+$font-path: "../../font/";
+$image-path: "../../img/";
+//
+//	Units
+//
+$zindex-dropdown-menu: 750;
+$zindex-offcanvas-body: 900;
+$zindex-oncanvas-navbar: 1000;
+$zindex-offcanvas-sidebar: 1100;
+$zindex-offcanvas-backdrop: 1050;
+$zindex-modal-backdrop: 1400;
+$zindex-modal: 1500;
+

@@ -1,6 +1,3 @@
-//
-//	Sidebar
-//
 var sidebar = (function () {
 
 	var sidebarIsOpen;
@@ -42,5 +39,4 @@ var sidebar = (function () {
 	}
 
 })();
-
 sidebar.init();

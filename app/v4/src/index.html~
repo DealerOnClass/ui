@@ -44,9 +44,6 @@
 				<a class="sidebar-item sidebar-link" href="#MediaNested">Media Nested</a>
 				<a class="sidebar-item sidebar-link" href="#Modal">Modal</a>
 				<a class="sidebar-item sidebar-link" href="#Navbar">Navbar</a>
-				<a class="sidebar-item sidebar-link" href="#Nav">Nav</a>
-				<a class="sidebar-item sidebar-link" href="#NavTabs">NavTabs</a>
-				<a class="sidebar-item sidebar-link" href="#NavPills">NavPills</a>
 				<a class="sidebar-item sidebar-link" href="#Sidebar">Sidebar</a>
 				<a class="sidebar-item sidebar-link" href="#Table">Table</a>
 				<a class="sidebar-item sidebar-link" href="#Tabs">Tabs</a>
@@ -422,27 +419,6 @@
 						</div>
 					</nav>
 					<hr class="my4 invisible">
-					<h3 id="Nav" class="anchor-offset">Nav</h3>
-					<nav class="nav">
-						<a class="nav-item nav-link" href="">Nav Item</a>
-						<a class="nav-item nav-link" href="">Nav Item</a>
-						<a class="nav-item nav-link" href="">Nav Item</a>
-					</nav>
-					<hr class="my4 invisible">
-					<h3 id="NavTabs" class="anchor-offset">Nav Tabs</h3>
-					<nav class="nav nav-tabs">
-						<a class="nav-item nav-link active" href="">Nav Tab Item</a>
-						<a class="nav-item nav-link" href="">Nav Tab Item</a>
-						<a class="nav-item nav-link" href="">Nav Tab Item</a>
-					</nav>
-					<hr class="my4 invisible">
-					<h3 id="NavPills" class="anchor-offset">Nav Pills</h3>
-					<nav class="nav nav-pills">
-						<a class="nav-item nav-link active" href="">Nav Pill Item</a>
-						<a class="nav-item nav-link" href="">Nav Pill Item</a>
-						<a class="nav-item nav-link" href="">Nav Pill Item</a>
-					</nav>
-					<hr class="my4 invisible">
 					<h3 id="Sidebar" class="anchor-offset">Sidebar</h3>
 					<nav class="sidebar">
 						<div class="sidebar-header">
@@ -491,17 +467,8 @@
 					</table>
 					<hr class="my4 invisible">
 					<h3 id="Tabs" class="anchor-offset">Tabs</h3>
-					<div class="nav nav-tabs" role="tablist">
-						<a href="#home" class="nav-item nav-link active" data-toggle="tab" role="tab">Active</a>
-						<a href="#profile" class="nav-item nav-link" data-toggle="tab" role="tab">Tab Item</a>
-						<a href="#messages" class="nav-item nav-link" data-toggle="tab" role="tab">Tab Item</a>
-						<a href="#settings" class="nav-item nav-link" data-toggle="tab" role="tab">Tab Item</a>
-					</div>
-					<div class="tab-content">
-						<div class="tab-pane active" id="home" role="tabpanel">Stuff1</div>
-						<div class="tab-pane" id="profile" role="tabpanel">Stuff2</div>
-						<div class="tab-pane" id="messages" role="tabpanel">Stuff3</div>
-						<div class="tab-pane" id="settings" role="tabpanel">Stuff4</div>
+					<div class="nav nav-tabs">
+						<a class="nav-item nav-link active">Active</a>
 					</div>
 					<hr class="my4 invisible">
 					<h3 id="Well" class="anchor-offset">Well</h3>
@@ -511,8 +478,7 @@
 		</div>
 		<div class="offcanvas-backdrop js-offcanvas-backdrop"></div>
 		<script defer src="./js/vendor/jquery.js"></script>
-		<script defer src="./js/vendor/tether.js"></script>
-		<script defer src="./js/vendor/bootstrap4.js"></script>
+		<script defer src="./js/vendor/bootstrap.js"></script>
 		<script defer src="./js/vendor/moment.js"></script>
 		<script defer src="./js/vendor/bootstrap-datepicker.js"></script>
 		<script defer src="./js/mockup/sidebar.js"></script>
