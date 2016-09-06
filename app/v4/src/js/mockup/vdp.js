@@ -1,376 +1,284 @@
-/*
- * Carousel Declaration
- */
+"use strict";
+
 var Carousel = (function(){
 
-	var carousel          = document.querySelector(".carousel");
-	var carouselOuter     = document.querySelector(".carousel__outer");
-	var carouselInner     = document.querySelector(".carousel__inner");
-	var carouselItems     = document.querySelectorAll(".carousel__item");
-	var carouselItemHero  = document.querySelectorAll(".carousel__item--hero");
-	var carouselControls  = document.querySelector(".carousel__controls");
-	var carouselLeft	  = document.querySelector(".carousel__control--left");
-	var carouselRight	  = document.querySelector(".carousel__control--right");
+	var body             = document.body;
+    var carousel         = document.querySelector(".js-carousel");
+	var carouselOuter    = document.querySelector(".js-carousel__outer");
+	var carouselItems    = document.querySelectorAll(".js-carousel__item");
+	var carouselControls = document.querySelector(".js-carousel__controls");
+	var carouselNext	 = document.querySelector(".js-carousel__control--next");
+	var carouselPrev	 = document.querySelector(".js-carousel__control--prev");
 
-	var carouselMaxHeight = 400;
-	var carouselRows      = 2;
-	var carouselIncrement = 500;
-	var imageAspecRatio   = 4/3;
-	var carouselHeroWidth = carouselMaxHeight * imageAspecRatio;
-	var carouselItemWidth = carouselHeroWidth / carouselRows;
-	//	TODO options for controls.
+	var carouselHeight;
+	var carouselRows;
+	var aspectRatio;
+	var carouselHeroWidth;
+	var carouselItemWidth;
+	var carouselIncrement;
 
-	var galleryActive     = false;
-	var galleryActiveBCR;
-	var galleryActiveImg;
-	var galleryPrevImg;
-	var galleryNextImg;
-	var galleryActiveX	  = 0;
-	var galleryActiveY	  = 0;
-	var galleryMovedTotal = carouselInner.getAttribute("data-translated") | 0;
-	var galleryLeftEnd    = false;
-	var galleryRightEnd   = false;
+	var carouselItemOffsetX = 0;
 
-	var _mouseClick       = true;
-	var _mouseDown        = false;
-	var _mouseCurrentXPos = 0;
-	var _carouselMovedTotal  = carouselOuter.getAttribute("data-translated") | 0;
+	var mouseClick         = true;
+	var mouseDown          = false;
+	var	mouseCurrentXPos   = 0;
+	var carouselMovedTotal = carouselOuter.getAttribute("data-translated") | 0;
 
-	var _offset 		  = 0;
+	var dragThreshold;
+	var keyboardMove = 0;
 
-	//
-	//	Initializer Functions
-	//
-	Init = function(rows) {
-		console.log("%cInitializing Carousel", "color: green;");
+	var galleryActive = false;
+
+	function Init(options) {
 		AddEventListeners();
-		CarouselImageInit();
-		CarouselControlsInit();
-	}
-	//
-	//	All Event Listeners
-	//
-	AddEventListeners = function() {
-		//	document.body.addEventListener("keydown", KeyDown);
-		carousel.addEventListener("mousedown", MouseDown);
-		carousel.addEventListener("mousemove", MouseMove);
-		carousel.addEventListener("mouseup", MouseUp);
-		carousel.addEventListener("mouseleave", MouseLeave);
-		carouselOuter.addEventListener("transitionend", TransitionEnd);
-		carouselLeft.addEventListener("click", CarouselPrev);
-		carouselRight.addEventListener("click", CarouselNext);
+		_CarouselInit(options);
+		_CarouselInitItems();
+		_ControlsInit(options);
 	}
 
-	//	KeyDown = function(evt) {
-	//		switch (evt.keyCode) {
-	//			case 37: // Left
-	//				console.log("left");
-	//				break;
-	//			case 39: // Right
-	//				console.log("right");
-	//				break;
-	//		}
-	//	}
-
-	//
-	//	Mouse Events
-	//
-	MouseDown = function(evt) {
-		evt.preventDefault();
-		_mouseClick       = true;
-		_mouseDown        = true;
-		_mouseCurrentXPos = evt.pageX;
-		_carouselMovedTotal  = carouselOuter.getAttribute("data-translated") | 0;
-	}
-
-	MouseMove = function(evt) {
-		//	if gallery is not active and I'm holding the click
-		if (!galleryActive && _mouseDown === true) {
-			//	if the mouse has moved
-			if ((evt.pageX - _mouseCurrentXPos) !== 0) {
-				//	drag the carousel
-				CarouselDragging(true);
-				CarouselSlideX((evt.pageX - _mouseCurrentXPos) + _carouselMovedTotal);
-				_mouseClick = false;
-			} else {
-				_mouseClick = true;
-			}
-		}
-	}
-
-	MouseUp = function(evt) {
-		//	if I just clicked
-		if (_mouseClick) {
-			//	if gallery is not active
-			if (!galleryActive) {
-				//	if target is image
-				if (evt.target.classList.contains("carousel__image")) {
-					//	start gallery
-					GalleryStart(evt.target);
-				}
-			} else {
-				//	if target is control
-				if (evt.target.classList.contains("carousel__control--target")) {
-					return;
-				}
-				//	if target is image
-				else if (evt.target.classList.contains("carousel__image")) {
-					//	go to image
-					console.log("go to image");
-				}
-				//	close gallery
-				else {
-					GalleryClose();
-				}
-			}
-		}
-		CarouselDragging(false);
-		_mouseDown = false;
-	}
-
-	MouseLeave = function(evt) {
-		CarouselDragging(false);
-		_mouseDown = false;
+	function AddEventListeners() {
+		body.addEventListener("keydown", _KeyboardControls);
+        carousel.addEventListener("mousedown", _MouseDown);
+        carousel.addEventListener("mousemove", _MouseMove);
+        carousel.addEventListener("mouseup", _MouseUp);
+        carousel.addEventListener("mouseleave", _MouseLeave);
+        carouselNext.addEventListener("click", _CarouselNext);
+        carouselPrev.addEventListener("click", _CarouselPrev);
 	}
 
 	//
-	//	Controls
+	//	Initialize Carousel
+	//	Accepts options, sets height for carousel, then
+	//	sets or initializes carousel items images to their
+	//	proper positions via CarouselInitItems func.
+	function _CarouselInit(options) {
+		carouselHeight        = options.carouselHeight || 400;
+		carouselRows          = options.carouselRows || 2;
+		aspectRatio           = options.aspectRatio || 4/3;
+		carouselIncrement	  = options.carouselIncrement || 500;
+		carouselHeroWidth     = carouselHeight * aspectRatio;
+		carouselItemWidth     = carouselHeroWidth / carouselRows;
+
+		carousel.style.height = carouselHeight + "px";
+		carouselOuter.style.transform = "translateX(0)";
+		carouselOuter.setAttribute("data-translated", 0);
+	}
+
 	//
-	CarouselControlsHide = function() {
-		carouselControls.classList.add("carousel__controls--hidden");
-	}
-
-	CarouselControlsShow = function() {
-		carouselControls.classList.remove("carousel__controls--hidden");
-	}
-
-	CarouselControlsInit = function() {
-		carouselControls.style.top = (carouselMaxHeight / 2) + "px";
-	}
-
-	TransitionEnd = function() {
-		CarouselControlsShow();
-	}
-
-	//
-	//	Carousel
-	//
-	CarouselDragging = function(isDragging) {
-		if (isDragging) {
-			CarouselControlsHide();
-			carouselOuter.classList.add("dragging");
-		} else {
-			CarouselControlsShow();
-			carouselOuter.classList.remove("dragging");
-		}
-	}
-
-	CarouselImageInit = function() {
-		var i = 0;
-		var l = carouselItems.length;
-		var carouselItemOffsetX = 0;
-		var stack;
-		for (i; i < l; i++) {
-			stack = i%carouselRows;
+	//	Initialize Carousel Items
+	//	For each carousel item, Checks if item is the hero
+	//	item and increments the offset accordingly. Sets
+	//	translate x and y. Uses modulo operater to create
+	//	visual rows.
+	function _CarouselInitItems() {
+		carouselItemOffsetX = 0;
+		for (var i = 0; i < carouselItems.length; i++) {
 			if (i === 0) {
 				carouselItemOffsetX += carouselHeroWidth;
 			} else if (((i-1) % carouselRows) === 0) {
 				carouselItemOffsetX += carouselItemWidth;
 			}
 			if (i === 0) {
-				carouselItems[i].style.transform = "translateX(" + (carouselItemOffsetX - carouselHeroWidth) + "px)";
+				carouselItems[i].style.transform
+					= "translateX(" + (carouselItemOffsetX - carouselHeroWidth) + "px)";
 				carouselItems[i].style.width = carouselHeroWidth + "px";
 			} else {
-				carouselItems[i].style.transform = "translateX(" + (carouselItemOffsetX - carouselItemWidth) + "px) translateY(" + (stack * carouselMaxHeight / carouselRows) +"px)";
+				carouselItems[i].style.transform
+					= "translateX(" + (carouselItemOffsetX - carouselItemWidth) + "px)"
+					+ "translateY(" + ((i%carouselRows) * carouselHeight / carouselRows) +"px)";
 				carouselItems[i].style.width = carouselItemWidth + "px";
 			}
 		}
-		carousel.style.height = carouselMaxHeight + "px";
 	}
 
-	CarouselNext = function(evt) {
-		evt.preventDefault();
-		if (!galleryActive) {
-			CarouselControlsHide();
-			CarouselSlideX(_carouselMovedTotal - carouselIncrement);
+	//
+	//	Drag Carousel using Mouse
+	//	Checks boolean and adds a class if dragging is
+	//	true. Used with CSS to disable transitions when
+	//	mouse drag is taking place versus keyboard controls
+	//	or carousel controls.
+	function _CarouselMouseDrag(isDragging) {
+		if (isDragging) {
+			carouselOuter.classList.add("dragging");
 		} else {
-			GalleryNext();
+			carouselOuter.classList.remove("dragging");
 		}
 	}
 
-	CarouselPrev = function(evt) {
-		evt.preventDefault();
-		if (!galleryActive) {
-			CarouselControlsHide();
-			CarouselSlideX(_carouselMovedTotal + carouselIncrement);
+	//
+	//	Will translate the carousel a value of "distance".
+	//	Additionally, will check if the carousel translate
+	//	has reached it's limits and set them.
+	function _CarouselSlideTo(distance) {
+		dragThreshold = ((carouselOuter.scrollWidth - body.scrollWidth) * -1);
+		if (distance > 0) {
+			_CarouselTranslateX(0);
+		} else if (distance <= dragThreshold){
+			_CarouselTranslateX(dragThreshold);
 		} else {
-			GalleryPrev();
+			_CarouselTranslateX(distance);
 		}
 	}
 
-	CarouselSlideTo = function(evt) {
-		CarouselControlsHide();
-		CarouselSlideX(_carouselMovedTotal + ((parseInt(evt.target.getBoundingClientRect().left) - ((window.innerWidth / 2) - (evt.target.offsetWidth / 2))) * -1));
-	}
-
-	CarouselSlideX = function(distance) {
-		return new Promise(function(resolve, reject) {
-			var threshold = ((carouselOuter.scrollWidth - document.body.scrollWidth) * -1) + _offset;
-			if (distance > 0){
-				CarouselControlsShow();
-				CarouselTranslateX(0);
-			} else if (distance <= threshold){
-				CarouselControlsShow();
-				CarouselTranslateX(threshold);
-			} else {
-				CarouselTranslateX(distance);
-			}
-			resolve();
-			return;
-		});
-	}
-
-	CarouselTranslateX = function(distance) {
-		carouselOuter.style.transform = "translate3d(" + Math.round(distance) + "px,0,0)";
+	function _CarouselTranslateX(distance) {
+		keyboardMove = distance;
+		carouselOuter.style.transform = "translateX(" + Math.round(distance) + "px)";
 		carouselOuter.setAttribute("data-translated", Math.round(distance));
 	}
 
 	//
-	//	Gallery
-	//
-	GalleryStart = function(image) {
-		galleryActive 	 = true;
-		galleryActiveBCR = image.parentElement.getBoundingClientRect();
-		galleryActiveX   = (document.body.scrollWidth / 2) - (galleryActiveBCR.width / 2);
-		galleryActiveY   = (carouselMaxHeight / 2) - (galleryActiveBCR.height / 2);
-
-		carousel.classList.add("carousel--active");
-		image.parentElement.setAttribute("data-style", image.parentElement.getAttribute("style"));
-		image.parentElement.style.transform = "translateX(" + galleryActiveX + "px) translateY(" + galleryActiveY + "px)";
-		image.parentElement.classList.add("carousel__item--active");
-		image.parentElement.nextElementSibling.classList.add("carousel__item--next");
-		image.parentElement.previousElementSibling.classList.add("carousel__item--prev");
-
-		var prev        = PrevAll(image.parentElement);
-		var prevOffsetX = galleryActiveX;
-		for (var i = 0; i < prev.length; i++) {
-			prevOffsetX -= carouselItemWidth;
-			prev[i].setAttribute("data-style", prev[i].getAttribute("style"));
-			prev[i].style.transform = "translateX(" + prevOffsetX + "px) translateY(" + galleryActiveY + "px)";
-			prev[i].style.width = carouselItemWidth + "px";
+	//	Checks for state of carousel and goes to the next
+	//	carousel item.
+	function _CarouselNext(evt) {
+		evt.preventDefault();
+		if (!galleryActive) {
+			_CarouselSlideTo(keyboardMove -= carouselIncrement);
 		}
-
-		var next        = NextAll(image.parentElement);
-		var nextOffsetX = galleryActiveX;
-		for (var i = 0; i < next.length; i++) {
-			nextOffsetX += carouselItemWidth;
-			next[i].setAttribute("data-style", next[i].getAttribute("style"));
-			next[i].style.transform = "translateX(" + nextOffsetX + "px) translateY(" + galleryActiveY + "px)";
-			next[i].style.width = carouselItemWidth + "px";
-		}
-
-		GalleryTranslateX(Math.abs(_carouselMovedTotal));
+		//	else {
+		//		GalleryNext();
+		//	}
 	}
 
-	GalleryClose = function() {
-		galleryActive = false;
-		carousel.classList.remove("carousel--active");
-		document.querySelector(".carousel__item--active").classList.remove("carousel__item--active");
-		carouselInner.removeAttribute("style");
-		carouselInner.removeAttribute("data-translated");
+	//
+	//	Checks for state of carousel and goes to the prev
+	//	carousel item.
+	function _CarouselPrev(evt) {
+		evt.preventDefault();
+		if (!galleryActive) {
+			_CarouselSlideTo(keyboardMove += carouselIncrement);
+		}
+		//	else {
+		//		GalleryNext();
+		//	}
+	}
+
+	//
+	//	Initialize Carousel Controls, setting positions etc.
+	function _ControlsInit() {
+		carouselControls.style.top = (carouselHeight / 2) + "px";
+	}
+
+	//
+	//	Change Carousel state to Gallery. Change layout of
+	//	images and focus the active image.
+	function _GalleryStart(image) {
+		galleryActive = true;
+		//	var imageLocation = image.parentElement.getBoundingClientRect();
+		_GalleryInitItems();
+		//	_CarouselSlideTo(carouselMovedTotal - (imageLocation.left - ((body.scrollWidth / 2) - (imageLocation.width / 2))));
+	}
+
+	function _GalleryInitItems() {
+		carouselItemOffsetX = 0;
 		for (var i = 0; i < carouselItems.length; i++) {
-			carouselItems[i].setAttribute("style", carouselItems[i].getAttribute("data-style"));
-			carouselItems[i].removeAttribute("data-style");
-		}
-		if (carouselLeft.classList.contains("carousel__control--hidden")) {
-			carouselLeft.classList.remove("carousel__control--hidden");
-		}
-		if (carouselRight.classList.contains("carousel__control--hidden")) {
-			carouselRight.classList.remove("carousel__control--hidden");
+			carouselItemOffsetX += (carouselHeroWidth / 2);
+			carouselItems[i].setAttribute("data-init-position", carouselItems[i].style.transform);
+			carouselItems[i].style.transform
+				= "translateX(" + (carouselItemOffsetX) + "px)"
+				+ "translateY(50%)";
+			carouselItems[i].style.width = (carouselHeroWidth / 2) + "px";
 		}
 	}
 
-	GalleryNext = function() {
-		if (galleryLeftEnd) {
-			carouselLeft.classList.remove("carousel__control--hidden");
-		};
-		galleryActiveImg = document.querySelector(".carousel__item--active");
-		galleryNextImg = document.querySelector(".carousel__item--next");
-		galleryPrevImg = document.querySelector(".carousel__item--prev");
-
-		galleryActiveImg.classList.add("carousel__item--prev");
-		galleryActiveImg.classList.remove("carousel__item--active");
-		galleryNextImg.classList.add("carousel__item--active");
-		galleryNextImg.classList.remove("carousel__item--next");
-		if (galleryNextImg.nextElementSibling) {
-			galleryNextImg.nextElementSibling.classList.add("carousel__item--next");
-		} else {
-			galleryRightEnd = true;
-			carouselRight.classList.add("carousel__control--hidden");
+	function _GalleryClose() {
+		for (var i = 0; i < carouselItems.length; i++) {
+			if (i === 0) {
+				carouselItems[i].style.width = carouselHeroWidth + "px";
+			} else {
+				carouselItems[i].style.width = carouselItemWidth + "px";
+			}
+			carouselItems[i].style.transform = carouselItems[i].getAttribute("data-init-position");
 		}
-		if (galleryPrevImg) {
-			galleryPrevImg.classList.remove("carousel__item--prev");
-		}
-
-		galleryMovedTotal = carouselInner.getAttribute("data-translated") | 0;
-		GalleryTranslateX(galleryMovedTotal - carouselItemWidth);
-	}
-
-	GalleryPrev = function() {
-		if (galleryRightEnd) {
-			carouselRight.classList.remove("carousel__control--hidden");
-		};
-		galleryActiveImg = document.querySelector(".carousel__item--active");
-		galleryNextImg = document.querySelector(".carousel__item--next");
-		galleryPrevImg = document.querySelector(".carousel__item--prev");
-
-		galleryActiveImg.classList.add("carousel__item--next");
-		galleryActiveImg.classList.remove("carousel__item--active");
-		galleryPrevImg.classList.add("carousel__item--active");
-		galleryPrevImg.classList.remove("carousel__item--prev");
-		if (galleryPrevImg.previousElementSibling) {
-			galleryPrevImg.previousElementSibling.classList.add("carousel__item--prev");
-		} else {
-			galleryLeftEnd = true;
-			carouselLeft.classList.add("carousel__control--hidden");
-		}
-		if (galleryNextImg) {
-			galleryNextImg.classList.remove("carousel__item--next");
-		}
-
-		galleryMovedTotal = carouselInner.getAttribute("data-translated") | 0;
-		GalleryTranslateX(galleryMovedTotal + carouselItemWidth);
-	}
-
-	GalleryTranslateX = function(distance) {
-		carouselInner.style.transform = "translate3d(" + Math.round(distance) + "px,0,0)";
-		carouselInner.setAttribute("data-translated", Math.round(distance));
+		galleryActive = false;
 	}
 
 	//
-	//	Utilities
-	//
-	PrevAll = function(element) {
-		var result = [];
-		while (element = element.previousElementSibling)
-			result.push(element);
-		return result;
-	}
-
-	NextAll = function(element) {
-		var result = [];
-		while (element = element.nextElementSibling)
-			result.push(element);
-		return result;
+	//	When mousedown event occurs on the carousel set
+	//	mouseclick and mousedown to true, additionally
+	//	capture the cursor's current position and if the
+	//	carousel has already been dragged get that value.
+	function _MouseDown(evt) {
+		evt.preventDefault();
+		mouseClick         = true;
+		mouseDown          = true;
+		mouseCurrentXPos   = evt.pageX;
+		carouselMovedTotal = carouselOuter.getAttribute("data-translated") | 0;
 	}
 
 	//
-	//	Expose Public Functions
+	//	When mousemove event occurs on the carousel and the
+	//	gallery is not active and mousedown is true then
+	//	check the following: if the mouse has moved begin
+	//	dragging the carousel and set mouseclick to false.
+	//	Else if the mouse hasn't moved, then the user is
+	//	trying to click on an image.
+	function _MouseMove(evt) {
+		if (!galleryActive && mouseDown === true) {
+			if ((evt.pageX - mouseCurrentXPos) !== 0) {
+				_CarouselMouseDrag(true);
+				_CarouselSlideTo((evt.pageX - mouseCurrentXPos) + carouselMovedTotal);
+				mouseClick = false;
+			} else {
+				mouseClick = true;
+			}
+		}
+	}
+
 	//
+	//	this deserves a lengthy description...
+	function _MouseUp(evt) {
+		if (mouseClick) {
+			if (!galleryActive) {
+				if (evt.target.classList.contains("carousel__image")) {
+					_GalleryStart(evt.target);
+				}
+			} else {
+				_GalleryClose();
+				//	if (evt.target.classList.contains("js-carousel__control")) {
+				//		return;
+				//	} else if (evt.target.classList.contains("carousel__image")) {
+				//		console.log("go to image");
+				//	} else {
+				//		_GalleryClose();
+				//	}
+			}
+		}
+		_CarouselMouseDrag(false);
+		mouseDown = false;
+	}
+
+    //
+	//	If the mouse leaves the carousel then we're not
+	//	dragging it or clicking down on it.
+	function _MouseLeave(evt) {
+		_CarouselMouseDrag(false);
+		mouseDown = false;
+	}
+
+	//
+	//	When the left or right arrows are moved, depending
+	//	on what state is the carousel is (carousel/gallery)
+	//	slide or go to next image.
+	function _KeyboardControls(evt) {
+		switch (evt.keyCode) {
+			case 37: // Left
+				_CarouselPrev(evt);
+				break;
+			case 39: // Right
+				_CarouselNext(evt);
+				break;
+		}
+	}
+
 	return {
 		init: Init
 	}
 
-})()
+})();
 
-Carousel.init();
+Carousel.init({
+	carouselHeight: 400,
+	carouselIncrement: 500,
+	carouselRows: 2,
+	aspectRatio: 4/3
+});

@@ -1,0 +1,193 @@
+"use strict";
+
+var Carousel = (function(){
+
+	var body		   = document.body;
+    var carousel       = document.querySelector(".js-carousel");
+	var carouselOuter  = document.querySelector(".js-carousel__outer");
+	var carouselItems  = document.querySelectorAll(".js-carousel__item");
+
+	var carouselHeight;
+	var carouselRows;
+	var aspectRatio;
+	var carouselHeroWidth;
+	var carouselItemWidth;
+
+	var mouseClick       = true;
+	var mouseDown        = false;
+	var	mouseCurrentXPos = 0;
+	var mouseMovedTotal  = carouselOuter.getAttribute("data-translated") | 0;
+
+	var mouseDragThreshold;
+
+	var galleryActive = false;
+
+	function Init(options) {
+		AddEventListeners();
+		_CarouselInit(options);
+	}
+
+	function AddEventListeners() {
+		body.addEventListener("keydown", _KeyboardControls);
+        carousel.addEventListener("mousedown", _MouseDown);
+        carousel.addEventListener("mousemove", _MouseMove);
+        carousel.addEventListener("mouseup", _MouseUp);
+        carousel.addEventListener("mouseleave", _MouseLeave);
+	}
+
+	//
+	//	Initialize Carousel
+	//	Accepts options, sets height for carousel, then
+	//	sets or initializes carousel items images to their
+	//	proper positions via CarouselInitItems func.
+	function _CarouselInit(options) {
+		carouselHeight        = options.carouselHeight || 400;
+		carouselRows          = options.carouselRows || 2;
+		aspectRatio           = options.aspectRatio || 4/3;
+		carouselHeroWidth     = carouselHeight * aspectRatio;
+		carouselItemWidth     = carouselHeroWidth / carouselRows;
+		carousel.style.height = carouselHeight + "px";
+		_CarouselInitItems();
+	}
+
+	//
+	//	Initialize Carousel Items
+	//	For each carousel item, Checks if item is the hero
+	//	item and increments the offset accordingly. Sets
+	//	translate x and y. Uses modulo operater to create
+	//	visual rows.
+	function _CarouselInitItems() {
+		var carouselItemOffsetX = 0;
+		for (var i = 0; i < carouselItems.length; i++) {
+			if (i === 0) {
+				carouselItemOffsetX += carouselHeroWidth;
+			} else if (((i-1) % carouselRows) === 0) {
+				carouselItemOffsetX += carouselItemWidth;
+			}
+			if (i === 0) {
+				carouselItems[i].style.transform
+					= "translateX(" + (carouselItemOffsetX - carouselHeroWidth) + "px)";
+				carouselItems[i].style.width = carouselHeroWidth + "px";
+			} else {
+				carouselItems[i].style.transform
+					= "translateX(" + (carouselItemOffsetX - carouselItemWidth) + "px)"
+					+ "translateY(" + ((i%carouselRows) * carouselHeight / carouselRows) +"px)";
+				carouselItems[i].style.width = carouselItemWidth + "px";
+			}
+		}
+	}
+
+	//
+	//	Drag Carousel using Mouse
+	//	Checks boolean and adds a class if dragging is
+	//	true. Used with CSS to disable transitions when
+	//	mouse drag is taking place versus keyboard controls
+	//	or carousel controls.
+	function _CarouselMouseDrag(isDragging) {
+		if (isDragging) {
+			carouselOuter.classList.add("dragging");
+		} else {
+			carouselOuter.classList.remove("dragging");
+		}
+	}
+
+	//
+	//	Will translate the carousel a value of "distance".
+	//	Additionally, will check if the carousel translate
+	//	has reached it's limits and set them.
+	function _CarouselSlideX(distance) {
+		mouseDragThreshold = ((carouselOuter.scrollWidth - body.scrollWidth) * -1);
+		if (distance > 0){
+			_CarouselTranslateX(0);
+		} else if (distance <= mouseDragThreshold){
+			_CarouselTranslateX(mouseDragThreshold);
+		} else {
+			_CarouselTranslateX(distance);
+		}
+	}
+
+	function _CarouselTranslateX(distance) {
+		carouselOuter.style.transform = "translateX(" + Math.round(distance) + "px)";
+		carouselOuter.setAttribute("data-translated", Math.round(distance));
+	}
+
+	//
+	//	When mousedown event occurs on the carousel set
+	//	mouseclick and mousedown to true, additionally
+	//	capture the cursor's current position and if the
+	//	carousel has already been dragged get that value.
+	function _MouseDown(evt) {
+		evt.preventDefault();
+		mouseClick         = true;
+		mouseDown          = true;
+		mouseCurrentXPos   = evt.pageX;
+		mouseMovedTotal    = carouselOuter.getAttribute("data-translated") | 0;
+	}
+
+	//
+	//	When mousemove event occurs on the carousel and the
+	//	gallery is not active and mousedown is true then
+	//	check the following: if the mouse has moved begin
+	//	dragging the carousel and set mouseclick to false.
+	//	Else if the mouse hasn't moved, then the user is
+	//	trying to click on an image.
+	function _MouseMove(evt) {
+		if (!galleryActive && mouseDown === true) {
+			if ((evt.pageX - mouseCurrentXPos) !== 0) {
+				_CarouselMouseDrag(true);
+				_CarouselSlideX((evt.pageX - mouseCurrentXPos) + mouseMovedTotal);
+				mouseClick = false;
+			} else {
+				mouseClick = true;
+			}
+		}
+	}
+
+	//
+	//	this deserves a lengthy description...
+	function _MouseUp(evt) {
+		if (mouseClick) {
+			if (!galleryActive) {
+				if (evt.target.classList.contains("carousel__image")) {
+					console.log("start gallery");
+					//	GalleryStart(evt.target);
+				}
+			} else {
+				if (evt.target.classList.contains("carousel__control--target")) {
+					return;
+				} else if (evt.target.classList.contains("carousel__image")) {
+					console.log("go to image");
+				} else {
+					console.log("close gallery");
+					//	GalleryClose();
+				}
+			}
+		}
+		_CarouselMouseDrag(false);
+		mouseDown = false;
+	}
+
+    //
+	//	If the mouse leaves the carousel then we're not
+	//	dragging it or clicking down on it.
+	function _MouseLeave(evt) {
+		_CarouselMouseDrag(false);
+		mouseDown = false;
+	}
+
+	//
+	//	Enable keyboard controls
+	function _KeyboardControls() {
+	}
+
+	return {
+		init: Init
+	}
+
+})();
+
+Carousel.init({
+	carouselHeight: 400,
+	carouselRows: 2,
+	aspectRatio: 4/3
+});

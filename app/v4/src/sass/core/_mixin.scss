@@ -1,11 +1,50 @@
 //
+//	Color
+//
+@function shade($input, $percentage) {
+    $output: mix($color-black, $input, $percentage);
+    @return $output;
+}
+@function tint($input, $percentage) {
+    $output: mix($color-white, $input, $percentage);
+    @return $output;
+}
+@function check-color($color, $threshold, $over: $color-inverse, $under: $color-white) {
+    @if (lightness($color) > $threshold) {
+        @return $over; // Lighter backgorund, return dark color
+    } @else {
+        @return $under; // Darker background, return light color
+    }
+}
+///	mixin that calculates if text needs to be light or dark
+///	depending on the background color passed.
+///
+///	From this W3C document: http://www.webmasterworld.com/r.cgi?f=88&d=9769&url=http://www.w3.org/TR/AERT#color-contrast
+///
+///	Color brightness is determined by the following formula:
+///	((Red value X 299) + (Green value X 587) + (Blue value X 114)) / 1000
+///
+/// @author David Halford
+///
+@function check-contrast($n) {
+  $color-brightness: round((red($n) * 299) + (green($n) * 587) + (blue($n) * 114) / 1000);
+  $light-color: round((red(#ffffff) * 299) + (green(#ffffff) * 587) + (blue(#ffffff) * 114) / 1000);
+  $color: white;
+  @if abs($color-brightness) < ($light-color/2){
+    $color: white;
+  } @else {
+    $color: black;
+  }
+  @return $color;
+}
+//
 //	Grid
 //
 @mixin container() {
 	.container {
 		margin-right: auto;
 		margin-left: auto;
-		padding-right: #{$grid-gutter};
+		padding-right: $grid-gutter;
 		padding-left: $grid-gutter;
 	}
 	@each $breakpoint, $size in $breakpoints {
@@ -39,7 +78,7 @@
 		}
 	}
 }
-@mixin column() {
+@mixin columns() {
 	[class*="col-"] {
 		padding-right: $grid-gutter;
 		padding-left: $grid-gutter;
@@ -102,4 +141,10 @@
 		}
 	}
 }
-
+//
+//	Rhythm
+//
+@function rhythm($multiplier) {
+	$output: ($multiplier * $global-lineheight) * $global-unit;
+	@return $output;
+}

@@ -259,10 +259,14 @@ function styles() {
 		//		dest: paths.styles.docs
 		//	}))
 		.pipe(gulpif(isProd, sourcemaps.init()))
-        .pipe(gulpif(isProd, autoprefixer({
-            browsers: ['last 3 versions'],
+        //	.pipe(gulpif(isProd, autoprefixer({
+        //	    browsers: ['last 3 versions'],
+        //	    cascade: false
+        //	})))
+        .pipe(autoprefixer({
+            browsers: ['>1%','last 3 versions'],
             cascade: false
-        })))
+        }))
 		.pipe(gulpif(isProd, cssnano({
 			core: true,
             discardComments: { removeAll: true },

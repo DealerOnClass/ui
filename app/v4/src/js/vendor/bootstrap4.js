@@ -2539,7 +2539,7 @@ var Tab = (function ($) {
     LI: 'li',
     DROPDOWN: '.dropdown',
     UL: 'ul:not(.dropdown-menu)',
-    NAV: 'nav',
+    NAV: '.nav',
     //  FADE_CHILD: '> li .fade, > .fade',
     FADE_CHILD: '.nav-item.fade, > .fade',
     ACTIVE: '.active',
@@ -2586,10 +2586,11 @@ var Tab = (function ($) {
         var target = undefined;
         var previous = undefined;
         //  var ulElement = $(this._element).closest(Selector.UL)[0];
-        var ulElement = $(this._element).closest(Selector.NAV)[0];
+        var ulElement = $(this._element).closest(Selector.NAV + "," + Selector.UL)[0]; // uh oh
         var selector = Util.getSelectorFromElement(this._element);
 
         if (ulElement) {
+          previous = $.makeArray($(ulElement).find(Selector.ACTIVE));
           previous = $.makeArray($(ulElement).find(Selector.ACTIVE));
           previous = previous[previous.length - 1];
         }

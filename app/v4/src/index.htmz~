@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=7">
+		<title>v4 Home</title>
+		<link rel="stylesheet" href="./css/core/styles.css">
+		<link rel="stylesheet" href="./css/vendor/font-awesome/font-awesome.css">
+		<link rel="stylesheet" href="./css/vendor/date-picker/datepicker.css">
+	</head>
+	<body class="bg-0025">
+		<nav class="oncanvas-navbar navbar navbar-primary">
+			<a class="offcanvas-toggle js-offcanvas-toggle navbar-item navbar-link" href="#Collapse"></a>
+			<a class="navbar-item navbar-link navbar-logo" href="/">DealerOn</a>
+		</nav>
+		<nav class="offcanvas-sidebar js-offcanvas-sidebar">
+			<div class="sidebar-body">
+				<strong class="sidebar-item">Mockups</strong>
+				<a class="sidebar-item sidebar-link" href="./mockup/leadsscreen.html">Leads Screen</a>
+				<a class="sidebar-item sidebar-link" href="./mockup/vdp.html">Vehicle Display Page</a>
+				<strong class="sidebar-item">Third Party</strong>
+				<a class="sidebar-item sidebar-link" href="#DatePicker">DatePicker</a>
+				<strong class="sidebar-item">UI Kit</strong>
+				<a class="sidebar-item sidebar-link" href="#Alert">Alert</a>
+				<a class="sidebar-item sidebar-link" href="#AlertDismissible">Alert Dismissible</a>
+				<a class="sidebar-item sidebar-link" href="#Button">Button</a>
+				<a class="sidebar-item sidebar-link" href="#ButtonRounded">ButtonRounded</a>
+				<a class="sidebar-item sidebar-link" href="#ButtonGroupInline">Button Group Inline</a>
+				<a class="sidebar-item sidebar-link" href="#ButtonGroupJustified">Button Group Justified</a>
+				<a class="sidebar-item sidebar-link" href="#ButtonGroupStacked">Button Group Stacked</a>
+				<a class="sidebar-item sidebar-link" href="#Card">Card</a>
+				<a class="sidebar-item sidebar-link" href="#CardGroup">Card Group</a>
+				<a class="sidebar-item sidebar-link" href="#Dropdown">Dropdown</a>
+				<a class="sidebar-item sidebar-link" href="#DropdownRounded">Dropdown Rounded</a>
+				<a class="sidebar-item sidebar-link" href="#Forms">Forms</a>
+				<a class="sidebar-item sidebar-link" href="#FormsInline">Forms Inline</a>
+				<a class="sidebar-item sidebar-link" href="#Histogram">Histogram</a>
+				<a class="sidebar-item sidebar-link" href="#AreaChart">AreaChart</a>
+				<a class="sidebar-item sidebar-link" href="#InputGroup">Input Group</a>
+				<a class="sidebar-item sidebar-link" href="#InputGroupRounded">Input Group Rounded</a>
+				<a class="sidebar-item sidebar-link" href="#ListGroupInline">List Group Inline</a>
+				<a class="sidebar-item sidebar-link" href="#ListGroupStacked">List Group Stacked</a>
+				<a class="sidebar-item sidebar-link" href="#Media">Media</a>
+				<a class="sidebar-item sidebar-link" href="#MediaBottom">Media Bottom</a>
+				<a class="sidebar-item sidebar-link" href="#MediaMiddle">Media Middle</a>
+				<a class="sidebar-item sidebar-link" href="#MediaNested">Media Nested</a>
+				<a class="sidebar-item sidebar-link" href="#Modal">Modal</a>
+				<a class="sidebar-item sidebar-link" href="#Navbar">Navbar</a>
+				<a class="sidebar-item sidebar-link" href="#Nav">Nav</a>
+				<a class="sidebar-item sidebar-link" href="#NavTabs">NavTabs</a>
+				<a class="sidebar-item sidebar-link" href="#NavPills">NavPills</a>
+				<a class="sidebar-item sidebar-link" href="#Sidebar">Sidebar</a>
+				<a class="sidebar-item sidebar-link" href="#Table">Table</a>
+				<a class="sidebar-item sidebar-link" href="#TableFixedHeaders">TableFixedHeaders</a>
+				<a class="sidebar-item sidebar-link" href="#Tabs">Tabs</a>
+				<a class="sidebar-item sidebar-link" href="#Well">Well</a>
+			</div>
+		</nav>
+		<div class="oncanvas-body">
+			<div class="container pt2 mb4">
+				<section class="mb4">
+					<h3 class="h3 mb2">Mockups</h3>
+					<ul class="list-inside">
+						<li><a href="./mockup/leadsscreen.html">Leads Screen</a></li>
+						<li><a href="./mockup/vdp.html">Vehicle Display Page</a></li>
+					</ul>
+				</section>
+				<section class="mb4">
+					<hr class="my4 invisible">
+					<h3 class="h3 mb2">Third Party</h3>
+					<h3 id="DatePicker" class="anchor-offset">Date Picker</h3>
+					<div class="form-group">
+						<div class="input-group date" id="datetimepicker1">
+							<input type="text" class="form-control"/>
+							<span class="input-group-addon">
+								<span class="fa fa-calendar"></span>
+							</span>
+						</div>
+					</div>
+				</section>
+				<section class="mb4">
+					<hr class="my4 invisible">
+					<h3 class="h3 mb2">UI Kit</h3>
+					<h3 id="Alert" class="anchor-offset">Alert</h3>
+					<div class="alert">
+						I'm an alert.
+					</div>
+					<hr class="my4 invisible">
+					<h3 id="AlertDismissible" class="anchor-offset">Alert Dismissible</h3>
+					<div class="alert">
+						I'm an alert.
+						<button data-dismiss="alert" class="close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<hr class="my4 invisible">
+					<h3 id="Button" class="anchor-offset">Button</h3>
+					<button class="btn" type="button">button</button>
+					<hr class="my4 invisible">
+					<h3 id="ButtonRounded" class="anchor-offset">Button Rounded</h3>
+					<button class="btn btn-rounded" type="button">button</button>
+					<hr class="my4 invisible">
+					<h3 id="ButtonGroupInline" class="anchor-offset">Button Group Inline</h3>
+					<div class="btn-group-inline">
+						<button class="btn" type="button">button</button>
+						<button class="btn" type="button">button</button>
+						<button class="btn" type="button">button</button>
+					</div>
+					<hr class="my4 invisible">
+					<h3 id="ButtonGroupJustified" class="anchor-offset">Button Group Justified</h3>
+					<div class="btn-group-inline btn-group-justified">
+						<button class="btn" type="button">button</button>
+						<button class="btn" type="button">button</button>
+						<button class="btn" type="button">button</button>
+					</div>
+					<hr class="my4 invisible">
+					<h3 id="ButtonGroupStacked" class="anchor-offset">Button Group Stacked</h3>
+					<div class="btn-group-stacked">
+						<button class="btn" type="button">button</button>
+						<button class="btn" type="button">button</button>
+						<button class="btn" type="button">button</button>
+					</div>
+					<hr class="my4 invisible">
+					<h3 id="Card" class="anchor-offset">Card</h3>
+					<div class="card">
+						<div class="card-header">Card Header</div>
+						<div class="card-body">Card Body</div>
+						<div class="card-footer">Card Footer</div>
+					</div>
+					<hr class="my4 invisible">
+					<h3 id="CardGroup" class="anchor-offset">Card Group</h3>
+					<div class="card-group">
+						<div class="card">
+							<div class="card-header">Card Header</div>
+							<div class="card-body">Card Body</div>
+							<div class="card-footer">Card Footer</div>
+						</div>
+						<div class="card">
+							<div class="card-header">Card Header</div>
+							<div class="card-body">Card Body</div>
+							<div class="card-footer">Card Footer</div>
+						</div>
+						<div class="card">
+							<div class="card-header">Card Header</div>
+							<div class="card-body">Card Body</div>
+							<div class="card-footer">Card Footer</div>
+						</div>
+					</div>
+					<hr class="my4 invisible">
+					<h3 id="Dropdown" class="anchor-offset">Dropdown</h3>
+					<div class="dropdown">
+						<button data-toggle="dropdown" class="dropdown-toggle">Dropdown</button>
+						<div class="dropdown-menu">
+							<a href="#" class="dropdown-item dropdown-link">Item 1</a>
+							<a href="#" class="dropdown-item dropdown-link">Item 2</a>
+							<div class="dropdown-item dropdown-divider">
+							</div>
+							<a href="#" class="dropdown-item dropdown-link">Item 3</a>
+						</div>
+					</div>
+					<hr class="my4 invisible">
+					<h3 id="DropdownRounded" class="anchor-offset">Dropdown Rounded</h3>
+					<div class="dropdown dropdown-rounded">
+						<button data-toggle="dropdown" class="dropdown-toggle">Dropdown</button>
+						<div class="dropdown-menu">
+							<a href="#" class="dropdown-item dropdown-link">Item 1</a>
+							<a href="#" class="dropdown-item dropdown-link">Item 2</a>
+							<div class="dropdown-item dropdown-divider">
+							</div>
+							<a href="#" class="dropdown-item dropdown-link">Item 3</a>
+						</div>
+					</div>
+					<hr class="my4 invisible">
+					<h3 id="Forms" class="anchor-offset">Forms</h3>
+					<form>
+						<div class="form-group">
+							<label class="form-label" for="exampleInputEmail1">Email address</label>
+							<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+							<small class="form-helper-text text-muted">We'll never share your email with anyone else.</small>
+						</div>
+						<div class="form-group">
+							<label class="form-label" for="exampleInputPassword1">Password</label>
+							<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+						</div>
+						<div class="form-group">
+							<label class="form-label" for="exampleSelect1">Example select</label>
+							<select class="form-control" id="exampleSelect1">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label class="form-label" for="exampleSelect2">Example multiple select</label>
+							<select multiple class="form-control" id="exampleSelect2">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label class="form-label" for="exampleInputFile">File input</label>
+							<input type="file" class="form-control-file" id="exampleInputFile">
+							<small class="form-helper-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+						</div>
+						<div class="radio">
+							<label>
+								<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+								Option one is this and that—be sure to include why it's great
+							</label>
+						</div>
+						<div class="radio">
+							<label>
+								<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+								Option two can be something else and selecting it will deselect option one
+							</label>
+						</div>
+						<div class="radio disabled">
+							<label>
+								<input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
+								Option three is disabled
+							</label>
+						</div>
+						<div class="checkbox">
+							<label>
+								<input type="checkbox">
+								Check me out
+							</label>
+						</div>
+						<button type="submit" class="btn">Submit</button>
+					</form>
+					<hr class="my4 invisible">
+					<h3 id="FormsInline" class="anchor-offset">Forms Inline</h3>
+					<form class="form-inline">
+						<div class="form-group">
+							<label class="form-label" class="form-label" for="exampleInputEmail1">Email address</label>
+							<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+							<small class="form-helper-text text-muted">We'll never share your email with anyone else.</small>
+						</div>
+						<div class="form-group">
+							<label class="form-label" class="form-label" for="exampleInputPassword1">Password</label>
+							<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+						</div>
+						<div class="form-group">
+							<label class="form-label" for="exampleSelect1">Example select</label>
+							<select class="form-control" id="exampleSelect1">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label class="form-label" for="exampleSelect2">Example multiple select</label>
+							<select multiple class="form-control" id="exampleSelect2">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label class="form-label" for="exampleInputFile">File input</label>
+							<input type="file" class="form-control-file" id="exampleInputFile">
+							<small class="form-helper-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+						</div>
+						<div class="radio">
+							<label>
+								<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+								Option one is this and that—be sure to include why it's great
+							</label>
+						</div>
+						<div class="radio">
+							<label>
+								<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+								Option two can be something else and selecting it will deselect option one
+							</label>
+						</div>
+						<div class="radio disabled">
+							<label>
+								<input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
+								Option three is disabled
+							</label>
+						</div>
+						<div class="checkbox">
+							<label>
+								<input type="checkbox">
+								Check me out
+							</label>
+						</div>
+						<button type="submit" class="btn">Submit</button>
+					</form>
+					<hr class="my4 invisible">
+					<h3 id="Histogram" class="anchor-offset">Histogram</h3>
+					<div class="histogram">
+						<div class="histogram-body">
+							<div class="histogram-x-body">
+								<!-- normalized value piped into style as height -->
+								<span class="histogram-x-bar" style="height: 10%;"><span class="histogram-x-label">1</span></span>
+								<span class="histogram-x-bar" style="height: 20%;"><span class="histogram-x-label">2</span></span>
+								<span class="histogram-x-bar" style="height: 70%;"><span class="histogram-x-label">7</span></span>
+								<span class="histogram-x-bar" style="height: 40%;"><span class="histogram-x-label">4</span></span>
+								<span class="histogram-x-bar" style="height: 30%;"><span class="histogram-x-label">3</span></span>
+							</div>
+						</div>
+						<div class="histogram-labels">
+							<div class="histogram-y-labels">
+								<span class="histogram-y-label">10</span>
+								<span class="histogram-y-label">20</span>
+								<span class="histogram-y-label">30</span>
+							</div>
+						</div>
+					</div>
+					<hr class="my4 invisible">
+					<h3 id="AreaChart" class="anchor-offset">Area Chart</h3>
+					<table class="table areachart">
+						<tr>
+							<th><div>40</div></th>
+							<td><div></div></td>
+							<td><div></div></td>
+							<td><div></div></td>
+							<td><div></div></td>
+							<td><div></div></td>
+							<td><div></div></td>
+						</tr>
+						<tr>
+							<th><div>30</div></th>
+							<td><div></div></td>
+							<td><div></div></td>
+							<td><div></div></td>
+							<td><div></div></td>
+							<td><div></div></td>
+							<td><div></div></td>
+						</tr>
+						<tr>
+							<th><div>20</div></th>
+							<td><div></div></td>
+							<td><div></div></td>
+							<td><div></div></td>
+							<td><div></div></td>
+							<td><div></div></td>
+							<td><div></div></td>
+						</tr>
+						<tr>
+							<th><div>10</div></th>
+							<td><div></div></td>
+							<td><div></div></td>
+							<td><div></div></td>
+							<td><div></div></td>
+							<td><div></div></td>
+							<td><div></div></td>
+						</tr>
+						<tr>
+							<td><div>xxx</div></td>
+							<td><div>mar</div></td>
+							<td><div>apr</div></td>
+							<td><div>may</div></td>
+							<td><div>jun</div></td>
+							<td><div>jul</div></td>
+							<td><div>aug</div></td>
+						</tr>
+					</table>
+					<hr class="my4 invisible">
+					<h3 id="InputGroup" class="anchor-offset">Input Group</h3>
+					<div class="input-group">
+						<input type="text" placeholder="Username" aria-describedby="basic-addon1" class="form-control">
+						<a id="basic-addon1" class="btn input-group-addon" href="#">Button</a>
+					</div>
+					<hr class="my4 invisible">
+					<h3 id="InputGroupRounded" class="anchor-offset">Input Group Rounded</h3>
+					<div class="input-group input-group-rounded">
+						<input type="text" placeholder="Username" aria-describedby="basic-addon1" class="form-control">
+						<a id="basic-addon1" class="btn input-group-addon" href="#">Button</a>
+					</div>
+					<hr class="my4 invisible">
+					<h3 id="ListGroupInline" class="anchor-offset">List Group Inline</h3>
+					<div class="list-group-inline">
+						<div class="list-group-item">List Group Item</div>
+						<div class="list-group-item">List Group Item</div>
+						<div class="list-group-item">List Group Item</div>
+					</div>
+					<hr class="my4 invisible">
+					<h3 id="ListGroupStacked" class="anchor-offset">List Group Stacked</h3>
+					<div class="list-group-stacked">
+						<div class="list-group-item">List Group Item</div>
+						<div class="list-group-item">List Group Item</div>
+						<div class="list-group-item">List Group Item</div>
+					</div>
+					<hr class="my4 invisible">
+					<h3 id="Media" class="anchor-offset">Media</h3>
+					<div class="media">
+						<div class="media-object">
+							<img src="http://placehold.it/64x64" alt="">
+						</div>
+						<div class="media-body">
+							<p>I"m a media body. Elit error illum eum eos ipsa repellat? Quas dolores cum quam est vel optio perspiciatis fuga eveniet. Sapiente assumenda vitae eveniet maxime nulla, quasi? Totam odit consequatur sint quasi iste.</p>
+							<p>Dolor alias vitae minus molestias laboriosam placeat doloribus commodi repudiandae, debitis! Unde mollitia pariatur nemo error ad laboriosam similique enim quasi assumenda! Ducimus numquam repellendus numquam voluptatibus amet dignissimos? Fugiat.</p>
+						</div>
+					</div>
+					<hr class="my4 invisible">
+					<h3 id="MediaBottom" class="anchor-offset">Media Bottom</h3>
+					<div class="media media-bottom">
+						<div class="media-object">
+							<img src="http://placehold.it/64x64" alt="">
+						</div>
+						<div class="media-body">
+							<p>I"m a media body. Elit error illum eum eos ipsa repellat? Quas dolores cum quam est vel optio perspiciatis fuga eveniet. Sapiente assumenda vitae eveniet maxime nulla, quasi? Totam odit consequatur sint quasi iste.</p>
+							<p>Dolor alias vitae minus molestias laboriosam placeat doloribus commodi repudiandae, debitis! Unde mollitia pariatur nemo error ad laboriosam similique enim quasi assumenda! Ducimus numquam repellendus numquam voluptatibus amet dignissimos? Fugiat.</p>
+						</div>
+					</div>
+					<hr class="my4 invisible">
+					<h3 id="MediaMiddle" class="anchor-offset">Media Middle</h3>
+					<div class="media media-middle">
+						<div class="media-object">
+							<img src="http://placehold.it/64x64" alt="">
+						</div>
+						<div class="media-body">
+							<p>I"m a media body. Elit error illum eum eos ipsa repellat? Quas dolores cum quam est vel optio perspiciatis fuga eveniet. Sapiente assumenda vitae eveniet maxime nulla, quasi? Totam odit consequatur sint quasi iste.</p>
+							<p>Dolor alias vitae minus molestias laboriosam placeat doloribus commodi repudiandae, debitis! Unde mollitia pariatur nemo error ad laboriosam similique enim quasi assumenda! Ducimus numquam repellendus numquam voluptatibus amet dignissimos? Fugiat.</p>
+						</div>
+					</div>
+					<hr class="my4 invisible">
+					<h3 id="MediaNested" class="anchor-offset">Media Nested</h3>
+					<div class="media">
+						<div class="media-object">
+							<img src="http://placehold.it/64x64" alt="">
+						</div>
+						<div class="media-body">
+							<p>I"m a media body. Elit error illum eum eos ipsa repellat? Quas dolores cum quam est vel optio perspiciatis fuga eveniet. Sapiente assumenda vitae eveniet maxime nulla, quasi? Totam odit consequatur sint quasi iste.</p>
+							<p>Dolor alias vitae minus molestias laboriosam placeat doloribus commodi repudiandae, debitis! Unde mollitia pariatur nemo error ad laboriosam similique enim quasi assumenda! Ducimus numquam repellendus numquam voluptatibus amet dignissimos? Fugiat.</p>
+							<div class="media">
+								<div class="media-object">
+									<img src="http://placehold.it/64x64" alt="Media left image placeholder">
+								</div>
+								<div class="media-body">
+									<p>I"m a media body. Elit error illum eum eos ipsa repellat? Quas dolores cum quam est vel optio perspiciatis fuga eveniet. Sapiente assumenda vitae eveniet maxime nulla, quasi? Totam odit consequatur sint quasi iste.</p>
+									<p>Dolor alias vitae minus molestias laboriosam placeat doloribus commodi repudiandae, debitis! Unde mollitia pariatur nemo error ad laboriosam similique enim quasi assumenda! Ducimus numquam repellendus numquam voluptatibus amet dignissimos? Fugiat.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<hr class="my4 invisible">
+					<h3 id="Modal" class="anchor-offset">Modal</h3>
+					<button type="button" data-toggle="modal" data-target="#myModal" class="btn">Launch Demo Modal</button>
+					<div id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade">
+						<div role="document" class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h4 id="myModalLabel" class="modal-title">Modal Title Lorem molestiae consequuntur id a nihil itaque laudantium vitae, sequi numquam dignissimos praesentium impedit, illo suscipit suscipit voluptate asperiores? Quas distinctio aliquid mollitia vitae quae. Quas inventore odio vitae doloribus!</h4>
+									<button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">&times;</span></button>
+								</div>
+								<div class="modal-body">...</div>
+								<div class="modal-footer">
+									<button type="button" data-dismiss="modal" class="btn">close</button>
+									<button type="button" class="btn">save changes</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<hr class="my4 invisible">
+					<h3 id="Navbar" class="anchor-offset">Navbar</h3>
+					<nav class="navbar">
+						<a href="#" class="navbar-item navbar-link navbar-logo">I"m a Logo</a>
+						<span class="navbar-item">I"m text</span>
+						<a href="#" class="navbar-item navbar-link">I"m a link</a>
+						<button class="navbar-item navbar-link">I"m a button</button>
+						<div class="navbar-item dropdown">
+							<button data-toggle="dropdown" class="dropdown-toggle">Dropdown</button>
+							<div class="dropdown-menu">
+								<a href="#" class="dropdown-item dropdown-link">Item 1</a>
+								<a href="#" class="dropdown-item dropdown-link">Item 2</a>
+								<div class="dropdown-item dropdown-divider">
+								</div>
+								<a href="#" class="dropdown-item dropdown-link">Item 3</a>
+							</div>
+						</div>
+					</nav>
+					<hr class="my4 invisible">
+					<h3 id="Nav" class="anchor-offset">Nav</h3>
+					<nav class="nav">
+						<a class="nav-item nav-link" href="">Nav Item</a>
+						<a class="nav-item nav-link" href="">Nav Item</a>
+						<a class="nav-item nav-link" href="">Nav Item</a>
+					</nav>
+					<hr class="my4 invisible">
+					<h3 id="NavTabs" class="anchor-offset">Nav Tabs</h3>
+					<nav class="nav nav-tabs">
+						<a class="nav-item nav-link active" href="">Nav Tab Item</a>
+						<a class="nav-item nav-link" href="">Nav Tab Item</a>
+						<a class="nav-item nav-link" href="">Nav Tab Item</a>
+					</nav>
+					<hr class="my4 invisible">
+					<h3 id="NavPills" class="anchor-offset">Nav Pills</h3>
+					<nav class="nav nav-pills">
+						<a class="nav-item nav-link active" href="">Nav Pill Item</a>
+						<a class="nav-item nav-link" href="">Nav Pill Item</a>
+						<a class="nav-item nav-link" href="">Nav Pill Item</a>
+					</nav>
+					<hr class="my4 invisible">
+					<h3 id="Sidebar" class="anchor-offset">Sidebar</h3>
+					<nav class="sidebar">
+						<div class="sidebar-header">
+							<span class="sidebar-item">Sidebar Header!</span>
+							<div class="sidebar-item">
+								<input class="form-control" type="text">
+							</div>
+						</div>
+						<div class="sidebar-body">
+							<span class="sidebar-item">Sidebar Item 1</span>
+							<span class="sidebar-item">Sidebar Item 2</span>
+							<span class="sidebar-item">Sidebar Item 3</span>
+						</div>
+					</nav>
+					<hr class="my4 invisible">
+					<h3 id="Table" class="anchor-offset">Table</h3>
+					<table class="table">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>First Name</th>
+								<th>Last Name</th>
+								<th>Username</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">1</th>
+								<td>Mark</td>
+								<td>Otto</td>
+								<td>@mdo</td>
+							</tr>
+							<tr>
+								<th scope="row">2</th>
+								<td>Jacob</td>
+								<td>Thornton</td>
+								<td>@fat</td>
+							</tr>
+							<tr>
+								<th scope="row">3</th>
+								<td>Larry</td>
+								<td>the Bird</td>
+								<td>@twitter</td>
+							</tr>
+						</tbody>
+					</table>
+					<hr class="my4 invisible">
+					<h3 id="TableFixedHeaders" class="anchor-offset">Table Fixed Headers</h3>
+					<div class="table-fixedheaders">
+						<div class="table-responsive">
+							<table class="table">
+								<thead>
+									<tr>
+										<th>
+											<div class="fixedghost">#</div>
+											<div class="fixedheader">#</div>
+										</th>
+										<th>
+											<div class="fixedghost">First Name</div>
+											<div class="fixedheader">First Name</div>
+										</th>
+										<th>
+											<div class="fixedghost">Last Name</div>
+											<div class="fixedheader">Last Name</div>
+										</th>
+										<th>
+											<div class="fixedghost">Username</div>
+											<div class="fixedheader">Username</div>
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row">1</th>
+										<td>Mark</td>
+										<td>Otto</td>
+										<td>@mdo</td>
+									</tr>
+									<tr>
+										<th scope="row">2</th>
+										<td>Jacob</td>
+										<td>Thornton</td>
+										<td>@fat</td>
+									</tr>
+									<tr>
+										<th scope="row">3</th>
+										<td>Larry</td>
+										<td>the Bird</td>
+										<td>@twitter</td>
+									</tr>
+									<tr>
+										<th scope="row">4</th>
+										<td>Larry</td>
+										<td>the Bird</td>
+										<td>@twitter</td>
+									</tr>
+									<tr>
+										<th scope="row">5</th>
+										<td>Larry</td>
+										<td>the Bird</td>
+										<td>@twitter</td>
+									</tr>
+									<tr>
+										<th scope="row">6</th>
+										<td>Larry</td>
+										<td>the Bird</td>
+										<td>@twitter</td>
+									</tr>
+									<tr>
+										<th scope="row">7</th>
+										<td>Larry</td>
+										<td>the Bird</td>
+										<td>@twitter</td>
+									</tr>
+									<tr>
+										<th scope="row">8</th>
+										<td>Larry</td>
+										<td>the Bird</td>
+										<td>@twitter</td>
+									</tr>
+									<tr>
+										<th scope="row">9</th>
+										<td>Larry</td>
+										<td>the Bird</td>
+										<td>@twitter</td>
+									</tr>
+									<tr>
+										<th scope="row">10</th>
+										<td>Larry</td>
+										<td>the Bird</td>
+										<td>@twitter</td>
+									</tr>
+									<tr>
+										<th scope="row">11</th>
+										<td>Larry</td>
+										<td>the Bird</td>
+										<td>@twitter</td>
+									</tr>
+									<tr>
+										<th scope="row">12</th>
+										<td>Larry</td>
+										<td>the Bird</td>
+										<td>@twitter</td>
+									</tr>
+									<tr>
+										<th scope="row">13</th>
+										<td>Larry</td>
+										<td>the Bird</td>
+										<td>@twitter</td>
+									</tr>
+									<tr>
+										<th scope="row">14</th>
+										<td>Larry</td>
+										<td>the Bird</td>
+										<td>@twitter</td>
+									</tr>
+									<tr>
+										<th scope="row">15</th>
+										<td>Larry</td>
+										<td>the Bird</td>
+										<td>@twitter</td>
+									</tr>
+									<tr>
+										<th scope="row">16</th>
+										<td>Larry</td>
+										<td>the Bird</td>
+										<td>@twitter</td>
+									</tr>
+									<tr>
+										<th scope="row">17</th>
+										<td>Larry</td>
+										<td>the Bird</td>
+										<td>@twitter</td>
+									</tr>
+									<tr>
+										<th scope="row">18</th>
+										<td>Larry</td>
+										<td>the Bird</td>
+										<td>@twitter</td>
+									</tr>
+									<tr>
+										<th scope="row">19</th>
+										<td>Larry</td>
+										<td>the Bird</td>
+										<td>@twitter</td>
+									</tr>
+									<tr>
+										<th scope="row">20</th>
+										<td>Larry</td>
+										<td>the Bird</td>
+										<td>@twitter</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<hr class="my4 invisible">
+					<h3 id="Tabs" class="anchor-offset">Tabs</h3>
+					<div class="nav nav-tabs" role="tablist">
+						<a href="#home" class="nav-item nav-link active" data-toggle="tab" role="tab">Active</a>
+						<a href="#profile" class="nav-item nav-link" data-toggle="tab" role="tab">Tab Item</a>
+						<a href="#messages" class="nav-item nav-link" data-toggle="tab" role="tab">Tab Item</a>
+						<a href="#settings" class="nav-item nav-link" data-toggle="tab" role="tab">Tab Item</a>
+					</div>
+					<div class="tab-content">
+						<div class="tab-pane active" id="home" role="tabpanel">Stuff1</div>
+						<div class="tab-pane" id="profile" role="tabpanel">Stuff2</div>
+						<div class="tab-pane" id="messages" role="tabpanel">Stuff3</div>
+						<div class="tab-pane" id="settings" role="tabpanel">Stuff4</div>
+					</div>
+					<hr class="my4 invisible">
+					<h3 id="Well" class="anchor-offset">Well</h3>
+					<div class="well">I'm a well</div>
+				</section>
+			</div>
+		</div>
+		<div class="offcanvas-backdrop js-offcanvas-backdrop"></div>
+		<script defer src="./js/vendor/jquery.js"></script>
+		<script defer src="./js/vendor/tether.js"></script>
+		<script defer src="./js/vendor/bootstrap4.js"></script>
+		<script defer src="./js/vendor/moment.js"></script>
+		<script defer src="./js/vendor/bootstrap-datepicker.js"></script>
+		<script defer src="./js/mockup/sidebar.js"></script>
+		<script defer src="./js/mockup/datepicker.js"></script>
+	</body>
+</html>

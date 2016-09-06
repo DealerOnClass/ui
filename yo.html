@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link rel=stylesheet href="http://cdn.dlron.us/js/bootstrap/css/bootstrap.min.css?v=07aa9505b195">
+		<title>because yes</title>
+	</head>
+	<body class="container">
+		<style>
+			/* Staff Blocks */
+		.staff-row {
+			display: block;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			display:-webkit-flex;
+			-ms-flex-flow: row wrap;
+			-webkit-flex-flow: row wrap;
+			flex-flow: row wrap;
+		}
+		.staff-card {
+			display: inline-block;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			display:-webkit-flex;
+		}
+		.staff-info {
+			-ms-flex-flow: column nowrap;
+			-webkit-flex-flow: column nowrap;
+			flex-flow: column nowrap;
+			-webkit-box-pack: justify;
+			-ms-flex-pack: justify;
+			-webkit-justify-content: space-between;
+			justify-content: space-between;
+			-ms-flex-line-pack: start;
+			-webkit-align-content: flex-start;
+			align-content: flex-start;
+			word-break: break-word;
+			word-wrap: break-word;
+		}
+		.staff-panel {
+			border-color: #ddd;
+			width: 100%;
+		}
+		/* Nav Menu */
+		.staff-nav {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: -webkit-flex;
+			display: flex;
+			-ms-flex-flow: row wrap;
+			-webkit-flex-flow: row wrap;
+			flex-flow: row wrap;
+			margin-bottom: 50px;
+		}
+		.staff-nav > li {
+			margin-right: 2px;
+			margin-bottom: 2px;
+			font-weight: bold;
+			white-space: normal;
+		}
+		.staff-nav > li > a {
+			padding: 10px 15px;
+		}
+		.staff-nav .btn-alt3.active, .staff-nav .btn-alt3:active {
+			outline: 0;
+			box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+		}
+		/* Media Queries */
+		@media (max-width: 767px) {
+			.staff-card {
+				-webkit-box-flex: 1;
+				-ms-flex-positive: 1;
+				-webkit-flex-grow: 1;
+				flex-grow: 1;
+			}
+			.staff-row {
+				margin-left: -15px;
+				margin-right: -15px;
+			}
+			.staff-nav {
+				display: block;
+				text-align: center;
+			}
+			.staff-nav .btn {
+				width: 100%;
+			}
+			.staff-nav > li {
+				margin-bottom: 5px;
+			}
+		}
+		@media (max-width: 539px){
+			.col-xxs-8 {width: 67%;}
+			.col-xxs-4 {width: 33%;}
+		} 
+	</style>
+	<div id="tabs">
+		<ul class="staff-nav list-unstyled">
+			<li>
+				<a class="btn btn-alt3 border-radius-x" data-toggle="tab" href="#tab1">Department 1</a>
+			</li>
+			<li>
+				<a class="btn btn-alt3 border-radius-x" data-toggle="tab" href="#tab2">Department 2</a>
+			</li>
+			<li>
+				<a class="btn btn-alt3 border-radius-x" data-toggle="tab" href="#tab3">Department 3</a>
+			</li>
+			<li>
+				<a class="btn btn-alt3 border-radius-x" data-toggle="tab" href="#tab4">Department 4</a>
+			</li>
+			<li>
+				<a class="btn btn-alt3 border-radius-x" data-toggle="tab" href="#tab5">Department 5</a>
+			</li>
+		</ul>
+	</div>
+	<div id="tabDisplay">
+		<div class="tab-content margin-top-1x">
+			<div id="tab1" class="tab-pane fade active in">
+				<div class="staff-row gutter-2x">
+					<div class="staff-card col-md-4 col-sm-6">
+						<div class="panel panel-body staff-panel">
+							<div class="row">
+								<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
+									<img class="img-responsive margin-auto" src="http://placehold.it/300x300" alt="#NAME# in #CITY# #STATE#">
+								</div>
+								<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
+									<div class="staff-title h3 margin-top-x">Staff Title</div>
+									<div class="staff-desc margin-bottom_5x">
+										<em>Example Staff Description.</em>
+									</div>
+									<div class="staff-RM">
+										<a class="btn btn-main btn-sm" data-toggle="modal" href="#">
+											<i class="fa fa-user">
+										</i> Read More</a>
+									</div>
+									<div class="btn-group margin-top_5x panel staff-contact">
+										<a href="tel:" class="btn btn-main btn-sm phone1 phone-alert">
+											<i class="fa fa-phone">
+											</i>
+										</a>
+										<a class="btn btn-main btn-sm email" href="mailto: ">
+											<i class="fa fa-envelope">
+											</i>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="staff-card col-md-4 col-sm-6">
+						<div class="panel panel-body staff-panel">
+							<div class="row">
+								<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
+									<img class="img-responsive margin-auto" src="http://placehold.it/300x300" alt="#NAME# in #CITY# #STATE#">
+								</div>
+								<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
+									<div class="staff-title h3 margin-top-x">Staff Title</div>
+									<div class="staff-desc margin-bottom_5x">
+										<em>Example Staff Description.</em>
+									</div>
+									<div class="staff-RM">
+										<a class="btn btn-main btn-sm" data-toggle="modal" href="#">
+											<i class="fa fa-user">
+										</i> Read More</a>
+									</div>
+									<div class="btn-group margin-top_5x panel staff-contact">
+										<a href="tel:" class="btn btn-main btn-sm phone1 phone-alert">
+											<i class="fa fa-phone">
+											</i>
+										</a>
+										<a class="btn btn-main btn-sm email" href="mailto: ">
+											<i class="fa fa-envelope">
+											</i>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="staff-card col-md-4 col-sm-6">
+						<div class="panel panel-body staff-panel">
+							<div class="row">
+								<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
+									<img class="img-responsive margin-auto" src="http://placehold.it/300x300" alt="#NAME# in #CITY# #STATE#">
+								</div>
+								<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
+									<div class="staff-title h3 margin-top-x">Staff Title</div>
+									<div class="staff-desc margin-bottom_5x">
+										<em>Example Staff Description.</em>
+									</div>
+									<div class="staff-RM">
+										<a class="btn btn-main btn-sm" data-toggle="modal" href="#">
+											<i class="fa fa-user">
+										</i> Read More</a>
+									</div>
+									<div class="btn-group margin-top_5x panel staff-contact">
+										<a href="tel:" class="btn btn-main btn-sm phone1 phone-alert">
+											<i class="fa fa-phone">
+											</i>
+										</a>
+										<a class="btn btn-main btn-sm email" href="mailto: ">
+											<i class="fa fa-envelope">
+											</i>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="staff-card col-md-4 col-sm-6">
+						<div class="panel panel-body staff-panel">
+							<div class="row">
+								<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
+									<img class="img-responsive margin-auto" src="http://placehold.it/300x300" alt="#NAME# in #CITY# #STATE#">
+								</div>
+								<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
+									<div class="staff-title h3 margin-top-x">Staff Title</div>
+									<div class="staff-desc margin-bottom_5x">
+										<em>Example Staff Description.</em>
+									</div>
+									<div class="staff-RM">
+										<a class="btn btn-main btn-sm" data-toggle="modal" href="#">
+											<i class="fa fa-user">
+										</i> Read More</a>
+									</div>
+									<div class="btn-group margin-top_5x panel staff-contact">
+										<a href="tel:" class="btn btn-main btn-sm phone1 phone-alert">
+											<i class="fa fa-phone">
+											</i>
+										</a>
+										<a class="btn btn-main btn-sm email" href="mailto: ">
+											<i class="fa fa-envelope">
+											</i>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="staff-card col-md-4 col-sm-6">
+						<div class="panel panel-body staff-panel">
+							<div class="row">
+								<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
+									<img class="img-responsive margin-auto" src="http://placehold.it/300x300" alt="#NAME# in #CITY# #STATE#">
+								</div>
+								<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
+									<div class="staff-title h3 margin-top-x">Staff Title</div>
+									<div class="staff-desc margin-bottom_5x">
+										<em>Example Staff Description.</em>
+									</div>
+									<div class="staff-RM">
+										<a class="btn btn-main btn-sm" data-toggle="modal" href="#">
+											<i class="fa fa-user">
+										</i> Read More</a>
+									</div>
+									<div class="btn-group margin-top_5x panel staff-contact">
+										<a href="tel:" class="btn btn-main btn-sm phone1 phone-alert">
+											<i class="fa fa-phone">
+											</i>
+										</a>
+										<a class="btn btn-main btn-sm email" href="mailto: ">
+											<i class="fa fa-envelope">
+											</i>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="staff-card col-md-4 col-sm-6">
+						<div class="panel panel-body staff-panel">
+							<div class="row">
+								<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
+									<img class="img-responsive margin-auto" src="http://placehold.it/300x300" alt="#NAME# in #CITY# #STATE#">
+								</div>
+								<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
+									<div class="staff-title h3 margin-top-x">Staff Title</div>
+									<div class="staff-desc margin-bottom_5x">
+										<em>Example Staff Description.</em>
+									</div>
+									<div class="staff-RM">
+										<a class="btn btn-main btn-sm" data-toggle="modal" href="#">
+											<i class="fa fa-user">
+										</i> Read More</a>
+									</div>
+									<div class="btn-group margin-top_5x panel staff-contact">
+										<a href="tel:" class="btn btn-main btn-sm phone1 phone-alert">
+											<i class="fa fa-phone">
+											</i>
+										</a>
+										<a class="btn btn-main btn-sm email" href="mailto: ">
+											<i class="fa fa-envelope">
+											</i>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

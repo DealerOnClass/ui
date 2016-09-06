@@ -26,6 +26,9 @@ $bs-datetimepicker-text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25) !default;
     &.dropdown-menu {
         width: 19em;
         margin: 2px 0 0;
+		display: block;
+		opacity: 1;
+		pointer-events: all;
         //	padding: 4px;
 
         &.timepicker-sbs {
@@ -201,7 +204,7 @@ $bs-datetimepicker-text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25) !default;
 
             span {
                 //	line-height: 2.5;
-                width: 100%;
+				width: 100%;
                 //	height: 2.5em;
             }
         }

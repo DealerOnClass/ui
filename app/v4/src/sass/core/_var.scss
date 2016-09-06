@@ -9,8 +9,14 @@ $media-max-sm: 543px;
 $media-max-md: 767px;
 $media-max-lg: 991px;
 $media-max-xl: 1199px;
+$breakpoints: (
+	"sm": $media-min-sm,
+	"md": $media-min-md,
+	"lg": $media-min-lg,
+	"xl": $media-min-xl,
+);
 //
-//	Colors
+//	Colors Grayscale
 //
 $color-white: #fff;
 $color-black: #000;
@@ -27,6 +33,20 @@ $grayscale: (
 	"08":  mix($color-black, $color-white, 80%),
 	"09":  mix($color-black, $color-white, 90%),
 );
+$gray-0025: map-get($grayscale, "0025");
+$gray-005: map-get($grayscale, "005");
+$gray-01: map-get($grayscale, "01");
+$gray-02: map-get($grayscale, "02");
+$gray-03: map-get($grayscale, "03");
+$gray-04: map-get($grayscale, "04");
+$gray-05: map-get($grayscale, "05");
+$gray-06: map-get($grayscale, "06");
+$gray-07: map-get($grayscale, "07");
+$gray-08: map-get($grayscale, "08");
+$gray-09: map-get($grayscale, "09");
+//
+//	Colors Palette
+//
 $color-default: #e4e4e4;
 $color-primary: #3662ad;
 $color-accent: #f36c0a;
@@ -35,6 +55,9 @@ $color-state-success: #5cb85c !default;
 $color-state-info: #5bc0de !default;
 $color-state-warning: #f0ad4e !default;
 $color-state-danger: #d9534f !default;
+//
+//	Color Palettes
+//
 $palette-default: (
     "default":  $color-default,
 );
@@ -70,7 +93,20 @@ $grid-gutter: 1rem;
 $font-path: "../../font/";
 $image-path: "../../img/";
 //
-//	Units
+//	Units - global
+//
+$global-unit: 1em;
+//
+//	Units - spacers
+//
+$global-x: 0.4 * $global-unit;
+$global-y: 0.8 * $global-unit;
+//
+//	Units - typography
+//
+$global-lineheight: 1.6;
+//
+//	Z-index
 //
 $zindex-dropdown-menu: 750;
 $zindex-offcanvas-body: 900;
@@ -79,4 +115,3 @@ $zindex-offcanvas-sidebar: 1100;
 $zindex-offcanvas-backdrop: 1050;
 $zindex-modal-backdrop: 1400;
 $zindex-modal: 1500;
-

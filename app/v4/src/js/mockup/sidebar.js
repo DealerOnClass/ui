@@ -6,16 +6,16 @@ var sidebar = (function () {
 	var sidebarToggle = document.querySelector(".js-offcanvas-toggle");
 	var backdrop	  = document.querySelector(".js-offcanvas-backdrop");
 
-	Init = function () {
+	function Init() {
 		AddEventListeners();
 	}
 
-	AddEventListeners = function () {
+	function AddEventListeners() {
 		sidebarToggle.addEventListener("click", Toggle);
 		backdrop.addEventListener("click", CloseSidebar);
 	}
 
-	Toggle = function (evt) {
+	function Toggle(evt) {
 		evt.preventDefault();
 		if (!sidebarIsOpen) {
 			OpenSidebar();
@@ -24,12 +24,12 @@ var sidebar = (function () {
 		}
 	}
 
-	CloseSidebar = function () {
+	function CloseSidebar() {
 		body.classList.remove("sidebar-is-open");
 		sidebarIsOpen = false;
 	}
 
-	OpenSidebar = function () {
+	function OpenSidebar() {
 		body.classList.add("sidebar-is-open");
 		sidebarIsOpen = true;
 	}

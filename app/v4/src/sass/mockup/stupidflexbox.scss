@@ -1,0 +1,81 @@
+/* Staff Blocks */
+.staff-row {
+	display: block;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	//	flex-flow: row wrap;
+}
+.staff-card {
+	display: inline-block;
+	display: flex;
+	flex: 1 1 auto;
+}
+.staff-info {
+	flex-direction: column;
+	flex-wrap: wrap;
+	//	flex-flow: column nowrap;
+	justify-content: space-between;
+	align-content: flex-start;
+	word-break: break-word;
+	word-wrap: break-word;
+}
+.staff-panel {
+	border-color: #ddd;
+	width: 100%;
+}
+/* Nav Menu */
+.staff-nav {
+	display: flex;
+	flex-flow: row wrap;
+	margin-bottom: 50px;
+}
+.staff-nav > li {
+	margin-right: 2px;
+	margin-bottom: 2px;
+	font-weight: bold;
+	white-space: normal;
+}
+.staff-nav > li > a {
+	padding: 10px 15px;
+}
+.staff-nav .btn-alt3.active, .staff-nav .btn-alt3:active {
+	outline: 0;
+	box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+}
+/* Media Queries */
+@media (max-width: 767px) {
+	.staff-card {
+		-webkit-box-flex: 1;
+		-ms-flex-positive: 1;
+		-webkit-flex-grow: 1;
+		flex-grow: 1;
+	}
+	.staff-row {
+		margin-left: -15px;
+		margin-right: -15px;
+	}
+	.staff-nav {
+		display: block;
+		text-align: center;
+	}
+	.staff-nav .btn {
+		width: 100%;
+	}
+	.staff-nav > li {
+		margin-bottom: 5px;
+	}
+}
+@media (max-width: 539px){
+	.col-xxs-8 {width: 67%;}
+	.col-xxs-4 {width: 33%;}
+} 
+
+/*
+ * stuipd panels
+ */
+.panel {
+    padding: 15px;
+    border: 1px solid;
+    margin-bottom: 20px;
+}

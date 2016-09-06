@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=7">
+		<link rel="stylesheet" href="../css/vendor/font-awesome/font-awesome.css">
+		<link rel="stylesheet" href="../css/vendor/bootstrap/bootstrap.css">
+		<link rel="stylesheet" href="../css/mockup/inventory.css">
+		<title>Inventory</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="clearfix">
+				<div class="pull-left">
+					<h3 class="margin-x text-muted">34 Available Feeds</h3>
+				</div>
+				<div class="pull-right" style="padding-right: .15em">
+					<button class="btn btn-link" type="button" data-toggle="modal" data-target="#createNewFeed" data-keyboard="false" data-backdrop="static">
+						<i class="fa fa-plus"></i>
+					</button>
+				</div>
+			</div>
+		</div>
+		<div id="createNewFeed" class="modal fade">
+			<div class="modal-dialog modal-lg" style="max-width: 100%; width: initial; padding: 0 15px;">
+				<div class="modal-content">
+					<div class="modal-header" style="padding-bottom: 0;">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">
+								<i class="fa fa-times"></i>
+							</span>
+						</button>
+						<h4 id="modal-title" style="margin: 0;">
+							<ul class="nav nav-tabs" role="tablist" style="border-bottom: 0;">
+								<li role="presentation">
+									<a href="#Config" aria-controls="config" role="tab" data-toggle="tab">General Config</a>
+								</li>
+								<li role="presentation" class="active">
+									<a href="#Mappings" aria-controls="mappings" role="tab" data-toggle="tab">Mappings</a>
+								</li>
+							</h4>
+						</div>
+						<div class="modal-body">
+							<div class="tab-content">
+								<div role="tabpanel" class="tab-pane" id="Config">
+									<form class="form form-horizontal" action="">
+										<div class="row">
+											<div class="col-sm-6">
+												<div class="form-group">
+													<label class="col-sm-4 control-label">
+														<span>Name</span>
+														<span>:</span>
+													</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control" placeholder="Enter Name" name="name" value="">
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-4 control-label">
+														<span>URL</span>
+														<span>:</span>
+													</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control" placeholder="Enter URL" name="url" value="">
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-4 control-label">Protocol</label>
+													<div class="col-sm-8">
+														<div class="radio-inline">
+															<input type="radio" name="protocol" value="ftp" checked=""> ftp
+														</div>
+														<div class="radio-inline">
+															<input type="radio" name="protocol" value="sftp"> sftp
+														</div>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-4 control-label">
+														<span>Username</span>
+														<span>:</span>
+													</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control" placeholder="Enter Username" name="username" value="">
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-4 control-label">
+														<span>Password</span>
+														<span>:</span>
+													</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control" placeholder="Enter Password" name="password" value="">
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-4 control-label">
+														<span>Delimiter</span>
+														<span>:</span>
+													</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control" placeholder="Enter Delimiter" name="delimiter" value="">
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-4 control-label">
+														<span>Feed Dealer ID</span>
+														<span>:</span>
+													</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control" placeholder="Enter Feed Dealer ID" name="provider" value="">
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-4 control-label">
+														<span>VIN</span>
+														<span>:</span>
+													</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control" placeholder="Enter VIN" name="vin" value="">
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-4 control-label">
+														<span>Filename</span>
+														<span>:</span>
+													</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control" placeholder="Enter Filename" name="filename">
+													</div>
+												</div>
+											</div>
+											<div class="col-sm-6">
+												<div class="checkbox">
+													<label>
+														<input type="checkbox" class="" name="hasHeaders" checked="">
+														Has Headers?
+													</label>
+												</div>
+												<div class="checkbox">
+													<label>
+														<input type="checkbox" class="" name="isQuoted" checked="">
+														Is Quoted?
+													</label>
+												</div>
+												<div class="checkbox">
+													<label>
+														<input type="checkbox" class="" name="isSecure">
+														Is Secure?
+													</label>
+												</div>
+												<div class="checkbox">
+													<label>
+														<input type="checkbox" class="" name="isZipped">
+														Is Zipped?
+													</label>
+												</div>
+												<div class="checkbox">
+													<label>
+														<input type="checkbox" class="" name="localServer" checked="">
+														Local Server?
+													</label>
+												</div>
+												<div class="checkbox">
+													<label>
+														<input type="checkbox" class="" name="multipleLinesPerVin" checked="">
+														Multiple Lines Per Vin?
+													</label>
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+								<div role="tabpanel" class="tab-pane active" id="Mappings">
+									<form class="form form-horizontal" action="">
+										<div class="clearfix columnmapping__outer">
+											<div class="columnmapping__inner">
+												<div class="columnmapping__item--header">
+													<div class="clearfix">
+														<label class="control-label">
+															<span>Column Header</span>
+															<span>:</span>
+														</label>
+													</div>
+													<div class="clearfix">
+														<label class="control-label">
+															<span>Vehicle Field</span>
+															<span>:</span>
+														</label>
+													</div>
+												</div>
+												<div class="columnmapping__item" style="margin-left: 15px">
+													<div>
+														<input type="text" class="form-control js-columnmapping__input" placeholder="Enter Column Header" name="inFile" value="test header">
+														<select class="form-control js-columnmapping__select" name="inVehicle">
+															<option value="BodyStyle">BodyStyle</option>
+															<option value="BookValue">BookValue</option>
+															<option value="CarfaxOneOwner">CarfaxOneOwner</option>
+															<option value="Category">Category</option>
+															<option value="ChromeStyleID">ChromeStyleID</option>
+															<option value="Comments">Comments</option>
+															<option value="Comments1">Comments1</option>
+															<option value="Comments2">Comments2</option>
+															<option value="Comments3">Comments3</option>
+															<option value="Comments4">Comments4</option>
+															<option value="Comments5">Comments5</option>
+															<option value="Cpo">Cpo</option>
+															<option value="Days">Days</option>
+															<option value="Description1">Description1</option>
+															<option value="Description2">Description2</option>
+															<option value="Display">Display</option>
+															<option value="Doors">Doors</option>
+															<option value="DriveTrainType">DriveTrainType</option>
+															<option value="Engine">Engine</option>
+															<option value="EngineCylinders">EngineCylinders</option>
+															<option value="EngineDisp">EngineDisp</option>
+															<option value="ExtColor">ExtColor</option>
+															<option value="ExtColorCode">ExtColorCode</option>
+															<option value="ExtColorGeneric">ExtColorGeneric</option>
+															<option value="ExteriorEquipment">ExteriorEquipment</option>
+															<option value="Features">Features</option>
+															<option value="FeedId">FeedId</option>
+															<option value="FuelType">FuelType</option>
+															<option value="IsHybrid">IsHybrid</option>
+															<option value="InventoryPhotosCount">InventoryPhotosCount</option>
+															<option value="StockPhotosCount">StockPhotosCount</option>
+															<option value="ImageList">ImageList</option>
+															<option value="IntColor">IntColor</option>
+															<option value="IntColorCode">IntColorCode</option>
+															<option value="IntColorGeneric">IntColorGeneric</option>
+															<option value="InteriorEquipment">InteriorEquipment</option>
+															<option value="InternetPrice">InternetPrice</option>
+															<option value="InTransit">InTransit</option>
+															<option value="Invoice">Invoice</option>
+															<option value="IsSpecial">IsSpecial</option>
+															<option value="IsUpdated">IsUpdated</option>
+															<option value="Make">Make</option>
+															<option value="MechanicalEquipment">MechanicalEquipment</option>
+															<option value="MediaLink">MediaLink</option>
+															<option value="Mileage">Mileage</option>
+															<option value="Model">Model</option>
+															<option value="ModelCode">ModelCode</option>
+															<option value="MpgCity">MpgCity</option>
+															<option value="MpgHwy">MpgHwy</option>
+															<option value="Msrp">Msrp</option>
+															<option value="OptionalEquipment">OptionalEquipment</option>
+															<option value="OptionalEquipmentShort">OptionalEquipmentShort</option>
+															<option value="Options">Options</option>
+															<option value="Other">Other</option>
+															<option value="OtherPrice1">OtherPrice1</option>
+															<option value="OtherPrice2">OtherPrice2</option>
+															<option value="OtherPrice3">OtherPrice3</option>
+															<option value="OtherPrice4">OtherPrice4</option>
+															<option value="OtherPrice5">OtherPrice5</option>
+															<option value="OtherPrice6">OtherPrice6</option>
+															<option value="OtherPrice7">OtherPrice7</option>
+															<option value="PackageCode">PackageCode</option>
+															<option value="Packages">Packages</option>
+															<option value="PassengerCapacity">PassengerCapacity</option>
+															<option value="Pricing">Pricing</option>
+															<option value="Rebates">Rebates</option>
+															<option value="RawRebates">RawRebates</option>
+															<option value="SafetyEquipment">SafetyEquipment</option>
+															<option value="SellingPrice">SellingPrice</option>
+															<option value="SpecialPrice">SpecialPrice</option>
+															<option value="SpecialsId">SpecialsId</option>
+															<option value="StandardEquipment">StandardEquipment</option>
+															<option value="StockNum">StockNum</option>
+															<option value="StockPhotos">StockPhotos</option>
+															<option value="StyleDescription">StyleDescription</option>
+															<option value="Tags">Tags</option>
+															<option value="TechSpecs">TechSpecs</option>
+															<option value="Transmission">Transmission</option>
+															<option value="Trim">Trim</option>
+															<option value="Type">Type</option>
+															<option value="Upholstery">Upholstery</option>
+															<option value="ReferenceId">ReferenceId</option>
+															<option value="VideoLink">VideoLink</option>
+															<option value="Warranty">Warranty</option>
+															<option value="WhenCreated">WhenCreated</option>
+															<option value="WhenDecoded">WhenDecoded</option>
+															<option value="WhenInStock">WhenInStock</option>
+															<option value="WhenPhotosUpdated">WhenPhotosUpdated</option>
+															<option value="WhenSpecialStarts">WhenSpecialStarts</option>
+															<option value="WhenSpecialEnds">WhenSpecialEnds</option>
+															<option value="WhenUpdated">WhenUpdated</option>
+															<option value="Year">Year</option>
+															<option value="DownloadedInventoryPhotos">DownloadedInventoryPhotos</option>
+															<option value="DownloadedStockPhotos">DownloadedStockPhotos</option>
+														</select>
+													</div>
+													<div class="columnmapping__buttons">
+														<button class="btn btn-success js-columnmapping__button--duplicate">
+															<i class="fa fa-plus"></i>
+														</button>
+														<button class="btn btn-danger js-columnmapping__button--delete">
+															<i class="fa fa-remove"></i>
+														</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<a href="#" class="btn btn-default">Save</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script src="../js/vendor/jquery.js"></script>
+			<script src="../js/vendor/bootstrap.js"></script>
+			<script src="../js/mockup/inventory.js"></script>
+		</body>
+	</html>

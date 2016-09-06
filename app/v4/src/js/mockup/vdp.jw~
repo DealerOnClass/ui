@@ -1,0 +1,60 @@
+var Carousel = (function(){
+
+    var carousel       = document.querySelector(".js-carousel");
+	var carouselItems  = document.querySelectorAll(".js-carousel__item");
+	var carouselHeight, carouselRows, aspectRatio;
+	var carouselHeroWidth, carouselItemWidth;
+
+	function Init(options) {
+		AddEventListeners();
+		CarouselInit(options);
+	}
+
+	function AddEventListeners() {
+	}
+
+	function CarouselInit(options) {
+		carouselHeight        = options.carouselHeight || 400;
+		carouselRows          = options.carouselRows || 2;
+		aspectRatio           = options.aspectRatio || 4/3;
+		carouselHeroWidth     = carouselHeight * aspectRatio;
+		carouselItemWidth     = carouselHeroWidth / carouselRows;
+		carousel.style.height = carouselHeight + "px";
+		CarouselInitItems();
+	}
+
+	function CarouselInitItems() {
+		var carouselItemOffsetX = 0;
+		for (var i = 0; i < carouselItems.length; i++) {
+			//	if (i === 0) {
+			//		carouselItemOffsetX += carouselHeroWidth;
+			//	} else if (((i-1) % carouselRows) === 0) {
+			//		carouselItemOffsetX += carouselItemWidth;
+			//	}
+			carouselItemOffsetX = (i%carouselRows) * (carouselRows);
+
+			console.log(i + ":" + (i+carouselRows) % carouselRows + " + " + carouselItemOffsetX);
+
+			if (i === 0) {
+				carouselItems[i].style.transform
+					= "translateX(" + (carouselItemOffsetX - carouselHeroWidth) + "px)";
+				carouselItems[i].style.width = carouselHeroWidth + "px";
+			} else {
+				carouselItems[i].style.transform
+					= "translateX(" + (carouselItemOffsetX - carouselItemWidth) + "px)"
+					+ "translateY(" + ((i%carouselRows) * carouselHeight / carouselRows) +"px)";
+				carouselItems[i].style.width = carouselItemWidth + "px";
+			}
+		}
+	}
+
+	return {
+		init: Init
+	}
+
+})();
+Carousel.init({
+	carouselHeight: 400,
+	carouselRows: 3,
+	aspectRatio: 4/3
+});

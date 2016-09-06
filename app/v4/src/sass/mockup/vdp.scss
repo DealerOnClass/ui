@@ -1,5 +1,5 @@
 //
-//	Vdp Carousel
+//	Carousel
 //
 .carousel {
     position: relative;
@@ -8,14 +8,8 @@
     width: 100%;
     background-color: #333;
 }
-.carousel--active {
-    .carousel__item {
-        opacity: 0.2;
-    }
-}
 .carousel__outer {
     transition: transform 0.5s ease-in-out;
-
     backface-visibility: hidden;
     &.dragging {
         transition: none;
@@ -23,39 +17,28 @@
 }
 .carousel__inner {
     transition: transform 0.5s ease-in-out;
-
     backface-visibility: hidden;
 }
 .carousel__item {
-    position: absolute;
-    transition-timing-function: ease-in-out;
-    transition-duration: 0.5s;
-    transition-property: transform, opacity, width, z-index;
-
+	position: absolute;
+	transition-property: transform, width;
+	transition-duration: 0.5s;
+	transition-timing-function: ease-in-out;
+	transition: transform 0.5s ease-in-out;
     backface-visibility: hidden;
-}
-.carousel__item--active {
-    z-index: 300;
-    opacity: 1 !important;
-    .carousel__image {
-        transform: scale(1.75,1.75);
-    }
 }
 .carousel__image {
-    max-width: 100%;
-    transition: transform 0.5s ease-in-out;
-
+	max-width: 100%;
     backface-visibility: hidden;
 }
-/*
- * Vdp Carousel Controls
- */
+//
+//	Carousel Controls
+//
 .carousel__controls {
     position: relative;
     z-index: 200;
     width: 100%;
     transition: opacity 0.25s ease-in-out;
-
     backface-visibility: hidden;
     &.carousel__controls--hidden {
         pointer-events: none;
@@ -65,7 +48,6 @@
 .carousel__control {
     line-height: 1;
     position: absolute;
-    top: 50%;
     width: 3em;
     height: 3em;
     transition: opacity 0.25s ease-in-out;
@@ -78,58 +60,14 @@
         pointer-events: none;
         opacity: 0;
     }
+	> .fa {
+		position: absolute;
+		transform: translateX(-50%) translateY(-50%);
+	}
 }
-.carousel__control--right {
+.carousel__control--prev {
+	left: 0;
+}
+.carousel__control--next {
     right: 0;
 }
-/*
- * Utilities
- */
-.fade {
-    transition: opacity 0.5s ease-in-out;
-    opacity: 0;
-}
-.in {
-    opacity: 1;
-}
-/*
- * Guides
- */
-$useguides: false;
-$center: 50%;
-$offset: 134px;
-@if $useguides {
-    body,
-    main {
-        &:before,
-        &:after {
-            position: fixed;
-            z-index: 2000;
-            top: 0;
-            display: block;
-            width: 1px;
-            height: 100%;
-            content: "";
-            background-color: red;
-        }
-    }
-    body {
-        &:before {
-            left: calc(#{$center} - #{$offset});
-        }
-        &:after {
-            left: $center;
-        }
-    }
-    main {
-        &:before {
-            left: calc(#{$center} + #{$offset});
-        }
-        &:after {
-            display: none;
-        }
-    }
-}
-//
-//	
-//

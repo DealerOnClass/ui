@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>v4 Home</title>
+		<link rel="stylesheet" href="../css/core/styles.css">
+		<link rel="stylesheet" href="../css/vendor/font-awesome/font-awesome.css">
+		<link rel="stylesheet" href="../css/vendor/date-picker/datepicker.css">
+	</head>
+	<body class="bg-0025">
+		<nav class="oncanvas-navbar navbar navbar-primary">
+			<a class="offcanvas-toggle js-offcanvas-toggle navbar-item navbar-link" href="#Collapse"></a>
+			<a class="navbar-item navbar-link navbar-logo" href="/">DealerOn</a>
+		</nav>
+		<nav class="offcanvas-sidebar js-offcanvas-sidebar">
+			<div class="sidebar-body">
+				<div class="tab-parent">
+					<a class="sidebar-item sidebar-link collapse-toggle" data-toggle="collapse" href="#InventoryAccordion" aria-expanded="false" aria-controls="InventoryAccordion">Inventory</a>
+					<div class="sidebar-item collapse in" id="InventoryAccordion" aria-expanded="false">
+						<div class="collapse-inner" role="tablist">
+							<a class="tab-item sidebar-item sidebar-link" href="#Status" data-toggle="tab" role="tab">Status</a>
+							<a class="tab-item sidebar-item sidebar-link active" href="#Sources" data-toggle="tab" role="tab">Lot Sources</a>
+							<a class="tab-item sidebar-item sidebar-link" href="#Dealers" data-toggle="tab" role="tab">Dealers</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<div class="oncanvas-body">
+			<div class="container-fluid pt2 mb4">
+				<div class="tab-content">
+					<div id="Status" class="tab-pane" role="tabpanel">
+						<h3 class="h4 mb2 clearfix">
+							<div class="pull-left">Viewing (12) Feeds</div>
+							<button class="btn btn-link pull-right" href="">
+								<i class="fa fa-plus"></i>
+								&nbsp;
+								New Feed
+							</button>
+						</h3>
+						<nav class="navbar navbar-white bxs1 mb2">
+							<div class="navbar-group">
+								<span class="navbar-item">Filter by</span>
+								<div class="navbar-item input-group input-group-rounded">
+									<input class="form-control ng-pristine ng-untouched ng-valid" style="border-right: 0 none;" placeholder="Search..." type="text" ng-model="filterString">
+									<button class="input-group-addon" type="button" ng-click="clearFilter()">
+										<i class="fa fa-times fa-danger"></i>
+									</button>
+								</div>
+							</div>
+						</nav>
+						<div class="table-fixedheaders table-fixedheaders-white">
+							<div class="table-responsive">
+								<table class="table table-nowrap table-striped table-borderless">
+									<thead>
+										<tr>
+											<th class="wa"></th>
+											<th>
+												<div class="fixedghost">Title<button class="btn btn-link"><i class="fa fa-caret-down fa-fw"></i></button></div>
+												<div class="fixedheader">Title<button class="btn btn-link"><i class="fa fa-caret-down fa-fw"></i></button></div>
+											</th>
+											<th>
+												<div class="fixedghost">Status<button class="btn btn-link"><i class="fa fa-caret-down fa-fw"></i></button></div>
+												<div class="fixedheader">Status<button class="btn btn-link"><i class="fa fa-caret-down fa-fw"></i></button></div>
+											</th>
+											<th>
+												<div class="fixedghost">Last Run<button class="btn btn-link"><i class="fa fa-caret-down fa-fw"></i></button></div>
+												<div class="fixedheader">Last Run<button class="btn btn-link"><i class="fa fa-caret-down fa-fw"></i></button></div>
+											</th>
+											<th>
+												<div class="fixedghost">Duration<button class="btn btn-link"><i class="fa fa-caret-down fa-fw"></i></button></div>
+												<div class="fixedheader">Duration<button class="btn btn-link"><i class="fa fa-caret-down fa-fw"></i></button></div>
+											</th>
+											<th>
+												<div class="fixedghost">Errors<button class="btn btn-link"><i class="fa fa-caret-down fa-fw"></i></button></div>
+												<div class="fixedheader">Errors<button class="btn btn-link"><i class="fa fa-caret-down fa-fw"></i></button></div>
+											</th>
+											<th>
+												<div class="fixedghost">Lot Sources<button class="btn btn-link"><i class="fa fa-caret-down fa-fw"></i></button></div>
+												<div class="fixedheader">Lot Sources<button class="btn btn-link"><i class="fa fa-caret-down fa-fw"></i></button></div>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="wa">
+												<button class="btn btn-link"><i class="fa fa-refresh text-success"></i></button>
+												<button class="btn btn-link"><i class="fa fa-pencil"></i></button>
+												<button class="btn btn-link"><i class="fa fa-remove text-danger"></i></button>
+											</td>
+											<td>whoEver</td>
+											<td>
+												<div class="progress progress-striped progress-animated">
+													<div aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;" class="progress-bar"><span>60%</span></div>
+												</div>
+											</td>
+											<td>Today at XX:XX AM</td>
+											<td>a few seconds</td>
+											<td>2</td>
+											<td>10</td>
+										</tr>
+										<tr>
+											<td class="wa">
+												<button class="btn btn-link"><i class="fa fa-refresh text-success"></i></button>
+												<button class="btn btn-link"><i class="fa fa-pencil"></i></button>
+												<button class="btn btn-link"><i class="fa fa-remove text-danger"></i></button>
+											</td>
+											<td>vAuto</td>
+											<td>
+												<div class="progress progress-success">
+													<div aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;" class="progress-bar"><span>Done</span></div>
+												</div>
+											</td>
+											<td>Today at XX:XX AM</td>
+											<td>a minute</td>
+											<td>0</td>
+											<td>4</td>
+										</tr>
+										<tr>
+											<td class="wa">
+												<button class="btn btn-link"><i class="fa fa-refresh text-success"></i></button>
+												<button class="btn btn-link"><i class="fa fa-pencil"></i></button>
+												<button class="btn btn-link"><i class="fa fa-remove text-danger"></i></button>
+											</td>
+											<td>Some Others</td>
+											<td>
+												<div class="progress progress-02">
+													<div aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;" class="progress-bar"><span>Idle</span></div>
+												</div>
+											</td>
+											<td>Today at XX:XX AM</td>
+											<td>a minute</td>
+											<td>0</td>
+											<td>4</td>
+										</tr>
+										<tr>
+											<td class="wa">
+												<button class="btn btn-link"><i class="fa fa-refresh text-success"></i></button>
+												<button class="btn btn-link"><i class="fa fa-pencil"></i></button>
+												<button class="btn btn-link"><i class="fa fa-remove text-danger"></i></button>
+											</td>
+											<td>It didn't work</td>
+											<td>
+												<div class="progress progress-danger">
+													<div aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;" class="progress-bar"><span>Failed</span></div>
+												</div>
+											</td>
+											<td>Today at XX:XX AM</td>
+											<td>a minute</td>
+											<td>0</td>
+											<td>4</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div id="Sources" class="tab-pane active" role="tabpanel">
+						<h3 class="h4 mb2 clearfix">
+							<div class="pull-left">Viewing (12) Lot Sources</div>
+							<button class="btn btn-link pull-right" href="">
+								<i class="fa fa-plus"></i>
+								&nbsp;
+								New Lot Source
+							</button>
+						</h3>
+						<nav class="navbar navbar-white bxs1 mb2">
+							<div class="navbar-group">
+								<span class="navbar-item">Filter by</span>
+								<div class="navbar-item input-group input-group-rounded">
+									<input class="form-control ng-pristine ng-untouched ng-valid" style="border-right: 0 none;" placeholder="Search..." type="text" ng-model="filterString">
+									<button class="input-group-addon" type="button" ng-click="clearFilter()">
+										<i class="fa fa-times fa-danger"></i>
+									</button>
+								</div>
+							</div>
+						</nav>
+						<div class="tab-content tab-parent">
+							<div id="lotsource-main" class="tab-pane" role="tabpanel">
+								<div class="table-fixedheaders table-fixedheaders-white">
+									<div class="table-responsive">
+										<table class="table table-nowrap table-striped table-borderless">
+											<thead>
+												<tr>
+													<th class="wa"></th>
+													<th>
+														<div class="fixedghost">ID<button class="btn btn-link"><i class="fa fa-caret-down fa-fw"></i></button></div>
+														<div class="fixedheader">ID<button class="btn btn-link"><i class="fa fa-caret-down fa-fw"></i></button></div>
+													</th>
+													<th>
+														<div class="fixedghost">Name<button class="btn btn-link"><i class="fa fa-caret-down fa-fw"></i></button></div>
+														<div class="fixedheader">Name<button class="btn btn-link"><i class="fa fa-caret-down fa-fw"></i></button></div>
+													</th>
+													<th>
+														<div class="fixedghost">Last Update<button class="btn btn-link"><i class="fa fa-caret-down fa-fw"></i></button></div>
+														<div class="fixedheader">Last Update<button class="btn btn-link"><i class="fa fa-caret-down fa-fw"></i></button></div>
+													</th>
+													<th>
+														<div class="fixedghost">Duplicates<button class="btn btn-link"><i class="fa fa-caret-down fa-fw"></i></button></div>
+														<div class="fixedheader">Duplicates<button class="btn btn-link"><i class="fa fa-caret-down fa-fw"></i></button></div>
+													</th>
+													<th>
+														<div class="fixedghost">Errors<button class="btn btn-link"><i class="fa fa-caret-down fa-fw"></i></button></div>
+														<div class="fixedheader">Errors<button class="btn btn-link"><i class="fa fa-caret-down fa-fw"></i></button></div>
+													</th>
+													<th>
+														<div class="fixedghost">Ineligible Vehicles<button class="btn btn-link"><i class="fa fa-caret-down fa-fw"></i></button></div>
+														<div class="fixedheader">Ineligible Vehicles<button class="btn btn-link"><i class="fa fa-caret-down fa-fw"></i></button></div>
+													</th>
+													<th>
+														<div class="fixedghost">New<button class="btn btn-link"><i class="fa fa-caret-down fa-fw"></i></button></div>
+														<div class="fixedheader">New<button class="btn btn-link"><i class="fa fa-caret-down fa-fw"></i></button></div>
+													</th>
+													<th>
+														<div class="fixedghost">Used<button class="btn btn-link"><i class="fa fa-caret-down fa-fw"></i></button></div>
+														<div class="fixedheader">Used<button class="btn btn-link"><i class="fa fa-caret-down fa-fw"></i></button></div>
+													</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td class="wa">
+														<button class="btn btn-link"><i class="fa fa-refresh text-success"></i></button>
+														<button class="tab-item btn btn-link" data-toggle="tab" data-target="#lotsource-1"><i class="fa fa-pencil"></i></button>
+														<button class="btn btn-link"><i class="fa fa-remove text-danger"></i></button>
+													</td>
+													<td>624</td>
+													<td>Ann Arbor Acura</td>
+													<td>Today at XX:XX AM</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+													<td>2</td>
+													<td>10</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+							<div id="lotsource-1" class="tab-pane active" role="tabpanel">
+								<h3 class="h4 mb2 clearfix">
+									<div class="pull-left">Viewing Ann Arbor Acura</div>
+									<button class="tab-item btn btn-link pull-right" data-toggle="tab" data-target="#lotsource-main">
+										<i class="fa fa-chevron-left"></i>
+										&nbsp;
+										Back to Lot Sources
+									</button>
+								</h3>
+								<div class="navbar navbar-justified navbar-white bxs1 tab-parent" role="tablist">
+									<a href="#lots" class="tab-item navbar-item navbar-link active" data-toggle="tab" role="tab">Lots</a>
+									<a href="#feeds" class="tab-item navbar-item navbar-link" data-toggle="tab" role="tab">Feeds</a>
+									<a href="#decoding" class="tab-item navbar-item navbar-link" data-toggle="tab" role="tab">Decoding</a>
+									<a href="#rules" class="tab-item navbar-item navbar-link" data-toggle="tab" role="tab">Rules</a>
+								</div>
+								<div class="tab-content">
+									<div class="tab-pane active" id="lots" role="tabpanel">
+										<div class="table-fixedheaders table-fixedheaders-white mt2">
+											<div class="table-responsive">
+												<table class="table table-nowrap table-striped table-borderless">
+													<thead>
+														<tr>
+															<th class="wa"></th>
+															<th>
+																<div class="fixedghost">ID<button class="btn btn-link"><i class="fa fa-caret-down fa-fw"></i></button></div>
+																<div class="fixedheader">ID<button class="btn btn-link"><i class="fa fa-caret-down fa-fw"></i></button></div>
+															</th>
+															<th>
+																<div class="fixedghost">Lot<button class="btn btn-link"><i class="fa fa-caret-down fa-fw"></i></button></div>
+																<div class="fixedheader">Lot<button class="btn btn-link"><i class="fa fa-caret-down fa-fw"></i></button></div>
+															</th>
+															<th>
+																<div class="fixedghost">Vehicles<button class="btn btn-link"><i class="fa fa-caret-down fa-fw"></i></button></div>
+																<div class="fixedheader">Vehicles<button class="btn btn-link"><i class="fa fa-caret-down fa-fw"></i></button></div>
+															</th>
+															<th>
+																<div class="fixedghost">Associated Dealers<button class="btn btn-link"><i class="fa fa-caret-down fa-fw"></i></button></div>
+																<div class="fixedheader">Associated Dealers<button class="btn btn-link"><i class="fa fa-caret-down fa-fw"></i></button></div>
+															</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td class="wa">
+																<button class="btn btn-link"><i class="fa fa-pencil"></i></button>
+																<button class="btn btn-link"><i class="fa fa-remove text-danger"></i></button>
+															</td>
+															<td>1622</td>
+															<td>Ann Arbor Used (Used)</td>
+															<td><a class="btn btn-link" href="">71</a></td>
+															<td><a class="btn btn-link" href="">8</a></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+									<div class="tab-pane" id="feeds" role="tabpanel">
+									</div>
+									<div class="tab-pane" id="decoding" role="tabpanel">
+									</div>
+									<div class="tab-pane" id="rules" role="tabpanel">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="Dealers" class="tab-pane" role="tabpanel">
+						<h3 class="h4 mb2">Viewing (12) Dealers</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="offcanvas-backdrop js-offcanvas-backdrop"></div>
+		<script defer src="../js/vendor/jquery.js"></script>
+		<script defer src="../js/vendor/tether.js"></script>
+		<script defer src="../js/core/bootstrap.js"></script>
+		<script defer src="../js/vendor/moment.js"></script>
+		<script defer src="../js/vendor/bootstrap-datepicker.js"></script>
+		<script defer src="../js/mockup/sidebar.js"></script>
+		<script defer src="../js/mockup/datepicker.js"></script>
+	</body>
+</html>
+
