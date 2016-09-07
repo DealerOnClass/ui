@@ -61,6 +61,10 @@
 .carousel__image {
     /*opacity: 0 !important;*/
     width: 100%;
+    -webkit-transition: -webkit-transform 0.5s ease-in-out;
+            transition: -webkit-transform 0.5s ease-in-out;
+            transition:         transform 0.5s ease-in-out;
+            transition:         transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out; 
 
     -webkit-backface-visibility: hidden;
             backface-visibility: hidden;

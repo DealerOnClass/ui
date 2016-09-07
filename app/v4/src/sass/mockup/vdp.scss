@@ -44,6 +44,7 @@
 	/*opacity: 0 !important;*/
 	width: 100%;
     backface-visibility: hidden;
+    transition: transform 0.5s ease-in-out;
 }
 //
 //	Carousel Controls
