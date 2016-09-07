@@ -1,1 +1,42 @@
-var sidebar=function(){function e(){n()}function n(){a.addEventListener("click",t),r.addEventListener("click",c)}function t(e){e.preventDefault(),o?c():i()}function c(){s.classList.remove("sidebar-is-open"),o=!1}function i(){s.classList.add("sidebar-is-open"),o=!0}var o,s=document.body,a=(document.querySelector(".js-offcanvas-sidebar"),document.querySelector(".js-offcanvas-toggle")),r=document.querySelector(".js-offcanvas-backdrop");return{init:e}}();sidebar.init();
+var sidebar = (function () {
+
+	var sidebarIsOpen;
+	var body		  = document.body;
+	var sidebar       = document.querySelector(".js-offcanvas-sidebar");
+	var sidebarToggle = document.querySelector(".js-offcanvas-toggle");
+	var backdrop	  = document.querySelector(".js-offcanvas-backdrop");
+
+	function Init() {
+		AddEventListeners();
+	}
+
+	function AddEventListeners() {
+		sidebarToggle.addEventListener("click", Toggle);
+		backdrop.addEventListener("click", CloseSidebar);
+	}
+
+	function Toggle(evt) {
+		evt.preventDefault();
+		if (!sidebarIsOpen) {
+			OpenSidebar();
+		} else {
+			CloseSidebar();
+		}
+	}
+
+	function CloseSidebar() {
+		body.classList.remove("sidebar-is-open");
+		sidebarIsOpen = false;
+	}
+
+	function OpenSidebar() {
+		body.classList.add("sidebar-is-open");
+		sidebarIsOpen = true;
+	}
+
+	return {
+		init: Init
+	}
+
+})();
+sidebar.init();

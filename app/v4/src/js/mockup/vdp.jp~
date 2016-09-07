@@ -22,7 +22,7 @@ var Carousel = (function(){
 
 	var mouseClick         = true;
 	var mouseDown          = false;
-	var mouseCurrentXPos   = 0;
+	var	mouseCurrentXPos   = 0;
 	var carouselMovedTotal = carouselOuter.getAttribute("data-translated") | 0;
 
 	var dragThreshold;
@@ -76,7 +76,7 @@ var Carousel = (function(){
 		for (var i = 0; i < carouselItems.length; i++) {
 			if (i === 0) {
 				carouselItemOffsetX += carouselHeroWidth;
-			} else if ((i-1)%carouselRows === 0) {
+			} else if (((i-1) % carouselRows) === 0) {
 				carouselItemOffsetX += carouselItemWidth;
 			}
 			if (i === 0) {
@@ -170,32 +170,35 @@ var Carousel = (function(){
 	function _GalleryInitItems(image) {
 		var active    = image.parentElement;
 		var activeBCR = active.getBoundingClientRect();
-		var center    = ((body.scrollWidth / 2) - (carouselHeroWidth / 2)) - carouselMovedTotal;
-
-		//	Handle all images
-		for (var i = 0; i < carouselItems.length; i++) {
-			carouselItems[i].setAttribute("data-init-position", carouselItems[i].style.transform);
-			carouselItems[i].style.width = carouselItemWidth + "px";
-		}
 
 		//	Handle active image
-		active.style.transform = "translateX(" + center + "px) translateY(0)";
-		active.style.width = carouselHeroWidth + "px";
+		active.style.transform
+			= "translateX(" + ((body.scrollWidth / 2) - (activeBCR.width / 2)) + "px)"
+			+ "translateY(50%)";
+	    //	active.style.width = carouselHeroWidth + "px";
+		_GalleryTranslateX(carouselMovedTotal * -1);
 
 		//	Handle prev images
 		var prev        = _PrevAll(active);
-		var prevOffsetX = center;
+		var prevOffsetX = ((body.scrollWidth / 2) - (activeBCR.width / 2));
 		for (var i = 0; i < prev.length; i++) {
 			prevOffsetX -= carouselItemWidth;
-			prev[i].style.transform = "translateX(" + prevOffsetX + "px) translateY(50%)";
+			prev[i].style.transform = "translateX(" + prevOffsetX + "px)";
 		}
 
 		//	Handle next images
 		var next        = _NextAll(active);
-		var nextOffsetX = center;
+		var nextOffsetX = ((body.scrollWidth / 2) - (activeBCR.width / 2));
 		for (var i = 0; i < next.length; i++) {
 			nextOffsetX += carouselItemWidth;
-			next[i].style.transform = "translateX(" + nextOffsetX + "px) translateY(50%)";
+			next[i].style.transform = "translateX(" + nextOffsetX + "px)";
+		}
+
+		//	Handle all images
+		for (var i = 0; i < carouselItems.length; i++) {
+			carouselItemOffsetX += (carouselHeroWidth / 2);
+			carouselItems[i].setAttribute("data-init-position", carouselItems[i].style.transform);
+			carouselItems[i].style.width = (carouselHeroWidth / 2) + "px";
 		}
 	}
 
@@ -211,13 +214,11 @@ var Carousel = (function(){
 		}
 	}
 
-	function _GalleryIsActive(isActive, image) {
+	function _GalleryIsActive(isActive, image = null) {
 		if (isActive) {
 			galleryActive = true;
 			carousel.classList.add("active");
-			if (image) {
-				image.parentElement.classList.add("active");
-			}
+			image.parentElement.classList.add("active");
 		} else {
 			galleryActive = false;
 			carousel.classList.remove("active");
@@ -338,39 +339,3 @@ Carousel.init({
 	carouselRows: 2,
 	aspectRatio: 4/3
 });
-
-var SetCarouselOptions = (function(){
-
-	var setRows = document.querySelector(".js-options-rows");
-	var setHeight = document.querySelector(".js-options-height");
-	var rows, height;
-
-	function Init() {
-		setRows.addEventListener("change", _UpdateRows);
-		setHeight.addEventListener("change", _UpdateHeight);
-	}
-
-	function _UpdateRows(evt) {
-		rows = evt.target.value;
-		_CarouselUpdate();
-	}
-
-	function _UpdateHeight(evt) {
-		height = evt.target.value;
-		_CarouselUpdate();
-	}
-
-	function _CarouselUpdate() {
-		Carousel.init({
-			carouselHeight: height,
-			carouselRows: rows
-		})
-	}
-
-	return {
-		init: Init
-	}
-
-})();
-
-SetCarouselOptions.init();

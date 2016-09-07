@@ -5,6 +5,7 @@ var Carousel = (function(){
 	var body             = document.body;
     var carousel         = document.querySelector(".js-carousel");
 	var carouselOuter    = document.querySelector(".js-carousel__outer");
+	var carouselInner    = document.querySelector(".js-carousel__inner");
 	var carouselItems    = document.querySelectorAll(".js-carousel__item");
 	var carouselControls = document.querySelector(".js-carousel__controls");
 	var carouselNext	 = document.querySelector(".js-carousel__control--next");
@@ -21,7 +22,7 @@ var Carousel = (function(){
 
 	var mouseClick         = true;
 	var mouseDown          = false;
-	var	mouseCurrentXPos   = 0;
+	var mouseCurrentXPos   = 0;
 	var carouselMovedTotal = carouselOuter.getAttribute("data-translated") | 0;
 
 	var dragThreshold;
@@ -75,7 +76,7 @@ var Carousel = (function(){
 		for (var i = 0; i < carouselItems.length; i++) {
 			if (i === 0) {
 				carouselItemOffsetX += carouselHeroWidth;
-			} else if (((i-1) % carouselRows) === 0) {
+			} else if ((i-1)%carouselRows === 0) {
 				carouselItemOffsetX += carouselItemWidth;
 			}
 			if (i === 0) {
@@ -162,25 +163,44 @@ var Carousel = (function(){
 	//	Change Carousel state to Gallery. Change layout of
 	//	images and focus the active image.
 	function _GalleryStart(image) {
-		galleryActive = true;
-		//	var imageLocation = image.parentElement.getBoundingClientRect();
-		_GalleryInitItems();
-		//	_CarouselSlideTo(carouselMovedTotal - (imageLocation.left - ((body.scrollWidth / 2) - (imageLocation.width / 2))));
+		_GalleryIsActive(true, image);
+		_GalleryInitItems(image);
 	}
 
-	function _GalleryInitItems() {
-		carouselItemOffsetX = 0;
+	function _GalleryInitItems(image) {
+		var active    = image.parentElement;
+		var activeBCR = active.getBoundingClientRect();
+		var center    = ((body.scrollWidth / 2) - (carouselHeroWidth / 2)) - carouselMovedTotal;
+
+		//	Handle all images
 		for (var i = 0; i < carouselItems.length; i++) {
-			carouselItemOffsetX += (carouselHeroWidth / 2);
 			carouselItems[i].setAttribute("data-init-position", carouselItems[i].style.transform);
-			carouselItems[i].style.transform
-				= "translateX(" + (carouselItemOffsetX) + "px)"
-				+ "translateY(50%)";
-			carouselItems[i].style.width = (carouselHeroWidth / 2) + "px";
+			carouselItems[i].style.width = carouselItemWidth + "px";
+		}
+
+		//	Handle active image
+		active.style.transform = "translateX(" + center + "px) translateY(0)";
+		active.style.width = carouselHeroWidth + "px";
+
+		//	Handle prev images
+		var prev        = _PrevAll(active);
+		var prevOffsetX = center;
+		for (var i = 0; i < prev.length; i++) {
+			prevOffsetX -= carouselItemWidth;
+			prev[i].style.transform = "translateX(" + prevOffsetX + "px) translateY(50%)";
+		}
+
+		//	Handle next images
+		var next        = _NextAll(active);
+		var nextOffsetX = center;
+		for (var i = 0; i < next.length; i++) {
+			nextOffsetX += carouselItemWidth;
+			next[i].style.transform = "translateX(" + nextOffsetX + "px) translateY(50%)";
 		}
 	}
 
 	function _GalleryClose() {
+		_GalleryIsActive(false);
 		for (var i = 0; i < carouselItems.length; i++) {
 			if (i === 0) {
 				carouselItems[i].style.width = carouselHeroWidth + "px";
@@ -189,7 +209,25 @@ var Carousel = (function(){
 			}
 			carouselItems[i].style.transform = carouselItems[i].getAttribute("data-init-position");
 		}
-		galleryActive = false;
+	}
+
+	function _GalleryIsActive(isActive, image) {
+		if (isActive) {
+			galleryActive = true;
+			carousel.classList.add("active");
+			if (image) {
+				image.parentElement.classList.add("active");
+			}
+		} else {
+			galleryActive = false;
+			carousel.classList.remove("active");
+			carousel.querySelector(".active").classList.remove("active");
+		}
+	}
+
+	function _GalleryTranslateX(distance) {
+		carouselInner.style.transform = "translateX(" + Math.round(distance) + "px)";
+		carouselInner.setAttribute("data-translated", Math.round(distance));
 	}
 
 	//
@@ -270,6 +308,24 @@ var Carousel = (function(){
 		}
 	}
 
+	//
+	//	Get all previous elements
+	function _PrevAll(element) {
+		var result = [];
+		while (element = element.previousElementSibling)
+			result.push(element);
+		return result;
+	}
+
+	//
+	//	Get all next elements
+	function _NextAll(element) {
+		var result = [];
+		while (element = element.nextElementSibling)
+			result.push(element);
+		return result;
+	}
+
 	return {
 		init: Init
 	}
@@ -282,3 +338,39 @@ Carousel.init({
 	carouselRows: 2,
 	aspectRatio: 4/3
 });
+
+var SetCarouselOptions = (function(){
+
+	var setRows = document.querySelector(".js-options-rows");
+	var setHeight = document.querySelector(".js-options-height");
+	var rows, height;
+
+	function Init() {
+		setRows.addEventListener("change", _UpdateRows);
+		setHeight.addEventListener("change", _UpdateHeight);
+	}
+
+	function _UpdateRows(evt) {
+		rows = evt.target.value;
+		_CarouselUpdate();
+	}
+
+	function _UpdateHeight(evt) {
+		height = evt.target.value;
+		_CarouselUpdate();
+	}
+
+	function _CarouselUpdate() {
+		Carousel.init({
+			carouselHeight: height,
+			carouselRows: rows
+		})
+	}
+
+	return {
+		init: Init
+	}
+
+})();
+
+SetCarouselOptions.init();

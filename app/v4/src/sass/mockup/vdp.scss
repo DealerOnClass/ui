@@ -7,6 +7,17 @@
     overflow: hidden;
     width: 100%;
     background-color: #333;
+    transition: height 0.5s ease-in-out;
+	&.active {
+		.carousel__item {
+			opacity: 0.4;
+			&.active {
+				/*border-color: green;*/
+				z-index: 100;
+				opacity: 1;
+			}
+		}
+	}
 }
 .carousel__outer {
     transition: transform 0.5s ease-in-out;
@@ -21,14 +32,17 @@
 }
 .carousel__item {
 	position: absolute;
-	transition-property: transform, width;
+	transition-property: transform, width, height, opacity, z-index;
 	transition-duration: 0.5s;
 	transition-timing-function: ease-in-out;
-	transition: transform 0.5s ease-in-out;
     backface-visibility: hidden;
+    background-size: contain;
+    /*background-color: #444;*/
+	/*border: 1px solid red;*/
 }
 .carousel__image {
-	max-width: 100%;
+	/*opacity: 0 !important;*/
+	width: 100%;
     backface-visibility: hidden;
 }
 //

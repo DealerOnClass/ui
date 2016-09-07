@@ -1,2 +1,116 @@
-.carousel{position:relative;z-index:1;overflow:hidden;width:100%;background-color:#333}.carousel__outer{-webkit-transition:-webkit-transform .5s ease-in-out;transition:-webkit-transform .5s ease-in-out;transition:transform .5s ease-in-out;transition:transform .5s ease-in-out,-webkit-transform .5s ease-in-out;-webkit-backface-visibility:hidden;backface-visibility:hidden}.carousel__outer.dragging{-webkit-transition:none;transition:none}.carousel__inner{-webkit-transition:-webkit-transform .5s ease-in-out;transition:-webkit-transform .5s ease-in-out;transition:transform .5s ease-in-out;transition:transform .5s ease-in-out,-webkit-transform .5s ease-in-out}.carousel__inner,.carousel__item{-webkit-backface-visibility:hidden;backface-visibility:hidden}.carousel__item{position:absolute;-webkit-transition-property:width,-webkit-transform;transition-property:width,-webkit-transform;transition-property:transform,width;transition-property:transform,width,-webkit-transform;-webkit-transition-duration:.5s;transition-duration:.5s;-webkit-transition-timing-function:ease-in-out;transition-timing-function:ease-in-out;-webkit-transition:-webkit-transform .5s ease-in-out;transition:-webkit-transform .5s ease-in-out;transition:transform .5s ease-in-out;transition:transform .5s ease-in-out,-webkit-transform .5s ease-in-out}.carousel__image{max-width:100%}.carousel__controls,.carousel__image{-webkit-backface-visibility:hidden;backface-visibility:hidden}.carousel__controls{position:relative;z-index:2;width:100%;-webkit-transition:opacity .25s ease-in-out;transition:opacity .25s ease-in-out}.carousel__controls.carousel__controls--hidden{pointer-events:none;opacity:0}.carousel__control{line-height:1;position:absolute;width:3em;height:3em;-webkit-transition:opacity .25s ease-in-out;transition:opacity .25s ease-in-out;-webkit-transform:translateY(-50%);transform:translateY(-50%);color:inherit;border:4px solid rgba(0,0,0,.1);border-radius:50%;background-color:#fff}.carousel__control.carousel__control--hidden{pointer-events:none;opacity:0}.carousel__control>.fa{position:absolute;-webkit-transform:translateX(-50%) translateY(-50%);transform:translateX(-50%) translateY(-50%)}.carousel__control--prev{left:0}.carousel__control--next{right:0}
-/*# sourceMappingURL=../map/mockup/vdp.css.map */
+.carousel {
+    position: relative;
+    z-index: 100;
+    overflow: hidden;
+    width: 100%;
+    -webkit-transition: height 0.5s ease-in-out;
+            transition: height 0.5s ease-in-out; 
+    background-color: #333;
+}
+.carousel.active .carousel__item {
+    opacity: 0.4;
+}
+.carousel.active .carousel__item.active {
+    /*border-color: green;*/
+    z-index: 100;
+    opacity: 1;
+}
+
+.carousel__outer {
+    -webkit-transition: -webkit-transform 0.5s ease-in-out;
+            transition: -webkit-transform 0.5s ease-in-out;
+            transition:         transform 0.5s ease-in-out;
+            transition:         transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+}
+.carousel__outer.dragging {
+    -webkit-transition: none;
+            transition: none;
+}
+
+.carousel__inner {
+    -webkit-transition: -webkit-transform 0.5s ease-in-out;
+            transition: -webkit-transform 0.5s ease-in-out;
+            transition:         transform 0.5s ease-in-out;
+            transition:         transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+}
+
+.carousel__item {
+    position: absolute;
+    -webkit-transition-timing-function: ease-in-out;
+            transition-timing-function: ease-in-out;
+    -webkit-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+    -webkit-transition-property: width, height, opacity, z-index, -webkit-transform;
+            transition-property: width, height, opacity, z-index, -webkit-transform;
+            transition-property: transform, width, height, opacity, z-index;
+            transition-property: transform, width, height, opacity, z-index, -webkit-transform;
+    background-size: contain;
+
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    /*background-color: #444;*/
+    /*border: 1px solid red;*/
+}
+
+.carousel__image {
+    /*opacity: 0 !important;*/
+    width: 100%;
+
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+}
+
+.carousel__controls {
+    position: relative;
+    z-index: 200;
+    width: 100%;
+    -webkit-transition: opacity 0.25s ease-in-out;
+            transition: opacity 0.25s ease-in-out;
+
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+}
+.carousel__controls.carousel__controls--hidden {
+    pointer-events: none;
+    opacity: 0;
+}
+
+.carousel__control {
+    line-height: 1;
+    position: absolute;
+    width: 3em;
+    height: 3em;
+    -webkit-transition: opacity 0.25s ease-in-out;
+            transition: opacity 0.25s ease-in-out;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    color: inherit;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    background-color: white;
+}
+.carousel__control.carousel__control--hidden {
+    pointer-events: none;
+    opacity: 0;
+}
+.carousel__control > .fa {
+    position: absolute;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+        -ms-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+}
+
+.carousel__control--prev {
+    left: 0;
+}
+
+.carousel__control--next {
+    right: 0;
+}
