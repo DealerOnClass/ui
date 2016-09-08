@@ -35,6 +35,7 @@ var Carousel = (function(){
 
 	function Init(options) {
 		AddEventListeners();
+		_GalleryIsActive(false);
 		_CarouselInit(options);
 		_CarouselInitItems();
 		_ControlsInit(options);
@@ -161,7 +162,7 @@ var Carousel = (function(){
 	//
 	//	Initialize Carousel Controls, setting positions etc.
 	function _ControlsInit() {
-		carouselControls.style.top = (carouselHeight / 2) + "px";
+		carouselControls.style.transform = "translateY(" + (carouselHeight / 2) + "px)";
 	}
 
 	//
@@ -229,9 +230,10 @@ var Carousel = (function(){
 			}
 		} else {
 			galleryActive = false;
-			_GalleryTranslateX(0);
 			carousel.classList.remove("active");
-			carousel.querySelector(".active").classList.remove("active");
+			if (carousel.querySelector(".active")) {
+				carousel.querySelector(".active").classList.remove("active");
+			}
 		}
 	}
 
